@@ -1,28 +1,12 @@
-# doc-templates
+# Devsite JSilver Templates
 
-This repository contains templates used to create refernce documentation for developers.google.com,
-cloud.google.com, and other sites.
+This directory contains the jsilver templates used to generate javadocs for
+devsite.  They are modified directly from the templates included in doclava.
+The following javascript libraries have been removed in order to comply with
+Google's policy on third party code.  All of this will need to be integrated
+into devsite's core javascript framework anyway.
 
+ * `assets/jquery-history.js` (v0.1)
+ * `assets/jquery-resizable.min.js` (jQuery 1.3.2, jQuery UI 1.7.2)
+ * `assets/prettify.js`
 
-## Source Code Headers
-
-Every file containing source code must include copyright and license
-information. This includes any JS/CSS files that you might be serving out to
-browsers. (This is to help well-intentioned people avoid accidental copying that
-doesn't comply with the license.)
-
-Apache header:
-
-    Copyright 2020 Google LLC
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        https://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
