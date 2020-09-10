@@ -7,6 +7,10 @@ cloud.google.com, and other sites.
 
 ### Testing
 
+When you run the tests, the HTML generated for the test will be stored at
+`testdata/python-small/site/api`. You can inspect the output manually to verify
+changes and add additional tests to prevent regressions.
+
 #### In a Docker container (recommended)
 
 You can run the tests in a Docker container using Trampoline V2 with the
