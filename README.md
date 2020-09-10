@@ -3,6 +3,45 @@
 This repository contains templates used to create refernce documentation for developers.google.com,
 cloud.google.com, and other sites.
 
+## Developing
+
+### Testing
+
+#### In a Docker container (recommended)
+
+You can run the tests in a Docker container using Trampoline V2 with the
+following command:
+
+```
+TRAMPOLINE_BUILD_FILE=./ci/run_tests.sh TRAMPOLINE_IMAGE=gcr.io/cloud-devrel-kokoro-resources/docfx ci/trampoline_v2.sh
+```
+
+The Dockerfile for the `docfx` image
+[is in googleapis/doc-pipline](https://github.com/googleapis/doc-pipeline/blob/master/docfx/Dockerfile).
+Any updates to the Dockerfile should be made there.
+
+#### Without using Docker
+
+If you want to run the tests in your normal environment, not in a container:
+
+1. Install DocFX and put a `docfx` executable (possibly a script that calls
+   `mono /path/to/docfx.exe`) on your path.
+1. Create and activate a virtual environment:
+   ```
+   python3 -m venv venv
+   . ./venv/bin/activate
+   ```
+1. Install dependencies:
+   ```
+   python3 -m pip install -r requirements.txt
+   ```
+1. Run linters and tests:
+   ```
+   black --check tests
+   flake8 tests
+
+   pytest tests
+   ```
 
 ## Source Code Headers
 
