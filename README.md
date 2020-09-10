@@ -3,6 +3,18 @@
 This repository contains templates used to create refernce documentation for developers.google.com,
 cloud.google.com, and other sites.
 
+## Developing
+
+### Testing
+
+You can run the tests with the following command:
+
+```
+TRAMPOLINE_BUILD_FILE=./ci/run_tests.sh TRAMPOLINE_IMAGE=gcr.io/cloud-devrel-kokoro-resources/docfx ci/trampoline_v2.sh
+```
+
+The Dockerfile for the `docfx` image
+[is in googleapis/doc-pipline](https://github.com/googleapis/doc-pipeline/blob/master/docfx/Dockerfile).
 
 ## Source Code Headers
 
