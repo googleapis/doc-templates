@@ -12,24 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import shutil
+from pathlib import Path
 
 from docuploader import shell
 
 import pytest
 
 
-@pytest.fixture
-def test_dir(tmpdir):
-    """Copy the test data and template into the temporary directory."""
-    shutil.copytree("testdata", tmpdir, dirs_exist_ok=True)
-    shutil.copytree("third_party/docfx/templates", tmpdir, dirs_exist_ok=True)
-    return tmpdir
-
-
-def test_generate(test_dir, tmpdir):
-    build_dir = tmpdir.join("python-small")
-    out_dir = build_dir.join("site/api")
+def test_generate():
+    build_dir = Path("testdata/python-small")
+    out_dir = build_dir / "site/api"
     # Generate!
     try:
         shell.run(
@@ -37,8 +29,7 @@ def test_generate(test_dir, tmpdir):
                 "docfx",
                 "build",
                 "-t",
-                # Template path depends on the test_dir fixture setup.
-                "default,../devsite",
+                "default,../../third_party/docfx/templates/devsite",
             ],
             cwd=build_dir,
             hide_output=False,
@@ -47,7 +38,7 @@ def test_generate(test_dir, tmpdir):
         pytest.fail(f"build raised an exception: {e}")
 
     # Note: rename of toc.html to _toc.yaml happens in doc-pipeline.
-    toc_file_path = out_dir.join("toc.html")
-    assert toc_file_path.isfile()
+    toc_file_path = out_dir / "toc.html"
+    assert toc_file_path.is_file()
     got_text = toc_file_path.read_text("utf-8")
     assert "/python/docs/reference/texttospeech/latest" in got_text
