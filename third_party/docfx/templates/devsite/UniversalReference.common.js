@@ -283,8 +283,10 @@ function getDefinitions(category) {
     "interface":    { inInterface: true,    typePropertyName: "inInterface",    id: "interfaces" },
     "enum":         { inEnum: true,         typePropertyName: "inEnum",         id: "enums" },
     "delegate":     { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" },
-    "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
+    "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts",       isEmbedded: true },
     "variable":     { inVariable: true,     typePropertyName: "inVariable",     id: "variables",    isEmbedded: true },
+    "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
+    "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
     "typealias":    { inTypeAlias: true,    typePropertyName: "inTypeAlias",    id: "typealiases",  isEmbedded: true },
   };
   var classItems = {
@@ -298,7 +300,7 @@ function getDefinitions(category) {
     "member":       { inMember: true,       typePropertyName: "inMember",       id: "members"},
     "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions" }
   };
-  if (category === 'class') {
+  if (category === 'class' || category === 'type') {
     return classItems;
   }
   if (category === 'ns') {
