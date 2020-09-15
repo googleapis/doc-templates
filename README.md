@@ -1,7 +1,7 @@
 # doc-templates
 
-This repository contains templates used to create refernce documentation for developers.google.com,
-cloud.google.com, and other sites.
+This repository contains templates used to generate API reference documentation
+for developers.google.com, cloud.google.com, and other sites.
 
 ## Developing
 
@@ -71,4 +71,16 @@ Apache header:
     limitations under the License.
 
 ### docfx
-Customize the partials, at least for `<head>`, e.g., `<meta name="project_path" value="/dotnet/_project.yaml" />` as needed. 
+Customize the partials, at least for `<head>`, e.g.,
+  `<meta name="project_path" value="/dotnet/_project.yaml" />` as needed.
+
+## Contributing
+
+Contributions are welcome. Please, see the
+[CONTRIBUTING](https://github.com/googleapis/doc-templates/blob/master/docs/CONTRIBUTING.md)
+document for details.
+
+Please note that this project is released with a Contributor Code of Conduct.
+By participating in this project you agree to abide by its terms.
+See [Contributor Code of Conduct](https://github.com/googleapis/doc-templates/blob/master/docs/CODE_OF_CONDUCT.md)
+for more information.
