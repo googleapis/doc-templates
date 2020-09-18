@@ -624,6 +624,36 @@ Use Client.Bucket to get a handle.</p>
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_examples">Examples</h5>
+        <h6 translate="no">exists</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err == storage.ErrBucketNotExist {
+		fmt.Println(&quot;The bucket does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_BucketIterator" data-uid="cloud.google.com/go/storage.BucketIterator">BucketIterator</h3>
         <div class="markdown level1 summary"><p>A BucketIterator is an iterator over BucketAttrs.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
@@ -1274,6 +1304,36 @@ Use BucketHandle.Object to get a handle.</p>
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_examples">Examples</h5>
+        <h6 translate="no">exists</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err == storage.ErrObjectNotExist {
+		fmt.Println(&quot;The object does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ObjectIterator" data-uid="cloud.google.com/go/storage.ObjectIterator">ObjectIterator</h3>
         <div class="markdown level1 summary"><p>An ObjectIterator is an iterator over ObjectAttrs.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
@@ -1761,6 +1821,29 @@ policies.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (a *ACLHandle) Delete(ctx context.Context, entity ACLEntity) (err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ACLHandle_Delete_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// No longer grant access to the bucket to everyone on the Internet.
+	if err := client.Bucket(&quot;my-bucket&quot;).ACL().Delete(ctx, storage.AllUsers); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ACLHandle_List" data-uid="cloud.google.com/go/storage.ACLHandle.List">func (*ACLHandle) List
 </h3>
         <div class="markdown level1 summary"><p>List retrieves ACL entries.</p>
@@ -1770,6 +1853,32 @@ policies.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (a *ACLHandle) List(ctx context.Context) (rules []ACLRule, err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ACLHandle_List_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// List the default object ACLs for my-bucket.
+	aclRules, err := client.Bucket(&quot;my-bucket&quot;).DefaultObjectACL().List(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(aclRules)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ACLHandle_Set" data-uid="cloud.google.com/go/storage.ACLHandle.Set">func (*ACLHandle) Set
 </h3>
         <div class="markdown level1 summary"><p>Set sets the role for the given entity.</p>
@@ -1778,6 +1887,30 @@ policies.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (a *ACLHandle) Set(ctx context.Context, entity ACLEntity, role ACLRole) (err error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_ACLHandle_Set_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Let any authenticated user read my-bucket/my-object.
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	if err := obj.ACL().Set(ctx, storage.AllAuthenticatedUsers, storage.RoleReader); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_BucketAttrsToUpdate_DeleteLabel" data-uid="cloud.google.com/go/storage.BucketAttrsToUpdate.DeleteLabel">func (*BucketAttrsToUpdate) DeleteLabel
 </h3>
@@ -1821,6 +1954,36 @@ returned Notification&#39;s ID can be used to refer to it.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) AddNotification(ctx context.Context, n *Notification) (ret *Notification, err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_AddNotification_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	n, err := b.AddNotification(ctx, &amp;storage.Notification{
+		TopicProjectID: &quot;my-project&quot;,
+		TopicID:        &quot;my-topic&quot;,
+		PayloadFormat:  storage.JSONPayload,
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(n.ID)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_Attrs" data-uid="cloud.google.com/go/storage.BucketHandle.Attrs">func (*BucketHandle) Attrs
 </h3>
         <div class="markdown level1 summary"><p>Attrs returns the metadata for the bucket.</p>
@@ -1829,6 +1992,31 @@ returned Notification&#39;s ID can be used to refer to it.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) Attrs(ctx context.Context) (attrs *BucketAttrs, err error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_Attrs_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(attrs)
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_Create" data-uid="cloud.google.com/go/storage.BucketHandle.Create">func (*BucketHandle) Create
 </h3>
@@ -1839,6 +2027,28 @@ If attrs is nil the API defaults will be used.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) Create(ctx context.Context, projectID string, attrs *BucketAttrs) (err error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_Create_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	if err := client.Bucket(&quot;my-bucket&quot;).Create(ctx, &quot;my-project&quot;, nil); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_DefaultObjectACL" data-uid="cloud.google.com/go/storage.BucketHandle.DefaultObjectACL">func (*BucketHandle) DefaultObjectACL
 </h3>
@@ -1860,6 +2070,28 @@ This call does not perform any network operations.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) Delete(ctx context.Context) (err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_Delete_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	if err := client.Bucket(&quot;my-bucket&quot;).Delete(ctx); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_DeleteNotification" data-uid="cloud.google.com/go/storage.BucketHandle.DeleteNotification">func (*BucketHandle) DeleteNotification
 </h3>
         <div class="markdown level1 summary"><p>DeleteNotification deletes the notification with the given ID.</p>
@@ -1868,6 +2100,34 @@ This call does not perform any network operations.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) DeleteNotification(ctx context.Context, id string) (err error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_DeleteNotification_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+var notificationID string
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	// TODO: Obtain notificationID from BucketHandle.AddNotification
+	// or BucketHandle.Notifications.
+	err = b.DeleteNotification(ctx, notificationID)
+	if err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_IAM" data-uid="cloud.google.com/go/storage.BucketHandle.IAM">func (*BucketHandle) IAM
 </h3>
@@ -1907,6 +2167,36 @@ subject to any SLA or deprecation policy.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) LockRetentionPolicy(ctx context.Context) error</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_LockRetentionPolicy_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	attrs, err := b.Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Note that locking the bucket without first attaching a RetentionPolicy
+	// that's at least 1 day is a no-op
+	err = b.If(storage.BucketConditions{MetagenerationMatch: attrs.MetaGeneration}).LockRetentionPolicy(ctx)
+	if err != nil {
+		// TODO: handle err
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_Notifications" data-uid="cloud.google.com/go/storage.BucketHandle.Notifications">func (*BucketHandle) Notifications
 </h3>
         <div class="markdown level1 summary"><p>Notifications returns all the Notifications configured for this bucket, as a map
@@ -1916,6 +2206,34 @@ indexed by notification ID.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) Notifications(ctx context.Context) (n map[string]*Notification, err error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_Notifications_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	ns, err := b.Notifications(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	for id, n := range ns {
+		fmt.Printf(&quot;%s: %+v\n&quot;, id, n)
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_Object" data-uid="cloud.google.com/go/storage.BucketHandle.Object">func (*BucketHandle) Object
 </h3>
@@ -1941,6 +2259,27 @@ If q is nil, no filtering is done.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) Objects(ctx context.Context, q *Query) *ObjectIterator</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_Objects_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Bucket(&quot;my-bucket&quot;).Objects(ctx, nil)
+	_ = it // TODO: iterate using Next or iterator.Pager.
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_Update" data-uid="cloud.google.com/go/storage.BucketHandle.Update">func (*BucketHandle) Update
 </h3>
         <div class="markdown level1 summary"><p>Update updates a bucket&#39;s attributes.</p>
@@ -1949,6 +2288,69 @@ If q is nil, no filtering is done.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (b *BucketHandle) Update(ctx context.Context, uattrs BucketAttrsToUpdate) (attrs *BucketAttrs, err error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_BucketHandle_Update_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Enable versioning in the bucket, regardless of its previous value.
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Update(ctx,
+		storage.BucketAttrsToUpdate{VersioningEnabled: true})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(attrs)
+}
+</code></pre>
+        </div>
+        <h6 translate="no">readModifyWrite</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	attrs, err := b.Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	var au storage.BucketAttrsToUpdate
+	au.SetLabel(&quot;lab&quot;, attrs.Labels[&quot;lab&quot;]+&quot;-more&quot;)
+	if attrs.Labels[&quot;delete-me&quot;] == &quot;yes&quot; {
+		au.DeleteLabel(&quot;delete-me&quot;)
+	}
+	attrs, err = b.
+		If(storage.BucketConditions{MetagenerationMatch: attrs.MetaGeneration}).
+		Update(ctx, au)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(attrs)
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_BucketHandle_UserProject" data-uid="cloud.google.com/go/storage.BucketHandle.UserProject">func (*BucketHandle) UserProject
 </h3>
@@ -1974,6 +2376,38 @@ calls will return iterator.Done.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (it *BucketIterator) Next() (*BucketAttrs, error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_BucketIterator_Next_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Buckets(ctx, &quot;my-project&quot;)
+	for {
+		bucketAttrs, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		fmt.Println(bucketAttrs)
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_BucketIterator_PageInfo" data-uid="cloud.google.com/go/storage.BucketIterator.PageInfo">func (*BucketIterator) PageInfo
 </h3>
         <div class="markdown level1 summary"><p>PageInfo supports pagination. See the google.golang.org/api/iterator package for details.</p>
@@ -1996,6 +2430,59 @@ are safe for concurrent use by multiple goroutines.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_Client_NewClient_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	// Use Google Application Default Credentials to authorize and authenticate the client.
+	// More information about Application Default Credentials and how to enable is at
+	// https://developers.google.com/identity/protocols/application-default-credentials.
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Use the client.
+
+	// Close the client when finished.
+	if err := client.Close(); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
+        </div>
+        <h6 translate="no">unauthenticated</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/option&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx, option.WithoutAuthentication())
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Use the client.
+
+	// Close the client when finished.
+	if err := client.Close(); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_Client_Bucket" data-uid="cloud.google.com/go/storage.Client.Bucket">func (*Client) Bucket
 </h3>
@@ -2024,6 +2511,27 @@ are returned.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (c *Client) Buckets(ctx context.Context, projectID string) *BucketIterator</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_Client_Buckets_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Buckets(ctx, &quot;my-bucket&quot;)
+	_ = it // TODO: iterate using Next or iterator.Pager.
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_Client_Close" data-uid="cloud.google.com/go/storage.Client.Close">func (*Client) Close
 </h3>
         <div class="markdown level1 summary"><p>Close closes the Client.</p>
@@ -2043,6 +2551,31 @@ are returned.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (c *Client) CreateHMACKey(ctx context.Context, projectID, serviceAccountEmail string, ...) (*HMACKey, error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_Client_CreateHMACKey_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkey, err := client.CreateHMACKey(ctx, &quot;project-id&quot;, &quot;service-account-email&quot;)
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = hkey // TODO: Use the HMAC Key.
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_Client_HMACKeyHandle" data-uid="cloud.google.com/go/storage.Client.HMACKeyHandle">func (*Client) HMACKeyHandle
 </h3>
@@ -2065,6 +2598,100 @@ are returned.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (c *Client) ListHMACKeys(ctx context.Context, projectID string, opts ...HMACKeyOption) *HMACKeysIterator</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_Client_ListHMACKeys_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	iter := client.ListHMACKeys(ctx, &quot;project-id&quot;)
+	for {
+		key, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: handle error.
+		}
+		_ = key // TODO: Use the key.
+	}
+}
+</code></pre>
+        </div>
+        <h6 translate="no">forServiceAccountEmail</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	iter := client.ListHMACKeys(ctx, &quot;project-id&quot;, storage.ForHMACKeyServiceAccountEmail(&quot;service@account.email&quot;))
+	for {
+		key, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: handle error.
+		}
+		_ = key // TODO: Use the key.
+	}
+}
+</code></pre>
+        </div>
+        <h6 translate="no">showDeletedKeys</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	iter := client.ListHMACKeys(ctx, &quot;project-id&quot;, storage.ShowDeletedHMACKeys())
+	for {
+		key, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: handle error.
+		}
+		_ = key // TODO: Use the key.
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_Client_ServiceAccount" data-uid="cloud.google.com/go/storage.Client.ServiceAccount">func (*Client) ServiceAccount
 </h3>
         <div class="markdown level1 summary"><p>ServiceAccount fetches the email address of the given project&#39;s Google Cloud Storage service account.</p>
@@ -2083,6 +2710,51 @@ are returned.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (c *Composer) Run(ctx context.Context) (attrs *ObjectAttrs, err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_Composer_Run_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	bkt := client.Bucket(&quot;bucketname&quot;)
+	src1 := bkt.Object(&quot;o1&quot;)
+	src2 := bkt.Object(&quot;o2&quot;)
+	dst := bkt.Object(&quot;o3&quot;)
+
+	// Compose and modify metadata.
+	c := dst.ComposerFrom(src1, src2)
+	c.ContentType = &quot;text/plain&quot;
+
+	// Set the expected checksum for the destination object to be validated by
+	// the backend (if desired).
+	c.CRC32C = 42
+	c.SendCRC32C = true
+
+	attrs, err := c.Run(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	fmt.Println(attrs)
+	// Just compose.
+	attrs, err = dst.ComposerFrom(src1, src2).Run(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	fmt.Println(attrs)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_Copier_Run" data-uid="cloud.google.com/go/storage.Copier.Run">func (*Copier) Run
 </h3>
         <div class="markdown level1 summary"><p>Run performs the copy.</p>
@@ -2091,6 +2763,74 @@ are returned.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (c *Copier) Run(ctx context.Context) (attrs *ObjectAttrs, err error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_Copier_Run_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	src := client.Bucket(&quot;bucketname&quot;).Object(&quot;file1&quot;)
+	dst := client.Bucket(&quot;another-bucketname&quot;).Object(&quot;file2&quot;)
+
+	// Copy content and modify metadata.
+	copier := dst.CopierFrom(src)
+	copier.ContentType = &quot;text/plain&quot;
+	attrs, err := copier.Run(ctx)
+	if err != nil {
+		// TODO: Handle error, possibly resuming with copier.RewriteToken.
+	}
+	fmt.Println(attrs)
+
+	// Just copy content.
+	attrs, err = dst.CopierFrom(src).Run(ctx)
+	if err != nil {
+		// TODO: Handle error. No way to resume.
+	}
+	fmt.Println(attrs)
+}
+</code></pre>
+        </div>
+        <h6 translate="no">progress</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;log&quot;
+)
+
+func main() {
+	// Display progress across multiple rewrite RPCs.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	src := client.Bucket(&quot;bucketname&quot;).Object(&quot;file1&quot;)
+	dst := client.Bucket(&quot;another-bucketname&quot;).Object(&quot;file2&quot;)
+
+	copier := dst.CopierFrom(src)
+	copier.ProgressFunc = func(copiedBytes, totalBytes uint64) {
+		log.Printf(&quot;copy %.1f%% done&quot;, float64(copiedBytes)/float64(totalBytes)*100)
+	}
+	if _, err := copier.Run(ctx); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_HMACKeyHandle_Delete" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Delete">func (*HMACKeyHandle) Delete
 </h3>
@@ -2103,6 +2843,31 @@ After deletion, a key cannot be used to authenticate requests.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (hkh *HMACKeyHandle) Delete(ctx context.Context, opts ...HMACKeyOption) error</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Delete_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkh := client.HMACKeyHandle(&quot;project-id&quot;, &quot;access-key-id&quot;)
+	// Make sure that the HMACKey being deleted has a status of inactive.
+	if err := hkh.Delete(ctx); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_HMACKeyHandle_Get" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Get">func (*HMACKeyHandle) Get
 </h3>
@@ -2117,6 +2882,32 @@ userProject to be billed against for operations.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (hkh *HMACKeyHandle) Get(ctx context.Context, opts ...HMACKeyOption) (*HMACKey, error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Get_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkh := client.HMACKeyHandle(&quot;project-id&quot;, &quot;access-key-id&quot;)
+	hkey, err := hkh.Get(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = hkey // TODO: Use the HMAC Key.
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_HMACKeyHandle_Update" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Update">func (*HMACKeyHandle) Update
 </h3>
         <div class="markdown level1 summary"><p>Update mutates the HMACKey referred to by accessID.</p>
@@ -2126,6 +2917,34 @@ userProject to be billed against for operations.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (h *HMACKeyHandle) Update(ctx context.Context, au HMACKeyAttrsToUpdate, opts ...HMACKeyOption) (*HMACKey, error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Update_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkh := client.HMACKeyHandle(&quot;project-id&quot;, &quot;access-key-id&quot;)
+	ukey, err := hkh.Update(ctx, storage.HMACKeyAttrsToUpdate{
+		State: storage.Inactive,
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = ukey // TODO: Use the HMAC Key.
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_HMACKeyOption_ForHMACKeyServiceAccountEmail" data-uid="cloud.google.com/go/storage.HMACKeyOption.ForHMACKeyServiceAccountEmail">func ForHMACKeyServiceAccountEmail
 </h3>
@@ -2207,6 +3026,65 @@ ErrObjectNotExist will be returned if the object is not found.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) Attrs(ctx context.Context) (attrs *ObjectAttrs, err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_Attrs_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	objAttrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(objAttrs)
+}
+</code></pre>
+        </div>
+        <h6 translate="no">withConditions</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	// Read the object.
+	objAttrs1, err := obj.Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Do something else for a while.
+	time.Sleep(5 * time.Minute)
+	// Now read the same contents, even if the object has been written since the last read.
+	objAttrs2, err := obj.Generation(objAttrs1.Generation).Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(objAttrs1, objAttrs2)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_BucketName" data-uid="cloud.google.com/go/storage.ObjectHandle.BucketName">func (*ObjectHandle) BucketName
 </h3>
         <div class="markdown level1 summary"><p>BucketName returns the name of the bucket.</p>
@@ -2243,6 +3121,34 @@ in which case the user project of src is billed.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (dst *ObjectHandle) CopierFrom(src *ObjectHandle) *Copier</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_CopierFrom_examples">Examples</h5>
+        <h6 translate="no">rotateEncryptionKeys</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+var key1, key2 []byte
+
+func main() {
+	// To rotate the encryption key on an object, copy it onto itself.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;bucketname&quot;).Object(&quot;obj&quot;)
+	// Assume obj is encrypted with key1, and we want to change to key2.
+	_, err = obj.Key(key2).CopierFrom(obj.Key(key1)).Run(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_Delete" data-uid="cloud.google.com/go/storage.ObjectHandle.Delete">func (*ObjectHandle) Delete
 </h3>
         <div class="markdown level1 summary"><p>Delete deletes the single specified object.</p>
@@ -2251,6 +3157,48 @@ in which case the user project of src is billed.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) Delete(ctx context.Context) error</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_Delete_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// To delete multiple objects in a bucket, list them with an
+	// ObjectIterator, then Delete them.
+
+	// If you are using this package on the App Engine Flex runtime,
+	// you can init a bucket client with your app's default bucket name.
+	// See http://godoc.org/google.golang.org/appengine/file#DefaultBucketName.
+	bucket := client.Bucket(&quot;my-bucket&quot;)
+	it := bucket.Objects(ctx, nil)
+	for {
+		objAttrs, err := it.Next()
+		if err != nil &amp;&amp; err != iterator.Done {
+			// TODO: Handle error.
+		}
+		if err == iterator.Done {
+			break
+		}
+		if err := bucket.Object(objAttrs.Name).Delete(ctx); err != nil {
+			// TODO: Handle error.
+		}
+	}
+	fmt.Println(&quot;deleted all object items in the bucket specified.&quot;)
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_Generation" data-uid="cloud.google.com/go/storage.ObjectHandle.Generation">func (*ObjectHandle) Generation
 </h3>
@@ -2265,6 +3213,40 @@ endpoints at <a href="https://cloud.google.com/storage/docs/json_api/">https://c
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) Generation(gen int64) *ObjectHandle</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_Generation_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;io&quot;
+	&quot;os&quot;
+)
+
+var gen int64
+
+func main() {
+	// Read an object's contents from generation gen, regardless of the
+	// current generation of the object.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	rc, err := obj.Generation(gen).NewReader(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+	if _, err := io.Copy(os.Stdout, rc); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_If" data-uid="cloud.google.com/go/storage.ObjectHandle.If">func (*ObjectHandle) If
 </h3>
         <div class="markdown level1 summary"><p>If returns a new ObjectHandle that applies a set of preconditions.
@@ -2278,6 +3260,55 @@ for more details.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) If(conds Conditions) *ObjectHandle</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_If_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/googleapi&quot;
+	&quot;io&quot;
+	&quot;net/http&quot;
+	&quot;os&quot;
+)
+
+var gen int64
+
+func main() {
+	// Read from an object only if the current generation is gen.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	rc, err := obj.If(storage.Conditions{GenerationMatch: gen}).NewReader(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	if _, err := io.Copy(os.Stdout, rc); err != nil {
+		// TODO: handle error.
+	}
+	if err := rc.Close(); err != nil {
+		switch ee := err.(type) {
+		case *googleapi.Error:
+			if ee.Code == http.StatusPreconditionFailed {
+				// The condition presented in the If failed.
+				// TODO: handle error.
+			}
+
+			// TODO: handle other status codes here.
+
+		default:
+			// TODO: handle error.
+		}
+	}
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_Key" data-uid="cloud.google.com/go/storage.ObjectHandle.Key">func (*ObjectHandle) Key
 </h3>
         <div class="markdown level1 summary"><p>Key returns a new ObjectHandle that uses the supplied encryption
@@ -2289,6 +3320,36 @@ See <a href="https://cloud.google.com/storage/docs/encryption">https://cloud.goo
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) Key(encryptionKey []byte) *ObjectHandle</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_Key_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+var secretKey []byte
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	// Encrypt the object's contents.
+	w := obj.Key(secretKey).NewWriter(ctx)
+	if _, err := w.Write([]byte(&quot;top secret&quot;)); err != nil {
+		// TODO: handle error.
+	}
+	if err := w.Close(); err != nil {
+		// TODO: handle error.
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_NewRangeReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewRangeReader">func (*ObjectHandle) NewRangeReader
 </h3>
@@ -2307,6 +3368,103 @@ Google Cloud Storage dictates.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) NewRangeReader(ctx context.Context, offset, length int64) (r *Reader, err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_NewRangeReader_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Read only the first 64K.
+	rc, err := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewRangeReader(ctx, 0, 64*1024)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+
+	slurp, err := ioutil.ReadAll(rc)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;first 64K of file contents:\n%s\n&quot;, slurp)
+}
+</code></pre>
+        </div>
+        <h6 translate="no">lastNBytes</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Read only the last 10 bytes until the end of the file.
+	rc, err := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewRangeReader(ctx, -10, -1)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+
+	slurp, err := ioutil.ReadAll(rc)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;Last 10 bytes from the end of the file:\n%s\n&quot;, slurp)
+}
+</code></pre>
+        </div>
+        <h6 translate="no">untilEnd</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Read from the 101st byte until the end of the file.
+	rc, err := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewRangeReader(ctx, 100, -1)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+
+	slurp, err := ioutil.ReadAll(rc)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;From 101st byte until the end:\n%s\n&quot;, slurp)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_NewReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewReader">func (*ObjectHandle) NewReader
 </h3>
         <div class="markdown level1 summary"><p>NewReader creates a new Reader to read the contents of the
@@ -2318,6 +3476,37 @@ ErrObjectNotExist will be returned if the object is not found.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) NewReader(ctx context.Context) (*Reader, error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_NewReader_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	rc, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).NewReader(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	slurp, err := ioutil.ReadAll(rc)
+	rc.Close()
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;file contents:&quot;, slurp)
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_NewWriter" data-uid="cloud.google.com/go/storage.ObjectHandle.NewWriter">func (*ObjectHandle) NewWriter
 </h3>
@@ -2338,6 +3527,27 @@ stop writing without saving the data, cancel the context.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) NewWriter(ctx context.Context) *Writer</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_NewWriter_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(ctx)
+	_ = wc // TODO: Use the Writer.
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_ObjectHandle_ObjectName" data-uid="cloud.google.com/go/storage.ObjectHandle.ObjectName">func (*ObjectHandle) ObjectName
 </h3>
@@ -2368,6 +3578,35 @@ ErrObjectNotExist will be returned if the object is not found.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (o *ObjectHandle) Update(ctx context.Context, uattrs ObjectAttrsToUpdate) (oa *ObjectAttrs, err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_ObjectHandle_Update_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Change only the content type of the object.
+	objAttrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Update(ctx, storage.ObjectAttrsToUpdate{
+		ContentType:        &quot;text/html&quot;,
+		ContentDisposition: &quot;&quot;, // delete ContentDisposition
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(objAttrs)
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_ObjectIterator_Next" data-uid="cloud.google.com/go/storage.ObjectIterator.Next">func (*ObjectIterator) Next
 </h3>
         <div class="markdown level1 summary"><p>Next returns the next result. Its second return value is iterator.Done if
@@ -2382,6 +3621,38 @@ represent prefixes.</p>
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (it *ObjectIterator) Next() (*ObjectAttrs, error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_ObjectIterator_Next_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Bucket(&quot;my-bucket&quot;).Objects(ctx, nil)
+	for {
+		objAttrs, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		fmt.Println(objAttrs)
+	}
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_ObjectIterator_PageInfo" data-uid="cloud.google.com/go/storage.ObjectIterator.PageInfo">func (*ObjectIterator) PageInfo
 </h3>
@@ -2402,6 +3673,82 @@ The generated URL and fields will then allow an unauthenticated client to perfor
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func GenerateSignedPostPolicyV4(bucket, object string, opts *PostPolicyV4Options) (*PostPolicyV4, error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_PostPolicyV4_GenerateSignedPostPolicyV4_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;bytes&quot;
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;io&quot;
+	&quot;mime/multipart&quot;
+	&quot;net/http&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	pv4, err := storage.GenerateSignedPostPolicyV4(&quot;my-bucket&quot;, &quot;my-object.txt&quot;, &amp;storage.PostPolicyV4Options{
+		GoogleAccessID: &quot;my-access-id&quot;,
+		PrivateKey:     []byte(&quot;my-private-key&quot;),
+
+		// The upload expires in 2hours.
+		Expires: time.Now().Add(2 * time.Hour),
+
+		Fields: &amp;storage.PolicyV4Fields{
+			StatusCodeOnSuccess:    200,
+			RedirectToURLOnSuccess: &quot;https://example.org/&quot;,
+			// It MUST only be a text file.
+			ContentType: &quot;text/plain&quot;,
+		},
+
+		// The conditions that the uploaded file will be expected to conform to.
+		Conditions: []storage.PostPolicyV4Condition{
+			// Make the file a maximum of 10mB.
+			storage.ConditionContentLengthRange(0, 10&lt;&lt;20),
+		},
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	// Now you can upload your file using the generated post policy
+	// with a plain HTTP client or even the browser.
+	formBuf := new(bytes.Buffer)
+	mw := multipart.NewWriter(formBuf)
+	for fieldName, value := range pv4.Fields {
+		if err := mw.WriteField(fieldName, value); err != nil {
+			// TODO: handle error.
+		}
+	}
+	file := bytes.NewReader(bytes.Repeat([]byte(&quot;a&quot;), 100))
+
+	mf, err := mw.CreateFormFile(&quot;file&quot;, &quot;myfile.txt&quot;)
+	if err != nil {
+		// TODO: handle error.
+	}
+	if _, err := io.Copy(mf, file); err != nil {
+		// TODO: handle error.
+	}
+	if err := mw.Close(); err != nil {
+		// TODO: handle error.
+	}
+
+	// Compose the request.
+	req, err := http.NewRequest(&quot;POST&quot;, pv4.URL, formBuf)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Ensure the Content-Type is derived from the multipart writer.
+	req.Header.Set(&quot;Content-Type&quot;, mw.FormDataContentType())
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = res
+}
+</code></pre>
         </div>
         <h3 id="cloud_google_com_go_storage_PostPolicyV4Condition_ConditionContentLengthRange" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition.ConditionContentLengthRange">func ConditionContentLengthRange
 </h3>
@@ -2599,6 +3946,105 @@ Writer.ChunkSize has been set to zero.</p>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func (w *Writer) Write(p []byte) (n int, err error)</code></pre>
         </div>
+        <h5 id="cloud_google_com_go_storage_Writer_Write_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(ctx)
+	wc.ContentType = &quot;text/plain&quot;
+	wc.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
+	if _, err := wc.Write([]byte(&quot;hello world&quot;)); err != nil {
+		// TODO: handle error.
+		// Note that Write may return nil in some error situations,
+		// so always check the error from Close.
+	}
+	if err := wc.Close(); err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
+}
+</code></pre>
+        </div>
+        <h6 translate="no">checksum</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;hash/crc32&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	data := []byte(&quot;verify me&quot;)
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(ctx)
+	wc.CRC32C = crc32.Checksum(data, crc32.MakeTable(crc32.Castagnoli))
+	wc.SendCRC32C = true
+	if _, err := wc.Write([]byte(&quot;hello world&quot;)); err != nil {
+		// TODO: handle error.
+		// Note that Write may return nil in some error situations,
+		// so always check the error from Close.
+	}
+	if err := wc.Close(); err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
+}
+</code></pre>
+        </div>
+        <h6 translate="no">timeout</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	tctx, cancel := context.WithTimeout(ctx, 30*time.Second)
+	defer cancel() // Cancel when done, whether we time out or not.
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(tctx)
+	wc.ContentType = &quot;text/plain&quot;
+	wc.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
+	if _, err := wc.Write([]byte(&quot;hello world&quot;)); err != nil {
+		// TODO: handle error.
+		// Note that Write may return nil in some error situations,
+		// so always check the error from Close.
+	}
+	if err := wc.Close(); err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
+}
+</code></pre>
+        </div>
         <h3 id="cloud_google_com_go_storage_SignedURL" data-uid="cloud.google.com/go/storage.SignedURL">func SignedURL
 </h3>
         <div class="markdown level1 summary"><p>SignedURL returns a URL for the specified object. Signed URLs allow
@@ -2610,6 +4056,36 @@ URLs, see <a href="https://cloud.google.com/storage/docs/accesscontrol#Signed-UR
         <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="lang-go hljs">func SignedURL(bucket, name string, opts *SignedURLOptions) (string, error)</code></pre>
+        </div>
+        <h5 id="cloud_google_com_go_storage_SignedURL_examples">Examples</h5>
+        <h6 translate="no">System.Object[]</h6>
+        <div class="codewrapper">
+          <pre><code>package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	pkey, err := ioutil.ReadFile(&quot;my-private-key.pem&quot;)
+	if err != nil {
+		// TODO: handle error.
+	}
+	url, err := storage.SignedURL(&quot;my-bucket&quot;, &quot;my-object&quot;, &amp;storage.SignedURLOptions{
+		GoogleAccessID: &quot;xxx@developer.gserviceaccount.com&quot;,
+		PrivateKey:     pkey,
+		Method:         &quot;GET&quot;,
+		Expires:        time.Now().Add(48 * time.Hour),
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(url)
+}
+</code></pre>
         </div>
 </article>
           </div>

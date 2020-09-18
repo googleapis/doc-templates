@@ -176,6 +176,19 @@
       {{#example.0}}
       <h5 id="{{id}}_examples">{{__global.examples}}</h5>
       {{/example.0}}
+      {{^example.0}}
+      {{#codeexamples.0}}
+      <h5 id="{{id}}_examples">{{__global.examples}}</h5>
+      {{/codeexamples.0}}
+      {{/example.0}}
+      {{#codeexamples}}
+      {{#name}}
+      <h6 translate="no">{{name}}</h6>
+      {{/name}}
+      <div class="codewrapper">
+        <pre><code>{{content}}</code></pre>
+      </div>
+      {{/codeexamples}}
       {{#example}}
       {{{.}}}
       {{/example}}
