@@ -1,0 +1,1214 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  commentId: T:Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  id: AssetService.AssetServiceBase
+  parent: Google.Cloud.Asset.V1
+  children:
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed(Google.Cloud.Asset.V1.CreateFeedRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed(Google.Cloud.Asset.V1.DeleteFeedRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets(Google.Cloud.Asset.V1.ExportAssetsRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed(Google.Cloud.Asset.V1.GetFeedRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds(Google.Cloud.Asset.V1.ListFeedsRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources(Google.Cloud.Asset.V1.SearchAllResourcesRequest,Grpc.Core.ServerCallContext)
+  - Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed(Google.Cloud.Asset.V1.UpdateFeedRequest,Grpc.Core.ServerCallContext)
+  langs:
+  - csharp
+  - vb
+  name: AssetService.AssetServiceBase
+  nameWithType: AssetService.AssetServiceBase
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  type: Class
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: AssetServiceBase
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 136
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: Base class for server-side implementations of AssetService
+  example: []
+  syntax:
+    content: >-
+      [BindServiceMethod(typeof(AssetService), "BindService")]
+
+      public abstract class AssetServiceBase
+    content.vb: >-
+      <BindServiceMethod(GetType(AssetService), "BindService")>
+
+      Public MustInherit Class AssetServiceBase
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: Grpc.Core.BindServiceMethodAttribute
+    ctor: Grpc.Core.BindServiceMethodAttribute.#ctor(System.Type,System.String)
+    arguments:
+    - type: System.Type
+      value: Google.Cloud.Asset.V1.AssetService
+    - type: System.String
+      value: BindService
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets(Google.Cloud.Asset.V1.ExportAssetsRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets(Google.Cloud.Asset.V1.ExportAssetsRequest,Grpc.Core.ServerCallContext)
+  id: ExportAssets(Google.Cloud.Asset.V1.ExportAssetsRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: ExportAssets(ExportAssetsRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.ExportAssets(ExportAssetsRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets(Google.Cloud.Asset.V1.ExportAssetsRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ExportAssets
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 154
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nExports assets with time and resource types to a given Cloud Storage\nlocation/BigQuery table. For Cloud Storage location destinations, the\noutput format is newline-delimited JSON. Each line represents a\n[google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table\ndestinations, the output table stores the fields in asset proto as columns.\nThis API implements the [google.longrunning.Operation][google.longrunning.Operation] API\n, which allows you to keep track of the export. We recommend intervals of\nat least 2 seconds with exponential retry to poll the export operation\nresult. For regular-size resource parent, the export operation usually\nfinishes within 5 minutes.\n"
+  example: []
+  syntax:
+    content: public virtual Task<Operation> ExportAssets(ExportAssetsRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.ExportAssetsRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.LongRunning.Operation}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function ExportAssets(request As ExportAssetsRequest, context As ServerCallContext) As Task(Of Operation)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Grpc.Core.ServerCallContext)
+  id: BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: BatchGetAssetsHistory(BatchGetAssetsHistoryRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.BatchGetAssetsHistory(BatchGetAssetsHistoryRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: BatchGetAssetsHistory
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 171
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nBatch gets the update history of assets that overlap a time window.\nFor IAM_POLICY content, this API outputs history when the asset and its\nattached IAM POLICY both exist. This can create gaps in the output history.\nOtherwise, this API outputs history with asset in both non-delete or\ndeleted status.\nIf a specified asset does not exist, this API returns an INVALID_ARGUMENT\nerror.\n"
+  example: []
+  syntax:
+    content: public virtual Task<BatchGetAssetsHistoryResponse> BatchGetAssetsHistory(BatchGetAssetsHistoryRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function BatchGetAssetsHistory(request As BatchGetAssetsHistoryRequest, context As ServerCallContext) As Task(Of BatchGetAssetsHistoryResponse)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed(Google.Cloud.Asset.V1.CreateFeedRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed(Google.Cloud.Asset.V1.CreateFeedRequest,Grpc.Core.ServerCallContext)
+  id: CreateFeed(Google.Cloud.Asset.V1.CreateFeedRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: CreateFeed(CreateFeedRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.CreateFeed(CreateFeedRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed(Google.Cloud.Asset.V1.CreateFeedRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: CreateFeed
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 183
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nCreates a feed in a parent project/folder/organization to listen to its\nasset updates.\n"
+  example: []
+  syntax:
+    content: public virtual Task<Feed> CreateFeed(CreateFeedRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.CreateFeedRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.Feed}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function CreateFeed(request As CreateFeedRequest, context As ServerCallContext) As Task(Of Feed)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed(Google.Cloud.Asset.V1.GetFeedRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed(Google.Cloud.Asset.V1.GetFeedRequest,Grpc.Core.ServerCallContext)
+  id: GetFeed(Google.Cloud.Asset.V1.GetFeedRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: GetFeed(GetFeedRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.GetFeed(GetFeedRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed(Google.Cloud.Asset.V1.GetFeedRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: GetFeed
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 194
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nGets details about an asset feed.\n"
+  example: []
+  syntax:
+    content: public virtual Task<Feed> GetFeed(GetFeedRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.GetFeedRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.Feed}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function GetFeed(request As GetFeedRequest, context As ServerCallContext) As Task(Of Feed)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds(Google.Cloud.Asset.V1.ListFeedsRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds(Google.Cloud.Asset.V1.ListFeedsRequest,Grpc.Core.ServerCallContext)
+  id: ListFeeds(Google.Cloud.Asset.V1.ListFeedsRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: ListFeeds(ListFeedsRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.ListFeeds(ListFeedsRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds(Google.Cloud.Asset.V1.ListFeedsRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ListFeeds
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 205
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nLists all asset feeds in a parent project/folder/organization.\n"
+  example: []
+  syntax:
+    content: public virtual Task<ListFeedsResponse> ListFeeds(ListFeedsRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.ListFeedsRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.ListFeedsResponse}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function ListFeeds(request As ListFeedsRequest, context As ServerCallContext) As Task(Of ListFeedsResponse)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed(Google.Cloud.Asset.V1.UpdateFeedRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed(Google.Cloud.Asset.V1.UpdateFeedRequest,Grpc.Core.ServerCallContext)
+  id: UpdateFeed(Google.Cloud.Asset.V1.UpdateFeedRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: UpdateFeed(UpdateFeedRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.UpdateFeed(UpdateFeedRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed(Google.Cloud.Asset.V1.UpdateFeedRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: UpdateFeed
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 216
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nUpdates an asset feed configuration.\n"
+  example: []
+  syntax:
+    content: public virtual Task<Feed> UpdateFeed(UpdateFeedRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.UpdateFeedRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.Feed}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function UpdateFeed(request As UpdateFeedRequest, context As ServerCallContext) As Task(Of Feed)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed(Google.Cloud.Asset.V1.DeleteFeedRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed(Google.Cloud.Asset.V1.DeleteFeedRequest,Grpc.Core.ServerCallContext)
+  id: DeleteFeed(Google.Cloud.Asset.V1.DeleteFeedRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: DeleteFeed(DeleteFeedRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.DeleteFeed(DeleteFeedRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed(Google.Cloud.Asset.V1.DeleteFeedRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: DeleteFeed
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 227
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nDeletes an asset feed.\n"
+  example: []
+  syntax:
+    content: public virtual Task<Empty> DeleteFeed(DeleteFeedRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.DeleteFeedRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Protobuf.WellKnownTypes.Empty}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function DeleteFeed(request As DeleteFeedRequest, context As ServerCallContext) As Task(Of Empty)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources(Google.Cloud.Asset.V1.SearchAllResourcesRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources(Google.Cloud.Asset.V1.SearchAllResourcesRequest,Grpc.Core.ServerCallContext)
+  id: SearchAllResources(Google.Cloud.Asset.V1.SearchAllResourcesRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: SearchAllResources(SearchAllResourcesRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.SearchAllResources(SearchAllResourcesRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources(Google.Cloud.Asset.V1.SearchAllResourcesRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: SearchAllResources
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 241
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nSearches all Cloud resources within the specified scope, such as a project,\nfolder, or organization. The caller must be granted the\n`cloudasset.assets.searchAllResources` permission on the desired scope,\notherwise the request will be rejected.\n"
+  example: []
+  syntax:
+    content: public virtual Task<SearchAllResourcesResponse> SearchAllResources(SearchAllResourcesRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.SearchAllResourcesRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.SearchAllResourcesResponse}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function SearchAllResources(request As SearchAllResourcesRequest, context As ServerCallContext) As Task(Of SearchAllResourcesResponse)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest,Grpc.Core.ServerCallContext)
+  id: SearchAllIamPolicies(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: SearchAllIamPolicies(SearchAllIamPoliciesRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.SearchAllIamPolicies(SearchAllIamPoliciesRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: SearchAllIamPolicies
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 255
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nSearches all IAM policies within the specified scope, such as a project,\nfolder, or organization. The caller must be granted the\n`cloudasset.assets.searchAllIamPolicies` permission on the desired scope,\notherwise the request will be rejected.\n"
+  example: []
+  syntax:
+    content: public virtual Task<SearchAllIamPoliciesResponse> SearchAllIamPolicies(SearchAllIamPoliciesRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function SearchAllIamPolicies(request As SearchAllIamPoliciesRequest, context As ServerCallContext) As Task(Of SearchAllIamPoliciesResponse)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest,Grpc.Core.ServerCallContext)
+  id: AnalyzeIamPolicy(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: AnalyzeIamPolicy(AnalyzeIamPolicyRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.AnalyzeIamPolicy(AnalyzeIamPolicyRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: AnalyzeIamPolicy
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 267
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nAnalyzes IAM policies to answer which identities have what accesses on\nwhich resources.\n"
+  example: []
+  syntax:
+    content: public virtual Task<AnalyzeIamPolicyResponse> AnalyzeIamPolicy(AnalyzeIamPolicyRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function AnalyzeIamPolicy(request As AnalyzeIamPolicyRequest, context As ServerCallContext) As Task(Of AnalyzeIamPolicyResponse)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Grpc.Core.ServerCallContext)
+  id: ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Grpc.Core.ServerCallContext)
+  parent: Google.Cloud.Asset.V1.AssetService.AssetServiceBase
+  langs:
+  - csharp
+  - vb
+  name: ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest, ServerCallContext)
+  nameWithType: AssetService.AssetServiceBase.ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest, ServerCallContext)
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ExportIamPolicyAnalysis
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceGrpc.cs
+    startLine: 286
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nExports the answers of which identities have what accesses on which\nresources to a Google Cloud Storage or a BigQuery destination. For Cloud\nStorage destination, the output format is the JSON format that represents a\n[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].\nThis method implements the\n[google.longrunning.Operation][google.longrunning.Operation], which allows\nyou to track the export status. We recommend intervals of at least 2\nseconds with exponential retry to poll the export operation result. The\nmetadata contains the request to help callers to map responses to requests.\n"
+  example: []
+  syntax:
+    content: public virtual Task<Operation> ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+      description: The request received from the client.
+    - id: context
+      type: Grpc.Core.ServerCallContext
+      description: The context of the server-side call handler being invoked.
+    return:
+      type: System.Threading.Tasks.Task{Google.LongRunning.Operation}
+      description: The response to send back to the client (wrapped by a task).
+    content.vb: Public Overridable Function ExportIamPolicyAnalysis(request As ExportIamPolicyAnalysisRequest, context As ServerCallContext) As Task(Of Operation)
+  overload: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+references:
+- uid: Google.Cloud.Asset.V1
+  commentId: N:Google.Cloud.Asset.V1
+  name: Google.Cloud.Asset.V1
+  nameWithType: Google.Cloud.Asset.V1
+  fullName: Google.Cloud.Asset.V1
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets
+  name: ExportAssets
+  nameWithType: AssetService.AssetServiceBase.ExportAssets
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportAssets
+- uid: Google.Cloud.Asset.V1.ExportAssetsRequest
+  commentId: T:Google.Cloud.Asset.V1.ExportAssetsRequest
+  parent: Google.Cloud.Asset.V1
+  name: ExportAssetsRequest
+  nameWithType: ExportAssetsRequest
+  fullName: Google.Cloud.Asset.V1.ExportAssetsRequest
+- uid: Grpc.Core.ServerCallContext
+  commentId: T:Grpc.Core.ServerCallContext
+  parent: Grpc.Core
+  isExternal: true
+  name: ServerCallContext
+  nameWithType: ServerCallContext
+  fullName: Grpc.Core.ServerCallContext
+- uid: System.Threading.Tasks.Task{Google.LongRunning.Operation}
+  commentId: T:System.Threading.Tasks.Task{Google.LongRunning.Operation}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Operation>
+  nameWithType: Task<Operation>
+  fullName: System.Threading.Tasks.Task<Google.LongRunning.Operation>
+  nameWithType.vb: Task(Of Operation)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.LongRunning.Operation)
+  name.vb: Task(Of Operation)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.LongRunning.Operation
+    name: Operation
+    nameWithType: Operation
+    fullName: Google.LongRunning.Operation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.LongRunning.Operation
+    name: Operation
+    nameWithType: Operation
+    fullName: Google.LongRunning.Operation
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: true
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory
+  name: BatchGetAssetsHistory
+  nameWithType: AssetService.AssetServiceBase.BatchGetAssetsHistory
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.BatchGetAssetsHistory
+- uid: Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest
+  commentId: T:Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest
+  parent: Google.Cloud.Asset.V1
+  name: BatchGetAssetsHistoryRequest
+  nameWithType: BatchGetAssetsHistoryRequest
+  fullName: Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest
+- uid: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse}
+  commentId: T:System.Threading.Tasks.Task{Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<BatchGetAssetsHistoryResponse>
+  nameWithType: Task<BatchGetAssetsHistoryResponse>
+  fullName: System.Threading.Tasks.Task<Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse>
+  nameWithType.vb: Task(Of BatchGetAssetsHistoryResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse)
+  name.vb: Task(Of BatchGetAssetsHistoryResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse
+    name: BatchGetAssetsHistoryResponse
+    nameWithType: BatchGetAssetsHistoryResponse
+    fullName: Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse
+    name: BatchGetAssetsHistoryResponse
+    nameWithType: BatchGetAssetsHistoryResponse
+    fullName: Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed
+  name: CreateFeed
+  nameWithType: AssetService.AssetServiceBase.CreateFeed
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.CreateFeed
+- uid: Google.Cloud.Asset.V1.CreateFeedRequest
+  commentId: T:Google.Cloud.Asset.V1.CreateFeedRequest
+  parent: Google.Cloud.Asset.V1
+  name: CreateFeedRequest
+  nameWithType: CreateFeedRequest
+  fullName: Google.Cloud.Asset.V1.CreateFeedRequest
+- uid: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.Feed}
+  commentId: T:System.Threading.Tasks.Task{Google.Cloud.Asset.V1.Feed}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Feed>
+  nameWithType: Task<Feed>
+  fullName: System.Threading.Tasks.Task<Google.Cloud.Asset.V1.Feed>
+  nameWithType.vb: Task(Of Feed)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Cloud.Asset.V1.Feed)
+  name.vb: Task(Of Feed)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed
+  name: GetFeed
+  nameWithType: AssetService.AssetServiceBase.GetFeed
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed
+- uid: Google.Cloud.Asset.V1.GetFeedRequest
+  commentId: T:Google.Cloud.Asset.V1.GetFeedRequest
+  parent: Google.Cloud.Asset.V1
+  name: GetFeedRequest
+  nameWithType: GetFeedRequest
+  fullName: Google.Cloud.Asset.V1.GetFeedRequest
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds
+  name: ListFeeds
+  nameWithType: AssetService.AssetServiceBase.ListFeeds
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListFeeds
+- uid: Google.Cloud.Asset.V1.ListFeedsRequest
+  commentId: T:Google.Cloud.Asset.V1.ListFeedsRequest
+  parent: Google.Cloud.Asset.V1
+  name: ListFeedsRequest
+  nameWithType: ListFeedsRequest
+  fullName: Google.Cloud.Asset.V1.ListFeedsRequest
+- uid: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.ListFeedsResponse}
+  commentId: T:System.Threading.Tasks.Task{Google.Cloud.Asset.V1.ListFeedsResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ListFeedsResponse>
+  nameWithType: Task<ListFeedsResponse>
+  fullName: System.Threading.Tasks.Task<Google.Cloud.Asset.V1.ListFeedsResponse>
+  nameWithType.vb: Task(Of ListFeedsResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Cloud.Asset.V1.ListFeedsResponse)
+  name.vb: Task(Of ListFeedsResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.ListFeedsResponse
+    name: ListFeedsResponse
+    nameWithType: ListFeedsResponse
+    fullName: Google.Cloud.Asset.V1.ListFeedsResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.ListFeedsResponse
+    name: ListFeedsResponse
+    nameWithType: ListFeedsResponse
+    fullName: Google.Cloud.Asset.V1.ListFeedsResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed
+  name: UpdateFeed
+  nameWithType: AssetService.AssetServiceBase.UpdateFeed
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.UpdateFeed
+- uid: Google.Cloud.Asset.V1.UpdateFeedRequest
+  commentId: T:Google.Cloud.Asset.V1.UpdateFeedRequest
+  parent: Google.Cloud.Asset.V1
+  name: UpdateFeedRequest
+  nameWithType: UpdateFeedRequest
+  fullName: Google.Cloud.Asset.V1.UpdateFeedRequest
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed
+  name: DeleteFeed
+  nameWithType: AssetService.AssetServiceBase.DeleteFeed
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.DeleteFeed
+- uid: Google.Cloud.Asset.V1.DeleteFeedRequest
+  commentId: T:Google.Cloud.Asset.V1.DeleteFeedRequest
+  parent: Google.Cloud.Asset.V1
+  name: DeleteFeedRequest
+  nameWithType: DeleteFeedRequest
+  fullName: Google.Cloud.Asset.V1.DeleteFeedRequest
+- uid: System.Threading.Tasks.Task{Google.Protobuf.WellKnownTypes.Empty}
+  commentId: T:System.Threading.Tasks.Task{Google.Protobuf.WellKnownTypes.Empty}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Empty>
+  nameWithType: Task<Empty>
+  fullName: System.Threading.Tasks.Task<Google.Protobuf.WellKnownTypes.Empty>
+  nameWithType.vb: Task(Of Empty)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Protobuf.WellKnownTypes.Empty)
+  name.vb: Task(Of Empty)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Empty
+    name: Empty
+    nameWithType: Empty
+    fullName: Google.Protobuf.WellKnownTypes.Empty
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Empty
+    name: Empty
+    nameWithType: Empty
+    fullName: Google.Protobuf.WellKnownTypes.Empty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources
+  name: SearchAllResources
+  nameWithType: AssetService.AssetServiceBase.SearchAllResources
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllResources
+- uid: Google.Cloud.Asset.V1.SearchAllResourcesRequest
+  commentId: T:Google.Cloud.Asset.V1.SearchAllResourcesRequest
+  parent: Google.Cloud.Asset.V1
+  name: SearchAllResourcesRequest
+  nameWithType: SearchAllResourcesRequest
+  fullName: Google.Cloud.Asset.V1.SearchAllResourcesRequest
+- uid: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.SearchAllResourcesResponse}
+  commentId: T:System.Threading.Tasks.Task{Google.Cloud.Asset.V1.SearchAllResourcesResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<SearchAllResourcesResponse>
+  nameWithType: Task<SearchAllResourcesResponse>
+  fullName: System.Threading.Tasks.Task<Google.Cloud.Asset.V1.SearchAllResourcesResponse>
+  nameWithType.vb: Task(Of SearchAllResourcesResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Cloud.Asset.V1.SearchAllResourcesResponse)
+  name.vb: Task(Of SearchAllResourcesResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.SearchAllResourcesResponse
+    name: SearchAllResourcesResponse
+    nameWithType: SearchAllResourcesResponse
+    fullName: Google.Cloud.Asset.V1.SearchAllResourcesResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.SearchAllResourcesResponse
+    name: SearchAllResourcesResponse
+    nameWithType: SearchAllResourcesResponse
+    fullName: Google.Cloud.Asset.V1.SearchAllResourcesResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies
+  name: SearchAllIamPolicies
+  nameWithType: AssetService.AssetServiceBase.SearchAllIamPolicies
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.SearchAllIamPolicies
+- uid: Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest
+  commentId: T:Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest
+  parent: Google.Cloud.Asset.V1
+  name: SearchAllIamPoliciesRequest
+  nameWithType: SearchAllIamPoliciesRequest
+  fullName: Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest
+- uid: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse}
+  commentId: T:System.Threading.Tasks.Task{Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<SearchAllIamPoliciesResponse>
+  nameWithType: Task<SearchAllIamPoliciesResponse>
+  fullName: System.Threading.Tasks.Task<Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse>
+  nameWithType.vb: Task(Of SearchAllIamPoliciesResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse)
+  name.vb: Task(Of SearchAllIamPoliciesResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse
+    name: SearchAllIamPoliciesResponse
+    nameWithType: SearchAllIamPoliciesResponse
+    fullName: Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse
+    name: SearchAllIamPoliciesResponse
+    nameWithType: SearchAllIamPoliciesResponse
+    fullName: Google.Cloud.Asset.V1.SearchAllIamPoliciesResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy
+  name: AnalyzeIamPolicy
+  nameWithType: AssetService.AssetServiceBase.AnalyzeIamPolicy
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest
+  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest
+  parent: Google.Cloud.Asset.V1
+  name: AnalyzeIamPolicyRequest
+  nameWithType: AnalyzeIamPolicyRequest
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest
+- uid: System.Threading.Tasks.Task{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse}
+  commentId: T:System.Threading.Tasks.Task{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<AnalyzeIamPolicyResponse>
+  nameWithType: Task<AnalyzeIamPolicyResponse>
+  fullName: System.Threading.Tasks.Task<Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse>
+  nameWithType.vb: Task(Of AnalyzeIamPolicyResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse)
+  name.vb: Task(Of AnalyzeIamPolicyResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse
+    name: AnalyzeIamPolicyResponse
+    nameWithType: AnalyzeIamPolicyResponse
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse
+    name: AnalyzeIamPolicyResponse
+    nameWithType: AnalyzeIamPolicyResponse
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis
+  name: ExportIamPolicyAnalysis
+  nameWithType: AssetService.AssetServiceBase.ExportIamPolicyAnalysis
+  fullName: Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis
+- uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+  commentId: T:Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+  parent: Google.Cloud.Asset.V1
+  name: ExportIamPolicyAnalysisRequest
+  nameWithType: ExportIamPolicyAnalysisRequest
+  fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
