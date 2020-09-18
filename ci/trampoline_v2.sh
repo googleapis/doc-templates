@@ -124,6 +124,9 @@ pass_down_envvars=(
     "TRAMPOLINE_CI"
     # Indicates the version of the script.
     "TRAMPOLINE_VERSION"
+
+    # doc-templates variables.
+    "UPDATE_GOLDENS"
 )
 
 log_yellow "Building with Trampoline ${TRAMPOLINE_VERSION}"

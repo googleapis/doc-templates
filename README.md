@@ -25,6 +25,12 @@ following command:
 TRAMPOLINE_BUILD_FILE=./ci/run_tests.sh TRAMPOLINE_IMAGE=gcr.io/cloud-devrel-kokoro-resources/docfx ci/trampoline_v2.sh
 ```
 
+If you need to update the golden test files, add the `UPDATE_GOLDENS` env var:
+
+```
+UPDATE_GOLDENS=1 TRAMPOLINE_BUILD_FILE=./ci/run_tests.sh TRAMPOLINE_IMAGE=gcr.io/cloud-devrel-kokoro-resources/docfx ci/trampoline_v2.sh
+```
+
 The Dockerfile for the `docfx` image
 [is in googleapis/doc-pipline](https://github.com/googleapis/doc-pipeline/blob/master/docfx/Dockerfile).
 Any updates to the Dockerfile should be made there.
@@ -51,6 +57,15 @@ If you want to run the tests in your normal environment, not in a container:
 
    pytest tests
    ```
+
+   To update goldens add the `--update-goldens` flag:
+   ```
+   pytest --update-goldens tests
+   ```
+
+   **Warning**: your local `docfx` version and the container image version may
+   differ, which may cause differences in golden files. **The container version
+   is canonical.**
 
 ## Source Code Headers
 
