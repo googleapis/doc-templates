@@ -3,7 +3,12 @@
 This repository contains templates used to create refernce documentation for developers.google.com,
 cloud.google.com, and other sites.
 
-## Developing
+## Contributing
+
+### Docs
+
+See the [`docs`](/docs) directory for additional documentation, like a code of
+conduct and an overall contributing guide.
 
 ### Testing
 
@@ -69,6 +74,3 @@ Apache header:
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-### docfx
-Customize the partials, at least for `<head>`, e.g., `<meta name="project_path" value="/dotnet/_project.yaml" />` as needed. 
