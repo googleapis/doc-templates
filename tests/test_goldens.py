@@ -22,8 +22,8 @@ from docuploader import shell
 import pytest
 
 
-def test_goldens(update_goldens):
-    test_dir = "python-small"
+@pytest.mark.parametrize("test_dir", ["python-small", "go", "dotnet"])
+def test_goldens(update_goldens, test_dir):
     build_dir = Path("testdata") / test_dir
     golden_dir = Path("testdata/goldens") / test_dir
     out_dir = build_dir / "site/api"

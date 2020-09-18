@@ -1,0 +1,958 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Cloud.Asset.V1.Feed
+  commentId: T:Google.Cloud.Asset.V1.Feed
+  id: Feed
+  parent: Google.Cloud.Asset.V1
+  children:
+  - Google.Cloud.Asset.V1.Feed.#ctor
+  - Google.Cloud.Asset.V1.Feed.#ctor(Google.Cloud.Asset.V1.Feed)
+  - Google.Cloud.Asset.V1.Feed.AssetNames
+  - Google.Cloud.Asset.V1.Feed.AssetTypes
+  - Google.Cloud.Asset.V1.Feed.Condition
+  - Google.Cloud.Asset.V1.Feed.ContentType
+  - Google.Cloud.Asset.V1.Feed.FeedName
+  - Google.Cloud.Asset.V1.Feed.FeedOutputConfig
+  - Google.Cloud.Asset.V1.Feed.Name
+  langs:
+  - csharp
+  - vb
+  name: Feed
+  nameWithType: Feed
+  fullName: Google.Cloud.Asset.V1.Feed
+  type: Class
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceResourceNames.g.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Feed
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceResourceNames.g.cs
+    startLine: 365
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nAn asset feed used to export asset updates to a destinations.\nAn asset feed filter controls what updates are exported.\nThe asset feed must be created within a project, organization, or\nfolder. Supported destinations are:\nPub/Sub topics.\n"
+  example: []
+  syntax:
+    content: 'public sealed class Feed : IMessage<Feed>, IMessage, IEquatable<Feed>, IDeepCloneable<Feed>'
+    content.vb: >-
+      Public NotInheritable Class Feed
+          Implements IMessage(Of Feed), IMessage, IEquatable(Of Feed), IDeepCloneable(Of Feed)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Cloud.Asset.V1.Feed}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Cloud.Asset.V1.Feed}
+  - Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.Feed}
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Cloud.Asset.V1.Feed.#ctor
+  commentId: M:Google.Cloud.Asset.V1.Feed.#ctor
+  id: '#ctor'
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: Feed()
+  nameWithType: Feed.Feed()
+  fullName: Google.Cloud.Asset.V1.Feed.Feed()
+  type: Constructor
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: .ctor
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3347
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  syntax:
+    content: public Feed()
+    content.vb: Public Sub New
+  overload: Google.Cloud.Asset.V1.Feed.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.Feed.#ctor(Google.Cloud.Asset.V1.Feed)
+  commentId: M:Google.Cloud.Asset.V1.Feed.#ctor(Google.Cloud.Asset.V1.Feed)
+  id: '#ctor(Google.Cloud.Asset.V1.Feed)'
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: Feed(Feed)
+  nameWithType: Feed.Feed(Feed)
+  fullName: Google.Cloud.Asset.V1.Feed.Feed(Google.Cloud.Asset.V1.Feed)
+  type: Constructor
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: .ctor
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3354
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  syntax:
+    content: public Feed(Feed other)
+    parameters:
+    - id: other
+      type: Google.Cloud.Asset.V1.Feed
+    content.vb: Public Sub New(other As Feed)
+  overload: Google.Cloud.Asset.V1.Feed.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.Feed.Name
+  commentId: P:Google.Cloud.Asset.V1.Feed.Name
+  id: Name
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Feed.Name
+  fullName: Google.Cloud.Asset.V1.Feed.Name
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Name
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3382
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nRequired. The format will be\nprojects/{project_number}/feeds/{client-assigned_feed_identifier} or\nfolders/{folder_number}/feeds/{client-assigned_feed_identifier} or\norganizations/{organization_number}/feeds/{client-assigned_feed_identifier}\n\nThe client-assigned feed identifier must be unique within the parent\nproject/folder/organization.\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Google.Cloud.Asset.V1.Feed.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.Feed.AssetNames
+  commentId: P:Google.Cloud.Asset.V1.Feed.AssetNames
+  id: AssetNames
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: AssetNames
+  nameWithType: Feed.AssetNames
+  fullName: Google.Cloud.Asset.V1.Feed.AssetNames
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: AssetNames
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3405
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nA list of the full names of the assets to receive updates. You must specify\neither or both of asset_names and asset_types. Only asset updates matching\nspecified asset_names or asset_types are exported to the feed.\nExample:\n`//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.\nSee [Resource\nNames](https://cloud.google.com/apis/design/resource_names#full_resource_name)\nfor more info.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<string> AssetNames { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{System.String}
+    content.vb: Public ReadOnly Property AssetNames As RepeatedField(Of String)
+  overload: Google.Cloud.Asset.V1.Feed.AssetNames*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Cloud.Asset.V1.Feed.AssetTypes
+  commentId: P:Google.Cloud.Asset.V1.Feed.AssetTypes
+  id: AssetTypes
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: AssetTypes
+  nameWithType: Feed.AssetTypes
+  fullName: Google.Cloud.Asset.V1.Feed.AssetTypes
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: AssetTypes
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3425
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nA list of types of the assets to receive updates. You must specify either\nor both of asset_names and asset_types. Only asset updates matching\nspecified asset_names or asset_types are exported to the feed.\nExample: `&quot;compute.googleapis.com/Disk&quot;`\n\nSee [this\ntopic](https://cloud.google.com/asset-inventory/docs/supported-asset-types)\nfor a list of all supported asset types.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<string> AssetTypes { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{System.String}
+    content.vb: Public ReadOnly Property AssetTypes As RepeatedField(Of String)
+  overload: Google.Cloud.Asset.V1.Feed.AssetTypes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Cloud.Asset.V1.Feed.ContentType
+  commentId: P:Google.Cloud.Asset.V1.Feed.ContentType
+  id: ContentType
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: ContentType
+  nameWithType: Feed.ContentType
+  fullName: Google.Cloud.Asset.V1.Feed.ContentType
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ContentType
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3437
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nAsset content type. If not specified, no content but the asset name and\ntype will be returned.\n"
+  example: []
+  syntax:
+    content: public ContentType ContentType { get; set; }
+    parameters: []
+    return:
+      type: Google.Cloud.Asset.V1.ContentType
+    content.vb: Public Property ContentType As ContentType
+  overload: Google.Cloud.Asset.V1.Feed.ContentType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.Feed.FeedOutputConfig
+  commentId: P:Google.Cloud.Asset.V1.Feed.FeedOutputConfig
+  id: FeedOutputConfig
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: FeedOutputConfig
+  nameWithType: Feed.FeedOutputConfig
+  fullName: Google.Cloud.Asset.V1.Feed.FeedOutputConfig
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: FeedOutputConfig
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3452
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nRequired. Feed output configuration defining where the asset updates are\npublished to.\n"
+  example: []
+  syntax:
+    content: public FeedOutputConfig FeedOutputConfig { get; set; }
+    parameters: []
+    return:
+      type: Google.Cloud.Asset.V1.FeedOutputConfig
+    content.vb: Public Property FeedOutputConfig As FeedOutputConfig
+  overload: Google.Cloud.Asset.V1.Feed.FeedOutputConfig*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.Feed.Condition
+  commentId: P:Google.Cloud.Asset.V1.Feed.Condition
+  id: Condition
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: Condition
+  nameWithType: Feed.Condition
+  fullName: Google.Cloud.Asset.V1.Feed.Condition
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Condition
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 3477
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nA condition which determines whether an asset update should be published.\nIf specified, an asset will be returned only when the expression evaluates\nto true.\nWhen set, `expression` field in the `Expr` must be a valid [CEL expression]\n(https://github.com/google/cel-spec) on a TemporalAsset with name\n`temporal_asset`. Example: a Feed with expression (&quot;temporal_asset.deleted\n== true&quot;) will only publish Asset deletions. Other fields of `Expr` are\noptional.\n\nSee our [user\nguide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)\nfor detailed instructions.\n"
+  example: []
+  syntax:
+    content: public Expr Condition { get; set; }
+    parameters: []
+    return:
+      type: Google.Type.Expr
+    content.vb: Public Property Condition As Expr
+  overload: Google.Cloud.Asset.V1.Feed.Condition*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.Feed.FeedName
+  commentId: P:Google.Cloud.Asset.V1.Feed.FeedName
+  id: FeedName
+  parent: Google.Cloud.Asset.V1.Feed
+  langs:
+  - csharp
+  - vb
+  name: FeedName
+  nameWithType: Feed.FeedName
+  fullName: Google.Cloud.Asset.V1.Feed.FeedName
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceResourceNames.g.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: FeedName
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceResourceNames.g.cs
+    startLine: 370
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\n<xref href=\"Google.Cloud.Asset.V1.FeedName\" data-throw-if-not-resolved=\"false\"></xref>-typed view over the <xref href=\"Google.Cloud.Asset.V1.Feed.Name\" data-throw-if-not-resolved=\"false\"></xref> resource name property.\n"
+  example: []
+  syntax:
+    content: public FeedName FeedName { get; set; }
+    parameters: []
+    return:
+      type: Google.Cloud.Asset.V1.FeedName
+    content.vb: Public Property FeedName As FeedName
+  overload: Google.Cloud.Asset.V1.Feed.FeedName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Cloud.Asset.V1
+  commentId: N:Google.Cloud.Asset.V1
+  name: Google.Cloud.Asset.V1
+  nameWithType: Google.Cloud.Asset.V1
+  fullName: Google.Cloud.Asset.V1
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Cloud.Asset.V1.Feed}
+  commentId: T:Google.Protobuf.IMessage{Google.Cloud.Asset.V1.Feed}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Feed>
+  nameWithType: IMessage<Feed>
+  fullName: Google.Protobuf.IMessage<Google.Cloud.Asset.V1.Feed>
+  nameWithType.vb: IMessage(Of Feed)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Cloud.Asset.V1.Feed)
+  name.vb: IMessage(Of Feed)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Cloud.Asset.V1.Feed}
+  commentId: T:System.IEquatable{Google.Cloud.Asset.V1.Feed}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Feed>
+  nameWithType: IEquatable<Feed>
+  fullName: System.IEquatable<Google.Cloud.Asset.V1.Feed>
+  nameWithType.vb: IEquatable(Of Feed)
+  fullName.vb: System.IEquatable(Of Google.Cloud.Asset.V1.Feed)
+  name.vb: IEquatable(Of Feed)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.Feed}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.Feed}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Feed>
+  nameWithType: IDeepCloneable<Feed>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Cloud.Asset.V1.Feed>
+  nameWithType.vb: IDeepCloneable(Of Feed)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Cloud.Asset.V1.Feed)
+  name.vb: IDeepCloneable(Of Feed)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.Feed
+    name: Feed
+    nameWithType: Feed
+    fullName: Google.Cloud.Asset.V1.Feed
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: true
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.Feed.#ctor*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.#ctor
+  name: Feed
+  nameWithType: Feed.Feed
+  fullName: Google.Cloud.Asset.V1.Feed.Feed
+- uid: Google.Cloud.Asset.V1.Feed
+  commentId: T:Google.Cloud.Asset.V1.Feed
+  parent: Google.Cloud.Asset.V1
+  name: Feed
+  nameWithType: Feed
+  fullName: Google.Cloud.Asset.V1.Feed
+- uid: Google.Cloud.Asset.V1.Feed.Name*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.Name
+  name: Name
+  nameWithType: Feed.Name
+  fullName: Google.Cloud.Asset.V1.Feed.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Cloud.Asset.V1.Feed.AssetNames*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.AssetNames
+  name: AssetNames
+  nameWithType: Feed.AssetNames
+  fullName: Google.Cloud.Asset.V1.Feed.AssetNames
+- uid: Google.Protobuf.Collections.RepeatedField{System.String}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{System.String}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<String>
+  nameWithType: RepeatedField<String>
+  fullName: Google.Protobuf.Collections.RepeatedField<System.String>
+  nameWithType.vb: RepeatedField(Of String)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of System.String)
+  name.vb: RepeatedField(Of String)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: true
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: Google.Cloud.Asset.V1.Feed.AssetTypes*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.AssetTypes
+  name: AssetTypes
+  nameWithType: Feed.AssetTypes
+  fullName: Google.Cloud.Asset.V1.Feed.AssetTypes
+- uid: Google.Cloud.Asset.V1.Feed.ContentType*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.ContentType
+  name: ContentType
+  nameWithType: Feed.ContentType
+  fullName: Google.Cloud.Asset.V1.Feed.ContentType
+- uid: Google.Cloud.Asset.V1.ContentType
+  commentId: T:Google.Cloud.Asset.V1.ContentType
+  parent: Google.Cloud.Asset.V1
+  name: ContentType
+  nameWithType: ContentType
+  fullName: Google.Cloud.Asset.V1.ContentType
+- uid: Google.Cloud.Asset.V1.Feed.FeedOutputConfig*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.FeedOutputConfig
+  name: FeedOutputConfig
+  nameWithType: Feed.FeedOutputConfig
+  fullName: Google.Cloud.Asset.V1.Feed.FeedOutputConfig
+- uid: Google.Cloud.Asset.V1.FeedOutputConfig
+  commentId: T:Google.Cloud.Asset.V1.FeedOutputConfig
+  parent: Google.Cloud.Asset.V1
+  name: FeedOutputConfig
+  nameWithType: FeedOutputConfig
+  fullName: Google.Cloud.Asset.V1.FeedOutputConfig
+- uid: Google.Cloud.Asset.V1.Feed.Condition*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.Condition
+  name: Condition
+  nameWithType: Feed.Condition
+  fullName: Google.Cloud.Asset.V1.Feed.Condition
+- uid: Google.Type.Expr
+  commentId: T:Google.Type.Expr
+  parent: Google.Type
+  isExternal: true
+  name: Expr
+  nameWithType: Expr
+  fullName: Google.Type.Expr
+- uid: Google.Type
+  commentId: N:Google.Type
+  isExternal: true
+  name: Google.Type
+  nameWithType: Google.Type
+  fullName: Google.Type
+- uid: Google.Cloud.Asset.V1.FeedName
+  commentId: T:Google.Cloud.Asset.V1.FeedName
+  parent: Google.Cloud.Asset.V1
+  name: FeedName
+  nameWithType: FeedName
+  fullName: Google.Cloud.Asset.V1.FeedName
+- uid: Google.Cloud.Asset.V1.Feed.Name
+  commentId: P:Google.Cloud.Asset.V1.Feed.Name
+  isExternal: true
+- uid: Google.Cloud.Asset.V1.Feed.FeedName*
+  commentId: Overload:Google.Cloud.Asset.V1.Feed.FeedName
+  name: FeedName
+  nameWithType: Feed.FeedName
+  fullName: Google.Cloud.Asset.V1.Feed.FeedName
