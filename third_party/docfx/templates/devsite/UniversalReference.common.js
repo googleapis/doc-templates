@@ -41,8 +41,6 @@ exports.transform = function (model) {
     }
   }
 
-  console.log(JSON.stringify(model, null, "  "));
-
   return model;
 }
 
