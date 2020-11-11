@@ -20,7 +20,7 @@ import pytest
 
 
 def test_generate():
-    build_dir = Path("testdata/python-small")
+    build_dir = Path("testdata/python")
     out_dir = build_dir / "site/api"
     # Generate!
     try:
@@ -41,4 +41,4 @@ def test_generate():
     toc_file_path = out_dir / "toc.html"
     assert toc_file_path.is_file()
     got_text = toc_file_path.read_text("utf-8")
-    assert "/python/docs/reference/texttospeech/latest" in got_text
+    assert "/python/docs/reference/python/latest" in got_text
