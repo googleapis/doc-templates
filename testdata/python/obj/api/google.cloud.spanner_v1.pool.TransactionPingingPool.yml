@@ -1,0 +1,183 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.pool.TransactionPingingPool.begin_pending_transactions
+  - google.cloud.spanner_v1.pool.TransactionPingingPool.bind
+  - google.cloud.spanner_v1.pool.TransactionPingingPool.put
+  class: google.cloud.spanner_v1.pool.TransactionPingingPool
+  fullName: google.cloud.spanner_v1.pool.TransactionPingingPool
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: google.cloud.spanner_v1.pool.AbstractSessionPool
+    type: google.cloud.spanner_v1.pool.PingingPool
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: TransactionPingingPool
+  source:
+    id: TransactionPingingPool
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 449
+  summary: 'Concrete session pool implementation:
+
+
+    In addition to the features of <xref:google.cloud.spanner_v1.pool.PingingPool>,
+    this class
+
+    creates and begins a transaction for each of its sessions at startup.
+
+
+    When a session is returned to the pool, if its transaction has been
+
+    committed or rolled back, the pool creates a new transaction for the
+
+    session and pushes the transaction onto a separate queue of "transactions
+
+    to begin."  The application is responsible for flushing this queue
+
+    as appropriate via the pool''s <xref:google.cloud.spanner_v1.pool.TransactionPingingPool.begin_pending_transactions>
+    method.'
+  syntax:
+    content: TransactionPingingPool(size=10, default_timeout=10, ping_interval=3000,
+      labels=None)
+    parameters:
+    - description: fixed pool size
+      id: size
+      type:
+      - int
+    - description: 'default timeout, in seconds, to wait for
+
+        a returned session.'
+      id: default_timeout
+      type:
+      - int
+    - description: interval at which to ping sessions.
+      id: ping_interval
+      type:
+      - int
+    - description: '(Optional) user-assigned labels for sessions created
+
+        by the pool.'
+      id: labels
+      type:
+      - dict (str -> str)
+      - None
+  type: class
+  uid: google.cloud.spanner_v1.pool.TransactionPingingPool
+- class: google.cloud.spanner_v1.pool.TransactionPingingPool
+  fullName: google.cloud.spanner_v1.pool.TransactionPingingPool.begin_pending_transactions
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: begin_pending_transactions()
+  namewithoutparameters: begin_pending_transactions
+  source:
+    id: begin_pending_transactions
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 515
+  summary: Begin all transactions for sessions added to the pool.
+  syntax:
+    content: begin_pending_transactions()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.pool.TransactionPingingPool.begin_pending_transactions
+- class: google.cloud.spanner_v1.pool.TransactionPingingPool
+  fullName: google.cloud.spanner_v1.pool.TransactionPingingPool.bind
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: bind(database)
+  namewithoutparameters: bind
+  source:
+    id: bind
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 485
+  summary: Associate the pool with a database.
+  syntax:
+    content: bind(database)
+    parameters:
+    - description: 'database used by the pool:  used to create sessions
+
+        when needed.'
+      id: database
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.database.Database
+  type: method
+  uid: google.cloud.spanner_v1.pool.TransactionPingingPool.bind
+- class: google.cloud.spanner_v1.pool.TransactionPingingPool
+  exceptions:
+  - type: six.moves.queue.Full
+  fullName: google.cloud.spanner_v1.pool.TransactionPingingPool.put
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: put(session)
+  namewithoutparameters: put
+  source:
+    id: put
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 495
+  summary: 'Return a session to the pool.
+
+
+    Never blocks:  if the pool is full, raises.'
+  syntax:
+    content: put(session)
+    parameters:
+    - description: the session being returned.
+      id: session
+      isRequired: true
+      type:
+      - <xref:google.cloud.spanner_v1.session.Session>
+  type: method
+  uid: google.cloud.spanner_v1.pool.TransactionPingingPool.put
+references:
+- fullName: google.cloud.spanner_v1.pool.TransactionPingingPool.begin_pending_transactions
+  isExternal: false
+  name: begin_pending_transactions()
+  parent: google.cloud.spanner_v1.pool.TransactionPingingPool
+  uid: google.cloud.spanner_v1.pool.TransactionPingingPool.begin_pending_transactions
+- fullName: google.cloud.spanner_v1.pool.TransactionPingingPool.bind
+  isExternal: false
+  name: bind(database)
+  parent: google.cloud.spanner_v1.pool.TransactionPingingPool
+  uid: google.cloud.spanner_v1.pool.TransactionPingingPool.bind
+- fullName: google.cloud.spanner_v1.pool.TransactionPingingPool.put
+  isExternal: false
+  name: put(session)
+  parent: google.cloud.spanner_v1.pool.TransactionPingingPool
+  uid: google.cloud.spanner_v1.pool.TransactionPingingPool.put
+- fullName: dict (str -> str)
+  name: dict (str -> str)
+  spec.python:
+  - fullName: 'dict '
+    name: 'dict '
+    uid: 'dict '
+  - fullName: (
+    name: (
+  - fullName: str -> str
+    name: str -> str
+    uid: str -> str
+  - fullName: )
+    name: )
+  uid: dict (str -> str)

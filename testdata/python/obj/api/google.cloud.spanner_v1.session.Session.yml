@@ -1,0 +1,598 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.session.Session.batch
+  - google.cloud.spanner_v1.session.Session.create
+  - google.cloud.spanner_v1.session.Session.delete
+  - google.cloud.spanner_v1.session.Session.execute_sql
+  - google.cloud.spanner_v1.session.Session.exists
+  - google.cloud.spanner_v1.session.Session.labels
+  - google.cloud.spanner_v1.session.Session.name
+  - google.cloud.spanner_v1.session.Session.ping
+  - google.cloud.spanner_v1.session.Session.read
+  - google.cloud.spanner_v1.session.Session.run_in_transaction
+  - google.cloud.spanner_v1.session.Session.session_id
+  - google.cloud.spanner_v1.session.Session.snapshot
+  - google.cloud.spanner_v1.session.Session.transaction
+  class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: Session
+  source:
+    id: Session
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 44
+  summary: "Representation of a Cloud Spanner Session.\n\nWe can use a <xref:google.cloud.spanner_v1.session.Session>\
+    \ to:\n\n* <xref:google.cloud.spanner_v1.session.Session.create> the session \n\
+    \n* Use <xref:google.cloud.spanner_v1.session.Session.exists> to check for the\
+    \ existence of the session \n\n* <xref:google.cloud.spanner_v1.session.Session.drop>\
+    \ the session"
+  syntax:
+    content: Session(database, labels=None)
+    parameters:
+    - description: The database to which the session is bound.
+      id: database
+      type:
+      - google.cloud.spanner_v1.database.Database
+    - description: (Optional) User-assigned labels for the session.
+      id: labels
+      type:
+      - dict (str -> str)
+  type: class
+  uid: google.cloud.spanner_v1.session.Session
+- class: google.cloud.spanner_v1.session.Session
+  exceptions:
+  - description: if the session has not yet been created.
+    type: ValueError
+  fullName: google.cloud.spanner_v1.session.Session.batch
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: batch()
+  namewithoutparameters: batch
+  source:
+    id: batch
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 274
+  summary: Factory to create a batch for this session.
+  syntax:
+    content: batch()
+    parameters: []
+    return:
+      description: a batch bound to this session
+      type:
+      - google.cloud.spanner_v1.batch.Batch
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.batch
+- class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session.create
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: create()
+  namewithoutparameters: create
+  source:
+    id: create
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 107
+  summary: 'Create this session, bound to its database.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.Spanner.CreateSession](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.Spanner.CreateSession)'
+  syntax:
+    content: create()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.create
+- class: google.cloud.spanner_v1.session.Session
+  exceptions:
+  - description: if <xref:session_id> is not already set.
+    type: ValueError
+  - description: if the session does not exist
+    type: NotFound
+  fullName: google.cloud.spanner_v1.session.Session.delete
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: delete()
+  namewithoutparameters: delete
+  source:
+    id: delete
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 155
+  summary: 'Delete this session.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.Spanner.GetSession](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.Spanner.GetSession)'
+  syntax:
+    content: delete()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.delete
+- class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session.execute_sql
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: execute_sql(sql, params=None, param_types=None, query_mode=None, query_options=None,
+    retry=<object object>, timeout=<object object>)
+  namewithoutparameters: execute_sql
+  source:
+    id: execute_sql
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 226
+  summary: Perform an `ExecuteStreamingSql` API request.
+  syntax:
+    content: execute_sql(sql, params=None, param_types=None, query_mode=None, query_options=None,
+      retry=<object object>, timeout=<object object>)
+    parameters:
+    - description: SQL query statement
+      id: sql
+      isRequired: true
+      type:
+      - str
+    - defaultValue: None
+      description: 'values for parameter replacement.  Keys must match
+
+        the names used in `sql`.'
+      id: params
+      type:
+      - dict, {str -> column value}
+    - defaultValue: None
+      description: '(Optional) explicit types for one or more param
+
+        values;  overrides default type detection on the
+
+        back-end.'
+      id: param_types
+      type:
+      - dict, {str -> google.spanner.v1.type_pb2.TypeCode}
+    - defaultValue: None
+      description: 'Mode governing return of results / query plan. See:
+
+        [QueryMode](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.ExecuteSqlRequest.QueryMode).'
+      id: query_mode
+      type:
+      - google.spanner.v1.spanner_pb2.ExecuteSqlRequest.QueryMode
+    - defaultValue: None
+      description: (Optional) Options that are provided for query plan stability.
+      id: query_options
+      type:
+      - google.cloud.spanner_v1.ExecuteSqlRequest.QueryOptions
+      - google.cloud.spanner_v1.session.dict
+    - id: retry
+      isRequired: true
+    - id: timeout
+      isRequired: true
+    return:
+      description: a result set instance which can be used to consume rows.
+      type:
+      - google.cloud.spanner_v1.streamed.StreamedResultSet
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.execute_sql
+- class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session.exists
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: exists()
+  namewithoutparameters: exists
+  source:
+    id: exists
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 129
+  summary: 'Test for the existence of this session.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.Spanner.GetSession](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.Spanner.GetSession)'
+  syntax:
+    content: exists()
+    parameters: []
+    return:
+      description: True if the session exists on the back-end, else False.
+      type:
+      - bool
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.exists
+- class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session.labels
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: labels
+  source:
+    id: labels
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: User-assigned labels for the session.
+  syntax:
+    return:
+      description: the labels dict (empty if no labels were assigned.
+      type:
+      - dict (str -> str)
+  type: attribute
+  uid: google.cloud.spanner_v1.session.Session.labels
+- class: google.cloud.spanner_v1.session.Session
+  exceptions:
+  - description: if session is not yet created
+    type: ValueError
+  fullName: google.cloud.spanner_v1.session.Session.name
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: name
+  source:
+    id: name
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: "Session name used in requests.\n\n\n> [!NOTE]\n> This property will not\
+    \ change if session_id does not, but the\n>\n> return value is not cached.\n>\n\
+    \nThe session name is of the form\n\n   `\"projects/../instances/../databases/../sessions/{session_id}\"\
+    `"
+  syntax:
+    return:
+      description: The session name.
+      type:
+      - str
+  type: attribute
+  uid: google.cloud.spanner_v1.session.Session.name
+- class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session.ping
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: ping()
+  namewithoutparameters: ping
+  source:
+    id: ping
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 171
+  summary: Ping the session to keep it alive by executing "SELECT 1".
+  syntax:
+    content: ping()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.ping
+- class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session.read
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: read(table, columns, keyset, index='', limit=0)
+  namewithoutparameters: read
+  source:
+    id: read
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 202
+  summary: Perform a `StreamingRead` API request for rows in a table.
+  syntax:
+    content: read(table, columns, keyset, index='', limit=0)
+    parameters:
+    - description: name of the table from which to fetch data
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: names of columns to be retrieved
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: keys / ranges identifying rows to be retrieved
+      id: keyset
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.keyset.KeySet
+    - defaultValue: ''
+      description: '(Optional) name of index to use, rather than the
+
+        table''s primary key'
+      id: index
+      type:
+      - str
+    - defaultValue: '0'
+      description: (Optional) maximum number of rows to return
+      id: limit
+      type:
+      - int
+    return:
+      description: a result set instance which can be used to consume rows.
+      type:
+      - google.cloud.spanner_v1.streamed.StreamedResultSet
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.read
+- class: google.cloud.spanner_v1.session.Session
+  exceptions:
+  - description: reraises any non-ABORT execptions raised by `func`.
+    type: Exception
+  fullName: google.cloud.spanner_v1.session.Session.run_in_transaction
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: run_in_transaction(func, *args, **kw)
+  namewithoutparameters: run_in_transaction
+  source:
+    id: run_in_transaction
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 303
+  summary: Perform a unit of work in a transaction, retrying on abort.
+  syntax:
+    content: run_in_transaction(func, *args, **kw)
+    parameters:
+    - description: 'takes a required positional argument, the transaction,
+
+        and additional positional / keyword arguments as supplied
+
+        by the caller.'
+      id: func
+      isRequired: true
+      type:
+      - callable
+    - description: additional positional arguments to be passed to `func`.
+      id: args
+      isRequired: true
+      type:
+      - tuple
+    - description: '(Optional) keyword arguments to be passed to `func`.
+
+        If passed, "timeout_secs" will be removed and used to
+
+        override the default retry timeout which defines maximum timestamp
+
+        to continue retrying the transaction.'
+      id: kw
+      isRequired: true
+      type:
+      - dict
+    return:
+      description: The return value of `func`.
+      type:
+      - Any
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.run_in_transaction
+- class: google.cloud.spanner_v1.session.Session
+  fullName: google.cloud.spanner_v1.session.Session.session_id
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: session_id
+  source:
+    id: session_id
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: Read-only ID, set by the back-end during <xref:google.cloud.spanner_v1.session.Session.create>.
+  syntax: {}
+  type: attribute
+  uid: google.cloud.spanner_v1.session.Session.session_id
+- class: google.cloud.spanner_v1.session.Session
+  exceptions:
+  - description: if the session has not yet been created.
+    type: ValueError
+  fullName: google.cloud.spanner_v1.session.Session.snapshot
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: snapshot(**kw)
+  namewithoutparameters: snapshot
+  source:
+    id: snapshot
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 183
+  summary: 'Create a snapshot to perform a set of reads with shared staleness.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.TransactionOptions.ReadOnly](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.TransactionOptions.ReadOnly)'
+  syntax:
+    content: snapshot(**kw)
+    parameters:
+    - description: 'Passed through to
+
+        <xref:google.cloud.spanner_v1.snapshot.Snapshot> ctor.'
+      id: kw
+      isRequired: true
+      type:
+      - dict
+    return:
+      description: a snapshot bound to this session
+      type:
+      - google.cloud.spanner_v1.snapshot.Snapshot
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.snapshot
+- class: google.cloud.spanner_v1.session.Session
+  exceptions:
+  - description: if the session has not yet been created.
+    type: ValueError
+  fullName: google.cloud.spanner_v1.session.Session.transaction
+  langs:
+  - python
+  module: google.cloud.spanner_v1.session
+  name: transaction()
+  namewithoutparameters: transaction
+  source:
+    id: transaction
+    path: google/cloud/spanner_v1/session.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/session.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 286
+  summary: Create a transaction to perform a set of reads with shared staleness.
+  syntax:
+    content: transaction()
+    parameters: []
+    return:
+      description: a transaction bound to this session
+      type:
+      - google.cloud.spanner_v1.transaction.Transaction
+  type: method
+  uid: google.cloud.spanner_v1.session.Session.transaction
+references:
+- fullName: google.cloud.spanner_v1.session.Session.batch
+  isExternal: false
+  name: batch()
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.batch
+- fullName: google.cloud.spanner_v1.session.Session.create
+  isExternal: false
+  name: create()
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.create
+- fullName: google.cloud.spanner_v1.session.Session.delete
+  isExternal: false
+  name: delete()
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.delete
+- fullName: google.cloud.spanner_v1.session.Session.execute_sql
+  isExternal: false
+  name: execute_sql(sql, params=None, param_types=None, query_mode=None, query_options=None,
+    retry=<object object>, timeout=<object object>)
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.execute_sql
+- fullName: google.cloud.spanner_v1.session.Session.exists
+  isExternal: false
+  name: exists()
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.exists
+- fullName: google.cloud.spanner_v1.session.Session.labels
+  isExternal: false
+  name: labels
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.labels
+- fullName: google.cloud.spanner_v1.session.Session.name
+  isExternal: false
+  name: name
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.name
+- fullName: google.cloud.spanner_v1.session.Session.ping
+  isExternal: false
+  name: ping()
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.ping
+- fullName: google.cloud.spanner_v1.session.Session.read
+  isExternal: false
+  name: read(table, columns, keyset, index='', limit=0)
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.read
+- fullName: google.cloud.spanner_v1.session.Session.run_in_transaction
+  isExternal: false
+  name: run_in_transaction(func, *args, **kw)
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.run_in_transaction
+- fullName: google.cloud.spanner_v1.session.Session.session_id
+  isExternal: false
+  name: session_id
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.session_id
+- fullName: google.cloud.spanner_v1.session.Session.snapshot
+  isExternal: false
+  name: snapshot(**kw)
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.snapshot
+- fullName: google.cloud.spanner_v1.session.Session.transaction
+  isExternal: false
+  name: transaction()
+  parent: google.cloud.spanner_v1.session.Session
+  uid: google.cloud.spanner_v1.session.Session.transaction
+- fullName: dict (str -> str)
+  name: dict (str -> str)
+  spec.python:
+  - fullName: 'dict '
+    name: 'dict '
+    uid: 'dict '
+  - fullName: (
+    name: (
+  - fullName: str -> str
+    name: str -> str
+    uid: str -> str
+  - fullName: )
+    name: )
+  uid: dict (str -> str)
+- fullName: dict, {str -> column value}
+  name: dict, {str -> column value}
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: '{str -> column value}'
+    name: '{str -> column value}'
+    uid: '{str -> column value}'
+  uid: dict, {str -> column value}
+- fullName: dict, {str -> google.spanner.v1.type_pb2.TypeCode}
+  name: dict, TypeCode}
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: '{str -> google.spanner.v1.type_pb2.TypeCode}'
+    name: TypeCode}
+    uid: '{str -> google.spanner.v1.type_pb2.TypeCode}'
+  uid: dict, {str -> google.spanner.v1.type_pb2.TypeCode}

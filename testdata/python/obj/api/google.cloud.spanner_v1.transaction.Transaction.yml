@@ -1,0 +1,998 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.transaction.Transaction.__enter__
+  - google.cloud.spanner_v1.transaction.Transaction.__exit__
+  - google.cloud.spanner_v1.transaction.Transaction.batch_update
+  - google.cloud.spanner_v1.transaction.Transaction.begin
+  - google.cloud.spanner_v1.transaction.Transaction.commit
+  - google.cloud.spanner_v1.transaction.Transaction.committed
+  - google.cloud.spanner_v1.transaction.Transaction.delete
+  - google.cloud.spanner_v1.transaction.Transaction.execute_sql
+  - google.cloud.spanner_v1.transaction.Transaction.execute_update
+  - google.cloud.spanner_v1.transaction.Transaction.insert
+  - google.cloud.spanner_v1.transaction.Transaction.insert_or_update
+  - google.cloud.spanner_v1.transaction.Transaction.partition_query
+  - google.cloud.spanner_v1.transaction.Transaction.partition_read
+  - google.cloud.spanner_v1.transaction.Transaction.read
+  - google.cloud.spanner_v1.transaction.Transaction.replace
+  - google.cloud.spanner_v1.transaction.Transaction.rollback
+  - google.cloud.spanner_v1.transaction.Transaction.update
+  class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: google.cloud.spanner_v1._helpers._SessionWrapper
+    type: google.cloud.spanner_v1.snapshot._SnapshotBase
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: google.cloud.spanner_v1._helpers._SessionWrapper
+    type: google.cloud.spanner_v1.batch._BatchBase
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: Transaction
+  source:
+    id: Transaction
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 33
+  summary: Implement read-write transaction semantics for a session.
+  syntax:
+    content: Transaction(session)
+    parameters:
+    - description: the session used to perform the commit
+      id: session
+      type:
+      - google.cloud.spanner_v1.session.Session
+  type: class
+  uid: google.cloud.spanner_v1.transaction.Transaction
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.__enter__
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: __enter__()
+  namewithoutparameters: __enter__
+  source:
+    id: __enter__
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 304
+  summary: Begin `with` block.
+  syntax:
+    content: __enter__()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.__enter__
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.__exit__
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: __exit__(exc_type, exc_val, exc_tb)
+  namewithoutparameters: __exit__
+  source:
+    id: __exit__
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 309
+  summary: End `with` block.
+  syntax:
+    content: __exit__(exc_type, exc_val, exc_tb)
+    parameters:
+    - id: exc_type
+      isRequired: true
+    - id: exc_val
+      isRequired: true
+    - id: exc_tb
+      isRequired: true
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.__exit__
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.batch_update
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: batch_update(statements)
+  namewithoutparameters: batch_update
+  source:
+    id: batch_update
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 242
+  summary: Perform a batch of DML statements via an `ExecuteBatchDml` request.
+  syntax:
+    content: batch_update(statements)
+    parameters:
+    - description: 'List of DML statements, with optional params / param types.
+
+        If passed, ''params'' is a dict mapping names to the values
+
+        for parameter replacement.  Keys must match the names used in the
+
+        corresponding DML statement.  If ''params'' is passed, ''param_types''
+
+        must also be passed, as a dict mapping names to the type of
+
+        value passed in ''params''.'
+      id: statements
+      isRequired: true
+      type:
+      - Sequence[Union[ str, Tuple[str, Dict[str, Any], Dict[str, Union[dict, .types.Type]]]]]
+    return:
+      description: 'Status code, plus counts of rows affected by each completed DML
+
+        statement.  Note that if the staus code is not `OK`, the
+
+        statement triggering the error will not have an entry in the
+
+        list, nor will any statements following that one.'
+      type:
+      - Tuple(status, Sequence[int])
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.batch_update
+- class: google.cloud.spanner_v1.transaction.Transaction
+  exceptions:
+  - description: if the transaction is already begun, committed, or rolled back.
+    type: ValueError
+  fullName: google.cloud.spanner_v1.transaction.Transaction.begin
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: begin()
+  namewithoutparameters: begin
+  source:
+    id: begin
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 79
+  summary: Begin a transaction on the database.
+  syntax:
+    content: begin()
+    parameters: []
+    return:
+      description: the ID for the newly-begun transaction.
+      type:
+      - bytes
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.begin
+- class: google.cloud.spanner_v1.transaction.Transaction
+  exceptions:
+  - description: if there are no mutations to commit.
+    type: ValueError
+  fullName: google.cloud.spanner_v1.transaction.Transaction.commit
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: commit()
+  namewithoutparameters: commit
+  source:
+    id: commit
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 122
+  summary: Commit mutations to the database.
+  syntax:
+    content: commit()
+    parameters: []
+    return:
+      description: timestamp of the committed changes.
+      type:
+      - datetime
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.commit
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.committed
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: committed
+  source:
+    id: committed
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: Timestamp at which the transaction was successfully committed.
+  syntax:
+    content: committed = None
+  type: attribute
+  uid: google.cloud.spanner_v1.transaction.Transaction.committed
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.delete
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: delete(table, keyset)
+  namewithoutparameters: delete
+  source:
+    id: delete
+    path: google/cloud/spanner_v1/batch.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/batch.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 108
+  summary: Delete one or more table rows.
+  syntax:
+    content: delete(table, keyset)
+    parameters:
+    - description: Name of the table to be modified.
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: Keys/ranges identifying rows to delete.
+      id: keyset
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.keyset.Keyset
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.delete
+- class: google.cloud.spanner_v1.transaction.Transaction
+  exceptions:
+  - description: 'for reuse of single-use snapshots, or if a transaction ID is
+
+      already pending for multiple-use snapshots.'
+    type: ValueError
+  fullName: google.cloud.spanner_v1.transaction.Transaction.execute_sql
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: execute_sql(sql, params=None, param_types=None, query_mode=None, query_options=None,
+    partition=None, retry=<object object>, timeout=<object object>)
+  namewithoutparameters: execute_sql
+  source:
+    id: execute_sql
+    path: google/cloud/spanner_v1/snapshot.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/snapshot.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 181
+  summary: Perform an `ExecuteStreamingSql` API request.
+  syntax:
+    content: execute_sql(sql, params=None, param_types=None, query_mode=None, query_options=None,
+      partition=None, retry=<object object>, timeout=<object object>)
+    parameters:
+    - description: SQL query statement
+      id: sql
+      isRequired: true
+      type:
+      - str
+    - defaultValue: None
+      description: 'values for parameter replacement.  Keys must match
+
+        the names used in `sql`.'
+      id: params
+      type:
+      - dict, {str -> column value}
+    - defaultValue: None
+      description: '(Optional) maps explicit types for one or more param values;
+
+        required if parameters are passed.'
+      id: param_types
+      type:
+      - dict[str -> Union[dict, .types.Type]]
+    - defaultValue: None
+      description: 'Mode governing return of results / query plan.
+
+        See:
+
+        [QueryMode](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.ExecuteSqlRequest.QueryMode).'
+      id: query_mode
+      type:
+      - google.cloud.spanner_v1.ExecuteSqlRequest.QueryMode
+    - defaultValue: None
+      description: '(Optional) Query optimizer configuration to use for the given
+        query.
+
+        If a dict is provided, it must be of the same form as the protobuf
+
+        message <xref:google.cloud.spanner_v1.QueryOptions>'
+      id: query_options
+    - defaultValue: None
+      description: '(Optional) one of the partition tokens returned
+
+        from <xref:google.cloud.spanner_v1.transaction.Transaction.partition_query>.'
+      id: partition
+      type:
+      - bytes
+    - id: retry
+      isRequired: true
+    - id: timeout
+      isRequired: true
+    return:
+      description: a result set instance which can be used to consume rows.
+      type:
+      - google.cloud.spanner_v1.streamed.StreamedResultSet
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.execute_sql
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.execute_update
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: execute_update(dml, params=None, param_types=None, query_mode=None, query_options=None)
+  namewithoutparameters: execute_update
+  source:
+    id: execute_update
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 178
+  summary: Perform an `ExecuteSql` API request with DML.
+  syntax:
+    content: execute_update(dml, params=None, param_types=None, query_mode=None, query_options=None)
+    parameters:
+    - description: SQL DML statement
+      id: dml
+      isRequired: true
+      type:
+      - str
+    - defaultValue: None
+      description: 'values for parameter replacement.  Keys must match
+
+        the names used in `dml`.'
+      id: params
+      type:
+      - dict, {str -> column value}
+    - defaultValue: None
+      description: '(Optional) maps explicit types for one or more param values;
+
+        required if parameters are passed.'
+      id: param_types
+      type:
+      - dict[str -> Union[dict, .types.Type]]
+    - defaultValue: None
+      description: 'Mode governing return of results / query plan.
+
+        See:
+
+        [QueryMode](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.ExecuteSqlRequest.QueryMode).'
+      id: query_mode
+      type:
+      - google.cloud.spanner_v1.ExecuteSqlRequest.QueryMode
+    - defaultValue: None
+      description: (Optional) Options that are provided for query plan stability.
+      id: query_options
+      type:
+      - google.cloud.spanner_v1.ExecuteSqlRequest.QueryOptions
+      - google.cloud.spanner_v1.transaction.dict
+    return:
+      description: Count of rows affected by the DML statement.
+      type:
+      - int
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.execute_update
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.insert
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: insert(table, columns, values)
+  namewithoutparameters: insert
+  source:
+    id: insert
+    path: google/cloud/spanner_v1/batch.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/batch.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 50
+  summary: Insert one or more new table rows.
+  syntax:
+    content: insert(table, columns, values)
+    parameters:
+    - description: Name of the table to be modified.
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: Name of the table columns to be modified.
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: Values to be modified.
+      id: values
+      isRequired: true
+      type:
+      - list of lists
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.insert
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.insert_or_update
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: insert_or_update(table, columns, values)
+  namewithoutparameters: insert_or_update
+  source:
+    id: insert_or_update
+    path: google/cloud/spanner_v1/batch.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/batch.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 78
+  summary: Insert/update one or more table rows.
+  syntax:
+    content: insert_or_update(table, columns, values)
+    parameters:
+    - description: Name of the table to be modified.
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: Name of the table columns to be modified.
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: Values to be modified.
+      id: values
+      isRequired: true
+      type:
+      - list of lists
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.insert_or_update
+- class: google.cloud.spanner_v1.transaction.Transaction
+  exceptions:
+  - description: 'for single-use snapshots, or if a transaction ID is
+
+      already associtated with the snapshot.'
+    type: ValueError
+  fullName: google.cloud.spanner_v1.transaction.Transaction.partition_query
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: partition_query(sql, params=None, param_types=None, partition_size_bytes=None,
+    max_partitions=None)
+  namewithoutparameters: partition_query
+  source:
+    id: partition_query
+    path: google/cloud/spanner_v1/snapshot.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/snapshot.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 364
+  summary: Perform a `ParitionQuery` API request.
+  syntax:
+    content: partition_query(sql, params=None, param_types=None, partition_size_bytes=None,
+      max_partitions=None)
+    parameters:
+    - description: SQL query statement
+      id: sql
+      isRequired: true
+      type:
+      - str
+    - defaultValue: None
+      description: 'values for parameter replacement.  Keys must match
+
+        the names used in `sql`.'
+      id: params
+      type:
+      - dict, {str -> column value}
+    - defaultValue: None
+      description: '(Optional) maps explicit types for one or more param values;
+
+        required if parameters are passed.'
+      id: param_types
+      type:
+      - dict[str -> Union[dict, .types.Type]]
+    - defaultValue: None
+      description: '(Optional) desired size for each partition generated.  The service
+
+        uses this as a hint, the actual partition size may differ.'
+      id: partition_size_bytes
+      type:
+      - int
+    - defaultValue: None
+      description: '(Optional) desired maximum number of partitions generated. The
+
+        service uses this as a hint, the actual number of partitions may
+
+        differ.'
+      id: max_partitions
+      type:
+      - int
+    return:
+      description: a sequence of partition tokens
+      type:
+      - iterable of bytes
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.partition_query
+- class: google.cloud.spanner_v1.transaction.Transaction
+  exceptions:
+  - description: 'for single-use snapshots, or if a transaction ID is
+
+      already associtated with the snapshot.'
+    type: ValueError
+  fullName: google.cloud.spanner_v1.transaction.Transaction.partition_read
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: partition_read(table, columns, keyset, index='', partition_size_bytes=None,
+    max_partitions=None)
+  namewithoutparameters: partition_read
+  source:
+    id: partition_read
+    path: google/cloud/spanner_v1/snapshot.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/snapshot.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 291
+  summary: Perform a `ParitionRead` API request for rows in a table.
+  syntax:
+    content: partition_read(table, columns, keyset, index='', partition_size_bytes=None,
+      max_partitions=None)
+    parameters:
+    - description: name of the table from which to fetch data
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: names of columns to be retrieved
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: keys / ranges identifying rows to be retrieved
+      id: keyset
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.keyset.KeySet
+    - defaultValue: ''
+      description: '(Optional) name of index to use, rather than the
+
+        table''s primary key'
+      id: index
+      type:
+      - str
+    - defaultValue: None
+      description: '(Optional) desired size for each partition generated.  The service
+
+        uses this as a hint, the actual partition size may differ.'
+      id: partition_size_bytes
+      type:
+      - int
+    - defaultValue: None
+      description: '(Optional) desired maximum number of partitions generated. The
+
+        service uses this as a hint, the actual number of partitions may
+
+        differ.'
+      id: max_partitions
+      type:
+      - int
+    return:
+      description: a sequence of partition tokens
+      type:
+      - iterable of bytes
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.partition_read
+- class: google.cloud.spanner_v1.transaction.Transaction
+  exceptions:
+  - description: 'for reuse of single-use snapshots, or if a transaction ID is
+
+      already pending for multiple-use snapshots.'
+    type: ValueError
+  fullName: google.cloud.spanner_v1.transaction.Transaction.read
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: read(table, columns, keyset, index='', limit=0, partition=None)
+  namewithoutparameters: read
+  source:
+    id: read
+    path: google/cloud/spanner_v1/snapshot.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/snapshot.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 112
+  summary: Perform a `StreamingRead` API request for rows in a table.
+  syntax:
+    content: read(table, columns, keyset, index='', limit=0, partition=None)
+    parameters:
+    - description: name of the table from which to fetch data
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: names of columns to be retrieved
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: keys / ranges identifying rows to be retrieved
+      id: keyset
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.keyset.KeySet
+    - defaultValue: ''
+      description: '(Optional) name of index to use, rather than the
+
+        table''s primary key'
+      id: index
+      type:
+      - str
+    - defaultValue: '0'
+      description: '(Optional) maximum number of rows to return.
+
+        Incompatible with `partition`.'
+      id: limit
+      type:
+      - int
+    - defaultValue: None
+      description: '(Optional) one of the partition tokens returned
+
+        from <xref:google.cloud.spanner_v1.transaction.Transaction.partition_read>.  Incompatible
+        with
+
+        `limit`.'
+      id: partition
+      type:
+      - bytes
+    return:
+      description: a result set instance which can be used to consume rows.
+      type:
+      - google.cloud.spanner_v1.streamed.StreamedResultSet
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.read
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.replace
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: replace(table, columns, values)
+  namewithoutparameters: replace
+  source:
+    id: replace
+    path: google/cloud/spanner_v1/batch.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/batch.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 94
+  summary: Replace one or more table rows.
+  syntax:
+    content: replace(table, columns, values)
+    parameters:
+    - description: Name of the table to be modified.
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: Name of the table columns to be modified.
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: Values to be modified.
+      id: values
+      isRequired: true
+      type:
+      - list of lists
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.replace
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.rollback
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: rollback()
+  namewithoutparameters: rollback
+  source:
+    id: rollback
+    path: google/cloud/spanner_v1/transaction.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/transaction.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 107
+  summary: Roll back a transaction on the database.
+  syntax:
+    content: rollback()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.rollback
+- class: google.cloud.spanner_v1.transaction.Transaction
+  fullName: google.cloud.spanner_v1.transaction.Transaction.update
+  langs:
+  - python
+  module: google.cloud.spanner_v1.transaction
+  name: update(table, columns, values)
+  namewithoutparameters: update
+  source:
+    id: update
+    path: google/cloud/spanner_v1/batch.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/batch.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 64
+  summary: Update one or more existing table rows.
+  syntax:
+    content: update(table, columns, values)
+    parameters:
+    - description: Name of the table to be modified.
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: Name of the table columns to be modified.
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: Values to be modified.
+      id: values
+      isRequired: true
+      type:
+      - list of lists
+  type: method
+  uid: google.cloud.spanner_v1.transaction.Transaction.update
+references:
+- fullName: google.cloud.spanner_v1.transaction.Transaction.__enter__
+  isExternal: false
+  name: __enter__()
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.__enter__
+- fullName: google.cloud.spanner_v1.transaction.Transaction.__exit__
+  isExternal: false
+  name: __exit__(exc_type, exc_val, exc_tb)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.__exit__
+- fullName: google.cloud.spanner_v1.transaction.Transaction.batch_update
+  isExternal: false
+  name: batch_update(statements)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.batch_update
+- fullName: google.cloud.spanner_v1.transaction.Transaction.begin
+  isExternal: false
+  name: begin()
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.begin
+- fullName: google.cloud.spanner_v1.transaction.Transaction.commit
+  isExternal: false
+  name: commit()
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.commit
+- fullName: google.cloud.spanner_v1.transaction.Transaction.committed
+  isExternal: false
+  name: committed
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.committed
+- fullName: google.cloud.spanner_v1.transaction.Transaction.delete
+  isExternal: false
+  name: delete(table, keyset)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.delete
+- fullName: google.cloud.spanner_v1.transaction.Transaction.execute_sql
+  isExternal: false
+  name: execute_sql(sql, params=None, param_types=None, query_mode=None, query_options=None,
+    partition=None, retry=<object object>, timeout=<object object>)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.execute_sql
+- fullName: google.cloud.spanner_v1.transaction.Transaction.execute_update
+  isExternal: false
+  name: execute_update(dml, params=None, param_types=None, query_mode=None, query_options=None)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.execute_update
+- fullName: google.cloud.spanner_v1.transaction.Transaction.insert
+  isExternal: false
+  name: insert(table, columns, values)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.insert
+- fullName: google.cloud.spanner_v1.transaction.Transaction.insert_or_update
+  isExternal: false
+  name: insert_or_update(table, columns, values)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.insert_or_update
+- fullName: google.cloud.spanner_v1.transaction.Transaction.partition_query
+  isExternal: false
+  name: partition_query(sql, params=None, param_types=None, partition_size_bytes=None,
+    max_partitions=None)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.partition_query
+- fullName: google.cloud.spanner_v1.transaction.Transaction.partition_read
+  isExternal: false
+  name: partition_read(table, columns, keyset, index='', partition_size_bytes=None,
+    max_partitions=None)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.partition_read
+- fullName: google.cloud.spanner_v1.transaction.Transaction.read
+  isExternal: false
+  name: read(table, columns, keyset, index='', limit=0, partition=None)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.read
+- fullName: google.cloud.spanner_v1.transaction.Transaction.replace
+  isExternal: false
+  name: replace(table, columns, values)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.replace
+- fullName: google.cloud.spanner_v1.transaction.Transaction.rollback
+  isExternal: false
+  name: rollback()
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.rollback
+- fullName: google.cloud.spanner_v1.transaction.Transaction.update
+  isExternal: false
+  name: update(table, columns, values)
+  parent: google.cloud.spanner_v1.transaction.Transaction
+  uid: google.cloud.spanner_v1.transaction.Transaction.update
+- fullName: Sequence[Union[ str, Tuple[str, Dict[str, Any], Dict[str, Union[dict,
+    .types.Type]]]]]
+  name: Sequence[Union[ str, Tuple[str, Dict[str, Any], Dict[str, Union[dict, Type]]]]]
+  spec.python:
+  - fullName: Sequence
+    name: Sequence
+    uid: Sequence
+  - fullName: '['
+    name: '['
+  - fullName: Union
+    name: Union
+    uid: Union
+  - fullName: '['
+    name: '['
+  - fullName: ' str'
+    name: ' str'
+    uid: ' str'
+  - fullName: ', '
+    name: ', '
+  - fullName: Tuple
+    name: Tuple
+    uid: Tuple
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: Dict
+    name: Dict
+    uid: Dict
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: Any
+    name: Any
+    uid: Any
+  - fullName: ']'
+    name: ']'
+  - fullName: ', '
+    name: ', '
+  - fullName: Dict
+    name: Dict
+    uid: Dict
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: Union
+    name: Union
+    uid: Union
+  - fullName: '['
+    name: '['
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: .types.Type
+    name: Type
+    uid: .types.Type
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  uid: Sequence[Union[ str, Tuple[str, Dict[str, Any], Dict[str, Union[dict, .types.Type]]]]]
+- fullName: Tuple(status, Sequence[int])
+  name: Tuple(status, Sequence[int])
+  spec.python:
+  - fullName: Tuple
+    name: Tuple
+    uid: Tuple
+  - fullName: (
+    name: (
+  - fullName: status
+    name: status
+    uid: status
+  - fullName: ', '
+    name: ', '
+  - fullName: Sequence
+    name: Sequence
+    uid: Sequence
+  - fullName: '['
+    name: '['
+  - fullName: int
+    name: int
+    uid: int
+  - fullName: ']'
+    name: ']'
+  - fullName: )
+    name: )
+  uid: Tuple(status, Sequence[int])
+- fullName: dict, {str -> column value}
+  name: dict, {str -> column value}
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: '{str -> column value}'
+    name: '{str -> column value}'
+    uid: '{str -> column value}'
+  uid: dict, {str -> column value}
+- fullName: dict[str -> Union[dict, .types.Type]]
+  name: dict[str -> Union[dict, Type]]
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: '['
+    name: '['
+  - fullName: str -> Union
+    name: str -> Union
+    uid: str -> Union
+  - fullName: '['
+    name: '['
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: .types.Type
+    name: Type
+    uid: .types.Type
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  uid: dict[str -> Union[dict, .types.Type]]

@@ -1,0 +1,990 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.database.Database.batch
+  - google.cloud.spanner_v1.database.Database.batch_snapshot
+  - google.cloud.spanner_v1.database.Database.create
+  - google.cloud.spanner_v1.database.Database.create_time
+  - google.cloud.spanner_v1.database.Database.ddl_statements
+  - google.cloud.spanner_v1.database.Database.drop
+  - google.cloud.spanner_v1.database.Database.execute_partitioned_dml
+  - google.cloud.spanner_v1.database.Database.exists
+  - google.cloud.spanner_v1.database.Database.from_pb
+  - google.cloud.spanner_v1.database.Database.is_optimized
+  - google.cloud.spanner_v1.database.Database.is_ready
+  - google.cloud.spanner_v1.database.Database.list_database_operations
+  - google.cloud.spanner_v1.database.Database.name
+  - google.cloud.spanner_v1.database.Database.reload
+  - google.cloud.spanner_v1.database.Database.restore
+  - google.cloud.spanner_v1.database.Database.restore_info
+  - google.cloud.spanner_v1.database.Database.run_in_transaction
+  - google.cloud.spanner_v1.database.Database.session
+  - google.cloud.spanner_v1.database.Database.snapshot
+  - google.cloud.spanner_v1.database.Database.spanner_api
+  - google.cloud.spanner_v1.database.Database.state
+  - google.cloud.spanner_v1.database.Database.update_ddl
+  class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: Database
+  source:
+    id: Database
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 73
+  summary: "Representation of a Cloud Spanner Database.\n\nWe can use a <xref:google.cloud.spanner_v1.database.Database>\
+    \ to:\n\n* <xref:google.cloud.spanner_v1.database.Database.create> the database\
+    \ \n\n* <xref:google.cloud.spanner_v1.database.Database.reload> the database \n\
+    \n* <xref:google.cloud.spanner_v1.database.Database.update> the database \n\n\
+    * <xref:google.cloud.spanner_v1.database.Database.drop> the database"
+  syntax:
+    content: Database(database_id, instance, ddl_statements=(), pool=None)
+    parameters:
+    - description: The ID of the database.
+      id: database_id
+      type:
+      - str
+    - description: The instance that owns the database.
+      id: instance
+      type:
+      - google.cloud.spanner_v1.instance.Instance
+    - description: '(Optional) DDL statements, excluding the
+
+        CREATE DATABASE statement.'
+      id: ddl_statements
+      type:
+      - list of string
+    - description: '(Optional) session pool to be used by database.  If not
+
+        passed, the database will construct an instance of
+
+        <xref:google.cloud.spanner_v1.pool.BurstyPool>.'
+      id: pool
+      type:
+      - concrete subclass ofgoogle.cloud.spanner_v1.pool.AbstractSessionPool.
+  type: class
+  uid: google.cloud.spanner_v1.database.Database
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.batch
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: batch()
+  namewithoutparameters: batch
+  source:
+    id: batch
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 463
+  summary: 'Return an object which wraps a batch.
+
+
+    The wrapper *must* be used as a context manager, with the batch
+
+    as the value returned by the wrapper.'
+  syntax:
+    content: batch()
+    parameters: []
+    return:
+      description: new wrapper
+      type:
+      - <xref:google.cloud.spanner_v1.database.BatchCheckout>
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.batch
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.batch_snapshot
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: batch_snapshot(read_timestamp=None, exact_staleness=None)
+  namewithoutparameters: batch_snapshot
+  source:
+    id: batch_snapshot
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 474
+  summary: Return an object which wraps a batch read / query.
+  syntax:
+    content: batch_snapshot(read_timestamp=None, exact_staleness=None)
+    parameters:
+    - defaultValue: None
+      description: Execute all reads at the given timestamp.
+      id: read_timestamp
+      type:
+      - datetime.datetime
+    - defaultValue: None
+      description: 'Execute all reads at a timestamp that is
+
+        `exact_staleness` old.'
+      id: exact_staleness
+      type:
+      - datetime.timedelta
+    return:
+      description: new wrapper
+      type:
+      - <xref:google.cloud.spanner_v1.database.BatchSnapshot>
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.batch_snapshot
+- class: google.cloud.spanner_v1.database.Database
+  exceptions:
+  - description: if the database already exists
+    type: Conflict
+  - description: if the instance owning the database does not exist
+    type: NotFound
+  fullName: google.cloud.spanner_v1.database.Database.create
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: create()
+  namewithoutparameters: create
+  source:
+    id: create
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 253
+  summary: 'Create this database within its instance
+
+
+    Inclues any configured schema assigned to <xref:ddl_statements>.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase)'
+  syntax:
+    content: create()
+    parameters: []
+    return:
+      description: a future used to poll the status of the create request
+      type:
+      - google.api_core.operation.Operation
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.create
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.create_time
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: create_time
+  source:
+    id: create_time
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: Create time of this database.
+  syntax:
+    return:
+      description: 'a datetime object representing the create time of
+
+        this database'
+      type:
+      - datetime.datetime
+  type: attribute
+  uid: google.cloud.spanner_v1.database.Database.create_time
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.ddl_statements
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: ddl_statements
+  source:
+    id: ddl_statements
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: 'DDL Statements used to define database schema.
+
+
+    See
+
+    cloud.google.com/spanner/docs/data-definition-language'
+  syntax:
+    return:
+      description: the statements
+      type:
+      - sequence of string
+  type: attribute
+  uid: google.cloud.spanner_v1.database.Database.ddl_statements
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.drop
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: drop()
+  namewithoutparameters: drop
+  source:
+    id: drop
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 345
+  summary: 'Drop this database.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase)'
+  syntax:
+    content: drop()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.drop
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.execute_partitioned_dml
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: execute_partitioned_dml(dml, params=None, param_types=None, query_options=None)
+  namewithoutparameters: execute_partitioned_dml
+  source:
+    id: execute_partitioned_dml
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 355
+  summary: Execute a partitionable DML statement.
+  syntax:
+    content: execute_partitioned_dml(dml, params=None, param_types=None, query_options=None)
+    parameters:
+    - description: DML statement
+      id: dml
+      isRequired: true
+      type:
+      - str
+    - defaultValue: None
+      description: 'values for parameter replacement.  Keys must match
+
+        the names used in `dml`.'
+      id: params
+      type:
+      - dict, {str -> column value}
+    - defaultValue: None
+      description: '(Optional) maps explicit types for one or more param values;
+
+        required if parameters are passed.'
+      id: param_types
+      type:
+      - dict[str -> Union[dict, .types.Type]]
+    - defaultValue: None
+      description: '(Optional) Query optimizer configuration to use for the given
+        query.
+
+        If a dict is provided, it must be of the same form as the protobuf
+
+        message <xref:google.cloud.spanner_v1.QueryOptions>'
+      id: query_options
+      type:
+      - google.cloud.spanner_v1.ExecuteSqlRequest.QueryOptions
+      - google.cloud.spanner_v1.database.dict
+    return:
+      description: Count of rows affected by the DML statement.
+      type:
+      - int
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.execute_partitioned_dml
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.exists
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: exists()
+  namewithoutparameters: exists
+  source:
+    id: exists
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 280
+  summary: 'Test whether this database exists.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDDL](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDDL)'
+  syntax:
+    content: exists()
+    parameters: []
+    return:
+      description: True if the database exists, else false.
+      type:
+      - bool
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.exists
+- class: google.cloud.spanner_v1.database.Database
+  exceptions:
+  - description: 'if the instance name does not match the expected format
+
+      or if the parsed project ID does not match the project ID
+
+      on the instance''s client, or if the parsed instance ID does
+
+      not match the instance''s ID.'
+    type: ValueError
+  fullName: google.cloud.spanner_v1.database.Database.from_pb
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: from_pb(database_pb, instance, pool=None)
+  namewithoutparameters: from_pb
+  source:
+    id: from_pb
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 117
+  summary: Creates an instance of this class from a protobuf.
+  syntax:
+    content: from_pb(database_pb, instance, pool=None)
+    parameters:
+    - description: A instance protobuf object.
+      id: database_pb
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.Instance
+    - description: The instance that owns the database.
+      id: instance
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.instance.Instance
+    - description: (Optional) session pool to be used by database.
+      id: pool
+      isRequired: true
+      type:
+      - concrete subclass ofgoogle.cloud.spanner_v1.pool.AbstractSessionPool.
+    - defaultValue: None
+      id: pool
+    return:
+      description: The database parsed from the protobuf response.
+      type:
+      - <xref:google.cloud.spanner_v1.database.Database>
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.from_pb
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.is_optimized
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: is_optimized()
+  namewithoutparameters: is_optimized
+  source:
+    id: is_optimized
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 566
+  summary: Test whether this database has finished optimizing.
+  syntax:
+    content: is_optimized()
+    parameters: []
+    return:
+      description: True if the database state is READY, else False.
+      type:
+      - bool
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.is_optimized
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.is_ready
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: is_ready()
+  namewithoutparameters: is_ready
+  source:
+    id: is_ready
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 555
+  summary: Test whether this database is ready for use.
+  syntax:
+    content: is_ready()
+    parameters: []
+    return:
+      description: True if the database state is READY_OPTIMIZING or READY, else False.
+      type:
+      - bool
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.is_ready
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.list_database_operations
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: list_database_operations(filter_='', page_size=None)
+  namewithoutparameters: list_database_operations
+  source:
+    id: list_database_operations
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 574
+  summary: List database operations for the database.
+  syntax:
+    content: list_database_operations(filter_='', page_size=None)
+    parameters:
+    - defaultValue: ''
+      description: Optional. A string specifying a filter for which database operations
+        to list.
+      id: filter
+      type:
+      - str
+    - defaultValue: None
+      description: 'Optional. The maximum number of operations in each page of results
+        from this
+
+        request. Non-positive values are ignored. Defaults to a sensible value set
+
+        by the API.'
+      id: page_size
+      type:
+      - int
+    return:
+      description: 'Iterator of <xref:google.api_core.operation.Operation>
+
+        resources within the current instance.'
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.list_database_operations
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.name
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: name
+  source:
+    id: name
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: "Database name used in requests.\n\n\n> [!NOTE]\n> This property will not\
+    \ change if database_id does not, but the\n>\n> return value is not cached.\n\
+    >\n\nThe database name is of the form\n\n   `\"projects/../instances/../databases/{database_id}\"\
+    `"
+  syntax:
+    return:
+      description: The database name.
+      type:
+      - str
+  type: attribute
+  uid: google.cloud.spanner_v1.database.Database.name
+- class: google.cloud.spanner_v1.database.Database
+  exceptions:
+  - description: if the database does not exist
+    type: NotFound
+  fullName: google.cloud.spanner_v1.database.Database.reload
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: reload()
+  namewithoutparameters: reload
+  source:
+    id: reload
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 298
+  summary: 'Reload this database.
+
+
+    Refresh any configured schema into <xref:google.cloud.spanner_v1.database.Database.ddl_statements>.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDDL](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDDL)'
+  syntax:
+    content: reload()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.reload
+- class: google.cloud.spanner_v1.database.Database
+  exceptions:
+  - description: if the database already exists
+    type: Conflict
+  - description: 'if the instance owning the database does not exist, or
+
+      if the backup being restored from does not exist'
+    type: NotFound
+  - description: if backup is not set
+    type: ValueError
+  fullName: google.cloud.spanner_v1.database.Database.restore
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: restore(source)
+  namewithoutparameters: restore
+  source:
+    id: restore
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 529
+  summary: Restore from a backup to this database.
+  syntax:
+    content: restore(source)
+    parameters:
+    - description: the path of the backup being restored from.
+      id: backup
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.backup.Backup
+    return:
+      description: a future used to poll the status of the create request
+      type:
+      - google.api_core.operation.Operation
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.restore
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.restore_info
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: restore_info
+  source:
+    id: restore_info
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: Restore info for this database.
+  syntax:
+    return:
+      description: an object representing the restore info for this database
+      type:
+      - google.cloud.spanner_v1.database.RestoreInfo
+  type: attribute
+  uid: google.cloud.spanner_v1.database.Database.restore_info
+- class: google.cloud.spanner_v1.database.Database
+  exceptions:
+  - description: reraises any non-ABORT execptions raised by `func`.
+    type: Exception
+  fullName: google.cloud.spanner_v1.database.Database.run_in_transaction
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: run_in_transaction(func, *args, **kw)
+  namewithoutparameters: run_in_transaction
+  source:
+    id: run_in_transaction
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 491
+  summary: Perform a unit of work in a transaction, retrying on abort.
+  syntax:
+    content: run_in_transaction(func, *args, **kw)
+    parameters:
+    - description: 'takes a required positional argument, the transaction,
+
+        and additional positional / keyword arguments as supplied
+
+        by the caller.'
+      id: func
+      isRequired: true
+      type:
+      - callable
+    - description: additional positional arguments to be passed to `func`.
+      id: args
+      isRequired: true
+      type:
+      - tuple
+    - description: '(Optional) keyword arguments to be passed to `func`.
+
+        If passed, "timeout_secs" will be removed and used to
+
+        override the default retry timeout which defines maximum timestamp
+
+        to continue retrying the transaction.'
+      id: kw
+      isRequired: true
+      type:
+      - dict
+    return:
+      description: The return value of `func`.
+      type:
+      - Any
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.run_in_transaction
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.session
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: session(labels=None)
+  namewithoutparameters: session
+  source:
+    id: session
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 433
+  summary: Factory to create a session for this database.
+  syntax:
+    content: session(labels=None)
+    parameters:
+    - defaultValue: None
+      description: (Optional) user-assigned labels for the session.
+      id: labels
+      type:
+      - dict (str -> str)
+      - None
+    return:
+      description: a session bound to this database.
+      type:
+      - google.cloud.spanner_v1.session.Session
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.session
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.snapshot
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: snapshot(**kw)
+  namewithoutparameters: snapshot
+  source:
+    id: snapshot
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 444
+  summary: 'Return an object which wraps a snapshot.
+
+
+    The wrapper *must* be used as a context manager, with the snapshot
+
+    as the value returned by the wrapper.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.TransactionOptions.ReadOnly](https://cloud.google.com/spanner/reference/rpc/google.spanner.v1#google.spanner.v1.TransactionOptions.ReadOnly)'
+  syntax:
+    content: snapshot(**kw)
+    parameters:
+    - description: 'Passed through to
+
+        <xref:google.cloud.spanner_v1.snapshot.Snapshot> constructor.'
+      id: kw
+      isRequired: true
+      type:
+      - dict
+    return:
+      description: new wrapper
+      type:
+      - google.cloud.spanner_v1.database.SnapshotCheckout
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.snapshot
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.spanner_api
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: spanner_api
+  source:
+    id: spanner_api
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: Helper for session-related API calls.
+  syntax: {}
+  type: attribute
+  uid: google.cloud.spanner_v1.database.Database.spanner_api
+- class: google.cloud.spanner_v1.database.Database
+  fullName: google.cloud.spanner_v1.database.Database.state
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: state
+  source:
+    id: state
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: State of this database.
+  syntax:
+    return:
+      description: an enum describing the state of the database
+      type:
+      - google.cloud.spanner_admin_database_v1.Database.State
+  type: attribute
+  uid: google.cloud.spanner_v1.database.Database.state
+- class: google.cloud.spanner_v1.database.Database
+  exceptions:
+  - description: if the database does not exist
+    type: NotFound
+  fullName: google.cloud.spanner_v1.database.Database.update_ddl
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: update_ddl(ddl_statements, operation_id='')
+  namewithoutparameters: update_ddl
+  source:
+    id: update_ddl
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 317
+  summary: 'Update DDL for this database.
+
+
+    Apply any configured schema from <xref:google.cloud.spanner_v1.database.Database.ddl_statements>.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabase](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabase)'
+  syntax:
+    content: update_ddl(ddl_statements, operation_id='')
+    parameters:
+    - description: a list of DDL statements to use on this database
+      id: ddl_statements
+      isRequired: true
+      type:
+      - Sequence[str]
+    - defaultValue: ''
+      description: (optional) a string ID for the long-running operation
+      id: operation_id
+      type:
+      - str
+    return:
+      description: an operation instance
+      type:
+      - google.api_core.operation.Operation
+  type: method
+  uid: google.cloud.spanner_v1.database.Database.update_ddl
+references:
+- fullName: google.cloud.spanner_v1.database.Database.batch
+  isExternal: false
+  name: batch()
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.batch
+- fullName: google.cloud.spanner_v1.database.Database.batch_snapshot
+  isExternal: false
+  name: batch_snapshot(read_timestamp=None, exact_staleness=None)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.batch_snapshot
+- fullName: google.cloud.spanner_v1.database.Database.create
+  isExternal: false
+  name: create()
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.create
+- fullName: google.cloud.spanner_v1.database.Database.create_time
+  isExternal: false
+  name: create_time
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.create_time
+- fullName: google.cloud.spanner_v1.database.Database.ddl_statements
+  isExternal: false
+  name: ddl_statements
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.ddl_statements
+- fullName: google.cloud.spanner_v1.database.Database.drop
+  isExternal: false
+  name: drop()
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.drop
+- fullName: google.cloud.spanner_v1.database.Database.execute_partitioned_dml
+  isExternal: false
+  name: execute_partitioned_dml(dml, params=None, param_types=None, query_options=None)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.execute_partitioned_dml
+- fullName: google.cloud.spanner_v1.database.Database.exists
+  isExternal: false
+  name: exists()
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.exists
+- fullName: google.cloud.spanner_v1.database.Database.from_pb
+  isExternal: false
+  name: from_pb(database_pb, instance, pool=None)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.from_pb
+- fullName: google.cloud.spanner_v1.database.Database.is_optimized
+  isExternal: false
+  name: is_optimized()
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.is_optimized
+- fullName: google.cloud.spanner_v1.database.Database.is_ready
+  isExternal: false
+  name: is_ready()
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.is_ready
+- fullName: google.cloud.spanner_v1.database.Database.list_database_operations
+  isExternal: false
+  name: list_database_operations(filter_='', page_size=None)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.list_database_operations
+- fullName: google.cloud.spanner_v1.database.Database.name
+  isExternal: false
+  name: name
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.name
+- fullName: google.cloud.spanner_v1.database.Database.reload
+  isExternal: false
+  name: reload()
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.reload
+- fullName: google.cloud.spanner_v1.database.Database.restore
+  isExternal: false
+  name: restore(source)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.restore
+- fullName: google.cloud.spanner_v1.database.Database.restore_info
+  isExternal: false
+  name: restore_info
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.restore_info
+- fullName: google.cloud.spanner_v1.database.Database.run_in_transaction
+  isExternal: false
+  name: run_in_transaction(func, *args, **kw)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.run_in_transaction
+- fullName: google.cloud.spanner_v1.database.Database.session
+  isExternal: false
+  name: session(labels=None)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.session
+- fullName: google.cloud.spanner_v1.database.Database.snapshot
+  isExternal: false
+  name: snapshot(**kw)
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.snapshot
+- fullName: google.cloud.spanner_v1.database.Database.spanner_api
+  isExternal: false
+  name: spanner_api
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.spanner_api
+- fullName: google.cloud.spanner_v1.database.Database.state
+  isExternal: false
+  name: state
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.state
+- fullName: google.cloud.spanner_v1.database.Database.update_ddl
+  isExternal: false
+  name: update_ddl(ddl_statements, operation_id='')
+  parent: google.cloud.spanner_v1.database.Database
+  uid: google.cloud.spanner_v1.database.Database.update_ddl
+- fullName: dict, {str -> column value}
+  name: dict, {str -> column value}
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: '{str -> column value}'
+    name: '{str -> column value}'
+    uid: '{str -> column value}'
+  uid: dict, {str -> column value}
+- fullName: dict[str -> Union[dict, .types.Type]]
+  name: dict[str -> Union[dict, Type]]
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: '['
+    name: '['
+  - fullName: str -> Union
+    name: str -> Union
+    uid: str -> Union
+  - fullName: '['
+    name: '['
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: .types.Type
+    name: Type
+    uid: .types.Type
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  uid: dict[str -> Union[dict, .types.Type]]
+- fullName: dict (str -> str)
+  name: dict (str -> str)
+  spec.python:
+  - fullName: 'dict '
+    name: 'dict '
+    uid: 'dict '
+  - fullName: (
+    name: (
+  - fullName: str -> str
+    name: str -> str
+    uid: str -> str
+  - fullName: )
+    name: )
+  uid: dict (str -> str)
+- fullName: Sequence[str]
+  name: Sequence[str]
+  spec.python:
+  - fullName: Sequence
+    name: Sequence
+    uid: Sequence
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  uid: Sequence[str]

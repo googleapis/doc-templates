@@ -1,0 +1,243 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.pool.PingingPool.bind
+  - google.cloud.spanner_v1.pool.PingingPool.clear
+  - google.cloud.spanner_v1.pool.PingingPool.get
+  - google.cloud.spanner_v1.pool.PingingPool.ping
+  - google.cloud.spanner_v1.pool.PingingPool.put
+  class: google.cloud.spanner_v1.pool.PingingPool
+  fullName: google.cloud.spanner_v1.pool.PingingPool
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: google.cloud.spanner_v1.pool.AbstractSessionPool
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: PingingPool
+  source:
+    id: PingingPool
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 311
+  summary: "Concrete session pool implementation:\n\n* Pre-allocates / creates a fixed\
+    \ number of sessions. \n\n* Sessions are used in \"round-robin\" order (LRU first).\
+    \ \n\n* \"Pings\" existing sessions in the background after a specified interval\
+    \ via an API call (`session.ping()`). \n\n* Blocks, with a timeout, when <xref:google.cloud.spanner_v1.pool.PingingPool.get>\
+    \ is called on an empty pool. Raises after timing out. \n\n* Raises when <xref:google.cloud.spanner_v1.pool.PingingPool.put>\
+    \ is called on a full pool.  That error is never expected in normal practice,\
+    \ as users should be calling <xref:google.cloud.spanner_v1.pool.PingingPool.get>\
+    \ followed by <xref:google.cloud.spanner_v1.pool.PingingPool.put> whenever in\
+    \ need of a session. \n\nThe application is responsible for calling <xref:google.cloud.spanner_v1.pool.PingingPool.ping>\
+    \ at appropriate\ntimes, e.g. from a background thread."
+  syntax:
+    content: PingingPool(size=10, default_timeout=10, ping_interval=3000, labels=None)
+    parameters:
+    - description: fixed pool size
+      id: size
+      type:
+      - int
+    - description: 'default timeout, in seconds, to wait for
+
+        a returned session.'
+      id: default_timeout
+      type:
+      - int
+    - description: interval at which to ping sessions.
+      id: ping_interval
+      type:
+      - int
+    - description: '(Optional) user-assigned labels for sessions created
+
+        by the pool.'
+      id: labels
+      type:
+      - dict (str -> str)
+      - None
+  type: class
+  uid: google.cloud.spanner_v1.pool.PingingPool
+- class: google.cloud.spanner_v1.pool.PingingPool
+  fullName: google.cloud.spanner_v1.pool.PingingPool.bind
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: bind(database)
+  namewithoutparameters: bind
+  source:
+    id: bind
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 353
+  summary: Associate the pool with a database.
+  syntax:
+    content: bind(database)
+    parameters:
+    - description: 'database used by the pool:  used to create sessions
+
+        when needed.'
+      id: database
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.database.Database
+  type: method
+  uid: google.cloud.spanner_v1.pool.PingingPool.bind
+- class: google.cloud.spanner_v1.pool.PingingPool
+  fullName: google.cloud.spanner_v1.pool.PingingPool.clear
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: clear()
+  namewithoutparameters: clear
+  source:
+    id: clear
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 415
+  summary: Delete all sessions in the pool.
+  syntax:
+    content: clear()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.pool.PingingPool.clear
+- class: google.cloud.spanner_v1.pool.PingingPool
+  exceptions:
+  - type: six.moves.queue.Empty
+  fullName: google.cloud.spanner_v1.pool.PingingPool.get
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: get(timeout=None)
+  namewithoutparameters: get
+  source:
+    id: get
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 377
+  summary: Check a session out from the pool.
+  syntax:
+    content: get(timeout=None)
+    parameters:
+    - defaultValue: None
+      description: seconds to block waiting for an available session
+      id: timeout
+      type:
+      - int
+    return:
+      description: 'an existing session from the pool, or a newly-created
+
+        session.'
+      type:
+      - <xref:google.cloud.spanner_v1.session.Session>
+  type: method
+  uid: google.cloud.spanner_v1.pool.PingingPool.get
+- class: google.cloud.spanner_v1.pool.PingingPool
+  fullName: google.cloud.spanner_v1.pool.PingingPool.ping
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: ping()
+  namewithoutparameters: ping
+  source:
+    id: ping
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 425
+  summary: 'Refresh maybe-expired sessions in the pool.
+
+
+    This method is designed to be called from a background thread,
+
+    or during the "idle" phase of an event loop.'
+  syntax:
+    content: ping()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.pool.PingingPool.ping
+- class: google.cloud.spanner_v1.pool.PingingPool
+  exceptions:
+  - type: six.moves.queue.Full
+  fullName: google.cloud.spanner_v1.pool.PingingPool.put
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: put(session)
+  namewithoutparameters: put
+  source:
+    id: put
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 403
+  summary: 'Return a session to the pool.
+
+
+    Never blocks:  if the pool is full, raises.'
+  syntax:
+    content: put(session)
+    parameters:
+    - description: the session being returned.
+      id: session
+      isRequired: true
+      type:
+      - <xref:google.cloud.spanner_v1.session.Session>
+  type: method
+  uid: google.cloud.spanner_v1.pool.PingingPool.put
+references:
+- fullName: google.cloud.spanner_v1.pool.PingingPool.bind
+  isExternal: false
+  name: bind(database)
+  parent: google.cloud.spanner_v1.pool.PingingPool
+  uid: google.cloud.spanner_v1.pool.PingingPool.bind
+- fullName: google.cloud.spanner_v1.pool.PingingPool.clear
+  isExternal: false
+  name: clear()
+  parent: google.cloud.spanner_v1.pool.PingingPool
+  uid: google.cloud.spanner_v1.pool.PingingPool.clear
+- fullName: google.cloud.spanner_v1.pool.PingingPool.get
+  isExternal: false
+  name: get(timeout=None)
+  parent: google.cloud.spanner_v1.pool.PingingPool
+  uid: google.cloud.spanner_v1.pool.PingingPool.get
+- fullName: google.cloud.spanner_v1.pool.PingingPool.ping
+  isExternal: false
+  name: ping()
+  parent: google.cloud.spanner_v1.pool.PingingPool
+  uid: google.cloud.spanner_v1.pool.PingingPool.ping
+- fullName: google.cloud.spanner_v1.pool.PingingPool.put
+  isExternal: false
+  name: put(session)
+  parent: google.cloud.spanner_v1.pool.PingingPool
+  uid: google.cloud.spanner_v1.pool.PingingPool.put
+- fullName: dict (str -> str)
+  name: dict (str -> str)
+  spec.python:
+  - fullName: 'dict '
+    name: 'dict '
+    uid: 'dict '
+  - fullName: (
+    name: (
+  - fullName: str -> str
+    name: str -> str
+    uid: str -> str
+  - fullName: )
+    name: )
+  uid: dict (str -> str)

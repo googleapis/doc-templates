@@ -1,0 +1,557 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.database.BatchSnapshot.close
+  - google.cloud.spanner_v1.database.BatchSnapshot.execute_sql
+  - google.cloud.spanner_v1.database.BatchSnapshot.from_dict
+  - google.cloud.spanner_v1.database.BatchSnapshot.generate_query_batches
+  - google.cloud.spanner_v1.database.BatchSnapshot.generate_read_batches
+  - google.cloud.spanner_v1.database.BatchSnapshot.process
+  - google.cloud.spanner_v1.database.BatchSnapshot.process_query_batch
+  - google.cloud.spanner_v1.database.BatchSnapshot.process_read_batch
+  - google.cloud.spanner_v1.database.BatchSnapshot.read
+  - google.cloud.spanner_v1.database.BatchSnapshot.to_dict
+  class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: BatchSnapshot
+  source:
+    id: BatchSnapshot
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 665
+  summary: Wrapper for generating and processing read / query batches.
+  syntax:
+    content: BatchSnapshot(database, read_timestamp=None, exact_staleness=None)
+    parameters:
+    - description: database to use
+      id: database
+      type:
+      - google.cloud.spanner_v1.database.Database
+    - description: Execute all reads at the given timestamp.
+      id: read_timestamp
+      type:
+      - datetime.datetime
+    - description: 'Execute all reads at a timestamp that is
+
+        `exact_staleness` old.'
+      id: exact_staleness
+      type:
+      - datetime.timedelta
+  type: class
+  uid: google.cloud.spanner_v1.database.BatchSnapshot
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.close
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: close()
+  namewithoutparameters: close
+  source:
+    id: close
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 948
+  summary: 'Clean up underlying session.
+
+
+
+    > [!NOTE]
+
+    > If the transaction has been shared across multiple machines,
+
+    >
+
+    > calling this on any machine would invalidate the transaction
+
+    >
+
+    > everywhere. Ideally this would be called when data has been read
+
+    >
+
+    > from all the partitions.
+
+    >'
+  syntax:
+    content: close()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.close
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.execute_sql
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: execute_sql(*args, **kw)
+  namewithoutparameters: execute_sql
+  source:
+    id: execute_sql
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 751
+  summary: 'Convenience method:  perform query operation via snapshot.
+
+
+    See <xref:google.cloud.spanner_v1.snapshot.Snapshot.execute_sql>.'
+  syntax:
+    content: execute_sql(*args, **kw)
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.execute_sql
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.from_dict
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: from_dict(database, mapping)
+  namewithoutparameters: from_dict
+  source:
+    id: from_dict
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 686
+  summary: Reconstruct an instance from a mapping.
+  syntax:
+    content: from_dict(database, mapping)
+    parameters:
+    - description: database to use
+      id: database
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.database.Database
+    - description: serialized state of the instance
+      id: mapping
+      isRequired: true
+      type:
+      - mapping
+    - id: mapping
+      isRequired: true
+    return:
+      type:
+      - <xref:google.cloud.spanner_v1.database.BatchSnapshot>
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.from_dict
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.generate_query_batches
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: generate_query_batches(sql, params=None, param_types=None, partition_size_bytes=None,
+    max_partitions=None, query_options=None)
+  namewithoutparameters: generate_query_batches
+  source:
+    id: generate_query_batches
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 836
+  summary: 'Start a partitioned query operation.
+
+
+    Uses the `PartitionQuery` API request to start a partitioned
+
+    query operation.  Returns a list of batch information needed to
+
+    peform the actual queries.'
+  syntax:
+    content: generate_query_batches(sql, params=None, param_types=None, partition_size_bytes=None,
+      max_partitions=None, query_options=None)
+    parameters:
+    - description: SQL query statement
+      id: sql
+      isRequired: true
+      type:
+      - str
+    - defaultValue: None
+      description: 'values for parameter replacement.  Keys must match
+
+        the names used in `sql`.'
+      id: params
+      type:
+      - dict, {str -> column value}
+    - defaultValue: None
+      description: '(Optional) maps explicit types for one or more param values;
+
+        required if parameters are passed.'
+      id: param_types
+      type:
+      - dict[str -> Union[dict, .types.Type]]
+    - defaultValue: None
+      description: '(Optional) desired size for each partition generated.  The service
+
+        uses this as a hint, the actual partition size may differ.'
+      id: partition_size_bytes
+      type:
+      - int
+    - defaultValue: None
+      description: '(Optional) desired size for each partition generated.  The service
+
+        uses this as a hint, the actual partition size may differ.'
+      id: partition_size_bytes
+      type:
+      - int
+    - defaultValue: None
+      description: '(Optional) desired maximum number of partitions generated. The
+
+        service uses this as a hint, the actual number of partitions may
+
+        differ.'
+      id: max_partitions
+      type:
+      - int
+    - description: '(Optional) Query optimizer configuration to use for the given
+        query.
+
+        If a dict is provided, it must be of the same form as the protobuf
+
+        message <xref:google.cloud.spanner_v1.QueryOptions>'
+      id: query_options
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.ExecuteSqlRequest.QueryOptions
+      - google.cloud.spanner_v1.database.dict
+    return:
+      description: 'mappings of information used peform actual partitioned reads via
+
+        <xref:google.cloud.spanner_v1.database.BatchSnapshot.process_read_batch>.'
+      type:
+      - iterable of dict
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.generate_query_batches
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.generate_read_batches
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: generate_read_batches(table, columns, keyset, index='', partition_size_bytes=None,
+    max_partitions=None)
+  namewithoutparameters: generate_read_batches
+  source:
+    id: generate_read_batches
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 758
+  summary: 'Start a partitioned batch read operation.
+
+
+    Uses the `PartitionRead` API request to initiate the partitioned
+
+    read.  Returns a list of batch information needed to perform the
+
+    actual reads.'
+  syntax:
+    content: generate_read_batches(table, columns, keyset, index='', partition_size_bytes=None,
+      max_partitions=None)
+    parameters:
+    - description: name of the table from which to fetch data
+      id: table
+      isRequired: true
+      type:
+      - str
+    - description: names of columns to be retrieved
+      id: columns
+      isRequired: true
+      type:
+      - list of str
+    - description: keys / ranges identifying rows to be retrieved
+      id: keyset
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.keyset.KeySet
+    - defaultValue: ''
+      description: '(Optional) name of index to use, rather than the
+
+        table''s primary key'
+      id: index
+      type:
+      - str
+    - defaultValue: None
+      description: '(Optional) desired size for each partition generated.  The service
+
+        uses this as a hint, the actual partition size may differ.'
+      id: partition_size_bytes
+      type:
+      - int
+    - defaultValue: None
+      description: '(Optional) desired maximum number of partitions generated. The
+
+        service uses this as a hint, the actual number of partitions may
+
+        differ.'
+      id: max_partitions
+      type:
+      - int
+    return:
+      description: 'mappings of information used peform actual partitioned reads via
+
+        <xref:google.cloud.spanner_v1.database.BatchSnapshot.process_read_batch>.'
+      type:
+      - iterable of dict
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.generate_read_batches
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  exceptions:
+  - description: if batch does not contain either 'read' or 'query'
+    type: ValueError
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.process
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: process(batch)
+  namewithoutparameters: process
+  source:
+    id: process
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 930
+  summary: Process a single, partitioned query or read.
+  syntax:
+    content: process(batch)
+    parameters:
+    - description: 'one of the mappings returned from an earlier call to
+
+        <xref:google.cloud.spanner_v1.database.BatchSnapshot.generate_query_batches>.'
+      id: batch
+      isRequired: true
+      type:
+      - mapping
+    return:
+      description: a result set instance which can be used to consume rows.
+      type:
+      - google.cloud.spanner_v1.streamed.StreamedResultSet
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.process
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.process_query_batch
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: process_query_batch(batch)
+  namewithoutparameters: process_query_batch
+  source:
+    id: process_query_batch
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 915
+  summary: Process a single, partitioned query.
+  syntax:
+    content: process_query_batch(batch)
+    parameters:
+    - description: 'one of the mappings returned from an earlier call to
+
+        <xref:google.cloud.spanner_v1.database.BatchSnapshot.generate_query_batches>.'
+      id: batch
+      isRequired: true
+      type:
+      - mapping
+    return:
+      description: a result set instance which can be used to consume rows.
+      type:
+      - google.cloud.spanner_v1.streamed.StreamedResultSet
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.process_query_batch
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.process_read_batch
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: process_read_batch(batch)
+  namewithoutparameters: process_read_batch
+  source:
+    id: process_read_batch
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 820
+  summary: Process a single, partitioned read.
+  syntax:
+    content: process_read_batch(batch)
+    parameters:
+    - description: 'one of the mappings returned from an earlier call to
+
+        <xref:google.cloud.spanner_v1.database.BatchSnapshot.generate_read_batches>.'
+      id: batch
+      isRequired: true
+      type:
+      - mapping
+    return:
+      description: a result set instance which can be used to consume rows.
+      type:
+      - google.cloud.spanner_v1.streamed.StreamedResultSet
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.process_read_batch
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.read
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: read(*args, **kw)
+  namewithoutparameters: read
+  source:
+    id: read
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 744
+  summary: 'Convenience method:  perform read operation via snapshot.
+
+
+    See <xref:google.cloud.spanner_v1.snapshot.Snapshot.read>.'
+  syntax:
+    content: read(*args, **kw)
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.read
+- class: google.cloud.spanner_v1.database.BatchSnapshot
+  fullName: google.cloud.spanner_v1.database.BatchSnapshot.to_dict
+  langs:
+  - python
+  module: google.cloud.spanner_v1.database
+  name: to_dict()
+  namewithoutparameters: to_dict
+  source:
+    id: to_dict
+    path: google/cloud/spanner_v1/database.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/database.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 705
+  summary: 'Return state as a dictionary.
+
+
+    Result can be used to serialize the instance and reconstitute
+
+    it later using <xref:google.cloud.spanner_v1.database.BatchSnapshot.from_dict>.'
+  syntax:
+    content: to_dict()
+    parameters: []
+    return:
+      type:
+      - dict
+  type: method
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.to_dict
+references:
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.close
+  isExternal: false
+  name: close()
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.close
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.execute_sql
+  isExternal: false
+  name: execute_sql(*args, **kw)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.execute_sql
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.from_dict
+  isExternal: false
+  name: from_dict(database, mapping)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.from_dict
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.generate_query_batches
+  isExternal: false
+  name: generate_query_batches(sql, params=None, param_types=None, partition_size_bytes=None,
+    max_partitions=None, query_options=None)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.generate_query_batches
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.generate_read_batches
+  isExternal: false
+  name: generate_read_batches(table, columns, keyset, index='', partition_size_bytes=None,
+    max_partitions=None)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.generate_read_batches
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.process
+  isExternal: false
+  name: process(batch)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.process
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.process_query_batch
+  isExternal: false
+  name: process_query_batch(batch)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.process_query_batch
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.process_read_batch
+  isExternal: false
+  name: process_read_batch(batch)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.process_read_batch
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.read
+  isExternal: false
+  name: read(*args, **kw)
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.read
+- fullName: google.cloud.spanner_v1.database.BatchSnapshot.to_dict
+  isExternal: false
+  name: to_dict()
+  parent: google.cloud.spanner_v1.database.BatchSnapshot
+  uid: google.cloud.spanner_v1.database.BatchSnapshot.to_dict
+- fullName: dict, {str -> column value}
+  name: dict, {str -> column value}
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: '{str -> column value}'
+    name: '{str -> column value}'
+    uid: '{str -> column value}'
+  uid: dict, {str -> column value}
+- fullName: dict[str -> Union[dict, .types.Type]]
+  name: dict[str -> Union[dict, Type]]
+  spec.python:
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: '['
+    name: '['
+  - fullName: str -> Union
+    name: str -> Union
+    uid: str -> Union
+  - fullName: '['
+    name: '['
+  - fullName: dict
+    name: dict
+    uid: dict
+  - fullName: ', '
+    name: ', '
+  - fullName: .types.Type
+    name: Type
+    uid: .types.Type
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  uid: dict[str -> Union[dict, .types.Type]]

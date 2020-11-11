@@ -1,0 +1,264 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.pool.AbstractSessionPool.bind
+  - google.cloud.spanner_v1.pool.AbstractSessionPool.clear
+  - google.cloud.spanner_v1.pool.AbstractSessionPool.get
+  - google.cloud.spanner_v1.pool.AbstractSessionPool.labels
+  - google.cloud.spanner_v1.pool.AbstractSessionPool.put
+  - google.cloud.spanner_v1.pool.AbstractSessionPool.session
+  class: google.cloud.spanner_v1.pool.AbstractSessionPool
+  fullName: google.cloud.spanner_v1.pool.AbstractSessionPool
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: AbstractSessionPool
+  source:
+    id: AbstractSessionPool
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 28
+  summary: Specifies required API for concrete session pool implementations.
+  syntax:
+    content: AbstractSessionPool(labels=None)
+    parameters:
+    - description: '(Optional) user-assigned labels for sessions created
+
+        by the pool.'
+      id: labels
+      type:
+      - dict (str -> str)
+      - None
+  type: class
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool
+- class: google.cloud.spanner_v1.pool.AbstractSessionPool
+  exceptions:
+  - description: abstract method
+    type: NotImplementedError
+  fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.bind
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: bind(database)
+  namewithoutparameters: bind
+  source:
+    id: bind
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 52
+  summary: 'Associate the pool with a database.
+
+
+    Concrete implementations of this method may pre-fill the pool
+
+    using the database.'
+  syntax:
+    content: bind(database)
+    parameters:
+    - id: database
+      isRequired: true
+  type: method
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.bind
+- class: google.cloud.spanner_v1.pool.AbstractSessionPool
+  exceptions:
+  - description: abstract method
+    type: NotImplementedError
+  fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.clear
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: clear()
+  namewithoutparameters: clear
+  source:
+    id: clear
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 91
+  summary: 'Delete all sessions in the pool.
+
+
+    Concrete implementations of this method are allowed to raise an
+
+    error to signal that the pool is full, or to block until it is
+
+    not full.'
+  syntax:
+    content: clear()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.clear
+- class: google.cloud.spanner_v1.pool.AbstractSessionPool
+  exceptions:
+  - description: abstract method
+    type: NotImplementedError
+  fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.get
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: get()
+  namewithoutparameters: get
+  source:
+    id: get
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 66
+  summary: 'Check a session out from the pool.
+
+
+    Concrete implementations of this method are allowed to raise an
+
+    error to signal that the pool is exhausted, or to block until a
+
+    session is available.'
+  syntax:
+    content: get()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.get
+- class: google.cloud.spanner_v1.pool.AbstractSessionPool
+  fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.labels
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: labels
+  source:
+    id: labels
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: User-assigned labels for sesions created by the pool.
+  syntax:
+    return:
+      description: labels assigned by the user
+      type:
+      - dict (str -> str)
+  type: attribute
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.labels
+- class: google.cloud.spanner_v1.pool.AbstractSessionPool
+  exceptions:
+  - description: abstract method
+    type: NotImplementedError
+  fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.put
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: put(session)
+  namewithoutparameters: put
+  source:
+    id: put
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 77
+  summary: 'Return a session to the pool.
+
+
+    Concrete implementations of this method are allowed to raise an
+
+    error to signal that the pool is full, or to block until it is
+
+    not full.'
+  syntax:
+    content: put(session)
+    parameters:
+    - id: session
+      isRequired: true
+  type: method
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.put
+- class: google.cloud.spanner_v1.pool.AbstractSessionPool
+  fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.session
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: session(**kwargs)
+  namewithoutparameters: session
+  source:
+    id: session
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 112
+  summary: Check out a session from the pool.
+  syntax:
+    content: session(**kwargs)
+    parameters:
+    - description: '(optional) keyword arguments, passed through to
+
+        the returned checkout.'
+      id: kwargs
+      isRequired: true
+    return:
+      description: 'a checkout instance, to be used as a context manager for
+
+        accessing the session and returning it to the pool.'
+      type:
+      - google.cloud.spanner_v1.session.SessionCheckout
+  type: method
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.session
+references:
+- fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.bind
+  isExternal: false
+  name: bind(database)
+  parent: google.cloud.spanner_v1.pool.AbstractSessionPool
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.bind
+- fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.clear
+  isExternal: false
+  name: clear()
+  parent: google.cloud.spanner_v1.pool.AbstractSessionPool
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.clear
+- fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.get
+  isExternal: false
+  name: get()
+  parent: google.cloud.spanner_v1.pool.AbstractSessionPool
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.get
+- fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.labels
+  isExternal: false
+  name: labels
+  parent: google.cloud.spanner_v1.pool.AbstractSessionPool
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.labels
+- fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.put
+  isExternal: false
+  name: put(session)
+  parent: google.cloud.spanner_v1.pool.AbstractSessionPool
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.put
+- fullName: google.cloud.spanner_v1.pool.AbstractSessionPool.session
+  isExternal: false
+  name: session(**kwargs)
+  parent: google.cloud.spanner_v1.pool.AbstractSessionPool
+  uid: google.cloud.spanner_v1.pool.AbstractSessionPool.session
+- fullName: dict (str -> str)
+  name: dict (str -> str)
+  spec.python:
+  - fullName: 'dict '
+    name: 'dict '
+    uid: 'dict '
+  - fullName: (
+    name: (
+  - fullName: str -> str
+    name: str -> str
+    uid: str -> str
+  - fullName: )
+    name: )
+  uid: dict (str -> str)

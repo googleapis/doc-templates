@@ -1,0 +1,1883 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_billing_account_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_folder_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_location_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_organization_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_project_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.create_instance
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.delete_instance
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_file
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_json
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_iam_policy
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance_config
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_config_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instance_configs
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instances
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_billing_account_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_folder_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_location_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_organization_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_project_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_config_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.set_iam_policy
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.test_iam_permissions
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.transport
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.update_instance
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: InstanceAdminAsyncClient
+  source:
+    id: InstanceAdminAsyncClient
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 44
+  summary: 'Cloud Spanner Instance Admin API
+
+    The Cloud Spanner Instance Admin API can be used to create,
+
+    delete, modify and list instances. Instances are dedicated Cloud
+
+    Spanner serving and storage resources to be used by Cloud
+
+    Spanner databases.
+
+    Each instance has a "configuration", which dictates where the
+
+    serving resources for the Cloud Spanner instance are located
+
+    (e.g., US-central, Europe). Configurations are created by Google
+
+    based on resource availability.
+
+
+    Cloud Spanner billing is based on the instances that exist and
+
+    their sizes. After an instance exists, there are no additional
+
+    per-database or per-operation charges for use of the instance
+
+    (though there may be additional network bandwidth charges).
+
+    Instances offer isolation: problems with databases in one
+
+    instance will not affect other instances. However, within an
+
+    instance databases can affect each other. For example, if one
+
+    database in an instance receives a lot of requests and consumes
+
+    most of the instance resources, fewer resources are available
+
+    for other databases in that instance, and their performance may
+
+    suffer.
+
+
+    Instantiate the instance admin client.'
+  syntax:
+    parameters: &id001
+    - description: 'The
+
+        authorization credentials to attach to requests. These
+
+        credentials identify the application to the service; if none
+
+        are specified, the client will attempt to ascertain the
+
+        credentials from the environment.'
+      id: credentials
+      type:
+      - Optional[google.auth.credentials.Credentials]
+    - description: 'The
+
+        transport to use. If set to None, a transport is chosen
+
+        automatically.'
+      id: transport
+      type:
+      - Union[str, .InstanceAdminTransport]
+    - description: 'Custom options for the client. It
+
+        won''t take effect if a `transport` instance is provided.
+
+        (1) The `api_endpoint` property can be used to override the
+
+        default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
+
+        environment variable can also be used to override the endpoint:
+
+        "always" (always use the default mTLS endpoint), "never" (always
+
+        use the default regular endpoint) and "auto" (auto switch to the
+
+        default mTLS endpoint if client certificate is present, this is
+
+        the default value). However, the `api_endpoint` property takes
+
+        precedence if provided.
+
+        (2) If GOOGLE_API_USE_CLIENT_CERTIFICATE environment variable
+
+        is "true", then the `client_cert_source` property can be used
+
+        to provide client certificate for mutual TLS transport. If
+
+        not provided, the default SSL client certificate will be used if
+
+        present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is "false" or not
+
+        set, no client certificate will be used.'
+      id: client_options
+      type:
+      - ClientOptions
+  type: class
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+- children:
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_billing_account_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_folder_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_location_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_organization_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_project_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.create_instance
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.delete_instance
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_file
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_json
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_iam_policy
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance_config
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_config_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instance_configs
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instances
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_billing_account_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_folder_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_location_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_organization_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_project_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_config_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_path
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.set_iam_policy
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.test_iam_permissions
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.transport
+  - google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.update_instance
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: InstanceAdminAsyncClient
+  source:
+    id: InstanceAdminAsyncClient
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 44
+  summary: 'Cloud Spanner Instance Admin API
+
+    The Cloud Spanner Instance Admin API can be used to create,
+
+    delete, modify and list instances. Instances are dedicated Cloud
+
+    Spanner serving and storage resources to be used by Cloud
+
+    Spanner databases.
+
+    Each instance has a "configuration", which dictates where the
+
+    serving resources for the Cloud Spanner instance are located
+
+    (e.g., US-central, Europe). Configurations are created by Google
+
+    based on resource availability.
+
+
+    Cloud Spanner billing is based on the instances that exist and
+
+    their sizes. After an instance exists, there are no additional
+
+    per-database or per-operation charges for use of the instance
+
+    (though there may be additional network bandwidth charges).
+
+    Instances offer isolation: problems with databases in one
+
+    instance will not affect other instances. However, within an
+
+    instance databases can affect each other. For example, if one
+
+    database in an instance receives a lot of requests and consumes
+
+    most of the instance resources, fewer resources are available
+
+    for other databases in that instance, and their performance may
+
+    suffer.
+
+
+    Instantiate the instance admin client.'
+  syntax:
+    parameters: *id001
+  type: class
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+- &id002
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_billing_account_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'common_billing_account_path(billing_account: str) -> str'
+  namewithoutparameters: common_billing_account_path
+  source:
+    id: common_billing_account_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 195
+  summary: Return a fully-qualified billing_account string.
+  syntax:
+    content: 'common_billing_account_path(billing_account: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_billing_account_path
+- *id002
+- &id003
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_folder_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'common_folder_path(folder: str) -> str'
+  namewithoutparameters: common_folder_path
+  source:
+    id: common_folder_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 208
+  summary: Return a fully-qualified folder string.
+  syntax:
+    content: 'common_folder_path(folder: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_folder_path
+- *id003
+- &id004
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_location_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'common_location_path(project: str, location: str) -> str'
+  namewithoutparameters: common_location_path
+  source:
+    id: common_location_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 241
+  summary: Return a fully-qualified location string.
+  syntax:
+    content: 'common_location_path(project: str, location: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_location_path
+- *id004
+- &id005
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_organization_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'common_organization_path(organization: str) -> str'
+  namewithoutparameters: common_organization_path
+  source:
+    id: common_organization_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 219
+  summary: Return a fully-qualified organization string.
+  syntax:
+    content: 'common_organization_path(organization: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_organization_path
+- *id005
+- &id006
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_project_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'common_project_path(project: str) -> str'
+  namewithoutparameters: common_project_path
+  source:
+    id: common_project_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 230
+  summary: Return a fully-qualified project string.
+  syntax:
+    content: 'common_project_path(project: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_project_path
+- *id006
+- &id007
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.create_instance
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'create_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.CreateInstanceRequest
+    = None, *, parent: str = None, instance_id: str = None, instance: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance
+    = None, retry: google.api_core.retry.Retry = <object object>, timeout: float =
+    None, metadata: typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  namewithoutparameters: create_instance
+  source:
+    id: create_instance
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 519
+  summary: "Creates an instance and begins preparing it to begin serving.\nThe returned\
+    \ [long-running\noperation][google.longrunning.Operation] can be used to track\n\
+    the progress of preparing the new instance. The instance name is\nassigned by\
+    \ the caller. If the named instance already exists,\n`CreateInstance` returns\
+    \ `ALREADY_EXISTS`.\n\nImmediately upon completion of this request:\n\n* The instance\
+    \ is readable via the API, with all requested attributes but no allocated resources.\
+    \ Its state is `CREATING`. \n\nUntil completion of the returned operation:\n\n\
+    * Cancelling the operation renders the instance immediately unreadable via the\
+    \ API. \n\n* The instance can be deleted. \n\n* All other attempts to modify the\
+    \ instance are rejected. \n\nUpon completion of the returned operation:\n\n* Billing\
+    \ for all successfully-allocated resources begins (some types may have lower than\
+    \ the requested levels). \n\n* Databases can be created in the instance. \n\n\
+    * The instance's allocated resource levels are readable via the API. \n\n* The\
+    \ instance's state becomes `READY`. \n\nThe returned [long-running\noperation][google.longrunning.Operation]\
+    \ will have a name of the\nformat `<instance_name>/operations/<operation_id>`\
+    \ and can be\nused to track creation of the instance. The\n[metadata][google.longrunning.Operation.metadata]\
+    \ field type is\n[CreateInstanceMetadata][google.spanner.admin.instance.v1.CreateInstanceMetadata].\n\
+    The [response][google.longrunning.Operation.response] field type\nis [Instance][google.spanner.admin.instance.v1.Instance],\
+    \ if\nsuccessful."
+  syntax:
+    content: 'create_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.CreateInstanceRequest
+      = None, *, parent: str = None, instance_id: str = None, instance: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance
+      = None, retry: google.api_core.retry.Retry = <object object>, timeout: float
+      = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+    parameters:
+    - description: 'The request object. The request for
+
+        [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_instance_admin.CreateInstanceRequest
+    - description: 'Required. The name of the project in which to create the
+
+        instance. Values are of the form `projects/<project>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Required. The ID of the instance to create. Valid
+
+        identifiers are of the form `[a-z][-a-z0-9]*[a-z0-9]`
+
+        and must be between 2 and 64 characters in length.
+
+        This corresponds to the `instance_id` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: instance_id
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Required. The instance to create. The name may be
+
+        omitted, but if specified must be
+
+        `<parent>/instances/<instance_id>`.
+
+        This corresponds to the `instance` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: instance
+      isRequired: true
+      type:
+      - spanner_instance_admin.Instance
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'An object representing a long-running operation.
+
+
+        The result type for the operation will be
+
+        :class:`~.spanner_instance_admin.Instance`: An
+
+        isolated set of Cloud Spanner resources on which
+
+        databases can be hosted.'
+      type:
+      - .operation_async.AsyncOperation
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.create_instance
+- *id007
+- &id008
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.delete_instance
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'delete_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.DeleteInstanceRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> None'
+  namewithoutparameters: delete_instance
+  source:
+    id: delete_instance
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 807
+  summary: "Deletes an instance.\n\nImmediately upon completion of the request:\n\n\
+    * Billing ceases for all of the instance's reserved resources. \n\nSoon afterward:\n\
+    \n* The instance and *all of its databases* immediately and irrevocably disappear\
+    \ from the API. All data in the databases is permanently deleted."
+  syntax:
+    content: 'delete_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.DeleteInstanceRequest
+      = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+      timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+      -> None'
+    parameters:
+    - description: 'The request object. The request for
+
+        [DeleteInstance][google.spanner.admin.instance.v1.InstanceAdmin.DeleteInstance].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_instance_admin.DeleteInstanceRequest
+    - description: 'Required. The name of the instance to be deleted. Values
+
+        are of the form
+
+        `projects/<project>/instances/<instance>`
+
+        This corresponds to the `name` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: name
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.delete_instance
+- *id008
+- &id009
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_file
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'from_service_account_file(filename: str, *args, **kwargs)'
+  namewithoutparameters: from_service_account_file
+  source:
+    id: from_service_account_file
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 137
+  summary: 'Creates an instance of this client using the provided credentials
+
+    file.'
+  syntax:
+    content: 'from_service_account_file(filename: str, *args, **kwargs)'
+    parameters:
+    - description: 'The path to the service account private key json
+
+        file.'
+      id: filename
+      isRequired: true
+      type:
+      - str
+    - description: Additional arguments to pass to the constructor.
+      id: args
+      isRequired: true
+    - description: Additional arguments to pass to the constructor.
+      id: kwargs
+      isRequired: true
+    return:
+      description: The constructed client.
+      type:
+      - <xref:mailto:{api.name>}
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_file
+- *id009
+- &id010
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_json
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'from_service_account_json(filename: str, *args, **kwargs)'
+  namewithoutparameters: from_service_account_json
+  source:
+    id: from_service_account_json
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 137
+  summary: 'Creates an instance of this client using the provided credentials
+
+    file.'
+  syntax:
+    content: 'from_service_account_json(filename: str, *args, **kwargs)'
+    parameters:
+    - description: 'The path to the service account private key json
+
+        file.'
+      id: filename
+      isRequired: true
+      type:
+      - str
+    - description: Additional arguments to pass to the constructor.
+      id: args
+      isRequired: true
+    - description: Additional arguments to pass to the constructor.
+      id: kwargs
+      isRequired: true
+    return:
+      description: The constructed client.
+      type:
+      - <xref:mailto:{api.name>}
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_json
+- *id010
+- &id011
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_iam_policy
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'get_iam_policy(request: google.iam.v1.iam_policy_pb2.GetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  namewithoutparameters: get_iam_policy
+  source:
+    id: get_iam_policy
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1032
+  summary: 'Gets the access control policy for an instance resource. Returns
+
+    an empty policy if an instance exists but does not have a policy
+
+    set.
+
+
+    Authorization requires `spanner.instances.getIamPolicy` on
+
+    [resource][google.iam.v1.GetIamPolicyRequest.resource].'
+  syntax:
+    content: 'get_iam_policy(request: google.iam.v1.iam_policy_pb2.GetIamPolicyRequest
+      = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.iam.v1.policy_pb2.Policy'
+    parameters:
+    - description: 'The request object. Request message for *GetIamPolicy*
+
+        method.'
+      id: request
+      isRequired: true
+      type:
+      - iam_policy.GetIamPolicyRequest
+    - description: 'REQUIRED: The resource for which the
+
+        policy is being requested. See the
+
+        operation documentation for the
+
+        appropriate value for this field.
+
+        This corresponds to the `resource` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: resource
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: "Defines an Identity and Access Management (IAM) policy.\nIt is\
+        \ used to specify access control policies for Cloud\nPlatform resources.\n\
+        \nA `Policy` is a collection of `bindings`. A\n`binding` binds one or more\
+        \ `members` to a single\n`role`. Members can be user accounts, service\naccounts,\
+        \ Google groups, and domains (such as G Suite).\nA `role` is a named list\
+        \ of permissions (defined by\nIAM or configured by users). A `binding` can\n\
+        optionally specify a `condition`, which is a logic\nexpression that further\
+        \ constrains the role binding\nbased on attributes about the request and/or\
+        \ target\nresource.\n\n**JSON Example**\n\n<!-- literal_block {\"ids\": [],\
+        \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+        : \"preserve\"} -->\n\n````\n\n   {\n     \"bindings\": [\n       {\n    \
+        \     \"role\": \"roles/resourcemanager.organizationAdmin\",\n         \"\
+        members\": [\n           \"user:mike@example.com\",\n           \"group:admins@example.com\"\
+        ,\n           \"domain:google.com\",\n           \"serviceAccount:my-project-id@appspot.gserviceaccount.com\"\
+        \n         ]\n       },\n       {\n         \"role\": \"roles/resourcemanager.organizationViewer\"\
+        ,\n         \"members\": [\"user:eve@example.com\"],\n         \"condition\"\
+        : {\n           \"title\": \"expirable access\",\n           \"description\"\
+        : \"Does not grant access after Sep 2020\",\n           \"expression\": \"\
+        request.time <\n           timestamp('2020-10-01T00:00:00.000Z')\",\n    \
+        \     }\n       }\n     ]\n   }\n   ````\n\n**YAML Example**\n\n<!-- literal_block\
+        \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+        : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   bindings:\n   - members:\n\
+        \     - user:mike@example.com\n     - group:admins@example.com\n     - domain:google.com\n\
+        \     - serviceAccount:my-project-id@appspot.gserviceaccount.com\n     role:\
+        \ roles/resourcemanager.organizationAdmin\n   - members:\n     - user:eve@example.com\n\
+        \     role: roles/resourcemanager.organizationViewer\n     condition:\n  \
+        \     title: expirable access\n       description: Does not grant access after\
+        \ Sep 2020\n       expression: request.time < timestamp('2020-10-01T00:00:00.000Z')\n\
+        \   ````\n\nFor a description of IAM and its features, see the [IAM\ndeveloper's\n\
+        guide](https://cloud.google.com/iam/docs)."
+      type:
+      - .policy.Policy
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_iam_policy
+- *id011
+- &id012
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'get_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.GetInstanceRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance'
+  namewithoutparameters: get_instance
+  source:
+    id: get_instance
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 438
+  summary: Gets information about a particular instance.
+  syntax:
+    content: 'get_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.GetInstanceRequest
+      = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+      timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+      -> google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance'
+    parameters:
+    - description: 'The request object. The request for
+
+        [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_instance_admin.GetInstanceRequest
+    - description: 'Required. The name of the requested instance. Values are
+
+        of the form `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `name` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: name
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'An isolated set of Cloud Spanner
+
+        resources on which databases can be
+
+        hosted.'
+      type:
+      - .spanner_instance_admin.Instance
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance
+- *id012
+- &id013
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance_config
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'get_instance_config(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.GetInstanceConfigRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.InstanceConfig'
+  namewithoutparameters: get_instance_config
+  source:
+    id: get_instance_config
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 264
+  summary: 'Gets information about a particular instance
+
+    configuration.'
+  syntax:
+    content: 'get_instance_config(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.GetInstanceConfigRequest
+      = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+      timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+      -> google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.InstanceConfig'
+    parameters:
+    - description: 'The request object. The request for
+
+        [GetInstanceConfigRequest][google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_instance_admin.GetInstanceConfigRequest
+    - description: 'Required. The name of the requested instance
+
+        configuration. Values are of the form
+
+        `projects/<project>/instanceConfigs/<config>`.
+
+        This corresponds to the `name` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: name
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'A possible configuration for a Cloud
+
+        Spanner instance. Configurations define
+
+        the geographic placement of nodes and
+
+        their replication.'
+      type:
+      - .spanner_instance_admin.InstanceConfig
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance_config
+- *id013
+- &id014
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_config_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'instance_config_path(project: str, instance_config: str) -> str'
+  namewithoutparameters: instance_config_path
+  source:
+    id: instance_config_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 179
+  summary: Return a fully-qualified instance_config string.
+  syntax:
+    content: 'instance_config_path(project: str, instance_config: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_config_path
+- *id014
+- &id015
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'instance_path(project: str, instance: str) -> str'
+  namewithoutparameters: instance_path
+  source:
+    id: instance_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 166
+  summary: Return a fully-qualified instance string.
+  syntax:
+    content: 'instance_path(project: str, instance: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_path
+- *id015
+- &id016
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instance_configs
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'list_instance_configs(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.ListInstanceConfigsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.services.instance_admin.pagers.ListInstanceConfigsAsyncPager'
+  namewithoutparameters: list_instance_configs
+  source:
+    id: list_instance_configs
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 173
+  summary: 'Lists the supported instance configurations for a
+
+    given project.'
+  syntax:
+    content: 'list_instance_configs(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.ListInstanceConfigsRequest
+      = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.cloud.spanner_admin_instance_v1.services.instance_admin.pagers.ListInstanceConfigsAsyncPager'
+    parameters:
+    - description: 'The request object. The request for
+
+        [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_instance_admin.ListInstanceConfigsRequest
+    - description: 'Required. The name of the project for which a list of
+
+        supported instance configurations is requested. Values
+
+        are of the form `projects/<project>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'The response for
+
+        [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
+
+
+        Iterating over this object will yield results and
+
+        resolve additional pages automatically.'
+      type:
+      - .pagers.ListInstanceConfigsAsyncPager
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instance_configs
+- *id016
+- &id017
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instances
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'list_instances(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.ListInstancesRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.services.instance_admin.pagers.ListInstancesAsyncPager'
+  namewithoutparameters: list_instances
+  source:
+    id: list_instances
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 348
+  summary: Lists all instances in the given project.
+  syntax:
+    content: 'list_instances(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.ListInstancesRequest
+      = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.cloud.spanner_admin_instance_v1.services.instance_admin.pagers.ListInstancesAsyncPager'
+    parameters:
+    - description: 'The request object. The request for
+
+        [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_instance_admin.ListInstancesRequest
+    - description: 'Required. The name of the project for which a list of
+
+        instances is requested. Values are of the form
+
+        `projects/<project>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'The response for
+
+        [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
+
+
+        Iterating over this object will yield results and
+
+        resolve additional pages automatically.'
+      type:
+      - .pagers.ListInstancesAsyncPager
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instances
+- *id017
+- &id018
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_billing_account_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'parse_common_billing_account_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_billing_account_path
+  source:
+    id: parse_common_billing_account_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 202
+  summary: Parse a billing_account path into its component segments.
+  syntax:
+    content: 'parse_common_billing_account_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_billing_account_path
+- *id018
+- &id019
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_folder_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'parse_common_folder_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_folder_path
+  source:
+    id: parse_common_folder_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 213
+  summary: Parse a folder path into its component segments.
+  syntax:
+    content: 'parse_common_folder_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_folder_path
+- *id019
+- &id020
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_location_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'parse_common_location_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_location_path
+  source:
+    id: parse_common_location_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 248
+  summary: Parse a location path into its component segments.
+  syntax:
+    content: 'parse_common_location_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_location_path
+- *id020
+- &id021
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_organization_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'parse_common_organization_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_organization_path
+  source:
+    id: parse_common_organization_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 224
+  summary: Parse a organization path into its component segments.
+  syntax:
+    content: 'parse_common_organization_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_organization_path
+- *id021
+- &id022
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_project_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'parse_common_project_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_project_path
+  source:
+    id: parse_common_project_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 235
+  summary: Parse a project path into its component segments.
+  syntax:
+    content: 'parse_common_project_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_project_path
+- *id022
+- &id023
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_config_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'parse_instance_config_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_instance_config_path
+  source:
+    id: parse_instance_config_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 186
+  summary: Parse a instance_config path into its component segments.
+  syntax:
+    content: 'parse_instance_config_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_config_path
+- *id023
+- &id024
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'parse_instance_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_instance_path
+  source:
+    id: parse_instance_path
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 173
+  summary: Parse a instance path into its component segments.
+  syntax:
+    content: 'parse_instance_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_path
+- *id024
+- &id025
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.set_iam_policy
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'set_iam_policy(request: google.iam.v1.iam_policy_pb2.SetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  namewithoutparameters: set_iam_policy
+  source:
+    id: set_iam_policy
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 891
+  summary: 'Sets the access control policy on an instance resource. Replaces
+
+    any existing policy.
+
+
+    Authorization requires `spanner.instances.setIamPolicy` on
+
+    [resource][google.iam.v1.SetIamPolicyRequest.resource].'
+  syntax:
+    content: 'set_iam_policy(request: google.iam.v1.iam_policy_pb2.SetIamPolicyRequest
+      = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.iam.v1.policy_pb2.Policy'
+    parameters:
+    - description: 'The request object. Request message for *SetIamPolicy*
+
+        method.'
+      id: request
+      isRequired: true
+      type:
+      - iam_policy.SetIamPolicyRequest
+    - description: 'REQUIRED: The resource for which the
+
+        policy is being specified. See the
+
+        operation documentation for the
+
+        appropriate value for this field.
+
+        This corresponds to the `resource` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: resource
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: "Defines an Identity and Access Management (IAM) policy.\nIt is\
+        \ used to specify access control policies for Cloud\nPlatform resources.\n\
+        \nA `Policy` is a collection of `bindings`. A\n`binding` binds one or more\
+        \ `members` to a single\n`role`. Members can be user accounts, service\naccounts,\
+        \ Google groups, and domains (such as G Suite).\nA `role` is a named list\
+        \ of permissions (defined by\nIAM or configured by users). A `binding` can\n\
+        optionally specify a `condition`, which is a logic\nexpression that further\
+        \ constrains the role binding\nbased on attributes about the request and/or\
+        \ target\nresource.\n\n**JSON Example**\n\n<!-- literal_block {\"ids\": [],\
+        \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+        : \"preserve\"} -->\n\n````\n\n   {\n     \"bindings\": [\n       {\n    \
+        \     \"role\": \"roles/resourcemanager.organizationAdmin\",\n         \"\
+        members\": [\n           \"user:mike@example.com\",\n           \"group:admins@example.com\"\
+        ,\n           \"domain:google.com\",\n           \"serviceAccount:my-project-id@appspot.gserviceaccount.com\"\
+        \n         ]\n       },\n       {\n         \"role\": \"roles/resourcemanager.organizationViewer\"\
+        ,\n         \"members\": [\"user:eve@example.com\"],\n         \"condition\"\
+        : {\n           \"title\": \"expirable access\",\n           \"description\"\
+        : \"Does not grant access after Sep 2020\",\n           \"expression\": \"\
+        request.time <\n           timestamp('2020-10-01T00:00:00.000Z')\",\n    \
+        \     }\n       }\n     ]\n   }\n   ````\n\n**YAML Example**\n\n<!-- literal_block\
+        \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+        : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   bindings:\n   - members:\n\
+        \     - user:mike@example.com\n     - group:admins@example.com\n     - domain:google.com\n\
+        \     - serviceAccount:my-project-id@appspot.gserviceaccount.com\n     role:\
+        \ roles/resourcemanager.organizationAdmin\n   - members:\n     - user:eve@example.com\n\
+        \     role: roles/resourcemanager.organizationViewer\n     condition:\n  \
+        \     title: expirable access\n       description: Does not grant access after\
+        \ Sep 2020\n       expression: request.time < timestamp('2020-10-01T00:00:00.000Z')\n\
+        \   ````\n\nFor a description of IAM and its features, see the [IAM\ndeveloper's\n\
+        guide](https://cloud.google.com/iam/docs)."
+      type:
+      - .policy.Policy
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.set_iam_policy
+- *id025
+- &id026
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.test_iam_permissions
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'test_iam_permissions(request: google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest
+    = None, *, resource: str = None, permissions: typing.Sequence[str] = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.iam.v1.iam_policy_pb2.TestIamPermissionsResponse'
+  namewithoutparameters: test_iam_permissions
+  source:
+    id: test_iam_permissions
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1182
+  summary: 'Returns permissions that the caller has on the specified
+
+    instance resource.
+
+
+    Attempting this RPC on a non-existent Cloud Spanner instance
+
+    resource will result in a NOT_FOUND error if the user has
+
+    `spanner.instances.list` permission on the containing Google
+
+    Cloud Project. Otherwise returns an empty set of permissions.'
+  syntax:
+    content: 'test_iam_permissions(request: google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest
+      = None, *, resource: str = None, permissions: typing.Sequence[str] = None, retry:
+      google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+      typing.Sequence[typing.Tuple[str, str]] = ()) -> google.iam.v1.iam_policy_pb2.TestIamPermissionsResponse'
+    parameters:
+    - description: 'The request object. Request message for
+
+        *TestIamPermissions* method.'
+      id: request
+      isRequired: true
+      type:
+      - iam_policy.TestIamPermissionsRequest
+    - description: 'REQUIRED: The resource for which the
+
+        policy detail is being requested. See
+
+        the operation documentation for the
+
+        appropriate value for this field.
+
+        This corresponds to the `resource` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: resource
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.str
+    - description: 'The set of permissions to check for the `resource`.
+
+        Permissions with wildcards (such as ''*'' or ''storage.*'')
+
+        are not allowed. For more information see [IAM
+
+        Overview](https://cloud.google.com/iam/docs/overview#permissions).
+
+        This corresponds to the `permissions` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: permissions
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_instance_v1.services.instance_admin.Sequence[str]
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: Response message for `TestIamPermissions` method.
+      type:
+      - .iam_policy.TestIamPermissionsResponse
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.test_iam_permissions
+- *id026
+- &id027
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.transport
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: transport
+  source:
+    id: transport
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: Return the transport used by the client instance.
+  syntax:
+    return:
+      description: The transport used by the client instance.
+      type:
+      - InstanceAdminTransport
+  type: attribute
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.transport
+- *id027
+- &id028
+  class: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.update_instance
+  langs:
+  - python
+  module: google.cloud.spanner_admin_instance_v1.services.instance_admin
+  name: 'update_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.UpdateInstanceRequest
+    = None, *, instance: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance
+    = None, field_mask: google.protobuf.field_mask_pb2.FieldMask = None, retry: google.api_core.retry.Retry
+    = <object object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+    str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  namewithoutparameters: update_instance
+  source:
+    id: update_instance
+    path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_instance_v1/services/instance_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 660
+  summary: "Updates an instance, and begins allocating or releasing\nresources as\
+    \ requested. The returned [long-running\noperation][google.longrunning.Operation]\
+    \ can be used to track\nthe progress of updating the instance. If the named instance\n\
+    does not exist, returns `NOT_FOUND`.\n\nImmediately upon completion of this request:\n\
+    \n* For resource types for which a decrease in the instance's allocation has been\
+    \ requested, billing is based on the newly-requested level. \n\nUntil completion\
+    \ of the returned operation:\n\n* Cancelling the operation sets its metadata's\
+    \ [cancel_time][google.spanner.admin.instance.v1.UpdateInstanceMetadata.cancel_time],\
+    \ and begins restoring resources to their pre-request values. The operation is\
+    \ guaranteed to succeed at undoing all resource changes, after which point it\
+    \ terminates with a `CANCELLED` status. \n\n* All other attempts to modify the\
+    \ instance are rejected. \n\n* Reading the instance via the API continues to give\
+    \ the pre-request resource levels. \n\nUpon completion of the returned operation:\n\
+    \n* Billing begins for all successfully-allocated resources (some types may have\
+    \ lower than the requested levels). \n\n* All newly-reserved resources are available\
+    \ for serving the instance's tables. \n\n* The instance's new resource levels\
+    \ are readable via the API. \n\nThe returned [long-running\noperation][google.longrunning.Operation]\
+    \ will have a name of the\nformat `<instance_name>/operations/<operation_id>`\
+    \ and can be\nused to track the instance modification. The\n[metadata][google.longrunning.Operation.metadata]\
+    \ field type is\n[UpdateInstanceMetadata][google.spanner.admin.instance.v1.UpdateInstanceMetadata].\n\
+    The [response][google.longrunning.Operation.response] field type\nis [Instance][google.spanner.admin.instance.v1.Instance],\
+    \ if\nsuccessful.\n\nAuthorization requires `spanner.instances.update` permission\n\
+    on resource\n[name][google.spanner.admin.instance.v1.Instance.name]."
+  syntax:
+    content: 'update_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.UpdateInstanceRequest
+      = None, *, instance: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance
+      = None, field_mask: google.protobuf.field_mask_pb2.FieldMask = None, retry:
+      google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+      typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+    parameters:
+    - description: 'The request object. The request for
+
+        [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_instance_admin.UpdateInstanceRequest
+    - description: 'Required. The instance to update, which must always
+
+        include the instance name. Otherwise, only fields
+
+        mentioned in
+
+        [field_mask][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask]
+
+        need be included.
+
+        This corresponds to the `instance` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: instance
+      isRequired: true
+      type:
+      - spanner_instance_admin.Instance
+    - description: 'Required. A mask specifying which fields in
+
+        [Instance][google.spanner.admin.instance.v1.Instance]
+
+        should be updated. The field mask must always be
+
+        specified; this prevents any future fields in
+
+        [Instance][google.spanner.admin.instance.v1.Instance]
+
+        from being erased accidentally by clients that do not
+
+        know about them.
+
+        This corresponds to the `field_mask` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: field_mask
+      isRequired: true
+      type:
+      - gp_field_mask.FieldMask
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'An object representing a long-running operation.
+
+
+        The result type for the operation will be
+
+        :class:`~.spanner_instance_admin.Instance`: An
+
+        isolated set of Cloud Spanner resources on which
+
+        databases can be hosted.'
+      type:
+      - .operation_async.AsyncOperation
+  type: method
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.update_instance
+- *id028
+references:
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_billing_account_path
+  isExternal: false
+  name: 'common_billing_account_path(billing_account: str) -> str'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_billing_account_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_folder_path
+  isExternal: false
+  name: 'common_folder_path(folder: str) -> str'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_folder_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_location_path
+  isExternal: false
+  name: 'common_location_path(project: str, location: str) -> str'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_location_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_organization_path
+  isExternal: false
+  name: 'common_organization_path(organization: str) -> str'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_organization_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_project_path
+  isExternal: false
+  name: 'common_project_path(project: str) -> str'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.common_project_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.create_instance
+  isExternal: false
+  name: 'create_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.CreateInstanceRequest
+    = None, *, parent: str = None, instance_id: str = None, instance: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance
+    = None, retry: google.api_core.retry.Retry = <object object>, timeout: float =
+    None, metadata: typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.create_instance
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.delete_instance
+  isExternal: false
+  name: 'delete_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.DeleteInstanceRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> None'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.delete_instance
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_file
+  isExternal: false
+  name: 'from_service_account_file(filename: str, *args, **kwargs)'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_file
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_json
+  isExternal: false
+  name: 'from_service_account_json(filename: str, *args, **kwargs)'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.from_service_account_json
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_iam_policy
+  isExternal: false
+  name: 'get_iam_policy(request: google.iam.v1.iam_policy_pb2.GetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_iam_policy
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance
+  isExternal: false
+  name: 'get_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.GetInstanceRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance_config
+  isExternal: false
+  name: 'get_instance_config(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.GetInstanceConfigRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.InstanceConfig'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.get_instance_config
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_config_path
+  isExternal: false
+  name: 'instance_config_path(project: str, instance_config: str) -> str'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_config_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_path
+  isExternal: false
+  name: 'instance_path(project: str, instance: str) -> str'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.instance_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instance_configs
+  isExternal: false
+  name: 'list_instance_configs(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.ListInstanceConfigsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.services.instance_admin.pagers.ListInstanceConfigsAsyncPager'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instance_configs
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instances
+  isExternal: false
+  name: 'list_instances(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.ListInstancesRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_instance_v1.services.instance_admin.pagers.ListInstancesAsyncPager'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.list_instances
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_billing_account_path
+  isExternal: false
+  name: 'parse_common_billing_account_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_billing_account_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_folder_path
+  isExternal: false
+  name: 'parse_common_folder_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_folder_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_location_path
+  isExternal: false
+  name: 'parse_common_location_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_location_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_organization_path
+  isExternal: false
+  name: 'parse_common_organization_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_organization_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_project_path
+  isExternal: false
+  name: 'parse_common_project_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_common_project_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_config_path
+  isExternal: false
+  name: 'parse_instance_config_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_config_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_path
+  isExternal: false
+  name: 'parse_instance_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.parse_instance_path
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.set_iam_policy
+  isExternal: false
+  name: 'set_iam_policy(request: google.iam.v1.iam_policy_pb2.SetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.set_iam_policy
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.test_iam_permissions
+  isExternal: false
+  name: 'test_iam_permissions(request: google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest
+    = None, *, resource: str = None, permissions: typing.Sequence[str] = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.iam.v1.iam_policy_pb2.TestIamPermissionsResponse'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.test_iam_permissions
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.transport
+  isExternal: false
+  name: transport
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.transport
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.update_instance
+  isExternal: false
+  name: 'update_instance(request: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.UpdateInstanceRequest
+    = None, *, instance: google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin.Instance
+    = None, field_mask: google.protobuf.field_mask_pb2.FieldMask = None, retry: google.api_core.retry.Retry
+    = <object object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+    str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  parent: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.InstanceAdminAsyncClient.update_instance
+- fullName: Optional[google.auth.credentials.Credentials]
+  name: Optional[Credentials]
+  spec.python:
+  - fullName: Optional
+    name: Optional
+    uid: Optional
+  - fullName: '['
+    name: '['
+  - fullName: google.auth.credentials.Credentials
+    name: Credentials
+    uid: google.auth.credentials.Credentials
+  - fullName: ']'
+    name: ']'
+  uid: Optional[google.auth.credentials.Credentials]
+- fullName: Union[str, .InstanceAdminTransport]
+  name: Union[str, InstanceAdminTransport]
+  spec.python:
+  - fullName: Union
+    name: Union
+    uid: Union
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: .InstanceAdminTransport
+    name: InstanceAdminTransport
+    uid: .InstanceAdminTransport
+  - fullName: ']'
+    name: ']'
+  uid: Union[str, .InstanceAdminTransport]
+- fullName: Sequence[Tuple[str, str]]
+  name: Sequence[Tuple[str, str]]
+  spec.python:
+  - fullName: Sequence
+    name: Sequence
+    uid: Sequence
+  - fullName: '['
+    name: '['
+  - fullName: Tuple
+    name: Tuple
+    uid: Tuple
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  uid: Sequence[Tuple[str, str]]
+- fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.Sequence[str]
+  name: Sequence[str]
+  spec.python:
+  - fullName: google.cloud.spanner_admin_instance_v1.services.instance_admin.Sequence
+    name: Sequence
+    uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.Sequence
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  uid: google.cloud.spanner_admin_instance_v1.services.instance_admin.Sequence[str]

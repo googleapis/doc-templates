@@ -1,0 +1,647 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.instance.Instance.backup
+  - google.cloud.spanner_v1.instance.Instance.copy
+  - google.cloud.spanner_v1.instance.Instance.create
+  - google.cloud.spanner_v1.instance.Instance.database
+  - google.cloud.spanner_v1.instance.Instance.delete
+  - google.cloud.spanner_v1.instance.Instance.exists
+  - google.cloud.spanner_v1.instance.Instance.from_pb
+  - google.cloud.spanner_v1.instance.Instance.list_backup_operations
+  - google.cloud.spanner_v1.instance.Instance.list_backups
+  - google.cloud.spanner_v1.instance.Instance.list_database_operations
+  - google.cloud.spanner_v1.instance.Instance.list_databases
+  - google.cloud.spanner_v1.instance.Instance.name
+  - google.cloud.spanner_v1.instance.Instance.reload
+  - google.cloud.spanner_v1.instance.Instance.update
+  class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: Instance
+  source:
+    id: Instance
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 72
+  summary: "Representation of a Cloud Spanner Instance.\n\nWe can use a <xref:google.cloud.spanner_v1.instance.Instance>\
+    \ to:\n\n* <xref:google.cloud.spanner_v1.instance.Instance.reload> itself \n\n\
+    * <xref:google.cloud.spanner_v1.instance.Instance.create> itself \n\n* <xref:google.cloud.spanner_v1.instance.Instance.update>\
+    \ itself \n\n* <xref:google.cloud.spanner_v1.instance.Instance.delete> itself"
+  syntax:
+    content: Instance(instance_id, client, configuration_name=None, node_count=1,
+      display_name=None, emulator_host=None)
+    parameters:
+    - description: The ID of the instance.
+      id: instance_id
+      type:
+      - str
+    - description: 'The client that owns the instance. Provides
+
+        authorization and a project ID.'
+      id: client
+      type:
+      - google.cloud.spanner_v1.client.Client
+    - description: 'Name of the instance configuration defining
+
+        how the instance will be created.
+
+        Required for instances which do not yet exist.'
+      id: configuration_name
+      type:
+      - str
+    - description: (Optional) Number of nodes allocated to the instance.
+      id: node_count
+      type:
+      - int
+    - description: '(Optional) The display name for the instance in the
+
+        Cloud Console UI. (Must be between 4 and 30
+
+        characters.) If this value is not set in the
+
+        constructor, will fall back to the instance ID.'
+      id: display_name
+      type:
+      - str
+  type: class
+  uid: google.cloud.spanner_v1.instance.Instance
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.backup
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: backup(backup_id, database='', expire_time=None)
+  namewithoutparameters: backup
+  source:
+    id: backup
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 392
+  summary: Factory to create a backup within this instance.
+  syntax:
+    content: backup(backup_id, database='', expire_time=None)
+    parameters:
+    - description: The ID of the backup.
+      id: backup_id
+      isRequired: true
+      type:
+      - str
+    - defaultValue: ''
+      description: 'Optional. The database that will be used when creating the backup.
+
+        Required if the create method needs to be called.'
+      id: database
+      type:
+      - google.cloud.spanner_v1.database.Database
+    - defaultValue: None
+      description: 'Optional. The expire time that will be used when creating the
+        backup.
+
+        Required if the create method needs to be called.'
+      id: expire_time
+      type:
+      - datetime.datetime
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.backup
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.copy
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: copy()
+  namewithoutparameters: copy
+  source:
+    id: copy
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 198
+  summary: 'Make a copy of this instance.
+
+
+    Copies the local data stored as simple types and copies the client
+
+    attached to this instance.'
+  syntax:
+    content: copy()
+    parameters: []
+    return:
+      description: A copy of the current instance.
+      type:
+      - <xref:google.cloud.spanner_v1.instance.Instance>
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.copy
+- class: google.cloud.spanner_v1.instance.Instance
+  exceptions:
+  - description: if the instance already exists
+    type: Conflict
+  fullName: google.cloud.spanner_v1.instance.Instance.create
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: create()
+  namewithoutparameters: create
+  source:
+    id: create
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 216
+  summary: "Create this instance.\n\nSee\n[https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance)\n\
+    \n\n> [!NOTE]\n> Uses the project and instance_id on the current\n>\n> <xref:google.cloud.spanner_v1.instance.Instance>\
+    \ in addition to the display_name.\n>\n> To change them before creating, reset\
+    \ the values via\n>\n> \n>\n> instance.display_name = 'New display name'\n>\n\
+    > instance.instance_id = 'i-changed-my-mind'\n>\n> \n>\n> before calling <xref:google.cloud.spanner_v1.instance.Instance.create>.\n\
+    >"
+  syntax:
+    content: create()
+    parameters: []
+    return:
+      description: an operation instance
+      type:
+      - google.api_core.operation.Operation
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.create
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.database
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: database(database_id, ddl_statements=(), pool=None)
+  namewithoutparameters: database
+  source:
+    id: database
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 349
+  summary: Factory to create a database within this instance.
+  syntax:
+    content: database(database_id, ddl_statements=(), pool=None)
+    parameters:
+    - description: The ID of the instance.
+      id: database_id
+      isRequired: true
+      type:
+      - str
+    - defaultValue: ()
+      description: '(Optional) DDL statements, excluding the
+
+        ''CREATE DATABSE'' statement.'
+      id: ddl_statements
+      type:
+      - list of string
+    - defaultValue: None
+      description: (Optional) session pool to be used by database.
+      id: pool
+      type:
+      - concrete subclass ofgoogle.cloud.spanner_v1.pool.AbstractSessionPool.
+    return:
+      description: a database owned by this instance.
+      type:
+      - google.cloud.spanner_v1.database.Database
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.database
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.delete
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: delete()
+  namewithoutparameters: delete
+  source:
+    id: delete
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 329
+  summary: "Mark an instance and all of its databases for permanent deletion.\n\n\
+    See\n[https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.DeleteInstance](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.DeleteInstance)\n\
+    \nImmediately upon completion of the request:\n\n* Billing will cease for all\
+    \ of the instance's reserved resources. \n\nSoon afterward:\n\n* The instance\
+    \ and all databases within the instance will be deleteed. All data in the databases\
+    \ will be permanently deleted."
+  syntax:
+    content: delete()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.delete
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.exists
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: exists()
+  namewithoutparameters: exists
+  source:
+    id: exists
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 257
+  summary: 'Test whether this instance exists.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig)'
+  syntax:
+    content: exists()
+    parameters: []
+    return:
+      description: True if the instance exists, else false
+      type:
+      - bool
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.exists
+- class: google.cloud.spanner_v1.instance.Instance
+  exceptions:
+  - description: 'if the instance name does not match
+
+      `projects/{project}/instances/{instance_id}` or if the parsed
+
+      project ID does not match the project ID on the client.'
+    type: ValueError
+  fullName: google.cloud.spanner_v1.instance.Instance.from_pb
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: from_pb(instance_pb, client)
+  namewithoutparameters: from_pb
+  source:
+    id: from_pb
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 131
+  summary: Creates an instance from a protobuf.
+  syntax:
+    content: from_pb(instance_pb, client)
+    parameters:
+    - description: A instance protobuf object.
+      id: instance_pb
+      isRequired: true
+      type:
+      - google.spanner.v2.spanner_instance_admin_pb2.Instance
+    - description: The client that owns the instance.
+      id: client
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.client.Client
+    - id: client
+      isRequired: true
+    return:
+      description: The instance parsed from the protobuf response.
+      type:
+      - <xref:google.cloud.spanner_v1.instance.Instance>
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.from_pb
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.list_backup_operations
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: list_backup_operations(filter_='', page_size=None)
+  namewithoutparameters: list_backup_operations
+  source:
+    id: list_backup_operations
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 442
+  summary: List backup operations for the instance.
+  syntax:
+    content: list_backup_operations(filter_='', page_size=None)
+    parameters:
+    - defaultValue: ''
+      description: 'Optional. A string specifying a filter for which backup operations
+
+        to list.'
+      id: filter
+      type:
+      - str
+    - defaultValue: None
+      description: 'Optional. The maximum number of operations in each page of results
+
+        from this request. Non-positive values are ignored. Defaults to a
+
+        sensible value set by the API.'
+      id: page_size
+      type:
+      - int
+    return:
+      description: 'Iterator of <xref:google.api_core.operation.Operation>
+
+        resources within the current instance.'
+      type:
+      - google.api_core.page_iterator.Iterator
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.list_backup_operations
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.list_backups
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: list_backups(filter_='', page_size=None)
+  namewithoutparameters: list_backups
+  source:
+    id: list_backups
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 415
+  summary: List backups for the instance.
+  syntax:
+    content: list_backups(filter_='', page_size=None)
+    parameters:
+    - defaultValue: ''
+      description: Optional. A string specifying a filter for which backups to list.
+      id: filter
+      type:
+      - str
+    - defaultValue: None
+      description: 'Optional. The maximum number of databases in each page of results
+
+        from this request. Non-positive values are ignored. Defaults to a
+
+        sensible value set by the API.'
+      id: page_size
+      type:
+      - int
+    return:
+      description: 'Iterator of <xref:google.cloud.spanner_v1.backup.Backup>
+
+        resources within the current instance.'
+      type:
+      - google.api_core.page_iterator.Iterator
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.list_backups
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.list_database_operations
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: list_database_operations(filter_='', page_size=None)
+  namewithoutparameters: list_database_operations
+  source:
+    id: list_database_operations
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 470
+  summary: List database operations for the instance.
+  syntax:
+    content: list_database_operations(filter_='', page_size=None)
+    parameters:
+    - defaultValue: ''
+      description: 'Optional. A string specifying a filter for which database operations
+
+        to list.'
+      id: filter
+      type:
+      - str
+    - defaultValue: None
+      description: 'Optional. The maximum number of operations in each page of results
+
+        from this request. Non-positive values are ignored. Defaults to a
+
+        sensible value set by the API.'
+      id: page_size
+      type:
+      - int
+    return:
+      description: 'Iterator of <xref:google.api_core.operation.Operation>
+
+        resources within the current instance.'
+      type:
+      - google.api_core.page_iterator.Iterator
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.list_database_operations
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.list_databases
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: list_databases(page_size=None)
+  namewithoutparameters: list_databases
+  source:
+    id: list_databases
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 368
+  summary: 'List databases for the instance.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.ListDatabases](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.database.v1#google.spanner.admin.database.v1.DatabaseAdmin.ListDatabases)'
+  syntax:
+    content: list_databases(page_size=None)
+    parameters:
+    - defaultValue: None
+      description: 'Optional. The maximum number of databases in each page of results
+
+        from this request. Non-positive values are ignored. Defaults
+
+        to a sensible value set by the API.'
+      id: page_size
+      type:
+      - int
+    return:
+      description: 'Iterator of <xref:google.cloud.spanner_v1.database.Database>
+
+        resources within the current instance.'
+      type:
+      - google.api._ore.page_iterator.Iterator
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.list_databases
+- class: google.cloud.spanner_v1.instance.Instance
+  fullName: google.cloud.spanner_v1.instance.Instance.name
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: name
+  source:
+    id: name
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: "Instance name used in requests.\n\n\n> [!NOTE]\n> This property will not\
+    \ change if instance_id does not,\n>\n> but the return value is not cached.\n\
+    >\n\nThe instance name is of the form\n\n   `\"projects/{project}/instances/{instance_id}\"\
+    `"
+  syntax:
+    return:
+      description: The instance name.
+      type:
+      - str
+  type: attribute
+  uid: google.cloud.spanner_v1.instance.Instance.name
+- class: google.cloud.spanner_v1.instance.Instance
+  exceptions:
+  - description: if the instance does not exist
+    type: NotFound
+  fullName: google.cloud.spanner_v1.instance.Instance.reload
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: reload()
+  namewithoutparameters: reload
+  source:
+    id: reload
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 276
+  summary: 'Reload the metadata for this instance.
+
+
+    See
+
+    [https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig)'
+  syntax:
+    content: reload()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.reload
+- class: google.cloud.spanner_v1.instance.Instance
+  exceptions:
+  - description: if the instance does not exist
+    type: NotFound
+  fullName: google.cloud.spanner_v1.instance.Instance.update
+  langs:
+  - python
+  module: google.cloud.spanner_v1.instance
+  name: update()
+  namewithoutparameters: update
+  source:
+    id: update
+    path: google/cloud/spanner_v1/instance.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/instance.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 291
+  summary: "Update this instance.\n\nSee\n[https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance](https://cloud.google.com/spanner/reference/rpc/google.spanner.admin.instance.v1#google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance)\n\
+    \n\n> [!NOTE]\n> Updates the display_name and node_count. To change those\n>\n\
+    > values before updating, set them via\n>\n> \n>\n> instance.display_name = 'New\
+    \ display name'\n>\n> instance.node_count = 5\n>\n> \n>\n> before calling <xref:google.cloud.spanner_v1.instance.Instance.update>.\n\
+    >"
+  syntax:
+    content: update()
+    parameters: []
+    return:
+      description: an operation instance
+      type:
+      - google.api_core.operation.Operation
+  type: method
+  uid: google.cloud.spanner_v1.instance.Instance.update
+references:
+- fullName: google.cloud.spanner_v1.instance.Instance.backup
+  isExternal: false
+  name: backup(backup_id, database='', expire_time=None)
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.backup
+- fullName: google.cloud.spanner_v1.instance.Instance.copy
+  isExternal: false
+  name: copy()
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.copy
+- fullName: google.cloud.spanner_v1.instance.Instance.create
+  isExternal: false
+  name: create()
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.create
+- fullName: google.cloud.spanner_v1.instance.Instance.database
+  isExternal: false
+  name: database(database_id, ddl_statements=(), pool=None)
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.database
+- fullName: google.cloud.spanner_v1.instance.Instance.delete
+  isExternal: false
+  name: delete()
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.delete
+- fullName: google.cloud.spanner_v1.instance.Instance.exists
+  isExternal: false
+  name: exists()
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.exists
+- fullName: google.cloud.spanner_v1.instance.Instance.from_pb
+  isExternal: false
+  name: from_pb(instance_pb, client)
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.from_pb
+- fullName: google.cloud.spanner_v1.instance.Instance.list_backup_operations
+  isExternal: false
+  name: list_backup_operations(filter_='', page_size=None)
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.list_backup_operations
+- fullName: google.cloud.spanner_v1.instance.Instance.list_backups
+  isExternal: false
+  name: list_backups(filter_='', page_size=None)
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.list_backups
+- fullName: google.cloud.spanner_v1.instance.Instance.list_database_operations
+  isExternal: false
+  name: list_database_operations(filter_='', page_size=None)
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.list_database_operations
+- fullName: google.cloud.spanner_v1.instance.Instance.list_databases
+  isExternal: false
+  name: list_databases(page_size=None)
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.list_databases
+- fullName: google.cloud.spanner_v1.instance.Instance.name
+  isExternal: false
+  name: name
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.name
+- fullName: google.cloud.spanner_v1.instance.Instance.reload
+  isExternal: false
+  name: reload()
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.reload
+- fullName: google.cloud.spanner_v1.instance.Instance.update
+  isExternal: false
+  name: update()
+  parent: google.cloud.spanner_v1.instance.Instance
+  uid: google.cloud.spanner_v1.instance.Instance.update

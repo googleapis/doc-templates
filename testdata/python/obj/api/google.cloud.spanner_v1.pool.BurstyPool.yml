@@ -1,0 +1,190 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_v1.pool.BurstyPool.bind
+  - google.cloud.spanner_v1.pool.BurstyPool.clear
+  - google.cloud.spanner_v1.pool.BurstyPool.get
+  - google.cloud.spanner_v1.pool.BurstyPool.put
+  class: google.cloud.spanner_v1.pool.BurstyPool
+  fullName: google.cloud.spanner_v1.pool.BurstyPool
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: google.cloud.spanner_v1.pool.AbstractSessionPool
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: BurstyPool
+  source:
+    id: BurstyPool
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 229
+  summary: "Concrete session pool implementation:\n\n* \"Pings\" existing sessions\
+    \ via <xref:session.exists> before returning them. \n\n* Creates a new session,\
+    \ rather than blocking, when <xref:google.cloud.spanner_v1.pool.BurstyPool.get>\
+    \ is called on an empty pool. \n\n* Discards the returned session, rather than\
+    \ blocking, when <xref:google.cloud.spanner_v1.pool.BurstyPool.put> is called\
+    \ on a full pool."
+  syntax:
+    content: BurstyPool(target_size=10, labels=None)
+    parameters:
+    - description: max pool size
+      id: target_size
+      type:
+      - int
+    - description: '(Optional) user-assigned labels for sessions created
+
+        by the pool.'
+      id: labels
+      type:
+      - dict (str -> str)
+      - None
+  type: class
+  uid: google.cloud.spanner_v1.pool.BurstyPool
+- class: google.cloud.spanner_v1.pool.BurstyPool
+  fullName: google.cloud.spanner_v1.pool.BurstyPool.bind
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: bind(database)
+  namewithoutparameters: bind
+  source:
+    id: bind
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 255
+  summary: Associate the pool with a database.
+  syntax:
+    content: bind(database)
+    parameters:
+    - description: 'database used by the pool:  used to create sessions
+
+        when needed.'
+      id: database
+      isRequired: true
+      type:
+      - google.cloud.spanner_v1.database.Database
+  type: method
+  uid: google.cloud.spanner_v1.pool.BurstyPool.bind
+- class: google.cloud.spanner_v1.pool.BurstyPool
+  fullName: google.cloud.spanner_v1.pool.BurstyPool.clear
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: clear()
+  namewithoutparameters: clear
+  source:
+    id: clear
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 299
+  summary: Delete all sessions in the pool.
+  syntax:
+    content: clear()
+    parameters: []
+  type: method
+  uid: google.cloud.spanner_v1.pool.BurstyPool.clear
+- class: google.cloud.spanner_v1.pool.BurstyPool
+  fullName: google.cloud.spanner_v1.pool.BurstyPool.get
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: get()
+  namewithoutparameters: get
+  source:
+    id: get
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 264
+  summary: Check a session out from the pool.
+  syntax:
+    content: get()
+    parameters: []
+    return:
+      description: 'an existing session from the pool, or a newly-created
+
+        session.'
+      type:
+      - <xref:google.cloud.spanner_v1.session.Session>
+  type: method
+  uid: google.cloud.spanner_v1.pool.BurstyPool.get
+- class: google.cloud.spanner_v1.pool.BurstyPool
+  fullName: google.cloud.spanner_v1.pool.BurstyPool.put
+  langs:
+  - python
+  module: google.cloud.spanner_v1.pool
+  name: put(session)
+  namewithoutparameters: put
+  source:
+    id: put
+    path: google/cloud/spanner_v1/pool.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/pool.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 282
+  summary: 'Return a session to the pool.
+
+
+    Never blocks:  if the pool is full, the returned session is
+
+    discarded.'
+  syntax:
+    content: put(session)
+    parameters:
+    - description: the session being returned.
+      id: session
+      isRequired: true
+      type:
+      - <xref:google.cloud.spanner_v1.session.Session>
+  type: method
+  uid: google.cloud.spanner_v1.pool.BurstyPool.put
+references:
+- fullName: google.cloud.spanner_v1.pool.BurstyPool.bind
+  isExternal: false
+  name: bind(database)
+  parent: google.cloud.spanner_v1.pool.BurstyPool
+  uid: google.cloud.spanner_v1.pool.BurstyPool.bind
+- fullName: google.cloud.spanner_v1.pool.BurstyPool.clear
+  isExternal: false
+  name: clear()
+  parent: google.cloud.spanner_v1.pool.BurstyPool
+  uid: google.cloud.spanner_v1.pool.BurstyPool.clear
+- fullName: google.cloud.spanner_v1.pool.BurstyPool.get
+  isExternal: false
+  name: get()
+  parent: google.cloud.spanner_v1.pool.BurstyPool
+  uid: google.cloud.spanner_v1.pool.BurstyPool.get
+- fullName: google.cloud.spanner_v1.pool.BurstyPool.put
+  isExternal: false
+  name: put(session)
+  parent: google.cloud.spanner_v1.pool.BurstyPool
+  uid: google.cloud.spanner_v1.pool.BurstyPool.put
+- fullName: dict (str -> str)
+  name: dict (str -> str)
+  spec.python:
+  - fullName: 'dict '
+    name: 'dict '
+    uid: 'dict '
+  - fullName: (
+    name: (
+  - fullName: str -> str
+    name: str -> str
+    uid: str -> str
+  - fullName: )
+    name: )
+  uid: dict (str -> str)

@@ -1,0 +1,2710 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.backup_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_billing_account_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_folder_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_location_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_organization_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_project_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.database_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.delete_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.drop_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_file
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_json
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database_ddl
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_iam_policy
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.instance_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backup_operations
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backups
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_database_operations
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_databases
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_backup_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_billing_account_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_folder_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_location_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_organization_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_project_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_database_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_instance_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.restore_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.set_iam_policy
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.test_iam_permissions
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.transport
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_database_ddl
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: DatabaseAdminAsyncClient
+  source:
+    id: DatabaseAdminAsyncClient
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 49
+  summary: 'Cloud Spanner Database Admin API
+
+    The Cloud Spanner Database Admin API can be used to create,
+
+    drop, and list databases. It also enables updating the schema of
+
+    pre-existing databases. It can be also used to create, delete
+
+    and list backups for a database and to restore from an existing
+
+    backup.
+
+
+    Instantiate the database admin client.'
+  syntax:
+    parameters: &id001
+    - description: 'The
+
+        authorization credentials to attach to requests. These
+
+        credentials identify the application to the service; if none
+
+        are specified, the client will attempt to ascertain the
+
+        credentials from the environment.'
+      id: credentials
+      type:
+      - Optional[google.auth.credentials.Credentials]
+    - description: 'The
+
+        transport to use. If set to None, a transport is chosen
+
+        automatically.'
+      id: transport
+      type:
+      - Union[str, .DatabaseAdminTransport]
+    - description: 'Custom options for the client. It
+
+        won''t take effect if a `transport` instance is provided.
+
+        (1) The `api_endpoint` property can be used to override the
+
+        default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
+
+        environment variable can also be used to override the endpoint:
+
+        "always" (always use the default mTLS endpoint), "never" (always
+
+        use the default regular endpoint) and "auto" (auto switch to the
+
+        default mTLS endpoint if client certificate is present, this is
+
+        the default value). However, the `api_endpoint` property takes
+
+        precedence if provided.
+
+        (2) If GOOGLE_API_USE_CLIENT_CERTIFICATE environment variable
+
+        is "true", then the `client_cert_source` property can be used
+
+        to provide client certificate for mutual TLS transport. If
+
+        not provided, the default SSL client certificate will be used if
+
+        present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is "false" or not
+
+        set, no client certificate will be used.'
+      id: client_options
+      type:
+      - ClientOptions
+  type: class
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+- children:
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.backup_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_billing_account_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_folder_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_location_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_organization_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_project_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.database_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.delete_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.drop_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_file
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_json
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database_ddl
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_iam_policy
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.instance_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backup_operations
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backups
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_database_operations
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_databases
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_backup_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_billing_account_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_folder_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_location_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_organization_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_project_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_database_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_instance_path
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.restore_database
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.set_iam_policy
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.test_iam_permissions
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.transport
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_backup
+  - google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_database_ddl
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: DatabaseAdminAsyncClient
+  source:
+    id: DatabaseAdminAsyncClient
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 49
+  summary: 'Cloud Spanner Database Admin API
+
+    The Cloud Spanner Database Admin API can be used to create,
+
+    drop, and list databases. It also enables updating the schema of
+
+    pre-existing databases. It can be also used to create, delete
+
+    and list backups for a database and to restore from an existing
+
+    backup.
+
+
+    Instantiate the database admin client.'
+  syntax:
+    parameters: *id001
+  type: class
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+- &id002
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.backup_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'backup_path(project: str, instance: str, backup: str) -> str'
+  namewithoutparameters: backup_path
+  source:
+    id: backup_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 156
+  summary: Return a fully-qualified backup string.
+  syntax:
+    content: 'backup_path(project: str, instance: str, backup: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.backup_path
+- *id002
+- &id003
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_billing_account_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'common_billing_account_path(billing_account: str) -> str'
+  namewithoutparameters: common_billing_account_path
+  source:
+    id: common_billing_account_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 201
+  summary: Return a fully-qualified billing_account string.
+  syntax:
+    content: 'common_billing_account_path(billing_account: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_billing_account_path
+- *id003
+- &id004
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_folder_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'common_folder_path(folder: str) -> str'
+  namewithoutparameters: common_folder_path
+  source:
+    id: common_folder_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 214
+  summary: Return a fully-qualified folder string.
+  syntax:
+    content: 'common_folder_path(folder: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_folder_path
+- *id004
+- &id005
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_location_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'common_location_path(project: str, location: str) -> str'
+  namewithoutparameters: common_location_path
+  source:
+    id: common_location_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 247
+  summary: Return a fully-qualified location string.
+  syntax:
+    content: 'common_location_path(project: str, location: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_location_path
+- *id005
+- &id006
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_organization_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'common_organization_path(organization: str) -> str'
+  namewithoutparameters: common_organization_path
+  source:
+    id: common_organization_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 225
+  summary: Return a fully-qualified organization string.
+  syntax:
+    content: 'common_organization_path(organization: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_organization_path
+- *id006
+- &id007
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_project_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'common_project_path(project: str) -> str'
+  namewithoutparameters: common_project_path
+  source:
+    id: common_project_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 236
+  summary: Return a fully-qualified project string.
+  syntax:
+    content: 'common_project_path(project: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_project_path
+- *id007
+- &id008
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_backup
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'create_backup(request: google.cloud.spanner_admin_database_v1.types.backup.CreateBackupRequest
+    = None, *, parent: str = None, backup: google.cloud.spanner_admin_database_v1.types.backup.Backup
+    = None, backup_id: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.api_core.operation_async.AsyncOperation'
+  namewithoutparameters: create_backup
+  source:
+    id: create_backup
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1124
+  summary: 'Starts creating a new Cloud Spanner Backup. The returned backup
+
+    [long-running operation][google.longrunning.Operation] will have
+
+    a name of the format
+
+    `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation_id>`
+
+    and can be used to track creation of the backup. The
+
+    [metadata][google.longrunning.Operation.metadata] field type is
+
+    [CreateBackupMetadata][google.spanner.admin.database.v1.CreateBackupMetadata].
+
+    The [response][google.longrunning.Operation.response] field type
+
+    is [Backup][google.spanner.admin.database.v1.Backup], if
+
+    successful. Cancelling the returned operation will stop the
+
+    creation and delete the backup. There can be only one pending
+
+    backup creation per database. Backup creation of different
+
+    databases can run concurrently.'
+  syntax:
+    content: 'create_backup(request: google.cloud.spanner_admin_database_v1.types.backup.CreateBackupRequest
+      = None, *, parent: str = None, backup: google.cloud.spanner_admin_database_v1.types.backup.Backup
+      = None, backup_id: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+    parameters:
+    - description: 'The request object. The request for
+
+        [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].'
+      id: request
+      isRequired: true
+      type:
+      - gsad_backup.CreateBackupRequest
+    - description: 'Required. The name of the instance in which the backup
+
+        will be created. This must be the same instance that
+
+        contains the database the backup will be created from.
+
+        The backup will be stored in the location(s) specified
+
+        in the instance configuration of this instance. Values
+
+        are of the form
+
+        `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Required. The backup to create.
+
+        This corresponds to the `backup` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: backup
+      isRequired: true
+      type:
+      - gsad_backup.Backup
+    - description: 'Required. The id of the backup to be created. The
+
+        `backup_id` appended to `parent` forms the full
+
+        backup name of the form
+
+        `projects/<project>/instances/<instance>/backups/<backup_id>`.
+
+        This corresponds to the `backup_id` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: backup_id
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'An object representing a long-running operation.
+
+
+        The result type for the operation will be
+
+        :class:`~.gsad_backup.Backup`: A backup of a Cloud
+
+        Spanner database.'
+      type:
+      - .operation_async.AsyncOperation
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_backup
+- *id008
+- &id009
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_database
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'create_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.CreateDatabaseRequest
+    = None, *, parent: str = None, create_statement: str = None, retry: google.api_core.retry.Retry
+    = <object object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+    str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  namewithoutparameters: create_database
+  source:
+    id: create_database
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 253
+  summary: 'Creates a new Cloud Spanner database and starts to prepare it
+
+    for serving. The returned [long-running
+
+    operation][google.longrunning.Operation] will have a name of the
+
+    format `<database_name>/operations/<operation_id>` and can be
+
+    used to track preparation of the database. The
+
+    [metadata][google.longrunning.Operation.metadata] field type is
+
+    [CreateDatabaseMetadata][google.spanner.admin.database.v1.CreateDatabaseMetadata].
+
+    The [response][google.longrunning.Operation.response] field type
+
+    is [Database][google.spanner.admin.database.v1.Database], if
+
+    successful.'
+  syntax:
+    content: 'create_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.CreateDatabaseRequest
+      = None, *, parent: str = None, create_statement: str = None, retry: google.api_core.retry.Retry
+      = <object object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+    parameters:
+    - description: 'The request object. The request for
+
+        [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.CreateDatabaseRequest
+    - description: 'Required. The name of the instance that will serve the
+
+        new database. Values are of the form
+
+        `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Required. A `CREATE DATABASE` statement, which
+
+        specifies the ID of the new database. The database ID
+
+        must conform to the regular expression
+
+        `[a-z][a-z0-9_\-]*[a-z0-9]` and be between 2 and 30
+
+        characters in length. If the database ID is a reserved
+
+        word or if it contains a hyphen, the database ID must be
+
+        enclosed in backticks (```).
+
+        This corresponds to the `create_statement` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: create_statement
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'An object representing a long-running operation.
+
+
+        The result type for the operation will be
+
+        :class:`~.spanner_database_admin.Database`: A Cloud
+
+        Spanner database.'
+      type:
+      - .operation_async.AsyncOperation
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_database
+- *id009
+- &id010
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.database_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'database_path(project: str, instance: str, database: str) -> str'
+  namewithoutparameters: database_path
+  source:
+    id: database_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 172
+  summary: Return a fully-qualified database string.
+  syntax:
+    content: 'database_path(project: str, instance: str, database: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.database_path
+- *id010
+- &id011
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.delete_backup
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'delete_backup(request: google.cloud.spanner_admin_database_v1.types.backup.DeleteBackupRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> None'
+  namewithoutparameters: delete_backup
+  source:
+    id: delete_backup
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1422
+  summary: 'Deletes a pending or completed
+
+    [Backup][google.spanner.admin.database.v1.Backup].'
+  syntax:
+    content: 'delete_backup(request: google.cloud.spanner_admin_database_v1.types.backup.DeleteBackupRequest
+      = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+      timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+      -> None'
+    parameters:
+    - description: 'The request object. The request for
+
+        [DeleteBackup][google.spanner.admin.database.v1.DatabaseAdmin.DeleteBackup].'
+      id: request
+      isRequired: true
+      type:
+      - backup.DeleteBackupRequest
+    - description: 'Required. Name of the backup to delete. Values are of
+
+        the form
+
+        `projects/<project>/instances/<instance>/backups/<backup>`.
+
+        This corresponds to the `name` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: name
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.delete_backup
+- *id011
+- &id012
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.drop_database
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'drop_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.DropDatabaseRequest
+    = None, *, database: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> None'
+  namewithoutparameters: drop_database
+  source:
+    id: drop_database
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 576
+  summary: 'Drops (aka deletes) a Cloud Spanner database. Completed backups
+
+    for the database will be retained according to their
+
+    `expire_time`.'
+  syntax:
+    content: 'drop_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.DropDatabaseRequest
+      = None, *, database: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> None'
+    parameters:
+    - description: 'The request object. The request for
+
+        [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.DropDatabaseRequest
+    - description: 'Required. The database to be dropped.
+
+        This corresponds to the `database` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: database
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.drop_database
+- *id012
+- &id013
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_file
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'from_service_account_file(filename: str, *args, **kwargs)'
+  namewithoutparameters: from_service_account_file
+  source:
+    id: from_service_account_file
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 127
+  summary: 'Creates an instance of this client using the provided credentials
+
+    file.'
+  syntax:
+    content: 'from_service_account_file(filename: str, *args, **kwargs)'
+    parameters:
+    - description: 'The path to the service account private key json
+
+        file.'
+      id: filename
+      isRequired: true
+      type:
+      - str
+    - description: Additional arguments to pass to the constructor.
+      id: args
+      isRequired: true
+    - description: Additional arguments to pass to the constructor.
+      id: kwargs
+      isRequired: true
+    return:
+      description: The constructed client.
+      type:
+      - <xref:mailto:{api.name>}
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_file
+- *id013
+- &id014
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_json
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'from_service_account_json(filename: str, *args, **kwargs)'
+  namewithoutparameters: from_service_account_json
+  source:
+    id: from_service_account_json
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 127
+  summary: 'Creates an instance of this client using the provided credentials
+
+    file.'
+  syntax:
+    content: 'from_service_account_json(filename: str, *args, **kwargs)'
+    parameters:
+    - description: 'The path to the service account private key json
+
+        file.'
+      id: filename
+      isRequired: true
+      type:
+      - str
+    - description: Additional arguments to pass to the constructor.
+      id: args
+      isRequired: true
+    - description: Additional arguments to pass to the constructor.
+      id: kwargs
+      isRequired: true
+    return:
+      description: The constructed client.
+      type:
+      - <xref:mailto:{api.name>}
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_json
+- *id014
+- &id015
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_backup
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'get_backup(request: google.cloud.spanner_admin_database_v1.types.backup.GetBackupRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.types.backup.Backup'
+  namewithoutparameters: get_backup
+  source:
+    id: get_backup
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1243
+  summary: 'Gets metadata on a pending or completed
+
+    [Backup][google.spanner.admin.database.v1.Backup].'
+  syntax:
+    content: 'get_backup(request: google.cloud.spanner_admin_database_v1.types.backup.GetBackupRequest
+      = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+      timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+      -> google.cloud.spanner_admin_database_v1.types.backup.Backup'
+    parameters:
+    - description: 'The request object. The request for
+
+        [GetBackup][google.spanner.admin.database.v1.DatabaseAdmin.GetBackup].'
+      id: request
+      isRequired: true
+      type:
+      - backup.GetBackupRequest
+    - description: 'Required. Name of the backup. Values are of the form
+
+        `projects/<project>/instances/<instance>/backups/<backup>`.
+
+        This corresponds to the `name` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: name
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: A backup of a Cloud Spanner database.
+      type:
+      - .backup.Backup
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_backup
+- *id015
+- &id016
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'get_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.types.spanner_database_admin.Database'
+  namewithoutparameters: get_database
+  source:
+    id: get_database
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 360
+  summary: Gets the state of a Cloud Spanner database.
+  syntax:
+    content: 'get_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseRequest
+      = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+      timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+      -> google.cloud.spanner_admin_database_v1.types.spanner_database_admin.Database'
+    parameters:
+    - description: 'The request object. The request for
+
+        [GetDatabase][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabase].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.GetDatabaseRequest
+    - description: 'Required. The name of the requested database. Values are
+
+        of the form
+
+        `projects/<project>/instances/<instance>/databases/<database>`.
+
+        This corresponds to the `name` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: name
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: A Cloud Spanner database.
+      type:
+      - .spanner_database_admin.Database
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database
+- *id016
+- &id017
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database_ddl
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'get_database_ddl(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseDdlRequest
+    = None, *, database: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseDdlResponse'
+  namewithoutparameters: get_database_ddl
+  source:
+    id: get_database_ddl
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 650
+  summary: 'Returns the schema of a Cloud Spanner database as a list of
+
+    formatted DDL statements. This method does not show pending
+
+    schema updates, those may be queried using the
+
+    [Operations][google.longrunning.Operations] API.'
+  syntax:
+    content: 'get_database_ddl(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseDdlRequest
+      = None, *, database: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseDdlResponse'
+    parameters:
+    - description: 'The request object. The request for
+
+        [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.GetDatabaseDdlRequest
+    - description: 'Required. The database whose schema
+
+        we wish to get.
+
+        This corresponds to the `database` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: database
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'The response for
+
+        [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].'
+      type:
+      - .spanner_database_admin.GetDatabaseDdlResponse
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database_ddl
+- *id017
+- &id018
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_iam_policy
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'get_iam_policy(request: google.iam.v1.iam_policy_pb2.GetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  namewithoutparameters: get_iam_policy
+  source:
+    id: get_iam_policy
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 878
+  summary: 'Gets the access control policy for a database or backup
+
+    resource. Returns an empty policy if a database or backup exists
+
+    but does not have a policy set.
+
+
+    Authorization requires `spanner.databases.getIamPolicy`
+
+    permission on
+
+    [resource][google.iam.v1.GetIamPolicyRequest.resource]. For
+
+    backups, authorization requires `spanner.backups.getIamPolicy`
+
+    permission on
+
+    [resource][google.iam.v1.GetIamPolicyRequest.resource].'
+  syntax:
+    content: 'get_iam_policy(request: google.iam.v1.iam_policy_pb2.GetIamPolicyRequest
+      = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.iam.v1.policy_pb2.Policy'
+    parameters:
+    - description: 'The request object. Request message for *GetIamPolicy*
+
+        method.'
+      id: request
+      isRequired: true
+      type:
+      - iam_policy.GetIamPolicyRequest
+    - description: 'REQUIRED: The resource for which the
+
+        policy is being requested. See the
+
+        operation documentation for the
+
+        appropriate value for this field.
+
+        This corresponds to the `resource` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: resource
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: "Defines an Identity and Access Management (IAM) policy.\nIt is\
+        \ used to specify access control policies for Cloud\nPlatform resources.\n\
+        \nA `Policy` is a collection of `bindings`. A\n`binding` binds one or more\
+        \ `members` to a single\n`role`. Members can be user accounts, service\naccounts,\
+        \ Google groups, and domains (such as G Suite).\nA `role` is a named list\
+        \ of permissions (defined by\nIAM or configured by users). A `binding` can\n\
+        optionally specify a `condition`, which is a logic\nexpression that further\
+        \ constrains the role binding\nbased on attributes about the request and/or\
+        \ target\nresource.\n\n**JSON Example**\n\n<!-- literal_block {\"ids\": [],\
+        \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+        : \"preserve\"} -->\n\n````\n\n   {\n     \"bindings\": [\n       {\n    \
+        \     \"role\": \"roles/resourcemanager.organizationAdmin\",\n         \"\
+        members\": [\n           \"user:mike@example.com\",\n           \"group:admins@example.com\"\
+        ,\n           \"domain:google.com\",\n           \"serviceAccount:my-project-id@appspot.gserviceaccount.com\"\
+        \n         ]\n       },\n       {\n         \"role\": \"roles/resourcemanager.organizationViewer\"\
+        ,\n         \"members\": [\"user:eve@example.com\"],\n         \"condition\"\
+        : {\n           \"title\": \"expirable access\",\n           \"description\"\
+        : \"Does not grant access after Sep 2020\",\n           \"expression\": \"\
+        request.time <\n           timestamp('2020-10-01T00:00:00.000Z')\",\n    \
+        \     }\n       }\n     ]\n   }\n   ````\n\n**YAML Example**\n\n<!-- literal_block\
+        \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+        : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   bindings:\n   - members:\n\
+        \     - user:mike@example.com\n     - group:admins@example.com\n     - domain:google.com\n\
+        \     - serviceAccount:my-project-id@appspot.gserviceaccount.com\n     role:\
+        \ roles/resourcemanager.organizationAdmin\n   - members:\n     - user:eve@example.com\n\
+        \     role: roles/resourcemanager.organizationViewer\n     condition:\n  \
+        \     title: expirable access\n       description: Does not grant access after\
+        \ Sep 2020\n       expression: request.time < timestamp('2020-10-01T00:00:00.000Z')\n\
+        \   ````\n\nFor a description of IAM and its features, see the [IAM\ndeveloper's\n\
+        guide](https://cloud.google.com/iam/docs)."
+      type:
+      - .policy.Policy
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_iam_policy
+- *id018
+- &id019
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.instance_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'instance_path(project: str, instance: str) -> str'
+  namewithoutparameters: instance_path
+  source:
+    id: instance_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 188
+  summary: Return a fully-qualified instance string.
+  syntax:
+    content: 'instance_path(project: str, instance: str) -> str'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.instance_path
+- *id019
+- &id020
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backup_operations
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'list_backup_operations(request: google.cloud.spanner_admin_database_v1.types.backup.ListBackupOperationsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListBackupOperationsAsyncPager'
+  namewithoutparameters: list_backup_operations
+  source:
+    id: list_backup_operations
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1813
+  summary: 'Lists the backup [long-running
+
+    operations][google.longrunning.Operation] in the given instance.
+
+    A backup operation has a name of the form
+
+    `projects/<project>/instances/<instance>/backups/<backup>/operations/<operation>`.
+
+    The long-running operation
+
+    [metadata][google.longrunning.Operation.metadata] field type
+
+    `metadata.type_url` describes the type of the metadata.
+
+    Operations returned include those that have
+
+    completed/failed/canceled within the last 7 days, and pending
+
+    operations. Operations returned are ordered by
+
+    `operation.metadata.value.progress.start_time` in descending
+
+    order starting from the most recently started operation.'
+  syntax:
+    content: 'list_backup_operations(request: google.cloud.spanner_admin_database_v1.types.backup.ListBackupOperationsRequest
+      = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListBackupOperationsAsyncPager'
+    parameters:
+    - description: 'The request object. The request for
+
+        [ListBackupOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListBackupOperations].'
+      id: request
+      isRequired: true
+      type:
+      - backup.ListBackupOperationsRequest
+    - description: 'Required. The instance of the backup operations. Values
+
+        are of the form
+
+        `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'The response for
+
+        [ListBackupOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListBackupOperations].
+
+
+        Iterating over this object will yield results and
+
+        resolve additional pages automatically.'
+      type:
+      - .pagers.ListBackupOperationsAsyncPager
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backup_operations
+- *id020
+- &id021
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backups
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'list_backups(request: google.cloud.spanner_admin_database_v1.types.backup.ListBackupsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListBackupsAsyncPager'
+  namewithoutparameters: list_backups
+  source:
+    id: list_backups
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1497
+  summary: 'Lists completed and pending backups. Backups returned are
+
+    ordered by `create_time` in descending order, starting from
+
+    the most recent `create_time`.'
+  syntax:
+    content: 'list_backups(request: google.cloud.spanner_admin_database_v1.types.backup.ListBackupsRequest
+      = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListBackupsAsyncPager'
+    parameters:
+    - description: 'The request object. The request for
+
+        [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].'
+      id: request
+      isRequired: true
+      type:
+      - backup.ListBackupsRequest
+    - description: 'Required. The instance to list backups from. Values are
+
+        of the form `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'The response for
+
+        [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
+
+
+        Iterating over this object will yield results and
+
+        resolve additional pages automatically.'
+      type:
+      - .pagers.ListBackupsAsyncPager
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backups
+- *id021
+- &id022
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_database_operations
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'list_database_operations(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.ListDatabaseOperationsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListDatabaseOperationsAsyncPager'
+  namewithoutparameters: list_database_operations
+  source:
+    id: list_database_operations
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1714
+  summary: 'Lists database
+
+    [longrunning-operations][google.longrunning.Operation]. A
+
+    database operation has a name of the form
+
+    `projects/<project>/instances/<instance>/databases/<database>/operations/<operation>`.
+
+    The long-running operation
+
+    [metadata][google.longrunning.Operation.metadata] field type
+
+    `metadata.type_url` describes the type of the metadata.
+
+    Operations returned include those that have
+
+    completed/failed/canceled within the last 7 days, and pending
+
+    operations.'
+  syntax:
+    content: 'list_database_operations(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.ListDatabaseOperationsRequest
+      = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListDatabaseOperationsAsyncPager'
+    parameters:
+    - description: 'The request object. The request for
+
+        [ListDatabaseOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabaseOperations].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.ListDatabaseOperationsRequest
+    - description: 'Required. The instance of the database operations.
+
+        Values are of the form
+
+        `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'The response for
+
+        [ListDatabaseOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabaseOperations].
+
+
+        Iterating over this object will yield results and
+
+        resolve additional pages automatically.'
+      type:
+      - .pagers.ListDatabaseOperationsAsyncPager
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_database_operations
+- *id022
+- &id023
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_databases
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'list_databases(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.ListDatabasesRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListDatabasesAsyncPager'
+  namewithoutparameters: list_databases
+  source:
+    id: list_databases
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 163
+  summary: Lists Cloud Spanner databases.
+  syntax:
+    content: 'list_databases(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.ListDatabasesRequest
+      = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListDatabasesAsyncPager'
+    parameters:
+    - description: 'The request object. The request for
+
+        [ListDatabases][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabases].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.ListDatabasesRequest
+    - description: 'Required. The instance whose databases should be listed.
+
+        Values are of the form
+
+        `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'The response for
+
+        [ListDatabases][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabases].
+
+
+        Iterating over this object will yield results and
+
+        resolve additional pages automatically.'
+      type:
+      - .pagers.ListDatabasesAsyncPager
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_databases
+- *id023
+- &id024
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_backup_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_backup_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_backup_path
+  source:
+    id: parse_backup_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 163
+  summary: Parse a backup path into its component segments.
+  syntax:
+    content: 'parse_backup_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_backup_path
+- *id024
+- &id025
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_billing_account_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_common_billing_account_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_billing_account_path
+  source:
+    id: parse_common_billing_account_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 208
+  summary: Parse a billing_account path into its component segments.
+  syntax:
+    content: 'parse_common_billing_account_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_billing_account_path
+- *id025
+- &id026
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_folder_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_common_folder_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_folder_path
+  source:
+    id: parse_common_folder_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 219
+  summary: Parse a folder path into its component segments.
+  syntax:
+    content: 'parse_common_folder_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_folder_path
+- *id026
+- &id027
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_location_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_common_location_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_location_path
+  source:
+    id: parse_common_location_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 254
+  summary: Parse a location path into its component segments.
+  syntax:
+    content: 'parse_common_location_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_location_path
+- *id027
+- &id028
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_organization_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_common_organization_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_organization_path
+  source:
+    id: parse_common_organization_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 230
+  summary: Parse a organization path into its component segments.
+  syntax:
+    content: 'parse_common_organization_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_organization_path
+- *id028
+- &id029
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_project_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_common_project_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_common_project_path
+  source:
+    id: parse_common_project_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 241
+  summary: Parse a project path into its component segments.
+  syntax:
+    content: 'parse_common_project_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_project_path
+- *id029
+- &id030
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_database_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_database_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_database_path
+  source:
+    id: parse_database_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 179
+  summary: Parse a database path into its component segments.
+  syntax:
+    content: 'parse_database_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_database_path
+- *id030
+- &id031
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_instance_path
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'parse_instance_path(path: str) -> typing.Dict[str, str]'
+  namewithoutparameters: parse_instance_path
+  source:
+    id: parse_instance_path
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 195
+  summary: Parse a instance path into its component segments.
+  syntax:
+    content: 'parse_instance_path(path: str) -> typing.Dict[str, str]'
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_instance_path
+- *id031
+- &id032
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.restore_database
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'restore_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.RestoreDatabaseRequest
+    = None, *, parent: str = None, database_id: str = None, backup: str = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  namewithoutparameters: restore_database
+  source:
+    id: restore_database
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1588
+  summary: 'Create a new database by restoring from a completed backup. The
+
+    new database must be in the same project and in an instance with
+
+    the same instance configuration as the instance containing the
+
+    backup. The returned database [long-running
+
+    operation][google.longrunning.Operation] has a name of the
+
+    format
+
+    `projects/<project>/instances/<instance>/databases/<database>/operations/<operation_id>`,
+
+    and can be used to track the progress of the operation, and to
+
+    cancel it. The [metadata][google.longrunning.Operation.metadata]
+
+    field type is
+
+    [RestoreDatabaseMetadata][google.spanner.admin.database.v1.RestoreDatabaseMetadata].
+
+    The [response][google.longrunning.Operation.response] type is
+
+    [Database][google.spanner.admin.database.v1.Database], if
+
+    successful. Cancelling the returned operation will stop the
+
+    restore and delete the database. There can be only one database
+
+    being restored into an instance at a time. Once the restore
+
+    operation completes, a new restore operation can be initiated,
+
+    without waiting for the optimize operation associated with the
+
+    first restore to complete.'
+  syntax:
+    content: 'restore_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.RestoreDatabaseRequest
+      = None, *, parent: str = None, database_id: str = None, backup: str = None,
+      retry: google.api_core.retry.Retry = <object object>, timeout: float = None,
+      metadata: typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+    parameters:
+    - description: 'The request object. The request for
+
+        [RestoreDatabase][google.spanner.admin.database.v1.DatabaseAdmin.RestoreDatabase].'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.RestoreDatabaseRequest
+    - description: 'Required. The name of the instance in which to create
+
+        the restored database. This instance must be in the same
+
+        project and have the same instance configuration as the
+
+        instance containing the source backup. Values are of the
+
+        form `projects/<project>/instances/<instance>`.
+
+        This corresponds to the `parent` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: parent
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Required. The id of the database to create and restore
+
+        to. This database must not already exist. The
+
+        `database_id` appended to `parent` forms the full
+
+        database name of the form
+
+        `projects/<project>/instances/<instance>/databases/<database_id>`.
+
+        This corresponds to the `database_id` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: database_id
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Name of the backup from which to restore. Values are of
+
+        the form
+
+        `projects/<project>/instances/<instance>/backups/<backup>`.
+
+        This corresponds to the `backup` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: backup
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: 'An object representing a long-running operation.
+
+
+        The result type for the operation will be
+
+        :class:`~.spanner_database_admin.Database`: A Cloud
+
+        Spanner database.'
+      type:
+      - .operation_async.AsyncOperation
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.restore_database
+- *id032
+- &id033
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.set_iam_policy
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'set_iam_policy(request: google.iam.v1.iam_policy_pb2.SetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  namewithoutparameters: set_iam_policy
+  source:
+    id: set_iam_policy
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 733
+  summary: 'Sets the access control policy on a database or backup resource.
+
+    Replaces any existing policy.
+
+
+    Authorization requires `spanner.databases.setIamPolicy`
+
+    permission on
+
+    [resource][google.iam.v1.SetIamPolicyRequest.resource]. For
+
+    backups, authorization requires `spanner.backups.setIamPolicy`
+
+    permission on
+
+    [resource][google.iam.v1.SetIamPolicyRequest.resource].'
+  syntax:
+    content: 'set_iam_policy(request: google.iam.v1.iam_policy_pb2.SetIamPolicyRequest
+      = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+      object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+      str]] = ()) -> google.iam.v1.policy_pb2.Policy'
+    parameters:
+    - description: 'The request object. Request message for *SetIamPolicy*
+
+        method.'
+      id: request
+      isRequired: true
+      type:
+      - iam_policy.SetIamPolicyRequest
+    - description: 'REQUIRED: The resource for which the
+
+        policy is being specified. See the
+
+        operation documentation for the
+
+        appropriate value for this field.
+
+        This corresponds to the `resource` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: resource
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: "Defines an Identity and Access Management (IAM) policy.\nIt is\
+        \ used to specify access control policies for Cloud\nPlatform resources.\n\
+        \nA `Policy` is a collection of `bindings`. A\n`binding` binds one or more\
+        \ `members` to a single\n`role`. Members can be user accounts, service\naccounts,\
+        \ Google groups, and domains (such as G Suite).\nA `role` is a named list\
+        \ of permissions (defined by\nIAM or configured by users). A `binding` can\n\
+        optionally specify a `condition`, which is a logic\nexpression that further\
+        \ constrains the role binding\nbased on attributes about the request and/or\
+        \ target\nresource.\n\n**JSON Example**\n\n<!-- literal_block {\"ids\": [],\
+        \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+        : \"preserve\"} -->\n\n````\n\n   {\n     \"bindings\": [\n       {\n    \
+        \     \"role\": \"roles/resourcemanager.organizationAdmin\",\n         \"\
+        members\": [\n           \"user:mike@example.com\",\n           \"group:admins@example.com\"\
+        ,\n           \"domain:google.com\",\n           \"serviceAccount:my-project-id@appspot.gserviceaccount.com\"\
+        \n         ]\n       },\n       {\n         \"role\": \"roles/resourcemanager.organizationViewer\"\
+        ,\n         \"members\": [\"user:eve@example.com\"],\n         \"condition\"\
+        : {\n           \"title\": \"expirable access\",\n           \"description\"\
+        : \"Does not grant access after Sep 2020\",\n           \"expression\": \"\
+        request.time <\n           timestamp('2020-10-01T00:00:00.000Z')\",\n    \
+        \     }\n       }\n     ]\n   }\n   ````\n\n**YAML Example**\n\n<!-- literal_block\
+        \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+        : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   bindings:\n   - members:\n\
+        \     - user:mike@example.com\n     - group:admins@example.com\n     - domain:google.com\n\
+        \     - serviceAccount:my-project-id@appspot.gserviceaccount.com\n     role:\
+        \ roles/resourcemanager.organizationAdmin\n   - members:\n     - user:eve@example.com\n\
+        \     role: roles/resourcemanager.organizationViewer\n     condition:\n  \
+        \     title: expirable access\n       description: Does not grant access after\
+        \ Sep 2020\n       expression: request.time < timestamp('2020-10-01T00:00:00.000Z')\n\
+        \   ````\n\nFor a description of IAM and its features, see the [IAM\ndeveloper's\n\
+        guide](https://cloud.google.com/iam/docs)."
+      type:
+      - .policy.Policy
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.set_iam_policy
+- *id033
+- &id034
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.test_iam_permissions
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'test_iam_permissions(request: google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest
+    = None, *, resource: str = None, permissions: typing.Sequence[str] = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.iam.v1.iam_policy_pb2.TestIamPermissionsResponse'
+  namewithoutparameters: test_iam_permissions
+  source:
+    id: test_iam_permissions
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1032
+  summary: 'Returns permissions that the caller has on the specified
+
+    database or backup resource.
+
+
+    Attempting this RPC on a non-existent Cloud Spanner database
+
+    will result in a NOT_FOUND error if the user has
+
+    `spanner.databases.list` permission on the containing Cloud
+
+    Spanner instance. Otherwise returns an empty set of permissions.
+
+    Calling this method on a backup that does not exist will result
+
+    in a NOT_FOUND error if the user has `spanner.backups.list`
+
+    permission on the containing instance.'
+  syntax:
+    content: 'test_iam_permissions(request: google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest
+      = None, *, resource: str = None, permissions: typing.Sequence[str] = None, retry:
+      google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+      typing.Sequence[typing.Tuple[str, str]] = ()) -> google.iam.v1.iam_policy_pb2.TestIamPermissionsResponse'
+    parameters:
+    - description: 'The request object. Request message for
+
+        *TestIamPermissions* method.'
+      id: request
+      isRequired: true
+      type:
+      - iam_policy.TestIamPermissionsRequest
+    - description: 'REQUIRED: The resource for which the
+
+        policy detail is being requested. See
+
+        the operation documentation for the
+
+        appropriate value for this field.
+
+        This corresponds to the `resource` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: resource
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'The set of permissions to check for the `resource`.
+
+        Permissions with wildcards (such as ''*'' or ''storage.*'')
+
+        are not allowed. For more information see [IAM
+
+        Overview](https://cloud.google.com/iam/docs/overview#permissions).
+
+        This corresponds to the `permissions` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: permissions
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.Sequence[str]
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: Response message for `TestIamPermissions` method.
+      type:
+      - .iam_policy.TestIamPermissionsResponse
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.test_iam_permissions
+- *id034
+- &id035
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.transport
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: transport
+  source:
+    id: transport
+    path: null
+    remote:
+      branch: HEAD
+      path: null
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: null
+  summary: Return the transport used by the client instance.
+  syntax:
+    return:
+      description: The transport used by the client instance.
+      type:
+      - DatabaseAdminTransport
+  type: attribute
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.transport
+- *id035
+- &id036
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_backup
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'update_backup(request: google.cloud.spanner_admin_database_v1.types.backup.UpdateBackupRequest
+    = None, *, backup: google.cloud.spanner_admin_database_v1.types.backup.Backup
+    = None, update_mask: google.protobuf.field_mask_pb2.FieldMask = None, retry: google.api_core.retry.Retry
+    = <object object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+    str]] = ()) -> google.cloud.spanner_admin_database_v1.types.backup.Backup'
+  namewithoutparameters: update_backup
+  source:
+    id: update_backup
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 1322
+  summary: 'Updates a pending or completed
+
+    [Backup][google.spanner.admin.database.v1.Backup].'
+  syntax:
+    content: 'update_backup(request: google.cloud.spanner_admin_database_v1.types.backup.UpdateBackupRequest
+      = None, *, backup: google.cloud.spanner_admin_database_v1.types.backup.Backup
+      = None, update_mask: google.protobuf.field_mask_pb2.FieldMask = None, retry:
+      google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+      typing.Sequence[typing.Tuple[str, str]] = ()) -> google.cloud.spanner_admin_database_v1.types.backup.Backup'
+    parameters:
+    - description: 'The request object. The request for
+
+        [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup].'
+      id: request
+      isRequired: true
+      type:
+      - gsad_backup.UpdateBackupRequest
+    - description: "Required. The backup to update. `backup.name`, and the\nfields\
+        \ to be updated as specified by `update_mask` are\nrequired. Other fields\
+        \ are ignored. Update is only\nsupported for the following fields:\n\n* `backup.expire_time`.\
+        \ \n\nThis corresponds to the `backup` field\non the `request` instance; if\
+        \ `request` is provided, this\nshould not be set."
+      id: backup
+      isRequired: true
+      type:
+      - gsad_backup.Backup
+    - description: 'Required. A mask specifying which fields (e.g.
+
+        `expire_time`) in the Backup resource should be
+
+        updated. This mask is relative to the Backup resource,
+
+        not to the request message. The field mask must always
+
+        be specified; this prevents any future fields from being
+
+        erased accidentally by clients that do not know about
+
+        them.
+
+        This corresponds to the `update_mask` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: update_mask
+      isRequired: true
+      type:
+      - field_mask.FieldMask
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: A backup of a Cloud Spanner database.
+      type:
+      - .gsad_backup.Backup
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_backup
+- *id036
+- &id037
+  class: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_database_ddl
+  langs:
+  - python
+  module: google.cloud.spanner_admin_database_v1.services.database_admin
+  name: 'update_database_ddl(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.UpdateDatabaseDdlRequest
+    = None, *, database: str = None, statements: typing.Sequence[str] = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  namewithoutparameters: update_database_ddl
+  source:
+    id: update_database_ddl
+    path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_admin_database_v1/services/database_admin/async_client.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 439
+  summary: 'Updates the schema of a Cloud Spanner database by
+
+    creating/altering/dropping tables, columns, indexes, etc. The
+
+    returned [long-running operation][google.longrunning.Operation]
+
+    will have a name of the format
+
+    `<database_name>/operations/<operation_id>` and can be used to
+
+    track execution of the schema change(s). The
+
+    [metadata][google.longrunning.Operation.metadata] field type is
+
+    [UpdateDatabaseDdlMetadata][google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata].
+
+    The operation has no response.'
+  syntax:
+    content: 'update_database_ddl(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.UpdateDatabaseDdlRequest
+      = None, *, database: str = None, statements: typing.Sequence[str] = None, retry:
+      google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+      typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+    parameters:
+    - description: 'The request object. Enqueues the given DDL statements to
+
+        be applied, in order but not necessarily all at once, to
+
+        the database schema at some point (or points) in the
+
+        future. The server checks that the statements are
+
+        executable (syntactically valid, name tables that exist,
+
+        etc.) before enqueueing them, but they may still fail
+
+        upon
+
+        later execution (e.g., if a statement from another batch
+
+        of statements is applied first and it conflicts in some
+
+        way, or if there is some data-related problem like a
+
+        *NULL* value in a column to which *NOT NULL* would be
+
+        added). If a statement fails, all subsequent statements
+
+        in the batch are automatically cancelled.
+
+        Each batch of statements is assigned a name which can be
+
+        used with the
+
+        [Operations][google.longrunning.Operations] API to
+
+        monitor progress. See the
+
+        [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id]
+
+        field for more details.'
+      id: request
+      isRequired: true
+      type:
+      - spanner_database_admin.UpdateDatabaseDdlRequest
+    - description: 'Required. The database to update.
+
+        This corresponds to the `database` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: database
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.str
+    - description: 'Required. DDL statements to be
+
+        applied to the database.
+
+        This corresponds to the `statements` field
+
+        on the `request` instance; if `request` is provided, this
+
+        should not be set.'
+      id: statements
+      isRequired: true
+      type:
+      - google.cloud.spanner_admin_database_v1.services.database_admin.Sequence[str]
+    - description: 'Designation of what errors, if any,
+
+        should be retried.'
+      id: retry
+      isRequired: true
+      type:
+      - google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      isRequired: true
+      type:
+      - float
+    - description: 'Strings which should be
+
+        sent along with the request as metadata.'
+      id: metadata
+      isRequired: true
+      type:
+      - Sequence[Tuple[str, str]]
+    return:
+      description: "An object representing a long-running operation.\n\nThe result\
+        \ type for the operation will be\n:class:`~.empty.Empty`: A generic empty\
+        \ message that\nyou can re-use to avoid defining duplicated empty\nmessages\
+        \ in your APIs. A typical example is to use it as\nthe request or the response\
+        \ type of an API method. For\ninstance:\n\n<!-- literal_block {\"ids\": [],\
+        \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+        : \"preserve\"} -->\n\n````\n\n   service Foo {\n     rpc Bar(google.protobuf.Empty)\
+        \ returns (google.protobuf.Empty);\n   }\n   ````\n\nThe JSON representation\
+        \ for `Empty` is empty JSON\nobject `{}`."
+      type:
+      - .operation_async.AsyncOperation
+  type: method
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_database_ddl
+- *id037
+references:
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.backup_path
+  isExternal: false
+  name: 'backup_path(project: str, instance: str, backup: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.backup_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_billing_account_path
+  isExternal: false
+  name: 'common_billing_account_path(billing_account: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_billing_account_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_folder_path
+  isExternal: false
+  name: 'common_folder_path(folder: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_folder_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_location_path
+  isExternal: false
+  name: 'common_location_path(project: str, location: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_location_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_organization_path
+  isExternal: false
+  name: 'common_organization_path(organization: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_organization_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_project_path
+  isExternal: false
+  name: 'common_project_path(project: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.common_project_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_backup
+  isExternal: false
+  name: 'create_backup(request: google.cloud.spanner_admin_database_v1.types.backup.CreateBackupRequest
+    = None, *, parent: str = None, backup: google.cloud.spanner_admin_database_v1.types.backup.Backup
+    = None, backup_id: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.api_core.operation_async.AsyncOperation'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_backup
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_database
+  isExternal: false
+  name: 'create_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.CreateDatabaseRequest
+    = None, *, parent: str = None, create_statement: str = None, retry: google.api_core.retry.Retry
+    = <object object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+    str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.create_database
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.database_path
+  isExternal: false
+  name: 'database_path(project: str, instance: str, database: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.database_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.delete_backup
+  isExternal: false
+  name: 'delete_backup(request: google.cloud.spanner_admin_database_v1.types.backup.DeleteBackupRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> None'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.delete_backup
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.drop_database
+  isExternal: false
+  name: 'drop_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.DropDatabaseRequest
+    = None, *, database: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> None'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.drop_database
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_file
+  isExternal: false
+  name: 'from_service_account_file(filename: str, *args, **kwargs)'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_file
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_json
+  isExternal: false
+  name: 'from_service_account_json(filename: str, *args, **kwargs)'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.from_service_account_json
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_backup
+  isExternal: false
+  name: 'get_backup(request: google.cloud.spanner_admin_database_v1.types.backup.GetBackupRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.types.backup.Backup'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_backup
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database
+  isExternal: false
+  name: 'get_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseRequest
+    = None, *, name: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.types.spanner_database_admin.Database'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database_ddl
+  isExternal: false
+  name: 'get_database_ddl(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseDdlRequest
+    = None, *, database: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.cloud.spanner_admin_database_v1.types.spanner_database_admin.GetDatabaseDdlResponse'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_database_ddl
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_iam_policy
+  isExternal: false
+  name: 'get_iam_policy(request: google.iam.v1.iam_policy_pb2.GetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.get_iam_policy
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.instance_path
+  isExternal: false
+  name: 'instance_path(project: str, instance: str) -> str'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.instance_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backup_operations
+  isExternal: false
+  name: 'list_backup_operations(request: google.cloud.spanner_admin_database_v1.types.backup.ListBackupOperationsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListBackupOperationsAsyncPager'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backup_operations
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backups
+  isExternal: false
+  name: 'list_backups(request: google.cloud.spanner_admin_database_v1.types.backup.ListBackupsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListBackupsAsyncPager'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_backups
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_database_operations
+  isExternal: false
+  name: 'list_database_operations(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.ListDatabaseOperationsRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListDatabaseOperationsAsyncPager'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_database_operations
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_databases
+  isExternal: false
+  name: 'list_databases(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.ListDatabasesRequest
+    = None, *, parent: str = None, retry: google.api_core.retry.Retry = <object object>,
+    timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]] = ())
+    -> google.cloud.spanner_admin_database_v1.services.database_admin.pagers.ListDatabasesAsyncPager'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.list_databases
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_backup_path
+  isExternal: false
+  name: 'parse_backup_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_backup_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_billing_account_path
+  isExternal: false
+  name: 'parse_common_billing_account_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_billing_account_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_folder_path
+  isExternal: false
+  name: 'parse_common_folder_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_folder_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_location_path
+  isExternal: false
+  name: 'parse_common_location_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_location_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_organization_path
+  isExternal: false
+  name: 'parse_common_organization_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_organization_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_project_path
+  isExternal: false
+  name: 'parse_common_project_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_common_project_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_database_path
+  isExternal: false
+  name: 'parse_database_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_database_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_instance_path
+  isExternal: false
+  name: 'parse_instance_path(path: str) -> typing.Dict[str, str]'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.parse_instance_path
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.restore_database
+  isExternal: false
+  name: 'restore_database(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.RestoreDatabaseRequest
+    = None, *, parent: str = None, database_id: str = None, backup: str = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.restore_database
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.set_iam_policy
+  isExternal: false
+  name: 'set_iam_policy(request: google.iam.v1.iam_policy_pb2.SetIamPolicyRequest
+    = None, *, resource: str = None, retry: google.api_core.retry.Retry = <object
+    object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str, str]]
+    = ()) -> google.iam.v1.policy_pb2.Policy'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.set_iam_policy
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.test_iam_permissions
+  isExternal: false
+  name: 'test_iam_permissions(request: google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest
+    = None, *, resource: str = None, permissions: typing.Sequence[str] = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.iam.v1.iam_policy_pb2.TestIamPermissionsResponse'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.test_iam_permissions
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.transport
+  isExternal: false
+  name: transport
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.transport
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_backup
+  isExternal: false
+  name: 'update_backup(request: google.cloud.spanner_admin_database_v1.types.backup.UpdateBackupRequest
+    = None, *, backup: google.cloud.spanner_admin_database_v1.types.backup.Backup
+    = None, update_mask: google.protobuf.field_mask_pb2.FieldMask = None, retry: google.api_core.retry.Retry
+    = <object object>, timeout: float = None, metadata: typing.Sequence[typing.Tuple[str,
+    str]] = ()) -> google.cloud.spanner_admin_database_v1.types.backup.Backup'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_backup
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_database_ddl
+  isExternal: false
+  name: 'update_database_ddl(request: google.cloud.spanner_admin_database_v1.types.spanner_database_admin.UpdateDatabaseDdlRequest
+    = None, *, database: str = None, statements: typing.Sequence[str] = None, retry:
+    google.api_core.retry.Retry = <object object>, timeout: float = None, metadata:
+    typing.Sequence[typing.Tuple[str, str]] = ()) -> google.api_core.operation_async.AsyncOperation'
+  parent: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient.update_database_ddl
+- fullName: Optional[google.auth.credentials.Credentials]
+  name: Optional[Credentials]
+  spec.python:
+  - fullName: Optional
+    name: Optional
+    uid: Optional
+  - fullName: '['
+    name: '['
+  - fullName: google.auth.credentials.Credentials
+    name: Credentials
+    uid: google.auth.credentials.Credentials
+  - fullName: ']'
+    name: ']'
+  uid: Optional[google.auth.credentials.Credentials]
+- fullName: Union[str, .DatabaseAdminTransport]
+  name: Union[str, DatabaseAdminTransport]
+  spec.python:
+  - fullName: Union
+    name: Union
+    uid: Union
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: .DatabaseAdminTransport
+    name: DatabaseAdminTransport
+    uid: .DatabaseAdminTransport
+  - fullName: ']'
+    name: ']'
+  uid: Union[str, .DatabaseAdminTransport]
+- fullName: Sequence[Tuple[str, str]]
+  name: Sequence[Tuple[str, str]]
+  spec.python:
+  - fullName: Sequence
+    name: Sequence
+    uid: Sequence
+  - fullName: '['
+    name: '['
+  - fullName: Tuple
+    name: Tuple
+    uid: Tuple
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ', '
+    name: ', '
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  - fullName: ']'
+    name: ']'
+  uid: Sequence[Tuple[str, str]]
+- fullName: google.cloud.spanner_admin_database_v1.services.database_admin.Sequence[str]
+  name: Sequence[str]
+  spec.python:
+  - fullName: google.cloud.spanner_admin_database_v1.services.database_admin.Sequence
+    name: Sequence
+    uid: google.cloud.spanner_admin_database_v1.services.database_admin.Sequence
+  - fullName: '['
+    name: '['
+  - fullName: str
+    name: str
+    uid: str
+  - fullName: ']'
+    name: ']'
+  uid: google.cloud.spanner_admin_database_v1.services.database_admin.Sequence[str]

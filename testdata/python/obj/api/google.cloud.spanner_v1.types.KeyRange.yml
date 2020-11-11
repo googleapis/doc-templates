@@ -1,0 +1,84 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: google.cloud.spanner_v1.types.KeyRange
+  fullName: google.cloud.spanner_v1.types.KeyRange
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: proto.message.Message
+  langs:
+  - python
+  module: google.cloud.spanner_v1.types
+  name: KeyRange
+  source:
+    id: KeyRange
+    path: google/cloud/spanner_v1/types/keys.py
+    remote:
+      branch: HEAD
+      path: google/cloud/spanner_v1/types/keys.py
+      repo: https://github.com/googleapis/python-spanner.git
+    startLine: 29
+  summary: "KeyRange represents a range of rows in a table or index.\n\nA range has\
+    \ a start key and an end key. These keys can be open or\nclosed, indicating if\
+    \ the range includes rows with that key.\n\nKeys are represented by lists, where\
+    \ the ith value in the list\ncorresponds to the ith component of the table or\
+    \ index primary key.\nIndividual values are encoded as described\n[here][google.spanner.v1.TypeCode].\n\
+    \nFor example, consider the following table definition:\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   CREATE TABLE UserEvents (\n\
+    \     UserName STRING(MAX),\n     EventDate STRING(10)\n   ) PRIMARY KEY(UserName,\
+    \ EventDate);\n   ````\n\nThe following keys name rows in this table:\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   [\"Bob\", \"\
+    2014-09-23\"]\n   [\"Alfred\", \"2015-06-12\"]\n   ````\n\nSince the `UserEvents`\
+    \ table's `PRIMARY KEY` clause names two\ncolumns, each `UserEvents` key has two\
+    \ elements; the first is the\n`UserName`, and the second is the `EventDate`.\n\
+    \nKey ranges with multiple components are interpreted\nlexicographically by component\
+    \ using the table or index key's\ndeclared sort order. For example, the following\
+    \ range returns all\nevents for user `\"Bob\"` that occurred in the year 2015:\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   \"start_closed\"\
+    : [\"Bob\", \"2015-01-01\"]\n   \"end_closed\": [\"Bob\", \"2015-12-31\"]\n  \
+    \ ````\n\nStart and end keys can omit trailing key components. This affects\n\
+    the inclusion and exclusion of rows that exactly match the provided\nkey components:\
+    \ if the key is closed, then rows that exactly match\nthe provided components\
+    \ are included; if the key is open, then rows\nthat exactly match are not included.\n\
+    \nFor example, the following range includes all events for `\"Bob\"`\nthat occurred\
+    \ during and after the year 2000:\n\n<!-- literal_block {\"ids\": [], \"classes\"\
+    : [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\"\
+    } -->\n\n````\n\n   \"start_closed\": [\"Bob\", \"2000-01-01\"]\n   \"end_closed\"\
+    : [\"Bob\"]\n   ````\n\nThe next example retrieves all events for `\"Bob\"`:\n\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   \"start_closed\"\
+    : [\"Bob\"]\n   \"end_closed\": [\"Bob\"]\n   ````\n\nTo retrieve events before\
+    \ the year 2000:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
+    : [], \"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\"} -->\n\n\
+    ````\n\n   \"start_closed\": [\"Bob\"]\n   \"end_open\": [\"Bob\", \"2000-01-01\"\
+    ]\n   ````\n\nThe following range includes all rows in the table:\n\n<!-- literal_block\
+    \ {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   \"start_closed\": []\n  \
+    \ \"end_closed\": []\n   ````\n\nThis range returns all users whose `UserName`\
+    \ begins with any\ncharacter from A to C:\n\n<!-- literal_block {\"ids\": [],\
+    \ \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [], \"xml:space\"\
+    : \"preserve\"} -->\n\n````\n\n   \"start_closed\": [\"A\"]\n   \"end_open\":\
+    \ [\"D\"]\n   ````\n\nThis range returns all users whose `UserName` begins with\
+    \ B:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"backrefs\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   \"start_closed\"\
+    : [\"B\"]\n   \"end_open\": [\"C\"]\n   ````\n\nKey ranges honor column sort order.\
+    \ For example, suppose a table is\ndefined as follows:\n\n<!-- literal_block {\"\
+    ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\": [],\
+    \ \"xml:space\": \"preserve\"} -->\n\n````\n\n   CREATE TABLE DescendingSortedTable\
+    \ {\n     Key INT64,\n     ...\n   ) PRIMARY KEY(Key DESC);\n   ````\n\nThe following\
+    \ range retrieves all rows with key values between 1 and\n100 inclusive:\n\n<!--\
+    \ literal_block {\"ids\": [], \"classes\": [], \"names\": [], \"dupnames\": [],\
+    \ \"backrefs\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   \"start_closed\"\
+    : [\"100\"]\n   \"end_closed\": [\"1\"]\n   ````\n\nNote that 100 is passed as\
+    \ the start, and 1 is passed as the end,\nbecause `Key` is a descending column\
+    \ in the schema."
+  syntax:
+    content: KeyRange(mapping=None, *, ignore_unknown_fields=False, **kwargs)
+  type: class
+  uid: google.cloud.spanner_v1.types.KeyRange
+references: []
