@@ -27,4 +27,8 @@ python3 -m pip install flake8 black pytest pytest-cov
 black --check tests
 flake8 tests
 
-pytest tests
+if [ -n "$UPDATE_GOLDENS" ]; then
+    pytest --update-goldens tests
+else
+    pytest tests
+fi

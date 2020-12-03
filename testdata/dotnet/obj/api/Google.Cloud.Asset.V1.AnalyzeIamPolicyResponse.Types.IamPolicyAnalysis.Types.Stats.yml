@@ -1,0 +1,891 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  id: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  parent: Google.Cloud.Asset.V1
+  children:
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor(Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+  langs:
+  - csharp
+  - vb
+  name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  type: Class
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Stats
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6407
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nA stats message that contains a set of analysis metrics.\n\nHere are some equations to show relationships of the explicitly specified\nmetrics with other implicit metrics:\n* node_count = discovered_node_count + undiscovered_node_count(implicit)\n* discovered_node_count = explored_node_count +\nunexplored_node_count(implicit)\n* explored_node_count = capped_node_count + uncapped_node_count(implicit)\n* unexplored_node_count(implicit) = permission_denied_node_count +\nexecution_timeout_node_count + other_unexplored_node_count(implicit)\n* discovered_node_count = matched_node_count +\nunmatched_node_count(implicit)\n"
+  example: []
+  syntax:
+    content: 'public sealed class Stats : IMessage<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>, IMessage, IEquatable<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>, IDeepCloneable<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>'
+    content.vb: >-
+      Public NotInheritable Class Stats
+          Implements IMessage(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats), IMessage, IEquatable(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats), IDeepCloneable(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  - Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor
+  commentId: M:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor
+  id: '#ctor'
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: Stats()
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Stats()
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Stats()
+  type: Constructor
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: .ctor
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6423
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  syntax:
+    content: public Stats()
+    content.vb: Public Sub New
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor(Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  commentId: M:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor(Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  id: '#ctor(Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)'
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: Stats(AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Stats(AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Stats(Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  type: Constructor
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: .ctor
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6430
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  syntax:
+    content: public Stats(AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats other)
+    parameters:
+    - id: other
+      type: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    content.vb: Public Sub New(other As AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+  id: NodeType
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: NodeType
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: NodeType
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6454
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nNode type.\n"
+  example: []
+  syntax:
+    content: public AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType NodeType { get; set; }
+    parameters: []
+    return:
+      type: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
+    content.vb: Public Property NodeType As AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+  id: NodeSubtype
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: NodeSubtype
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: NodeSubtype
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6472
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe subtype of a node, such as:\n* For Identity: Group, User, ServiceAccount etc.\n* For Resource: resource type name, such as\ncloudresourcemanager.googleapis.com/Organization, etc.\n* For Access: Role or Permission\n"
+  example: []
+  syntax:
+    content: public string NodeSubtype { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property NodeSubtype As String
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+  id: DiscoveredNodeCount
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: DiscoveredNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: DiscoveredNodeCount
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6486
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe count of discovered nodes.\n"
+  example: []
+  syntax:
+    content: public int DiscoveredNodeCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property DiscoveredNodeCount As Integer
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+  id: MatchedNodeCount
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: MatchedNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: MatchedNodeCount
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6501
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe count of nodes that match the query. These nodes form a sub-graph\nof discovered nodes.\n"
+  example: []
+  syntax:
+    content: public int MatchedNodeCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MatchedNodeCount As Integer
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+  id: ExploredNodeCount
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: ExploredNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ExploredNodeCount
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6515
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe count of explored nodes.\n"
+  example: []
+  syntax:
+    content: public int ExploredNodeCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ExploredNodeCount As Integer
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+  id: CappedNodeCount
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: CappedNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: CappedNodeCount
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6530
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe count of nodes that get explored, but are capped by max fanout\nsetting.\n"
+  example: []
+  syntax:
+    content: public int CappedNodeCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CappedNodeCount As Integer
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+  id: PermisionDeniedNodeCount
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: PermisionDeniedNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: PermisionDeniedNodeCount
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6544
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe count of unexplored nodes caused by permission denied error.\n"
+  example: []
+  syntax:
+    content: public int PermisionDeniedNodeCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property PermisionDeniedNodeCount As Integer
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount
+  commentId: P:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount
+  id: ExecutionTimeoutNodeCount
+  parent: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  langs:
+  - csharp
+  - vb
+  name: ExecutionTimeoutNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ExecutionTimeoutNodeCount
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
+    startLine: 6558
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe count of unexplored nodes caused by execution timeout.\n"
+  example: []
+  syntax:
+    content: public int ExecutionTimeoutNodeCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ExecutionTimeoutNodeCount As Integer
+  overload: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Cloud.Asset.V1
+  commentId: N:Google.Cloud.Asset.V1
+  name: Google.Cloud.Asset.V1
+  nameWithType: Google.Cloud.Asset.V1
+  fullName: Google.Cloud.Asset.V1
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  commentId: T:Google.Protobuf.IMessage{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  nameWithType: IMessage<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  fullName: Google.Protobuf.IMessage<Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  nameWithType.vb: IMessage(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  name.vb: IMessage(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  commentId: T:System.IEquatable{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  nameWithType: IEquatable<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  fullName: System.IEquatable<Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  nameWithType.vb: IEquatable(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  fullName.vb: System.IEquatable(Of Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  name.vb: IEquatable(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  nameWithType: IDeepCloneable<AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats>
+  nameWithType.vb: IDeepCloneable(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  name.vb: IDeepCloneable(Of AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: true
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.#ctor
+  name: Stats
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Stats
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Stats
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  parent: Google.Cloud.Asset.V1
+  name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+  name: NodeType
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeType
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
+  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
+  parent: Google.Cloud.Asset.V1
+  name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+  name: NodeSubtype
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.NodeSubtype
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+  name: DiscoveredNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.DiscoveredNodeCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+  name: MatchedNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.MatchedNodeCount
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+  name: ExploredNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExploredNodeCount
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+  name: CappedNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.CappedNodeCount
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+  name: PermisionDeniedNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.PermisionDeniedNodeCount
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount*
+  commentId: Overload:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount
+  name: ExecutionTimeoutNodeCount
+  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.ExecutionTimeoutNodeCount

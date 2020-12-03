@@ -118,6 +118,8 @@ function joinType(parameter) {
   var joinTypeProperty = function (type, key) {
     if (!type || !type[0] || !type[0][key]) return null;
     var value = type.map(function (t) {
+      if (!t) return null;
+      if (!t[key]) return t.uid;
       return t[key][0].value;
     }).join(' | ');
     return [{
@@ -171,16 +173,27 @@ function groupParameters(parameters) {
   return groupedParameters;
 }
 
-function groupChildren(model, category, typeChildrenItems) {
+function groupChildren(model, category, typeChildrenItems, itemToModify) {
   if (!model || !model.type) {
     return;
   }
+  if (!itemToModify) itemToModify = model;
   if (!typeChildrenItems) {
     var typeChildrenItems = getDefinitions(category);
   }
   var grouped = {};
 
   normalizeLanguageValuePairs(model.children).forEach(function (c) {
+    if (c.langs && c.langs[0] === "go") {
+      // Skip if this child has a different parent.
+      if (c.parent && c.parent[0].value.uid != itemToModify.uid) return;
+
+      // Group all of this child's children.
+      if (c.uid !== model.uid) {
+        groupChildren(model, category, typeChildrenItem, c);
+      }
+    }
+
     if (c.isEii) {
       var type = "eii";
     } else {
@@ -233,7 +246,7 @@ function groupChildren(model, category, typeChildrenItems) {
     }
   }
 
-  model.children = children;
+  itemToModify.children = children;
 }
 
 function getTypePropertyName(type) {
@@ -287,6 +300,7 @@ function getDefinitions(category) {
     "variable":     { inVariable: true,     typePropertyName: "inVariable",     id: "variables",    isEmbedded: true },
     "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
     "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
+    "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods",      isEmbedded: true },
     "typealias":    { inTypeAlias: true,    typePropertyName: "inTypeAlias",    id: "typealiases",  isEmbedded: true },
   };
   var classItems = {
