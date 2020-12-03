@@ -1,13 +1,22 @@
 # doc-templates
 
-This repository contains templates used to create refernce documentation for developers.google.com,
-cloud.google.com, and other sites.
+This repository contains templates used to generate API reference documentation
+for developers.google.com, cloud.google.com, and other sites.
 
 ## Contributing
 
+Contributions are welcome. Please, see the
+[CONTRIBUTING](https://github.com/googleapis/doc-templates/blob/master/docs/CONTRIBUTING.md)
+document for details.
+
+Please note that this project is released with a Contributor Code of Conduct.
+By participating in this project you agree to abide by its terms.
+See [Contributor Code of Conduct](https://github.com/googleapis/doc-templates/blob/master/docs/CODE_OF_CONDUCT.md)
+for more information.
+
 ### Docs
 
-See the [`docs`](/docs) directory for additional documentation, like a code of
+See the [`docs`](/docs) directory for additional documentation, like the code of
 conduct and an overall contributing guide.
 
 ### Testing
