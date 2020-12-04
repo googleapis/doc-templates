@@ -215,7 +215,10 @@
         {{! Note: don't print the Functions/Methods headers for children of children.}}
         {{#children}}
           <h4 id="{{id}}" data-uid="{{uid}}">{{name.0.value}}</h4>
-          <div class="markdown level1 summary">{{{summary}}}</div>	
+          <div class="markdown level1 summary">{{{summary}}}</div>
+          {{#syntax}}
+          <h5 class="decalaration">{{__global.declaration}}</h5>
+          {{/syntax}}
         {{/children}}
       {{/children}}
     {{/children}}
