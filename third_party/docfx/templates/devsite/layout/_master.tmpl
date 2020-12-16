@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html devsite>
   {{>partials/head}}
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  <body>
       <header>
       </header>
       {{#_enableSearch}}
@@ -16,26 +16,12 @@
       </div>
       {{/_enableSearch}}
       <div role="main" class="container body-content hide-when-search">
-      {{^_disableToc}}
-        {{>partials/toc}}
         <div class="article row grid-right">
-      {{/_disableToc}}
-      {{#_disableToc}}
         <div class="article row grid">
-        {{/_disableToc}}
-          {{#_disableAffix}}
-          <div class="col-md-12">
-          {{/_disableAffix}}
-          {{^_disableAffix}}
-          <div class="col-md-10">
-          {{/_disableAffix}}
-            <article class="content wrap" id="_content" data-uid="{{uid}}">
-                {{!body}}
-            </article>
-          </div>
-          {{^_disableAffix}}
-          {{>partials/affix}}
-          {{/_disableAffix}}
+          <article class="content wrap" id="_content" data-uid="{{uid}}">
+            {{!body}}
+          </article>
+        </div>
         </div>
       </div>
       {{^_disableFooter}}
