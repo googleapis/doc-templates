@@ -11,18 +11,14 @@
       <header>
       </header>
       {{#_enableSearch}}
-      <div class="container body-content">
+      <div>
         {{>partials/searchResults}}
       </div>
       {{/_enableSearch}}
-      <div role="main" class="container body-content hide-when-search">
-        <div class="article row grid-right">
-        <div class="article row grid">
-          <article class="content wrap" id="_content" data-uid="{{uid}}">
-            {{!body}}
-          </article>
-        </div>
-        </div>
+      <div>
+        <article data-uid="{{uid}}">
+          {{!body}}
+        </article>
       </div>
       {{^_disableFooter}}
       {{>partials/footer}}
