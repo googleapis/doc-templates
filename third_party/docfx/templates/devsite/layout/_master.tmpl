@@ -1,28 +1,13 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
-{{!include(/^styles/.*/)}}
-{{!include(/^fonts/.*/)}}
-{{!include(favicon.ico)}}
-{{!include(logo.svg)}}
-{{!include(search-stopwords.json)}}
 <!DOCTYPE html>
 <html devsite>
   {{>partials/head}}
   <body>
-      <header>
-      </header>
-      {{#_enableSearch}}
-      <div>
-        {{>partials/searchResults}}
-      </div>
-      {{/_enableSearch}}
-      <div>
-        <article data-uid="{{uid}}">
-          {{!body}}
-        </article>
-      </div>
-      {{^_disableFooter}}
-      {{>partials/footer}}
-      {{/_disableFooter}}
-    {{>partials/scripts}}
+    <div>
+      <h1>{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}}</h1>
+      <article data-uid="{{uid}}">
+        {{!body}}
+      </article>
+    </div>
   </body>
 </html>
