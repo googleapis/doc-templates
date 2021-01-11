@@ -18,6 +18,7 @@ from docuploader import shell
 
 import pytest
 
+
 def test_generate():
     build_dir = Path("testdata/nodejs-hang")
     out_dir = build_dir / "site/api"
