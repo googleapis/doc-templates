@@ -22,6 +22,7 @@ import pytest
 def test_generate(test_all):
     if not test_all:
         pytest.skip("skipping hanging test unless --test-all option is supplied.")
+
     build_dir = Path("testdata/nodejs-hang")
     out_dir = build_dir / "site/api"
     # Generate!
