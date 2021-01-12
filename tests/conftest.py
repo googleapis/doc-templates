@@ -17,8 +17,14 @@ import pytest
 
 def pytest_addoption(parser):
     parser.addoption("--update-goldens", action="store", default=False)
+    parser.addoption("--test-all", action="store", default=False)
 
 
 @pytest.fixture
 def update_goldens(request):
     return request.config.getoption("--update-goldens")
+
+
+@pytest.fixture
+def test_all(request):
+    return request.config.getoption("--test-all")
