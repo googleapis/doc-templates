@@ -21,64 +21,94 @@
 </h1>
       <article data-uid="cloud.google.com/go/storage">
   
-  <div class="markdown level0 summary"><p>Package storage provides an easy way to work with Google Cloud Storage.
-Google Cloud Storage stores data in named objects, which are grouped into buckets.</p>
-<p>More information about Google Cloud Storage is available at
-<a href="https://cloud.google.com/storage/docs">https://cloud.google.com/storage/docs</a>.</p>
-<p>See <a href="https://godoc.org/cloud.google.com/go">https://godoc.org/cloud.google.com/go</a> for authentication, timeouts,
-connection pooling and similar aspects of this package.</p>
-<p>All of the methods of this package use exponential backoff to retry calls that fail
+  <aside class="note"><strong>Note:</strong> You can also view this documentation at https://pkg.go.dev/cloud.google.com/go/storage.</aside>
+  <div class="markdown level0 summary"><p><p>
+Package storage provides an easy way to work with Google Cloud Storage.
+Google Cloud Storage stores data in named objects, which are grouped into buckets.
+</p>
+<p>
+More information about Google Cloud Storage is available at
+<a href="https://cloud.google.com/storage/docs">https://cloud.google.com/storage/docs</a>.
+</p>
+<p>
+See <a href="https://godoc.org/cloud.google.com/go">https://godoc.org/cloud.google.com/go</a> for authentication, timeouts,
+connection pooling and similar aspects of this package.
+</p>
+<p>
+All of the methods of this package use exponential backoff to retry calls that fail
 with certain errors, as described in
 <a href="https://cloud.google.com/storage/docs/exponential-backoff">https://cloud.google.com/storage/docs/exponential-backoff</a>. Retrying continues
 indefinitely unless the controlling context is canceled or the client is closed. See
-context.WithTimeout and context.WithCancel.</p>
-<p>Creating a Client</p>
-<p>To start working with this package, create a client:</p>
-<pre><code>ctx := context.Background()
+context.WithTimeout and context.WithCancel.
+</p>
+<h3 id="hdr-Creating_a_Client">Creating a Client</h3>
+<p>
+To start working with this package, create a client:
+</p></p>
+<pre>ctx := context.Background()
 client, err := storage.NewClient(ctx)
 if err != nil {
     // TODO: Handle error.
 }
-</code></pre><p>The client will use your default application credentials. Clients should be
+</pre>
+<p><p>
+The client will use your default application credentials. Clients should be
 reused instead of created as needed. The methods of Client are safe for
-concurrent use by multiple goroutines.</p>
-<p>If you only wish to access public data, you can create
-an unauthenticated client with</p>
-<pre><code>client, err := storage.NewClient(ctx, option.WithoutAuthentication())
-</code></pre><p>Buckets</p>
-<p>A Google Cloud Storage bucket is a collection of objects. To work with a
-bucket, make a bucket handle:</p>
-<pre><code>bkt := client.Bucket(bucketName)
-</code></pre><p>A handle is a reference to a bucket. You can have a handle even if the
+concurrent use by multiple goroutines.
+</p>
+<p>
+If you only wish to access public data, you can create
+an unauthenticated client with
+</p></p>
+<pre>client, err := storage.NewClient(ctx, option.WithoutAuthentication())
+</pre>
+<p><h3 id="hdr-Buckets">Buckets</h3>
+<p>
+A Google Cloud Storage bucket is a collection of objects. To work with a
+bucket, make a bucket handle:
+</p></p>
+<pre>bkt := client.Bucket(bucketName)
+</pre>
+<p><p>
+A handle is a reference to a bucket. You can have a handle even if the
 bucket doesn&#39;t exist yet. To create a bucket in Google Cloud Storage,
-call Create on the handle:</p>
-<pre><code>if err := bkt.Create(ctx, projectID, nil); err != nil {
+call Create on the handle:
+</p></p>
+<pre>if err := bkt.Create(ctx, projectID, nil); err != nil {
     // TODO: Handle error.
 }
-</code></pre><p>Note that although buckets are associated with projects, bucket names are
-global across all projects.</p>
-<p>Each bucket has associated metadata, represented in this package by
+</pre>
+<p><p>
+Note that although buckets are associated with projects, bucket names are
+global across all projects.
+</p>
+<p>
+Each bucket has associated metadata, represented in this package by
 BucketAttrs. The third argument to BucketHandle.Create allows you to set
 the initial BucketAttrs of a bucket. To retrieve a bucket&#39;s attributes, use
-Attrs:</p>
-<pre><code>attrs, err := bkt.Attrs(ctx)
+Attrs:
+</p></p>
+<pre>attrs, err := bkt.Attrs(ctx)
 if err != nil {
     // TODO: Handle error.
 }
-fmt.Printf(&quot;bucket %s, created at %s, is located in %s with storage class %s\n&quot;,
+fmt.Printf(&#34;bucket %s, created at %s, is located in %s with storage class %s\n&#34;,
     attrs.Name, attrs.Created, attrs.Location, attrs.StorageClass)
-</code></pre><p>Objects</p>
-<p>An object holds arbitrary data as a sequence of bytes, like a file. You
+</pre>
+<p><h3 id="hdr-Objects">Objects</h3>
+<p>
+An object holds arbitrary data as a sequence of bytes, like a file. You
 refer to objects using a handle, just as with buckets, but unlike buckets
 you don&#39;t explicitly create an object. Instead, the first time you write
 to an object it will be created. You can use the standard Go io.Reader
-and io.Writer interfaces to read and write object data:</p>
-<pre><code>obj := bkt.Object(&quot;data&quot;)
+and io.Writer interfaces to read and write object data:
+</p></p>
+<pre>obj := bkt.Object(&#34;data&#34;)
 // Write something to obj.
 // w implements io.Writer.
 w := obj.NewWriter(ctx)
 // Write some text to obj. This will either create the object or overwrite whatever is there already.
-if _, err := fmt.Fprintf(w, &quot;This object contains text.\n&quot;); err != nil {
+if _, err := fmt.Fprintf(w, &#34;This object contains text.\n&#34;); err != nil {
     // TODO: Handle error.
 }
 // Close, just like writing a file.
@@ -95,17 +125,23 @@ defer r.Close()
 if _, err := io.Copy(os.Stdout, r); err != nil {
     // TODO: Handle error.
 }
-// Prints &quot;This object contains text.&quot;
-</code></pre><p>Objects also have attributes, which you can fetch with Attrs:</p>
-<pre><code>objAttrs, err := obj.Attrs(ctx)
+// Prints &#34;This object contains text.&#34;
+</pre>
+<p><p>
+Objects also have attributes, which you can fetch with Attrs:
+</p></p>
+<pre>objAttrs, err := obj.Attrs(ctx)
 if err != nil {
     // TODO: Handle error.
 }
-fmt.Printf(&quot;object %s has size %d and can be read using %s\n&quot;,
+fmt.Printf(&#34;object %s has size %d and can be read using %s\n&#34;,
     objAttrs.Name, objAttrs.Size, objAttrs.MediaLink)
-</code></pre><p>Listing objects</p>
-<p>Listing objects in a bucket is done with the Bucket.Objects method:</p>
-<pre><code>query := &amp;storage.Query{Prefix: &quot;&quot;}
+</pre>
+<p><h3 id="hdr-Listing_objects">Listing objects</h3>
+<p>
+Listing objects in a bucket is done with the Bucket.Objects method:
+</p></p>
+<pre>query := &amp;storage.Query{Prefix: &#34;&#34;}
 
 var names []string
 it := bkt.Objects(ctx, query)
@@ -119,65 +155,104 @@ for {
     }
     names = append(names, attrs.Name)
 }
-</code></pre><p>If only a subset of object attributes is needed when listing, specifying this
-subset using Query.SetAttrSelection may speed up the listing process:</p>
-<pre><code>query := &amp;storage.Query{Prefix: &quot;&quot;}
-query.SetAttrSelection([]string{&quot;Name&quot;})
+</pre>
+<p><p>
+Objects are listed lexicographically by name. To filter objects
+lexicographically, Query.StartOffset and/or Query.EndOffset can be used:
+</p></p>
+<pre>query := &amp;storage.Query{
+    Prefix: &#34;&#34;,
+    StartOffset: &#34;bar/&#34;,  // Only list objects lexicographically &gt;= &#34;bar/&#34;
+    EndOffset: &#34;foo/&#34;,    // Only list objects lexicographically &lt; &#34;foo/&#34;
+}
 
 // ... as before
-</code></pre><p>ACLs</p>
-<p>Both objects and buckets have ACLs (Access Control Lists). An ACL is a list of
+</pre>
+<p><p>
+If only a subset of object attributes is needed when listing, specifying this
+subset using Query.SetAttrSelection may speed up the listing process:
+</p></p>
+<pre>query := &amp;storage.Query{Prefix: &#34;&#34;}
+query.SetAttrSelection([]string{&#34;Name&#34;})
+
+// ... as before
+</pre>
+<p><h3 id="hdr-ACLs">ACLs</h3>
+<p>
+Both objects and buckets have ACLs (Access Control Lists). An ACL is a list of
 ACLRules, each of which specifies the role of a user, group or project. ACLs
 are suitable for fine-grained control, but you may prefer using IAM to control
 access at the project level (see
-<a href="https://cloud.google.com/storage/docs/access-control/iam">https://cloud.google.com/storage/docs/access-control/iam</a>).</p>
-<p>To list the ACLs of a bucket or object, obtain an ACLHandle and call its List method:</p>
-<pre><code>acls, err := obj.ACL().List(ctx)
+<a href="https://cloud.google.com/storage/docs/access-control/iam">https://cloud.google.com/storage/docs/access-control/iam</a>).
+</p>
+<p>
+To list the ACLs of a bucket or object, obtain an ACLHandle and call its List method:
+</p></p>
+<pre>acls, err := obj.ACL().List(ctx)
 if err != nil {
     // TODO: Handle error.
 }
 for _, rule := range acls {
-    fmt.Printf(&quot;%s has role %s\n&quot;, rule.Entity, rule.Role)
+    fmt.Printf(&#34;%s has role %s\n&#34;, rule.Entity, rule.Role)
 }
-</code></pre><p>You can also set and delete ACLs.</p>
-<p>Conditions</p>
-<p>Every object has a generation and a metageneration. The generation changes
+</pre>
+<p><p>
+You can also set and delete ACLs.
+</p>
+<h3 id="hdr-Conditions">Conditions</h3>
+<p>
+Every object has a generation and a metageneration. The generation changes
 whenever the content changes, and the metageneration changes whenever the
 metadata changes. Conditions let you check these values before an operation;
 the operation only executes if the conditions match. You can use conditions to
-prevent race conditions in read-modify-write operations.</p>
-<p>For example, say you&#39;ve read an object&#39;s metadata into objAttrs. Now
+prevent race conditions in read-modify-write operations.
+</p>
+<p>
+For example, say you&#39;ve read an object&#39;s metadata into objAttrs. Now
 you want to write to that object, but only if its contents haven&#39;t changed
-since you read it. Here is how to express that:</p>
-<pre><code>w = obj.If(storage.Conditions{GenerationMatch: objAttrs.Generation}).NewWriter(ctx)
+since you read it. Here is how to express that:
+</p></p>
+<pre>w = obj.If(storage.Conditions{GenerationMatch: objAttrs.Generation}).NewWriter(ctx)
 // Proceed with writing as above.
-</code></pre><p>Signed URLs</p>
-<p>You can obtain a URL that lets anyone read or write an object for a limited time.
+</pre>
+<p><h3 id="hdr-Signed_URLs">Signed URLs</h3>
+<p>
+You can obtain a URL that lets anyone read or write an object for a limited time.
 You don&#39;t need to create a client to do this. See the documentation of
-SignedURL for details.</p>
-<pre><code>url, err := storage.SignedURL(bucketName, &quot;shared-object&quot;, opts)
+SignedURL for details.
+</p></p>
+<pre>url, err := storage.SignedURL(bucketName, &#34;shared-object&#34;, opts)
 if err != nil {
     // TODO: Handle error.
 }
 fmt.Println(url)
-</code></pre><p>Post Policy V4 Signed Request</p>
-<p>A type of signed request that allows uploads through HTML forms directly to Cloud Storage with
+</pre>
+<p><h3 id="hdr-Post_Policy_V4_Signed_Request">Post Policy V4 Signed Request</h3>
+<p>
+A type of signed request that allows uploads through HTML forms directly to Cloud Storage with
 temporary permission. Conditions can be applied to restrict how the HTML form is used and exercised
-by a user.</p>
-<p>For more information, please see <a href="https://cloud.google.com/storage/docs/xml-api/post-object">https://cloud.google.com/storage/docs/xml-api/post-object</a> as well
-as the documentation of GenerateSignedPostPolicyV4.</p>
-<pre><code>pv4, err := storage.GenerateSignedPostPolicyV4(bucketName, objectName, opts)
+by a user.
+</p>
+<p>
+For more information, please see <a href="https://cloud.google.com/storage/docs/xml-api/post-object">https://cloud.google.com/storage/docs/xml-api/post-object</a> as well
+as the documentation of GenerateSignedPostPolicyV4.
+</p></p>
+<pre>pv4, err := storage.GenerateSignedPostPolicyV4(bucketName, objectName, opts)
 if err != nil {
     // TODO: Handle error.
 }
-fmt.Printf(&quot;URL: %s\nFields; %v\n&quot;, pv4.URL, pv4.Fields)
-</code></pre><p>Errors</p>
-<p>Errors returned by this client are often of the type <a href="https://godoc.org/google.golang.org/api/googleapi#Error"><code>googleapi.Error</code></a>.
-These errors can be introspected for more information by type asserting to the richer <code>googleapi.Error</code> type. For example:</p>
-<pre><code>if e, ok := err.(*googleapi.Error); ok {
+fmt.Printf(&#34;URL: %s\nFields; %v\n&#34;, pv4.URL, pv4.Fields)
+</pre>
+<p><h3 id="hdr-Errors">Errors</h3>
+<p>
+Errors returned by this client are often of the type [<code>googleapi.Error</code>](<a href="https://godoc.org/google.golang.org/api/googleapi#Error">https://godoc.org/google.golang.org/api/googleapi#Error</a>).
+These errors can be introspected for more information by type asserting to the richer <code>googleapi.Error</code> type. For example:
+</p></p>
+<pre>if e, ok := err.(*googleapi.Error); ok {
       if e.Code == 409 { ... }
 }
-</code></pre></div>
+</pre>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
     <h2 id="consts">
@@ -705,8 +780,9 @@ for valid object names can be found at:
             <h5 class="decalaration">Declaration</h5>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Objects" data-uid="cloud.google.com/go/storage.BucketHandle.Objects">func (*BucketHandle) Objects
 </h4>
-            <div class="markdown level1 summary"><p>Objects returns an iterator over the objects in the bucket that match the Query q.
-If q is nil, no filtering is done.</p>
+            <div class="markdown level1 summary"><p>Objects returns an iterator over the objects in the bucket that match the
+Query q. If q is nil, no filtering is done. Objects will be iterated over
+lexicographically by name.</p>
 <p>Note: The returned iterator is not safe for concurrent operations without explicit synchronization.</p>
 </div>
             <h5 class="decalaration">Declaration</h5>
@@ -1716,6 +1792,12 @@ ErrObjectNotExist will be returned if the object is not found.</p>
             <div class="markdown level1 summary"><p>Next returns the next result. Its second return value is iterator.Done if
 there are no more results. Once Next returns iterator.Done, all subsequent
 calls will return iterator.Done.</p>
+<p>In addition, if Next returns an error other than iterator.Done, all
+subsequent calls will return the same error. To continue iteration, a new
+<code>ObjectIterator</code> must be created. Since objects are ordered lexicographically
+by name, <code>Query.StartOffset</code> can be used to create a new iterator which will
+start at the desired place. See
+<a href="https://pkg.go.dev/cloud.google.com/go/storage?tab=doc#hdr-Listing_objects">https://pkg.go.dev/cloud.google.com/go/storage?tab=doc#hdr-Listing_objects</a>.</p>
 <p>If Query.Delimiter is non-empty, some of the ObjectAttrs returned by Next will
 have a non-empty Prefix field, and a zero value for all other fields. These
 represent prefixes.</p>
