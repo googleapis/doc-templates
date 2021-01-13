@@ -34,7 +34,7 @@ def test_goldens(update_goldens, test_dir):
                 "docfx",
                 "build",
                 "-t",
-                "default,../../third_party/docfx/templates/devsite",
+                "../../third_party/docfx/templates/devsite",
             ],
             cwd=build_dir,
             hide_output=False,

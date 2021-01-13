@@ -29,7 +29,7 @@ def test_generate():
                 "docfx",
                 "build",
                 "-t",
-                "default,../../third_party/docfx/templates/devsite",
+                "../../third_party/docfx/templates/devsite",
             ],
             # If it takes more than 30 minutes to build, likely it has gone into
             # infinite loop
