@@ -42,7 +42,9 @@ def test_generate(test_long):
             hide_output=False,
         )
     except subprocess.TimeoutExpired:
-        pytest.fail("hanging build failed due to continued timeout")
+        pytest.fail(
+            "build failed by timeout. Doc generation seems stuck on an infinite loop."
+        )
     except Exception as e:
         pytest.fail(f"hanging build raised an exception: {e}")
 
