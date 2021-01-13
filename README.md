@@ -66,9 +66,9 @@ If you want to run the tests in your normal environment, not in a container:
 
    pytest tests
    ```
-   It is also recommended to run all optional tests with `--test-all` flag:
+   It is also recommended to run all optional tests with `--long` flag:
    ```
-   pytest --test-all tests
+   pytest --long tests
    ```
    It may take some time to run all the optional tests.
 

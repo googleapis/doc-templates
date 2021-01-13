@@ -21,40 +21,30 @@ import pytest
 import subprocess
 
 
-def test_generate(test_all):
-    if not test_all:
-        pytest.skip("skipping hanging test unless --test-all option is supplied.")
+def test_generate(test_long):
+    if not test_long:
+        pytest.skip("skipping hanging test unless --long option is supplied.")
 
     build_dir = Path("testdata/nodejs-hang")
     out_dir = build_dir / "site/api"
-    times = {"timeout_count": 1, "timeout_initial": 1800, "timeout_limit": 4}
-    built = False
 
     # Generate!
-    while built is not True:
-        try:
-            shell.run(
-                [
-                    "docfx",
-                    "build",
-                    "-t",
-                    "default,../../third_party/docfx/templates/devsite",
-                ],
-                # Test until timeout
-                timeout=times["timeout_count"] * times["timeout_initial"],
-                cwd=build_dir,
-                hide_output=False,
-            )
-            built = True
-        # If we timed out, to account for different build environments,
-        # try again with increased timeout
-        except subprocess.TimeoutExpired:
-            if times["timeout_count"] < times["timeout_limit"]:
-                times["timeout_count"] += 1
-            else:
-                pytest.fail("hanging build failed due to continued timeout")
-        except Exception as e:
-            pytest.fail(f"hanging build raised an exception: {e}")
+    try:
+        shell.run(
+            [
+                "docfx",
+                "build",
+                "-t",
+                "default,../../third_party/docfx/templates/devsite",
+            ],
+            timeout=7200,
+            cwd=build_dir,
+            hide_output=False,
+        )
+    except subprocess.TimeoutExpired:
+        pytest.fail("hanging build failed due to continued timeout")
+    except Exception as e:
+        pytest.fail(f"hanging build raised an exception: {e}")
 
     # Note: rename of toc.html to _toc.yaml happens in doc-pipeline.
     toc_file_path = out_dir / "toc.html"
