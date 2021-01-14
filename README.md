@@ -66,6 +66,11 @@ If you want to run the tests in your normal environment, not in a container:
 
    pytest tests
    ```
+   It is also recommended to run all optional tests with `--long` flag:
+   ```
+   pytest --long tests
+   ```
+   It may take some time to run all the optional tests.
 
    To update goldens add the `--update-goldens` flag:
    ```

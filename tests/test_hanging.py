@@ -18,10 +18,16 @@ from docuploader import shell
 
 import pytest
 
+import subprocess
 
-def test_generate():
+
+def test_generate(test_long):
+    if not test_long:
+        pytest.skip("skipping hanging test unless --long option is supplied.")
+
     build_dir = Path("testdata/nodejs-hang")
     out_dir = build_dir / "site/api"
+
     # Generate!
     try:
         shell.run(
@@ -31,11 +37,13 @@ def test_generate():
                 "-t",
                 "default,../../third_party/docfx/templates/devsite",
             ],
-            # If it takes more than 30 minutes to build, likely it has gone into
-            # infinite loop
-            timeout=1800,
+            timeout=7200,
             cwd=build_dir,
             hide_output=False,
+        )
+    except subprocess.TimeoutExpired:
+        pytest.fail(
+            "build failed by timeout. Doc generation seems stuck on an infinite loop."
         )
     except Exception as e:
         pytest.fail(f"hanging build raised an exception: {e}")
