@@ -37,8 +37,8 @@ def test_generate():
     except Exception as e:
         pytest.fail(f"build raised an exception: {e}")
 
-    # Note: rename of toc.html to _toc.yaml happens in doc-pipeline.
-    toc_file_path = out_dir / "toc.html"
+    # Note: rename of toc.yaml to _toc.yaml happens in doc-pipeline.
+    toc_file_path = out_dir / "toc.yaml"
     assert toc_file_path.is_file()
     got_text = toc_file_path.read_text("utf-8")
     assert "/python/docs/reference/texttospeech/latest" in got_text
