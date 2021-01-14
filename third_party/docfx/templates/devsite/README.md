@@ -1,6 +1,6 @@
 # Devsite DocFX Templates
 
-The output `toc.html` file should be renamed `_toc.yaml`.
+The output `toc.yaml` file should be renamed `_toc.yaml`.
 
 The `docfx.json` file needs some extra config:
 
@@ -40,7 +40,6 @@ changed. A high level summary:
 * Removed the `h1` titles from class and namespace pages.
 * Bumped headers up one level (e.g. `h4` -> `h3`) for class and namespace pages.
   This makes the right nav work properly.
-* `toc.html` actually results in YAML and should be renamed to `_toc.yaml`.
 
 ## Disclaimer
 
