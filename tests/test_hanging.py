@@ -35,7 +35,7 @@ def test_generate(test_long):
                 "docfx",
                 "build",
                 "-t",
-                "default,../../third_party/docfx/templates/devsite",
+                "../../third_party/docfx/templates/devsite",
             ],
             timeout=7200,
             cwd=build_dir,
