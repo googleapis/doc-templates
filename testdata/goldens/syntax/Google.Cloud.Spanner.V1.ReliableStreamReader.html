@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/dotnet/_project.yaml">
+    <meta name="book_path" value="/dotnet/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class ReliableStreamReader
+</h1>
+      <article data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader">
+  
+  
+  <div class="markdown level0 summary"><p>Provides streaming access to a Spanner SQL query that automatically retries, handles
+chunking and recoverable errors.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ReliableStreamReader</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Google.Cloud.Spanner.V1.html">Google.Cloud.Spanner.V1</a></h6>
+  <h6><strong>Assembly</strong>: Google.Cloud.Spanner.V1.dll</h6>
+  <h5 id="Google_Cloud_Spanner_V1_ReliableStreamReader_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public sealed class ReliableStreamReader : IDisposable</code></pre>
+  </div>
+  <h2 id="properties">Properties
+  </h2>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_IsClosed_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.IsClosed*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_IsClosed" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.IsClosed">IsClosed</h3>
+  <div class="markdown level1 summary"><p>Indicates whether the reader is closed or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public bool IsClosed { get; }</code></pre>
+  </div>
+  <h4 class="propertyValue">Property Value</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_Stats_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Stats*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_Stats" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Stats">Stats</h3>
+  <div class="markdown level1 summary"><p>The statistics for the results, if present. These are only present on the last RPC
+response from the server. They can be observed while that final response is being consumed, or afterwards.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public ResultSetStats Stats { get; }</code></pre>
+  </div>
+  <h4 class="propertyValue">Property Value</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.ResultSetStats.html">ResultSetStats</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_Close_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Close*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_Close" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Close">Close()</h3>
+  <div class="markdown level1 summary"><p>Closes the stream reader.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void Close()</code></pre>
+  </div>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_Dispose_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Dispose*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_Dispose" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Dispose">Dispose()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void Dispose()</code></pre>
+  </div>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_Finalize_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Finalize*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_Finalize" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.Finalize">Finalize()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected void Finalize()</code></pre>
+  </div>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_GetMetadataAsync_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.GetMetadataAsync*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_GetMetadataAsync_System_Threading_CancellationToken_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.GetMetadataAsync(System.Threading.CancellationToken)">GetMetadataAsync(CancellationToken)</h3>
+  <div class="markdown level1 summary"><p>Asynchronously retrieves the metadata associated with this stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Task&lt;ResultSetMetadata&gt; GetMetadataAsync(CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token for the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Google.Cloud.Spanner.V1.ResultSetMetadata.html">ResultSetMetadata</a>&gt;</td>
+        <td><p>A task which, when completed, will contain the metadata for the stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_HasDataAsync_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.HasDataAsync*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_HasDataAsync_System_Threading_CancellationToken_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.HasDataAsync(System.Threading.CancellationToken)">HasDataAsync(CancellationToken)</h3>
+  <div class="markdown level1 summary"><p>Determines whether this stream has any more data or not.
+This is equivalent to calling <a class="xref" href="Google.Cloud.Spanner.V1.ReliableStreamReader.html#Google_Cloud_Spanner_V1_ReliableStreamReader_NextAsync_System_Threading_CancellationToken_">NextAsync(CancellationToken)</a> to see whether the return
+value is null, but without consuming the value from the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Task&lt;bool&gt; HasDataAsync(CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token for the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><p>A task which, when completed, will indicate whether the stream contains data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Spanner_V1_ReliableStreamReader_NextAsync_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.NextAsync*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_NextAsync_System_Threading_CancellationToken_" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.NextAsync(System.Threading.CancellationToken)">NextAsync(CancellationToken)</h3>
+  <div class="markdown level1 summary"><p>Asynchronously reads the next value from the stream. A null value indicates the end of the stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Task&lt;Value&gt; NextAsync(CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A cancellation token for the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">Google.Protobuf.WellKnownTypes.Value</span>&gt;</td>
+        <td><p>A task which, when completed, will provide the next value read from the stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="events">Events
+  </h2>
+  <h3 id="Google_Cloud_Spanner_V1_ReliableStreamReader_StreamClosed" data-uid="Google.Cloud.Spanner.V1.ReliableStreamReader.StreamClosed">StreamClosed</h3>
+  <div class="markdown level1 summary"><p>Event invoked when the stream is closed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public event EventHandler&lt;StreamClosedEventArgs&gt; StreamClosed</code></pre>
+  </div>
+  <h4 class="eventType">Event Type</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Google.Cloud.Spanner.V1.StreamClosedEventArgs.html">StreamClosedEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

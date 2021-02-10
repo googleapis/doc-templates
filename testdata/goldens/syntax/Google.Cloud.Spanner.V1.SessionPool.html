@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/dotnet/_project.yaml">
+    <meta name="book_path" value="/dotnet/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class SessionPool
+</h1>
+      <article data-uid="Google.Cloud.Spanner.V1.SessionPool">
+  
+  
+  <div class="markdown level0 summary"><p>A pool of sessions associated with a SpannerClient.
+Sessions can be acquired by specifying the desired transaction options, if any.
+A session/transaction pair is then returned, which should be returned to the pool when
+it is no longer required. Sessions are kept alive automatically, and retired if they
+are expired by the server.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">SessionPool</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Google.Cloud.Spanner.V1.html">Google.Cloud.Spanner.V1</a></h6>
+  <h6><strong>Assembly</strong>: Google.Cloud.Spanner.V1.dll</h6>
+  <h5 id="Google_Cloud_Spanner_V1_SessionPool_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public sealed class SessionPool</code></pre>
+  </div>
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="Google_Cloud_Spanner_V1_SessionPool__ctor_" data-uid="Google.Cloud.Spanner.V1.SessionPool.#ctor*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool__ctor_Google_Cloud_Spanner_V1_SpannerClient_Google_Cloud_Spanner_V1_SessionPoolOptions_" data-uid="Google.Cloud.Spanner.V1.SessionPool.#ctor(Google.Cloud.Spanner.V1.SpannerClient,Google.Cloud.Spanner.V1.SessionPoolOptions)">SessionPool(SpannerClient, SessionPoolOptions)</h3>
+  <div class="markdown level1 summary"><p>Creates a session pool for the given client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public SessionPool(SpannerClient client, SessionPoolOptions options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.SpannerClient.html">SpannerClient</a></td>
+        <td><span class="parametername">client</span></td>
+        <td><p>The client to use for this session pool. Must not be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.SessionPoolOptions.html">SessionPoolOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options for this session pool. Must not be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="properties">Properties
+  </h2>
+  <a id="Google_Cloud_Spanner_V1_SessionPool_Options_" data-uid="Google.Cloud.Spanner.V1.SessionPool.Options*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool_Options" data-uid="Google.Cloud.Spanner.V1.SessionPool.Options">Options</h3>
+  <div class="markdown level1 summary"><p>The options governing this session pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public SessionPoolOptions Options { get; }</code></pre>
+  </div>
+  <h4 class="propertyValue">Property Value</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.SessionPoolOptions.html">SessionPoolOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="Google_Cloud_Spanner_V1_SessionPool_AcquireSessionAsync_" data-uid="Google.Cloud.Spanner.V1.SessionPool.AcquireSessionAsync*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool_AcquireSessionAsync_Google_Cloud_Spanner_Common_V1_DatabaseName_Google_Cloud_Spanner_V1_TransactionOptions_System_Threading_CancellationToken_" data-uid="Google.Cloud.Spanner.V1.SessionPool.AcquireSessionAsync(Google.Cloud.Spanner.Common.V1.DatabaseName,Google.Cloud.Spanner.V1.TransactionOptions,System.Threading.CancellationToken)">AcquireSessionAsync(DatabaseName, TransactionOptions, CancellationToken)</h3>
+  <div class="markdown level1 summary"><p>Asynchronously acquires a session, potentially associated with a transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Task&lt;PooledSession&gt; AcquireSessionAsync(DatabaseName databaseName, TransactionOptions transactionOptions, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Cloud.Spanner.Common.V1.DatabaseName</span></td>
+        <td><span class="parametername">databaseName</span></td>
+        <td><p>The name of the database to acquire the session for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.TransactionOptions.html">TransactionOptions</a></td>
+        <td><span class="parametername">transactionOptions</span></td>
+        <td><p>The transaction options required for the session. After the operation completes,
+this value is no longer used, so modifications to the object will not affect the transaction. May be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>An optional token for canceling the call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Google.Cloud.Spanner.V1.PooledSession.html">PooledSession</a>&gt;</td>
+        <td><p>The <a class="xref" href="Google.Cloud.Spanner.V1.PooledSession.html">PooledSession</a> representing the client, session and transaction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Spanner_V1_SessionPool_CreateDetachedSession_" data-uid="Google.Cloud.Spanner.V1.SessionPool.CreateDetachedSession*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool_CreateDetachedSession_Google_Cloud_Spanner_V1_SessionName_Google_Protobuf_ByteString_Google_Cloud_Spanner_V1_TransactionOptions_ModeOneofCase_" data-uid="Google.Cloud.Spanner.V1.SessionPool.CreateDetachedSession(Google.Cloud.Spanner.V1.SessionName,Google.Protobuf.ByteString,Google.Cloud.Spanner.V1.TransactionOptions.ModeOneofCase)">CreateDetachedSession(SessionName, ByteString, TransactionOptions.ModeOneofCase)</h3>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="Google.Cloud.Spanner.V1.PooledSession.html">PooledSession</a> with a known name and transaction ID/mode, with the client associated
+with this pool, but is otherwise not part of this pool. This method does not query the server for the session state.
+When the returned <a class="xref" href="Google.Cloud.Spanner.V1.PooledSession.html">PooledSession</a> is released, it will not become part of this pool, and the transaction
+will not be rolled back.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public PooledSession CreateDetachedSession(SessionName sessionName, ByteString transactionId, TransactionOptions.ModeOneofCase transactionMode)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.SessionName.html">SessionName</a></td>
+        <td><span class="parametername">sessionName</span></td>
+        <td><p>The name of the transaction. Must not be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Protobuf.ByteString</span></td>
+        <td><span class="parametername">transactionId</span></td>
+        <td><p>The ID of the transaction. Must not be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.TransactionOptions.ModeOneofCase.html">TransactionOptions.ModeOneofCase</a></td>
+        <td><span class="parametername">transactionMode</span></td>
+        <td><p>The mode of the transaction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.PooledSession.html">PooledSession</a></td>
+        <td><p>A <a class="xref" href="Google.Cloud.Spanner.V1.PooledSession.html">PooledSession</a> for the given session and transaction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Google_Cloud_Spanner_V1_SessionPool_CreateDetachedSession_Google_Cloud_Spanner_V1_SessionName_Google_Protobuf_ByteString_Google_Cloud_Spanner_V1_TransactionOptions_ModeOneofCase__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is typically used for partitioned queries, where the same session is used across multiple machines, so should
+not be reused by the pool.</p>
+</div>
+  <a id="Google_Cloud_Spanner_V1_SessionPool_GetStatisticsSnapshot_" data-uid="Google.Cloud.Spanner.V1.SessionPool.GetStatisticsSnapshot*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool_GetStatisticsSnapshot" data-uid="Google.Cloud.Spanner.V1.SessionPool.GetStatisticsSnapshot">GetStatisticsSnapshot()</h3>
+  <div class="markdown level1 summary"><p>Provides a snapshot of statistics for this pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public SessionPool.Statistics GetStatisticsSnapshot()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.SessionPool.Statistics.html">SessionPool.Statistics</a></td>
+        <td><p>A snapshot of statistics for this pool.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Spanner_V1_SessionPool_GetStatisticsSnapshot_" data-uid="Google.Cloud.Spanner.V1.SessionPool.GetStatisticsSnapshot*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool_GetStatisticsSnapshot_Google_Cloud_Spanner_Common_V1_DatabaseName_" data-uid="Google.Cloud.Spanner.V1.SessionPool.GetStatisticsSnapshot(Google.Cloud.Spanner.Common.V1.DatabaseName)">GetStatisticsSnapshot(DatabaseName)</h3>
+  <div class="markdown level1 summary"><p>Provides a snapshot of statistics for a database-specific pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public SessionPool.DatabaseStatistics GetStatisticsSnapshot(DatabaseName databaseName)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Cloud.Spanner.Common.V1.DatabaseName</span></td>
+        <td><span class="parametername">databaseName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Spanner.V1.SessionPool.DatabaseStatistics.html">SessionPool.DatabaseStatistics</a></td>
+        <td><p>A snapshot of statistics for this pool.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Spanner_V1_SessionPool_ShutdownPoolAsync_" data-uid="Google.Cloud.Spanner.V1.SessionPool.ShutdownPoolAsync*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool_ShutdownPoolAsync_Google_Cloud_Spanner_Common_V1_DatabaseName_System_Threading_CancellationToken_" data-uid="Google.Cloud.Spanner.V1.SessionPool.ShutdownPoolAsync(Google.Cloud.Spanner.Common.V1.DatabaseName,System.Threading.CancellationToken)">ShutdownPoolAsync(DatabaseName, CancellationToken)</h3>
+  <div class="markdown level1 summary"><p>Shuts down the session pool associated with the given database name.
+Further attempts to acquire sessions will fail immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Task ShutdownPoolAsync(DatabaseName databaseName, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Cloud.Spanner.Common.V1.DatabaseName</span></td>
+        <td><span class="parametername">databaseName</span></td>
+        <td><p>The database whose session pool should be shut down. Must not be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>An optional token for canceling the returned task. This does not cancel the shutdown itself.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task which will complete when the session pool has finished shutting down.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Google_Cloud_Spanner_V1_SessionPool_ShutdownPoolAsync_Google_Cloud_Spanner_Common_V1_DatabaseName_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This call will delete all pooled sessions, and wait for all active sessions to be released back to the pool
+and also deleted.</p>
+</div>
+  <a id="Google_Cloud_Spanner_V1_SessionPool_WhenPoolReady_" data-uid="Google.Cloud.Spanner.V1.SessionPool.WhenPoolReady*"></a>
+  <h3 id="Google_Cloud_Spanner_V1_SessionPool_WhenPoolReady_Google_Cloud_Spanner_Common_V1_DatabaseName_System_Threading_CancellationToken_" data-uid="Google.Cloud.Spanner.V1.SessionPool.WhenPoolReady(Google.Cloud.Spanner.Common.V1.DatabaseName,System.Threading.CancellationToken)">WhenPoolReady(DatabaseName, CancellationToken)</h3>
+  <div class="markdown level1 summary"><p>Returns a task indicating when the session pool associated with the given database name is populated up to its minimum size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Task WhenPoolReady(DatabaseName databaseName, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Cloud.Spanner.Common.V1.DatabaseName</span></td>
+        <td><span class="parametername">databaseName</span></td>
+        <td><p>The database whose session pool should be populated. Must not be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>An optional token for canceling the call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A task which will complete when the session pool has reached its minimum size.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Google_Cloud_Spanner_V1_SessionPool_WhenPoolReady_Google_Cloud_Spanner_Common_V1_DatabaseName_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If the pool is unhealthy or becomes unhealthy before it reaches its minimum size,
+the returned task will be faulted with an <span class="xref">Grpc.Core.RpcException</span>.</p>
+</div>
+</article>
+    </div>
+  </body>
+</html>

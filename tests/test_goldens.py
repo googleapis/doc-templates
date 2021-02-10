@@ -22,7 +22,9 @@ from docuploader import shell
 import pytest
 
 
-@pytest.mark.parametrize("test_dir", ["python-small", "go", "dotnet", "nodejs"])
+@pytest.mark.parametrize(
+    "test_dir", ["python-small", "go", "dotnet", "nodejs", "syntax"]
+)
 def test_goldens(update_goldens, test_dir):
     build_dir = Path("testdata") / test_dir
     golden_dir = Path("testdata/goldens") / test_dir

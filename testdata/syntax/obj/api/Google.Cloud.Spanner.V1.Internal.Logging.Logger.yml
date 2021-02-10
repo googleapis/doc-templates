@@ -1,0 +1,1689 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  commentId: T:Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  id: Logger
+  parent: Google.Cloud.Spanner.V1.Internal.Logging
+  children:
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.Func{System.String})
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.String)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.Func{System.String},System.Exception)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.String,System.Exception)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.Func{System.String})
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.String)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.Func{System.String},System.Exception)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats(Google.Cloud.Spanner.V1.CommitRequest,Google.Cloud.Spanner.V1.CommitResponse)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Double)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Func{System.Double,System.Double})
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Func{System.Double})
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries(System.Collections.Generic.IEnumerable{System.String})
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func{System.String})
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger(Google.Cloud.Spanner.V1.Internal.Logging.Logger)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.Func{System.String},System.Exception)
+  - Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.String,System.Exception)
+  langs:
+  - csharp
+  - vb
+  name: Logger
+  nameWithType: Logger
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  type: Class
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Logger
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 31
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nBase class for Spanner diagnostic loggers.\n"
+  remarks: "\nThis is an internal class intended for diagnostic purposes,\nand should not be used by general application code. Please read the user guide\npage on logging for more details.\n"
+  example: []
+  syntax:
+    content: public abstract class Logger
+    content.vb: Public MustInherit Class Logger
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+  id: DefaultLogger
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: DefaultLogger
+  nameWithType: Logger.DefaultLogger
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: DefaultLogger
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 40
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nRetrieves the default logger.\n"
+  example: []
+  syntax:
+    content: public static Logger DefaultLogger { get; }
+    parameters: []
+    return:
+      type: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+    content.vb: Public Shared ReadOnly Property DefaultLogger As Logger
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger(Google.Cloud.Spanner.V1.Internal.Logging.Logger)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger(Google.Cloud.Spanner.V1.Internal.Logging.Logger)
+  id: SetDefaultLogger(Google.Cloud.Spanner.V1.Internal.Logging.Logger)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: SetDefaultLogger(Logger)
+  nameWithType: Logger.SetDefaultLogger(Logger)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger(Google.Cloud.Spanner.V1.Internal.Logging.Logger)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: SetDefaultLogger
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 47
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nSets the default logger to be returned by future calls to <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger\" data-throw-if-not-resolved=\"false\"></xref>.\n(Any loggers retrieved by that property before are not affected by this method.)\n"
+  example: []
+  syntax:
+    content: public static void SetDefaultLogger(Logger instance)
+    parameters:
+    - id: instance
+      type: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+      description: The new default logger. Must not be null.
+    content.vb: Public Shared Sub SetDefaultLogger(instance As Logger)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+  id: LogLevel
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogLevel
+  nameWithType: Logger.LogLevel
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogLevel
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 60
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nThe level of logging this logger should perform. For example, if this is set to\n<xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Info\" data-throw-if-not-resolved=\"false\"></xref> then messages for <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Debug\" data-throw-if-not-resolved=\"false\"></xref> will\nbe ignored, but messages for <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Info\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Warn\" data-throw-if-not-resolved=\"false\"></xref>\nand <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Error\" data-throw-if-not-resolved=\"false\"></xref> will be logged. This property defaults to\n<xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.None\" data-throw-if-not-resolved=\"false\"></xref>, so no messages are logged.\n"
+  example: []
+  syntax:
+    content: public LogLevel LogLevel { get; set; }
+    parameters: []
+    return:
+      type: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel
+    content.vb: Public Property LogLevel As LogLevel
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+  id: LogPerformanceTraces
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogPerformanceTraces
+  nameWithType: Logger.LogPerformanceTraces
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogPerformanceTraces
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 68
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nWhether or not performance logging is enabled. This affects the\n<xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String%2cSystem.Double)\" data-throw-if-not-resolved=\"false\"></xref> methods, as well as\n<xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData\" data-throw-if-not-resolved=\"false\"></xref>. This defaults to false, and should only be set\nto true for the purposes of benchmarks and diagnosing performance issues.\n"
+  example: []
+  syntax:
+    content: public bool LogPerformanceTraces { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property LogPerformanceTraces As Boolean
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+  id: EnableSensitiveDataLogging
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: EnableSensitiveDataLogging
+  nameWithType: Logger.EnableSensitiveDataLogging
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: EnableSensitiveDataLogging
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 74
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nWhether or not potentially sensitive information (such as SQL queries) is recorded. This\naffects the behavior of the <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func%7bSystem.String%7d)\" data-throw-if-not-resolved=\"false\"></xref> method.\n"
+  example: []
+  syntax:
+    content: public virtual bool EnableSensitiveDataLogging { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Property EnableSensitiveDataLogging As Boolean
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData
+  id: LogPerformanceData
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogPerformanceData()
+  nameWithType: Logger.LogPerformanceData()
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData()
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogPerformanceData
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 79
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs any recorded performance data, if <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces\" data-throw-if-not-resolved=\"false\"></xref> is enabled.\n"
+  example: []
+  syntax:
+    content: public void LogPerformanceData()
+    content.vb: Public Sub LogPerformanceData
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData
+  id: ResetPerformanceData
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: ResetPerformanceData()
+  nameWithType: Logger.ResetPerformanceData()
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData()
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ResetPerformanceData
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 96
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nResets all performance data previously recorded by the <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String%2cSystem.Double)\" data-throw-if-not-resolved=\"false\"></xref> methods.\n"
+  example: []
+  syntax:
+    content: public void ResetPerformanceData()
+    content.vb: Public Sub ResetPerformanceData
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries(System.Collections.Generic.IEnumerable{System.String})
+  id: LogPerformanceEntries(System.Collections.Generic.IEnumerable{System.String})
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogPerformanceEntries(IEnumerable<String>)
+  nameWithType: Logger.LogPerformanceEntries(IEnumerable<String>)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries(System.Collections.Generic.IEnumerable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogPerformanceEntries
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 106
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nThis method is called by <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData\" data-throw-if-not-resolved=\"false\"></xref> when <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces\" data-throw-if-not-resolved=\"false\"></xref>\nis enabled, and should be implemented in derived classes to record performance data.\n"
+  example: []
+  syntax:
+    content: protected abstract void LogPerformanceEntries(IEnumerable<string> entries)
+    parameters:
+    - id: entries
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: The entries to log. This is never null, and never empty.
+    content.vb: Protected MustOverride Sub LogPerformanceEntries(entries As IEnumerable(Of String))
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries*
+  nameWithType.vb: Logger.LogPerformanceEntries(IEnumerable(Of String))
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries(System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: LogPerformanceEntries(IEnumerable(Of String))
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats(Google.Cloud.Spanner.V1.CommitRequest,Google.Cloud.Spanner.V1.CommitResponse)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats(Google.Cloud.Spanner.V1.CommitRequest,Google.Cloud.Spanner.V1.CommitResponse)
+  id: LogCommitStats(Google.Cloud.Spanner.V1.CommitRequest,Google.Cloud.Spanner.V1.CommitResponse)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogCommitStats(CommitRequest, CommitResponse)
+  nameWithType: Logger.LogCommitStats(CommitRequest, CommitResponse)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats(Google.Cloud.Spanner.V1.CommitRequest, Google.Cloud.Spanner.V1.CommitResponse)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogCommitStats
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 116
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nThis method is called when a transaction that requested CommitStats is committed.\nThe default implementation logs the commit stats at log level Info. Derived classes\ncan override this method to log the statistics at a different level, or to a different\ndestination.\n"
+  example: []
+  syntax:
+    content: public virtual void LogCommitStats(CommitRequest request, CommitResponse response)
+    parameters:
+    - id: request
+      type: Google.Cloud.Spanner.V1.CommitRequest
+      description: The commit request that requested commit statistics
+    - id: response
+      type: Google.Cloud.Spanner.V1.CommitResponse
+      description: The response with commit statistics
+    content.vb: Public Overridable Sub LogCommitStats(request As CommitRequest, response As CommitResponse)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.String)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.String)
+  id: Debug(System.String)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Debug(String)
+  nameWithType: Logger.Debug(String)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.String)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Debug
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 128
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Debug\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Debug(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message to log. May be null, in which case this method is a no-op.
+    content.vb: Public Sub Debug(message As String)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.Func{System.String})
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.Func{System.String})
+  id: Debug(System.Func{System.String})
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Debug(Func<String>)
+  nameWithType: Logger.Debug(Func<String>)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.Func<System.String>)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Debug
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 137
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Debug\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Debug(Func<string> messageFunc)
+    parameters:
+    - id: messageFunc
+      type: System.Func{System.String}
+      description: >-
+        A function that provides the message to log. This function is only called
+
+        after checking <xref href="Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel" data-throw-if-not-resolved="false"></xref>, in order to avoid unnecessary formatting. This may be null
+
+        and may return null, but in either of these cases, the call is a no-op.
+    content.vb: Public Sub Debug(messageFunc As Func(Of String))
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug*
+  nameWithType.vb: Logger.Debug(Func(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug(System.Func(Of System.String))
+  name.vb: Debug(Func(Of String))
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.String)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.String)
+  id: Info(System.String)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Info(String)
+  nameWithType: Logger.Info(String)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.String)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Info
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 144
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Info\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Info(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message to log. May be null, in which case this method is a no-op.
+    content.vb: Public Sub Info(message As String)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.Func{System.String})
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.Func{System.String})
+  id: Info(System.Func{System.String})
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Info(Func<String>)
+  nameWithType: Logger.Info(Func<String>)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.Func<System.String>)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Info
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 153
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Info\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Info(Func<string> messageFunc)
+    parameters:
+    - id: messageFunc
+      type: System.Func{System.String}
+      description: >-
+        A function that provides the message to log. This function is only called
+
+        after checking <xref href="Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel" data-throw-if-not-resolved="false"></xref>, in order to avoid unnecessary formatting. This may be null
+
+        and may return null, but in either of these cases, the call is a no-op.
+    content.vb: Public Sub Info(messageFunc As Func(Of String))
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info*
+  nameWithType.vb: Logger.Info(Func(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info(System.Func(Of System.String))
+  name.vb: Info(Func(Of String))
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func{System.String})
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func{System.String})
+  id: SensitiveInfo(System.Func{System.String})
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: SensitiveInfo(Func<String>)
+  nameWithType: Logger.SensitiveInfo(Func<String>)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func<System.String>)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: SensitiveInfo
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 163
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Info\" data-throw-if-not-resolved=\"false\"></xref>, but only if <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging\" data-throw-if-not-resolved=\"false\"></xref>\nis enabled.\n"
+  example: []
+  syntax:
+    content: public void SensitiveInfo(Func<string> messageFunc)
+    parameters:
+    - id: messageFunc
+      type: System.Func{System.String}
+      description: >-
+        A function that provides the message to log. This function is only called
+
+        after checking <xref href="Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel" data-throw-if-not-resolved="false"></xref>, in order to avoid unnecessary formatting. This may be null
+
+        and may return null, but in either of these cases, the call is a no-op.
+    content.vb: Public Sub SensitiveInfo(messageFunc As Func(Of String))
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo*
+  nameWithType.vb: Logger.SensitiveInfo(Func(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func(Of System.String))
+  name.vb: SensitiveInfo(Func(Of String))
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.String,System.Exception)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.String,System.Exception)
+  id: Warn(System.String,System.Exception)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Warn(String, Exception)
+  nameWithType: Logger.Warn(String, Exception)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.String, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Warn
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 176
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Warn\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Warn(string message, Exception exception = null)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message to log. May be null, in which case this method is a no-op.
+    - id: exception
+      type: System.Exception
+      description: The exception to log, if the logged event was caused by an exception. This may be null.
+    content.vb: Public Sub Warn(message As String, exception As Exception = Nothing)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.Func{System.String},System.Exception)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.Func{System.String},System.Exception)
+  id: Warn(System.Func{System.String},System.Exception)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Warn(Func<String>, Exception)
+  nameWithType: Logger.Warn(Func<String>, Exception)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.Func<System.String>, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Warn
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 186
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Warn\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Warn(Func<string> messageFunc, Exception exception = null)
+    parameters:
+    - id: messageFunc
+      type: System.Func{System.String}
+      description: >-
+        A function that provides the message to log. This function is only called
+
+        after checking <xref href="Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel" data-throw-if-not-resolved="false"></xref>, in order to avoid unnecessary formatting. This may be null
+
+        and may return null, but in either of these cases, the call is a no-op.
+    - id: exception
+      type: System.Exception
+      description: The exception to log, if the logged event was caused by an exception. This may be null.
+    content.vb: Public Sub Warn(messageFunc As Func(Of String), exception As Exception = Nothing)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn*
+  nameWithType.vb: Logger.Warn(Func(Of String), Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn(System.Func(Of System.String), System.Exception)
+  name.vb: Warn(Func(Of String), Exception)
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.String,System.Exception)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.String,System.Exception)
+  id: Error(System.String,System.Exception)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Error(String, Exception)
+  nameWithType: Logger.Error(String, Exception)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.String, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Error
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 194
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Error\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Error(string message, Exception exception = null)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message to log. May be null, in which case this method is a no-op.
+    - id: exception
+      type: System.Exception
+      description: The exception to log, if the logged event was caused by an exception. This may be null.
+    content.vb: Public Sub Error(message As String, exception As Exception = Nothing)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.Func{System.String},System.Exception)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.Func{System.String},System.Exception)
+  id: Error(System.Func{System.String},System.Exception)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Error(Func<String>, Exception)
+  nameWithType: Logger.Error(Func<String>, Exception)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.Func<System.String>, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Error
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 204
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a message at a level of <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Error\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Error(Func<string> messageFunc, Exception exception = null)
+    parameters:
+    - id: messageFunc
+      type: System.Func{System.String}
+      description: >-
+        A function that provides the message to log. This function is only called
+
+        after checking <xref href="Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel" data-throw-if-not-resolved="false"></xref>, in order to avoid unnecessary formatting. This may be null
+
+        and may return null, but in either of these cases, the call is a no-op.
+    - id: exception
+      type: System.Exception
+      description: The exception to log, if the logged event was caused by an exception. This may be null.
+    content.vb: Public Sub Error(messageFunc As Func(Of String), exception As Exception = Nothing)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error*
+  nameWithType.vb: Logger.Error(Func(Of String), Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error(System.Func(Of System.String), System.Exception)
+  name.vb: Error(Func(Of String), Exception)
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  id: Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Log(LogLevel, String, Exception)
+  nameWithType: Logger.Log(LogLevel, String, Exception)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel, System.String, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Log
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 213
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs the given message if the specified level equals or exceeds <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Log(LogLevel level, string message, Exception exception)
+    parameters:
+    - id: level
+      type: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel
+      description: The log level of the message to log.
+    - id: message
+      type: System.String
+      description: The message to log. This may be null, in which case this call is a no-op.
+    - id: exception
+      type: System.Exception
+      description: The exception to log, if the logged event was caused by an exception. This may be null.
+    content.vb: Public Sub Log(level As LogLevel, message As String, exception As Exception)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.Func{System.String},System.Exception)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.Func{System.String},System.Exception)
+  id: Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.Func{System.String},System.Exception)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: Log(LogLevel, Func<String>, Exception)
+  nameWithType: Logger.Log(LogLevel, Func<String>, Exception)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel, System.Func<System.String>, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Log
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 229
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs the result of calling the given message provider function if the specified level equals or exceeds <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void Log(LogLevel level, Func<string> messageFunc, Exception exception)
+    parameters:
+    - id: level
+      type: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel
+      description: The log level of the message to log.
+    - id: messageFunc
+      type: System.Func{System.String}
+      description: >-
+        A function that provides the message to log. This function is only called
+
+        if <code data-dev-comment-type="paramref" class="paramref">level</code> equals or exceeds <xref href="Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel" data-throw-if-not-resolved="false"></xref>, in order to avoid unnecessary formatting. This may be null
+
+        and may return null, but in either of these cases, the call is a no-op.
+    - id: exception
+      type: System.Exception
+      description: The exception to log, if the logged event was caused by an exception. This may be null.
+    content.vb: Public Sub Log(level As LogLevel, messageFunc As Func(Of String), exception As Exception)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log*
+  nameWithType.vb: Logger.Log(LogLevel, Func(Of String), Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel, System.Func(Of System.String), System.Exception)
+  name.vb: Log(LogLevel, Func(Of String), Exception)
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  id: LogImpl(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel,System.String,System.Exception)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogImpl(LogLevel, String, Exception)
+  nameWithType: Logger.LogImpl(LogLevel, String, Exception)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl(Google.Cloud.Spanner.V1.Internal.Logging.LogLevel, System.String, System.Exception)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogImpl
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 250
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nCore method to implement logging in derived classes. This method is only called\nif the given log level exceeds <xref href=\"Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel\" data-throw-if-not-resolved=\"false\"></xref>, so implementations do not\nneed to perform that check again.\n"
+  example: []
+  syntax:
+    content: protected abstract void LogImpl(LogLevel level, string message, Exception exception)
+    parameters:
+    - id: level
+      type: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel
+      description: The log level of the message to log.
+    - id: message
+      type: System.String
+      description: The message to log. This is never null.
+    - id: exception
+      type: System.Exception
+      description: The exception to log, if the logged event was caused by an exception. This may be null.
+    content.vb: Protected MustOverride Sub LogImpl(level As LogLevel, message As String, exception As Exception)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Double)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Double)
+  id: LogPerformanceCounter(System.String,System.Double)
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogPerformanceCounter(String, Double)
+  nameWithType: Logger.LogPerformanceCounter(String, Double)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String, System.Double)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogPerformanceCounter
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 257
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a performance counter value.\n"
+  example: []
+  syntax:
+    content: public void LogPerformanceCounter(string name, double value)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the performance counter to log. May be null, in which case this call is a no-op.
+    - id: value
+      type: System.Double
+      description: The latest value of the performance counter.
+    content.vb: Public Sub LogPerformanceCounter(name As String, value As Double)
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Func{System.Double})
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Func{System.Double})
+  id: LogPerformanceCounter(System.String,System.Func{System.Double})
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogPerformanceCounter(String, Func<Double>)
+  nameWithType: Logger.LogPerformanceCounter(String, Func<Double>)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String, System.Func<System.Double>)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogPerformanceCounter
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 270
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a computed performance counter value.\n"
+  example: []
+  syntax:
+    content: public void LogPerformanceCounter(string name, Func<double> valueFunc)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the performance counter to log. May be null, in which case this call is a no-op.
+    - id: valueFunc
+      type: System.Func{System.Double}
+      description: A function to compute the latest value of the performance counter. May be null, in which case this call is a no-op.
+    content.vb: Public Sub LogPerformanceCounter(name As String, valueFunc As Func(Of Double))
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter*
+  nameWithType.vb: Logger.LogPerformanceCounter(String, Func(Of Double))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String, System.Func(Of System.Double))
+  name.vb: LogPerformanceCounter(String, Func(Of Double))
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Func{System.Double,System.Double})
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Func{System.Double,System.Double})
+  id: LogPerformanceCounter(System.String,System.Func{System.Double,System.Double})
+  parent: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  langs:
+  - csharp
+  - vb
+  name: LogPerformanceCounter(String, Func<Double, Double>)
+  nameWithType: Logger.LogPerformanceCounter(String, Func<Double, Double>)
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String, System.Func<System.Double, System.Double>)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+      branch: c0943b21872eacb5bb6cb8702a5ef26436cc6930
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: LogPerformanceCounter
+    path: ../../../apis/Google.Cloud.Spanner.V1/Google.Cloud.Spanner.V1/Internal/Logging/Logger.cs
+    startLine: 283
+  assemblies:
+  - Google.Cloud.Spanner.V1
+  namespace: Google.Cloud.Spanner.V1.Internal.Logging
+  summary: "\nLogs a computed performance counter value.\n"
+  example: []
+  syntax:
+    content: public void LogPerformanceCounter(string name, Func<double, double> valueFunc)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the performance counter to log. May be null, in which case this call is a no-op.
+    - id: valueFunc
+      type: System.Func{System.Double,System.Double}
+      description: A function to compute the latest value of the performance counter based on the current value. May be null, in which case this call is a no-op.
+    content.vb: Public Sub LogPerformanceCounter(name As String, valueFunc As Func(Of Double, Double))
+  overload: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter*
+  nameWithType.vb: Logger.LogPerformanceCounter(String, Func(Of Double, Double))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String, System.Func(Of System.Double, System.Double))
+  name.vb: LogPerformanceCounter(String, Func(Of Double, Double))
+references:
+- uid: Google.Cloud.Spanner.V1.Internal.Logging
+  commentId: N:Google.Cloud.Spanner.V1.Internal.Logging
+  name: Google.Cloud.Spanner.V1.Internal.Logging
+  nameWithType: Google.Cloud.Spanner.V1.Internal.Logging
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+  name: DefaultLogger
+  nameWithType: Logger.DefaultLogger
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  commentId: T:Google.Cloud.Spanner.V1.Internal.Logging.Logger
+  parent: Google.Cloud.Spanner.V1.Internal.Logging
+  name: Logger
+  nameWithType: Logger
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.DefaultLogger
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger
+  name: SetDefaultLogger
+  nameWithType: Logger.SetDefaultLogger
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SetDefaultLogger
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Info
+  commentId: F:Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Info
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Debug
+  commentId: F:Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Debug
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Warn
+  commentId: F:Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Warn
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Error
+  commentId: F:Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.Error
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.None
+  commentId: F:Google.Cloud.Spanner.V1.Internal.Logging.LogLevel.None
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+  name: LogLevel
+  nameWithType: Logger.LogLevel
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel
+  commentId: T:Google.Cloud.Spanner.V1.Internal.Logging.LogLevel
+  parent: Google.Cloud.Spanner.V1.Internal.Logging
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.LogLevel
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Double)
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter(System.String,System.Double)
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+  name: LogPerformanceTraces
+  nameWithType: Logger.LogPerformanceTraces
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func{System.String})
+  commentId: M:Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo(System.Func{System.String})
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+  name: EnableSensitiveDataLogging
+  nameWithType: Logger.EnableSensitiveDataLogging
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceTraces
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData
+  name: LogPerformanceData
+  nameWithType: Logger.LogPerformanceData
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceData
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData
+  name: ResetPerformanceData
+  nameWithType: Logger.ResetPerformanceData
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.ResetPerformanceData
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries
+  name: LogPerformanceEntries
+  nameWithType: Logger.LogPerformanceEntries
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceEntries
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats
+  name: LogCommitStats
+  nameWithType: Logger.LogCommitStats
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogCommitStats
+- uid: Google.Cloud.Spanner.V1.CommitRequest
+  commentId: T:Google.Cloud.Spanner.V1.CommitRequest
+  parent: Google.Cloud.Spanner.V1
+  name: CommitRequest
+  nameWithType: CommitRequest
+  fullName: Google.Cloud.Spanner.V1.CommitRequest
+- uid: Google.Cloud.Spanner.V1.CommitResponse
+  commentId: T:Google.Cloud.Spanner.V1.CommitResponse
+  parent: Google.Cloud.Spanner.V1
+  name: CommitResponse
+  nameWithType: CommitResponse
+  fullName: Google.Cloud.Spanner.V1.CommitResponse
+- uid: Google.Cloud.Spanner.V1
+  commentId: N:Google.Cloud.Spanner.V1
+  name: Google.Cloud.Spanner.V1
+  nameWithType: Google.Cloud.Spanner.V1
+  fullName: Google.Cloud.Spanner.V1
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug
+  name: Debug
+  nameWithType: Logger.Debug
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Debug
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogLevel
+  isExternal: true
+- uid: System.Func{System.String}
+  commentId: T:System.Func{System.String}
+  parent: System
+  definition: System.Func`1
+  name: Func<String>
+  nameWithType: Func<String>
+  fullName: System.Func<System.String>
+  nameWithType.vb: Func(Of String)
+  fullName.vb: System.Func(Of System.String)
+  name.vb: Func(Of String)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info
+  name: Info
+  nameWithType: Logger.Info
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Info
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+  commentId: P:Google.Cloud.Spanner.V1.Internal.Logging.Logger.EnableSensitiveDataLogging
+  isExternal: true
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo
+  name: SensitiveInfo
+  nameWithType: Logger.SensitiveInfo
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.SensitiveInfo
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn
+  name: Warn
+  nameWithType: Logger.Warn
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Warn
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error
+  name: Error
+  nameWithType: Logger.Error
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Error
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log
+  name: Log
+  nameWithType: Logger.Log
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.Log
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl
+  name: LogImpl
+  nameWithType: Logger.LogImpl
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogImpl
+- uid: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter*
+  commentId: Overload:Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter
+  name: LogPerformanceCounter
+  nameWithType: Logger.LogPerformanceCounter
+  fullName: Google.Cloud.Spanner.V1.Internal.Logging.Logger.LogPerformanceCounter
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: System.Func{System.Double}
+  commentId: T:System.Func{System.Double}
+  parent: System
+  definition: System.Func`1
+  name: Func<Double>
+  nameWithType: Func<Double>
+  fullName: System.Func<System.Double>
+  nameWithType.vb: Func(Of Double)
+  fullName.vb: System.Func(Of System.Double)
+  name.vb: Func(Of Double)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Double,System.Double}
+  commentId: T:System.Func{System.Double,System.Double}
+  parent: System
+  definition: System.Func`2
+  name: Func<Double, Double>
+  nameWithType: Func<Double, Double>
+  fullName: System.Func<System.Double, System.Double>
+  nameWithType.vb: Func(Of Double, Double)
+  fullName.vb: System.Func(Of System.Double, System.Double)
+  name.vb: Func(Of Double, Double)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
