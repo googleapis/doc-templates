@@ -78,6 +78,7 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   vm.implements = vm.implements || null;
   vm.example = vm.example || null;
   vm.inheritance = vm.inheritance || null;
+  vm.children = vm.children || null;
   if (vm.inheritance) {
     normalizeLanguageValuePairs(vm.inheritance).forEach(handleInheritance);
   }

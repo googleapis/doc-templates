@@ -356,8 +356,15 @@ They are sometimes referred to as grantees.</p>
         
             <h4 id="cloud_google_com_go_storage_AllUsers_AllAuthenticatedUsers" data-uid="cloud.google.com/go/storage.AllUsers,AllAuthenticatedUsers">AllUsers, AllAuthenticatedUsers</h4>
             <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_ACLHandle" data-uid="cloud.google.com/go/storage.ACLHandle">ACLHandle</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">const (
+	AllUsers              <a href="#aclentity">ACLEntity</a> = "allUsers"
+	AllAuthenticatedUsers <a href="#aclentity">ACLEntity</a> = "allAuthenticatedUsers"
+)</code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_ACLHandle" data-uid="cloud.google.com/go/storage.ACLHandle">ACLHandle</h3>
         <div class="markdown level1 summary"><p>ACLHandle provides operations on an access control list for a Google Cloud Storage bucket or object.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
@@ -372,17 +379,99 @@ They are sometimes referred to as grantees.</p>
 </h4>
             <div class="markdown level1 summary"><p>Delete permanently deletes the ACL entry for the given entity.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (a *<a href="#aclhandle">ACLHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, entity <a href="#aclentity">ACLEntity</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ACLHandle_Delete_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// No longer grant access to the bucket to everyone on the Internet.
+	if err := client.Bucket(&quot;my-bucket&quot;).ACL().Delete(ctx, storage.AllUsers); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ACLHandle_List" data-uid="cloud.google.com/go/storage.ACLHandle.List">func (*ACLHandle) List
 </h4>
             <div class="markdown level1 summary"><p>List retrieves ACL entries.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (a *<a href="#aclhandle">ACLHandle</a>) List(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (rules []<a href="#aclrule">ACLRule</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ACLHandle_List_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// List the default object ACLs for my-bucket.
+	aclRules, err := client.Bucket(&quot;my-bucket&quot;).DefaultObjectACL().List(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(aclRules)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ACLHandle_Set" data-uid="cloud.google.com/go/storage.ACLHandle.Set">func (*ACLHandle) Set
 </h4>
             <div class="markdown level1 summary"><p>Set sets the role for the given entity.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (a *<a href="#aclhandle">ACLHandle</a>) Set(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, entity <a href="#aclentity">ACLEntity</a>, role <a href="#aclrole">ACLRole</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ACLHandle_Set_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Let any authenticated user read my-bucket/my-object.
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	if err := obj.ACL().Set(ctx, storage.AllAuthenticatedUsers, storage.RoleReader); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
         <h3 id="cloud_google_com_go_storage_ACLRole" data-uid="cloud.google.com/go/storage.ACLRole">ACLRole</h3>
         <div class="markdown level1 summary"><p>ACLRole is the level of access to grant.</p>
 </div>
@@ -394,8 +483,16 @@ They are sometimes referred to as grantees.</p>
         
             <h4 id="cloud_google_com_go_storage_RoleOwner_RoleReader_RoleWriter" data-uid="cloud.google.com/go/storage.RoleOwner,RoleReader,RoleWriter">RoleOwner, RoleReader, RoleWriter</h4>
             <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_ACLRule" data-uid="cloud.google.com/go/storage.ACLRule">ACLRule</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">const (
+	RoleOwner  <a href="#aclrole">ACLRole</a> = "OWNER"
+	RoleReader <a href="#aclrole">ACLRole</a> = "READER"
+	RoleWriter <a href="#aclrole">ACLRole</a> = "WRITER"
+)</code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_ACLRule" data-uid="cloud.google.com/go/storage.ACLRule">ACLRule</h3>
         <div class="markdown level1 summary"><p>ACLRule represents a grant for a role to an entity (user, group or team) for a
 Google Cloud Storage object or bucket.</p>
 </div>
@@ -600,14 +697,22 @@ Read-only fields are ignored by BucketHandle.Create.</p>
             <div class="markdown level1 summary"><p>DeleteLabel causes a label to be deleted when ua is used in a
 call to Bucket.Update.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_BucketAttrsToUpdate_SetLabel" data-uid="cloud.google.com/go/storage.BucketAttrsToUpdate.SetLabel">func (*BucketAttrsToUpdate) SetLabel
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (ua *<a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) DeleteLabel(name <a href="https://pkg.go.dev/builtin#string">string</a>)</code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_BucketAttrsToUpdate_SetLabel" data-uid="cloud.google.com/go/storage.BucketAttrsToUpdate.SetLabel">func (*BucketAttrsToUpdate) SetLabel
 </h4>
             <div class="markdown level1 summary"><p>SetLabel causes a label to be added or modified when ua is used
 in a call to Bucket.Update.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_BucketConditions" data-uid="cloud.google.com/go/storage.BucketConditions">BucketConditions</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (ua *<a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) SetLabel(name, value <a href="https://pkg.go.dev/builtin#string">string</a>)</code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_BucketConditions" data-uid="cloud.google.com/go/storage.BucketConditions">BucketConditions</h3>
         <div class="markdown level1 summary"><p>BucketConditions constrain bucket methods to act on specific metagenerations.</p>
 <p>The zero value is an empty set of constraints.</p>
 </div>
@@ -690,47 +795,291 @@ func main() {
 This controls who can list, create or overwrite the objects in a bucket.
 This call does not perform any network operations.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) ACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_ACL_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err == storage.ErrBucketNotExist {
+		fmt.Println(&quot;The bucket does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_AddNotification" data-uid="cloud.google.com/go/storage.BucketHandle.AddNotification">func (*BucketHandle) AddNotification
 </h4>
             <div class="markdown level1 summary"><p>AddNotification adds a notification to b. You must set n&#39;s TopicProjectID, TopicID
 and PayloadFormat, and must not set its ID. The other fields are all optional. The
 returned Notification&#39;s ID can be used to refer to it.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) AddNotification(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, n *<a href="#notification">Notification</a>) (ret *<a href="#notification">Notification</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_AddNotification_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	n, err := b.AddNotification(ctx, &amp;storage.Notification{
+		TopicProjectID: &quot;my-project&quot;,
+		TopicID:        &quot;my-topic&quot;,
+		PayloadFormat:  storage.JSONPayload,
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(n.ID)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Attrs" data-uid="cloud.google.com/go/storage.BucketHandle.Attrs">func (*BucketHandle) Attrs
 </h4>
             <div class="markdown level1 summary"><p>Attrs returns the metadata for the bucket.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Attrs(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#bucketattrs">BucketAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_Attrs_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Create" data-uid="cloud.google.com/go/storage.BucketHandle.Create">func (*BucketHandle) Create
 </h4>
             <div class="markdown level1 summary"><p>Create creates the Bucket in the project.
 If attrs is nil the API defaults will be used.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Create(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>, attrs *<a href="#bucketattrs">BucketAttrs</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_Create_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	if err := client.Bucket(&quot;my-bucket&quot;).Create(ctx, &quot;my-project&quot;, nil); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_DefaultObjectACL" data-uid="cloud.google.com/go/storage.BucketHandle.DefaultObjectACL">func (*BucketHandle) DefaultObjectACL
 </h4>
             <div class="markdown level1 summary"><p>DefaultObjectACL returns an ACLHandle, which provides access to the bucket&#39;s default object ACLs.
 These ACLs are applied to newly created objects in this bucket that do not have a defined ACL.
 This call does not perform any network operations.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) DefaultObjectACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_DefaultObjectACL_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err == storage.ErrBucketNotExist {
+		fmt.Println(&quot;The bucket does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Delete" data-uid="cloud.google.com/go/storage.BucketHandle.Delete">func (*BucketHandle) Delete
 </h4>
             <div class="markdown level1 summary"><p>Delete deletes the Bucket.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_Delete_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	if err := client.Bucket(&quot;my-bucket&quot;).Delete(ctx); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_DeleteNotification" data-uid="cloud.google.com/go/storage.BucketHandle.DeleteNotification">func (*BucketHandle) DeleteNotification
 </h4>
             <div class="markdown level1 summary"><p>DeleteNotification deletes the notification with the given ID.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) DeleteNotification(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, id <a href="https://pkg.go.dev/builtin#string">string</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_DeleteNotification_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+var notificationID string
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	// TODO: Obtain notificationID from BucketHandle.AddNotification
+	// or BucketHandle.Notifications.
+	err = b.DeleteNotification(ctx, notificationID)
+	if err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_IAM" data-uid="cloud.google.com/go/storage.BucketHandle.IAM">func (*BucketHandle) IAM
 </h4>
             <div class="markdown level1 summary"><p>IAM provides access to IAM access control for the bucket.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) IAM() *<a href="https://pkg.go.dev/cloud.google.com/go/iam">iam</a>.<a href="https://pkg.go.dev/cloud.google.com/go/iam#Handle">Handle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_IAM_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err == storage.ErrBucketNotExist {
+		fmt.Println(&quot;The bucket does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_If" data-uid="cloud.google.com/go/storage.BucketHandle.If">func (*BucketHandle) If
 </h4>
             <div class="markdown level1 summary"><p>If returns a new BucketHandle that applies a set of preconditions.
@@ -739,7 +1088,41 @@ Operations on the new handle will return an error if the preconditions are not
 satisfied. The only valid preconditions for buckets are MetagenerationMatch
 and MetagenerationNotMatch.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) If(conds <a href="#bucketconditions">BucketConditions</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_If_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err == storage.ErrBucketNotExist {
+		fmt.Println(&quot;The bucket does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_LockRetentionPolicy" data-uid="cloud.google.com/go/storage.BucketHandle.LockRetentionPolicy">func (*BucketHandle) LockRetentionPolicy
 </h4>
             <div class="markdown level1 summary"><p>LockRetentionPolicy locks a bucket&#39;s retention policy until a previously-configured
@@ -751,13 +1134,77 @@ matches the bucket&#39;s metageneration. See BucketHandle.If.</p>
 most customers. It might be changed in backwards-incompatible ways and is not
 subject to any SLA or deprecation policy.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) LockRetentionPolicy(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_LockRetentionPolicy_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	attrs, err := b.Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Note that locking the bucket without first attaching a RetentionPolicy
+	// that's at least 1 day is a no-op
+	err = b.If(storage.BucketConditions{MetagenerationMatch: attrs.MetaGeneration}).LockRetentionPolicy(ctx)
+	if err != nil {
+		// TODO: handle err
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Notifications" data-uid="cloud.google.com/go/storage.BucketHandle.Notifications">func (*BucketHandle) Notifications
 </h4>
             <div class="markdown level1 summary"><p>Notifications returns all the Notifications configured for this bucket, as a map
 indexed by notification ID.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Notifications(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (n map[<a href="https://pkg.go.dev/builtin#string">string</a>]*<a href="#notification">Notification</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_Notifications_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	ns, err := b.Notifications(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	for id, n := range ns {
+		fmt.Printf(&quot;%s: %+v\n&quot;, id, n)
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Object" data-uid="cloud.google.com/go/storage.BucketHandle.Object">func (*BucketHandle) Object
 </h4>
             <div class="markdown level1 summary"><p>Object returns an ObjectHandle, which provides operations on the named object.
@@ -766,7 +1213,41 @@ This call does not perform any network operations.</p>
 for valid object names can be found at:
   <a href="https://cloud.google.com/storage/docs/bucket-naming">https://cloud.google.com/storage/docs/bucket-naming</a></p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Object(name <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_Object_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err == storage.ErrBucketNotExist {
+		fmt.Println(&quot;The bucket does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Objects" data-uid="cloud.google.com/go/storage.BucketHandle.Objects">func (*BucketHandle) Objects
 </h4>
             <div class="markdown level1 summary"><p>Objects returns an iterator over the objects in the bucket that match the
@@ -774,12 +1255,102 @@ Query q. If q is nil, no filtering is done. Objects will be iterated over
 lexicographically by name.</p>
 <p>Note: The returned iterator is not safe for concurrent operations without explicit synchronization.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Objects(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, q *<a href="#query">Query</a>) *<a href="#objectiterator">ObjectIterator</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_Objects_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Bucket(&quot;my-bucket&quot;).Objects(ctx, nil)
+	_ = it // TODO: iterate using Next or iterator.Pager.
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Update" data-uid="cloud.google.com/go/storage.BucketHandle.Update">func (*BucketHandle) Update
 </h4>
             <div class="markdown level1 summary"><p>Update updates a bucket&#39;s attributes.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, uattrs <a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) (attrs *<a href="#bucketattrs">BucketAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_Update_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Enable versioning in the bucket, regardless of its previous value.
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Update(ctx,
+		storage.BucketAttrsToUpdate{VersioningEnabled: true})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">readModifyWrite</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	b := client.Bucket(&quot;my-bucket&quot;)
+	attrs, err := b.Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	var au storage.BucketAttrsToUpdate
+	au.SetLabel(&quot;lab&quot;, attrs.Labels[&quot;lab&quot;]+&quot;-more&quot;)
+	if attrs.Labels[&quot;delete-me&quot;] == &quot;yes&quot; {
+		au.DeleteLabel(&quot;delete-me&quot;)
+	}
+	attrs, err = b.
+		If(storage.BucketConditions{MetagenerationMatch: attrs.MetaGeneration}).
+		Update(ctx, au)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_UserProject" data-uid="cloud.google.com/go/storage.BucketHandle.UserProject">func (*BucketHandle) UserProject
 </h4>
             <div class="markdown level1 summary"><p>UserProject returns a new BucketHandle that passes the project ID as the user
@@ -787,7 +1358,41 @@ project for all subsequent calls. Calls with a user project will be billed to th
 project rather than to the bucket&#39;s owning project.</p>
 <p>A user project is required for all operations on Requester Pays buckets.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) UserProject(projectID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketHandle_UserProject_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Attrs(ctx)
+	if err == storage.ErrBucketNotExist {
+		fmt.Println(&quot;The bucket does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
         <h3 id="cloud_google_com_go_storage_BucketIterator" data-uid="cloud.google.com/go/storage.BucketIterator">BucketIterator</h3>
         <div class="markdown level1 summary"><p>A BucketIterator is an iterator over BucketAttrs.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
@@ -809,14 +1414,53 @@ there are no more results. Once Next returns iterator.Done, all subsequent
 calls will return iterator.Done.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#bucketiterator">BucketIterator</a>) Next() (*<a href="#bucketattrs">BucketAttrs</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_BucketIterator_Next_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Buckets(ctx, &quot;my-project&quot;)
+	for {
+		bucketAttrs, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		fmt.Println(bucketAttrs)
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_BucketIterator_PageInfo" data-uid="cloud.google.com/go/storage.BucketIterator.PageInfo">func (*BucketIterator) PageInfo
 </h4>
             <div class="markdown level1 summary"><p>PageInfo supports pagination. See the google.golang.org/api/iterator package for details.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_BucketLogging" data-uid="cloud.google.com/go/storage.BucketLogging">BucketLogging</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#bucketiterator">BucketIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_BucketLogging" data-uid="cloud.google.com/go/storage.BucketLogging">BucketLogging</h3>
         <div class="markdown level1 summary"><p>BucketLogging holds the bucket&#39;s logging configuration, which defines the
 destination bucket and optional name prefix for the current bucket&#39;s
 logs.</p>
@@ -922,7 +1566,63 @@ ScopeReadOnly, use option.WithScopes.</p>
 <p>Clients should be reused instead of created as needed. The methods of Client
 are safe for concurrent use by multiple goroutines.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func NewClient(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="https://pkg.go.dev/google.golang.org/api/option">option</a>.<a href="https://pkg.go.dev/google.golang.org/api/option#ClientOption">ClientOption</a>) (*<a href="#client">Client</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_Client_NewClient_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	// Use Google Application Default Credentials to authorize and authenticate the client.
+	// More information about Application Default Credentials and how to enable is at
+	// https://developers.google.com/identity/protocols/application-default-credentials.
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Use the client.
+
+	// Close the client when finished.
+	if err := client.Close(); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">unauthenticated</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/option&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx, option.WithoutAuthentication())
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Use the client.
+
+	// Close the client when finished.
+	if err := client.Close(); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_Client_Bucket" data-uid="cloud.google.com/go/storage.Client.Bucket">func (*Client) Bucket
 </h4>
             <div class="markdown level1 summary"><p>Bucket returns a BucketHandle, which provides operations on the named bucket.
@@ -932,8 +1632,12 @@ underscores, and dots. The full specification for valid bucket names can be
 found at:
   <a href="https://cloud.google.com/storage/docs/bucket-naming">https://cloud.google.com/storage/docs/bucket-naming</a></p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Client_Buckets" data-uid="cloud.google.com/go/storage.Client.Buckets">func (*Client) Buckets
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Bucket(name <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Client_Buckets" data-uid="cloud.google.com/go/storage.Client.Buckets">func (*Client) Buckets
 </h4>
             <div class="markdown level1 summary"><p>Buckets returns an iterator over the buckets in the project. You may
 optionally set the iterator&#39;s Prefix field to restrict the list to buckets
@@ -941,38 +1645,199 @@ whose names begin with the prefix. By default, all buckets in the project
 are returned.</p>
 <p>Note: The returned iterator is not safe for concurrent operations without explicit synchronization.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Buckets(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#bucketiterator">BucketIterator</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_Client_Buckets_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Buckets(ctx, &quot;my-bucket&quot;)
+	_ = it // TODO: iterate using Next or iterator.Pager.
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_Client_Close" data-uid="cloud.google.com/go/storage.Client.Close">func (*Client) Close
 </h4>
             <div class="markdown level1 summary"><p>Close closes the Client.</p>
 <p>Close need not be called at program exit.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Client_CreateHMACKey" data-uid="cloud.google.com/go/storage.Client.CreateHMACKey">func (*Client) CreateHMACKey
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Client_CreateHMACKey" data-uid="cloud.google.com/go/storage.Client.CreateHMACKey">func (*Client) CreateHMACKey
 </h4>
             <div class="markdown level1 summary"><p>CreateHMACKey invokes an RPC for Google Cloud Storage to create a new HMACKey.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) CreateHMACKey(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID, serviceAccountEmail <a href="https://pkg.go.dev/builtin#string">string</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_Client_CreateHMACKey_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkey, err := client.CreateHMACKey(ctx, &quot;project-id&quot;, &quot;service-account-email&quot;)
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = hkey // TODO: Use the HMAC Key.
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_Client_HMACKeyHandle" data-uid="cloud.google.com/go/storage.Client.HMACKeyHandle">func (*Client) HMACKeyHandle
 </h4>
             <div class="markdown level1 summary"><p>HMACKeyHandle creates a handle that will be used for HMACKey operations.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Client_ListHMACKeys" data-uid="cloud.google.com/go/storage.Client.ListHMACKeys">func (*Client) ListHMACKeys
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) HMACKeyHandle(projectID, accessID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#hmackeyhandle">HMACKeyHandle</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Client_ListHMACKeys" data-uid="cloud.google.com/go/storage.Client.ListHMACKeys">func (*Client) ListHMACKeys
 </h4>
             <div class="markdown level1 summary"><p>ListHMACKeys returns an iterator for listing HMACKeys.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) ListHMACKeys(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) *<a href="#hmackeysiterator">HMACKeysIterator</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_Client_ListHMACKeys_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	iter := client.ListHMACKeys(ctx, &quot;project-id&quot;)
+	for {
+		key, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: handle error.
+		}
+		_ = key // TODO: Use the key.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">forServiceAccountEmail</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	iter := client.ListHMACKeys(ctx, &quot;project-id&quot;, storage.ForHMACKeyServiceAccountEmail(&quot;service@account.email&quot;))
+	for {
+		key, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: handle error.
+		}
+		_ = key // TODO: Use the key.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">showDeletedKeys</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	iter := client.ListHMACKeys(ctx, &quot;project-id&quot;, storage.ShowDeletedHMACKeys())
+	for {
+		key, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: handle error.
+		}
+		_ = key // TODO: Use the key.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_Client_ServiceAccount" data-uid="cloud.google.com/go/storage.Client.ServiceAccount">func (*Client) ServiceAccount
 </h4>
             <div class="markdown level1 summary"><p>ServiceAccount fetches the email address of the given project&#39;s Google Cloud Storage service account.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_Composer" data-uid="cloud.google.com/go/storage.Composer">Composer</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) ServiceAccount(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>) (<a href="https://pkg.go.dev/builtin#string">string</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_Composer" data-uid="cloud.google.com/go/storage.Composer">Composer</h3>
         <div class="markdown level1 summary"><p>A Composer composes source objects into a destination object.</p>
 <p>For Requester Pays buckets, the user project of dst is billed.</p>
 </div>
@@ -999,7 +1864,55 @@ are returned.</p>
 </h4>
             <div class="markdown level1 summary"><p>Run performs the compose operation.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#composer">Composer</a>) Run(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_Composer_Run_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	bkt := client.Bucket(&quot;bucketname&quot;)
+	src1 := bkt.Object(&quot;o1&quot;)
+	src2 := bkt.Object(&quot;o2&quot;)
+	dst := bkt.Object(&quot;o3&quot;)
+
+	// Compose and modify metadata.
+	c := dst.ComposerFrom(src1, src2)
+	c.ContentType = &quot;text/plain&quot;
+
+	// Set the expected checksum for the destination object to be validated by
+	// the backend (if desired).
+	c.CRC32C = 42
+	c.SendCRC32C = true
+
+	attrs, err := c.Run(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	fmt.Println(attrs)
+	// Just compose.
+	attrs, err = dst.ComposerFrom(src1, src2).Run(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	fmt.Println(attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
         <h3 id="cloud_google_com_go_storage_Conditions" data-uid="cloud.google.com/go/storage.Conditions">Conditions</h3>
         <div class="markdown level1 summary"><p>Conditions constrain methods to act on specific generations of
 objects.</p>
@@ -1089,7 +2002,78 @@ for details on how these operate.</p>
 </h4>
             <div class="markdown level1 summary"><p>Run performs the copy.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#copier">Copier</a>) Run(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_Copier_Run_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	src := client.Bucket(&quot;bucketname&quot;).Object(&quot;file1&quot;)
+	dst := client.Bucket(&quot;another-bucketname&quot;).Object(&quot;file2&quot;)
+
+	// Copy content and modify metadata.
+	copier := dst.CopierFrom(src)
+	copier.ContentType = &quot;text/plain&quot;
+	attrs, err := copier.Run(ctx)
+	if err != nil {
+		// TODO: Handle error, possibly resuming with copier.RewriteToken.
+	}
+	fmt.Println(attrs)
+
+	// Just copy content.
+	attrs, err = dst.CopierFrom(src).Run(ctx)
+	if err != nil {
+		// TODO: Handle error. No way to resume.
+	}
+	fmt.Println(attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">progress</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;log&quot;
+)
+
+func main() {
+	// Display progress across multiple rewrite RPCs.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	src := client.Bucket(&quot;bucketname&quot;).Object(&quot;file1&quot;)
+	dst := client.Bucket(&quot;another-bucketname&quot;).Object(&quot;file2&quot;)
+
+	copier := dst.CopierFrom(src)
+	copier.ProgressFunc = func(copiedBytes, totalBytes uint64) {
+		log.Printf(&quot;copy %.1f%% done&quot;, float64(copiedBytes)/float64(totalBytes)*100)
+	}
+	if _, err := copier.Run(ctx); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
         <h3 id="cloud_google_com_go_storage_HMACKey" data-uid="cloud.google.com/go/storage.HMACKey">HMACKey</h3>
         <div class="markdown level1 summary"><p>HMACKey is the representation of a Google Cloud Storage HMAC key.</p>
 <p>HMAC keys are used to authenticate signed access to objects. To enable HMAC key
@@ -1167,7 +2151,35 @@ Only inactive HMAC keys can be deleted.
 After deletion, a key cannot be used to authenticate requests.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (hkh *<a href="#hmackeyhandle">HMACKeyHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Delete_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkh := client.HMACKeyHandle(&quot;project-id&quot;, &quot;access-key-id&quot;)
+	// Make sure that the HMACKey being deleted has a status of inactive.
+	if err := hkh.Delete(ctx); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_HMACKeyHandle_Get" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Get">func (*HMACKeyHandle) Get
 </h4>
             <div class="markdown level1 summary"><p>Get invokes an RPC to retrieve the HMAC key referenced by the
@@ -1176,13 +2188,73 @@ HMACKeyHandle&#39;s accessID.</p>
 userProject to be billed against for operations.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (hkh *<a href="#hmackeyhandle">HMACKeyHandle</a>) Get(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Get_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkh := client.HMACKeyHandle(&quot;project-id&quot;, &quot;access-key-id&quot;)
+	hkey, err := hkh.Get(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = hkey // TODO: Use the HMAC Key.
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_HMACKeyHandle_Update" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Update">func (*HMACKeyHandle) Update
 </h4>
             <div class="markdown level1 summary"><p>Update mutates the HMACKey referred to by accessID.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (h *<a href="#hmackeyhandle">HMACKeyHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, au <a href="#hmackeyattrstoupdate">HMACKeyAttrsToUpdate</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Update_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	hkh := client.HMACKeyHandle(&quot;project-id&quot;, &quot;access-key-id&quot;)
+	ukey, err := hkh.Update(ctx, storage.HMACKeyAttrsToUpdate{
+		State: storage.Inactive,
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = ukey // TODO: Use the HMAC Key.
+}
+{% endverbatim %}</code></pre>
+            </div>
         <h3 id="cloud_google_com_go_storage_HMACKeyOption" data-uid="cloud.google.com/go/storage.HMACKeyOption">HMACKeyOption</h3>
         <div class="markdown level1 summary"><p>HMACKeyOption configures the behavior of HMACKey related methods and actions.</p>
 <p>This interface is EXPERIMENTAL and subject to change or removal without notice.</p>
@@ -1203,22 +2275,34 @@ associated with the email address of a service account in the project.</p>
 of these options are applied, the last email to be set will be used.</p>
 <p>This option is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_HMACKeyOption_ShowDeletedHMACKeys" data-uid="cloud.google.com/go/storage.HMACKeyOption.ShowDeletedHMACKeys">func ShowDeletedHMACKeys
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ForHMACKeyServiceAccountEmail(serviceAccountEmail <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_HMACKeyOption_ShowDeletedHMACKeys" data-uid="cloud.google.com/go/storage.HMACKeyOption.ShowDeletedHMACKeys">func ShowDeletedHMACKeys
 </h4>
             <div class="markdown level1 summary"><p>ShowDeletedHMACKeys will also list keys whose state is &quot;DELETED&quot;.</p>
 <p>This option is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_HMACKeyOption_UserProjectForHMACKeys" data-uid="cloud.google.com/go/storage.HMACKeyOption.UserProjectForHMACKeys">func UserProjectForHMACKeys
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ShowDeletedHMACKeys() <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_HMACKeyOption_UserProjectForHMACKeys" data-uid="cloud.google.com/go/storage.HMACKeyOption.UserProjectForHMACKeys">func UserProjectForHMACKeys
 </h4>
             <div class="markdown level1 summary"><p>UserProjectForHMACKeys will bill the request against userProjectID
 if userProjectID is non-empty.</p>
 <p>Note: This is a noop right now and only provided for API compatibility.</p>
 <p>This option is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_HMACKeysIterator" data-uid="cloud.google.com/go/storage.HMACKeysIterator">HMACKeysIterator</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func UserProjectForHMACKeys(userProjectID <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_HMACKeysIterator" data-uid="cloud.google.com/go/storage.HMACKeysIterator">HMACKeysIterator</h3>
         <div class="markdown level1 summary"><p>An HMACKeysIterator is an iterator over HMACKeys.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
 <p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
@@ -1239,15 +2323,23 @@ calls will return iterator.Done.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_HMACKeysIterator_PageInfo" data-uid="cloud.google.com/go/storage.HMACKeysIterator.PageInfo">func (*HMACKeysIterator) PageInfo
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#hmackeysiterator">HMACKeysIterator</a>) Next() (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_HMACKeysIterator_PageInfo" data-uid="cloud.google.com/go/storage.HMACKeysIterator.PageInfo">func (*HMACKeysIterator) PageInfo
 </h4>
             <div class="markdown level1 summary"><p>PageInfo supports pagination. See the google.golang.org/api/iterator package for details.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_HMACState" data-uid="cloud.google.com/go/storage.HMACState">HMACState</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#hmackeysiterator">HMACKeysIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_HMACState" data-uid="cloud.google.com/go/storage.HMACState">HMACState</h3>
         <div class="markdown level1 summary"><p>HMACState is the state of the HMAC key.</p>
 <p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
@@ -1259,8 +2351,26 @@ calls will return iterator.Done.</p>
         
             <h4 id="cloud_google_com_go_storage_Active_Inactive_Deleted" data-uid="cloud.google.com/go/storage.Active,Inactive,Deleted">Active, Inactive, Deleted</h4>
             <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_Lifecycle" data-uid="cloud.google.com/go/storage.Lifecycle">Lifecycle</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">const (
+	// Active is the status for an active key that can be used to sign
+	// requests.
+	Active <a href="#hmacstate">HMACState</a> = "ACTIVE"
+
+	// Inactive is the status for an inactive key thus requests signed by
+	// this key will be denied.
+	Inactive <a href="#hmacstate">HMACState</a> = "INACTIVE"
+
+	// Deleted is the status for a key that is deleted.
+	// Once in this state the key cannot key cannot be recovered
+	// and does not count towards key limits. Deleted keys will be cleaned
+	// up later.
+	Deleted <a href="#hmacstate">HMACState</a> = "DELETED"
+)</code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_Lifecycle" data-uid="cloud.google.com/go/storage.Lifecycle">Lifecycle</h3>
         <div class="markdown level1 summary"><p>Lifecycle is the lifecycle configuration for objects in the bucket.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
@@ -1379,8 +2489,19 @@ configured action will automatically be taken on that object.</p>
         
             <h4 id="cloud_google_com_go_storage_LiveAndArchived_Live_Archived" data-uid="cloud.google.com/go/storage.LiveAndArchived,Live,Archived">LiveAndArchived, Live, Archived</h4>
             <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_Notification" data-uid="cloud.google.com/go/storage.Notification">Notification</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">const (
+	// LiveAndArchived includes both live and archived objects.
+	LiveAndArchived <a href="#liveness">Liveness</a> = <a href="https://pkg.go.dev/builtin#iota">iota</a>
+	// Live specifies that the object is still live.
+	Live
+	// Archived specifies that the object is archived.
+	Archived
+)</code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_Notification" data-uid="cloud.google.com/go/storage.Notification">Notification</h3>
         <div class="markdown level1 summary"><p>A Notification describes how to send Cloud PubSub messages when certain
 events occur in a bucket.</p>
 </div>
@@ -1648,18 +2769,148 @@ func main() {
 This controls who can read and write this object.
 This call does not perform any network operations.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) ACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_ACL_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err == storage.ErrObjectNotExist {
+		fmt.Println(&quot;The object does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Attrs" data-uid="cloud.google.com/go/storage.ObjectHandle.Attrs">func (*ObjectHandle) Attrs
 </h4>
             <div class="markdown level1 summary"><p>Attrs returns meta information about the object.
 ErrObjectNotExist will be returned if the object is not found.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Attrs(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_Attrs_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	objAttrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(objAttrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">withConditions</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	// Read the object.
+	objAttrs1, err := obj.Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Do something else for a while.
+	time.Sleep(5 * time.Minute)
+	// Now read the same contents, even if the object has been written since the last read.
+	objAttrs2, err := obj.Generation(objAttrs1.Generation).Attrs(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(objAttrs1, objAttrs2)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_BucketName" data-uid="cloud.google.com/go/storage.ObjectHandle.BucketName">func (*ObjectHandle) BucketName
 </h4>
             <div class="markdown level1 summary"><p>BucketName returns the name of the bucket.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) BucketName() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_BucketName_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err == storage.ErrObjectNotExist {
+		fmt.Println(&quot;The object does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_ComposerFrom" data-uid="cloud.google.com/go/storage.ObjectHandle.ComposerFrom">func (*ObjectHandle) ComposerFrom
 </h4>
             <div class="markdown level1 summary"><p>ComposerFrom creates a Composer that can compose srcs into dst.
@@ -1669,7 +2920,41 @@ configure it first.</p>
 source objects and encrypt the destination object. It is an error
 to specify an encryption key for any of the source objects.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (dst *<a href="#objecthandle">ObjectHandle</a>) ComposerFrom(srcs ...*<a href="#objecthandle">ObjectHandle</a>) *<a href="#composer">Composer</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_ComposerFrom_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err == storage.ErrObjectNotExist {
+		fmt.Println(&quot;The object does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_CopierFrom" data-uid="cloud.google.com/go/storage.ObjectHandle.CopierFrom">func (*ObjectHandle) CopierFrom
 </h4>
             <div class="markdown level1 summary"><p>CopierFrom creates a Copier that can copy src to dst.
@@ -1678,12 +2963,89 @@ you can configure it first.</p>
 <p>For Requester Pays buckets, the user project of dst is billed, unless it is empty,
 in which case the user project of src is billed.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (dst *<a href="#objecthandle">ObjectHandle</a>) CopierFrom(src *<a href="#objecthandle">ObjectHandle</a>) *<a href="#copier">Copier</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_CopierFrom_examples">Examples</h5>
+            <h6 translate="no">rotateEncryptionKeys</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+var key1, key2 []byte
+
+func main() {
+	// To rotate the encryption key on an object, copy it onto itself.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;bucketname&quot;).Object(&quot;obj&quot;)
+	// Assume obj is encrypted with key1, and we want to change to key2.
+	_, err = obj.Key(key2).CopierFrom(obj.Key(key1)).Run(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Delete" data-uid="cloud.google.com/go/storage.ObjectHandle.Delete">func (*ObjectHandle) Delete
 </h4>
             <div class="markdown level1 summary"><p>Delete deletes the single specified object.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_Delete_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// To delete multiple objects in a bucket, list them with an
+	// ObjectIterator, then Delete them.
+
+	// If you are using this package on the App Engine Flex runtime,
+	// you can init a bucket client with your app's default bucket name.
+	// See http://godoc.org/google.golang.org/appengine/file#DefaultBucketName.
+	bucket := client.Bucket(&quot;my-bucket&quot;)
+	it := bucket.Objects(ctx, nil)
+	for {
+		objAttrs, err := it.Next()
+		if err != nil &amp;&amp; err != iterator.Done {
+			// TODO: Handle error.
+		}
+		if err == iterator.Done {
+			break
+		}
+		if err := bucket.Object(objAttrs.Name).Delete(ctx); err != nil {
+			// TODO: Handle error.
+		}
+	}
+	fmt.Println(&quot;deleted all object items in the bucket specified.&quot;)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Generation" data-uid="cloud.google.com/go/storage.ObjectHandle.Generation">func (*ObjectHandle) Generation
 </h4>
             <div class="markdown level1 summary"><p>Generation returns a new ObjectHandle that operates on a specific generation
@@ -1692,7 +3054,44 @@ By default, the handle operates on the latest generation. Not
 all operations work when given a specific generation; check the API
 endpoints at <a href="https://cloud.google.com/storage/docs/json_api/">https://cloud.google.com/storage/docs/json_api/</a> for details.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Generation(gen <a href="https://pkg.go.dev/builtin#int64">int64</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_Generation_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;io&quot;
+	&quot;os&quot;
+)
+
+var gen int64
+
+func main() {
+	// Read an object's contents from generation gen, regardless of the
+	// current generation of the object.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	rc, err := obj.Generation(gen).NewReader(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+	if _, err := io.Copy(os.Stdout, rc); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_If" data-uid="cloud.google.com/go/storage.ObjectHandle.If">func (*ObjectHandle) If
 </h4>
             <div class="markdown level1 summary"><p>If returns a new ObjectHandle that applies a set of preconditions.
@@ -1701,7 +3100,59 @@ Operations on the new handle will return an error if the preconditions are not
 satisfied. See <a href="https://cloud.google.com/storage/docs/generations-preconditions">https://cloud.google.com/storage/docs/generations-preconditions</a>
 for more details.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) If(conds <a href="#conditions">Conditions</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_If_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;google.golang.org/api/googleapi&quot;
+	&quot;io&quot;
+	&quot;net/http&quot;
+	&quot;os&quot;
+)
+
+var gen int64
+
+func main() {
+	// Read from an object only if the current generation is gen.
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	rc, err := obj.If(storage.Conditions{GenerationMatch: gen}).NewReader(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	if _, err := io.Copy(os.Stdout, rc); err != nil {
+		// TODO: handle error.
+	}
+	if err := rc.Close(); err != nil {
+		switch ee := err.(type) {
+		case *googleapi.Error:
+			if ee.Code == http.StatusPreconditionFailed {
+				// The condition presented in the If failed.
+				// TODO: handle error.
+			}
+
+			// TODO: handle other status codes here.
+
+		default:
+			// TODO: handle error.
+		}
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Key" data-uid="cloud.google.com/go/storage.ObjectHandle.Key">func (*ObjectHandle) Key
 </h4>
             <div class="markdown level1 summary"><p>Key returns a new ObjectHandle that uses the supplied encryption
@@ -1709,7 +3160,40 @@ key to encrypt and decrypt the object&#39;s contents.</p>
 <p>Encryption key must be a 32-byte AES-256 key.
 See <a href="https://cloud.google.com/storage/docs/encryption">https://cloud.google.com/storage/docs/encryption</a> for details.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Key(encryptionKey []<a href="https://pkg.go.dev/builtin#byte">byte</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_Key_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+var secretKey []byte
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	obj := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;)
+	// Encrypt the object's contents.
+	w := obj.Key(secretKey).NewWriter(ctx)
+	if _, err := w.Write([]byte(&quot;top secret&quot;)); err != nil {
+		// TODO: handle error.
+	}
+	if err := w.Close(); err != nil {
+		// TODO: handle error.
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_NewRangeReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewRangeReader">func (*ObjectHandle) NewRangeReader
 </h4>
             <div class="markdown level1 summary"><p>NewRangeReader reads part of an object, reading at most length bytes
@@ -1722,7 +3206,107 @@ decompressive transcoding per <a href="https://cloud.google.com/storage/docs/tra
 that file will be served back whole, regardless of the requested range as
 Google Cloud Storage dictates.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewRangeReader(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, offset, length <a href="https://pkg.go.dev/builtin#int64">int64</a>) (r *<a href="#reader">Reader</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_NewRangeReader_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Read only the first 64K.
+	rc, err := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewRangeReader(ctx, 0, 64*1024)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+
+	slurp, err := ioutil.ReadAll(rc)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;first 64K of file contents:\n%s\n&quot;, slurp)
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">lastNBytes</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Read only the last 10 bytes until the end of the file.
+	rc, err := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewRangeReader(ctx, -10, -1)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+
+	slurp, err := ioutil.ReadAll(rc)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;Last 10 bytes from the end of the file:\n%s\n&quot;, slurp)
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">untilEnd</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Read from the 101st byte until the end of the file.
+	rc, err := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewRangeReader(ctx, 100, -1)
+	if err != nil {
+		// TODO: handle error.
+	}
+	defer rc.Close()
+
+	slurp, err := ioutil.ReadAll(rc)
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;From 101st byte until the end:\n%s\n&quot;, slurp)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_NewReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewReader">func (*ObjectHandle) NewReader
 </h4>
             <div class="markdown level1 summary"><p>NewReader creates a new Reader to read the contents of the
@@ -1730,7 +3314,41 @@ object.
 ErrObjectNotExist will be returned if the object is not found.</p>
 <p>The caller must call Close on the returned Reader when done reading.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewReader(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (*<a href="#reader">Reader</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_NewReader_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	rc, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).NewReader(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	slurp, err := ioutil.ReadAll(rc)
+	rc.Close()
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;file contents:&quot;, slurp)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_NewWriter" data-uid="cloud.google.com/go/storage.ObjectHandle.NewWriter">func (*ObjectHandle) NewWriter
 </h4>
             <div class="markdown level1 summary"><p>NewWriter returns a storage Writer that writes to the GCS object
@@ -1746,24 +3364,148 @@ using net/http.DetectContentType.</p>
 <p>It is the caller&#39;s responsibility to call Close when writing is done. To
 stop writing without saving the data, cancel the context.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewWriter(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) *<a href="#writer">Writer</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_NewWriter_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(ctx)
+	_ = wc // TODO: Use the Writer.
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_ObjectName" data-uid="cloud.google.com/go/storage.ObjectHandle.ObjectName">func (*ObjectHandle) ObjectName
 </h4>
             <div class="markdown level1 summary"><p>ObjectName returns the name of the object.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) ObjectName() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_ObjectName_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err == storage.ErrObjectNotExist {
+		fmt.Println(&quot;The object does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_ReadCompressed" data-uid="cloud.google.com/go/storage.ObjectHandle.ReadCompressed">func (*ObjectHandle) ReadCompressed
 </h4>
             <div class="markdown level1 summary"><p>ReadCompressed when true causes the read to happen without decompressing.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) ReadCompressed(compressed <a href="https://pkg.go.dev/builtin#bool">bool</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_ReadCompressed_examples">Examples</h5>
+            <h6 translate="no">exists</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	attrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Attrs(ctx)
+	if err == storage.ErrObjectNotExist {
+		fmt.Println(&quot;The object does not exist&quot;)
+		return
+	}
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Update" data-uid="cloud.google.com/go/storage.ObjectHandle.Update">func (*ObjectHandle) Update
 </h4>
             <div class="markdown level1 summary"><p>Update updates an object with the provided attributes.
 All zero-value attributes are ignored.
 ErrObjectNotExist will be returned if the object is not found.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, uattrs <a href="#objectattrstoupdate">ObjectAttrsToUpdate</a>) (oa *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectHandle_Update_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Change only the content type of the object.
+	objAttrs, err := client.Bucket(&quot;my-bucket&quot;).Object(&quot;my-object&quot;).Update(ctx, storage.ObjectAttrsToUpdate{
+		ContentType:        &quot;text/html&quot;,
+		ContentDisposition: &quot;&quot;, // delete ContentDisposition
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(objAttrs)
+}
+{% endverbatim %}</code></pre>
+            </div>
         <h3 id="cloud_google_com_go_storage_ObjectIterator" data-uid="cloud.google.com/go/storage.ObjectIterator">ObjectIterator</h3>
         <div class="markdown level1 summary"><p>An ObjectIterator is an iterator over ObjectAttrs.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
@@ -1792,14 +3534,53 @@ have a non-empty Prefix field, and a zero value for all other fields. These
 represent prefixes.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#objectiterator">ObjectIterator</a>) Next() (*<a href="#objectattrs">ObjectAttrs</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_ObjectIterator_Next_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;google.golang.org/api/iterator&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	it := client.Bucket(&quot;my-bucket&quot;).Objects(ctx, nil)
+	for {
+		objAttrs, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		fmt.Println(objAttrs)
+	}
+}
+{% endverbatim %}</code></pre>
+            </div>
             <h4 id="cloud_google_com_go_storage_ObjectIterator_PageInfo" data-uid="cloud.google.com/go/storage.ObjectIterator.PageInfo">func (*ObjectIterator) PageInfo
 </h4>
             <div class="markdown level1 summary"><p>PageInfo supports pagination. See the google.golang.org/api/iterator package for details.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_PolicyV4Fields" data-uid="cloud.google.com/go/storage.PolicyV4Fields">PolicyV4Fields</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#objectiterator">ObjectIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_PolicyV4Fields" data-uid="cloud.google.com/go/storage.PolicyV4Fields">PolicyV4Fields</h3>
         <div class="markdown level1 summary"><p>PolicyV4Fields describes the attributes for a PostPolicyV4 request.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
@@ -1858,7 +3639,86 @@ represent prefixes.</p>
             <div class="markdown level1 summary"><p>GenerateSignedPostPolicyV4 generates a PostPolicyV4 value from bucket, object and opts.
 The generated URL and fields will then allow an unauthenticated client to perform multipart uploads.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func GenerateSignedPostPolicyV4(bucket, object <a href="https://pkg.go.dev/builtin#string">string</a>, opts *<a href="#postpolicyv4options">PostPolicyV4Options</a>) (*<a href="#postpolicyv4">PostPolicyV4</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_PostPolicyV4_GenerateSignedPostPolicyV4_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;bytes&quot;
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;io&quot;
+	&quot;mime/multipart&quot;
+	&quot;net/http&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	pv4, err := storage.GenerateSignedPostPolicyV4(&quot;my-bucket&quot;, &quot;my-object.txt&quot;, &amp;storage.PostPolicyV4Options{
+		GoogleAccessID: &quot;my-access-id&quot;,
+		PrivateKey:     []byte(&quot;my-private-key&quot;),
+
+		// The upload expires in 2hours.
+		Expires: time.Now().Add(2 * time.Hour),
+
+		Fields: &amp;storage.PolicyV4Fields{
+			StatusCodeOnSuccess:    200,
+			RedirectToURLOnSuccess: &quot;https://example.org/&quot;,
+			// It MUST only be a text file.
+			ContentType: &quot;text/plain&quot;,
+		},
+
+		// The conditions that the uploaded file will be expected to conform to.
+		Conditions: []storage.PostPolicyV4Condition{
+			// Make the file a maximum of 10mB.
+			storage.ConditionContentLengthRange(0, 10&lt;&lt;20),
+		},
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+
+	// Now you can upload your file using the generated post policy
+	// with a plain HTTP client or even the browser.
+	formBuf := new(bytes.Buffer)
+	mw := multipart.NewWriter(formBuf)
+	for fieldName, value := range pv4.Fields {
+		if err := mw.WriteField(fieldName, value); err != nil {
+			// TODO: handle error.
+		}
+	}
+	file := bytes.NewReader(bytes.Repeat([]byte(&quot;a&quot;), 100))
+
+	mf, err := mw.CreateFormFile(&quot;file&quot;, &quot;myfile.txt&quot;)
+	if err != nil {
+		// TODO: handle error.
+	}
+	if _, err := io.Copy(mf, file); err != nil {
+		// TODO: handle error.
+	}
+	if err := mw.Close(); err != nil {
+		// TODO: handle error.
+	}
+
+	// Compose the request.
+	req, err := http.NewRequest(&quot;POST&quot;, pv4.URL, formBuf)
+	if err != nil {
+		// TODO: handle error.
+	}
+	// Ensure the Content-Type is derived from the multipart writer.
+	req.Header.Set(&quot;Content-Type&quot;, mw.FormDataContentType())
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		// TODO: handle error.
+	}
+	_ = res
+}
+{% endverbatim %}</code></pre>
+            </div>
         <h3 id="cloud_google_com_go_storage_PostPolicyV4Condition" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition">PostPolicyV4Condition</h3>
         <div class="markdown level1 summary"><p>PostPolicyV4Condition describes the constraints that the subsequent
 object upload&#39;s multipart form fields will be expected to conform to.</p>
@@ -1877,14 +3737,22 @@ object upload&#39;s multipart form fields will be expected to conform to.</p>
             <div class="markdown level1 summary"><p>ConditionContentLengthRange constraints the limits that the
 multipart upload&#39;s range header will be expected to be within.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_PostPolicyV4Condition_ConditionStartsWith" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition.ConditionStartsWith">func ConditionStartsWith
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ConditionContentLengthRange(start, end <a href="https://pkg.go.dev/builtin#uint64">uint64</a>) <a href="#postpolicyv4condition">PostPolicyV4Condition</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_PostPolicyV4Condition_ConditionStartsWith" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition.ConditionStartsWith">func ConditionStartsWith
 </h4>
             <div class="markdown level1 summary"><p>ConditionStartsWith checks that an attributes starts with value.
 An empty value will cause this condition to be ignored.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_PostPolicyV4Options" data-uid="cloud.google.com/go/storage.PostPolicyV4Options">PostPolicyV4Options</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ConditionStartsWith(key, value <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#postpolicyv4condition">PostPolicyV4Condition</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_PostPolicyV4Options" data-uid="cloud.google.com/go/storage.PostPolicyV4Options">PostPolicyV4Options</h3>
         <div class="markdown level1 summary"><p>PostPolicyV4Options are used to construct a signed post policy.
 Please see <a href="https://cloud.google.com/storage/docs/xml-api/post-object">https://cloud.google.com/storage/docs/xml-api/post-object</a>
 for reference about the fields.</p>
@@ -2021,8 +3889,12 @@ ObjectAttr will remain at their default values. This is a performance
 optimization; for more information, see
 <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance">https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance</a></p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_Reader" data-uid="cloud.google.com/go/storage.Reader">Reader</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (q *<a href="#query">Query</a>) SetAttrSelection(attrs []<a href="https://pkg.go.dev/builtin#string">string</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_Reader" data-uid="cloud.google.com/go/storage.Reader">Reader</h3>
         <div class="markdown level1 summary"><p>Reader reads a Cloud Storage object.
 It implements io.Reader.</p>
 <p>Typically, a Reader computes the CRC of the downloaded content and compares it to
@@ -2043,48 +3915,80 @@ is skipped if transcoding occurs. See <a href="https://cloud.google.com/storage/
             <div class="markdown level1 summary"><p>CacheControl returns the cache control of the object.</p>
 <p>Deprecated: use Reader.Attrs.CacheControl.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Reader_Close" data-uid="cloud.google.com/go/storage.Reader.Close">func (*Reader) Close
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) CacheControl() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Reader_Close" data-uid="cloud.google.com/go/storage.Reader.Close">func (*Reader) Close
 </h4>
             <div class="markdown level1 summary"><p>Close closes the Reader. It must be called when done reading.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Reader_ContentEncoding" data-uid="cloud.google.com/go/storage.Reader.ContentEncoding">func (*Reader) ContentEncoding
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Reader_ContentEncoding" data-uid="cloud.google.com/go/storage.Reader.ContentEncoding">func (*Reader) ContentEncoding
 </h4>
             <div class="markdown level1 summary"><p>ContentEncoding returns the content encoding of the object.</p>
 <p>Deprecated: use Reader.Attrs.ContentEncoding.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Reader_ContentType" data-uid="cloud.google.com/go/storage.Reader.ContentType">func (*Reader) ContentType
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) ContentEncoding() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Reader_ContentType" data-uid="cloud.google.com/go/storage.Reader.ContentType">func (*Reader) ContentType
 </h4>
             <div class="markdown level1 summary"><p>ContentType returns the content type of the object.</p>
 <p>Deprecated: use Reader.Attrs.ContentType.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Reader_LastModified" data-uid="cloud.google.com/go/storage.Reader.LastModified">func (*Reader) LastModified
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) ContentType() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Reader_LastModified" data-uid="cloud.google.com/go/storage.Reader.LastModified">func (*Reader) LastModified
 </h4>
             <div class="markdown level1 summary"><p>LastModified returns the value of the Last-Modified header.</p>
 <p>Deprecated: use Reader.Attrs.LastModified.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Reader_Read" data-uid="cloud.google.com/go/storage.Reader.Read">func (*Reader) Read
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) LastModified() (<a href="https://pkg.go.dev/time">time</a>.<a href="https://pkg.go.dev/time#Time">Time</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Reader_Read" data-uid="cloud.google.com/go/storage.Reader.Read">func (*Reader) Read
 </h4>
             <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Reader_Remain" data-uid="cloud.google.com/go/storage.Reader.Remain">func (*Reader) Remain
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Read(p []<a href="https://pkg.go.dev/builtin#byte">byte</a>) (<a href="https://pkg.go.dev/builtin#int">int</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Reader_Remain" data-uid="cloud.google.com/go/storage.Reader.Remain">func (*Reader) Remain
 </h4>
             <div class="markdown level1 summary"><p>Remain returns the number of bytes left to read, or -1 if unknown.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Reader_Size" data-uid="cloud.google.com/go/storage.Reader.Size">func (*Reader) Size
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Remain() <a href="https://pkg.go.dev/builtin#int64">int64</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Reader_Size" data-uid="cloud.google.com/go/storage.Reader.Size">func (*Reader) Size
 </h4>
             <div class="markdown level1 summary"><p>Size returns the size of the object in bytes.
 The returned value is always the same and is not affected by
 calls to Read or Close.</p>
 <p>Deprecated: use Reader.Attrs.Size.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_ReaderObjectAttrs" data-uid="cloud.google.com/go/storage.ReaderObjectAttrs">ReaderObjectAttrs</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Size() <a href="https://pkg.go.dev/builtin#int64">int64</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_ReaderObjectAttrs" data-uid="cloud.google.com/go/storage.ReaderObjectAttrs">ReaderObjectAttrs</h3>
         <div class="markdown level1 summary"><p>ReaderObjectAttrs are attributes about the object being read. These are populated
 during the New call. This struct only holds a subset of object attributes: to
 get the full set of attributes, use ObjectHandle.Attrs.</p>
@@ -2270,8 +4174,21 @@ subject to any SLA or deprecation policy.</p>
         
             <h4 id="cloud_google_com_go_storage_SigningSchemeDefault_SigningSchemeV2_SigningSchemeV4" data-uid="cloud.google.com/go/storage.SigningSchemeDefault,SigningSchemeV2,SigningSchemeV4">SigningSchemeDefault, SigningSchemeV2, SigningSchemeV4</h4>
             <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_URLStyle" data-uid="cloud.google.com/go/storage.URLStyle">URLStyle</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">const (
+	// SigningSchemeDefault is presently V2 and will change to V4 in the future.
+	SigningSchemeDefault <a href="#signingscheme">SigningScheme</a> = <a href="https://pkg.go.dev/builtin#iota">iota</a>
+
+	// SigningSchemeV2 uses the V2 scheme to sign URLs.
+	SigningSchemeV2
+
+	// SigningSchemeV4 uses the V4 scheme to sign URLs.
+	SigningSchemeV4
+)</code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_URLStyle" data-uid="cloud.google.com/go/storage.URLStyle">URLStyle</h3>
         <div class="markdown level1 summary"><p>URLStyle determines the style to use for the signed URL. pathStyle is the
 default. All non-default options work with V4 scheme only. See
 <a href="https://cloud.google.com/storage/docs/request-endpoints">https://cloud.google.com/storage/docs/request-endpoints</a> for details.</p>
@@ -2295,20 +4212,32 @@ hostname argument. Generated urls will be of the form
 for details. Note that for CNAMEs, only HTTP is supported, so Insecure must
 be set to true.<p>
 </object-name></bucket-bound-hostname></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_URLStyle_PathStyle" data-uid="cloud.google.com/go/storage.URLStyle.PathStyle">func PathStyle
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func BucketBoundHostname(hostname <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#urlstyle">URLStyle</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_URLStyle_PathStyle" data-uid="cloud.google.com/go/storage.URLStyle.PathStyle">func PathStyle
 </h4>
             <div class="markdown level1 summary"><p>PathStyle is the default style, and will generate a URL of the form
 &quot;storage.googleapis.com/<bucket-name>/<object-name>&quot;.<p>
 </object-name></bucket-name></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_URLStyle_VirtualHostedStyle" data-uid="cloud.google.com/go/storage.URLStyle.VirtualHostedStyle">func VirtualHostedStyle
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func PathStyle() <a href="#urlstyle">URLStyle</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_URLStyle_VirtualHostedStyle" data-uid="cloud.google.com/go/storage.URLStyle.VirtualHostedStyle">func VirtualHostedStyle
 </h4>
             <div class="markdown level1 summary"><p>VirtualHostedStyle generates a URL relative to the bucket&#39;s virtual
 hostname, e.g. &quot;<bucket-name>.storage.googleapis.com/<object-name>&quot;.<p>
 </object-name></bucket-name></div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-        <h3 id="cloud_google_com_go_storage_UniformBucketLevelAccess" data-uid="cloud.google.com/go/storage.UniformBucketLevelAccess">UniformBucketLevelAccess</h3>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func VirtualHostedStyle() <a href="#urlstyle">URLStyle</a></code></pre>	
+            </div>
+                  <h3 id="cloud_google_com_go_storage_UniformBucketLevelAccess" data-uid="cloud.google.com/go/storage.UniformBucketLevelAccess">UniformBucketLevelAccess</h3>
         <div class="markdown level1 summary"><p>UniformBucketLevelAccess configures access checks to use only bucket-level IAM
 policies.</p>
 </div>
@@ -2384,22 +4313,34 @@ policies.</p>
             <div class="markdown level1 summary"><p>Attrs returns metadata about a successfully-written object.
 It&#39;s only valid to call it after Close returns nil.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Writer_Close" data-uid="cloud.google.com/go/storage.Writer.Close">func (*Writer) Close
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Attrs() *<a href="#objectattrs">ObjectAttrs</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Writer_Close" data-uid="cloud.google.com/go/storage.Writer.Close">func (*Writer) Close
 </h4>
             <div class="markdown level1 summary"><p>Close completes the write operation and flushes any buffered data.
 If Close doesn&#39;t return an error, metadata about the written object
 can be retrieved by calling Attrs.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Writer_CloseWithError" data-uid="cloud.google.com/go/storage.Writer.CloseWithError">func (*Writer) CloseWithError
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Writer_CloseWithError" data-uid="cloud.google.com/go/storage.Writer.CloseWithError">func (*Writer) CloseWithError
 </h4>
             <div class="markdown level1 summary"><p>CloseWithError aborts the write operation with the provided error.
 CloseWithError always returns nil.</p>
 <p>Deprecated: cancel the context passed to NewWriter instead.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
-            <h4 id="cloud_google_com_go_storage_Writer_Write" data-uid="cloud.google.com/go/storage.Writer.Write">func (*Writer) Write
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) CloseWithError(err <a href="https://pkg.go.dev/builtin#error">error</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
+                      <h4 id="cloud_google_com_go_storage_Writer_Write" data-uid="cloud.google.com/go/storage.Writer.Write">func (*Writer) Write
 </h4>
             <div class="markdown level1 summary"><p>Write appends to w. It implements the io.Writer interface.</p>
 <p>Since writes happen asynchronously, Write may return a nil
@@ -2409,7 +4350,109 @@ the upload was successful.</p>
 <p>Writes will be retried on transient errors from the server, unless
 Writer.ChunkSize has been set to zero.</p>
 </div>
+            <div class="markdown level1 conceptual"></div>
             <h5 class="decalaration">Declaration</h5>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Write(p []<a href="https://pkg.go.dev/builtin#byte">byte</a>) (n <a href="https://pkg.go.dev/builtin#int">int</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
+            <h5 id="cloud_google_com_go_storage_Writer_Write_examples">Examples</h5>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(ctx)
+	wc.ContentType = &quot;text/plain&quot;
+	wc.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
+	if _, err := wc.Write([]byte(&quot;hello world&quot;)); err != nil {
+		// TODO: handle error.
+		// Note that Write may return nil in some error situations,
+		// so always check the error from Close.
+	}
+	if err := wc.Close(); err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">checksum</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;hash/crc32&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	data := []byte(&quot;verify me&quot;)
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(ctx)
+	wc.CRC32C = crc32.Checksum(data, crc32.MakeTable(crc32.Castagnoli))
+	wc.SendCRC32C = true
+	if _, err := wc.Write([]byte(&quot;hello world&quot;)); err != nil {
+		// TODO: handle error.
+		// Note that Write may return nil in some error situations,
+		// so always check the error from Close.
+	}
+	if err := wc.Close(); err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
+}
+{% endverbatim %}</code></pre>
+            </div>
+            <h6 translate="no">timeout</h6>
+            <div class="codewrapper">
+            <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;context&quot;
+	&quot;fmt&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	ctx := context.Background()
+	client, err := storage.NewClient(ctx)
+	if err != nil {
+		// TODO: handle error.
+	}
+	tctx, cancel := context.WithTimeout(ctx, 30*time.Second)
+	defer cancel() // Cancel when done, whether we time out or not.
+	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(tctx)
+	wc.ContentType = &quot;text/plain&quot;
+	wc.ACL = []storage.ACLRule{{Entity: storage.AllUsers, Role: storage.RoleReader}}
+	if _, err := wc.Write([]byte(&quot;hello world&quot;)); err != nil {
+		// TODO: handle error.
+		// Note that Write may return nil in some error situations,
+		// so always check the error from Close.
+	}
+	if err := wc.Close(); err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
+}
+{% endverbatim %}</code></pre>
+            </div>
     <h2 id="functions">Functions
   
   </h2>
