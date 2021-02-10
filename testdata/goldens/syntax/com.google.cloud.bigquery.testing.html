@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Namespace com.google.cloud.bigquery.testing
+</h1>
+      <article data-uid="com.google.cloud.bigquery.testing">
+  
+  <div class="markdown level0 summary"><p>A testing helper for Google BigQuery.</p>
+<p> <p>A simple usage example:</p>
+<p> <p>Before the test:</p>
+ <pre><code>
+ RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+ BigQuery bigquery = bigqueryHelper.getOptions().getService();
+ String dataset = RemoteBigQueryHelper.generateDatasetName();
+ bigquery.create(DatasetInfo.newBuilder(dataset).build());
+ </code></pre>
+
+<p> <p>After the test:</p>
+ <pre><code>
+ RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
+ </code></pre></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h2 id="classes">Classes
+  
+  </h2>
+      <h3><a class="xref" href="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.html">RemoteBigQueryHelper</a></h3>
+      <section><p>Utility to create a remote BigQuery configuration for testing. BigQuery options can be obtained via the <a class="xref" href="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.html#com_google_cloud_bigquery_testing_RemoteBigQueryHelper_getOptions__">#getOptions()</a> method. Returned options have custom <span class="xref">BigQueryOptions#getRetrySettings()</span>: <span class="xref">RetrySettings#getMaxAttempts()</span> is <code>10</code>, <span class="xref">RetrySettings#getMaxRetryDelay()</span> is <code>30000</code>, <span class="xref">RetrySettings#getTotalTimeout()</span> is <code>120000</code> and <span class="xref">RetrySettings#getInitialRetryDelay()</span> is <code>250</code>. <span class="xref">HttpTransportOptions#getConnectTimeout()</span> and <span class="xref">HttpTransportOptions#getReadTimeout()</span> are both set to <code>60000</code>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.BigQueryHelperException.html#com_google_cloud_bigquery_testing_RemoteBigQueryHelper_BigQueryHelperException">RemoteBigQueryHelper.BigQueryHelperException</a></h3>
+      <section></section>
+</article>
+    </div>
+  </body>
+</html>

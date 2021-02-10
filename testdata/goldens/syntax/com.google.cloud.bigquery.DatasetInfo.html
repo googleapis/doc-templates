@@ -1,0 +1,756 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class DatasetInfo
+</h1>
+      <article data-uid="com.google.cloud.bigquery.DatasetInfo">
+  
+  
+  <div class="markdown level0 summary"><p>Google BigQuery Dataset information. A dataset is a grouping mechanism that holds zero or more tables. Datasets are the lowest level unit of access control; you cannot control access at the table level.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">DatasetInfo</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">java.io.Serializable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_DatasetInfo_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class DatasetInfo implements Serializable</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_DatasetInfo_equals_" data-uid="com.google.cloud.bigquery.DatasetInfo.equals*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_equals_java_lang_Object_" data-uid="com.google.cloud.bigquery.DatasetInfo.equals(java.lang.Object)">equals(Object obj)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean equals(Object obj)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.equals(java.lang.Object)</span></div>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getAcl_" data-uid="com.google.cloud.bigquery.DatasetInfo.getAcl*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getAcl__" data-uid="com.google.cloud.bigquery.DatasetInfo.getAcl()">getAcl()</h3>
+  <div class="markdown level1 summary"><p>Returns the dataset&#39;s access control configuration.</p>
+<p>Update the ACLs for a dataset.</p>
+<pre><code class="lang-java">Dataset dataset = bigquery.getDataset(DatasetId.of(&quot;my_dataset&quot;));
+ List beforeAcls = dataset.getAcl();
+
+ // Make a copy of the ACLs so that they can be modified.
+ ArrayList acls = new ArrayList&lt;&gt;(beforeAcls);
+ acls.add(Acl.of(new Acl.User(&quot;sample.bigquery.dev@gmail.com&quot;), Acl.Role.READER));
+ Dataset.Builder builder = dataset.toBuilder();
+ builder.setAcl(acls);
+
+ bigquery.update(builder.build());  // API request.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public List&lt;Acl&gt; getAcl()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Acl.html">Acl</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getCreationTime_" data-uid="com.google.cloud.bigquery.DatasetInfo.getCreationTime*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getCreationTime__" data-uid="com.google.cloud.bigquery.DatasetInfo.getCreationTime()">getCreationTime()</h3>
+  <div class="markdown level1 summary"><p>Returns the time when this dataset was created, in milliseconds since the epoch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Long getCreationTime()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getDatasetId_" data-uid="com.google.cloud.bigquery.DatasetInfo.getDatasetId*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getDatasetId__" data-uid="com.google.cloud.bigquery.DatasetInfo.getDatasetId()">getDatasetId()</h3>
+  <div class="markdown level1 summary"><p>Returns the dataset identity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public DatasetId getDatasetId()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getDefaultEncryptionConfiguration_" data-uid="com.google.cloud.bigquery.DatasetInfo.getDefaultEncryptionConfiguration*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getDefaultEncryptionConfiguration__" data-uid="com.google.cloud.bigquery.DatasetInfo.getDefaultEncryptionConfiguration()">getDefaultEncryptionConfiguration()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public EncryptionConfiguration getDefaultEncryptionConfiguration()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.EncryptionConfiguration.html">EncryptionConfiguration</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getDefaultPartitionExpirationMs_" data-uid="com.google.cloud.bigquery.DatasetInfo.getDefaultPartitionExpirationMs*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getDefaultPartitionExpirationMs__" data-uid="com.google.cloud.bigquery.DatasetInfo.getDefaultPartitionExpirationMs()">getDefaultPartitionExpirationMs()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Long getDefaultPartitionExpirationMs()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getDefaultTableLifetime_" data-uid="com.google.cloud.bigquery.DatasetInfo.getDefaultTableLifetime*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getDefaultTableLifetime__" data-uid="com.google.cloud.bigquery.DatasetInfo.getDefaultTableLifetime()">getDefaultTableLifetime()</h3>
+  <div class="markdown level1 summary"><p>Returns the default lifetime of all tables in the dataset, in milliseconds. Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table&#39;s expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property.</p>
+<p>Update the default table expiration time for a dataset.</p>
+<pre><code class="lang-java">Dataset dataset = bigquery.getDataset(DatasetId.of(&quot;my_dataset&quot;));
+ Long beforeExpiration = dataset.getDefaultTableLifetime();
+
+ Long oneDayMilliseconds = 24 * 60 * 60 * 1000L;
+ Dataset.Builder builder = dataset.toBuilder();
+ builder.setDefaultTableLifetime(oneDayMilliseconds);
+ bigquery.update(builder.build());  // API request.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Long getDefaultTableLifetime()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getDescription_" data-uid="com.google.cloud.bigquery.DatasetInfo.getDescription*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getDescription__" data-uid="com.google.cloud.bigquery.DatasetInfo.getDescription()">getDescription()</h3>
+  <div class="markdown level1 summary"><p>Returns a user-friendly description for the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getDescription()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getEtag_" data-uid="com.google.cloud.bigquery.DatasetInfo.getEtag*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getEtag__" data-uid="com.google.cloud.bigquery.DatasetInfo.getEtag()">getEtag()</h3>
+  <div class="markdown level1 summary"><p>Returns the hash of the dataset resource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getEtag()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getFriendlyName_" data-uid="com.google.cloud.bigquery.DatasetInfo.getFriendlyName*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getFriendlyName__" data-uid="com.google.cloud.bigquery.DatasetInfo.getFriendlyName()">getFriendlyName()</h3>
+  <div class="markdown level1 summary"><p>Returns a user-friendly name for the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getFriendlyName()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getGeneratedId_" data-uid="com.google.cloud.bigquery.DatasetInfo.getGeneratedId*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getGeneratedId__" data-uid="com.google.cloud.bigquery.DatasetInfo.getGeneratedId()">getGeneratedId()</h3>
+  <div class="markdown level1 summary"><p>Returns the service-generated id for the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getGeneratedId()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getLabels_" data-uid="com.google.cloud.bigquery.DatasetInfo.getLabels*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getLabels__" data-uid="com.google.cloud.bigquery.DatasetInfo.getLabels()">getLabels()</h3>
+  <div class="markdown level1 summary"><p>Return a map for labels applied to the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Map&lt;String,String&gt; getLabels()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">java.lang.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getLastModified_" data-uid="com.google.cloud.bigquery.DatasetInfo.getLastModified*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getLastModified__" data-uid="com.google.cloud.bigquery.DatasetInfo.getLastModified()">getLastModified()</h3>
+  <div class="markdown level1 summary"><p>Returns the time when this dataset or any of its tables was last modified, in milliseconds since the epoch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Long getLastModified()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getLocation_" data-uid="com.google.cloud.bigquery.DatasetInfo.getLocation*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getLocation__" data-uid="com.google.cloud.bigquery.DatasetInfo.getLocation()">getLocation()</h3>
+  <div class="markdown level1 summary"><p>Returns the geographic location where the dataset should reside.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getLocation()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_getSelfLink_" data-uid="com.google.cloud.bigquery.DatasetInfo.getSelfLink*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_getSelfLink__" data-uid="com.google.cloud.bigquery.DatasetInfo.getSelfLink()">getSelfLink()</h3>
+  <div class="markdown level1 summary"><p>Returns an URL that can be used to access the resource again. The returned URL can be used for get or update requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getSelfLink()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_hashCode_" data-uid="com.google.cloud.bigquery.DatasetInfo.hashCode*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_hashCode__" data-uid="com.google.cloud.bigquery.DatasetInfo.hashCode()">hashCode()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public int hashCode()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.hashCode()</span></div>
+  <a id="com_google_cloud_bigquery_DatasetInfo_newBuilder_" data-uid="com.google.cloud.bigquery.DatasetInfo.newBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_newBuilder_com_google_cloud_bigquery_DatasetId_" data-uid="com.google.cloud.bigquery.DatasetInfo.newBuilder(com.google.cloud.bigquery.DatasetId)">newBuilder(DatasetId datasetId)</h3>
+  <div class="markdown level1 summary"><p>Returns a builder for a <code>DatasetInfo</code> object given it&#39;s identity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static DatasetInfo.Builder newBuilder(DatasetId datasetId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.Builder.html#com_google_cloud_bigquery_DatasetInfo_Builder">DatasetInfo.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_newBuilder_" data-uid="com.google.cloud.bigquery.DatasetInfo.newBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_newBuilder_java_lang_String_" data-uid="com.google.cloud.bigquery.DatasetInfo.newBuilder(java.lang.String)">newBuilder(String datasetId)</h3>
+  <div class="markdown level1 summary"><p>Returns a builder for a <code>DatasetInfo</code> object given it&#39;s user-defined id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static DatasetInfo.Builder newBuilder(String datasetId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.Builder.html#com_google_cloud_bigquery_DatasetInfo_Builder">DatasetInfo.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_newBuilder_" data-uid="com.google.cloud.bigquery.DatasetInfo.newBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_newBuilder_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.DatasetInfo.newBuilder(java.lang.String,java.lang.String)">newBuilder(String projectId, String datasetId)</h3>
+  <div class="markdown level1 summary"><p>Returns a builder for the DatasetInfo object given it&#39;s user-defined project and dataset ids.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static DatasetInfo.Builder newBuilder(String projectId, String datasetId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.Builder.html#com_google_cloud_bigquery_DatasetInfo_Builder">DatasetInfo.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_of_" data-uid="com.google.cloud.bigquery.DatasetInfo.of*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_of_com_google_cloud_bigquery_DatasetId_" data-uid="com.google.cloud.bigquery.DatasetInfo.of(com.google.cloud.bigquery.DatasetId)">of(DatasetId datasetId)</h3>
+  <div class="markdown level1 summary"><p>Returns a <code>DatasetInfo</code> object given it&#39;s identity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static DatasetInfo of(DatasetId datasetId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_of_" data-uid="com.google.cloud.bigquery.DatasetInfo.of*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_of_java_lang_String_" data-uid="com.google.cloud.bigquery.DatasetInfo.of(java.lang.String)">of(String datasetId)</h3>
+  <div class="markdown level1 summary"><p>Returns a <code>DatasetInfo</code> object given it&#39;s user-defined id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static DatasetInfo of(String datasetId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_toBuilder_" data-uid="com.google.cloud.bigquery.DatasetInfo.toBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_toBuilder__" data-uid="com.google.cloud.bigquery.DatasetInfo.toBuilder()">toBuilder()</h3>
+  <div class="markdown level1 summary"><p>Returns a builder for the dataset object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public DatasetInfo.Builder toBuilder()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.Builder.html#com_google_cloud_bigquery_DatasetInfo_Builder">DatasetInfo.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_DatasetInfo_toString_" data-uid="com.google.cloud.bigquery.DatasetInfo.toString*"></a>
+  <h3 id="com_google_cloud_bigquery_DatasetInfo_toString__" data-uid="com.google.cloud.bigquery.DatasetInfo.toString()">toString()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String toString()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.toString()</span></div>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">java.io.Serializable</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,889 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class QueryStage
+</h1>
+      <article data-uid="com.google.cloud.bigquery.QueryStage">
+  
+  
+  <div class="markdown level0 summary"><p>BigQuery provides diagnostic information about a completed query&#39;s execution plan (or query plan for short). The query plan describes a query as a series of stages, with each stage comprising a number of steps that read from data sources, perform a series of transformations on the input, and emit an output to a future stage (or the final result). This class contains information on a query stage.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">QueryStage</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">java.io.Serializable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_QueryStage_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class QueryStage implements Serializable</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_QueryStage_equals_" data-uid="com.google.cloud.bigquery.QueryStage.equals*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_equals_java_lang_Object_" data-uid="com.google.cloud.bigquery.QueryStage.equals(java.lang.Object)">equals(Object obj)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final boolean equals(Object obj)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.equals(java.lang.Object)</span></div>
+  <a id="com_google_cloud_bigquery_QueryStage_getCompletedParallelInputs_" data-uid="com.google.cloud.bigquery.QueryStage.getCompletedParallelInputs*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getCompletedParallelInputs__" data-uid="com.google.cloud.bigquery.QueryStage.getCompletedParallelInputs()">getCompletedParallelInputs()</h3>
+  <div class="markdown level1 summary"><p>Returns the number of parallel input segments completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getCompletedParallelInputs()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getComputeMsAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getComputeMsAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getComputeMsAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getComputeMsAvg()">getComputeMsAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the average worker spent on CPU-bound tasks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getComputeMsAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getComputeMsMax_" data-uid="com.google.cloud.bigquery.QueryStage.getComputeMsMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getComputeMsMax__" data-uid="com.google.cloud.bigquery.QueryStage.getComputeMsMax()">getComputeMsMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the slowest worker spent on CPU-bound tasks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getComputeMsMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getComputeRatioAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getComputeRatioAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getComputeRatioAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getComputeRatioAvg()">getComputeRatioAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the average worker spent CPU-bound, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getComputeRatioAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getComputeRatioMax_" data-uid="com.google.cloud.bigquery.QueryStage.getComputeRatioMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getComputeRatioMax__" data-uid="com.google.cloud.bigquery.QueryStage.getComputeRatioMax()">getComputeRatioMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the slowest worker spent CPU-bound, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getComputeRatioMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getEndMs_" data-uid="com.google.cloud.bigquery.QueryStage.getEndMs*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getEndMs__" data-uid="com.google.cloud.bigquery.QueryStage.getEndMs()">getEndMs()</h3>
+  <div class="markdown level1 summary"><p>Returns the stage end time represented as milliseconds since epoch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getEndMs()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getGeneratedId_" data-uid="com.google.cloud.bigquery.QueryStage.getGeneratedId*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getGeneratedId__" data-uid="com.google.cloud.bigquery.QueryStage.getGeneratedId()">getGeneratedId()</h3>
+  <div class="markdown level1 summary"><p>Returns a unique, server-generated ID for the stage within its plan.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getGeneratedId()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getInputStages_" data-uid="com.google.cloud.bigquery.QueryStage.getInputStages*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getInputStages__" data-uid="com.google.cloud.bigquery.QueryStage.getInputStages()">getInputStages()</h3>
+  <div class="markdown level1 summary"><p>Returns a list of the stage IDs that are inputs to this stage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public List&lt;Long&gt; getInputStages()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.Long</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getName_" data-uid="com.google.cloud.bigquery.QueryStage.getName*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getName__" data-uid="com.google.cloud.bigquery.QueryStage.getName()">getName()</h3>
+  <div class="markdown level1 summary"><p>Returns a human-readable name for the stage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getName()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getParallelInputs_" data-uid="com.google.cloud.bigquery.QueryStage.getParallelInputs*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getParallelInputs__" data-uid="com.google.cloud.bigquery.QueryStage.getParallelInputs()">getParallelInputs()</h3>
+  <div class="markdown level1 summary"><p>Returns the number of parallel input segments to be processed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getParallelInputs()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getReadMsAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getReadMsAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getReadMsAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getReadMsAvg()">getReadMsAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the average worker spent reading input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getReadMsAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getReadMsMax_" data-uid="com.google.cloud.bigquery.QueryStage.getReadMsMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getReadMsMax__" data-uid="com.google.cloud.bigquery.QueryStage.getReadMsMax()">getReadMsMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the slowest worker spent reading input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getReadMsMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getReadRatioAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getReadRatioAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getReadRatioAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getReadRatioAvg()">getReadRatioAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the average worker spent reading input data, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getReadRatioAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getReadRatioMax_" data-uid="com.google.cloud.bigquery.QueryStage.getReadRatioMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getReadRatioMax__" data-uid="com.google.cloud.bigquery.QueryStage.getReadRatioMax()">getReadRatioMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the slowest worker spent reading input data, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getReadRatioMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getRecordsRead_" data-uid="com.google.cloud.bigquery.QueryStage.getRecordsRead*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getRecordsRead__" data-uid="com.google.cloud.bigquery.QueryStage.getRecordsRead()">getRecordsRead()</h3>
+  <div class="markdown level1 summary"><p>Returns the number of rows (top-level records) read by the stage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getRecordsRead()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getRecordsWritten_" data-uid="com.google.cloud.bigquery.QueryStage.getRecordsWritten*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getRecordsWritten__" data-uid="com.google.cloud.bigquery.QueryStage.getRecordsWritten()">getRecordsWritten()</h3>
+  <div class="markdown level1 summary"><p>Returns the number of rows (top-level records) written by the stage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getRecordsWritten()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getShuffleOutputBytes_" data-uid="com.google.cloud.bigquery.QueryStage.getShuffleOutputBytes*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getShuffleOutputBytes__" data-uid="com.google.cloud.bigquery.QueryStage.getShuffleOutputBytes()">getShuffleOutputBytes()</h3>
+  <div class="markdown level1 summary"><p>Returns the total number of bytes written to shuffle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getShuffleOutputBytes()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getShuffleOutputBytesSpilled_" data-uid="com.google.cloud.bigquery.QueryStage.getShuffleOutputBytesSpilled*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getShuffleOutputBytesSpilled__" data-uid="com.google.cloud.bigquery.QueryStage.getShuffleOutputBytesSpilled()">getShuffleOutputBytesSpilled()</h3>
+  <div class="markdown level1 summary"><p>Returns the total number of bytes writtedn to shuffle and spilled to disk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getShuffleOutputBytesSpilled()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getSlotMs_" data-uid="com.google.cloud.bigquery.QueryStage.getSlotMs*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getSlotMs__" data-uid="com.google.cloud.bigquery.QueryStage.getSlotMs()">getSlotMs()</h3>
+  <div class="markdown level1 summary"><p>Returns the slot-milliseconds used by the stage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getSlotMs()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getStartMs_" data-uid="com.google.cloud.bigquery.QueryStage.getStartMs*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getStartMs__" data-uid="com.google.cloud.bigquery.QueryStage.getStartMs()">getStartMs()</h3>
+  <div class="markdown level1 summary"><p>Returns the stage start time represented as milliseconds since epoch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getStartMs()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getStatus_" data-uid="com.google.cloud.bigquery.QueryStage.getStatus*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getStatus__" data-uid="com.google.cloud.bigquery.QueryStage.getStatus()">getStatus()</h3>
+  <div class="markdown level1 summary"><p>Returns the current status for the stage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getStatus()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getSteps_" data-uid="com.google.cloud.bigquery.QueryStage.getSteps*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getSteps__" data-uid="com.google.cloud.bigquery.QueryStage.getSteps()">getSteps()</h3>
+  <div class="markdown level1 summary"><p>Returns the list of steps within the stage in dependency order (approximately chronological).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public List&lt;QueryStage.QueryStep&gt; getSteps()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<a class="xref" href="com.google.cloud.bigquery.QueryStage.QueryStep.html#com_google_cloud_bigquery_QueryStage_QueryStep">QueryStep</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWaitMsAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getWaitMsAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWaitMsAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getWaitMsAvg()">getWaitMsAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the average worker spent waiting to be scheduled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getWaitMsAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWaitMsMax_" data-uid="com.google.cloud.bigquery.QueryStage.getWaitMsMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWaitMsMax__" data-uid="com.google.cloud.bigquery.QueryStage.getWaitMsMax()">getWaitMsMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the slowest worker spent waiting to be scheduled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getWaitMsMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWaitRatioAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getWaitRatioAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWaitRatioAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getWaitRatioAvg()">getWaitRatioAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the average worker spent waiting to be scheduled, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getWaitRatioAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWaitRatioMax_" data-uid="com.google.cloud.bigquery.QueryStage.getWaitRatioMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWaitRatioMax__" data-uid="com.google.cloud.bigquery.QueryStage.getWaitRatioMax()">getWaitRatioMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the slowest worker spent waiting to be scheduled, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getWaitRatioMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWriteMsAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getWriteMsAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWriteMsAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getWriteMsAvg()">getWriteMsAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the average worker spent writing output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getWriteMsAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWriteMsMax_" data-uid="com.google.cloud.bigquery.QueryStage.getWriteMsMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWriteMsMax__" data-uid="com.google.cloud.bigquery.QueryStage.getWriteMsMax()">getWriteMsMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time in milliseconds the slowest worker spent writing output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public long getWriteMsMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWriteRatioAvg_" data-uid="com.google.cloud.bigquery.QueryStage.getWriteRatioAvg*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWriteRatioAvg__" data-uid="com.google.cloud.bigquery.QueryStage.getWriteRatioAvg()">getWriteRatioAvg()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the average worker spent writing output data, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getWriteRatioAvg()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_getWriteRatioMax_" data-uid="com.google.cloud.bigquery.QueryStage.getWriteRatioMax*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_getWriteRatioMax__" data-uid="com.google.cloud.bigquery.QueryStage.getWriteRatioMax()">getWriteRatioMax()</h3>
+  <div class="markdown level1 summary"><p>Returns the time the slowest worker spent writing output data, divided by the longest time spent by any worker in any segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public double getWriteRatioMax()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryStage_hashCode_" data-uid="com.google.cloud.bigquery.QueryStage.hashCode*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_hashCode__" data-uid="com.google.cloud.bigquery.QueryStage.hashCode()">hashCode()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final int hashCode()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.hashCode()</span></div>
+  <a id="com_google_cloud_bigquery_QueryStage_toString_" data-uid="com.google.cloud.bigquery.QueryStage.toString*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryStage_toString__" data-uid="com.google.cloud.bigquery.QueryStage.toString()">toString()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String toString()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.toString()</span></div>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">java.io.Serializable</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

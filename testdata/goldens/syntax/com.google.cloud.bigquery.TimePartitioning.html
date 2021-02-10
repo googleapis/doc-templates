@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class TimePartitioning
+</h1>
+      <article data-uid="com.google.cloud.bigquery.TimePartitioning">
+  
+  
+  <div class="markdown level0 summary"><p>Objects of this class allow to configure table partitioning based on time. By dividing a large table into smaller partitions, you can improve query performance and reduce the number of bytes billed by restricting the amount of data scanned.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">TimePartitioning</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">java.io.Serializable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_TimePartitioning_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract class TimePartitioning implements Serializable</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_TimePartitioning_getExpirationMs_" data-uid="com.google.cloud.bigquery.TimePartitioning.getExpirationMs*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_getExpirationMs__" data-uid="com.google.cloud.bigquery.TimePartitioning.getExpirationMs()">getExpirationMs()</h3>
+  <div class="markdown level1 summary"><p>Returns the number of milliseconds for which to keep the storage for a partition. When expired, the storage for the partition is reclaimed. If null, the partion does not expire.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Long getExpirationMs()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Long</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TimePartitioning_getField_" data-uid="com.google.cloud.bigquery.TimePartitioning.getField*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_getField__" data-uid="com.google.cloud.bigquery.TimePartitioning.getField()">getField()</h3>
+  <div class="markdown level1 summary"><p>If not set, the table is partitioned by pseudo column &#39;_PARTITIONTIME&#39;; if set, the table is partitioned by this field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract String getField()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TimePartitioning_getRequirePartitionFilter_" data-uid="com.google.cloud.bigquery.TimePartitioning.getRequirePartitionFilter*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_getRequirePartitionFilter__" data-uid="com.google.cloud.bigquery.TimePartitioning.getRequirePartitionFilter()">getRequirePartitionFilter()</h3>
+  <div class="markdown level1 summary"><p>If set to true, queries over this table require a partition filter (that can be used for partition elimination) to be specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Boolean getRequirePartitionFilter()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TimePartitioning_getType_" data-uid="com.google.cloud.bigquery.TimePartitioning.getType*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_getType__" data-uid="com.google.cloud.bigquery.TimePartitioning.getType()">getType()</h3>
+  <div class="markdown level1 summary"><p>Returns the time partitioning type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TimePartitioning.Type getType()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Type.html#com_google_cloud_bigquery_TimePartitioning_Type">TimePartitioning.Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TimePartitioning_newBuilder_" data-uid="com.google.cloud.bigquery.TimePartitioning.newBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_newBuilder_com_google_cloud_bigquery_TimePartitioning_Type_" data-uid="com.google.cloud.bigquery.TimePartitioning.newBuilder(com.google.cloud.bigquery.TimePartitioning.Type)">newBuilder(TimePartitioning.Type type)</h3>
+  <div class="markdown level1 summary"><p>Returns a <code>TimePartitioning</code> object given the time partitioning type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static TimePartitioning.Builder newBuilder(TimePartitioning.Type type)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Type.html#com_google_cloud_bigquery_TimePartitioning_Type">TimePartitioning.Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Builder.html#com_google_cloud_bigquery_TimePartitioning_Builder">TimePartitioning.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TimePartitioning_of_" data-uid="com.google.cloud.bigquery.TimePartitioning.of*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_of_com_google_cloud_bigquery_TimePartitioning_Type_" data-uid="com.google.cloud.bigquery.TimePartitioning.of(com.google.cloud.bigquery.TimePartitioning.Type)">of(TimePartitioning.Type type)</h3>
+  <div class="markdown level1 summary"><p>Returns a <code>TimePartitioning</code> object given the time partitioning type. The partitions will not expire.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static TimePartitioning of(TimePartitioning.Type type)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Type.html#com_google_cloud_bigquery_TimePartitioning_Type">TimePartitioning.Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TimePartitioning_of_" data-uid="com.google.cloud.bigquery.TimePartitioning.of*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_of_com_google_cloud_bigquery_TimePartitioning_Type_long_" data-uid="com.google.cloud.bigquery.TimePartitioning.of(com.google.cloud.bigquery.TimePartitioning.Type,long)">of(TimePartitioning.Type type, long expirationMs)</h3>
+  <div class="markdown level1 summary"><p>Returns a <code>TimePartitioning</code> object given the time partitioning type and the partition&#39;s expiration in milliseconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static TimePartitioning of(TimePartitioning.Type type, long expirationMs)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Type.html#com_google_cloud_bigquery_TimePartitioning_Type">TimePartitioning.Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>the time partitioning type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td><span class="parametername">expirationMs</span></td>
+        <td><p>the number of milliseconds for which to keep the storage for a partition</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TimePartitioning_toBuilder_" data-uid="com.google.cloud.bigquery.TimePartitioning.toBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_TimePartitioning_toBuilder__" data-uid="com.google.cloud.bigquery.TimePartitioning.toBuilder()">toBuilder()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TimePartitioning.Builder toBuilder()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Builder.html#com_google_cloud_bigquery_TimePartitioning_Builder">TimePartitioning.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">java.io.Serializable</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

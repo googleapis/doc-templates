@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class InsertAllRequest.RowToInsert
+</h1>
+      <article data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert">
+  
+  
+  <div class="markdown level0 summary"><p>A Google Big Query row to be inserted into a table. Each <code>RowToInsert</code> has an associated id used by BigQuery to detect duplicate insertion requests on a best-effort basis.</p>
+<p>To ensure proper serialization of numeric data, it is recommended to supply values using a string-typed representation. Additionally, data for fields of <a class="xref" href="com.google.cloud.bigquery.LegacySQLTypeName.html#com_google_cloud_bigquery_LegacySQLTypeName_BYTES">LegacySQLTypeName#BYTES</a> must be provided as a base64 encoded string.</p>
+<p>Example usage of creating a row to insert:</p>
+<pre><code class="lang-java">List repeatedFieldValue = Arrays.asList(1L, 2L);
+ Map recordContent = new HashMap();
+ recordContent.put(&quot;subfieldName1&quot;, &quot;value&quot;);
+ recordContent.put(&quot;subfieldName2&quot;, repeatedFieldValue);
+ Map rowContent = new HashMap();
+ rowContent.put(&quot;booleanFieldName&quot;, true);
+ rowContent.put(&quot;bytesFieldName&quot;, &quot;DQ4KDQ==&quot;);
+ rowContent.put(&quot;recordFieldName&quot;, recordContent);
+ rowContent.put(&quot;numericFieldName&quot;, &quot;1298930929292.129593272&quot;);
+ RowToInsert row = new RowToInsert(&quot;rowId&quot;, rowContent);
+</code></pre></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">InsertAllRequest.RowToInsert</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">java.io.Serializable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static class InsertAllRequest.RowToInsert implements Serializable</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_equals_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.equals*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_equals_java_lang_Object_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.equals(java.lang.Object)">equals(Object obj)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean equals(Object obj)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.equals(java.lang.Object)</span></div>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_getContent_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.getContent*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_getContent__" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.getContent()">getContent()</h3>
+  <div class="markdown level1 summary"><p>Returns the actual content of the row, as a map.</p>
+<p>The returned map is always immutable. Its iteration order is unspecified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Map&lt;String,Object&gt; getContent()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">java.lang.Object</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_getId_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.getId*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_getId__" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.getId()">getId()</h3>
+  <div class="markdown level1 summary"><p>Returns the id associated with the row. Returns <code>null</code> if not set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getId()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_hashCode_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.hashCode*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_hashCode__" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.hashCode()">hashCode()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public int hashCode()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.hashCode()</span></div>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_of_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.of*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_of_java_lang_String_java_util_Map_java_lang_String____" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.of(java.lang.String,java.util.Map&lt;java.lang.String,?&gt;)">of(String id, Map&lt;String,?&gt; content)</h3>
+  <div class="markdown level1 summary"><p>Creates a row to be inserted with associated id.</p>
+<p>To ensure proper serialization of numeric data, supply values using a string-typed representation. Additionally, data for fields of <a class="xref" href="com.google.cloud.bigquery.LegacySQLTypeName.html#com_google_cloud_bigquery_LegacySQLTypeName_BYTES">LegacySQLTypeName#BYTES</a> must be provided as a base64 encoded string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static InsertAllRequest.RowToInsert of(String id, Map&lt;String,?&gt; content)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>id of the row, used to identify duplicates</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">content</span></td>
+        <td><p>the actual content of the row</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_of_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.of*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_of_java_util_Map_java_lang_String____" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.of(java.util.Map&lt;java.lang.String,?&gt;)">of(Map&lt;String,?&gt; content)</h3>
+  <div class="markdown level1 summary"><p>Creates a row to be inserted without associated id.</p>
+<p>To ensure proper serialization of numeric data, supply values using a string-typed representation. Additionally, data for fields of type <a class="xref" href="com.google.cloud.bigquery.LegacySQLTypeName.html#com_google_cloud_bigquery_LegacySQLTypeName_BYTES">LegacySQLTypeName#BYTES</a> must be provided as a base64 encoded string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static InsertAllRequest.RowToInsert of(Map&lt;String,?&gt; content)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">content</span></td>
+        <td><p>the actual content of the row</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_toString_" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.toString*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_RowToInsert_toString__" data-uid="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.toString()">toString()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String toString()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.toString()</span></div>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">java.io.Serializable</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

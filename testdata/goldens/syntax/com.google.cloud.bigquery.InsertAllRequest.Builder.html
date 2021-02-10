@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class InsertAllRequest.Builder
+</h1>
+      <article data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder">
+  
+  
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">InsertAllRequest.Builder</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_InsertAllRequest_Builder_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final class InsertAllRequest.Builder</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_addRow_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.addRow*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_addRow_com_google_cloud_bigquery_InsertAllRequest_RowToInsert_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.addRow(com.google.cloud.bigquery.InsertAllRequest.RowToInsert)">addRow(InsertAllRequest.RowToInsert rowToInsert)</h3>
+  <div class="markdown level1 summary"><p>Adds a row to be inserted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder addRow(InsertAllRequest.RowToInsert rowToInsert)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.html#com_google_cloud_bigquery_InsertAllRequest_RowToInsert">InsertAllRequest.RowToInsert</a></td>
+        <td><span class="parametername">rowToInsert</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_addRow_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.addRow*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_addRow_java_lang_String_java_util_Map_java_lang_String____" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.addRow(java.lang.String,java.util.Map&lt;java.lang.String,?&gt;)">addRow(String id, Map&lt;String,?&gt; content)</h3>
+  <div class="markdown level1 summary"><p>Adds a row to be inserted with associated id.</p>
+<p>To ensure proper serialization of numeric data, supply values using a string-typed representation. Additionally, data for fields of <a class="xref" href="com.google.cloud.bigquery.LegacySQLTypeName.html#com_google_cloud_bigquery_LegacySQLTypeName_BYTES">LegacySQLTypeName#BYTES</a> must be provided as a base64 encoded string.</p>
+<p>Example usage of adding a row with associated id:</p>
+<pre><code class="lang-java">InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
+ List repeatedFieldValue = Arrays.asList(1L, 2L);
+ Map recordContent = new HashMap();
+ recordContent.put(&quot;subfieldName1&quot;, &quot;value&quot;);
+ recordContent.put(&quot;subfieldName2&quot;, repeatedFieldValue);
+ Map rowContent = new HashMap();
+ rowContent.put(&quot;booleanFieldName&quot;, true);
+ rowContent.put(&quot;bytesFieldName&quot;, &quot;DQ4KDQ==&quot;);
+ rowContent.put(&quot;recordFieldName&quot;, recordContent);
+ rowContent.put(&quot;numericFieldName&quot;, &quot;1298930929292.129593272&quot;);
+ builder.addRow(&quot;rowId&quot;, rowContent);
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder addRow(String id, Map&lt;String,?&gt; content)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">content</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_addRow_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.addRow*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_addRow_java_util_Map_java_lang_String____" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.addRow(java.util.Map&lt;java.lang.String,?&gt;)">addRow(Map&lt;String,?&gt; content)</h3>
+  <div class="markdown level1 summary"><p>Adds a row to be inserted without an associated id.</p>
+<p>To ensure proper serialization of numeric data, it is recommended to supply values using a string-typed representation. Additionally, data for fields of type <a class="xref" href="com.google.cloud.bigquery.LegacySQLTypeName.html#com_google_cloud_bigquery_LegacySQLTypeName_BYTES">LegacySQLTypeName#BYTES</a> must be provided as a base64 encoded string.</p>
+<p>Example usage of adding a row without an associated id:</p>
+<pre><code class="lang-java">InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
+ List repeatedFieldValue = Arrays.asList(1L, 2L);
+ Map recordContent = new HashMap();
+ recordContent.put(&quot;subfieldName1&quot;, &quot;value&quot;);
+ recordContent.put(&quot;subfieldName2&quot;, repeatedFieldValue);
+ Map rowContent = new HashMap();
+ rowContent.put(&quot;booleanFieldName&quot;, true);
+ rowContent.put(&quot;bytesFieldName&quot;, &quot;DQ4KDQ==&quot;);
+ rowContent.put(&quot;recordFieldName&quot;, recordContent);
+ rowContent.put(&quot;numericFieldName&quot;, &quot;1298930929292.129593272&quot;);
+ builder.addRow(rowContent);
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder addRow(Map&lt;String,?&gt; content)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">content</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_build_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.build*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_build__" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.build()">build()</h3>
+  <div class="markdown level1 summary"><p>Creates an <code>InsertAllRequest</code> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest build()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.html">InsertAllRequest</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_setIgnoreUnknownValues_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setIgnoreUnknownValues*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_setIgnoreUnknownValues_boolean_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setIgnoreUnknownValues(boolean)">setIgnoreUnknownValues(boolean ignoreUnknownValues)</h3>
+  <div class="markdown level1 summary"><p>Sets whether to accept rows that contain values that do not match the schema. The unknown values are ignored. If not set, rows with unknown values are considered to be invalid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder setIgnoreUnknownValues(boolean ignoreUnknownValues)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><span class="parametername">ignoreUnknownValues</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_setRows_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setRows*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_setRows_java_lang_Iterable_com_google_cloud_bigquery_InsertAllRequest_RowToInsert__" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setRows(java.lang.Iterable&lt;com.google.cloud.bigquery.InsertAllRequest.RowToInsert&gt;)">setRows(Iterable&lt;InsertAllRequest.RowToInsert&gt; rows)</h3>
+  <div class="markdown level1 summary"><p>Sets the rows to insert as a list of <a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.html#com_google_cloud_bigquery_InsertAllRequest_RowToInsert">RowToInsert</a> objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder setRows(Iterable&lt;InsertAllRequest.RowToInsert&gt; rows)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Iterable</span>&lt;<a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.html#com_google_cloud_bigquery_InsertAllRequest_RowToInsert">RowToInsert</a>&gt;</td>
+        <td><span class="parametername">rows</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_setSkipInvalidRows_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setSkipInvalidRows*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_setSkipInvalidRows_boolean_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setSkipInvalidRows(boolean)">setSkipInvalidRows(boolean skipInvalidRows)</h3>
+  <div class="markdown level1 summary"><p>Sets whether to insert all valid rows of a request, even if invalid rows exist. If not set the entire insert request will fail if it contains an invalid row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder setSkipInvalidRows(boolean skipInvalidRows)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><span class="parametername">skipInvalidRows</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_setTable_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setTable*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_setTable_com_google_cloud_bigquery_TableId_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setTable(com.google.cloud.bigquery.TableId)">setTable(TableId table)</h3>
+  <div class="markdown level1 summary"><p>Sets the destination table for rows insert request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder setTable(TableId table)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">table</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_InsertAllRequest_Builder_setTemplateSuffix_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setTemplateSuffix*"></a>
+  <h3 id="com_google_cloud_bigquery_InsertAllRequest_Builder_setTemplateSuffix_java_lang_String_" data-uid="com.google.cloud.bigquery.InsertAllRequest.Builder.setTemplateSuffix(java.lang.String)">setTemplateSuffix(String templateSuffix)</h3>
+  <div class="markdown level1 summary"><p>If specified, the destination table is treated as a base template. Rows are inserted into an instance table named &quot;{destination}{templateSuffix}&quot;. BigQuery will manage the creation of the instance table, using the schema of the base template table. Table creation might take some time. To obtain table&#39;s information after <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_insertAll_com_google_cloud_bigquery_InsertAllRequest_">BigQuery#insertAll(InsertAllRequest)</a> is called use:</p>
+<pre><code class="lang-java">String suffixTableId = ...;
+ TableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
+ while (suffixTable == null) {
+   Thread.sleep(1000L);
+   suffixTable = bigquery.getTable(DATASET, suffixTableId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public InsertAllRequest.Builder setTemplateSuffix(String templateSuffix)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">templateSuffix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+  </body>
+</html>

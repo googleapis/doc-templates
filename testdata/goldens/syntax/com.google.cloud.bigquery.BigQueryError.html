@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class BigQueryError
+</h1>
+      <article data-uid="com.google.cloud.bigquery.BigQueryError">
+  
+  
+  <div class="markdown level0 summary"><p>Google Cloud BigQuery Error. Objects of this class represent errors encountered by the BigQuery service while executing a request. A BigQuery Job that terminated with an error has a non-null <a class="xref" href="com.google.cloud.bigquery.JobStatus.html#com_google_cloud_bigquery_JobStatus_getError__">JobStatus#getError()</a>. A job can also encounter errors during its execution that do not cause the whole job to fail (see <a class="xref" href="com.google.cloud.bigquery.JobStatus.html#com_google_cloud_bigquery_JobStatus_getExecutionErrors__">JobStatus#getExecutionErrors()</a>). Similarly, queries and insert all requests can cause BigQuery errors that do not mean the whole operation failed (see <a class="xref" href="com.google.cloud.bigquery.JobStatus.html#com_google_cloud_bigquery_JobStatus_getExecutionErrors__">JobStatus#getExecutionErrors()</a> and <a class="xref" href="com.google.cloud.bigquery.InsertAllResponse.html#com_google_cloud_bigquery_InsertAllResponse_getInsertErrors__">InsertAllResponse#getInsertErrors()</a>). When a <a class="xref" href="com.google.cloud.bigquery.BigQueryException.html">BigQueryException</a> is thrown the BigQuery Error that caused it, if any, can be accessed with <a class="xref" href="com.google.cloud.bigquery.BigQueryException.html#com_google_cloud_bigquery_BigQueryException_getError__">BigQueryException#getError()</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">BigQueryError</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">java.io.Serializable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_BigQueryError_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final class BigQueryError implements Serializable</code></pre>
+  </div>
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="com_google_cloud_bigquery_BigQueryError_BigQueryError_" data-uid="com.google.cloud.bigquery.BigQueryError.BigQueryError*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_BigQueryError_java_lang_String_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.BigQueryError.BigQueryError(java.lang.String,java.lang.String,java.lang.String)">BigQueryError(String reason, String location, String message)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public BigQueryError(String reason, String location, String message)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">reason</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">location</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQueryError_BigQueryError_" data-uid="com.google.cloud.bigquery.BigQueryError.BigQueryError*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_BigQueryError_java_lang_String_java_lang_String_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.BigQueryError.BigQueryError(java.lang.String,java.lang.String,java.lang.String,java.lang.String)">BigQueryError(String reason, String location, String message, String debugInfo)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public BigQueryError(String reason, String location, String message, String debugInfo)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">reason</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">location</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">debugInfo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_BigQueryError_equals_" data-uid="com.google.cloud.bigquery.BigQueryError.equals*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_equals_java_lang_Object_" data-uid="com.google.cloud.bigquery.BigQueryError.equals(java.lang.Object)">equals(Object obj)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean equals(Object obj)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.equals(java.lang.Object)</span></div>
+  <a id="com_google_cloud_bigquery_BigQueryError_getDebugInfo_" data-uid="com.google.cloud.bigquery.BigQueryError.getDebugInfo*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_getDebugInfo__" data-uid="com.google.cloud.bigquery.BigQueryError.getDebugInfo()">getDebugInfo()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getDebugInfo()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQueryError_getLocation_" data-uid="com.google.cloud.bigquery.BigQueryError.getLocation*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_getLocation__" data-uid="com.google.cloud.bigquery.BigQueryError.getLocation()">getLocation()</h3>
+  <div class="markdown level1 summary"><p>Returns where the error occurred, if present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getLocation()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQueryError_getMessage_" data-uid="com.google.cloud.bigquery.BigQueryError.getMessage*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_getMessage__" data-uid="com.google.cloud.bigquery.BigQueryError.getMessage()">getMessage()</h3>
+  <div class="markdown level1 summary"><p>Returns a human-readable description of the error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getMessage()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQueryError_getReason_" data-uid="com.google.cloud.bigquery.BigQueryError.getReason*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_getReason__" data-uid="com.google.cloud.bigquery.BigQueryError.getReason()">getReason()</h3>
+  <div class="markdown level1 summary"><p>Returns short error code that summarizes the error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String getReason()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQueryError_hashCode_" data-uid="com.google.cloud.bigquery.BigQueryError.hashCode*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_hashCode__" data-uid="com.google.cloud.bigquery.BigQueryError.hashCode()">hashCode()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public int hashCode()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.hashCode()</span></div>
+  <a id="com_google_cloud_bigquery_BigQueryError_toString_" data-uid="com.google.cloud.bigquery.BigQueryError.toString*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQueryError_toString__" data-uid="com.google.cloud.bigquery.BigQueryError.toString()">toString()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public String toString()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">java.lang.Object.toString()</span></div>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">java.io.Serializable</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

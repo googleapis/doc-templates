@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class Job
+</h1>
+      <article data-uid="com.google.cloud.bigquery.Job">
+  
+  
+  <div class="markdown level0 summary"><p>A Google BigQuery Job.</p>
+<p>Objects of this class are immutable. To get a <code>Job</code> object with the most recent information use <a class="xref" href="com.google.cloud.bigquery.Job.html#com_google_cloud_bigquery_Job_reload_">#reload</a>. <code>Job</code> adds a layer of service-related functionality over <a class="xref" href="com.google.cloud.bigquery.JobInfo.html">JobInfo</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><a class="xref" href="com.google.cloud.bigquery.JobInfo.html">JobInfo</a></div>
+    <div class="level2"><span class="xref">Job</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo__C_getConfiguration__">JobInfo.&lt;C&gt;getConfiguration()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo__S_getStatistics__">JobInfo.&lt;S&gt;getStatistics()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_equals_java_lang_Object_">JobInfo.equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_getEtag__">JobInfo.getEtag()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_getGeneratedId__">JobInfo.getGeneratedId()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_getJobId__">JobInfo.getJobId()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_getSelfLink__">JobInfo.getSelfLink()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_getStatus__">JobInfo.getStatus()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_getUserEmail__">JobInfo.getUserEmail()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_hashCode__">JobInfo.hashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_newBuilder_com_google_cloud_bigquery_JobConfiguration_">JobInfo.newBuilder(JobConfiguration)</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_of_com_google_cloud_bigquery_JobConfiguration_">JobInfo.of(JobConfiguration)</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_of_com_google_cloud_bigquery_JobId_com_google_cloud_bigquery_JobConfiguration_">JobInfo.of(JobId,JobConfiguration)</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_toBuilder__">JobInfo.toBuilder()</a>
+    </div>
+    <div>
+      <a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_toString__">JobInfo.toString()</a>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_Job_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class Job extends JobInfo</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_Job_cancel_" data-uid="com.google.cloud.bigquery.Job.cancel*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_cancel__" data-uid="com.google.cloud.bigquery.Job.cancel()">cancel()</h3>
+  <div class="markdown level1 summary"><p>Sends a job cancel request.</p>
+<p>Example of cancelling a job.</p>
+<pre><code class="lang-java">if (job.cancel()) {
+   return true; // job successfully cancelled
+ } else {
+   // job not found
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean cancel()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if cancel request was sent successfully, <code>false</code> if job was not
+     found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_Job_equals_" data-uid="com.google.cloud.bigquery.Job.equals*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_equals_java_lang_Object_" data-uid="com.google.cloud.bigquery.Job.equals(java.lang.Object)">equals(Object obj)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final boolean equals(Object obj)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_equals_java_lang_Object_">JobInfo.equals(Object obj)</a></div>
+  <a id="com_google_cloud_bigquery_Job_exists_" data-uid="com.google.cloud.bigquery.Job.exists*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_exists__" data-uid="com.google.cloud.bigquery.Job.exists()">exists()</h3>
+  <div class="markdown level1 summary"><p>Checks if this job exists.</p>
+<p>Example of checking that a job exists.</p>
+<pre><code class="lang-java">if (!job.exists()) {
+   // job doesn&#39;t exist
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean exists()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if this job exists, <code>false</code> otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_Job_getBigQuery_" data-uid="com.google.cloud.bigquery.Job.getBigQuery*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_getBigQuery__" data-uid="com.google.cloud.bigquery.Job.getBigQuery()">getBigQuery()</h3>
+  <div class="markdown level1 summary"><p>Returns the job&#39;s <code>BigQuery</code> object used to issue requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public BigQuery getBigQuery()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.html">BigQuery</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_Job_getQueryResults_" data-uid="com.google.cloud.bigquery.Job.getQueryResults*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_getQueryResults_com_google_cloud_bigquery_BigQuery_QueryResultsOption____" data-uid="com.google.cloud.bigquery.Job.getQueryResults(com.google.cloud.bigquery.BigQuery.QueryResultsOption...)">getQueryResults(BigQuery.QueryResultsOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Gets the query results of this job. This job must be of type <code>JobConfiguration.Type.QUERY</code>, otherwise this method will throw <span class="xref">UnsupportedOperationException</span>.</p>
+<p>If the job hasn&#39;t finished, this method waits for the job to complete. However, the state of the current <code>Job</code> instance is not updated. To get the new state, call <a class="xref" href="com.google.cloud.bigquery.Job.html#com_google_cloud_bigquery_Job_waitFor_">#waitFor(RetryOption...)</a> or <a class="xref" href="com.google.cloud.bigquery.Job.html#com_google_cloud_bigquery_Job_reload_">#reload(JobOption...)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public TableResult getQueryResults(BigQuery.QueryResultsOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.QueryResultsOption.html#com_google_cloud_bigquery_BigQuery_QueryResultsOption">QueryResultsOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="exceptions">Exceptions</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.InterruptedException</span></td>
+        <td><p>upon failure</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobException.html">JobException</a></td>
+        <td><p>upon failure</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_Job_hashCode_" data-uid="com.google.cloud.bigquery.Job.hashCode*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_hashCode__" data-uid="com.google.cloud.bigquery.Job.hashCode()">hashCode()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final int hashCode()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_hashCode__">JobInfo.hashCode()</a></div>
+  <a id="com_google_cloud_bigquery_Job_isDone_" data-uid="com.google.cloud.bigquery.Job.isDone*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_isDone__" data-uid="com.google.cloud.bigquery.Job.isDone()">isDone()</h3>
+  <div class="markdown level1 summary"><p>Checks if this job has completed its execution, either failing or succeeding. If the job does not exist this method returns <code>true</code>.</p>
+<p>Example of waiting for a job until it reports that it is done.</p>
+<pre><code class="lang-java">while (!job.isDone()) {
+   Thread.sleep(1000L);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean isDone()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if this job is in <a class="xref" href="com.google.cloud.bigquery.JobStatus.State.html#com_google_cloud_bigquery_JobStatus_State_DONE">JobStatus.State#DONE</a> state or if it does not
+     exist, <code>false</code> if the state is not <a class="xref" href="com.google.cloud.bigquery.JobStatus.State.html#com_google_cloud_bigquery_JobStatus_State_DONE">JobStatus.State#DONE</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_Job_reload_" data-uid="com.google.cloud.bigquery.Job.reload*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_reload_com_google_cloud_bigquery_BigQuery_JobOption____" data-uid="com.google.cloud.bigquery.Job.reload(com.google.cloud.bigquery.BigQuery.JobOption...)">reload(BigQuery.JobOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Fetches current job&#39;s latest information. Returns <code>null</code> if the job does not exist.</p>
+<p>Example of reloading all fields until job status is DONE.</p>
+<pre><code class="lang-java">while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
+   Thread.sleep(1000L);
+   job = job.reload();
+ }
+</code></pre><p>Example of reloading status field until job status is DONE.</p>
+<pre><code class="lang-java">while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
+   Thread.sleep(1000L);
+   job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Job reload(BigQuery.JobOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobOption.html#com_google_cloud_bigquery_BigQuery_JobOption">JobOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td><p>job options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td><p>a <code>Job</code> object with latest information or <code>null</code> if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_Job_toBuilder_" data-uid="com.google.cloud.bigquery.Job.toBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_toBuilder__" data-uid="com.google.cloud.bigquery.Job.toBuilder()">toBuilder()</h3>
+  <div class="markdown level1 summary"><p>Returns a builder for the job object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Job.Builder toBuilder()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Job.Builder.html#com_google_cloud_bigquery_Job_Builder">Job.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_toBuilder__">JobInfo.toBuilder()</a></div>
+  <a id="com_google_cloud_bigquery_Job_waitFor_" data-uid="com.google.cloud.bigquery.Job.waitFor*"></a>
+  <h3 id="com_google_cloud_bigquery_Job_waitFor_com_google_cloud_RetryOption____" data-uid="com.google.cloud.bigquery.Job.waitFor(com.google.cloud.RetryOption...)">waitFor(RetryOption[] waitOptions)</h3>
+  <div class="markdown level1 summary"><p>Blocks until this job completes its execution, either failing or succeeding. This method returns current job&#39;s latest information. If the job no longer exists, this method returns <code>null</code>. By default, the job status is checked using jittered exponential backoff with 1 second as an initial delay, 2.0 as a backoff factor, 1 minute as maximum delay between polls, 12 hours as a total timeout and unlimited number of attempts.</p>
+<p>Example usage of <code>waitFor()</code>.</p>
+<pre><code class="lang-java">Job completedJob = job.waitFor();
+ if (completedJob == null) {
+   // job no longer exists
+ } else if (completedJob.getStatus().getError() != null) {
+   // job failed, handle error
+ } else {
+   // job completed successfully
+ }
+</code></pre><p>Example usage of <code>waitFor()</code> with checking period and timeout.</p>
+<pre><code class="lang-java">Job completedJob =
+     job.waitFor(
+         RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
+         RetryOption.totalTimeout(Duration.ofMinutes(1)));
+ if (completedJob == null) {
+   // job no longer exists
+ } else if (completedJob.getStatus().getError() != null) {
+   // job failed, handle error
+ } else {
+   // job completed successfully
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Job waitFor(RetryOption[] waitOptions)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.RetryOption</span>[]</td>
+        <td><span class="parametername">waitOptions</span></td>
+        <td><p>options to configure checking period and timeout</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="exceptions">Exceptions</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.InterruptedException</span></td>
+        <td><p>upon failure, check <span class="xref">BigQueryException#getCause()</span> for details</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+  </body>
+</html>

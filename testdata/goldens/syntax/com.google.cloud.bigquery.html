@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Namespace com.google.cloud.bigquery
+</h1>
+      <article data-uid="com.google.cloud.bigquery">
+  
+  <div class="markdown level0 summary"><p>A client for BigQuery \u2013 A fully managed, petabyte scale, low cost enterprise data warehouse for
+ analytics.</p>
+<p> <p>A simple usage example showing how to create a table if it does not exist and load data into
+ it. For the complete source code see <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java">
+ CreateTableAndLoadData.java</a>.</p>
+ <pre><code>
+ BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+ TableId tableId = TableId.of("dataset", "table");
+ Table table = bigquery.getTable(tableId);
+ if (table == null) {
+   System.out.println("Creating table " + tableId);
+   Field integerField = Field.of("fieldName", Field.Type.integer());
+   Schema schema = Schema.of(integerField);
+   table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
+ }
+ System.out.println("Loading data into table " + tableId);
+ Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
+ loadJob = loadJob.waitFor();
+ if (loadJob.getStatus().getError() != null) {
+   System.out.println("Job completed with errors");
+ } else {
+   System.out.println("Job succeeded");
+ }
+ </code></pre></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h2 id="classes">Classes
+  
+  </h2>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.html">Acl</a></h3>
+      <section><p>Access Control for a BigQuery Dataset. BigQuery uses ACLs to manage permissions on datasets. ACLs are not directly supported on tables. A table inherits its ACL from the dataset that contains it. Project roles affect your ability to run jobs or manage the project, while dataset roles affect how you can access or modify the data inside of a project.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.Domain.html#com_google_cloud_bigquery_Acl_Domain">Acl.Domain</a></h3>
+      <section><p>Class for a BigQuery Domain entity. Objects of this class represent a domain to grant access to. Any users signed in with the domain specified will be granted the specified access.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.Entity.html#com_google_cloud_bigquery_Acl_Entity">Acl.Entity</a></h3>
+      <section><p>Base class for BigQuery entities that can be grant access to the dataset.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.Group.html#com_google_cloud_bigquery_Acl_Group">Acl.Group</a></h3>
+      <section><p>Class for a BigQuery Group entity. Objects of this class represent a group to granted access to. A Group entity can be created given the group&#39;s email or can be a special group: <a class="xref" href="com.google.cloud.bigquery.Acl.Group.html#com_google_cloud_bigquery_Acl_Group_ofProjectOwners__">#ofProjectOwners()</a>, <a class="xref" href="com.google.cloud.bigquery.Acl.Group.html#com_google_cloud_bigquery_Acl_Group_ofProjectReaders__">#ofProjectReaders()</a>, <a class="xref" href="com.google.cloud.bigquery.Acl.Group.html#com_google_cloud_bigquery_Acl_Group_ofProjectWriters__">#ofProjectWriters()</a> or <a class="xref" href="com.google.cloud.bigquery.Acl.Group.html#com_google_cloud_bigquery_Acl_Group_ofAllAuthenticatedUsers__">#ofAllAuthenticatedUsers()</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.IamMember.html#com_google_cloud_bigquery_Acl_IamMember">Acl.IamMember</a></h3>
+      <section><p>Class for a BigQuery IamMember entity. Objects of this class represent a iamMember to grant access to given the IAM Policy.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.Role.html#com_google_cloud_bigquery_Acl_Role">Acl.Role</a></h3>
+      <section><p>Dataset roles supported by BigQuery.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.Routine.html#com_google_cloud_bigquery_Acl_Routine">Acl.Routine</a></h3>
+      <section><p>Class for a BigQuery Routine entity. Objects of this class represent a routine from a different dataset to grant access to. Queries executed against that routine will have read access to views/tables/routines in this dataset. Only UDF is supported for now. The role field is not required when this field is set. If that routine is updated by any user, access to the routine needs to be granted again via an update operation.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.User.html#com_google_cloud_bigquery_Acl_User">Acl.User</a></h3>
+      <section><p>Class for a BigQuery User entity. Objects of this class represent a user to grant access to given the email address.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.View.html#com_google_cloud_bigquery_Acl_View">Acl.View</a></h3>
+      <section><p>Class for a BigQuery View entity. Objects of this class represent a view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetDeleteOption.html#com_google_cloud_bigquery_BigQuery_DatasetDeleteOption">BigQuery.DatasetDeleteOption</a></h3>
+      <section><p>Class for specifying dataset delete options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetListOption.html#com_google_cloud_bigquery_BigQuery_DatasetListOption">BigQuery.DatasetListOption</a></h3>
+      <section><p>Class for specifying dataset list options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetOption.html#com_google_cloud_bigquery_BigQuery_DatasetOption">BigQuery.DatasetOption</a></h3>
+      <section><p>Class for specifying dataset get, create and update options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.IAMOption.html#com_google_cloud_bigquery_BigQuery_IAMOption">BigQuery.IAMOption</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobListOption.html#com_google_cloud_bigquery_BigQuery_JobListOption">BigQuery.JobListOption</a></h3>
+      <section><p>Class for specifying job list options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobOption.html#com_google_cloud_bigquery_BigQuery_JobOption">BigQuery.JobOption</a></h3>
+      <section><p>Class for specifying table get and create options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelListOption.html#com_google_cloud_bigquery_BigQuery_ModelListOption">BigQuery.ModelListOption</a></h3>
+      <section><p>Class for specifying table list options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelOption.html#com_google_cloud_bigquery_BigQuery_ModelOption">BigQuery.ModelOption</a></h3>
+      <section><p>Class for specifying model get, create and update options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.QueryOption.html#com_google_cloud_bigquery_BigQuery_QueryOption">BigQuery.QueryOption</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.QueryResultsOption.html#com_google_cloud_bigquery_BigQuery_QueryResultsOption">BigQuery.QueryResultsOption</a></h3>
+      <section><p>Class for specifying query results options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineListOption.html#com_google_cloud_bigquery_BigQuery_RoutineListOption">BigQuery.RoutineListOption</a></h3>
+      <section><p>Class for specifying routine list options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineOption.html#com_google_cloud_bigquery_BigQuery_RoutineOption">BigQuery.RoutineOption</a></h3>
+      <section><p>Class for specifying table get, create and update options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableDataListOption.html#com_google_cloud_bigquery_BigQuery_TableDataListOption">BigQuery.TableDataListOption</a></h3>
+      <section><p>Class for specifying table data list options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableListOption.html#com_google_cloud_bigquery_BigQuery_TableListOption">BigQuery.TableListOption</a></h3>
+      <section><p>Class for specifying table list options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableOption.html#com_google_cloud_bigquery_BigQuery_TableOption">BigQuery.TableOption</a></h3>
+      <section><p>Class for specifying table get, create and update options.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQueryError.html">BigQueryError</a></h3>
+      <section><p>Google Cloud BigQuery Error. Objects of this class represent errors encountered by the BigQuery service while executing a request. A BigQuery Job that terminated with an error has a non-null <a class="xref" href="com.google.cloud.bigquery.JobStatus.html#com_google_cloud_bigquery_JobStatus_getError__">JobStatus#getError()</a>. A job can also encounter errors during its execution that do not cause the whole job to fail (see <a class="xref" href="com.google.cloud.bigquery.JobStatus.html#com_google_cloud_bigquery_JobStatus_getExecutionErrors__">JobStatus#getExecutionErrors()</a>). Similarly, queries and insert all requests can cause BigQuery errors that do not mean the whole operation failed (see <a class="xref" href="com.google.cloud.bigquery.JobStatus.html#com_google_cloud_bigquery_JobStatus_getExecutionErrors__">JobStatus#getExecutionErrors()</a> and <a class="xref" href="com.google.cloud.bigquery.InsertAllResponse.html#com_google_cloud_bigquery_InsertAllResponse_getInsertErrors__">InsertAllResponse#getInsertErrors()</a>). When a <a class="xref" href="com.google.cloud.bigquery.BigQueryException.html">BigQueryException</a> is thrown the BigQuery Error that caused it, if any, can be accessed with <a class="xref" href="com.google.cloud.bigquery.BigQueryException.html#com_google_cloud_bigquery_BigQueryException_getError__">BigQueryException#getError()</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQueryException.html">BigQueryException</a></h3>
+      <section><p>BigQuery service exception.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQueryOptions.html">BigQueryOptions</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQueryOptions.Builder.html#com_google_cloud_bigquery_BigQueryOptions_Builder">BigQueryOptions.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQueryOptions.DefaultBigQueryFactory.html#com_google_cloud_bigquery_BigQueryOptions_DefaultBigQueryFactory">BigQueryOptions.DefaultBigQueryFactory</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQueryOptions.DefaultBigQueryRpcFactory.html#com_google_cloud_bigquery_BigQueryOptions_DefaultBigQueryRpcFactory">BigQueryOptions.DefaultBigQueryRpcFactory</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigtableColumn.html">BigtableColumn</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigtableColumn.Builder.html#com_google_cloud_bigquery_BigtableColumn_Builder">BigtableColumn.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigtableColumnFamily.html">BigtableColumnFamily</a></h3>
+      <section><p>List of column families to expose in the table schema along with their types. This list restricts the column families that can be referenced in queries and specifies their value types.</p>
+<p>You can use this list to do type conversions - see the &#39;type&#39; field for more details. If you leave this list empty, all column families are present in the table schema and their values are read as BYTES. During a query only the column families referenced in that query are read from Bigtable.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigtableColumnFamily.Builder.html#com_google_cloud_bigquery_BigtableColumnFamily_Builder">BigtableColumnFamily.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigtableOptions.html">BigtableOptions</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigtableOptions.Builder.html#com_google_cloud_bigquery_BigtableOptions_Builder">BigtableOptions.Builder</a></h3>
+      <section><p>A builder for <code>BigtableOptions</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Clustering.html">Clustering</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Clustering.Builder.html#com_google_cloud_bigquery_Clustering_Builder">Clustering.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ConnectionProperty.html">ConnectionProperty</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ConnectionProperty.Builder.html#com_google_cloud_bigquery_ConnectionProperty_Builder">ConnectionProperty.Builder</a></h3>
+      <section><p>A builder for <code>ConnectionProperty</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.CopyJobConfiguration.html">CopyJobConfiguration</a></h3>
+      <section><p>Google BigQuery copy job configuration. A copy job copies an existing table to another new or existing table. Copy job configurations have <a class="xref" href="com.google.cloud.bigquery.JobConfiguration.Type.html#com_google_cloud_bigquery_JobConfiguration_Type_COPY">JobConfiguration.Type#COPY</a> type.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.CopyJobConfiguration.Builder.html#com_google_cloud_bigquery_CopyJobConfiguration_Builder">CopyJobConfiguration.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.CsvOptions.html">CsvOptions</a></h3>
+      <section><p>Google BigQuery options for CSV format. This class wraps some properties of CSV files used by BigQuery to parse external data.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.CsvOptions.Builder.html#com_google_cloud_bigquery_CsvOptions_Builder">CsvOptions.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Dataset.html">Dataset</a></h3>
+      <section><p>A Google BigQuery Dataset.</p>
+<p>Objects of this class are immutable. Operations that modify the dataset like <a class="xref" href="com.google.cloud.bigquery.Dataset.html#com_google_cloud_bigquery_Dataset_update_">#update</a> return a new object. To get a <code>Dataset</code> object with the most recent information use <a class="xref" href="com.google.cloud.bigquery.Dataset.html#com_google_cloud_bigquery_Dataset_reload_">#reload</a>. <code>Dataset</code> adds a layer of service-related functionality over <a class="xref" href="com.google.cloud.bigquery.DatasetInfo.html">DatasetInfo</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Dataset.Builder.html#com_google_cloud_bigquery_Dataset_Builder">Dataset.Builder</a></h3>
+      <section><p>A builder for <code>Dataset</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></h3>
+      <section><p>Google BigQuery Dataset identity.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.html">DatasetInfo</a></h3>
+      <section><p>Google BigQuery Dataset information. A dataset is a grouping mechanism that holds zero or more tables. Datasets are the lowest level unit of access control; you cannot control access at the table level.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.Builder.html#com_google_cloud_bigquery_DatasetInfo_Builder">DatasetInfo.Builder</a></h3>
+      <section><p>A builder for <code>DatasetInfo</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.DatastoreBackupOptions.html">DatastoreBackupOptions</a></h3>
+      <section><p>Google BigQuery options for Cloud Datastore backup.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.DatastoreBackupOptions.Builder.html#com_google_cloud_bigquery_DatastoreBackupOptions_Builder">DatastoreBackupOptions.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.EmptyTableResult.html">EmptyTableResult</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.EncryptionConfiguration.html">EncryptionConfiguration</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.EncryptionConfiguration.Builder.html#com_google_cloud_bigquery_EncryptionConfiguration_Builder">EncryptionConfiguration.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ExternalTableDefinition.html">ExternalTableDefinition</a></h3>
+      <section><p>Google BigQuery external table definition. BigQuery&#39;s external tables are tables whose data reside outside of BigQuery but can be queried as normal BigQuery tables. External tables are experimental and might be subject to change or removed.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ExternalTableDefinition.Builder.html#com_google_cloud_bigquery_ExternalTableDefinition_Builder">ExternalTableDefinition.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ExtractJobConfiguration.html">ExtractJobConfiguration</a></h3>
+      <section><p>Google BigQuery extract job configuration. An extract job exports a BigQuery table to Google Cloud Storage. The extract destination provided as URIs that point to objects in Google Cloud Storage. Extract job configurations have <a class="xref" href="com.google.cloud.bigquery.JobConfiguration.Type.html#com_google_cloud_bigquery_JobConfiguration_Type_EXTRACT">JobConfiguration.Type#EXTRACT</a> type.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ExtractJobConfiguration.Builder.html#com_google_cloud_bigquery_ExtractJobConfiguration_Builder">ExtractJobConfiguration.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Field.html">Field</a></h3>
+      <section><p>Google BigQuery Table schema field. A table field has a name, a type, a mode and possibly a description.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Field.Builder.html#com_google_cloud_bigquery_Field_Builder">Field.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.FieldList.html">FieldList</a></h3>
+      <section><p>Google BigQuery Table schema fields (columns). Each field has a unique name and index. Fields with duplicate names are not allowed in BigQuery schema.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.FieldValue.html">FieldValue</a></h3>
+      <section><p>Google BigQuery Table Field Value class. Objects of this class represent values of a BigQuery Table Field. A list of values forms a table row. Tables rows can be gotten as the result of a query or when listing table data.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.FieldValueList.html">FieldValueList</a></h3>
+      <section><p>Google BigQuery Table Field Values class, which represents a row in returned query result (table row). Tables rows can be retrieved as a result of a query or when listing table data.</p>
+<p>Depending on how a corresponding query was executed, each row (an instance of <code>FieldValueList</code>) may or may not contain related schema. If schema is not provided, the individual cells of the row will still be accessible by index but not by name.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.FormatOptions.html">FormatOptions</a></h3>
+      <section><p>Base class for Google BigQuery format options. These class define the format of external data used by BigQuery, for either federated tables or load jobs.</p>
+<p>Load jobs support the following formats: AVRO, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON, ORC, PARQUET</p>
+<p>Federated tables can be defined against following formats: AVRO, BIGTABLE, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.GoogleSheetsOptions.html">GoogleSheetsOptions</a></h3>
+      <section><p>Google BigQuery options for the Google Sheets format.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.GoogleSheetsOptions.Builder.html#com_google_cloud_bigquery_GoogleSheetsOptions_Builder">GoogleSheetsOptions.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.HivePartitioningOptions.html">HivePartitioningOptions</a></h3>
+      <section><p>HivePartitioningOptions currently supported types include: AVRO, CSV, JSON, ORC and Parquet.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.HivePartitioningOptions.Builder.html#com_google_cloud_bigquery_HivePartitioningOptions_Builder">HivePartitioningOptions.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.html">InsertAllRequest</a></h3>
+      <section><p>Google Cloud BigQuery insert all request. This class can be used to stream data into BigQuery one record at a time without needing to run a load job. This approach enables querying data without the delay of running a load job. There are several important trade-offs to consider before choosing an approach.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.Builder.html#com_google_cloud_bigquery_InsertAllRequest_Builder">InsertAllRequest.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.RowToInsert.html#com_google_cloud_bigquery_InsertAllRequest_RowToInsert">InsertAllRequest.RowToInsert</a></h3>
+      <section><p>A Google Big Query row to be inserted into a table. Each <code>RowToInsert</code> has an associated id used by BigQuery to detect duplicate insertion requests on a best-effort basis.</p>
+<p>To ensure proper serialization of numeric data, it is recommended to supply values using a string-typed representation. Additionally, data for fields of <a class="xref" href="com.google.cloud.bigquery.LegacySQLTypeName.html#com_google_cloud_bigquery_LegacySQLTypeName_BYTES">LegacySQLTypeName#BYTES</a> must be provided as a base64 encoded string.</p>
+<p>Example usage of creating a row to insert:</p>
+<pre><code class="lang-java">List repeatedFieldValue = Arrays.asList(1L, 2L);
+ Map recordContent = new HashMap();
+ recordContent.put(&quot;subfieldName1&quot;, &quot;value&quot;);
+ recordContent.put(&quot;subfieldName2&quot;, repeatedFieldValue);
+ Map rowContent = new HashMap();
+ rowContent.put(&quot;booleanFieldName&quot;, true);
+ rowContent.put(&quot;bytesFieldName&quot;, &quot;DQ4KDQ==&quot;);
+ rowContent.put(&quot;recordFieldName&quot;, recordContent);
+ rowContent.put(&quot;numericFieldName&quot;, &quot;1298930929292.129593272&quot;);
+ RowToInsert row = new RowToInsert(&quot;rowId&quot;, rowContent);
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.InsertAllResponse.html">InsertAllResponse</a></h3>
+      <section><p>Google Cloud BigQuery insert all response. Objects of this class possibly contain errors for an <a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.html">InsertAllRequest</a>. If a row failed to be inserted, the non-empty list of errors associated to that row&#39;s index can be obtained with <a class="xref" href="com.google.cloud.bigquery.InsertAllResponse.html#com_google_cloud_bigquery_InsertAllResponse_getErrorsFor_long_">InsertAllResponse#getErrorsFor(long)</a>. <a class="xref" href="com.google.cloud.bigquery.InsertAllResponse.html#com_google_cloud_bigquery_InsertAllResponse_getInsertErrors__">InsertAllResponse#getInsertErrors()</a> can be used to return all errors caused by a <a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.html">InsertAllRequest</a> as a map.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Job.html">Job</a></h3>
+      <section><p>A Google BigQuery Job.</p>
+<p>Objects of this class are immutable. To get a <code>Job</code> object with the most recent information use <a class="xref" href="com.google.cloud.bigquery.Job.html#com_google_cloud_bigquery_Job_reload_">#reload</a>. <code>Job</code> adds a layer of service-related functionality over <a class="xref" href="com.google.cloud.bigquery.JobInfo.html">JobInfo</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Job.Builder.html#com_google_cloud_bigquery_Job_Builder">Job.Builder</a></h3>
+      <section><p>A builder for <code>Job</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobConfiguration.html">JobConfiguration</a></h3>
+      <section><p>Base class for a BigQuery job configuration.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobConfiguration.Builder.html#com_google_cloud_bigquery_JobConfiguration_Builder">JobConfiguration.Builder&lt;T,B&gt;</a></h3>
+      <section><p>Base builder for job configurations.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobException.html">JobException</a></h3>
+      <section><p>Exception describing a failure of a job.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobId.html">JobId</a></h3>
+      <section><p>Google BigQuery Job identity.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobId.Builder.html#com_google_cloud_bigquery_JobId_Builder">JobId.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobInfo.html">JobInfo</a></h3>
+      <section><p>Google BigQuery Job information. Jobs are objects that manage asynchronous tasks such as running queries, loading data, and exporting data. Use <a class="xref" href="com.google.cloud.bigquery.CopyJobConfiguration.html">CopyJobConfiguration</a> for a job that copies an existing table. Use <a class="xref" href="com.google.cloud.bigquery.ExtractJobConfiguration.html">ExtractJobConfiguration</a> for a job that exports a table to Google Cloud Storage. Use <a class="xref" href="com.google.cloud.bigquery.LoadJobConfiguration.html">LoadJobConfiguration</a> for a job that loads data from Google Cloud Storage into a table. Use <a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.html">QueryJobConfiguration</a> for a job that runs a query.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobInfo.Builder.html#com_google_cloud_bigquery_JobInfo_Builder">JobInfo.Builder</a></h3>
+      <section><p>A builder for <code>JobInfo</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.html">JobStatistics</a></h3>
+      <section><p>A Google BigQuery Job statistics.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.CopyStatistics.html#com_google_cloud_bigquery_JobStatistics_CopyStatistics">JobStatistics.CopyStatistics</a></h3>
+      <section><p>A Google BigQuery Copy Job statistics.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.ExtractStatistics.html#com_google_cloud_bigquery_JobStatistics_ExtractStatistics">JobStatistics.ExtractStatistics</a></h3>
+      <section><p>A Google BigQuery Extract Job statistics.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.LoadStatistics.html#com_google_cloud_bigquery_JobStatistics_LoadStatistics">JobStatistics.LoadStatistics</a></h3>
+      <section><p>A Google BigQuery Load Job statistics.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.QueryStatistics.html#com_google_cloud_bigquery_JobStatistics_QueryStatistics">JobStatistics.QueryStatistics</a></h3>
+      <section><p>A Google BigQuery Query Job statistics.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType.html#com_google_cloud_bigquery_JobStatistics_QueryStatistics_StatementType">JobStatistics.QueryStatistics.StatementType</a></h3>
+      <section><p>StatementType represents possible types of SQL statements reported as part of the QueryStatistics of a BigQuery job.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.ReservationUsage.html#com_google_cloud_bigquery_JobStatistics_ReservationUsage">JobStatistics.ReservationUsage</a></h3>
+      <section><p>ReservationUsage contains information about a job&#39;s usage of a single reservation.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.ReservationUsage.Builder.html#com_google_cloud_bigquery_JobStatistics_ReservationUsage_Builder">JobStatistics.ReservationUsage.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.ScriptStatistics.html#com_google_cloud_bigquery_JobStatistics_ScriptStatistics">JobStatistics.ScriptStatistics</a></h3>
+      <section><p>A Google BigQuery Script statistics.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatistics.ScriptStatistics.ScriptStackFrame.html#com_google_cloud_bigquery_JobStatistics_ScriptStatistics_ScriptStackFrame">JobStatistics.ScriptStatistics.ScriptStackFrame</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatus.html">JobStatus</a></h3>
+      <section><p>A Google BigQuery Job status. Objects of this class can be examined when polling an asynchronous job to see if the job completed.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobStatus.State.html#com_google_cloud_bigquery_JobStatus_State">JobStatus.State</a></h3>
+      <section><p>Possible states that a BigQuery Job can assume.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.LegacySQLTypeName.html">LegacySQLTypeName</a></h3>
+      <section><p>A type used in legacy SQL contexts. NOTE: some contexts use a mix of types; for example, for queries that use standard SQL, the return types are the legacy SQL types.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.LoadJobConfiguration.html">LoadJobConfiguration</a></h3>
+      <section><p>Google BigQuery load job configuration. A load job loads data from one of several formats into a table. Data is provided as URIs that point to objects in Google Cloud Storage. Load job configurations have <a class="xref" href="com.google.cloud.bigquery.JobConfiguration.Type.html#com_google_cloud_bigquery_JobConfiguration_Type_LOAD">JobConfiguration.Type#LOAD</a> type.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.LoadJobConfiguration.Builder.html#com_google_cloud_bigquery_LoadJobConfiguration_Builder">LoadJobConfiguration.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.MaterializedViewDefinition.html">MaterializedViewDefinition</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.MaterializedViewDefinition.Builder.html#com_google_cloud_bigquery_MaterializedViewDefinition_Builder">MaterializedViewDefinition.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Model.html">Model</a></h3>
+      <section><p>A Google BigQuery ML Model.</p>
+<p>Objects of this class are immutable. Operations that modify the table like <a class="xref" href="com.google.cloud.bigquery.Model.html#com_google_cloud_bigquery_Model_update_">#update</a> return a new object. To get a <code>Model</code> object with the most recent information use <a class="xref" href="com.google.cloud.bigquery.Model.html#com_google_cloud_bigquery_Model_reload_">#reload</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Model.Builder.html#com_google_cloud_bigquery_Model_Builder">Model.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ModelId.html">ModelId</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ModelInfo.html">ModelInfo</a></h3>
+      <section><p>Google BigQuery ML model information. Models are not created directly via the API, but by issuing a CREATE MODEL query.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ModelInfo.Builder.html#com_google_cloud_bigquery_ModelInfo_Builder">ModelInfo.Builder</a></h3>
+      <section><p>A builder for <code>ModelInfo</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ModelTableDefinition.html">ModelTableDefinition</a></h3>
+      <section><p>A Google BigQuery Model table definition. This definition is used to represent a BigQuery ML model.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ModelTableDefinition.Builder.html#com_google_cloud_bigquery_ModelTableDefinition_Builder">ModelTableDefinition.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.PolicyTags.html">PolicyTags</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.PolicyTags.Builder.html#com_google_cloud_bigquery_PolicyTags_Builder">PolicyTags.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.html">QueryJobConfiguration</a></h3>
+      <section><p>Google BigQuery Query Job configuration. A Query Job runs a query against BigQuery data. Query job configurations have <a class="xref" href="com.google.cloud.bigquery.JobConfiguration.Type.html#com_google_cloud_bigquery_JobConfiguration_Type_QUERY">JobConfiguration.Type#QUERY</a> type.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.Builder.html#com_google_cloud_bigquery_QueryJobConfiguration_Builder">QueryJobConfiguration.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html">QueryParameterValue</a></h3>
+      <section><p>A value for a QueryParameter along with its type.</p>
+<p>A static factory method is provided for each of the possible types (e.g. <a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html#com_google_cloud_bigquery_QueryParameterValue_int64_java_lang_Long_">#int64(Long)</a> for StandardSQLTypeName.INT64). Alternatively, an instance can be constructed by calling <a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html#com_google_cloud_bigquery_QueryParameterValue_of_">#of(Object, Class)</a> with the value and a Class object, which will use these mappings:</p>
+<ul>
+<li>Boolean: StandardSQLTypeName.BOOL</li>
+<li>String: StandardSQLTypeName.STRING</li>
+<li>Integer: StandardSQLTypeName.INT64</li>
+<li>Long: StandardSQLTypeName.INT64</li>
+<li>Double: StandardSQLTypeName.FLOAT64</li>
+<li>Float: StandardSQLTypeName.FLOAT64</li>
+<li>BigDecimal: StandardSQLTypeName.NUMERIC</li>
+<li>BigNumeric: StandardSQLTypeName.BIGNUMERIC</li>
+</ul>
+<p>No other types are supported through that entry point. The other types can be created by calling <a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html#com_google_cloud_bigquery_QueryParameterValue_of_">#of(Object, StandardSQLTypeName)</a> with the value and a particular StandardSQLTypeName enum value.</p>
+<p>Struct parameters are currently not supported.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.Builder.html#com_google_cloud_bigquery_QueryParameterValue_Builder">QueryParameterValue.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryResponse.html">QueryResponse</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryStage.html">QueryStage</a></h3>
+      <section><p>BigQuery provides diagnostic information about a completed query&#39;s execution plan (or query plan for short). The query plan describes a query as a series of stages, with each stage comprising a number of steps that read from data sources, perform a series of transformations on the input, and emit an output to a future stage (or the final result). This class contains information on a query stage.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryStage.QueryStep.html#com_google_cloud_bigquery_QueryStage_QueryStep">QueryStage.QueryStep</a></h3>
+      <section><p>Each query stage is made of a number of steps. This class contains information on a query step.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RangePartitioning.html">RangePartitioning</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RangePartitioning.Builder.html#com_google_cloud_bigquery_RangePartitioning_Builder">RangePartitioning.Builder</a></h3>
+      <section><p>A builder for <code>RangePartitioning</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RangePartitioning.Range.html#com_google_cloud_bigquery_RangePartitioning_Range">RangePartitioning.Range</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RangePartitioning.Range.Builder.html#com_google_cloud_bigquery_RangePartitioning_Range_Builder">RangePartitioning.Range.Builder</a></h3>
+      <section><p>A builder for <code>Range</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Routine.html">Routine</a></h3>
+      <section><p>A Google BigQuery Routine.</p>
+<p>Objects of this class are immutable. Operations that modify the routine like <a class="xref" href="com.google.cloud.bigquery.Routine.html#com_google_cloud_bigquery_Routine_update_">#update</a> return a new object. To get a <code>routine</code> object with the most recent information use <a class="xref" href="com.google.cloud.bigquery.Routine.html#com_google_cloud_bigquery_Routine_reload_">#reload</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Routine.Builder.html#com_google_cloud_bigquery_Routine_Builder">Routine.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RoutineArgument.html">RoutineArgument</a></h3>
+      <section><p>An argument for a BigQuery Routine.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RoutineArgument.Builder.html#com_google_cloud_bigquery_RoutineArgument_Builder">RoutineArgument.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RoutineId.html">RoutineId</a></h3>
+      <section><p>RoutineId represents the identifier for a given Routine.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RoutineInfo.html">RoutineInfo</a></h3>
+      <section><p>Google BigQuery routine information. A Routine is an API abstraction that encapsulates several related concepts inside the BigQuery service, including scalar user defined functions (UDFS) and stored procedures.</p>
+<p>For more information about the REST representation of routines, see: <a href="https://cloud.google.com/bigquery/docs/reference/rest/v2/routines">https://cloud.google.com/bigquery/docs/reference/rest/v2/routines</a></p>
+<p>For more information about working with scalar functions, see: <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions">https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions</a></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.RoutineInfo.Builder.html#com_google_cloud_bigquery_RoutineInfo_Builder">RoutineInfo.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Schema.html">Schema</a></h3>
+      <section><p>This class represents the schema for a Google BigQuery Table or data source.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardSQLDataType.html">StandardSQLDataType</a></h3>
+      <section><p>Represents Standard SQL data type information.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardSQLDataType.Builder.html#com_google_cloud_bigquery_StandardSQLDataType_Builder">StandardSQLDataType.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardSQLField.html">StandardSQLField</a></h3>
+      <section><p>A Google BigQuery SQL Field.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardSQLField.Builder.html#com_google_cloud_bigquery_StandardSQLField_Builder">StandardSQLField.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardSQLStructType.html">StandardSQLStructType</a></h3>
+      <section><p>A set of fields contained within a SQL STRUCT in Google BigQuery.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardSQLStructType.Builder.html#com_google_cloud_bigquery_StandardSQLStructType_Builder">StandardSQLStructType.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardTableDefinition.html">StandardTableDefinition</a></h3>
+      <section><p>A Google BigQuery default table definition. This definition is used for standard, two-dimensional tables with individual records organized in rows, and a data type assigned to each column (also called a field). Individual fields within a record may contain nested and repeated children fields. Every table is described by a schema that describes field names, types, and other information.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardTableDefinition.Builder.html#com_google_cloud_bigquery_StandardTableDefinition_Builder">StandardTableDefinition.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer.html#com_google_cloud_bigquery_StandardTableDefinition_StreamingBuffer">StandardTableDefinition.StreamingBuffer</a></h3>
+      <section><p>Google BigQuery Table&#39;s Streaming Buffer information. This class contains information on a table&#39;s streaming buffer as the estimated size in number of rows/bytes.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Table.html">Table</a></h3>
+      <section><p>A Google BigQuery Table.</p>
+<p>Objects of this class are immutable. Operations that modify the table like <a class="xref" href="com.google.cloud.bigquery.Table.html#com_google_cloud_bigquery_Table_update_">#update</a> return a new object. To get a <code>Table</code> object with the most recent information use <a class="xref" href="com.google.cloud.bigquery.Table.html#com_google_cloud_bigquery_Table_reload_">#reload</a>. <code>Table</code> adds a layer of service-related functionality over <a class="xref" href="com.google.cloud.bigquery.TableInfo.html">TableInfo</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Table.Builder.html#com_google_cloud_bigquery_Table_Builder">Table.Builder</a></h3>
+      <section><p>A builder for <code>Table</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableDataWriteChannel.html">TableDataWriteChannel</a></h3>
+      <section><p><span class="xref">WriteChannel</span> implementation to stream data into a BigQuery table. Use <a class="xref" href="com.google.cloud.bigquery.TableDataWriteChannel.html#com_google_cloud_bigquery_TableDataWriteChannel_getJob__">#getJob()</a> to get the job used to insert streamed data. Please notice that <a class="xref" href="com.google.cloud.bigquery.TableDataWriteChannel.html#com_google_cloud_bigquery_TableDataWriteChannel_getJob__">#getJob()</a> returns <code>null</code> until the channel is closed.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableDefinition.html">TableDefinition</a></h3>
+      <section><p>Base class for a Google BigQuery table definition.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableDefinition.Builder.html#com_google_cloud_bigquery_TableDefinition_Builder">TableDefinition.Builder&lt;T,B&gt;</a></h3>
+      <section><p>Base builder for table definitions.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableDefinition.Type.html#com_google_cloud_bigquery_TableDefinition_Type">TableDefinition.Type</a></h3>
+      <section><p>The table type.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></h3>
+      <section><p>Google BigQuery Table identity.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableInfo.html">TableInfo</a></h3>
+      <section><p>Google BigQuery table information. Use <a class="xref" href="com.google.cloud.bigquery.StandardTableDefinition.html">StandardTableDefinition</a> to create simple BigQuery table. Use <a class="xref" href="com.google.cloud.bigquery.ViewDefinition.html">ViewDefinition</a> to create a BigQuery view. Use <a class="xref" href="com.google.cloud.bigquery.ExternalTableDefinition.html">ExternalTableDefinition</a> to create a BigQuery a table backed by external data.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableInfo.Builder.html#com_google_cloud_bigquery_TableInfo_Builder">TableInfo.Builder</a></h3>
+      <section><p>A builder for <code>TableInfo</code> objects.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.html">TimePartitioning</a></h3>
+      <section><p>Objects of this class allow to configure table partitioning based on time. By dividing a large table into smaller partitions, you can improve query performance and reduce the number of bytes billed by restricting the amount of data scanned.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Builder.html#com_google_cloud_bigquery_TimePartitioning_Builder">TimePartitioning.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TimelineSample.html">TimelineSample</a></h3>
+      <section><p>A specific timeline sample. This instruments work progress at a given point in time, providing information about work units active/pending/completed as well as cumulative slot-milliseconds.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TimelineSample.Builder.html#com_google_cloud_bigquery_TimelineSample_Builder">TimelineSample.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.UserDefinedFunction.html">UserDefinedFunction</a></h3>
+      <section><p>Google BigQuery User Defined Function. BigQuery supports user-defined functions (UDFs) written in JavaScript. A UDF is similar to the &quot;Map&quot; function in a MapReduce: it takes a single row as input and produces zero or more rows as output. The output can potentially have a different schema than the input.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ViewDefinition.html">ViewDefinition</a></h3>
+      <section><p>Google BigQuery view table definition. BigQuery&#39;s views are logical views, not materialized views, which means that the query that defines the view is re-executed every time the view is queried.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.ViewDefinition.Builder.html#com_google_cloud_bigquery_ViewDefinition_Builder">ViewDefinition.Builder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.WriteChannelConfiguration.html">WriteChannelConfiguration</a></h3>
+      <section><p>Google BigQuery Configuration for a load operation. A load configuration can be used to load data into a table with a <span class="xref">com.google.cloud.WriteChannel</span> (<a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_writer_com_google_cloud_bigquery_WriteChannelConfiguration_">BigQuery#writer(WriteChannelConfiguration)</a>).</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.WriteChannelConfiguration.Builder.html#com_google_cloud_bigquery_WriteChannelConfiguration_Builder">WriteChannelConfiguration.Builder</a></h3>
+      <section></section>
+    <h2 id="interfaces">Interfaces
+  
+  </h2>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.html">BigQuery</a></h3>
+      <section><p>An interface for Google Cloud BigQuery.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQueryFactory.html">BigQueryFactory</a></h3>
+      <section><p>An interface for BigQuery factories.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.LoadConfiguration.html">LoadConfiguration</a></h3>
+      <section><p>Common interface for a load configuration. A load configuration (<a class="xref" href="com.google.cloud.bigquery.WriteChannelConfiguration.html">WriteChannelConfiguration</a>) can be used to load data into a table with a <span class="xref">com.google.cloud.WriteChannel</span> (<a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_writer_com_google_cloud_bigquery_WriteChannelConfiguration_">BigQuery#writer(WriteChannelConfiguration)</a>). A load configuration (<a class="xref" href="com.google.cloud.bigquery.LoadJobConfiguration.html">LoadJobConfiguration</a>) can also be used to create a load job (<a class="xref" href="com.google.cloud.bigquery.JobInfo.html#com_google_cloud_bigquery_JobInfo_of_com_google_cloud_bigquery_JobConfiguration_">JobInfo#of(JobConfiguration)</a>).</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.LoadConfiguration.Builder.html#com_google_cloud_bigquery_LoadConfiguration_Builder">LoadConfiguration.Builder</a></h3>
+      <section></section>
+    <h2 id="enums">Enums
+  
+  </h2>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Acl.Entity.Type.html#com_google_cloud_bigquery_Acl_Entity_Type">Acl.Entity.Type</a></h3>
+      <section><p>Types of BigQuery entities.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetField.html#com_google_cloud_bigquery_BigQuery_DatasetField">BigQuery.DatasetField</a></h3>
+      <section><p>Fields of a BigQuery Dataset resource.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobField.html#com_google_cloud_bigquery_BigQuery_JobField">BigQuery.JobField</a></h3>
+      <section><p>Fields of a BigQuery Job resource.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelField.html#com_google_cloud_bigquery_BigQuery_ModelField">BigQuery.ModelField</a></h3>
+      <section><p>Fields of a BigQuery Model resource.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineField.html#com_google_cloud_bigquery_BigQuery_RoutineField">BigQuery.RoutineField</a></h3>
+      <section><p>Fields of a BigQuery Routine resource.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableField.html#com_google_cloud_bigquery_BigQuery_TableField">BigQuery.TableField</a></h3>
+      <section><p>Fields of a BigQuery Table resource.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.Field.Mode.html#com_google_cloud_bigquery_Field_Mode">Field.Mode</a></h3>
+      <section><p>Mode for a BigQuery Table field. <a class="xref" href="com.google.cloud.bigquery.Field.Mode.html#com_google_cloud_bigquery_Field_Mode_NULLABLE">Mode#NULLABLE</a> fields can be set to <code>null</code>, <a class="xref" href="com.google.cloud.bigquery.Field.Mode.html#com_google_cloud_bigquery_Field_Mode_REQUIRED">Mode#REQUIRED</a> fields must be provided. <a class="xref" href="com.google.cloud.bigquery.Field.Mode.html#com_google_cloud_bigquery_Field_Mode_REPEATED">Mode#REPEATED</a> fields can contain more than one value.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.FieldValue.Attribute.html#com_google_cloud_bigquery_FieldValue_Attribute">FieldValue.Attribute</a></h3>
+      <section><p>The field value&#39;s attribute, giving information on the field&#39;s content type.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobConfiguration.Type.html#com_google_cloud_bigquery_JobConfiguration_Type">JobConfiguration.Type</a></h3>
+      <section><p>Type of a BigQuery Job.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobInfo.CreateDisposition.html#com_google_cloud_bigquery_JobInfo_CreateDisposition">JobInfo.CreateDisposition</a></h3>
+      <section><p>Specifies whether the job is allowed to create new tables.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobInfo.SchemaUpdateOption.html#com_google_cloud_bigquery_JobInfo_SchemaUpdateOption">JobInfo.SchemaUpdateOption</a></h3>
+      <section><p>Specifies options relating to allowing the schema of the destination table to be updated as a side effect of the load or query job.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.JobInfo.WriteDisposition.html#com_google_cloud_bigquery_JobInfo_WriteDisposition">JobInfo.WriteDisposition</a></h3>
+      <section><p>Specifies the action that occurs if the destination table already exists.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.Priority.html#com_google_cloud_bigquery_QueryJobConfiguration_Priority">QueryJobConfiguration.Priority</a></h3>
+      <section><p>Priority levels for a query. If not specified the priority is assumed to be <a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.Priority.html#com_google_cloud_bigquery_QueryJobConfiguration_Priority_INTERACTIVE">Priority#INTERACTIVE</a>.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.StandardSQLTypeName.html">StandardSQLTypeName</a></h3>
+      <section><p>A type used in standard SQL contexts. For example, these types are used in queries with query parameters, which requires usage of standard SQL.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.TimePartitioning.Type.html#com_google_cloud_bigquery_TimePartitioning_Type">TimePartitioning.Type</a></h3>
+      <section><p>[Optional] The supported types are DAY, HOUR, MONTH, and YEAR, which will generate one partition per day, hour, month, and year, respectively. When the interval is not specified, the default behavior is DAY.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.bigquery.UserDefinedFunction.Type.html#com_google_cloud_bigquery_UserDefinedFunction_Type">UserDefinedFunction.Type</a></h3>
+      <section><p>Type of user-defined function. User defined functions can be provided inline as code blobs (<a class="xref" href="com.google.cloud.bigquery.UserDefinedFunction.Type.html#com_google_cloud_bigquery_UserDefinedFunction_Type_INLINE">#INLINE</a>) or as a Google Cloud Storage URI (<a class="xref" href="com.google.cloud.bigquery.UserDefinedFunction.Type.html#com_google_cloud_bigquery_UserDefinedFunction_Type_FROM_URI">#FROM_URI</a>).</p>
+</section>
+</article>
+    </div>
+  </body>
+</html>

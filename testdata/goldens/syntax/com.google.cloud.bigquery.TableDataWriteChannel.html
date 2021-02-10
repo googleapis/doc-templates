@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class TableDataWriteChannel
+</h1>
+      <article data-uid="com.google.cloud.bigquery.TableDataWriteChannel">
+  
+  
+  <div class="markdown level0 summary"><p><span class="xref">WriteChannel</span> implementation to stream data into a BigQuery table. Use <a class="xref" href="com.google.cloud.bigquery.TableDataWriteChannel.html#com_google_cloud_bigquery_TableDataWriteChannel_getJob__">#getJob()</a> to get the job used to insert streamed data. Please notice that <a class="xref" href="com.google.cloud.bigquery.TableDataWriteChannel.html#com_google_cloud_bigquery_TableDataWriteChannel_getJob__">#getJob()</a> returns <code>null</code> until the channel is closed.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">com.google.cloud.BaseWriteChannel</span></div>
+    <div class="level2"><span class="xref">TableDataWriteChannel</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.capture()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.close()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.flushBuffer(int,boolean)</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getBuffer()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getChunkSize()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getDefaultChunkSize()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getEntity()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getLimit()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getMinChunkSize()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getOptions()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getPosition()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.getUploadId()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.isOpen()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.restore(com.google.cloud.BaseWriteChannel.BaseState)</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.setChunkSize(int)</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.stateBuilder()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.cloud.BaseWriteChannel.write(java.nio.ByteBuffer)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_TableDataWriteChannel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class TableDataWriteChannel extends BaseWriteChannel&lt;BigQueryOptions,WriteChannelConfiguration&gt;</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_TableDataWriteChannel_flushBuffer_" data-uid="com.google.cloud.bigquery.TableDataWriteChannel.flushBuffer*"></a>
+  <h3 id="com_google_cloud_bigquery_TableDataWriteChannel_flushBuffer_int_boolean_" data-uid="com.google.cloud.bigquery.TableDataWriteChannel.flushBuffer(int,boolean)">flushBuffer(int length, boolean last)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected void flushBuffer(int length, boolean last)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><span class="parametername">last</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">com.google.cloud.BaseWriteChannel.flushBuffer(int,boolean)</span></div>
+  <a id="com_google_cloud_bigquery_TableDataWriteChannel_getJob_" data-uid="com.google.cloud.bigquery.TableDataWriteChannel.getJob*"></a>
+  <h3 id="com_google_cloud_bigquery_TableDataWriteChannel_getJob__" data-uid="com.google.cloud.bigquery.TableDataWriteChannel.getJob()">getJob()</h3>
+  <div class="markdown level1 summary"><p>Returns the <code>Job</code> created to insert the rows. The job is available only once the upload finished and the channel was closed, returns <code>null</code> otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Job getJob()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Job.html">Job</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_TableDataWriteChannel_stateBuilder_" data-uid="com.google.cloud.bigquery.TableDataWriteChannel.stateBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_TableDataWriteChannel_stateBuilder__" data-uid="com.google.cloud.bigquery.TableDataWriteChannel.stateBuilder()">stateBuilder()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected TableDataWriteChannel.StateImpl.Builder stateBuilder()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.bigquery.TableDataWriteChannel.StateImpl.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="overrides">Overrides</h4>
+  <div><span class="xref">com.google.cloud.BaseWriteChannel.stateBuilder()</span></div>
+</article>
+    </div>
+  </body>
+</html>

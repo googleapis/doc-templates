@@ -1,0 +1,2825 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Interface BigQuery
+</h1>
+      <article data-uid="com.google.cloud.bigquery.BigQuery">
+  
+  
+  <div class="markdown level0 summary"><p>An interface for Google Cloud BigQuery.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">com.google.cloud.Service&lt;com.google.cloud.bigquery.BigQueryOptions&gt;</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_BigQuery_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public interface BigQuery extends Service&lt;BigQueryOptions&gt;</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_BigQuery_cancel_" data-uid="com.google.cloud.bigquery.BigQuery.cancel*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_cancel_com_google_cloud_bigquery_JobId_" data-uid="com.google.cloud.bigquery.BigQuery.cancel(com.google.cloud.bigquery.JobId)">cancel(JobId jobId)</h3>
+  <div class="markdown level1 summary"><p>Sends a job cancel request. This call will return immediately. The job status can then be checked using either <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getJob_">#getJob(JobId, JobOption...)</a> or <span class="xref">#getJob(String,
+ JobOption...)</span>).</p>
+<p>If the location of the job is not &quot;US&quot; or &quot;EU&quot;, the <code>jobId</code> must specify the job location.</p>
+<p>Example of cancelling a job.</p>
+<pre><code class="lang-java">{
+   @code
+   String jobName = &quot;my_job_name&quot;;
+   JobId jobId = JobId.of(jobName);
+   boolean success = bigquery.cancel(jobId);
+   if (success) {
+     // job was cancelled
+   } else {
+     // job was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean cancel(JobId jobId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobId.html">JobId</a></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if cancel was requested successfully, <code>false</code> if the job was not
+     found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_cancel_" data-uid="com.google.cloud.bigquery.BigQuery.cancel*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_cancel_java_lang_String_" data-uid="com.google.cloud.bigquery.BigQuery.cancel(java.lang.String)">cancel(String jobId)</h3>
+  <div class="markdown level1 summary"><p>Sends a job cancel request. This call will return immediately. The job status can then be checked using either <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getJob_">#getJob(JobId, JobOption...)</a> or <span class="xref">#getJob(String,
+ JobOption...)</span>).</p>
+<p>If the location of the job is not &quot;US&quot; or &quot;EU&quot;, <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_cancel_com_google_cloud_bigquery_JobId_">#cancel(JobId)</a> must be used instead.</p>
+<p>Example of cancelling a job.</p>
+<pre><code class="lang-java">{
+   @code
+   String jobName = &quot;my_job_name&quot;;
+   boolean success = bigquery.cancel(jobName);
+   if (success) {
+     // job was cancelled
+   } else {
+     // job was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean cancel(String jobId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if cancel was requested successfully, <code>false</code> if the job was not
+     found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_create_" data-uid="com.google.cloud.bigquery.BigQuery.create*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_create_com_google_cloud_bigquery_DatasetInfo_com_google_cloud_bigquery_BigQuery_DatasetOption____" data-uid="com.google.cloud.bigquery.BigQuery.create(com.google.cloud.bigquery.DatasetInfo,com.google.cloud.bigquery.BigQuery.DatasetOption...)">create(DatasetInfo datasetInfo, BigQuery.DatasetOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Creates a new dataset.</p>
+<p>Example of creating a dataset.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   Dataset dataset = null;
+   DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
+   try {
+     // the dataset was created
+     dataset = bigquery.create(datasetInfo);
+   } catch (BigQueryException e) {
+     // the dataset was not created
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Dataset create(DatasetInfo datasetInfo, BigQuery.DatasetOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.html">DatasetInfo</a></td>
+        <td><span class="parametername">datasetInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetOption.html#com_google_cloud_bigquery_BigQuery_DatasetOption">DatasetOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Dataset.html">Dataset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_create_" data-uid="com.google.cloud.bigquery.BigQuery.create*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_create_com_google_cloud_bigquery_JobInfo_com_google_cloud_bigquery_BigQuery_JobOption____" data-uid="com.google.cloud.bigquery.BigQuery.create(com.google.cloud.bigquery.JobInfo,com.google.cloud.bigquery.BigQuery.JobOption...)">create(JobInfo jobInfo, BigQuery.JobOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Creates a new job.</p>
+<p>Example of loading a newline-delimited-json file with textual fields from GCS to a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   String sourceUri = &quot;gs://cloud-samples-data/bigquery/us-states/us-states.json&quot;;
+   TableId tableId = TableId.of(datasetName, tableName);
+   // Table field definition
+   Field[] fields = new Field[] { Field.of(&quot;name&quot;, LegacySQLTypeName.STRING),
+       Field.of(&quot;post_abbr&quot;, LegacySQLTypeName.STRING) };
+   // Table schema definition
+   Schema schema = Schema.of(fields);
+   LoadJobConfiguration configuration = LoadJobConfiguration.builder(tableId, sourceUri)
+       .setFormatOptions(FormatOptions.json()).setCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
+       .setSchema(schema).build();
+   // Load the table
+   Job loadJob = bigquery.create(JobInfo.of(configuration));
+   loadJob = loadJob.waitFor();
+   // Check the table
+   System.out.println(&quot;State: &quot; + loadJob.getStatus().getState());
+   return ((StandardTableDefinition) bigquery.getTable(tableId).getDefinition()).getNumRows();
+ }
+</code></pre><p>Example of creating a query job.</p>
+<pre><code class="lang-java">{
+   @code
+   String query = &quot;SELECT field FROM my_dataset_name.my_table_name&quot;;
+   Job job = null;
+   JobConfiguration jobConfiguration = QueryJobConfiguration.of(query);
+   JobInfo jobInfo = JobInfo.of(jobConfiguration);
+   try {
+     job = bigquery.create(jobInfo);
+   } catch (BigQueryException e) {
+     // the job was not created
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Job create(JobInfo jobInfo, BigQuery.JobOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobInfo.html">JobInfo</a></td>
+        <td><span class="parametername">jobInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobOption.html#com_google_cloud_bigquery_BigQuery_JobOption">JobOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Job.html">Job</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_create_" data-uid="com.google.cloud.bigquery.BigQuery.create*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_create_com_google_cloud_bigquery_RoutineInfo_com_google_cloud_bigquery_BigQuery_RoutineOption____" data-uid="com.google.cloud.bigquery.BigQuery.create(com.google.cloud.bigquery.RoutineInfo,com.google.cloud.bigquery.BigQuery.RoutineOption...)">create(RoutineInfo routineInfo, BigQuery.RoutineOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Creates a new routine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Routine create(RoutineInfo routineInfo, BigQuery.RoutineOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.RoutineInfo.html">RoutineInfo</a></td>
+        <td><span class="parametername">routineInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineOption.html#com_google_cloud_bigquery_BigQuery_RoutineOption">RoutineOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Routine.html">Routine</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_create_" data-uid="com.google.cloud.bigquery.BigQuery.create*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_create_com_google_cloud_bigquery_TableInfo_com_google_cloud_bigquery_BigQuery_TableOption____" data-uid="com.google.cloud.bigquery.BigQuery.create(com.google.cloud.bigquery.TableInfo,com.google.cloud.bigquery.BigQuery.TableOption...)">create(TableInfo tableInfo, BigQuery.TableOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Creates a new table.</p>
+<p>Example of creating a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   String fieldName = &quot;string_field&quot;;
+   TableId tableId = TableId.of(datasetName, tableName);
+   // Table field definition
+   Field field = Field.of(fieldName, LegacySQLTypeName.STRING);
+   // Table schema definition
+   Schema schema = Schema.of(field);
+   TableDefinition tableDefinition = StandardTableDefinition.of(schema);
+   TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
+   Table table = bigquery.create(tableInfo);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Table create(TableInfo tableInfo, BigQuery.TableOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableInfo.html">TableInfo</a></td>
+        <td><span class="parametername">tableInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableOption.html#com_google_cloud_bigquery_BigQuery_TableOption">TableOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Table.html">Table</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_delete_" data-uid="com.google.cloud.bigquery.BigQuery.delete*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_delete_com_google_cloud_bigquery_DatasetId_com_google_cloud_bigquery_BigQuery_DatasetDeleteOption____" data-uid="com.google.cloud.bigquery.BigQuery.delete(com.google.cloud.bigquery.DatasetId,com.google.cloud.bigquery.BigQuery.DatasetDeleteOption...)">delete(DatasetId datasetId, BigQuery.DatasetDeleteOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Deletes the requested dataset.</p>
+<p>Example of deleting a dataset, even if non-empty.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   String datasetName = &quot;my_dataset_name&quot;;
+   DatasetId datasetId = DatasetId.of(projectId, datasetName);
+   boolean deleted = bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
+   if (deleted) {
+     // the dataset was deleted
+   } else {
+     // the dataset was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean delete(DatasetId datasetId, BigQuery.DatasetDeleteOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetDeleteOption.html#com_google_cloud_bigquery_BigQuery_DatasetDeleteOption">DatasetDeleteOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if dataset was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_delete_" data-uid="com.google.cloud.bigquery.BigQuery.delete*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_delete_com_google_cloud_bigquery_ModelId_" data-uid="com.google.cloud.bigquery.BigQuery.delete(com.google.cloud.bigquery.ModelId)">delete(ModelId modelId)</h3>
+  <div class="markdown level1 summary"><p>Deletes the requested model.</p>
+<p>Example of deleting a model.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_model_name&quot;;
+   ModelId modelId = ModelId.of(projectId, datasetName, modelName);
+   boolean deleted = bigquery.delete(modelId);
+   if (deleted) {
+     // the model was deleted
+   } else {
+     // the model was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean delete(ModelId modelId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.ModelId.html">ModelId</a></td>
+        <td><span class="parametername">modelId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if model was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_delete_" data-uid="com.google.cloud.bigquery.BigQuery.delete*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_delete_com_google_cloud_bigquery_RoutineId_" data-uid="com.google.cloud.bigquery.BigQuery.delete(com.google.cloud.bigquery.RoutineId)">delete(RoutineId routineId)</h3>
+  <div class="markdown level1 summary"><p>Deletes the requested routine.</p>
+<p>Example of deleting a routine.</p>
+<pre><code class="lang-java">{@code
+ String projectId = &quot;my_project_id&quot;;
+ String datasetId = &quot;my_dataset_id&quot;;
+ String routineId = &quot;my_routine_id&quot;;
+ RoutineId routineId = RoutineId.of(projectId, datasetId, routineId);
+ boolean deleted = bigquery.delete(routineId);
+ if (deleted) {
+   // the routine was deleted
+ } else {
+   // the routine was not found
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean delete(RoutineId routineId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.RoutineId.html">RoutineId</a></td>
+        <td><span class="parametername">routineId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if routine was deleted, <code>false</code> if it was not
+ found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_delete_" data-uid="com.google.cloud.bigquery.BigQuery.delete*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_delete_com_google_cloud_bigquery_TableId_" data-uid="com.google.cloud.bigquery.BigQuery.delete(com.google.cloud.bigquery.TableId)">delete(TableId tableId)</h3>
+  <div class="markdown level1 summary"><p>Deletes the requested table.</p>
+<p>Example of deleting a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   TableId tableId = TableId.of(projectId, datasetName, tableName);
+   boolean deleted = bigquery.delete(tableId);
+   if (deleted) {
+     // the table was deleted
+   } else {
+     // the table was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean delete(TableId tableId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if table was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_delete_" data-uid="com.google.cloud.bigquery.BigQuery.delete*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_delete_java_lang_String_com_google_cloud_bigquery_BigQuery_DatasetDeleteOption____" data-uid="com.google.cloud.bigquery.BigQuery.delete(java.lang.String,com.google.cloud.bigquery.BigQuery.DatasetDeleteOption...)">delete(String datasetId, BigQuery.DatasetDeleteOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Deletes the requested dataset.</p>
+<p>Example of deleting a dataset from its id, even if non-empty.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
+   if (deleted) {
+     // the dataset was deleted
+   } else {
+     // the dataset was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean delete(String datasetId, BigQuery.DatasetDeleteOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetDeleteOption.html#com_google_cloud_bigquery_BigQuery_DatasetDeleteOption">DatasetDeleteOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if dataset was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_delete_" data-uid="com.google.cloud.bigquery.BigQuery.delete*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_delete_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.BigQuery.delete(java.lang.String,java.lang.String)">delete(String datasetId, String tableId)</h3>
+  <div class="markdown level1 summary"><p>Deletes the requested table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean delete(String datasetId, String tableId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if table was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getDataset_" data-uid="com.google.cloud.bigquery.BigQuery.getDataset*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getDataset_com_google_cloud_bigquery_DatasetId_com_google_cloud_bigquery_BigQuery_DatasetOption____" data-uid="com.google.cloud.bigquery.BigQuery.getDataset(com.google.cloud.bigquery.DatasetId,com.google.cloud.bigquery.BigQuery.DatasetOption...)">getDataset(DatasetId datasetId, BigQuery.DatasetOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested dataset or <code>null</code> if not found.</p>
+<p>Example of getting a dataset.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   String datasetName = &quot;my_dataset_name&quot;;
+   DatasetId datasetId = DatasetId.of(projectId, datasetName);
+   Dataset dataset = bigquery.getDataset(datasetId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Dataset getDataset(DatasetId datasetId, BigQuery.DatasetOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetOption.html#com_google_cloud_bigquery_BigQuery_DatasetOption">DatasetOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Dataset.html">Dataset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getDataset_" data-uid="com.google.cloud.bigquery.BigQuery.getDataset*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getDataset_java_lang_String_com_google_cloud_bigquery_BigQuery_DatasetOption____" data-uid="com.google.cloud.bigquery.BigQuery.getDataset(java.lang.String,com.google.cloud.bigquery.BigQuery.DatasetOption...)">getDataset(String datasetId, BigQuery.DatasetOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested dataset or <code>null</code> if not found.</p>
+<p>Example of getting a dataset.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset&quot;;
+   Dataset dataset = bigquery.getDataset(datasetName);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Dataset getDataset(String datasetId, BigQuery.DatasetOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetOption.html#com_google_cloud_bigquery_BigQuery_DatasetOption">DatasetOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Dataset.html">Dataset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getIamPolicy_" data-uid="com.google.cloud.bigquery.BigQuery.getIamPolicy*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getIamPolicy_com_google_cloud_bigquery_TableId_com_google_cloud_bigquery_BigQuery_IAMOption____" data-uid="com.google.cloud.bigquery.BigQuery.getIamPolicy(com.google.cloud.bigquery.TableId,com.google.cloud.bigquery.BigQuery.IAMOption...)">getIamPolicy(TableId tableId, BigQuery.IAMOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Gets the IAM policy for a specified table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Policy getIamPolicy(TableId tableId, BigQuery.IAMOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.IAMOption.html#com_google_cloud_bigquery_BigQuery_IAMOption">IAMOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.Policy</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getJob_" data-uid="com.google.cloud.bigquery.BigQuery.getJob*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getJob_com_google_cloud_bigquery_JobId_com_google_cloud_bigquery_BigQuery_JobOption____" data-uid="com.google.cloud.bigquery.BigQuery.getJob(com.google.cloud.bigquery.JobId,com.google.cloud.bigquery.BigQuery.JobOption...)">getJob(JobId jobId, BigQuery.JobOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested job or <code>null</code> if not found. If the location of the job is not &quot;US&quot; or &quot;EU&quot;, the <code>jobId</code> must specify the job location.</p>
+<p>Example of getting a job.</p>
+<pre><code class="lang-java">{
+   @code
+   String jobName = &quot;my_job_name&quot;;
+   JobId jobIdObject = JobId.of(jobName);
+   Job job = bigquery.getJob(jobIdObject);
+   if (job == null) {
+     // job was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Job getJob(JobId jobId, BigQuery.JobOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobId.html">JobId</a></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobOption.html#com_google_cloud_bigquery_BigQuery_JobOption">JobOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Job.html">Job</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getJob_" data-uid="com.google.cloud.bigquery.BigQuery.getJob*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getJob_java_lang_String_com_google_cloud_bigquery_BigQuery_JobOption____" data-uid="com.google.cloud.bigquery.BigQuery.getJob(java.lang.String,com.google.cloud.bigquery.BigQuery.JobOption...)">getJob(String jobId, BigQuery.JobOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested job or <code>null</code> if not found. If the location of the job is not &quot;US&quot; or &quot;EU&quot;, <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getJob_">#getJob(JobId, JobOption...)</a> must be used instead.</p>
+<p>Example of getting a job.</p>
+<pre><code class="lang-java">{
+   @code
+   String jobName = &quot;my_job_name&quot;;
+   Job job = bigquery.getJob(jobName);
+   if (job == null) {
+     // job was not found
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Job getJob(String jobId, BigQuery.JobOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobOption.html#com_google_cloud_bigquery_BigQuery_JobOption">JobOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Job.html">Job</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getModel_" data-uid="com.google.cloud.bigquery.BigQuery.getModel*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getModel_com_google_cloud_bigquery_ModelId_com_google_cloud_bigquery_BigQuery_ModelOption____" data-uid="com.google.cloud.bigquery.BigQuery.getModel(com.google.cloud.bigquery.ModelId,com.google.cloud.bigquery.BigQuery.ModelOption...)">getModel(ModelId tableId, BigQuery.ModelOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested model or <code>null</code> if not found.</p>
+<p>Example of getting a model.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   String datasetName = &quot;my_dataset_name&quot;;
+   String modelName = &quot;my_model_name&quot;;
+   ModelId modelId = ModelId.of(projectId, datasetName, tableName);
+   Model model = bigquery.getModel(modelId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Model getModel(ModelId tableId, BigQuery.ModelOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.ModelId.html">ModelId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelOption.html#com_google_cloud_bigquery_BigQuery_ModelOption">ModelOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Model.html">Model</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getModel_" data-uid="com.google.cloud.bigquery.BigQuery.getModel*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getModel_java_lang_String_java_lang_String_com_google_cloud_bigquery_BigQuery_ModelOption____" data-uid="com.google.cloud.bigquery.BigQuery.getModel(java.lang.String,java.lang.String,com.google.cloud.bigquery.BigQuery.ModelOption...)">getModel(String datasetId, String modelId, BigQuery.ModelOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested model or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Model getModel(String datasetId, String modelId, BigQuery.ModelOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">modelId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelOption.html#com_google_cloud_bigquery_BigQuery_ModelOption">ModelOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Model.html">Model</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getQueryResults_" data-uid="com.google.cloud.bigquery.BigQuery.getQueryResults*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getQueryResults_com_google_cloud_bigquery_JobId_com_google_cloud_bigquery_BigQuery_QueryResultsOption____" data-uid="com.google.cloud.bigquery.BigQuery.getQueryResults(com.google.cloud.bigquery.JobId,com.google.cloud.bigquery.BigQuery.QueryResultsOption...)">getQueryResults(JobId jobId, BigQuery.QueryResultsOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns results of the query associated with the provided job.</p>
+<p>Users are encouraged to use <a class="xref" href="com.google.cloud.bigquery.Job.html#com_google_cloud_bigquery_Job_getQueryResults_">Job#getQueryResults(QueryResultsOption...)</a> instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract QueryResponse getQueryResults(JobId jobId, BigQuery.QueryResultsOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobId.html">JobId</a></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.QueryResultsOption.html#com_google_cloud_bigquery_BigQuery_QueryResultsOption">QueryResultsOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.QueryResponse.html">QueryResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getRoutine_" data-uid="com.google.cloud.bigquery.BigQuery.getRoutine*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getRoutine_com_google_cloud_bigquery_RoutineId_com_google_cloud_bigquery_BigQuery_RoutineOption____" data-uid="com.google.cloud.bigquery.BigQuery.getRoutine(com.google.cloud.bigquery.RoutineId,com.google.cloud.bigquery.BigQuery.RoutineOption...)">getRoutine(RoutineId routineId, BigQuery.RoutineOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested routine or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Routine getRoutine(RoutineId routineId, BigQuery.RoutineOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.RoutineId.html">RoutineId</a></td>
+        <td><span class="parametername">routineId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineOption.html#com_google_cloud_bigquery_BigQuery_RoutineOption">RoutineOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Routine.html">Routine</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getRoutine_" data-uid="com.google.cloud.bigquery.BigQuery.getRoutine*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getRoutine_java_lang_String_java_lang_String_com_google_cloud_bigquery_BigQuery_RoutineOption____" data-uid="com.google.cloud.bigquery.BigQuery.getRoutine(java.lang.String,java.lang.String,com.google.cloud.bigquery.BigQuery.RoutineOption...)">getRoutine(String datasetId, String routineId, BigQuery.RoutineOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested routine or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Routine getRoutine(String datasetId, String routineId, BigQuery.RoutineOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">routineId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineOption.html#com_google_cloud_bigquery_BigQuery_RoutineOption">RoutineOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Routine.html">Routine</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getTable_" data-uid="com.google.cloud.bigquery.BigQuery.getTable*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getTable_com_google_cloud_bigquery_TableId_com_google_cloud_bigquery_BigQuery_TableOption____" data-uid="com.google.cloud.bigquery.BigQuery.getTable(com.google.cloud.bigquery.TableId,com.google.cloud.bigquery.BigQuery.TableOption...)">getTable(TableId tableId, BigQuery.TableOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested table or <code>null</code> if not found.</p>
+<p>Example of getting a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   TableId tableId = TableId.of(projectId, datasetName, tableName);
+   Table table = bigquery.getTable(tableId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Table getTable(TableId tableId, BigQuery.TableOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableOption.html#com_google_cloud_bigquery_BigQuery_TableOption">TableOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Table.html">Table</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_getTable_" data-uid="com.google.cloud.bigquery.BigQuery.getTable*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_getTable_java_lang_String_java_lang_String_com_google_cloud_bigquery_BigQuery_TableOption____" data-uid="com.google.cloud.bigquery.BigQuery.getTable(java.lang.String,java.lang.String,com.google.cloud.bigquery.BigQuery.TableOption...)">getTable(String datasetId, String tableId, BigQuery.TableOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested table or <code>null</code> if not found.</p>
+<p>Example of getting a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   Table table = bigquery.getTable(datasetName, tableName);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Table getTable(String datasetId, String tableId, BigQuery.TableOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableOption.html#com_google_cloud_bigquery_BigQuery_TableOption">TableOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Table.html">Table</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_insertAll_" data-uid="com.google.cloud.bigquery.BigQuery.insertAll*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_insertAll_com_google_cloud_bigquery_InsertAllRequest_" data-uid="com.google.cloud.bigquery.BigQuery.insertAll(com.google.cloud.bigquery.InsertAllRequest)">insertAll(InsertAllRequest request)</h3>
+  <div class="markdown level1 summary"><p>Sends an insert all request.</p>
+<p>Example of inserting rows into a table without running a load job.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   TableId tableId = TableId.of(datasetName, tableName);
+   // Values of the row to insert
+   Map rowContent = new HashMap&lt;&gt;();
+   rowContent.put(&quot;booleanField&quot;, true);
+   // Bytes are passed in base64
+   rowContent.put(&quot;bytesField&quot;, &quot;Cg0NDg0=&quot;); // 0xA, 0xD, 0xD, 0xE, 0xD in base64
+   // Records are passed as a map
+   Map recordsContent = new HashMap&lt;&gt;();
+   recordsContent.put(&quot;stringField&quot;, &quot;Hello, World!&quot;);
+   rowContent.put(&quot;recordField&quot;, recordsContent);
+   InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId).addRow(&quot;rowId&quot;, rowContent)
+       // More rows can be added in the same RPC by invoking .addRow() on the
+       // builder
+       .build());
+   if (response.hasErrors()) {
+     // If any of the insertions failed, this lets you inspect the errors
+     for (Entry&gt; entry : response.getInsertErrors().entrySet()) {
+       // inspect row error
+     }
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract InsertAllResponse insertAll(InsertAllRequest request)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.InsertAllRequest.html">InsertAllRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.InsertAllResponse.html">InsertAllResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listDatasets_" data-uid="com.google.cloud.bigquery.BigQuery.listDatasets*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listDatasets_com_google_cloud_bigquery_BigQuery_DatasetListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listDatasets(com.google.cloud.bigquery.BigQuery.DatasetListOption...)">listDatasets(BigQuery.DatasetListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the project&#39;s datasets. This method returns partial information on each dataset: (<span class="xref">Dataset#getDatasetId()</span>, <span class="xref">Dataset#getFriendlyName()</span> and <span class="xref">Dataset#getGeneratedId()</span>). To get complete information use either <span class="xref">#getDataset(String,
+ DatasetOption...)</span> or <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getDataset_">#getDataset(DatasetId, DatasetOption...)</a>.</p>
+<p>Example of listing datasets, specifying the page size.</p>
+<pre><code class="lang-java">{
+   @code
+   // List datasets in the default project
+   Page datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
+   for (Dataset dataset : datasets.iterateAll()) {
+     // do something with the dataset
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Dataset&gt; listDatasets(BigQuery.DatasetListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetListOption.html#com_google_cloud_bigquery_BigQuery_DatasetListOption">DatasetListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Dataset.html">Dataset</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listDatasets_" data-uid="com.google.cloud.bigquery.BigQuery.listDatasets*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listDatasets_java_lang_String_com_google_cloud_bigquery_BigQuery_DatasetListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listDatasets(java.lang.String,com.google.cloud.bigquery.BigQuery.DatasetListOption...)">listDatasets(String projectId, BigQuery.DatasetListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the datasets in the provided project. This method returns partial information on each dataset: (<span class="xref">Dataset#getDatasetId()</span>, <span class="xref">Dataset#getFriendlyName()</span> and <span class="xref">Dataset#getGeneratedId()</span>). To get complete information use either <span class="xref">#getDataset(String,
+ DatasetOption...)</span> or <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getDataset_">#getDataset(DatasetId, DatasetOption...)</a>.</p>
+<p>Example of listing datasets in a project, specifying the page size.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   // List datasets in a specified project
+   Page datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
+   for (Dataset dataset : datasets.iterateAll()) {
+     // do something with the dataset
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Dataset&gt; listDatasets(String projectId, BigQuery.DatasetListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetListOption.html#com_google_cloud_bigquery_BigQuery_DatasetListOption">DatasetListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Dataset.html">Dataset</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listJobs_" data-uid="com.google.cloud.bigquery.BigQuery.listJobs*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listJobs_com_google_cloud_bigquery_BigQuery_JobListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listJobs(com.google.cloud.bigquery.BigQuery.JobListOption...)">listJobs(BigQuery.JobListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the jobs.</p>
+<p>Example of listing jobs, specifying the page size.</p>
+<pre><code class="lang-java">{
+   @code
+   Page jobs = bigquery.listJobs(JobListOption.pageSize(100));
+   for (Job job : jobs.iterateAll()) {
+     // do something with the job
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Job&gt; listJobs(BigQuery.JobListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobListOption.html#com_google_cloud_bigquery_BigQuery_JobListOption">JobListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Job.html">Job</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listModels_" data-uid="com.google.cloud.bigquery.BigQuery.listModels*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listModels_com_google_cloud_bigquery_DatasetId_com_google_cloud_bigquery_BigQuery_ModelListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listModels(com.google.cloud.bigquery.DatasetId,com.google.cloud.bigquery.BigQuery.ModelListOption...)">listModels(DatasetId datasetId, BigQuery.ModelListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the models in the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Model&gt; listModels(DatasetId datasetId, BigQuery.ModelListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelListOption.html#com_google_cloud_bigquery_BigQuery_ModelListOption">ModelListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Model.html">Model</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listModels_" data-uid="com.google.cloud.bigquery.BigQuery.listModels*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listModels_java_lang_String_com_google_cloud_bigquery_BigQuery_ModelListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listModels(java.lang.String,com.google.cloud.bigquery.BigQuery.ModelListOption...)">listModels(String datasetId, BigQuery.ModelListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the models in the dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Model&gt; listModels(String datasetId, BigQuery.ModelListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelListOption.html#com_google_cloud_bigquery_BigQuery_ModelListOption">ModelListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Model.html">Model</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listPartitions_" data-uid="com.google.cloud.bigquery.BigQuery.listPartitions*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listPartitions_com_google_cloud_bigquery_TableId_" data-uid="com.google.cloud.bigquery.BigQuery.listPartitions(com.google.cloud.bigquery.TableId)">listPartitions(TableId tableId)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract List&lt;String&gt; listPartitions(TableId tableId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td><p>A list of the partition ids present in the partitioned table</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listRoutines_" data-uid="com.google.cloud.bigquery.BigQuery.listRoutines*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listRoutines_com_google_cloud_bigquery_DatasetId_com_google_cloud_bigquery_BigQuery_RoutineListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listRoutines(com.google.cloud.bigquery.DatasetId,com.google.cloud.bigquery.BigQuery.RoutineListOption...)">listRoutines(DatasetId datasetId, BigQuery.RoutineListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the routines in the specified dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Routine&gt; listRoutines(DatasetId datasetId, BigQuery.RoutineListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineListOption.html#com_google_cloud_bigquery_BigQuery_RoutineListOption">RoutineListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Routine.html">Routine</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listRoutines_" data-uid="com.google.cloud.bigquery.BigQuery.listRoutines*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listRoutines_java_lang_String_com_google_cloud_bigquery_BigQuery_RoutineListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listRoutines(java.lang.String,com.google.cloud.bigquery.BigQuery.RoutineListOption...)">listRoutines(String datasetId, BigQuery.RoutineListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the routines in the specified dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Routine&gt; listRoutines(String datasetId, BigQuery.RoutineListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineListOption.html#com_google_cloud_bigquery_BigQuery_RoutineListOption">RoutineListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Routine.html">Routine</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listTableData_" data-uid="com.google.cloud.bigquery.BigQuery.listTableData*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listTableData_com_google_cloud_bigquery_TableId_com_google_cloud_bigquery_BigQuery_TableDataListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listTableData(com.google.cloud.bigquery.TableId,com.google.cloud.bigquery.BigQuery.TableDataListOption...)">listTableData(TableId tableId, BigQuery.TableDataListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the table&#39;s rows.</p>
+<p>Example of listing table rows, specifying the page size.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   TableId tableIdObject = TableId.of(datasetName, tableName);
+   // This example reads the result 100 rows per RPC call. If there&#39;s no need
+   // to limit the number,
+   // simply omit the option.
+   TableResult tableData = bigquery.listTableData(tableIdObject, TableDataListOption.pageSize(100));
+   for (FieldValueList row : tableData.iterateAll()) {
+     // do something with the row
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableResult listTableData(TableId tableId, BigQuery.TableDataListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableDataListOption.html#com_google_cloud_bigquery_BigQuery_TableDataListOption">TableDataListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listTableData_" data-uid="com.google.cloud.bigquery.BigQuery.listTableData*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listTableData_com_google_cloud_bigquery_TableId_com_google_cloud_bigquery_Schema_com_google_cloud_bigquery_BigQuery_TableDataListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listTableData(com.google.cloud.bigquery.TableId,com.google.cloud.bigquery.Schema,com.google.cloud.bigquery.BigQuery.TableDataListOption...)">listTableData(TableId tableId, Schema schema, BigQuery.TableDataListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the table&#39;s rows. If the <code>schema</code> is not <code>null</code>, it is available to the <a class="xref" href="com.google.cloud.bigquery.FieldValueList.html">FieldValueList</a> iterated over.</p>
+<p>Example of listing table rows with schema.</p>
+<pre><code class="lang-java">{
+   @code
+   Schema schema = Schema.of(Field.of(&quot;word&quot;, LegacySQLTypeName.STRING),
+       Field.of(&quot;word_count&quot;, LegacySQLTypeName.STRING), Field.of(&quot;corpus&quot;, LegacySQLTypeName.STRING),
+       Field.of(&quot;corpus_date&quot;, LegacySQLTypeName.STRING));
+   TableResult tableData = bigquery.listTableData(TableId.of(&quot;bigquery-public-data&quot;, &quot;samples&quot;, &quot;shakespeare&quot;),
+       schema);
+   FieldValueList row = tableData.getValues().iterator().next();
+   System.out.println(row.get(&quot;word&quot;).getStringValue());
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableResult listTableData(TableId tableId, Schema schema, BigQuery.TableDataListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Schema.html">Schema</a></td>
+        <td><span class="parametername">schema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableDataListOption.html#com_google_cloud_bigquery_BigQuery_TableDataListOption">TableDataListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listTableData_" data-uid="com.google.cloud.bigquery.BigQuery.listTableData*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listTableData_java_lang_String_java_lang_String_com_google_cloud_bigquery_BigQuery_TableDataListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listTableData(java.lang.String,java.lang.String,com.google.cloud.bigquery.BigQuery.TableDataListOption...)">listTableData(String datasetId, String tableId, BigQuery.TableDataListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the table&#39;s rows.</p>
+<p>Example of listing table rows, specifying the page size.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   // This example reads the result 100 rows per RPC call. If there&#39;s no need
+   // to limit the number,
+   // simply omit the option.
+   TableResult tableData = bigquery.listTableData(datasetName, tableName, TableDataListOption.pageSize(100));
+   for (FieldValueList row : tableData.iterateAll()) {
+     // do something with the row
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableResult listTableData(String datasetId, String tableId, BigQuery.TableDataListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableDataListOption.html#com_google_cloud_bigquery_BigQuery_TableDataListOption">TableDataListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listTableData_" data-uid="com.google.cloud.bigquery.BigQuery.listTableData*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listTableData_java_lang_String_java_lang_String_com_google_cloud_bigquery_Schema_com_google_cloud_bigquery_BigQuery_TableDataListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listTableData(java.lang.String,java.lang.String,com.google.cloud.bigquery.Schema,com.google.cloud.bigquery.BigQuery.TableDataListOption...)">listTableData(String datasetId, String tableId, Schema schema, BigQuery.TableDataListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the table&#39;s rows. If the <code>schema</code> is not <code>null</code>, it is available to the <a class="xref" href="com.google.cloud.bigquery.FieldValueList.html">FieldValueList</a> iterated over.</p>
+<p>Example of listing table rows with schema.</p>
+<pre><code class="lang-java">String datasetName = &quot;my_dataset_name&quot;;
+ String tableName = &quot;my_table_name&quot;;
+ Schema schema = ...;
+ String field = &quot;field&quot;;
+ TableResult tableData = bigquery.listTableData(datasetName, tableName, schema);
+ for (FieldValueList row : tableData.iterateAll()) {
+   row.get(field);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableResult listTableData(String datasetId, String tableId, Schema schema, BigQuery.TableDataListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Schema.html">Schema</a></td>
+        <td><span class="parametername">schema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableDataListOption.html#com_google_cloud_bigquery_BigQuery_TableDataListOption">TableDataListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listTables_" data-uid="com.google.cloud.bigquery.BigQuery.listTables*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listTables_com_google_cloud_bigquery_DatasetId_com_google_cloud_bigquery_BigQuery_TableListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listTables(com.google.cloud.bigquery.DatasetId,com.google.cloud.bigquery.BigQuery.TableListOption...)">listTables(DatasetId datasetId, BigQuery.TableListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the tables in the dataset. This method returns partial information on each table: (<span class="xref">Table#getTableId()</span>, <span class="xref">Table#getFriendlyName()</span>, <span class="xref">Table#getGeneratedId()</span> and type, which is part of <span class="xref">Table#getDefinition()</span>). To get complete information use either <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getTable_">#getTable(TableId, TableOption...)</a> or <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getTable_">#getTable(String, String, TableOption...)</a>.</p>
+<p>Example of listing the tables in a dataset.</p>
+<pre><code class="lang-java">{
+   @code
+   String projectId = &quot;my_project_id&quot;;
+   String datasetName = &quot;my_dataset_name&quot;;
+   DatasetId datasetId = DatasetId.of(projectId, datasetName);
+   Page  tables = bigquery.listTables(datasetId, TableListOption.pageSize(100));
+   for (Table table : tables.iterateAll()) {
+     // do something with the table
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Table&gt; listTables(DatasetId datasetId, BigQuery.TableListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetId.html">DatasetId</a></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableListOption.html#com_google_cloud_bigquery_BigQuery_TableListOption">TableListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Table.html">Table</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_listTables_" data-uid="com.google.cloud.bigquery.BigQuery.listTables*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_listTables_java_lang_String_com_google_cloud_bigquery_BigQuery_TableListOption____" data-uid="com.google.cloud.bigquery.BigQuery.listTables(java.lang.String,com.google.cloud.bigquery.BigQuery.TableListOption...)">listTables(String datasetId, BigQuery.TableListOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Lists the tables in the dataset. This method returns partial information on each table: (<span class="xref">Table#getTableId()</span>, <span class="xref">Table#getFriendlyName()</span>, <span class="xref">Table#getGeneratedId()</span> and type, which is part of <span class="xref">Table#getDefinition()</span>). To get complete information use either <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getTable_">#getTable(TableId, TableOption...)</a> or <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_getTable_">#getTable(String, String, TableOption...)</a>.</p>
+<p>Example of listing the tables in a dataset, specifying the page size.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   Page  tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
+   for (Table table : tables.iterateAll()) {
+     // do something with the table
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Page&lt;Table&gt; listTables(String datasetId, BigQuery.TableListOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableListOption.html#com_google_cloud_bigquery_BigQuery_TableListOption">TableListOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.paging.Page</span>&lt;<a class="xref" href="com.google.cloud.bigquery.Table.html">Table</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_query_" data-uid="com.google.cloud.bigquery.BigQuery.query*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_query_com_google_cloud_bigquery_QueryJobConfiguration_com_google_cloud_bigquery_BigQuery_JobOption____" data-uid="com.google.cloud.bigquery.BigQuery.query(com.google.cloud.bigquery.QueryJobConfiguration,com.google.cloud.bigquery.BigQuery.JobOption...)">query(QueryJobConfiguration configuration, BigQuery.JobOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Runs the query associated with the request, using an internally-generated random JobId.</p>
+<p>If the location of the job is not &quot;US&quot; or &quot;EU&quot;, <span class="xref">#query(QueryJobConfiguration, JobId,
+ JobOption...)</span> must be used instead.</p>
+<p>This method cannot be used in conjuction with <a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.html#com_google_cloud_bigquery_QueryJobConfiguration_dryRun__">QueryJobConfiguration#dryRun()</a> queries. Since dry-run queries are not actually executed, there&#39;s no way to retrieve results.</p>
+<p>Example of running a query.</p>
+<pre><code class="lang-java">{
+   @code
+   // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+   String query = &quot;SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;&quot;;
+   QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
+
+   // Print the results.
+   for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
+     for (FieldValue val : row) {
+       System.out.printf(&quot;%s,&quot;, val.toString());
+     }
+     System.out.printf(&quot;\n&quot;);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableResult query(QueryJobConfiguration configuration, BigQuery.JobOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.html">QueryJobConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobOption.html#com_google_cloud_bigquery_BigQuery_JobOption">JobOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="exceptions">Exceptions</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.InterruptedException</span></td>
+        <td><p>upon failure</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobException.html">JobException</a></td>
+        <td><p>upon failure</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_query_" data-uid="com.google.cloud.bigquery.BigQuery.query*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_query_com_google_cloud_bigquery_QueryJobConfiguration_com_google_cloud_bigquery_JobId_com_google_cloud_bigquery_BigQuery_JobOption____" data-uid="com.google.cloud.bigquery.BigQuery.query(com.google.cloud.bigquery.QueryJobConfiguration,com.google.cloud.bigquery.JobId,com.google.cloud.bigquery.BigQuery.JobOption...)">query(QueryJobConfiguration configuration, JobId jobId, BigQuery.JobOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Runs the query associated with the request, using the given JobId.</p>
+<p>If the location of the job is not &quot;US&quot; or &quot;EU&quot;, the <code>jobId</code> must specify the job location.</p>
+<p>This method cannot be used in conjuction with <a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.html#com_google_cloud_bigquery_QueryJobConfiguration_dryRun__">QueryJobConfiguration#dryRun()</a> queries. Since dry-run queries are not actually executed, there&#39;s no way to retrieve results.</p>
+<p>See <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_query_">#query(QueryJobConfiguration, JobOption...)</a> for examples on populating a <a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.html">QueryJobConfiguration</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableResult query(QueryJobConfiguration configuration, JobId jobId, BigQuery.JobOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.QueryJobConfiguration.html">QueryJobConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobId.html">JobId</a></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.JobOption.html#com_google_cloud_bigquery_BigQuery_JobOption">JobOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableResult.html">TableResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="exceptions">Exceptions</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.InterruptedException</span></td>
+        <td><p>upon failure</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobException.html">JobException</a></td>
+        <td><p>upon failure</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_setIamPolicy_" data-uid="com.google.cloud.bigquery.BigQuery.setIamPolicy*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_setIamPolicy_com_google_cloud_bigquery_TableId_com_google_cloud_Policy_com_google_cloud_bigquery_BigQuery_IAMOption____" data-uid="com.google.cloud.bigquery.BigQuery.setIamPolicy(com.google.cloud.bigquery.TableId,com.google.cloud.Policy,com.google.cloud.bigquery.BigQuery.IAMOption...)">setIamPolicy(TableId tableId, Policy policy, BigQuery.IAMOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Sets the IAM policy for a specified table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Policy setIamPolicy(TableId tableId, Policy policy, BigQuery.IAMOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">com.google.cloud.Policy</span></td>
+        <td><span class="parametername">policy</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.IAMOption.html#com_google_cloud_bigquery_BigQuery_IAMOption">IAMOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.Policy</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_testIamPermissions_" data-uid="com.google.cloud.bigquery.BigQuery.testIamPermissions*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_testIamPermissions_com_google_cloud_bigquery_TableId_java_util_List_java_lang_String__com_google_cloud_bigquery_BigQuery_IAMOption____" data-uid="com.google.cloud.bigquery.BigQuery.testIamPermissions(com.google.cloud.bigquery.TableId,java.util.List&lt;java.lang.String&gt;,com.google.cloud.bigquery.BigQuery.IAMOption...)">testIamPermissions(TableId table, List&lt;String&gt; permissions, BigQuery.IAMOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Tests whether the caller holds specific permissions on a BigQuery table. The returned list represents the subset of granted permissions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract List&lt;String&gt; testIamPermissions(TableId table, List&lt;String&gt; permissions, BigQuery.IAMOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableId.html">TableId</a></td>
+        <td><span class="parametername">table</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td><span class="parametername">permissions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.IAMOption.html#com_google_cloud_bigquery_BigQuery_IAMOption">IAMOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_update_" data-uid="com.google.cloud.bigquery.BigQuery.update*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_update_com_google_cloud_bigquery_DatasetInfo_com_google_cloud_bigquery_BigQuery_DatasetOption____" data-uid="com.google.cloud.bigquery.BigQuery.update(com.google.cloud.bigquery.DatasetInfo,com.google.cloud.bigquery.BigQuery.DatasetOption...)">update(DatasetInfo datasetInfo, BigQuery.DatasetOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Updates dataset information.</p>
+<p>Example of updating a dataset by changing its description.</p>
+<pre><code class="lang-java">{
+   @code
+   // String datasetName = &quot;my_dataset_name&quot;;
+   // String tableName = &quot;my_table_name&quot;;
+   // String newDescription = &quot;new_description&quot;;
+
+   Table beforeTable = bigquery.getTable(datasetName, tableName);
+   TableInfo tableInfo = beforeTable.toBuilder().setDescription(newDescription).build();
+   Table afterTable = bigquery.update(tableInfo);
+
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Dataset update(DatasetInfo datasetInfo, BigQuery.DatasetOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.DatasetInfo.html">DatasetInfo</a></td>
+        <td><span class="parametername">datasetInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.DatasetOption.html#com_google_cloud_bigquery_BigQuery_DatasetOption">DatasetOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Dataset.html">Dataset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_update_" data-uid="com.google.cloud.bigquery.BigQuery.update*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_update_com_google_cloud_bigquery_ModelInfo_com_google_cloud_bigquery_BigQuery_ModelOption____" data-uid="com.google.cloud.bigquery.BigQuery.update(com.google.cloud.bigquery.ModelInfo,com.google.cloud.bigquery.BigQuery.ModelOption...)">update(ModelInfo modelInfo, BigQuery.ModelOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Updates model information.</p>
+<p>Example of updating a model by changing its description.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String modelName = &quot;my_model_name&quot;;
+   String newDescription = &quot;new_description&quot;;
+   Model beforeModel = bigquery.getModel(datasetName, modelName);
+   ModelInfo modelInfo = beforeModel.toBuilder().setDescription(newDescription).build();
+   Model afterModel = bigquery.update(modelInfo);
+ }
+</code></pre><p>Example of updating a model by changing its expiration.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String modelName = &quot;my_model_name&quot;;
+   Model beforeModel = bigquery.getModel(datasetName, modelName);
+
+   // Set model to expire 5 days from now.
+   long expirationMillis = DateTime.now().plusDays(5).getMillis();
+   ModelInfo modelInfo = beforeModel.toBuilder().setExpirationTime(expirationMillis).build();
+   Model afterModel = bigquery.update(modelInfo);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Model update(ModelInfo modelInfo, BigQuery.ModelOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.ModelInfo.html">ModelInfo</a></td>
+        <td><span class="parametername">modelInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.ModelOption.html#com_google_cloud_bigquery_BigQuery_ModelOption">ModelOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Model.html">Model</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_update_" data-uid="com.google.cloud.bigquery.BigQuery.update*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_update_com_google_cloud_bigquery_RoutineInfo_com_google_cloud_bigquery_BigQuery_RoutineOption____" data-uid="com.google.cloud.bigquery.BigQuery.update(com.google.cloud.bigquery.RoutineInfo,com.google.cloud.bigquery.BigQuery.RoutineOption...)">update(RoutineInfo routineInfo, BigQuery.RoutineOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Updates routine information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Routine update(RoutineInfo routineInfo, BigQuery.RoutineOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.RoutineInfo.html">RoutineInfo</a></td>
+        <td><span class="parametername">routineInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.RoutineOption.html#com_google_cloud_bigquery_BigQuery_RoutineOption">RoutineOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Routine.html">Routine</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_update_" data-uid="com.google.cloud.bigquery.BigQuery.update*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_update_com_google_cloud_bigquery_TableInfo_com_google_cloud_bigquery_BigQuery_TableOption____" data-uid="com.google.cloud.bigquery.BigQuery.update(com.google.cloud.bigquery.TableInfo,com.google.cloud.bigquery.BigQuery.TableOption...)">update(TableInfo tableInfo, BigQuery.TableOption[] options)</h3>
+  <div class="markdown level1 summary"><p>Updates table information.</p>
+<p>Example of updating a table by changing its description.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   String newDescription = &quot;new_description&quot;;
+   Table beforeTable = bigquery.getTable(datasetName, tableName);
+   TableInfo tableInfo = beforeTable.toBuilder().setDescription(newDescription).build();
+   Table afterTable = bigquery.update(tableInfo);
+ }
+</code></pre><p>Example of updating a table by changing its expiration.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   Table beforeTable = bigquery.getTable(datasetName, tableName);
+
+   // Set table to expire 5 days from now.
+   long expirationMillis = DateTime.now().plusDays(5).getMillis();
+   TableInfo tableInfo = beforeTable.toBuilder().setExpirationTime(expirationMillis).build();
+   Table afterTable = bigquery.update(tableInfo);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Table update(TableInfo tableInfo, BigQuery.TableOption[] options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableInfo.html">TableInfo</a></td>
+        <td><span class="parametername">tableInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.TableOption.html#com_google_cloud_bigquery_BigQuery_TableOption">TableOption</a>[]</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.Table.html">Table</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_writer_" data-uid="com.google.cloud.bigquery.BigQuery.writer*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_writer_com_google_cloud_bigquery_JobId_com_google_cloud_bigquery_WriteChannelConfiguration_" data-uid="com.google.cloud.bigquery.BigQuery.writer(com.google.cloud.bigquery.JobId,com.google.cloud.bigquery.WriteChannelConfiguration)">writer(JobId jobId, WriteChannelConfiguration writeChannelConfiguration)</h3>
+  <div class="markdown level1 summary"><p>Returns a channel to write data to be inserted into a BigQuery table. Data format and other options can be configured using the <a class="xref" href="com.google.cloud.bigquery.WriteChannelConfiguration.html">WriteChannelConfiguration</a> parameter. If the job is not in &quot;US&quot; or &quot;EU&quot;, the <code>jobId</code> must contain the location of the job.</p>
+<p>Example of creating a channel with which to write to a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   String csvData = &quot;StringValue1\nStringValue2\n&quot;;
+   String location = &quot;us&quot;;
+   TableId tableId = TableId.of(datasetName, tableName);
+   WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.newBuilder(tableId)
+       .setFormatOptions(FormatOptions.csv()).build();
+   // The location must be specified; other fields can be auto-detected.
+   JobId jobId = JobId.newBuilder().setLocation(location).build();
+   TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+   // Write data to writer
+   try {
+     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   } finally {
+     writer.close();
+   }
+   // Get load job
+   Job job = writer.getJob();
+   job = job.waitFor();
+   LoadStatistics stats = job.getStatistics();
+   return stats.getOutputRows();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableDataWriteChannel writer(JobId jobId, WriteChannelConfiguration writeChannelConfiguration)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.JobId.html">JobId</a></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.WriteChannelConfiguration.html">WriteChannelConfiguration</a></td>
+        <td><span class="parametername">writeChannelConfiguration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableDataWriteChannel.html">TableDataWriteChannel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_BigQuery_writer_" data-uid="com.google.cloud.bigquery.BigQuery.writer*"></a>
+  <h3 id="com_google_cloud_bigquery_BigQuery_writer_com_google_cloud_bigquery_WriteChannelConfiguration_" data-uid="com.google.cloud.bigquery.BigQuery.writer(com.google.cloud.bigquery.WriteChannelConfiguration)">writer(WriteChannelConfiguration writeChannelConfiguration)</h3>
+  <div class="markdown level1 summary"><p>Returns a channel to write data to be inserted into a BigQuery table. Data format and other options can be configured using the <a class="xref" href="com.google.cloud.bigquery.WriteChannelConfiguration.html">WriteChannelConfiguration</a> parameter. If the job is not in &quot;US&quot; or &quot;EU&quot;, <a class="xref" href="com.google.cloud.bigquery.BigQuery.html#com_google_cloud_bigquery_BigQuery_writer_com_google_cloud_bigquery_JobId_com_google_cloud_bigquery_WriteChannelConfiguration_">#writer(JobId, WriteChannelConfiguration)</a> must be used instead.</p>
+<p>Example of creating a channel with which to write to a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   String csvData = &quot;StringValue1\nStringValue2\n&quot;;
+   TableId tableId = TableId.of(datasetName, tableName);
+   WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.newBuilder(tableId)
+       .setFormatOptions(FormatOptions.csv()).build();
+   TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+   // Write data to writer
+   try {
+     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   } finally {
+     writer.close();
+   }
+   // Get load job
+   Job job = writer.getJob();
+   job = job.waitFor();
+   LoadStatistics stats = job.getStatistics();
+   return stats.getOutputRows();
+ }
+</code></pre><p>Example of writing a local file to a table.</p>
+<pre><code class="lang-java">{
+   @code
+   String datasetName = &quot;my_dataset_name&quot;;
+   String tableName = &quot;my_table_name&quot;;
+   Path csvPath = FileSystems.getDefault().getPath(&quot;.&quot;, &quot;my-data.csv&quot;);
+   String location = &quot;us&quot;;
+   TableId tableId = TableId.of(datasetName, tableName);
+   WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.newBuilder(tableId)
+       .setFormatOptions(FormatOptions.csv()).build();
+   // The location must be specified; other fields can be auto-detected.
+   JobId jobId = JobId.newBuilder().setLocation(location).build();
+   TableDataWriteChannel writer = bigquery.writer(jobId, writeChannelConfiguration);
+   // Write data to writer
+   try (OutputStream stream = Channels.newOutputStream(writer)) {
+     Files.copy(csvPath, stream);
+   }
+   // Get load job
+   Job job = writer.getJob();
+   job = job.waitFor();
+   LoadStatistics stats = job.getStatistics();
+   return stats.getOutputRows();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.WriteChannelConfiguration.html">WriteChannelConfiguration</a></td>
+        <td><span class="parametername">writeChannelConfiguration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.TableDataWriteChannel.html">TableDataWriteChannel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">com.google.cloud.Service&lt;com.google.cloud.bigquery.BigQueryOptions&gt;</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

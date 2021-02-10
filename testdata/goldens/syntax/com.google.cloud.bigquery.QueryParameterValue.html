@@ -1,0 +1,1081 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class QueryParameterValue
+</h1>
+      <article data-uid="com.google.cloud.bigquery.QueryParameterValue">
+  
+  
+  <div class="markdown level0 summary"><p>A value for a QueryParameter along with its type.</p>
+<p>A static factory method is provided for each of the possible types (e.g. <a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html#com_google_cloud_bigquery_QueryParameterValue_int64_java_lang_Long_">#int64(Long)</a> for StandardSQLTypeName.INT64). Alternatively, an instance can be constructed by calling <a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html#com_google_cloud_bigquery_QueryParameterValue_of_">#of(Object, Class)</a> with the value and a Class object, which will use these mappings:</p>
+<ul>
+<li>Boolean: StandardSQLTypeName.BOOL</li>
+<li>String: StandardSQLTypeName.STRING</li>
+<li>Integer: StandardSQLTypeName.INT64</li>
+<li>Long: StandardSQLTypeName.INT64</li>
+<li>Double: StandardSQLTypeName.FLOAT64</li>
+<li>Float: StandardSQLTypeName.FLOAT64</li>
+<li>BigDecimal: StandardSQLTypeName.NUMERIC</li>
+<li>BigNumeric: StandardSQLTypeName.BIGNUMERIC</li>
+</ul>
+<p>No other types are supported through that entry point. The other types can be created by calling <a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html#com_google_cloud_bigquery_QueryParameterValue_of_">#of(Object, StandardSQLTypeName)</a> with the value and a particular StandardSQLTypeName enum value.</p>
+<p>Struct parameters are currently not supported.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">QueryParameterValue</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">java.io.Serializable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_QueryParameterValue_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract class QueryParameterValue implements Serializable</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_array_" data-uid="com.google.cloud.bigquery.QueryParameterValue.array*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue__T_array_T___com_google_cloud_bigquery_StandardSQLTypeName_" data-uid="com.google.cloud.bigquery.QueryParameterValue.&lt;T&gt;array(T[],com.google.cloud.bigquery.StandardSQLTypeName)">&lt;T&gt;array(T[] array, StandardSQLTypeName type)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of ARRAY the given array element type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue &lt;T&gt;array(T[] array, StandardSQLTypeName type)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.StandardSQLTypeName.html">StandardSQLTypeName</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_array_" data-uid="com.google.cloud.bigquery.QueryParameterValue.array*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue__T_array_T___java_lang_Class_T__" data-uid="com.google.cloud.bigquery.QueryParameterValue.&lt;T&gt;array(T[],java.lang.Class&lt;T&gt;)">&lt;T&gt;array(T[] array, Class&lt;T&gt; clazz)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of ARRAY, and an array element type based on the given class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue &lt;T&gt;array(T[] array, Class&lt;T&gt; clazz)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.Class</span>&lt;<span class="xref">T</span>&gt;</td>
+        <td><span class="parametername">clazz</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_of_" data-uid="com.google.cloud.bigquery.QueryParameterValue.of*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue__T_of_T_com_google_cloud_bigquery_StandardSQLTypeName_" data-uid="com.google.cloud.bigquery.QueryParameterValue.&lt;T&gt;of(T,com.google.cloud.bigquery.StandardSQLTypeName)">&lt;T&gt;of(T value, StandardSQLTypeName type)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with the given value and type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue &lt;T&gt;of(T value, StandardSQLTypeName type)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.StandardSQLTypeName.html">StandardSQLTypeName</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_of_" data-uid="com.google.cloud.bigquery.QueryParameterValue.of*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue__T_of_T_java_lang_Class_T__" data-uid="com.google.cloud.bigquery.QueryParameterValue.&lt;T&gt;of(T,java.lang.Class&lt;T&gt;)">&lt;T&gt;of(T value, Class&lt;T&gt; type)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with the given value and type. Note: this does not support BigNumeric</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue &lt;T&gt;of(T value, Class&lt;T&gt; type)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.Class</span>&lt;<span class="xref">T</span>&gt;</td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_bigNumeric_" data-uid="com.google.cloud.bigquery.QueryParameterValue.bigNumeric*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_bigNumeric_java_math_BigDecimal_" data-uid="com.google.cloud.bigquery.QueryParameterValue.bigNumeric(java.math.BigDecimal)">bigNumeric(BigDecimal value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of BIGNUMERIC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue bigNumeric(BigDecimal value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.math.BigDecimal</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_bool_" data-uid="com.google.cloud.bigquery.QueryParameterValue.bool*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_bool_java_lang_Boolean_" data-uid="com.google.cloud.bigquery.QueryParameterValue.bool(java.lang.Boolean)">bool(Boolean value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of BOOL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue bool(Boolean value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Boolean</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_bytes_" data-uid="com.google.cloud.bigquery.QueryParameterValue.bytes*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_bytes_byte___" data-uid="com.google.cloud.bigquery.QueryParameterValue.bytes(byte[])">bytes(byte[] value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of BYTES.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue bytes(byte[] value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">byte</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_date_" data-uid="com.google.cloud.bigquery.QueryParameterValue.date*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_date_java_lang_String_" data-uid="com.google.cloud.bigquery.QueryParameterValue.date(java.lang.String)">date(String value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of DATE. Must be in the format &quot;yyyy-MM-dd&quot;, e.g. &quot;2014-08-19&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue date(String value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_dateTime_" data-uid="com.google.cloud.bigquery.QueryParameterValue.dateTime*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_dateTime_java_lang_String_" data-uid="com.google.cloud.bigquery.QueryParameterValue.dateTime(java.lang.String)">dateTime(String value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of DATETIME. Must be in the format &quot;yyyy-MM-dd HH:mm:ss.SSSSSS&quot;, e.g. &quot;&quot;2014-08-19 12:41:35.220000&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue dateTime(String value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_float64_" data-uid="com.google.cloud.bigquery.QueryParameterValue.float64*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_float64_java_lang_Double_" data-uid="com.google.cloud.bigquery.QueryParameterValue.float64(java.lang.Double)">float64(Double value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of FLOAT64.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue float64(Double value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_float64_" data-uid="com.google.cloud.bigquery.QueryParameterValue.float64*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_float64_java_lang_Float_" data-uid="com.google.cloud.bigquery.QueryParameterValue.float64(java.lang.Float)">float64(Float value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of FLOAT64.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue float64(Float value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Float</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_getArrayType_" data-uid="com.google.cloud.bigquery.QueryParameterValue.getArrayType*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_getArrayType__" data-uid="com.google.cloud.bigquery.QueryParameterValue.getArrayType()">getArrayType()</h3>
+  <div class="markdown level1 summary"><p>Returns the data type of the array elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract StandardSQLTypeName getArrayType()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.StandardSQLTypeName.html">StandardSQLTypeName</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_getArrayValues_" data-uid="com.google.cloud.bigquery.QueryParameterValue.getArrayValues*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_getArrayValues__" data-uid="com.google.cloud.bigquery.QueryParameterValue.getArrayValues()">getArrayValues()</h3>
+  <div class="markdown level1 summary"><p>Returns the array values of this parameter. The returned list, if not null, is immutable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public List&lt;QueryParameterValue&gt; getArrayValues()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html">QueryParameterValue</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_getStructTypes_" data-uid="com.google.cloud.bigquery.QueryParameterValue.getStructTypes*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_getStructTypes__" data-uid="com.google.cloud.bigquery.QueryParameterValue.getStructTypes()">getStructTypes()</h3>
+  <div class="markdown level1 summary"><p>Returns the data type of the struct elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Map&lt;String,QueryParameterValue&gt; getStructTypes()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html">QueryParameterValue</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_getStructValues_" data-uid="com.google.cloud.bigquery.QueryParameterValue.getStructValues*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_getStructValues__" data-uid="com.google.cloud.bigquery.QueryParameterValue.getStructValues()">getStructValues()</h3>
+  <div class="markdown level1 summary"><p>Returns the struct values of this parameter. The returned map, if not null, is immutable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Map&lt;String,QueryParameterValue&gt; getStructValues()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html">QueryParameterValue</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_getType_" data-uid="com.google.cloud.bigquery.QueryParameterValue.getType*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_getType__" data-uid="com.google.cloud.bigquery.QueryParameterValue.getType()">getType()</h3>
+  <div class="markdown level1 summary"><p>Returns the data type of this parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract StandardSQLTypeName getType()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.StandardSQLTypeName.html">StandardSQLTypeName</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_getValue_" data-uid="com.google.cloud.bigquery.QueryParameterValue.getValue*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_getValue__" data-uid="com.google.cloud.bigquery.QueryParameterValue.getValue()">getValue()</h3>
+  <div class="markdown level1 summary"><p>Returns the value of this parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract String getValue()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_int64_" data-uid="com.google.cloud.bigquery.QueryParameterValue.int64*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_int64_java_lang_Integer_" data-uid="com.google.cloud.bigquery.QueryParameterValue.int64(java.lang.Integer)">int64(Integer value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of INT64.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue int64(Integer value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Integer</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_int64_" data-uid="com.google.cloud.bigquery.QueryParameterValue.int64*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_int64_java_lang_Long_" data-uid="com.google.cloud.bigquery.QueryParameterValue.int64(java.lang.Long)">int64(Long value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of INT64.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue int64(Long value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Long</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_newBuilder_" data-uid="com.google.cloud.bigquery.QueryParameterValue.newBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_newBuilder__" data-uid="com.google.cloud.bigquery.QueryParameterValue.newBuilder()">newBuilder()</h3>
+  <div class="markdown level1 summary"><p>Returns a builder for the <code>QueryParameterValue</code> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue.Builder newBuilder()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.Builder.html#com_google_cloud_bigquery_QueryParameterValue_Builder">QueryParameterValue.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_numeric_" data-uid="com.google.cloud.bigquery.QueryParameterValue.numeric*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_numeric_java_math_BigDecimal_" data-uid="com.google.cloud.bigquery.QueryParameterValue.numeric(java.math.BigDecimal)">numeric(BigDecimal value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of NUMERIC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue numeric(BigDecimal value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.math.BigDecimal</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_string_" data-uid="com.google.cloud.bigquery.QueryParameterValue.string*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_string_java_lang_String_" data-uid="com.google.cloud.bigquery.QueryParameterValue.string(java.lang.String)">string(String value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of STRING.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue string(String value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_struct_" data-uid="com.google.cloud.bigquery.QueryParameterValue.struct*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_struct_java_util_Map_java_lang_String_com_google_cloud_bigquery_QueryParameterValue__" data-uid="com.google.cloud.bigquery.QueryParameterValue.struct(java.util.Map&lt;java.lang.String,com.google.cloud.bigquery.QueryParameterValue&gt;)">struct(Map&lt;String,QueryParameterValue&gt; struct)</h3>
+  <div class="markdown level1 summary"><p>Creates a map with <code>QueryParameterValue</code> object and a type of STRUCT the given struct element type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue struct(Map&lt;String,QueryParameterValue&gt; struct)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<span class="xref">java.lang.String</span>,<a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.html">QueryParameterValue</a>&gt;</td>
+        <td><span class="parametername">struct</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_time_" data-uid="com.google.cloud.bigquery.QueryParameterValue.time*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_time_java_lang_String_" data-uid="com.google.cloud.bigquery.QueryParameterValue.time(java.lang.String)">time(String value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of TIME. Must be in the format &quot;HH:mm:ss.SSSSSS&quot;, e.g. &quot;12:41:35.220000&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue time(String value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_timestamp_" data-uid="com.google.cloud.bigquery.QueryParameterValue.timestamp*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_timestamp_java_lang_Long_" data-uid="com.google.cloud.bigquery.QueryParameterValue.timestamp(java.lang.Long)">timestamp(Long value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of TIMESTAMP.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue timestamp(Long value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.Long</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_timestamp_" data-uid="com.google.cloud.bigquery.QueryParameterValue.timestamp*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_timestamp_java_lang_String_" data-uid="com.google.cloud.bigquery.QueryParameterValue.timestamp(java.lang.String)">timestamp(String value)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>QueryParameterValue</code> object with a type of TIMESTAMP. Must be in the format &quot;yyyy-MM-dd HH:mm:ss.SSSSSSZZ&quot;, e.g. &quot;2014-08-19 12:41:35.220000+00:00&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static QueryParameterValue timestamp(String value)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_QueryParameterValue_toBuilder_" data-uid="com.google.cloud.bigquery.QueryParameterValue.toBuilder*"></a>
+  <h3 id="com_google_cloud_bigquery_QueryParameterValue_toBuilder__" data-uid="com.google.cloud.bigquery.QueryParameterValue.toBuilder()">toBuilder()</h3>
+  <div class="markdown level1 summary"><p>Returns a builder for a QueryParameterValue object with given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract QueryParameterValue.Builder toBuilder()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.QueryParameterValue.Builder.html#com_google_cloud_bigquery_QueryParameterValue_Builder">QueryParameterValue.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">java.io.Serializable</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

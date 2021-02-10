@@ -1,0 +1,1666 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Interface BigQueryRpc
+</h1>
+      <article data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc">
+  
+  
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">com.google.cloud.ServiceRpc</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public interface BigQueryRpc extends ServiceRpc</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_cancel_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.cancel*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_cancel_java_lang_String_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.cancel(java.lang.String,java.lang.String,java.lang.String)">cancel(String projectId, String jobId, String location)</h3>
+  <div class="markdown level1 summary"><p>Sends a job cancel request. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean cancel(String projectId, String jobId, String location)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">location</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if cancel was requested successfully, <code>false</code> if the job was not
+     found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_com_google_api_services_bigquery_model_Dataset_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create(com.google.api.services.bigquery.model.Dataset,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">create(Dataset dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Creates a new dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Dataset create(Dataset dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Dataset</span></td>
+        <td><span class="parametername">dataset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Dataset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_com_google_api_services_bigquery_model_Job_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create(com.google.api.services.bigquery.model.Job,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">create(Job job, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Creates a new job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Job create(Job job, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Job</span></td>
+        <td><span class="parametername">job</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Job</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_com_google_api_services_bigquery_model_Routine_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create(com.google.api.services.bigquery.model.Routine,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">create(Routine routine, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Creates the requested routine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Routine create(Routine routine, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Routine</span></td>
+        <td><span class="parametername">routine</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Routine</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_create_com_google_api_services_bigquery_model_Table_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.create(com.google.api.services.bigquery.model.Table,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">create(Table table, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Creates a new table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Table create(Table table, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Table</span></td>
+        <td><span class="parametername">table</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Table</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteDataset_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteDataset*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteDataset_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteDataset(java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">deleteDataset(String projectId, String datasetId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Delete the requested dataset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean deleteDataset(String projectId, String datasetId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if dataset was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteModel_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteModel*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteModel_java_lang_String_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteModel(java.lang.String,java.lang.String,java.lang.String)">deleteModel(String projectId, String datasetId, String modelId)</h3>
+  <div class="markdown level1 summary"><p>Delete the requested model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean deleteModel(String projectId, String datasetId, String modelId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">modelId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if model was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteRoutine_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteRoutine*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteRoutine_java_lang_String_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteRoutine(java.lang.String,java.lang.String,java.lang.String)">deleteRoutine(String projectId, String datasetId, String routineId)</h3>
+  <div class="markdown level1 summary"><p>Deletes the requested routine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean deleteRoutine(String projectId, String datasetId, String routineId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">routineId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if routine was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteTable_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteTable*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_deleteTable_java_lang_String_java_lang_String_java_lang_String_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.deleteTable(java.lang.String,java.lang.String,java.lang.String)">deleteTable(String projectId, String datasetId, String tableId)</h3>
+  <div class="markdown level1 summary"><p>Delete the requested table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract boolean deleteTable(String projectId, String datasetId, String tableId)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if table was deleted, <code>false</code> if it was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getDataset_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getDataset*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getDataset_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getDataset(java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">getDataset(String projectId, String datasetId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested dataset or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Dataset getDataset(String projectId, String datasetId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Dataset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getIamPolicy_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getIamPolicy*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getIamPolicy_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getIamPolicy(java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">getIamPolicy(String resourceId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Returns the IAM Policy for the specified resource, using Policy V1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Policy getIamPolicy(String resourceId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">resourceId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Policy</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getJob_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getJob*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getJob_java_lang_String_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getJob(java.lang.String,java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">getJob(String projectId, String jobId, String location, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested job or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Job getJob(String projectId, String jobId, String location, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">location</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Job</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getModel_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getModel*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getModel_java_lang_String_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getModel(java.lang.String,java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">getModel(String projectId, String datasetId, String modelId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested model or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Model getModel(String projectId, String datasetId, String modelId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">modelId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getQueryResults_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getQueryResults*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getQueryResults_java_lang_String_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getQueryResults(java.lang.String,java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">getQueryResults(String projectId, String jobId, String location, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Returns results of the query associated with the provided job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract GetQueryResultsResponse getQueryResults(String projectId, String jobId, String location, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">location</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.GetQueryResultsResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getRoutine_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getRoutine*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getRoutine_java_lang_String_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getRoutine(java.lang.String,java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">getRoutine(String projectId, String datasetId, String routineId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested routine or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Routine getRoutine(String projectId, String datasetId, String routineId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">routineId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Routine</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getTable_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getTable*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_getTable_java_lang_String_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.getTable(java.lang.String,java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">getTable(String projectId, String datasetId, String tableId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Returns the requested table or <code>null</code> if not found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Table getTable(String projectId, String datasetId, String tableId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Table</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_insertAll_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.insertAll*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_insertAll_java_lang_String_java_lang_String_java_lang_String_com_google_api_services_bigquery_model_TableDataInsertAllRequest_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.insertAll(java.lang.String,java.lang.String,java.lang.String,com.google.api.services.bigquery.model.TableDataInsertAllRequest)">insertAll(String projectId, String datasetId, String tableId, TableDataInsertAllRequest request)</h3>
+  <div class="markdown level1 summary"><p>Sends an insert all request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableDataInsertAllResponse insertAll(String projectId, String datasetId, String tableId, TableDataInsertAllRequest request)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.TableDataInsertAllRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.TableDataInsertAllResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listDatasets_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listDatasets*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listDatasets_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listDatasets(java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">listDatasets(String projectId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Lists the provided project&#39;s datasets, keyed by page token. Partial information is returned on a dataset (datasetReference, friendlyName and id). To get full information use <a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_getDataset_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____">#getDataset(String, String, Map)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Tuple&lt;String,Iterable&lt;Dataset&gt;&gt; listDatasets(String projectId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.Tuple</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">java.lang.Iterable</span>&lt;<span class="xref">com.google.api.services.bigquery.model.Dataset</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listJobs_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listJobs*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listJobs_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listJobs(java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">listJobs(String projectId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Lists the project&#39;s jobs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Tuple&lt;String,Iterable&lt;Job&gt;&gt; listJobs(String projectId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.Tuple</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">java.lang.Iterable</span>&lt;<span class="xref">com.google.api.services.bigquery.model.Job</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listModels_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listModels*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listModels_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listModels(java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">listModels(String projectId, String dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Lists the dataset&#39;s models, keyed by page token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Tuple&lt;String,Iterable&lt;Model&gt;&gt; listModels(String projectId, String dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">dataset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.Tuple</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">java.lang.Iterable</span>&lt;<span class="xref">com.google.api.services.bigquery.model.Model</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listRoutines_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listRoutines*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listRoutines_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listRoutines(java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">listRoutines(String projectId, String datasetId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Tuple&lt;String,Iterable&lt;Routine&gt;&gt; listRoutines(String projectId, String datasetId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.Tuple</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">java.lang.Iterable</span>&lt;<span class="xref">com.google.api.services.bigquery.model.Routine</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listTableData_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listTableData*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listTableData_java_lang_String_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listTableData(java.lang.String,java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">listTableData(String projectId, String datasetId, String tableId, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Lists the table&#39;s rows.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TableDataList listTableData(String projectId, String datasetId, String tableId, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">datasetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">tableId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.TableDataList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listTables_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listTables*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_listTables_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.listTables(java.lang.String,java.lang.String,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">listTables(String projectId, String dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Lists the dataset&#39;s tables, keyed by page token. Partial information is returned on a table (tableReference, friendlyName, id and type). To get full information use <a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_getTable_java_lang_String_java_lang_String_java_lang_String_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____">#getTable(String, String, String, Map)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Tuple&lt;String,Iterable&lt;Table&gt;&gt; listTables(String projectId, String dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">dataset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.cloud.Tuple</span>&lt;<span class="xref">java.lang.String</span>,<span class="xref">java.lang.Iterable</span>&lt;<span class="xref">com.google.api.services.bigquery.model.Table</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_open_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.open*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_open_com_google_api_services_bigquery_model_Job_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.open(com.google.api.services.bigquery.model.Job)">open(Job job)</h3>
+  <div class="markdown level1 summary"><p>Opens a resumable upload session to load data into a BigQuery table and returns an upload URI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract String open(Job job)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Job</span></td>
+        <td><span class="parametername">job</span></td>
+        <td><p>load job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_patch_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.patch*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_patch_com_google_api_services_bigquery_model_Dataset_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.patch(com.google.api.services.bigquery.model.Dataset,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">patch(Dataset dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Updates dataset information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Dataset patch(Dataset dataset, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Dataset</span></td>
+        <td><span class="parametername">dataset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Dataset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_patch_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.patch*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_patch_com_google_api_services_bigquery_model_Model_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.patch(com.google.api.services.bigquery.model.Model,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">patch(Model model, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Updates model information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Model patch(Model model, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Model</span></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_patch_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.patch*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_patch_com_google_api_services_bigquery_model_Table_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.patch(com.google.api.services.bigquery.model.Table,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">patch(Table table, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Updates table information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Table patch(Table table, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Table</span></td>
+        <td><span class="parametername">table</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Table</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_queryRpc_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.queryRpc*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_queryRpc_java_lang_String_com_google_api_services_bigquery_model_QueryRequest_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.queryRpc(java.lang.String,com.google.api.services.bigquery.model.QueryRequest)">queryRpc(String projectId, QueryRequest content)</h3>
+  <div class="markdown level1 summary"><p>Runs a BigQuery SQL query synchronously and returns query results if the query completes within a specified timeout.</p>
+<p>Create a request for the method &quot;jobs.query&quot;.</p>
+<p>This request holds the parameters needed by the bigquery server. After setting any optional parameters, call the <span class="xref">Query#execute()</span> method to invoke the remote operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract QueryResponse queryRpc(String projectId, QueryRequest content)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td><p>Project ID of the project billed for the query</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.QueryRequest</span></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>the <span class="xref">com.google.api.services.bigquery.model.QueryRequest</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.QueryResponse</span></td>
+        <td><p>the request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_setIamPolicy_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.setIamPolicy*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_setIamPolicy_java_lang_String_com_google_api_services_bigquery_model_Policy_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.setIamPolicy(java.lang.String,com.google.api.services.bigquery.model.Policy,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">setIamPolicy(String resourceId, Policy policy, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Updates the IAM policy for the specified resource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Policy setIamPolicy(String resourceId, Policy policy, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">resourceId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Policy</span></td>
+        <td><span class="parametername">policy</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Policy</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_testIamPermissions_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.testIamPermissions*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_testIamPermissions_java_lang_String_java_util_List_java_lang_String__java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.testIamPermissions(java.lang.String,java.util.List&lt;java.lang.String&gt;,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">testIamPermissions(String resourceId, List&lt;String&gt; permissions, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Tests whether the caller holds the provided permissions for the specified resource. Returns the subset of permissions the caller actually holds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract TestIamPermissionsResponse testIamPermissions(String resourceId, List&lt;String&gt; permissions, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">resourceId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td><span class="parametername">permissions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.TestIamPermissionsResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_update_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.update*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_update_com_google_api_services_bigquery_model_Routine_java_util_Map_com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option____" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.update(com.google.api.services.bigquery.model.Routine,java.util.Map&lt;com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option,?&gt;)">update(Routine routine, Map&lt;BigQueryRpc.Option,?&gt; options)</h3>
+  <div class="markdown level1 summary"><p>Updates the requested routine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Routine update(Routine routine, Map&lt;BigQueryRpc.Option,?&gt; options)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Routine</span></td>
+        <td><span class="parametername">routine</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.Map</span>&lt;<a class="xref" href="com.google.cloud.bigquery.spi.v2.BigQueryRpc.Option.html#com_google_cloud_bigquery_spi_v2_BigQueryRpc_Option">Option</a>,<span class="xref">?</span>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Routine</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_write_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.write*"></a>
+  <h3 id="com_google_cloud_bigquery_spi_v2_BigQueryRpc_write_java_lang_String_byte___int_long_int_boolean_" data-uid="com.google.cloud.bigquery.spi.v2.BigQueryRpc.write(java.lang.String,byte[],int,long,int,boolean)">write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length, boolean last)</h3>
+  <div class="markdown level1 summary"><p>Uploads the provided data to the resumable upload session at the specified position. This method returns the job created to insert the rows, only when <code>last</code> is <code>true</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract Job write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length, boolean last)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">uploadId</span></td>
+        <td><p>the resumable upload session URI</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">byte</span>[]</td>
+        <td><span class="parametername">toWrite</span></td>
+        <td><p>a byte array of data to upload</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">toWriteOffset</span></td>
+        <td><p>offset in the <code>toWrite</code> param to start writing from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td><span class="parametername">destOffset</span></td>
+        <td><p>offset in the destination where to upload data to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>the number of bytes to upload</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><span class="parametername">last</span></td>
+        <td><p><code>true</code> indicates that the last chunk is being uploaded</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.services.bigquery.model.Job</span></td>
+        <td><p>returns the job created to insert the rows, only when <code>last</code> is <code>true</code>.
+     Returns <code>null</code> otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">com.google.cloud.ServiceRpc</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

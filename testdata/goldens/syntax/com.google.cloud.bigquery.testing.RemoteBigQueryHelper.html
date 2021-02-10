@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <h1 class="page-title">Class RemoteBigQueryHelper
+</h1>
+      <article data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper">
+  
+  
+  <div class="markdown level0 summary"><p>Utility to create a remote BigQuery configuration for testing. BigQuery options can be obtained via the <a class="xref" href="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.html#com_google_cloud_bigquery_testing_RemoteBigQueryHelper_getOptions__">#getOptions()</a> method. Returned options have custom <span class="xref">BigQueryOptions#getRetrySettings()</span>: <span class="xref">RetrySettings#getMaxAttempts()</span> is <code>10</code>, <span class="xref">RetrySettings#getMaxRetryDelay()</span> is <code>30000</code>, <span class="xref">RetrySettings#getTotalTimeout()</span> is <code>120000</code> and <span class="xref">RetrySettings#getInitialRetryDelay()</span> is <code>250</code>. <span class="xref">HttpTransportOptions#getConnectTimeout()</span> and <span class="xref">HttpTransportOptions#getReadTimeout()</span> are both set to <code>60000</code>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">java.lang.Object</span></div>
+    <div class="level1"><span class="xref">RemoteBigQueryHelper</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class RemoteBigQueryHelper</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_create_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.create*"></a>
+  <h3 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_create__" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.create()">create()</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>RemoteBigQueryHelper</code> object using default project id and authentication credentials.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static RemoteBigQueryHelper create()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_create_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.create*"></a>
+  <h3 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_create_java_lang_String_java_io_InputStream_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.create(java.lang.String,java.io.InputStream)">create(String projectId, InputStream keyStream)</h3>
+  <div class="markdown level1 summary"><p>Creates a <code>RemoteBigQueryHelper</code> object for the given project id and JSON key input stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static RemoteBigQueryHelper create(String projectId, InputStream keyStream)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">projectId</span></td>
+        <td><p>id of the project to be used for running the tests</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.io.InputStream</span></td>
+        <td><span class="parametername">keyStream</span></td>
+        <td><p>input stream for a JSON key</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td><p>A <code>RemoteBigQueryHelper</code> object for the provided options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="exceptions">Exceptions</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.BigQueryHelperException.html#com_google_cloud_bigquery_testing_RemoteBigQueryHelper_BigQueryHelperException">RemoteBigQueryHelper.BigQueryHelperException</a></td>
+        <td><p>if <code>keyStream</code> is not a valid JSON key stream</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_forceDelete_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.forceDelete*"></a>
+  <h3 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_forceDelete_com_google_cloud_bigquery_BigQuery_java_lang_String_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.forceDelete(com.google.cloud.bigquery.BigQuery,java.lang.String)">forceDelete(BigQuery bigquery, String dataset)</h3>
+  <div class="markdown level1 summary"><p>Deletes a dataset, even if non-empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static boolean forceDelete(BigQuery bigquery, String dataset)</code></pre>
+  </div>
+  <h4 class="parameters">Parameters</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQuery.html">BigQuery</a></td>
+        <td><span class="parametername">bigquery</span></td>
+        <td><p>the BigQuery service to be used to issue the delete request</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">dataset</span></td>
+        <td><p>the dataset to be deleted</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><p><code>true</code> if deletion succeeded, <code>false</code> if the dataset was not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_generateDatasetName_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.generateDatasetName*"></a>
+  <h3 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_generateDatasetName__" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.generateDatasetName()">generateDatasetName()</h3>
+  <div class="markdown level1 summary"><p>Returns a dataset name generated using a random UUID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static String generateDatasetName()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_generateModelName_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.generateModelName*"></a>
+  <h3 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_generateModelName__" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.generateModelName()">generateModelName()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static String generateModelName()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_generateRoutineName_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.generateRoutineName*"></a>
+  <h3 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_generateRoutineName__" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.generateRoutineName()">generateRoutineName()</h3>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static String generateRoutineName()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_getOptions_" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.getOptions*"></a>
+  <h3 id="com_google_cloud_bigquery_testing_RemoteBigQueryHelper_getOptions__" data-uid="com.google.cloud.bigquery.testing.RemoteBigQueryHelper.getOptions()">getOptions()</h3>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="com.google.cloud.bigquery.BigQueryOptions.html">BigQueryOptions</a> object to be used for testing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h4 class="decalaration">Declaration</h4>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public BigQueryOptions getOptions()</code></pre>
+  </div>
+  <h4 class="returns">Returns</h4>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.bigquery.BigQueryOptions.html">BigQueryOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+  </body>
+</html>
