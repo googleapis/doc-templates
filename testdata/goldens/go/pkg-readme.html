@@ -18,11 +18,11 @@
 </ul>
 <h3 id="example-usage">Example Usage</h3>
 <p>First create a <code>storage.Client</code> to use throughout your application:</p>
-<pre><code class="lang-go">client, err := storage.NewClient(ctx)
+<pre><code class="prettyprint lang-go">client, err := storage.NewClient(ctx)
 if err != nil {
     log.Fatal(err)
 }
-</code></pre><pre><code class="lang-go">// Read the object1 from bucket.
+</code></pre><pre><code class="prettyprint lang-go">// Read the object1 from bucket.
 rc, err := client.Bucket(&quot;bucket&quot;).Object(&quot;object1&quot;).NewReader(ctx)
 if err != nil {
     log.Fatal(err)
