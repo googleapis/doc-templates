@@ -248,9 +248,6 @@ These errors can be introspected for more information by type asserting to the r
   Constants
   </h2>
         <h3 id="cloud_google_com_go_storage_DeleteAction_SetStorageClassAction" data-uid="cloud.google.com/go/storage.DeleteAction,SetStorageClassAction">DeleteAction, SetStorageClassAction</h3>
-        <div class="markdown level1 summary"></div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 
@@ -263,12 +260,10 @@ These errors can be introspected for more information by type asserting to the r
 	SetStorageClassAction = "SetStorageClass"
 )</code></pre>
         </div>
+        <div class="markdown level1 summary"></div>
+        <div class="markdown level1 conceptual"></div>
         
         <h3 id="cloud_google_com_go_storage_NoPayload_JSONPayload" data-uid="cloud.google.com/go/storage.NoPayload,JSONPayload">NoPayload, JSONPayload</h3>
-        <div class="markdown level1 summary"><p>Values for Notification.PayloadFormat.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 	// Send no payload with notification messages.
@@ -278,12 +273,11 @@ These errors can be introspected for more information by type asserting to the r
 	JSONPayload = "JSON_API_V1"
 )</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_ObjectFinalizeEvent_ObjectMetadataUpdateEvent_ObjectDeleteEvent_ObjectArchiveEvent" data-uid="cloud.google.com/go/storage.ObjectFinalizeEvent,ObjectMetadataUpdateEvent,ObjectDeleteEvent,ObjectArchiveEvent">ObjectFinalizeEvent, ObjectMetadataUpdateEvent, ObjectDeleteEvent, ObjectArchiveEvent</h3>
-        <div class="markdown level1 summary"><p>Values for Notification.EventTypes.</p>
+        <div class="markdown level1 summary"><p>Values for Notification.PayloadFormat.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_ObjectFinalizeEvent_ObjectMetadataUpdateEvent_ObjectDeleteEvent_ObjectArchiveEvent" data-uid="cloud.google.com/go/storage.ObjectFinalizeEvent,ObjectMetadataUpdateEvent,ObjectDeleteEvent,ObjectArchiveEvent">ObjectFinalizeEvent, ObjectMetadataUpdateEvent, ObjectDeleteEvent, ObjectArchiveEvent</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 	// Event that occurs when an object is successfully created.
@@ -300,11 +294,11 @@ These errors can be introspected for more information by type asserting to the r
 	ObjectArchiveEvent = "OBJECT_ARCHIVE"
 )</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>Values for Notification.EventTypes.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
         <h3 id="cloud_google_com_go_storage_ScopeFullControl_ScopeReadOnly_ScopeReadWrite" data-uid="cloud.google.com/go/storage.ScopeFullControl,ScopeReadOnly,ScopeReadWrite">ScopeFullControl, ScopeReadOnly, ScopeReadWrite</h3>
-        <div class="markdown level1 summary"></div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 	// ScopeFullControl grants permissions to manage your
@@ -320,14 +314,13 @@ These errors can be introspected for more information by type asserting to the r
 	ScopeReadWrite = <a href="https://pkg.go.dev/google.golang.org/api/storage/v1">raw</a>.<a href="https://pkg.go.dev/google.golang.org/api/storage/v1#DevstorageReadWriteScope">DevstorageReadWriteScope</a>
 )</code></pre>
         </div>
+        <div class="markdown level1 summary"></div>
+        <div class="markdown level1 conceptual"></div>
         
     <h2 id="variables">Variables
   
   </h2>
         <h3 id="cloud_google_com_go_storage_ErrBucketNotExist_ErrObjectNotExist" data-uid="cloud.google.com/go/storage.ErrBucketNotExist,ErrObjectNotExist">ErrBucketNotExist, ErrObjectNotExist</h3>
-        <div class="markdown level1 summary"></div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">var (
 	// ErrBucketNotExist indicates that the bucket does not exist.
@@ -336,11 +329,16 @@ These errors can be introspected for more information by type asserting to the r
 	ErrObjectNotExist = <a href="https://pkg.go.dev/errors">errors</a>.<a href="https://pkg.go.dev/errors#New">New</a>("storage: object doesn't exist")
 )</code></pre>
         </div>
+        <div class="markdown level1 summary"></div>
+        <div class="markdown level1 conceptual"></div>
         
     <h2 id="types">
   Types
   </h2>
         <h3 id="cloud_google_com_go_storage_ACLEntity" data-uid="cloud.google.com/go/storage.ACLEntity">ACLEntity</h3>
+        <div class="codewrapper">
+          <pre><code class="prettyprint">type ACLEntity <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>
+        </div>
         <div class="markdown level1 summary"><p>ACLEntity refers to a user or group.
 They are sometimes referred to as grantees.</p>
 <p>It could be in the form of:
@@ -349,44 +347,37 @@ They are sometimes referred to as grantees.</p>
 <p>Or one of the predefined constants: AllUsers, AllAuthenticatedUsers.</p>
 </projectid></domain></email></groupid></email></userid></div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
-        <div class="codewrapper">
-          <pre><code class="prettyprint">type ACLEntity <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>
-        </div>
         
             <h4 id="cloud_google_com_go_storage_AllUsers_AllAuthenticatedUsers" data-uid="cloud.google.com/go/storage.AllUsers,AllAuthenticatedUsers">AllUsers, AllAuthenticatedUsers</h4>
-            <div class="markdown level1 summary"></div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">const (
 	AllUsers              <a href="#aclentity">ACLEntity</a> = "allUsers"
 	AllAuthenticatedUsers <a href="#aclentity">ACLEntity</a> = "allAuthenticatedUsers"
 )</code></pre>	
             </div>
+            <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
                   <h3 id="cloud_google_com_go_storage_ACLHandle" data-uid="cloud.google.com/go/storage.ACLHandle">ACLHandle</h3>
-        <div class="markdown level1 summary"><p>ACLHandle provides operations on an access control list for a Google Cloud Storage bucket or object.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ACLHandle struct {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>ACLHandle provides operations on an access control list for a Google Cloud Storage bucket or object.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_ACLHandle_Delete" data-uid="cloud.google.com/go/storage.ACLHandle.Delete">func (*ACLHandle) Delete
 </h4>
-            <div class="markdown level1 summary"><p>Delete permanently deletes the ACL entry for the given entity.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (a *<a href="#aclhandle">ACLHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, entity <a href="#aclentity">ACLEntity</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Delete permanently deletes the ACL entry for the given entity.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_ACLHandle_Delete_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -405,19 +396,18 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ACLHandle_List" data-uid="cloud.google.com/go/storage.ACLHandle.List">func (*ACLHandle) List
 </h4>
-            <div class="markdown level1 summary"><p>List retrieves ACL entries.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (a *<a href="#aclhandle">ACLHandle</a>) List(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (rules []<a href="#aclrule">ACLRule</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>List retrieves ACL entries.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_ACLHandle_List_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -439,19 +429,18 @@ func main() {
 	fmt.Println(aclRules)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ACLHandle_Set" data-uid="cloud.google.com/go/storage.ACLHandle.Set">func (*ACLHandle) Set
 </h4>
-            <div class="markdown level1 summary"><p>Set sets the role for the given entity.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (a *<a href="#aclhandle">ACLHandle</a>) Set(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, entity <a href="#aclentity">ACLEntity</a>, role <a href="#aclrole">ACLRole</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Set sets the role for the given entity.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_ACLHandle_Set_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -471,20 +460,16 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
         <h3 id="cloud_google_com_go_storage_ACLRole" data-uid="cloud.google.com/go/storage.ACLRole">ACLRole</h3>
-        <div class="markdown level1 summary"><p>ACLRole is the level of access to grant.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ACLRole <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>
         </div>
+        <div class="markdown level1 summary"><p>ACLRole is the level of access to grant.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_RoleOwner_RoleReader_RoleWriter" data-uid="cloud.google.com/go/storage.RoleOwner,RoleReader,RoleWriter">RoleOwner, RoleReader, RoleWriter</h4>
-            <div class="markdown level1 summary"></div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">const (
 	RoleOwner  <a href="#aclrole">ACLRole</a> = "OWNER"
@@ -492,12 +477,9 @@ func main() {
 	RoleWriter <a href="#aclrole">ACLRole</a> = "WRITER"
 )</code></pre>	
             </div>
+            <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
                   <h3 id="cloud_google_com_go_storage_ACLRule" data-uid="cloud.google.com/go/storage.ACLRule">ACLRule</h3>
-        <div class="markdown level1 summary"><p>ACLRule represents a grant for a role to an entity (user, group or team) for a
-Google Cloud Storage object or bucket.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ACLRule struct {
 	<a href="#entity">Entity</a>      <a href="#aclentity">ACLEntity</a>
@@ -508,13 +490,12 @@ Google Cloud Storage object or bucket.</p>
 	<a href="#projectteam">ProjectTeam</a> *<a href="#projectteam">ProjectTeam</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_BucketAttrs" data-uid="cloud.google.com/go/storage.BucketAttrs">BucketAttrs</h3>
-        <div class="markdown level1 summary"><p>BucketAttrs represents the metadata for a Google Cloud Storage bucket.
-Read-only fields are ignored by BucketHandle.Create.</p>
+        <div class="markdown level1 summary"><p>ACLRule represents a grant for a role to an entity (user, group or team) for a
+Google Cloud Storage object or bucket.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_BucketAttrs" data-uid="cloud.google.com/go/storage.BucketAttrs">BucketAttrs</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketAttrs struct {
 	// Name is the name of the bucket.
@@ -623,12 +604,12 @@ Read-only fields are ignored by BucketHandle.Create.</p>
 	<a href="#locationtype">LocationType</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_BucketAttrsToUpdate" data-uid="cloud.google.com/go/storage.BucketAttrsToUpdate">BucketAttrsToUpdate</h3>
-        <div class="markdown level1 summary"><p>BucketAttrsToUpdate define the attributes to update during an Update call.</p>
+        <div class="markdown level1 summary"><p>BucketAttrs represents the metadata for a Google Cloud Storage bucket.
+Read-only fields are ignored by BucketHandle.Create.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_BucketAttrsToUpdate" data-uid="cloud.google.com/go/storage.BucketAttrsToUpdate">BucketAttrsToUpdate</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketAttrsToUpdate struct {
 	// If set, updates whether the bucket uses versioning.
@@ -691,33 +672,29 @@ Read-only fields are ignored by BucketHandle.Create.</p>
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>BucketAttrsToUpdate define the attributes to update during an Update call.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_BucketAttrsToUpdate_DeleteLabel" data-uid="cloud.google.com/go/storage.BucketAttrsToUpdate.DeleteLabel">func (*BucketAttrsToUpdate) DeleteLabel
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (ua *<a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) DeleteLabel(name <a href="https://pkg.go.dev/builtin#string">string</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>DeleteLabel causes a label to be deleted when ua is used in a
 call to Bucket.Update.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (ua *<a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) DeleteLabel(name <a href="https://pkg.go.dev/builtin#string">string</a>)</code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_BucketAttrsToUpdate_SetLabel" data-uid="cloud.google.com/go/storage.BucketAttrsToUpdate.SetLabel">func (*BucketAttrsToUpdate) SetLabel
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (ua *<a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) SetLabel(name, value <a href="https://pkg.go.dev/builtin#string">string</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>SetLabel causes a label to be added or modified when ua is used
 in a call to Bucket.Update.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (ua *<a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) SetLabel(name, value <a href="https://pkg.go.dev/builtin#string">string</a>)</code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_BucketConditions" data-uid="cloud.google.com/go/storage.BucketConditions">BucketConditions</h3>
-        <div class="markdown level1 summary"><p>BucketConditions constrain bucket methods to act on specific metagenerations.</p>
-<p>The zero value is an empty set of constraints.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketConditions struct {
 	// MetagenerationMatch specifies that the bucket must have the given
@@ -731,12 +708,12 @@ in a call to Bucket.Update.</p>
 	<a href="#metagenerationnotmatch">MetagenerationNotMatch</a> <a href="https://pkg.go.dev/builtin#int64">int64</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_BucketEncryption" data-uid="cloud.google.com/go/storage.BucketEncryption">BucketEncryption</h3>
-        <div class="markdown level1 summary"><p>BucketEncryption is a bucket&#39;s encryption configuration.</p>
+        <div class="markdown level1 summary"><p>BucketConditions constrain bucket methods to act on specific metagenerations.</p>
+<p>The zero value is an empty set of constraints.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_BucketEncryption" data-uid="cloud.google.com/go/storage.BucketEncryption">BucketEncryption</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketEncryption struct {
 	// A Cloud KMS key name, in the form
@@ -746,18 +723,20 @@ in a call to Bucket.Update.</p>
 	<a href="#defaultkmskeyname">DefaultKMSKeyName</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_BucketHandle" data-uid="cloud.google.com/go/storage.BucketHandle">BucketHandle</h3>
-        <div class="markdown level1 summary"><p>BucketHandle provides operations on a Google Cloud Storage bucket.
-Use Client.Bucket to get a handle.</p>
+        <div class="markdown level1 summary"><p>BucketEncryption is a bucket&#39;s encryption configuration.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_BucketHandle" data-uid="cloud.google.com/go/storage.BucketHandle">BucketHandle</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketHandle struct {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>BucketHandle provides operations on a Google Cloud Storage bucket.
+Use Client.Bucket to get a handle.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         <h5 id="cloud_google_com_go_storage_BucketHandle_examples">Examples</h5>
         <h6 translate="no">exists</h6>
         <div class="codewrapper">
@@ -791,19 +770,18 @@ func main() {
   
             <h4 id="cloud_google_com_go_storage_BucketHandle_ACL" data-uid="cloud.google.com/go/storage.BucketHandle.ACL">func (*BucketHandle) ACL
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) ACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ACL returns an ACLHandle, which provides access to the bucket&#39;s access control list.
 This controls who can list, create or overwrite the objects in a bucket.
 This call does not perform any network operations.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) ACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_ACL_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -829,21 +807,20 @@ func main() {
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_AddNotification" data-uid="cloud.google.com/go/storage.BucketHandle.AddNotification">func (*BucketHandle) AddNotification
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) AddNotification(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, n *<a href="#notification">Notification</a>) (ret *<a href="#notification">Notification</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>AddNotification adds a notification to b. You must set n&#39;s TopicProjectID, TopicID
 and PayloadFormat, and must not set its ID. The other fields are all optional. The
 returned Notification&#39;s ID can be used to refer to it.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) AddNotification(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, n *<a href="#notification">Notification</a>) (ret *<a href="#notification">Notification</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_AddNotification_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -869,19 +846,18 @@ func main() {
 	fmt.Println(n.ID)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Attrs" data-uid="cloud.google.com/go/storage.BucketHandle.Attrs">func (*BucketHandle) Attrs
 </h4>
-            <div class="markdown level1 summary"><p>Attrs returns the metadata for the bucket.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Attrs(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#bucketattrs">BucketAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Attrs returns the metadata for the bucket.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_Attrs_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -902,20 +878,19 @@ func main() {
 	fmt.Println(attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Create" data-uid="cloud.google.com/go/storage.BucketHandle.Create">func (*BucketHandle) Create
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Create(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>, attrs *<a href="#bucketattrs">BucketAttrs</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Create creates the Bucket in the project.
 If attrs is nil the API defaults will be used.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Create(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>, attrs *<a href="#bucketattrs">BucketAttrs</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_Create_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -933,22 +908,21 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_DefaultObjectACL" data-uid="cloud.google.com/go/storage.BucketHandle.DefaultObjectACL">func (*BucketHandle) DefaultObjectACL
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) DefaultObjectACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>DefaultObjectACL returns an ACLHandle, which provides access to the bucket&#39;s default object ACLs.
 These ACLs are applied to newly created objects in this bucket that do not have a defined ACL.
 This call does not perform any network operations.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) DefaultObjectACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_DefaultObjectACL_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -974,19 +948,18 @@ func main() {
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Delete" data-uid="cloud.google.com/go/storage.BucketHandle.Delete">func (*BucketHandle) Delete
 </h4>
-            <div class="markdown level1 summary"><p>Delete deletes the Bucket.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Delete deletes the Bucket.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_Delete_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1004,19 +977,18 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_DeleteNotification" data-uid="cloud.google.com/go/storage.BucketHandle.DeleteNotification">func (*BucketHandle) DeleteNotification
 </h4>
-            <div class="markdown level1 summary"><p>DeleteNotification deletes the notification with the given ID.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) DeleteNotification(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, id <a href="https://pkg.go.dev/builtin#string">string</a>) (err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>DeleteNotification deletes the notification with the given ID.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_DeleteNotification_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1040,20 +1012,19 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_IAM" data-uid="cloud.google.com/go/storage.BucketHandle.IAM">func (*BucketHandle) IAM
 </h4>
-            <div class="markdown level1 summary"><p>IAM provides access to IAM access control for the bucket.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) IAM() *<a href="https://pkg.go.dev/cloud.google.com/go/iam">iam</a>.<a href="https://pkg.go.dev/cloud.google.com/go/iam#Handle">Handle</a></code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>IAM provides access to IAM access control for the bucket.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_IAM_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1079,9 +1050,12 @@ func main() {
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_If" data-uid="cloud.google.com/go/storage.BucketHandle.If">func (*BucketHandle) If
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) If(conds <a href="#bucketconditions">BucketConditions</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>If returns a new BucketHandle that applies a set of preconditions.
 Preconditions already set on the BucketHandle are ignored.
 Operations on the new handle will return an error if the preconditions are not
@@ -1089,14 +1063,10 @@ satisfied. The only valid preconditions for buckets are MetagenerationMatch
 and MetagenerationNotMatch.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) If(conds <a href="#bucketconditions">BucketConditions</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_If_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1122,9 +1092,12 @@ func main() {
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_LockRetentionPolicy" data-uid="cloud.google.com/go/storage.BucketHandle.LockRetentionPolicy">func (*BucketHandle) LockRetentionPolicy
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) LockRetentionPolicy(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>LockRetentionPolicy locks a bucket&#39;s retention policy until a previously-configured
 RetentionPeriod past the EffectiveTime. Note that if RetentionPeriod is set to less
 than a day, the retention policy is treated as a development configuration and locking
@@ -1135,13 +1108,9 @@ most customers. It might be changed in backwards-incompatible ways and is not
 subject to any SLA or deprecation policy.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) LockRetentionPolicy(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_LockRetentionPolicy_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1167,20 +1136,19 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Notifications" data-uid="cloud.google.com/go/storage.BucketHandle.Notifications">func (*BucketHandle) Notifications
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Notifications(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (n map[<a href="https://pkg.go.dev/builtin#string">string</a>]*<a href="#notification">Notification</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Notifications returns all the Notifications configured for this bucket, as a map
 indexed by notification ID.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Notifications(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (n map[<a href="https://pkg.go.dev/builtin#string">string</a>]*<a href="#notification">Notification</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_Notifications_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1204,9 +1172,12 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Object" data-uid="cloud.google.com/go/storage.BucketHandle.Object">func (*BucketHandle) Object
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Object(name <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Object returns an ObjectHandle, which provides operations on the named object.
 This call does not perform any network operations.</p>
 <p>name must consist entirely of valid UTF-8-encoded runes. The full specification
@@ -1214,14 +1185,10 @@ for valid object names can be found at:
   <a href="https://cloud.google.com/storage/docs/bucket-naming">https://cloud.google.com/storage/docs/bucket-naming</a></p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Object(name <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_Object_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1247,22 +1214,21 @@ func main() {
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Objects" data-uid="cloud.google.com/go/storage.BucketHandle.Objects">func (*BucketHandle) Objects
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Objects(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, q *<a href="#query">Query</a>) *<a href="#objectiterator">ObjectIterator</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Objects returns an iterator over the objects in the bucket that match the
 Query q. If q is nil, no filtering is done. Objects will be iterated over
 lexicographically by name.</p>
 <p>Note: The returned iterator is not safe for concurrent operations without explicit synchronization.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Objects(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, q *<a href="#query">Query</a>) *<a href="#objectiterator">ObjectIterator</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_Objects_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1279,19 +1245,18 @@ func main() {
 	_ = it // TODO: iterate using Next or iterator.Pager.
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_Update" data-uid="cloud.google.com/go/storage.BucketHandle.Update">func (*BucketHandle) Update
 </h4>
-            <div class="markdown level1 summary"><p>Update updates a bucket&#39;s attributes.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, uattrs <a href="#bucketattrstoupdate">BucketAttrsToUpdate</a>) (attrs *<a href="#bucketattrs">BucketAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Update updates a bucket&#39;s attributes.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_Update_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1314,10 +1279,10 @@ func main() {
 	fmt.Println(attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">readModifyWrite</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">readModifyWrite</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1350,23 +1315,22 @@ func main() {
 	fmt.Println(attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketHandle_UserProject" data-uid="cloud.google.com/go/storage.BucketHandle.UserProject">func (*BucketHandle) UserProject
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) UserProject(projectID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>UserProject returns a new BucketHandle that passes the project ID as the user
 project for all subsequent calls. Calls with a user project will be billed to that
 project rather than to the bucket&#39;s owning project.</p>
 <p>A user project is required for all operations on Requester Pays buckets.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (b *<a href="#buckethandle">BucketHandle</a>) UserProject(projectID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketHandle_UserProject_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1392,13 +1356,8 @@ func main() {
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
         <h3 id="cloud_google_com_go_storage_BucketIterator" data-uid="cloud.google.com/go/storage.BucketIterator">BucketIterator</h3>
-        <div class="markdown level1 summary"><p>A BucketIterator is an iterator over BucketAttrs.</p>
-<p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketIterator struct {
 	// Prefix restricts the iterator to buckets whose names begin with it.
@@ -1406,22 +1365,25 @@ func main() {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>A BucketIterator is an iterator over BucketAttrs.</p>
+<p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_BucketIterator_Next" data-uid="cloud.google.com/go/storage.BucketIterator.Next">func (*BucketIterator) Next
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#bucketiterator">BucketIterator</a>) Next() (*<a href="#bucketattrs">BucketAttrs</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Next returns the next result. Its second return value is iterator.Done if
 there are no more results. Once Next returns iterator.Done, all subsequent
 calls will return iterator.Done.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (it *<a href="#bucketiterator">BucketIterator</a>) Next() (*<a href="#bucketattrs">BucketAttrs</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_BucketIterator_Next_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1449,24 +1411,17 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_BucketIterator_PageInfo" data-uid="cloud.google.com/go/storage.BucketIterator.PageInfo">func (*BucketIterator) PageInfo
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#bucketiterator">BucketIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>PageInfo supports pagination. See the google.golang.org/api/iterator package for details.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (it *<a href="#bucketiterator">BucketIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_BucketLogging" data-uid="cloud.google.com/go/storage.BucketLogging">BucketLogging</h3>
-        <div class="markdown level1 summary"><p>BucketLogging holds the bucket&#39;s logging configuration, which defines the
-destination bucket and optional name prefix for the current bucket&#39;s
-logs.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketLogging struct {
 	// The destination bucket where the current bucket's logs
@@ -1477,13 +1432,13 @@ logs.</p>
 	<a href="#logobjectprefix">LogObjectPrefix</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_BucketPolicyOnly" data-uid="cloud.google.com/go/storage.BucketPolicyOnly">BucketPolicyOnly</h3>
-        <div class="markdown level1 summary"><p>BucketPolicyOnly is an alias for UniformBucketLevelAccess.
-Use of UniformBucketLevelAccess is preferred above BucketPolicyOnly.</p>
+        <div class="markdown level1 summary"><p>BucketLogging holds the bucket&#39;s logging configuration, which defines the
+destination bucket and optional name prefix for the current bucket&#39;s
+logs.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_BucketPolicyOnly" data-uid="cloud.google.com/go/storage.BucketPolicyOnly">BucketPolicyOnly</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketPolicyOnly struct {
 	// Enabled specifies whether access checks use only bucket-level IAM
@@ -1494,14 +1449,12 @@ Use of UniformBucketLevelAccess is preferred above BucketPolicyOnly.</p>
 	<a href="#lockedtime">LockedTime</a> <a href="https://pkg.go.dev/time">time</a>.<a href="https://pkg.go.dev/time#Time">Time</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_BucketWebsite" data-uid="cloud.google.com/go/storage.BucketWebsite">BucketWebsite</h3>
-        <div class="markdown level1 summary"><p>BucketWebsite holds the bucket&#39;s website configuration, controlling how the
-service behaves when accessing bucket contents as a web site. See
-<a href="https://cloud.google.com/storage/docs/static-website">https://cloud.google.com/storage/docs/static-website</a> for more information.</p>
+        <div class="markdown level1 summary"><p>BucketPolicyOnly is an alias for UniformBucketLevelAccess.
+Use of UniformBucketLevelAccess is preferred above BucketPolicyOnly.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_BucketWebsite" data-uid="cloud.google.com/go/storage.BucketWebsite">BucketWebsite</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type BucketWebsite struct {
 	// If the requested object path is missing, the service will ensure the path has
@@ -1516,12 +1469,13 @@ service behaves when accessing bucket contents as a web site. See
 	<a href="#notfoundpage">NotFoundPage</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_CORS" data-uid="cloud.google.com/go/storage.CORS">CORS</h3>
-        <div class="markdown level1 summary"><p>CORS is the bucket&#39;s Cross-Origin Resource Sharing (CORS) configuration.</p>
+        <div class="markdown level1 summary"><p>BucketWebsite holds the bucket&#39;s website configuration, controlling how the
+service behaves when accessing bucket contents as a web site. See
+<a href="https://cloud.google.com/storage/docs/static-website">https://cloud.google.com/storage/docs/static-website</a> for more information.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_CORS" data-uid="cloud.google.com/go/storage.CORS">CORS</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type CORS struct {
 	// MaxAge is the value to return in the Access-Control-Max-Age
@@ -1544,22 +1498,27 @@ service behaves when accessing bucket contents as a web site. See
 	<a href="#responseheaders">ResponseHeaders</a> []<a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_Client" data-uid="cloud.google.com/go/storage.Client">Client</h3>
-        <div class="markdown level1 summary"><p>Client is a client for interacting with Google Cloud Storage.</p>
-<p>Clients should be reused instead of created as needed.
-The methods of Client are safe for concurrent use by multiple goroutines.</p>
+        <div class="markdown level1 summary"><p>CORS is the bucket&#39;s Cross-Origin Resource Sharing (CORS) configuration.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_Client" data-uid="cloud.google.com/go/storage.Client">Client</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Client struct {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>Client is a client for interacting with Google Cloud Storage.</p>
+<p>Clients should be reused instead of created as needed.
+The methods of Client are safe for concurrent use by multiple goroutines.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_Client_NewClient" data-uid="cloud.google.com/go/storage.Client.NewClient">func NewClient
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func NewClient(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="https://pkg.go.dev/google.golang.org/api/option">option</a>.<a href="https://pkg.go.dev/google.golang.org/api/option#ClientOption">ClientOption</a>) (*<a href="#client">Client</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>NewClient creates a new Google Cloud Storage client.
 The default scope is ScopeFullControl. To use a different scope, like
 ScopeReadOnly, use option.WithScopes.</p>
@@ -1567,13 +1526,9 @@ ScopeReadOnly, use option.WithScopes.</p>
 are safe for concurrent use by multiple goroutines.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func NewClient(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="https://pkg.go.dev/google.golang.org/api/option">option</a>.<a href="https://pkg.go.dev/google.golang.org/api/option#ClientOption">ClientOption</a>) (*<a href="#client">Client</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_Client_NewClient_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1597,10 +1552,10 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">unauthenticated</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">unauthenticated</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1622,9 +1577,12 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_Client_Bucket" data-uid="cloud.google.com/go/storage.Client.Bucket">func (*Client) Bucket
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Bucket(name <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Bucket returns a BucketHandle, which provides operations on the named bucket.
 This call does not perform any network operations.</p>
 <p>The supplied name must contain only lowercase letters, numbers, dashes,
@@ -1633,12 +1591,11 @@ found at:
   <a href="https://cloud.google.com/storage/docs/bucket-naming">https://cloud.google.com/storage/docs/bucket-naming</a></p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Bucket(name <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#buckethandle">BucketHandle</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Client_Buckets" data-uid="cloud.google.com/go/storage.Client.Buckets">func (*Client) Buckets
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Buckets(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#bucketiterator">BucketIterator</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Buckets returns an iterator over the buckets in the project. You may
 optionally set the iterator&#39;s Prefix field to restrict the list to buckets
 whose names begin with the prefix. By default, all buckets in the project
@@ -1646,13 +1603,9 @@ are returned.</p>
 <p>Note: The returned iterator is not safe for concurrent operations without explicit synchronization.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Buckets(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#bucketiterator">BucketIterator</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_Client_Buckets_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1669,30 +1622,28 @@ func main() {
 	_ = it // TODO: iterate using Next or iterator.Pager.
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_Client_Close" data-uid="cloud.google.com/go/storage.Client.Close">func (*Client) Close
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Close closes the Client.</p>
 <p>Close need not be called at program exit.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Client_CreateHMACKey" data-uid="cloud.google.com/go/storage.Client.CreateHMACKey">func (*Client) CreateHMACKey
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) CreateHMACKey(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID, serviceAccountEmail <a href="https://pkg.go.dev/builtin#string">string</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>CreateHMACKey invokes an RPC for Google Cloud Storage to create a new HMACKey.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) CreateHMACKey(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID, serviceAccountEmail <a href="https://pkg.go.dev/builtin#string">string</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_Client_CreateHMACKey_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1713,31 +1664,29 @@ func main() {
 	_ = hkey // TODO: Use the HMAC Key.
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_Client_HMACKeyHandle" data-uid="cloud.google.com/go/storage.Client.HMACKeyHandle">func (*Client) HMACKeyHandle
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) HMACKeyHandle(projectID, accessID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#hmackeyhandle">HMACKeyHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>HMACKeyHandle creates a handle that will be used for HMACKey operations.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) HMACKeyHandle(projectID, accessID <a href="https://pkg.go.dev/builtin#string">string</a>) *<a href="#hmackeyhandle">HMACKeyHandle</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Client_ListHMACKeys" data-uid="cloud.google.com/go/storage.Client.ListHMACKeys">func (*Client) ListHMACKeys
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) ListHMACKeys(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) *<a href="#hmackeysiterator">HMACKeysIterator</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ListHMACKeys returns an iterator for listing HMACKeys.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) ListHMACKeys(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) *<a href="#hmackeysiterator">HMACKeysIterator</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_Client_ListHMACKeys_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1765,10 +1714,10 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">forServiceAccountEmail</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">forServiceAccountEmail</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1796,10 +1745,10 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">showDeletedKeys</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">showDeletedKeys</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1827,22 +1776,16 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_Client_ServiceAccount" data-uid="cloud.google.com/go/storage.Client.ServiceAccount">func (*Client) ServiceAccount
 </h4>
-            <div class="markdown level1 summary"><p>ServiceAccount fetches the email address of the given project&#39;s Google Cloud Storage service account.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (c *<a href="#client">Client</a>) ServiceAccount(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, projectID <a href="https://pkg.go.dev/builtin#string">string</a>) (<a href="https://pkg.go.dev/builtin#string">string</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
-                  <h3 id="cloud_google_com_go_storage_Composer" data-uid="cloud.google.com/go/storage.Composer">Composer</h3>
-        <div class="markdown level1 summary"><p>A Composer composes source objects into a destination object.</p>
-<p>For Requester Pays buckets, the user project of dst is billed.</p>
+            <div class="markdown level1 summary"><p>ServiceAccount fetches the email address of the given project&#39;s Google Cloud Storage service account.</p>
 </div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+            <div class="markdown level1 conceptual"></div>
+                  <h3 id="cloud_google_com_go_storage_Composer" data-uid="cloud.google.com/go/storage.Composer">Composer</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Composer struct {
 	// ObjectAttrs are optional attributes to set on the destination object.
@@ -1859,19 +1802,22 @@ func main() {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>A Composer composes source objects into a destination object.</p>
+<p>For Requester Pays buckets, the user project of dst is billed.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_Composer_Run" data-uid="cloud.google.com/go/storage.Composer.Run">func (*Composer) Run
 </h4>
-            <div class="markdown level1 summary"><p>Run performs the compose operation.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (c *<a href="#composer">Composer</a>) Run(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Run performs the compose operation.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_Composer_Run_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1912,17 +1858,8 @@ func main() {
 	fmt.Println(attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
         <h3 id="cloud_google_com_go_storage_Conditions" data-uid="cloud.google.com/go/storage.Conditions">Conditions</h3>
-        <div class="markdown level1 summary"><p>Conditions constrain methods to act on specific generations of
-objects.</p>
-<p>The zero value is an empty set of constraints. Not all conditions or
-combinations of conditions are applicable to all methods.
-See <a href="https://cloud.google.com/storage/docs/generations-preconditions">https://cloud.google.com/storage/docs/generations-preconditions</a>
-for details on how these operate.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Conditions struct {
 
@@ -1953,12 +1890,16 @@ for details on how these operate.</p>
 	<a href="#metagenerationnotmatch">MetagenerationNotMatch</a> <a href="https://pkg.go.dev/builtin#int64">int64</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_Copier" data-uid="cloud.google.com/go/storage.Copier">Copier</h3>
-        <div class="markdown level1 summary"><p>A Copier copies a source object to a destination.</p>
+        <div class="markdown level1 summary"><p>Conditions constrain methods to act on specific generations of
+objects.</p>
+<p>The zero value is an empty set of constraints. Not all conditions or
+combinations of conditions are applicable to all methods.
+See <a href="https://cloud.google.com/storage/docs/generations-preconditions">https://cloud.google.com/storage/docs/generations-preconditions</a>
+for details on how these operate.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_Copier" data-uid="cloud.google.com/go/storage.Copier">Copier</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Copier struct {
 	// ObjectAttrs are optional attributes to set on the destination object.
@@ -1997,19 +1938,21 @@ for details on how these operate.</p>
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>A Copier copies a source object to a destination.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_Copier_Run" data-uid="cloud.google.com/go/storage.Copier.Run">func (*Copier) Run
 </h4>
-            <div class="markdown level1 summary"><p>Run performs the copy.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (c *<a href="#copier">Copier</a>) Run(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Run performs the copy.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_Copier_Run_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2043,10 +1986,10 @@ func main() {
 	fmt.Println(attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">progress</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">progress</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2073,15 +2016,8 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
         <h3 id="cloud_google_com_go_storage_HMACKey" data-uid="cloud.google.com/go/storage.HMACKey">HMACKey</h3>
-        <div class="markdown level1 summary"><p>HMACKey is the representation of a Google Cloud Storage HMAC key.</p>
-<p>HMAC keys are used to authenticate signed access to objects. To enable HMAC key
-authentication, please visit <a href="https://cloud.google.com/storage/docs/migrating">https://cloud.google.com/storage/docs/migrating</a>.</p>
-<p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type HMACKey struct {
 	// The HMAC's secret key.
@@ -2115,13 +2051,14 @@ authentication, please visit <a href="https://cloud.google.com/storage/docs/migr
 	<a href="#state">State</a> <a href="#hmacstate">HMACState</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_HMACKeyAttrsToUpdate" data-uid="cloud.google.com/go/storage.HMACKeyAttrsToUpdate">HMACKeyAttrsToUpdate</h3>
-        <div class="markdown level1 summary"><p>HMACKeyAttrsToUpdate defines the attributes of an HMACKey that will be updated.</p>
+        <div class="markdown level1 summary"><p>HMACKey is the representation of a Google Cloud Storage HMAC key.</p>
+<p>HMAC keys are used to authenticate signed access to objects. To enable HMAC key
+authentication, please visit <a href="https://cloud.google.com/storage/docs/migrating">https://cloud.google.com/storage/docs/migrating</a>.</p>
 <p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_HMACKeyAttrsToUpdate" data-uid="cloud.google.com/go/storage.HMACKeyAttrsToUpdate">HMACKeyAttrsToUpdate</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type HMACKeyAttrsToUpdate struct {
 	// State is required and must be either StateActive or StateInactive.
@@ -2131,34 +2068,36 @@ authentication, please visit <a href="https://cloud.google.com/storage/docs/migr
 	<a href="#etag">Etag</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_HMACKeyHandle" data-uid="cloud.google.com/go/storage.HMACKeyHandle">HMACKeyHandle</h3>
-        <div class="markdown level1 summary"><p>HMACKeyHandle helps provide access and management for HMAC keys.</p>
+        <div class="markdown level1 summary"><p>HMACKeyAttrsToUpdate defines the attributes of an HMACKey that will be updated.</p>
 <p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_HMACKeyHandle" data-uid="cloud.google.com/go/storage.HMACKeyHandle">HMACKeyHandle</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type HMACKeyHandle struct {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>HMACKeyHandle helps provide access and management for HMAC keys.</p>
+<p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_HMACKeyHandle_Delete" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Delete">func (*HMACKeyHandle) Delete
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (hkh *<a href="#hmackeyhandle">HMACKeyHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Delete invokes an RPC to delete the key referenced by accessID, on Google Cloud Storage.
 Only inactive HMAC keys can be deleted.
 After deletion, a key cannot be used to authenticate requests.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (hkh *<a href="#hmackeyhandle">HMACKeyHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Delete_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2179,9 +2118,12 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_HMACKeyHandle_Get" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Get">func (*HMACKeyHandle) Get
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (hkh *<a href="#hmackeyhandle">HMACKeyHandle</a>) Get(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Get invokes an RPC to retrieve the HMAC key referenced by the
 HMACKeyHandle&#39;s accessID.</p>
 <p>Options such as UserProjectForHMACKeys can be used to set the
@@ -2189,13 +2131,9 @@ userProject to be billed against for operations.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (hkh *<a href="#hmackeyhandle">HMACKeyHandle</a>) Get(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Get_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2217,20 +2155,19 @@ func main() {
 	_ = hkey // TODO: Use the HMAC Key.
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_HMACKeyHandle_Update" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Update">func (*HMACKeyHandle) Update
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (h *<a href="#hmackeyhandle">HMACKeyHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, au <a href="#hmackeyattrstoupdate">HMACKeyAttrsToUpdate</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Update mutates the HMACKey referred to by accessID.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (h *<a href="#hmackeyhandle">HMACKeyHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, au <a href="#hmackeyattrstoupdate">HMACKeyAttrsToUpdate</a>, opts ...<a href="#hmackeyoption">HMACKeyOption</a>) (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_HMACKeyHandle_Update_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2254,21 +2191,23 @@ func main() {
 	_ = ukey // TODO: Use the HMAC Key.
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
         <h3 id="cloud_google_com_go_storage_HMACKeyOption" data-uid="cloud.google.com/go/storage.HMACKeyOption">HMACKeyOption</h3>
-        <div class="markdown level1 summary"><p>HMACKeyOption configures the behavior of HMACKey related methods and actions.</p>
-<p>This interface is EXPERIMENTAL and subject to change or removal without notice.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type HMACKeyOption interface {
 	// contains filtered or unexported methods
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>HMACKeyOption configures the behavior of HMACKey related methods and actions.</p>
+<p>This interface is EXPERIMENTAL and subject to change or removal without notice.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_HMACKeyOption_ForHMACKeyServiceAccountEmail" data-uid="cloud.google.com/go/storage.HMACKeyOption.ForHMACKeyServiceAccountEmail">func ForHMACKeyServiceAccountEmail
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ForHMACKeyServiceAccountEmail(serviceAccountEmail <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ForHMACKeyServiceAccountEmail returns HMAC Keys that are
 associated with the email address of a service account in the project.</p>
 <p>Only one service account email can be used as a filter, so if multiple
@@ -2276,47 +2215,43 @@ of these options are applied, the last email to be set will be used.</p>
 <p>This option is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func ForHMACKeyServiceAccountEmail(serviceAccountEmail <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_HMACKeyOption_ShowDeletedHMACKeys" data-uid="cloud.google.com/go/storage.HMACKeyOption.ShowDeletedHMACKeys">func ShowDeletedHMACKeys
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ShowDeletedHMACKeys() <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ShowDeletedHMACKeys will also list keys whose state is &quot;DELETED&quot;.</p>
 <p>This option is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func ShowDeletedHMACKeys() <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_HMACKeyOption_UserProjectForHMACKeys" data-uid="cloud.google.com/go/storage.HMACKeyOption.UserProjectForHMACKeys">func UserProjectForHMACKeys
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func UserProjectForHMACKeys(userProjectID <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>UserProjectForHMACKeys will bill the request against userProjectID
 if userProjectID is non-empty.</p>
 <p>Note: This is a noop right now and only provided for API compatibility.</p>
 <p>This option is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func UserProjectForHMACKeys(userProjectID <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#hmackeyoption">HMACKeyOption</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_HMACKeysIterator" data-uid="cloud.google.com/go/storage.HMACKeysIterator">HMACKeysIterator</h3>
-        <div class="markdown level1 summary"><p>An HMACKeysIterator is an iterator over HMACKeys.</p>
-<p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
-<p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type HMACKeysIterator struct {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>An HMACKeysIterator is an iterator over HMACKeys.</p>
+<p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
+<p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_HMACKeysIterator_Next" data-uid="cloud.google.com/go/storage.HMACKeysIterator.Next">func (*HMACKeysIterator) Next
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#hmackeysiterator">HMACKeysIterator</a>) Next() (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Next returns the next result. Its second return value is iterator.Done if
 there are no more results. Once Next returns iterator.Done, all subsequent
 calls will return iterator.Done.</p>
@@ -2324,35 +2259,26 @@ calls will return iterator.Done.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (it *<a href="#hmackeysiterator">HMACKeysIterator</a>) Next() (*<a href="#hmackey">HMACKey</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_HMACKeysIterator_PageInfo" data-uid="cloud.google.com/go/storage.HMACKeysIterator.PageInfo">func (*HMACKeysIterator) PageInfo
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#hmackeysiterator">HMACKeysIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>PageInfo supports pagination. See the google.golang.org/api/iterator package for details.</p>
 <p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
 <p>This method is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (it *<a href="#hmackeysiterator">HMACKeysIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_HMACState" data-uid="cloud.google.com/go/storage.HMACState">HMACState</h3>
+        <div class="codewrapper">
+          <pre><code class="prettyprint">type HMACState <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>
+        </div>
         <div class="markdown level1 summary"><p>HMACState is the state of the HMAC key.</p>
 <p>This type is EXPERIMENTAL and subject to change or removal without notice.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
-        <div class="codewrapper">
-          <pre><code class="prettyprint">type HMACState <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>
-        </div>
         
             <h4 id="cloud_google_com_go_storage_Active_Inactive_Deleted" data-uid="cloud.google.com/go/storage.Active,Inactive,Deleted">Active, Inactive, Deleted</h4>
-            <div class="markdown level1 summary"></div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">const (
 	// Active is the status for an active key that can be used to sign
@@ -2370,22 +2296,19 @@ calls will return iterator.Done.</p>
 	Deleted <a href="#hmacstate">HMACState</a> = "DELETED"
 )</code></pre>	
             </div>
+            <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
                   <h3 id="cloud_google_com_go_storage_Lifecycle" data-uid="cloud.google.com/go/storage.Lifecycle">Lifecycle</h3>
-        <div class="markdown level1 summary"><p>Lifecycle is the lifecycle configuration for objects in the bucket.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Lifecycle struct {
 	<a href="#rules">Rules</a> []<a href="#lifecyclerule">LifecycleRule</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_LifecycleAction" data-uid="cloud.google.com/go/storage.LifecycleAction">LifecycleAction</h3>
-        <div class="markdown level1 summary"><p>LifecycleAction is a lifecycle configuration action.</p>
+        <div class="markdown level1 summary"><p>Lifecycle is the lifecycle configuration for objects in the bucket.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_LifecycleAction" data-uid="cloud.google.com/go/storage.LifecycleAction">LifecycleAction</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type LifecycleAction struct {
 	// Type is the type of action to take on matching objects.
@@ -2400,14 +2323,11 @@ calls will return iterator.Done.</p>
 	<a href="#storageclass">StorageClass</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_LifecycleCondition" data-uid="cloud.google.com/go/storage.LifecycleCondition">LifecycleCondition</h3>
-        <div class="markdown level1 summary"><p>LifecycleCondition is a set of conditions used to match objects and take an
-action automatically.</p>
-<p>All configured conditions must be met for the associated action to be taken.</p>
+        <div class="markdown level1 summary"><p>LifecycleAction is a lifecycle configuration action.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_LifecycleCondition" data-uid="cloud.google.com/go/storage.LifecycleCondition">LifecycleCondition</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type LifecycleCondition struct {
 	// AgeInDays is the age of the object in days.
@@ -2458,14 +2378,13 @@ action automatically.</p>
 	<a href="#numnewerversions">NumNewerVersions</a> <a href="https://pkg.go.dev/builtin#int64">int64</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_LifecycleRule" data-uid="cloud.google.com/go/storage.LifecycleRule">LifecycleRule</h3>
-        <div class="markdown level1 summary"><p>LifecycleRule is a lifecycle configuration rule.</p>
-<p>When all the configured conditions are met by an object in the bucket, the
-configured action will automatically be taken on that object.</p>
+        <div class="markdown level1 summary"><p>LifecycleCondition is a set of conditions used to match objects and take an
+action automatically.</p>
+<p>All configured conditions must be met for the associated action to be taken.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_LifecycleRule" data-uid="cloud.google.com/go/storage.LifecycleRule">LifecycleRule</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type LifecycleRule struct {
 	// Action is the action to take when all of the associated conditions are
@@ -2477,20 +2396,21 @@ configured action will automatically be taken on that object.</p>
 	<a href="#condition">Condition</a> <a href="#lifecyclecondition">LifecycleCondition</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_Liveness" data-uid="cloud.google.com/go/storage.Liveness">Liveness</h3>
-        <div class="markdown level1 summary"><p>Liveness specifies whether the object is live or not.</p>
+        <div class="markdown level1 summary"><p>LifecycleRule is a lifecycle configuration rule.</p>
+<p>When all the configured conditions are met by an object in the bucket, the
+configured action will automatically be taken on that object.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_Liveness" data-uid="cloud.google.com/go/storage.Liveness">Liveness</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Liveness <a href="https://pkg.go.dev/builtin#int">int</a></code></pre>
         </div>
+        <div class="markdown level1 summary"><p>Liveness specifies whether the object is live or not.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_LiveAndArchived_Live_Archived" data-uid="cloud.google.com/go/storage.LiveAndArchived,Live,Archived">LiveAndArchived, Live, Archived</h4>
-            <div class="markdown level1 summary"></div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">const (
 	// LiveAndArchived includes both live and archived objects.
@@ -2501,12 +2421,9 @@ configured action will automatically be taken on that object.</p>
 	Archived
 )</code></pre>	
             </div>
+            <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
                   <h3 id="cloud_google_com_go_storage_Notification" data-uid="cloud.google.com/go/storage.Notification">Notification</h3>
-        <div class="markdown level1 summary"><p>A Notification describes how to send Cloud PubSub messages when certain
-events occur in a bucket.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Notification struct {
 	//The ID of the notification.
@@ -2536,12 +2453,12 @@ events occur in a bucket.</p>
 	<a href="#payloadformat">PayloadFormat</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_ObjectAttrs" data-uid="cloud.google.com/go/storage.ObjectAttrs">ObjectAttrs</h3>
-        <div class="markdown level1 summary"><p>ObjectAttrs represents the metadata for a Google Cloud Storage (GCS) object.</p>
+        <div class="markdown level1 summary"><p>A Notification describes how to send Cloud PubSub messages when certain
+events occur in a bucket.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_ObjectAttrs" data-uid="cloud.google.com/go/storage.ObjectAttrs">ObjectAttrs</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ObjectAttrs struct {
 	// Bucket is the name of the bucket containing this GCS object.
@@ -2687,21 +2604,11 @@ events occur in a bucket.</p>
 	<a href="#customtime">CustomTime</a> <a href="https://pkg.go.dev/time">time</a>.<a href="https://pkg.go.dev/time#Time">Time</a>
 }</userid></code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_ObjectAttrsToUpdate" data-uid="cloud.google.com/go/storage.ObjectAttrsToUpdate">ObjectAttrsToUpdate</h3>
-        <div class="markdown level1 summary"><p>ObjectAttrsToUpdate is used to update the attributes of an object.
-Only fields set to non-nil values will be updated.
-Set a field to its zero value to delete it.</p>
-<p>For example, to change ContentType and delete ContentEncoding and
-Metadata, use
-   ObjectAttrsToUpdate{
-       ContentType: &quot;text/html&quot;,
-       ContentEncoding: &quot;&quot;,
-       Metadata: map[string]string{},
-   }</p>
+        <div class="markdown level1 summary"><p>ObjectAttrs represents the metadata for a Google Cloud Storage (GCS) object.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_ObjectAttrsToUpdate" data-uid="cloud.google.com/go/storage.ObjectAttrsToUpdate">ObjectAttrsToUpdate</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ObjectAttrsToUpdate struct {
 	<a href="#eventbasedhold">EventBasedHold</a>     <a href="https://pkg.go.dev/cloud.google.com/go/internal/optional">optional</a>.<a href="https://pkg.go.dev/cloud.google.com/go/internal/optional#Bool">Bool</a>
@@ -2720,18 +2627,29 @@ Metadata, use
 	<a href="#predefinedacl">PredefinedACL</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_ObjectHandle" data-uid="cloud.google.com/go/storage.ObjectHandle">ObjectHandle</h3>
-        <div class="markdown level1 summary"><p>ObjectHandle provides operations on an object in a Google Cloud Storage bucket.
-Use BucketHandle.Object to get a handle.</p>
+        <div class="markdown level1 summary"><p>ObjectAttrsToUpdate is used to update the attributes of an object.
+Only fields set to non-nil values will be updated.
+Set a field to its zero value to delete it.</p>
+<p>For example, to change ContentType and delete ContentEncoding and
+Metadata, use
+   ObjectAttrsToUpdate{
+       ContentType: &quot;text/html&quot;,
+       ContentEncoding: &quot;&quot;,
+       Metadata: map[string]string{},
+   }</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_ObjectHandle" data-uid="cloud.google.com/go/storage.ObjectHandle">ObjectHandle</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ObjectHandle struct {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>ObjectHandle provides operations on an object in a Google Cloud Storage bucket.
+Use BucketHandle.Object to get a handle.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         <h5 id="cloud_google_com_go_storage_ObjectHandle_examples">Examples</h5>
         <h6 translate="no">exists</h6>
         <div class="codewrapper">
@@ -2765,19 +2683,18 @@ func main() {
   
             <h4 id="cloud_google_com_go_storage_ObjectHandle_ACL" data-uid="cloud.google.com/go/storage.ObjectHandle.ACL">func (*ObjectHandle) ACL
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) ACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ACL provides access to the object&#39;s access control list.
 This controls who can read and write this object.
 This call does not perform any network operations.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) ACL() *<a href="#aclhandle">ACLHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_ACL_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2803,20 +2720,19 @@ func main() {
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Attrs" data-uid="cloud.google.com/go/storage.ObjectHandle.Attrs">func (*ObjectHandle) Attrs
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Attrs(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Attrs returns meta information about the object.
 ErrObjectNotExist will be returned if the object is not found.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Attrs(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (attrs *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_Attrs_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2837,10 +2753,10 @@ func main() {
 	fmt.Println(objAttrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">withConditions</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">withConditions</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2871,20 +2787,19 @@ func main() {
 	fmt.Println(objAttrs1, objAttrs2)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_BucketName" data-uid="cloud.google.com/go/storage.ObjectHandle.BucketName">func (*ObjectHandle) BucketName
 </h4>
-            <div class="markdown level1 summary"><p>BucketName returns the name of the bucket.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) BucketName() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>BucketName returns the name of the bucket.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_BucketName_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2910,9 +2825,12 @@ func main() {
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_ComposerFrom" data-uid="cloud.google.com/go/storage.ObjectHandle.ComposerFrom">func (*ObjectHandle) ComposerFrom
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (dst *<a href="#objecthandle">ObjectHandle</a>) ComposerFrom(srcs ...*<a href="#objecthandle">ObjectHandle</a>) *<a href="#composer">Composer</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ComposerFrom creates a Composer that can compose srcs into dst.
 You can immediately call Run on the returned Composer, or you can
 configure it first.</p>
@@ -2921,14 +2839,10 @@ source objects and encrypt the destination object. It is an error
 to specify an encryption key for any of the source objects.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (dst *<a href="#objecthandle">ObjectHandle</a>) ComposerFrom(srcs ...*<a href="#objecthandle">ObjectHandle</a>) *<a href="#composer">Composer</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_ComposerFrom_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2954,9 +2868,12 @@ func main() {
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_CopierFrom" data-uid="cloud.google.com/go/storage.ObjectHandle.CopierFrom">func (*ObjectHandle) CopierFrom
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (dst *<a href="#objecthandle">ObjectHandle</a>) CopierFrom(src *<a href="#objecthandle">ObjectHandle</a>) *<a href="#copier">Copier</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>CopierFrom creates a Copier that can copy src to dst.
 You can immediately call Run on the returned Copier, or
 you can configure it first.</p>
@@ -2964,14 +2881,10 @@ you can configure it first.</p>
 in which case the user project of src is billed.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (dst *<a href="#objecthandle">ObjectHandle</a>) CopierFrom(src *<a href="#objecthandle">ObjectHandle</a>) *<a href="#copier">Copier</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_CopierFrom_examples">Examples</h5>
-            <h6 translate="no">rotateEncryptionKeys</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">rotateEncryptionKeys</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2995,19 +2908,18 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Delete" data-uid="cloud.google.com/go/storage.ObjectHandle.Delete">func (*ObjectHandle) Delete
 </h4>
-            <div class="markdown level1 summary"><p>Delete deletes the single specified object.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Delete(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Delete deletes the single specified object.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_Delete_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3045,9 +2957,12 @@ func main() {
 	fmt.Println(&quot;deleted all object items in the bucket specified.&quot;)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Generation" data-uid="cloud.google.com/go/storage.ObjectHandle.Generation">func (*ObjectHandle) Generation
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Generation(gen <a href="https://pkg.go.dev/builtin#int64">int64</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Generation returns a new ObjectHandle that operates on a specific generation
 of the object.
 By default, the handle operates on the latest generation. Not
@@ -3055,13 +2970,9 @@ all operations work when given a specific generation; check the API
 endpoints at <a href="https://cloud.google.com/storage/docs/json_api/">https://cloud.google.com/storage/docs/json_api/</a> for details.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Generation(gen <a href="https://pkg.go.dev/builtin#int64">int64</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_Generation_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3091,9 +3002,12 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_If" data-uid="cloud.google.com/go/storage.ObjectHandle.If">func (*ObjectHandle) If
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) If(conds <a href="#conditions">Conditions</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>If returns a new ObjectHandle that applies a set of preconditions.
 Preconditions already set on the ObjectHandle are ignored.
 Operations on the new handle will return an error if the preconditions are not
@@ -3101,13 +3015,9 @@ satisfied. See <a href="https://cloud.google.com/storage/docs/generations-precon
 for more details.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) If(conds <a href="#conditions">Conditions</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_If_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3152,22 +3062,21 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Key" data-uid="cloud.google.com/go/storage.ObjectHandle.Key">func (*ObjectHandle) Key
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Key(encryptionKey []<a href="https://pkg.go.dev/builtin#byte">byte</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Key returns a new ObjectHandle that uses the supplied encryption
 key to encrypt and decrypt the object&#39;s contents.</p>
 <p>Encryption key must be a 32-byte AES-256 key.
 See <a href="https://cloud.google.com/storage/docs/encryption">https://cloud.google.com/storage/docs/encryption</a> for details.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Key(encryptionKey []<a href="https://pkg.go.dev/builtin#byte">byte</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_Key_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3193,9 +3102,12 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_NewRangeReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewRangeReader">func (*ObjectHandle) NewRangeReader
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewRangeReader(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, offset, length <a href="https://pkg.go.dev/builtin#int64">int64</a>) (r *<a href="#reader">Reader</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>NewRangeReader reads part of an object, reading at most length bytes
 starting at the given offset. If length is negative, the object is read
 until the end. If offset is negative, the object is read abs(offset) bytes
@@ -3207,13 +3119,9 @@ that file will be served back whole, regardless of the requested range as
 Google Cloud Storage dictates.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewRangeReader(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, offset, length <a href="https://pkg.go.dev/builtin#int64">int64</a>) (r *<a href="#reader">Reader</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_NewRangeReader_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3242,10 +3150,10 @@ func main() {
 	fmt.Printf(&quot;first 64K of file contents:\n%s\n&quot;, slurp)
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">lastNBytes</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">lastNBytes</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3274,10 +3182,10 @@ func main() {
 	fmt.Printf(&quot;Last 10 bytes from the end of the file:\n%s\n&quot;, slurp)
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">untilEnd</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">untilEnd</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3306,22 +3214,21 @@ func main() {
 	fmt.Printf(&quot;From 101st byte until the end:\n%s\n&quot;, slurp)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_NewReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewReader">func (*ObjectHandle) NewReader
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewReader(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (*<a href="#reader">Reader</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>NewReader creates a new Reader to read the contents of the
 object.
 ErrObjectNotExist will be returned if the object is not found.</p>
 <p>The caller must call Close on the returned Reader when done reading.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewReader(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) (*<a href="#reader">Reader</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_NewReader_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3348,9 +3255,12 @@ func main() {
 	fmt.Println(&quot;file contents:&quot;, slurp)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_NewWriter" data-uid="cloud.google.com/go/storage.ObjectHandle.NewWriter">func (*ObjectHandle) NewWriter
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewWriter(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) *<a href="#writer">Writer</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>NewWriter returns a storage Writer that writes to the GCS object
 associated with this ObjectHandle.</p>
 <p>A new object will be created unless an object with this name already exists.
@@ -3365,13 +3275,9 @@ using net/http.DetectContentType.</p>
 stop writing without saving the data, cancel the context.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) NewWriter(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>) *<a href="#writer">Writer</a></code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_NewWriter_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3388,20 +3294,19 @@ func main() {
 	_ = wc // TODO: Use the Writer.
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_ObjectName" data-uid="cloud.google.com/go/storage.ObjectHandle.ObjectName">func (*ObjectHandle) ObjectName
 </h4>
-            <div class="markdown level1 summary"><p>ObjectName returns the name of the object.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) ObjectName() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>ObjectName returns the name of the object.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_ObjectName_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3427,20 +3332,19 @@ func main() {
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_ReadCompressed" data-uid="cloud.google.com/go/storage.ObjectHandle.ReadCompressed">func (*ObjectHandle) ReadCompressed
 </h4>
-            <div class="markdown level1 summary"><p>ReadCompressed when true causes the read to happen without decompressing.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) ReadCompressed(compressed <a href="https://pkg.go.dev/builtin#bool">bool</a>) *<a href="#objecthandle">ObjectHandle</a></code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>ReadCompressed when true causes the read to happen without decompressing.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_ReadCompressed_examples">Examples</h5>
-            <h6 translate="no">exists</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <h6 translate="no">exists</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3466,21 +3370,20 @@ func main() {
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectHandle_Update" data-uid="cloud.google.com/go/storage.ObjectHandle.Update">func (*ObjectHandle) Update
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, uattrs <a href="#objectattrstoupdate">ObjectAttrsToUpdate</a>) (oa *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Update updates an object with the provided attributes.
 All zero-value attributes are ignored.
 ErrObjectNotExist will be returned if the object is not found.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (o *<a href="#objecthandle">ObjectHandle</a>) Update(ctx <a href="https://pkg.go.dev/context">context</a>.<a href="https://pkg.go.dev/context#Context">Context</a>, uattrs <a href="#objectattrstoupdate">ObjectAttrsToUpdate</a>) (oa *<a href="#objectattrs">ObjectAttrs</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectHandle_Update_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3505,21 +3408,23 @@ func main() {
 	fmt.Println(objAttrs)
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
         <h3 id="cloud_google_com_go_storage_ObjectIterator" data-uid="cloud.google.com/go/storage.ObjectIterator">ObjectIterator</h3>
-        <div class="markdown level1 summary"><p>An ObjectIterator is an iterator over ObjectAttrs.</p>
-<p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ObjectIterator struct {
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>An ObjectIterator is an iterator over ObjectAttrs.</p>
+<p>Note: This iterator is not safe for concurrent operations without explicit synchronization.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_ObjectIterator_Next" data-uid="cloud.google.com/go/storage.ObjectIterator.Next">func (*ObjectIterator) Next
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#objectiterator">ObjectIterator</a>) Next() (*<a href="#objectattrs">ObjectAttrs</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Next returns the next result. Its second return value is iterator.Done if
 there are no more results. Once Next returns iterator.Done, all subsequent
 calls will return iterator.Done.</p>
@@ -3535,13 +3440,9 @@ represent prefixes.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (it *<a href="#objectiterator">ObjectIterator</a>) Next() (*<a href="#objectattrs">ObjectAttrs</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_ObjectIterator_Next_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3569,22 +3470,17 @@ func main() {
 	}
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
             <h4 id="cloud_google_com_go_storage_ObjectIterator_PageInfo" data-uid="cloud.google.com/go/storage.ObjectIterator.PageInfo">func (*ObjectIterator) PageInfo
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (it *<a href="#objectiterator">ObjectIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>PageInfo supports pagination. See the google.golang.org/api/iterator package for details.</p>
 <p>Note: This method is not safe for concurrent operations without explicit synchronization.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (it *<a href="#objectiterator">ObjectIterator</a>) PageInfo() *<a href="https://pkg.go.dev/google.golang.org/api/iterator">iterator</a>.<a href="https://pkg.go.dev/google.golang.org/api/iterator#PageInfo">PageInfo</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_PolicyV4Fields" data-uid="cloud.google.com/go/storage.PolicyV4Fields">PolicyV4Fields</h3>
-        <div class="markdown level1 summary"><p>PolicyV4Fields describes the attributes for a PostPolicyV4 request.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type PolicyV4Fields struct {
 	// ACL specifies the access control permissions for the object.
@@ -3618,12 +3514,11 @@ func main() {
 	<a href="#redirecttourlonsuccess">RedirectToURLOnSuccess</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_PostPolicyV4" data-uid="cloud.google.com/go/storage.PostPolicyV4">PostPolicyV4</h3>
-        <div class="markdown level1 summary"><p>PostPolicyV4 describes the URL and respective form fields for a generated PostPolicyV4 request.</p>
+        <div class="markdown level1 summary"><p>PolicyV4Fields describes the attributes for a PostPolicyV4 request.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_PostPolicyV4" data-uid="cloud.google.com/go/storage.PostPolicyV4">PostPolicyV4</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type PostPolicyV4 struct {
 	// URL is the generated URL that the file upload will be made to.
@@ -3633,20 +3528,22 @@ func main() {
 	<a href="#fields">Fields</a> map[<a href="https://pkg.go.dev/builtin#string">string</a>]<a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>PostPolicyV4 describes the URL and respective form fields for a generated PostPolicyV4 request.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_PostPolicyV4_GenerateSignedPostPolicyV4" data-uid="cloud.google.com/go/storage.PostPolicyV4.GenerateSignedPostPolicyV4">func GenerateSignedPostPolicyV4
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func GenerateSignedPostPolicyV4(bucket, object <a href="https://pkg.go.dev/builtin#string">string</a>, opts *<a href="#postpolicyv4options">PostPolicyV4Options</a>) (*<a href="#postpolicyv4">PostPolicyV4</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>GenerateSignedPostPolicyV4 generates a PostPolicyV4 value from bucket, object and opts.
 The generated URL and fields will then allow an unauthenticated client to perform multipart uploads.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func GenerateSignedPostPolicyV4(bucket, object <a href="https://pkg.go.dev/builtin#string">string</a>, opts *<a href="#postpolicyv4options">PostPolicyV4Options</a>) (*<a href="#postpolicyv4">PostPolicyV4</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_PostPolicyV4_GenerateSignedPostPolicyV4_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;bytes&quot;
@@ -3718,47 +3615,38 @@ func main() {
 	_ = res
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
         <h3 id="cloud_google_com_go_storage_PostPolicyV4Condition" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition">PostPolicyV4Condition</h3>
-        <div class="markdown level1 summary"><p>PostPolicyV4Condition describes the constraints that the subsequent
-object upload&#39;s multipart form fields will be expected to conform to.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type PostPolicyV4Condition interface {
 	<a href="https://pkg.go.dev/encoding/json">json</a>.<a href="https://pkg.go.dev/encoding/json#Marshaler">Marshaler</a>
 	// contains filtered or unexported methods
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>PostPolicyV4Condition describes the constraints that the subsequent
+object upload&#39;s multipart form fields will be expected to conform to.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_PostPolicyV4Condition_ConditionContentLengthRange" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition.ConditionContentLengthRange">func ConditionContentLengthRange
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ConditionContentLengthRange(start, end <a href="https://pkg.go.dev/builtin#uint64">uint64</a>) <a href="#postpolicyv4condition">PostPolicyV4Condition</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ConditionContentLengthRange constraints the limits that the
 multipart upload&#39;s range header will be expected to be within.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func ConditionContentLengthRange(start, end <a href="https://pkg.go.dev/builtin#uint64">uint64</a>) <a href="#postpolicyv4condition">PostPolicyV4Condition</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_PostPolicyV4Condition_ConditionStartsWith" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition.ConditionStartsWith">func ConditionStartsWith
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func ConditionStartsWith(key, value <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#postpolicyv4condition">PostPolicyV4Condition</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ConditionStartsWith checks that an attributes starts with value.
 An empty value will cause this condition to be ignored.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func ConditionStartsWith(key, value <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#postpolicyv4condition">PostPolicyV4Condition</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_PostPolicyV4Options" data-uid="cloud.google.com/go/storage.PostPolicyV4Options">PostPolicyV4Options</h3>
-        <div class="markdown level1 summary"><p>PostPolicyV4Options are used to construct a signed post policy.
-Please see <a href="https://cloud.google.com/storage/docs/xml-api/post-object">https://cloud.google.com/storage/docs/xml-api/post-object</a>
-for reference about the fields.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type PostPolicyV4Options struct {
 	// GoogleAccessID represents the authorizer of the signed URL generation.
@@ -3827,24 +3715,24 @@ for reference about the fields.</p>
 	<a href="#conditions">Conditions</a> []<a href="#postpolicyv4condition">PostPolicyV4Condition</a>
 }</your-project-id></code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_ProjectTeam" data-uid="cloud.google.com/go/storage.ProjectTeam">ProjectTeam</h3>
-        <div class="markdown level1 summary"><p>ProjectTeam is the project team associated with the entity, if any.</p>
+        <div class="markdown level1 summary"><p>PostPolicyV4Options are used to construct a signed post policy.
+Please see <a href="https://cloud.google.com/storage/docs/xml-api/post-object">https://cloud.google.com/storage/docs/xml-api/post-object</a>
+for reference about the fields.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_ProjectTeam" data-uid="cloud.google.com/go/storage.ProjectTeam">ProjectTeam</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ProjectTeam struct {
 	<a href="#projectnumber">ProjectNumber</a> <a href="https://pkg.go.dev/builtin#string">string</a>
 	<a href="#team">Team</a>          <a href="https://pkg.go.dev/builtin#string">string</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_Query" data-uid="cloud.google.com/go/storage.Query">Query</h3>
-        <div class="markdown level1 summary"><p>Query represents a query to filter objects from a bucket.</p>
+        <div class="markdown level1 summary"><p>ProjectTeam is the project team associated with the entity, if any.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_Query" data-uid="cloud.google.com/go/storage.Query">Query</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Query struct {
 	// Delimiter returns results in a directory-like fashion.
@@ -3878,9 +3766,15 @@ for reference about the fields.</p>
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>Query represents a query to filter objects from a bucket.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_Query_SetAttrSelection" data-uid="cloud.google.com/go/storage.Query.SetAttrSelection">func (*Query) SetAttrSelection
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (q *<a href="#query">Query</a>) SetAttrSelection(attrs []<a href="https://pkg.go.dev/builtin#string">string</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>SetAttrSelection makes the query populate only specific attributes of
 objects. When iterating over objects, if you only need each object&#39;s name
 and size, pass []string{&quot;Name&quot;, &quot;Size&quot;} to this method. Only these fields
@@ -3890,11 +3784,13 @@ optimization; for more information, see
 <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance">https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance</a></p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (q *<a href="#query">Query</a>) SetAttrSelection(attrs []<a href="https://pkg.go.dev/builtin#string">string</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_Reader" data-uid="cloud.google.com/go/storage.Reader">Reader</h3>
+        <div class="codewrapper">
+          <pre><code class="prettyprint">type Reader struct {
+	<a href="#attrs">Attrs</a> <a href="#readerobjectattrs">ReaderObjectAttrs</a>
+	// contains filtered or unexported fields
+}</code></pre>
+        </div>
         <div class="markdown level1 summary"><p>Reader reads a Cloud Storage object.
 It implements io.Reader.</p>
 <p>Typically, a Reader computes the CRC of the downloaded content and compares it to
@@ -3902,100 +3798,78 @@ the stored CRC, returning an error from Read if there is a mismatch. This integr
 is skipped if transcoding occurs. See <a href="https://cloud.google.com/storage/docs/transcoding">https://cloud.google.com/storage/docs/transcoding</a>.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
-        <div class="codewrapper">
-          <pre><code class="prettyprint">type Reader struct {
-	<a href="#attrs">Attrs</a> <a href="#readerobjectattrs">ReaderObjectAttrs</a>
-	// contains filtered or unexported fields
-}</code></pre>
-        </div>
         
             <h4 id="cloud_google_com_go_storage_Reader_CacheControl" data-uid="cloud.google.com/go/storage.Reader.CacheControl">func (*Reader) CacheControl
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) CacheControl() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>CacheControl returns the cache control of the object.</p>
 <p>Deprecated: use Reader.Attrs.CacheControl.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) CacheControl() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Reader_Close" data-uid="cloud.google.com/go/storage.Reader.Close">func (*Reader) Close
 </h4>
-            <div class="markdown level1 summary"><p>Close closes the Reader. It must be called when done reading.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Close closes the Reader. It must be called when done reading.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
                       <h4 id="cloud_google_com_go_storage_Reader_ContentEncoding" data-uid="cloud.google.com/go/storage.Reader.ContentEncoding">func (*Reader) ContentEncoding
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) ContentEncoding() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ContentEncoding returns the content encoding of the object.</p>
 <p>Deprecated: use Reader.Attrs.ContentEncoding.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) ContentEncoding() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Reader_ContentType" data-uid="cloud.google.com/go/storage.Reader.ContentType">func (*Reader) ContentType
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) ContentType() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>ContentType returns the content type of the object.</p>
 <p>Deprecated: use Reader.Attrs.ContentType.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) ContentType() <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Reader_LastModified" data-uid="cloud.google.com/go/storage.Reader.LastModified">func (*Reader) LastModified
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) LastModified() (<a href="https://pkg.go.dev/time">time</a>.<a href="https://pkg.go.dev/time#Time">Time</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>LastModified returns the value of the Last-Modified header.</p>
 <p>Deprecated: use Reader.Attrs.LastModified.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) LastModified() (<a href="https://pkg.go.dev/time">time</a>.<a href="https://pkg.go.dev/time#Time">Time</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Reader_Read" data-uid="cloud.google.com/go/storage.Reader.Read">func (*Reader) Read
 </h4>
-            <div class="markdown level1 summary"></div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Read(p []<a href="https://pkg.go.dev/builtin#byte">byte</a>) (<a href="https://pkg.go.dev/builtin#int">int</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
             </div>
+            <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
                       <h4 id="cloud_google_com_go_storage_Reader_Remain" data-uid="cloud.google.com/go/storage.Reader.Remain">func (*Reader) Remain
 </h4>
-            <div class="markdown level1 summary"><p>Remain returns the number of bytes left to read, or -1 if unknown.</p>
-</div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Remain() <a href="https://pkg.go.dev/builtin#int64">int64</a></code></pre>	
             </div>
+            <div class="markdown level1 summary"><p>Remain returns the number of bytes left to read, or -1 if unknown.</p>
+</div>
+            <div class="markdown level1 conceptual"></div>
                       <h4 id="cloud_google_com_go_storage_Reader_Size" data-uid="cloud.google.com/go/storage.Reader.Size">func (*Reader) Size
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Size() <a href="https://pkg.go.dev/builtin#int64">int64</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Size returns the size of the object in bytes.
 The returned value is always the same and is not affected by
 calls to Read or Close.</p>
 <p>Deprecated: use Reader.Attrs.Size.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (r *<a href="#reader">Reader</a>) Size() <a href="https://pkg.go.dev/builtin#int64">int64</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_ReaderObjectAttrs" data-uid="cloud.google.com/go/storage.ReaderObjectAttrs">ReaderObjectAttrs</h3>
-        <div class="markdown level1 summary"><p>ReaderObjectAttrs are attributes about the object being read. These are populated
-during the New call. This struct only holds a subset of object attributes: to
-get the full set of attributes, use ObjectHandle.Attrs.</p>
-<p>Each field is read-only.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ReaderObjectAttrs struct {
 	// Size is the length of the object's content.
@@ -4030,21 +3904,14 @@ get the full set of attributes, use ObjectHandle.Attrs.</p>
 	<a href="#metageneration">Metageneration</a> <a href="https://pkg.go.dev/builtin#int64">int64</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_RetentionPolicy" data-uid="cloud.google.com/go/storage.RetentionPolicy">RetentionPolicy</h3>
-        <div class="markdown level1 summary"><p>RetentionPolicy enforces a minimum retention time for all objects
-contained in the bucket.</p>
-<p>Any attempt to overwrite or delete objects younger than the retention
-period will result in an error. An unlocked retention policy can be
-modified or removed from the bucket via the Update method. A
-locked retention policy cannot be removed or shortened in duration
-for the lifetime of the bucket.</p>
-<p>This feature is in private alpha release. It is not currently available to
-most customers. It might be changed in backwards-incompatible ways and is not
-subject to any SLA or deprecation policy.</p>
+        <div class="markdown level1 summary"><p>ReaderObjectAttrs are attributes about the object being read. These are populated
+during the New call. This struct only holds a subset of object attributes: to
+get the full set of attributes, use ObjectHandle.Attrs.</p>
+<p>Each field is read-only.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_RetentionPolicy" data-uid="cloud.google.com/go/storage.RetentionPolicy">RetentionPolicy</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type RetentionPolicy struct {
 	// RetentionPeriod specifies the duration that objects need to be
@@ -4064,12 +3931,20 @@ subject to any SLA or deprecation policy.</p>
 	<a href="#islocked">IsLocked</a> <a href="https://pkg.go.dev/builtin#bool">bool</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_SignedURLOptions" data-uid="cloud.google.com/go/storage.SignedURLOptions">SignedURLOptions</h3>
-        <div class="markdown level1 summary"><p>SignedURLOptions allows you to restrict the access to the signed URL.</p>
+        <div class="markdown level1 summary"><p>RetentionPolicy enforces a minimum retention time for all objects
+contained in the bucket.</p>
+<p>Any attempt to overwrite or delete objects younger than the retention
+period will result in an error. An unlocked retention policy can be
+modified or removed from the bucket via the Update method. A
+locked retention policy cannot be removed or shortened in duration
+for the lifetime of the bucket.</p>
+<p>This feature is in private alpha release. It is not currently available to
+most customers. It might be changed in backwards-incompatible ways and is not
+subject to any SLA or deprecation policy.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_SignedURLOptions" data-uid="cloud.google.com/go/storage.SignedURLOptions">SignedURLOptions</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type SignedURLOptions struct {
 	// GoogleAccessID represents the authorizer of the signed URL generation.
@@ -4162,20 +4037,19 @@ subject to any SLA or deprecation policy.</p>
 	<a href="#scheme">Scheme</a> <a href="#signingscheme">SigningScheme</a>
 }</your-project-id></code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_SigningScheme" data-uid="cloud.google.com/go/storage.SigningScheme">SigningScheme</h3>
-        <div class="markdown level1 summary"><p>SigningScheme determines the API version to use when signing URLs.</p>
+        <div class="markdown level1 summary"><p>SignedURLOptions allows you to restrict the access to the signed URL.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_SigningScheme" data-uid="cloud.google.com/go/storage.SigningScheme">SigningScheme</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type SigningScheme <a href="https://pkg.go.dev/builtin#int">int</a></code></pre>
         </div>
+        <div class="markdown level1 summary"><p>SigningScheme determines the API version to use when signing URLs.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_SigningSchemeDefault_SigningSchemeV2_SigningSchemeV4" data-uid="cloud.google.com/go/storage.SigningSchemeDefault,SigningSchemeV2,SigningSchemeV4">SigningSchemeDefault, SigningSchemeV2, SigningSchemeV4</h4>
-            <div class="markdown level1 summary"></div>
-            <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
             <div class="codewrapper">	
               <pre><code class="prettyprint">const (
 	// SigningSchemeDefault is presently V2 and will change to V4 in the future.
@@ -4188,21 +4062,25 @@ subject to any SLA or deprecation policy.</p>
 	SigningSchemeV4
 )</code></pre>	
             </div>
+            <div class="markdown level1 summary"></div>
+            <div class="markdown level1 conceptual"></div>
                   <h3 id="cloud_google_com_go_storage_URLStyle" data-uid="cloud.google.com/go/storage.URLStyle">URLStyle</h3>
-        <div class="markdown level1 summary"><p>URLStyle determines the style to use for the signed URL. pathStyle is the
-default. All non-default options work with V4 scheme only. See
-<a href="https://cloud.google.com/storage/docs/request-endpoints">https://cloud.google.com/storage/docs/request-endpoints</a> for details.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type URLStyle interface {
 	// contains filtered or unexported methods
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>URLStyle determines the style to use for the signed URL. pathStyle is the
+default. All non-default options work with V4 scheme only. See
+<a href="https://cloud.google.com/storage/docs/request-endpoints">https://cloud.google.com/storage/docs/request-endpoints</a> for details.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_URLStyle_BucketBoundHostname" data-uid="cloud.google.com/go/storage.URLStyle.BucketBoundHostname">func BucketBoundHostname
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func BucketBoundHostname(hostname <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#urlstyle">URLStyle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>BucketBoundHostname generates a URL with a custom hostname tied to a
 specific GCS bucket. The desired hostname should be passed in using the
 hostname argument. Generated urls will be of the form
@@ -4213,36 +4091,25 @@ for details. Note that for CNAMEs, only HTTP is supported, so Insecure must
 be set to true.<p>
 </object-name></bucket-bound-hostname></div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func BucketBoundHostname(hostname <a href="https://pkg.go.dev/builtin#string">string</a>) <a href="#urlstyle">URLStyle</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_URLStyle_PathStyle" data-uid="cloud.google.com/go/storage.URLStyle.PathStyle">func PathStyle
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func PathStyle() <a href="#urlstyle">URLStyle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>PathStyle is the default style, and will generate a URL of the form
 &quot;storage.googleapis.com/<bucket-name>/<object-name>&quot;.<p>
 </object-name></bucket-name></div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func PathStyle() <a href="#urlstyle">URLStyle</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_URLStyle_VirtualHostedStyle" data-uid="cloud.google.com/go/storage.URLStyle.VirtualHostedStyle">func VirtualHostedStyle
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func VirtualHostedStyle() <a href="#urlstyle">URLStyle</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>VirtualHostedStyle generates a URL relative to the bucket&#39;s virtual
 hostname, e.g. &quot;<bucket-name>.storage.googleapis.com/<object-name>&quot;.<p>
 </object-name></bucket-name></div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func VirtualHostedStyle() <a href="#urlstyle">URLStyle</a></code></pre>	
-            </div>
                   <h3 id="cloud_google_com_go_storage_UniformBucketLevelAccess" data-uid="cloud.google.com/go/storage.UniformBucketLevelAccess">UniformBucketLevelAccess</h3>
-        <div class="markdown level1 summary"><p>UniformBucketLevelAccess configures access checks to use only bucket-level IAM
-policies.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
         <div class="codewrapper">
           <pre><code class="prettyprint">type UniformBucketLevelAccess struct {
 	// Enabled specifies whether access checks use only bucket-level IAM
@@ -4253,12 +4120,12 @@ policies.</p>
 	<a href="#lockedtime">LockedTime</a> <a href="https://pkg.go.dev/time">time</a>.<a href="https://pkg.go.dev/time#Time">Time</a>
 }</code></pre>
         </div>
-        
-        <h3 id="cloud_google_com_go_storage_Writer" data-uid="cloud.google.com/go/storage.Writer">Writer</h3>
-        <div class="markdown level1 summary"><p>A Writer writes a Cloud Storage object.</p>
+        <div class="markdown level1 summary"><p>UniformBucketLevelAccess configures access checks to use only bucket-level IAM
+policies.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
+        
+        <h3 id="cloud_google_com_go_storage_Writer" data-uid="cloud.google.com/go/storage.Writer">Writer</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">type Writer struct {
 	// ObjectAttrs are optional attributes to set on the object. Any attributes
@@ -4307,41 +4174,44 @@ policies.</p>
 	// contains filtered or unexported fields
 }</code></pre>
         </div>
+        <div class="markdown level1 summary"><p>A Writer writes a Cloud Storage object.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
         
             <h4 id="cloud_google_com_go_storage_Writer_Attrs" data-uid="cloud.google.com/go/storage.Writer.Attrs">func (*Writer) Attrs
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Attrs() *<a href="#objectattrs">ObjectAttrs</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Attrs returns metadata about a successfully-written object.
 It&#39;s only valid to call it after Close returns nil.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Attrs() *<a href="#objectattrs">ObjectAttrs</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Writer_Close" data-uid="cloud.google.com/go/storage.Writer.Close">func (*Writer) Close
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Close completes the write operation and flushes any buffered data.
 If Close doesn&#39;t return an error, metadata about the written object
 can be retrieved by calling Attrs.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Close() <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Writer_CloseWithError" data-uid="cloud.google.com/go/storage.Writer.CloseWithError">func (*Writer) CloseWithError
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) CloseWithError(err <a href="https://pkg.go.dev/builtin#error">error</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>CloseWithError aborts the write operation with the provided error.
 CloseWithError always returns nil.</p>
 <p>Deprecated: cancel the context passed to NewWriter instead.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) CloseWithError(err <a href="https://pkg.go.dev/builtin#error">error</a>) <a href="https://pkg.go.dev/builtin#error">error</a></code></pre>	
-            </div>
                       <h4 id="cloud_google_com_go_storage_Writer_Write" data-uid="cloud.google.com/go/storage.Writer.Write">func (*Writer) Write
 </h4>
+            <div class="codewrapper">	
+              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Write(p []<a href="https://pkg.go.dev/builtin#byte">byte</a>) (n <a href="https://pkg.go.dev/builtin#int">int</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
+            </div>
             <div class="markdown level1 summary"><p>Write appends to w. It implements the io.Writer interface.</p>
 <p>Since writes happen asynchronously, Write may return a nil
 error even though the write failed (or will fail). Always
@@ -4351,13 +4221,9 @@ the upload was successful.</p>
 Writer.ChunkSize has been set to zero.</p>
 </div>
             <div class="markdown level1 conceptual"></div>
-            <h5 class="decalaration">Declaration</h5>
-            <div class="codewrapper">	
-              <pre><code class="prettyprint">func (w *<a href="#writer">Writer</a>) Write(p []<a href="https://pkg.go.dev/builtin#byte">byte</a>) (n <a href="https://pkg.go.dev/builtin#int">int</a>, err <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>	
-            </div>
             <h5 id="cloud_google_com_go_storage_Writer_Write_examples">Examples</h5>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -4385,10 +4251,10 @@ func main() {
 	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">checksum</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">checksum</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -4418,10 +4284,10 @@ func main() {
 	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
 }
 {% endverbatim %}</code></pre>
-            </div>
-            <h6 translate="no">timeout</h6>
-            <div class="codewrapper">
-            <pre><code class="prettyprint">{% verbatim %}package main
+  </div>
+  <h6 translate="no">timeout</h6>
+  <div class="codewrapper">
+  <pre><code class="prettyprint">{% verbatim %}package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -4452,22 +4318,21 @@ func main() {
 	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
 }
 {% endverbatim %}</code></pre>
-            </div>
+  </div>
     <h2 id="functions">Functions
   
   </h2>
         <h3 id="cloud_google_com_go_storage_SignedURL" data-uid="cloud.google.com/go/storage.SignedURL">func SignedURL
 </h3>
+        <div class="codewrapper">
+          <pre><code class="prettyprint">func SignedURL(bucket, name <a href="https://pkg.go.dev/builtin#string">string</a>, opts *<a href="#signedurloptions">SignedURLOptions</a>) (<a href="https://pkg.go.dev/builtin#string">string</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>
+        </div>
         <div class="markdown level1 summary"><p>SignedURL returns a URL for the specified object. Signed URLs allow
 the users access to a restricted resource for a limited time without having a
 Google account or signing in. For more information about the signed
 URLs, see <a href="https://cloud.google.com/storage/docs/accesscontrol#Signed-URLs">https://cloud.google.com/storage/docs/accesscontrol#Signed-URLs</a>.</p>
 </div>
         <div class="markdown level1 conceptual"></div>
-        <h5 class="decalaration">Declaration</h5>
-        <div class="codewrapper">
-          <pre><code class="prettyprint">func SignedURL(bucket, name <a href="https://pkg.go.dev/builtin#string">string</a>, opts *<a href="#signedurloptions">SignedURLOptions</a>) (<a href="https://pkg.go.dev/builtin#string">string</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>
-        </div>
         <h5 id="cloud_google_com_go_storage_SignedURL_examples">Examples</h5>
         <div class="codewrapper">
         <pre><code class="prettyprint">{% verbatim %}package main
