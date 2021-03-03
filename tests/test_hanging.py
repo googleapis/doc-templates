@@ -21,10 +21,7 @@ import pytest
 import subprocess
 
 
-def test_generate(test_long):
-    if not test_long:
-        pytest.skip("skipping hanging test unless --long option is supplied.")
-
+def test_generate():
     build_dir = Path("testdata/nodejs-hang")
     out_dir = build_dir / "site/api"
 
@@ -37,7 +34,7 @@ def test_generate(test_long):
                 "-t",
                 "../../third_party/docfx/templates/devsite",
             ],
-            timeout=7200,
+            timeout=600,
             cwd=build_dir,
             hide_output=False,
         )
