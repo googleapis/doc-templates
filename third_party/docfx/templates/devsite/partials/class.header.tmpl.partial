@@ -6,12 +6,9 @@
 <div class="inheritance">
   <h5>{{__global.inheritance}}</h5>
   {{#inheritance}}
-  <div class="level{{index}}">{{{specName.0.value}}}</div>
+  <span>{{{specName.0.value}}}</span> <span> &gt; </span>
   {{/inheritance}}
-  <div class="level{{level}}"><span class="xref">{{name.0.value}}</span></div>
-  {{#derivedClasses}}
-    <div class="level{{index}}">{{{specName.0.value}}}</div>
-  {{/derivedClasses}}
+  <span class="xref">{{name.0.value}}</span>
 </div>
 {{/inClass}}
 {{#implements.0}}
@@ -41,6 +38,16 @@
 {{#inheritedMembers.0}}
 </div>
 {{/inheritedMembers.0}}
+{{#derivedClasses.0}}
+<div>
+<h5>{{__global.derived}}</h5>
+{{/derivedClasses.0}}
+{{#derivedClasses}}
+  <div>{{{specName.0.value}}}</div>
+{{/derivedClasses}}
+{{#derivedClasses.0}}
+</div>
+{{/derivedClasses.0}}
 <h6><strong>{{__global.namespace}}</strong>: {{{namespace.specName.0.value}}}</h6>
 <h6><strong>{{__global.assembly}}</strong>: {{assemblies.0}}.dll</h6>
 <h5 id="{{id}}_syntax">{{__global.syntax}}</h5>
