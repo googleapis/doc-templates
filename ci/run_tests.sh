@@ -28,7 +28,7 @@ black --check tests
 flake8 tests
 
 if [ -n "$UPDATE_GOLDENS" ]; then
-    pytest --update-goldens tests
+    pytest --update-goldens True tests/test_goldens.py
 else
     pytest tests
 fi
