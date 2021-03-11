@@ -11,5 +11,11 @@ exports.preTransform = function (model) {
  * This method will be called at the end of exports.transform in ManagedReference.html.primary.js
  */
 exports.postTransform = function (model) {
+  // Set last field of last implements element so we can build a comma separated
+  // list in the template. Otherwise, the final element would have a trailing
+  // comma.
+  if (model.implements) {
+    model.implements[model.implements.length - 1].last = true;
+  }
   return model;
 }
