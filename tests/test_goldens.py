@@ -75,6 +75,13 @@ def test_goldens(update_goldens, test_dir):
                 with open(golden_dir / f) as gold:
                     out_lines = out.readlines()
                     gold_lines = gold.readlines()
-                    diff = "\n".join(difflib.context_diff(out_lines, gold_lines))
+                    diff = "\n" + "\n".join(
+                        difflib.context_diff(
+                            gold_lines,
+                            out_lines,
+                            fromfile=str(golden_dir / f),
+                            tofile=str(out_dir / f),
+                        )
+                    )
 
         pytest.fail(f"got files that don't match goldens: {diff}")
