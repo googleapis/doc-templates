@@ -13,6 +13,7 @@
 # limitations under the License.
 
 from pathlib import Path
+import difflib
 import filecmp
 import os
 import shutil
@@ -52,15 +53,28 @@ def test_goldens(update_goldens, test_dir):
     got_files = [os.path.relpath(f, out_dir) for f in out_dir.rglob("*")]
     golden_files = [os.path.relpath(f, golden_dir) for f in golden_dir.rglob("*")]
 
+    nl = '\n'
+    extra = 'Extra:\n' + '\n+ '.join([f for f in got_files if f not in golden_files])
+    missing = 'Missing:\n' + '\n- '.join(
+        [f for f in golden_files if f not in got_files]
+    )
+
     assert len(got_files) == len(
         golden_files
-    ), f"got {len(got_files)} files, want {len(golden_files)}"
+    ), f"got {len(got_files)} files, want {len(golden_files)}:{nl}{extra}{nl}{missing}"
 
     (eq, neq, other) = filecmp.cmpfiles(out_dir, golden_dir, got_files, shallow=False)
-    neq = [(out_dir / f).as_posix() for f in neq]
     other = [(out_dir / f).as_posix() for f in other]
 
     if other:
         pytest.fail(f"found unknown files (should never happen): {other}")
     if neq:
-        pytest.fail(f"got files that don't match goldens: {neq}")
+        diff = ""
+        for f in neq:
+            with open(out_dir / f) as out:
+                with open(golden_dir / f) as gold:
+                    out_lines = out.readlines()
+                    gold_lines = gold.readlines()
+                    diff = '\n'.join(difflib.context_diff(out_lines, gold_lines))
+
+        pytest.fail(f"got files that don't match goldens: {diff}")
