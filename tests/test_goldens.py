@@ -53,9 +53,9 @@ def test_goldens(update_goldens, test_dir):
     got_files = [os.path.relpath(f, out_dir) for f in out_dir.rglob("*")]
     golden_files = [os.path.relpath(f, golden_dir) for f in golden_dir.rglob("*")]
 
-    nl = '\n'
-    extra = 'Extra:\n' + '\n+ '.join([f for f in got_files if f not in golden_files])
-    missing = 'Missing:\n' + '\n- '.join(
+    nl = "\n"
+    extra = "Extra:\n" + "\n+ ".join([f for f in got_files if f not in golden_files])
+    missing = "Missing:\n" + "\n- ".join(
         [f for f in golden_files if f not in got_files]
     )
 
@@ -75,6 +75,6 @@ def test_goldens(update_goldens, test_dir):
                 with open(golden_dir / f) as gold:
                     out_lines = out.readlines()
                     gold_lines = gold.readlines()
-                    diff = '\n'.join(difflib.context_diff(out_lines, gold_lines))
+                    diff = "\n".join(difflib.context_diff(out_lines, gold_lines))
 
         pytest.fail(f"got files that don't match goldens: {diff}")
