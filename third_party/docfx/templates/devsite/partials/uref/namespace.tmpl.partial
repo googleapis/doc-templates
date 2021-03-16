@@ -14,10 +14,9 @@
 {{/package.0}}
 <div class="markdown level0 remarks">{{{remarks}}}</div>
 {{#children}}
-  <h2 id="{{id}}">{{>partials/namespaceSubtitle}}</h2>
   {{^isEmbedded}}
     {{#children}}
-      <h3><xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/></h3>
+      <h2><xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/></h2>
       <section>{{{summary}}}</section>
     {{/children}}
   {{/isEmbedded}}
@@ -37,7 +36,7 @@
       {{#overload}}
       <a id="{{id}}" data-uid="{{uid}}"></a>
       {{/overload}}
-      <h3 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h3>
+      <h2 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h2>
       {{#syntax}}
       <div class="codewrapper">
         <pre><code class="prettyprint">{{{syntax.content.0.value}}}</code></pre>
@@ -47,7 +46,7 @@
       <div class="markdown level1 conceptual">{{{conceptual}}}</div>
       {{#syntax}}
       {{#parameters.0}}
-      <h5 class="parameters">{{__global.parameters}}</h5>
+      {{__global.parameters}}
       <table class="table table-bordered table-striped table-condensed">
         <thead>
           <tr>
@@ -73,7 +72,7 @@
       </table>
       {{/parameters.0}}
       {{#return}}
-      <h5 class="returns">{{__global.returns}}</h5>
+      {{__global.returns}}
       <table class="table table-bordered table-striped table-condensed">
         <thead>
           <tr>
@@ -90,7 +89,7 @@
       </table>
       {{/return}}
       {{#typeParameters.0}}
-      <h5 class="typeParameters">{{__global.typeParameters}}</h5>
+      {{__global.typeParameters}}
       <table class="table table-bordered table-striped table-condensed">
         <thead>
           <tr>
@@ -111,7 +110,7 @@
       </table>
       {{/typeParameters.0}}
       {{#fieldValue}}
-      <h5 class="fieldValue">{{__global.fieldValue}}</h5>
+      {{__global.fieldValue}}
       <table class="table table-bordered table-striped table-condensed">
         <thead>
           <tr>
@@ -128,7 +127,7 @@
       </table>
       {{/fieldValue}}
       {{#propertyValue}}
-      <h5 class="propertyValue">{{__global.propertyValue}}</h5>
+      {{__global.propertyValue}}
       <table class="table table-bordered table-striped table-condensed">
         <thead>
           <tr>
@@ -145,7 +144,7 @@
       </table>
       {{/propertyValue}}
       {{#eventType}}
-      <h5 class="eventType">{{__global.eventType}}</h5>
+      {{__global.eventType}}
       <table class="table table-bordered table-striped table-condensed">
         <thead>
           <tr>
@@ -163,11 +162,11 @@
       {{/eventType}}
       {{/syntax}}
       {{#overridden}}
-      <h5 class="overrides">{{__global.overrides}}</h5>
+      {{__global.overrides}}
       <div><xref href="{{uid}}" altProperty="fullName" displayProperty="nameWithType"/></div>
       {{/overridden}}
       {{#implements.0}}
-      <h5 class="implements">{{__global.implements}}</h5>
+      {{__global.implements}}
       {{/implements.0}}
       {{#implements}}
         {{#definition}}
@@ -178,12 +177,12 @@
         {{/definition}}
       {{/implements}}
       {{#remarks}}
-      <h5 id="{{id}}_remarks">{{__global.remarks}}</h5>
+      {{__global.remarks}}
       <div class="markdown level1 remarks">{{{remarks}}}</div>
       {{/remarks}}
       {{>partials/uref/namespace.examples}}
       {{#exceptions.0}}
-      <h5 class="exceptions">{{__global.exceptions}}</h5>
+      {{__global.exceptions}}
       <table class="table table-bordered table-striped table-condensed">
         <thead>
           <tr>
@@ -204,7 +203,7 @@
       </table>
       {{/exceptions.0}}
       {{#seealso.0}}
-      <h5 id="{{id}}_seealso">{{__global.seealso}}</h5>
+      {{__global.seealso}}
       <div class="seealso">
       {{/seealso.0}}
       {{#seealso}}
@@ -222,7 +221,7 @@
       {{#children}}
         {{! Note: don't print the Functions/Methods headers for children of children.}}
         {{#children}}
-          <h4 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h4>
+          <h3 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h3>
           {{#syntax}}
           <div class="codewrapper">	
             <pre><code class="prettyprint">{{{syntax.content.0.value}}}</code></pre>	
