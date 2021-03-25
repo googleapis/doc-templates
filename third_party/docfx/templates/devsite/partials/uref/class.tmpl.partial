@@ -2,7 +2,7 @@
 
 {{>partials/uref/class.header}}
 {{#children}}
-<h3 id="{{id}}">{{>partials/classSubtitle}}</h3>
+<h2 id="{{id}}">{{>partials/classSubtitle}}</h2>
 {{#children}}
 {{^_disableContribution}}
 {{#docurl}}
@@ -18,7 +18,7 @@
 {{#overload}}
 <a id="{{id}}" data-uid="{{uid}}"></a>
 {{/overload}}
-<h4 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h4>
+<h3 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h3>
 {{#syntax}}
 <div class="codewrapper">
   <pre><code class="prettyprint">{{syntax.content.0.value}}</code></pre>
@@ -28,7 +28,7 @@
 <div class="markdown level1 conceptual">{{{conceptual}}}</div>
 {{#syntax}}
 {{#parameters.0}}
-<h5 class="parameters">{{__global.parameters}}</h5>
+<strong>{{__global.parameters}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -54,7 +54,7 @@
 </table>
 {{/parameters.0}}
 {{#return}}
-<h5 class="returns">{{__global.returns}}</h5>
+<strong>{{__global.returns}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -71,7 +71,7 @@
 </table>
 {{/return}}
 {{#typeParameters.0}}
-<h5 class="typeParameters">{{__global.typeParameters}}</h5>
+<strong>{{__global.typeParameters}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -92,7 +92,7 @@
 </table>
 {{/typeParameters.0}}
 {{#fieldValue}}
-<h5 class="fieldValue">{{__global.fieldValue}}</h5>
+<strong>{{__global.fieldValue}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -109,7 +109,7 @@
 </table>
 {{/fieldValue}}
 {{#propertyValue}}
-<h5 class="propertyValue">{{__global.propertyValue}}</h5>
+<strong>{{__global.propertyValue}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -126,7 +126,7 @@
 </table>
 {{/propertyValue}}
 {{#eventType}}
-<h5 class="eventType">{{__global.eventType}}</h5>
+<strong>{{__global.eventType}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -143,7 +143,7 @@
 </table>
 {{/eventType}}
 {{#variableValue}}
-<h5 class="variableValue">{{__global.variableValue}}</h5>
+<strong>{{__global.variableValue}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -160,7 +160,7 @@
 </table>
 {{/variableValue}}
 {{#typeAliasType}}
-<h5 class="typeAliasType">{{__global.typeAliasType}}</h5>
+<strong>{{__global.typeAliasType}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -178,11 +178,11 @@
 {{/typeAliasType}}
 {{/syntax}}
 {{#overridden}}
-<h5 class="overrides">{{__global.overrides}}</h5>
+<strong>{{__global.overrides}}</strong>
 <div><xref href="{{uid}}" altProperty="fullName" displayProperty="nameWithType"/></div>
 {{/overridden}}
 {{#implements.0}}
-<h5 class="implements">{{__global.implements}}</h5>
+<strong>{{__global.implements}}</strong>
 {{/implements.0}}
 {{#implements}}
   {{#definition}}
@@ -193,17 +193,17 @@
   {{/definition}}
 {{/implements}}
 {{#remarks}}
-<h5 id="{{id}}_remarks">{{__global.remarks}}</h5>
+<strong>{{__global.remarks}}</strong>
 <div class="markdown level1 remarks">{{{remarks}}}</div>
 {{/remarks}}
 {{#example.0}}
-<h5 id="{{id}}_examples">{{__global.examples}}</h5>
+<strong>{{__global.examples}}</strong>
 {{/example.0}}
 {{#example}}
 {{{.}}}
 {{/example}}
 {{#exceptions.0}}
-<h5 class="exceptions">{{__global.exceptions}}</h5>
+<strong>{{__global.exceptions}}</strong>
 <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
@@ -224,7 +224,7 @@
 </table>
 {{/exceptions.0}}
 {{#seealso.0}}
-<h5 id="{{id}}_seealso">{{__global.seealso}}</h5>
+<strong>{{__global.seealso}}</strong>
 <div class="seealso">
 {{/seealso.0}}
 {{#seealso}}

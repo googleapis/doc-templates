@@ -299,8 +299,8 @@ function getDefinitions(category) {
     "delegate":     { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" },
     "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts",       isEmbedded: true },
     "variable":     { inVariable: true,     typePropertyName: "inVariable",     id: "variables",    isEmbedded: true },
-    "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
     "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
+    "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
     "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods",      isEmbedded: true },
     "typealias":    { inTypeAlias: true,    typePropertyName: "inTypeAlias",    id: "typealiases",  isEmbedded: true },
   };
