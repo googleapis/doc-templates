@@ -39,7 +39,12 @@
       {{#overload}}
       <a id="{{id}}" data-uid="{{uid}}"></a>
       {{/overload}}
+      {{#inTypes}}
+      <h2 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h2>
+      {{/inTypes}}
+      {{^inTypes}}
       <h3 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h3>
+      {{/inTypes}}
       {{#syntax}}
       <div class="codewrapper">
         <pre><code class="prettyprint">{{{syntax.content.0.value}}}</code></pre>
