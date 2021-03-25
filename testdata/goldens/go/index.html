@@ -248,7 +248,10 @@ These errors can be introspected for more information by type asserting to the r
   {% endverbatim %}
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
-        <h2 id="cloud_google_com_go_storage_DeleteAction_SetStorageClassAction" data-uid="cloud.google.com/go/storage.DeleteAction,SetStorageClassAction" class="notranslate">DeleteAction, SetStorageClassAction</h2>
+    <h2 id="consts">
+  Constants
+  </h2>
+        <h3 id="cloud_google_com_go_storage_DeleteAction_SetStorageClassAction" data-uid="cloud.google.com/go/storage.DeleteAction,SetStorageClassAction" class="notranslate">DeleteAction, SetStorageClassAction</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 
@@ -264,7 +267,7 @@ These errors can be introspected for more information by type asserting to the r
         <div class="markdown level1 summary"></div>
         <div class="markdown level1 conceptual"></div>
         
-        <h2 id="cloud_google_com_go_storage_NoPayload_JSONPayload" data-uid="cloud.google.com/go/storage.NoPayload,JSONPayload" class="notranslate">NoPayload, JSONPayload</h2>
+        <h3 id="cloud_google_com_go_storage_NoPayload_JSONPayload" data-uid="cloud.google.com/go/storage.NoPayload,JSONPayload" class="notranslate">NoPayload, JSONPayload</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 	// Send no payload with notification messages.
@@ -278,7 +281,7 @@ These errors can be introspected for more information by type asserting to the r
 </div>
         <div class="markdown level1 conceptual"></div>
         
-        <h2 id="cloud_google_com_go_storage_ObjectFinalizeEvent_ObjectMetadataUpdateEvent_ObjectDeleteEvent_ObjectArchiveEvent" data-uid="cloud.google.com/go/storage.ObjectFinalizeEvent,ObjectMetadataUpdateEvent,ObjectDeleteEvent,ObjectArchiveEvent" class="notranslate">ObjectFinalizeEvent, ObjectMetadataUpdateEvent, ObjectDeleteEvent, ObjectArchiveEvent</h2>
+        <h3 id="cloud_google_com_go_storage_ObjectFinalizeEvent_ObjectMetadataUpdateEvent_ObjectDeleteEvent_ObjectArchiveEvent" data-uid="cloud.google.com/go/storage.ObjectFinalizeEvent,ObjectMetadataUpdateEvent,ObjectDeleteEvent,ObjectArchiveEvent" class="notranslate">ObjectFinalizeEvent, ObjectMetadataUpdateEvent, ObjectDeleteEvent, ObjectArchiveEvent</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 	// Event that occurs when an object is successfully created.
@@ -299,7 +302,7 @@ These errors can be introspected for more information by type asserting to the r
 </div>
         <div class="markdown level1 conceptual"></div>
         
-        <h2 id="cloud_google_com_go_storage_ScopeFullControl_ScopeReadOnly_ScopeReadWrite" data-uid="cloud.google.com/go/storage.ScopeFullControl,ScopeReadOnly,ScopeReadWrite" class="notranslate">ScopeFullControl, ScopeReadOnly, ScopeReadWrite</h2>
+        <h3 id="cloud_google_com_go_storage_ScopeFullControl_ScopeReadOnly_ScopeReadWrite" data-uid="cloud.google.com/go/storage.ScopeFullControl,ScopeReadOnly,ScopeReadWrite" class="notranslate">ScopeFullControl, ScopeReadOnly, ScopeReadWrite</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">const (
 	// ScopeFullControl grants permissions to manage your
@@ -318,7 +321,10 @@ These errors can be introspected for more information by type asserting to the r
         <div class="markdown level1 summary"></div>
         <div class="markdown level1 conceptual"></div>
         
-        <h2 id="cloud_google_com_go_storage_ErrBucketNotExist_ErrObjectNotExist" data-uid="cloud.google.com/go/storage.ErrBucketNotExist,ErrObjectNotExist" class="notranslate">ErrBucketNotExist, ErrObjectNotExist</h2>
+    <h2 id="variables">Variables
+  
+  </h2>
+        <h3 id="cloud_google_com_go_storage_ErrBucketNotExist_ErrObjectNotExist" data-uid="cloud.google.com/go/storage.ErrBucketNotExist,ErrObjectNotExist" class="notranslate">ErrBucketNotExist, ErrObjectNotExist</h3>
         <div class="codewrapper">
           <pre><code class="prettyprint">var (
 	// ErrBucketNotExist indicates that the bucket does not exist.
@@ -330,6 +336,50 @@ These errors can be introspected for more information by type asserting to the r
         <div class="markdown level1 summary"></div>
         <div class="markdown level1 conceptual"></div>
         
+    <h2 id="functions">Functions
+  
+  </h2>
+        <h3 id="cloud_google_com_go_storage_SignedURL" data-uid="cloud.google.com/go/storage.SignedURL" class="notranslate">func SignedURL
+</h3>
+        <div class="codewrapper">
+          <pre><code class="prettyprint">func SignedURL(bucket, name <a href="https://pkg.go.dev/builtin#string">string</a>, opts *<a href="#signedurloptions">SignedURLOptions</a>) (<a href="https://pkg.go.dev/builtin#string">string</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>
+        </div>
+        <div class="markdown level1 summary"><p>SignedURL returns a URL for the specified object. Signed URLs allow
+the users access to a restricted resource for a limited time without having a
+Google account or signing in. For more information about the signed
+URLs, see <a href="https://cloud.google.com/storage/docs/accesscontrol#Signed-URLs">https://cloud.google.com/storage/docs/accesscontrol#Signed-URLs</a>.</p>
+</div>
+        <div class="markdown level1 conceptual"></div>
+        <strong>Example</strong>
+        <div class="codewrapper">
+        <pre><code class="prettyprint">{% verbatim %}package main
+
+import (
+	&quot;cloud.google.com/go/storage&quot;
+	&quot;fmt&quot;
+	&quot;io/ioutil&quot;
+	&quot;time&quot;
+)
+
+func main() {
+	pkey, err := ioutil.ReadFile(&quot;my-private-key.pem&quot;)
+	if err != nil {
+		// TODO: handle error.
+	}
+	url, err := storage.SignedURL(&quot;my-bucket&quot;, &quot;my-object&quot;, &amp;storage.SignedURLOptions{
+		GoogleAccessID: &quot;xxx@developer.gserviceaccount.com&quot;,
+		PrivateKey:     pkey,
+		Method:         &quot;GET&quot;,
+		Expires:        time.Now().Add(48 * time.Hour),
+	})
+	if err != nil {
+		// TODO: handle error.
+	}
+	fmt.Println(url)
+}
+{% endverbatim %}</code></pre>
+        </div>
+  
         <h2 id="cloud_google_com_go_storage_ACLEntity" data-uid="cloud.google.com/go/storage.ACLEntity" class="notranslate">ACLEntity</h2>
         <div class="codewrapper">
           <pre><code class="prettyprint">type ACLEntity <a href="https://pkg.go.dev/builtin#string">string</a></code></pre>
@@ -4314,47 +4364,6 @@ func main() {
 }
 {% endverbatim %}</code></pre>
   </div>
-        <h2 id="cloud_google_com_go_storage_SignedURL" data-uid="cloud.google.com/go/storage.SignedURL" class="notranslate">func SignedURL
-</h2>
-        <div class="codewrapper">
-          <pre><code class="prettyprint">func SignedURL(bucket, name <a href="https://pkg.go.dev/builtin#string">string</a>, opts *<a href="#signedurloptions">SignedURLOptions</a>) (<a href="https://pkg.go.dev/builtin#string">string</a>, <a href="https://pkg.go.dev/builtin#error">error</a>)</code></pre>
-        </div>
-        <div class="markdown level1 summary"><p>SignedURL returns a URL for the specified object. Signed URLs allow
-the users access to a restricted resource for a limited time without having a
-Google account or signing in. For more information about the signed
-URLs, see <a href="https://cloud.google.com/storage/docs/accesscontrol#Signed-URLs">https://cloud.google.com/storage/docs/accesscontrol#Signed-URLs</a>.</p>
-</div>
-        <div class="markdown level1 conceptual"></div>
-        <strong>Example</strong>
-        <div class="codewrapper">
-        <pre><code class="prettyprint">{% verbatim %}package main
-
-import (
-	&quot;cloud.google.com/go/storage&quot;
-	&quot;fmt&quot;
-	&quot;io/ioutil&quot;
-	&quot;time&quot;
-)
-
-func main() {
-	pkey, err := ioutil.ReadFile(&quot;my-private-key.pem&quot;)
-	if err != nil {
-		// TODO: handle error.
-	}
-	url, err := storage.SignedURL(&quot;my-bucket&quot;, &quot;my-object&quot;, &amp;storage.SignedURLOptions{
-		GoogleAccessID: &quot;xxx@developer.gserviceaccount.com&quot;,
-		PrivateKey:     pkey,
-		Method:         &quot;GET&quot;,
-		Expires:        time.Now().Add(48 * time.Hour),
-	})
-	if err != nil {
-		// TODO: handle error.
-	}
-	fmt.Println(url)
-}
-{% endverbatim %}</code></pre>
-        </div>
-  
 </article>
     </div>
   </body>
