@@ -1,0 +1,728 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings">
+<h1 class="page-title">Class CloudMemcacheSettings
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Settings class to configure an instance of <a class="xref" href="com.google.cloud.memcache.v1beta2.CloudMemcacheClient.html">CloudMemcacheClient</a>.</p>
+<p>The default instance has everything set to sensible defaults:</p>
+<ul>
+<li>The default service address (memcache.googleapis.com) and default port (443) are used.</li>
+<li>Credentials are acquired automatically through Application Default Credentials.</li>
+<li>Retries are configured for idempotent methods but not for non-idempotent methods.</li>
+</ul>
+<p>The builder of this class is recursive, so contained classes are themselves builders. When build() is called, the tree of builders is called to create the complete settings object.</p>
+<p>For example, to set the total timeout of getInstance to 30 seconds:</p>
+<pre><code class="prettyprint lang-java">CloudMemcacheSettings.Builder cloudMemcacheSettingsBuilder = CloudMemcacheSettings.newBuilder();
+ cloudMemcacheSettingsBuilder
+     .getInstanceSettings()
+     .setRetrySettings(
+         cloudMemcacheSettingsBuilder
+             .getInstanceSettings()
+             .getRetrySettings()
+             .toBuilder()
+             .setTotalTimeout(Duration.ofSeconds(30))
+             .build());
+ CloudMemcacheSettings cloudMemcacheSettings = cloudMemcacheSettingsBuilder.build();
+</code></pre></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <span><span class="xref">java.lang.Object</span></span> <span> &gt; </span>
+    <span><span class="xref">com.google.api.gax.rpc.ClientSettings</span></span> <span> &gt; </span>
+    <span class="xref">CloudMemcacheSettings</span>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.&lt;B&gt;toBuilder()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getClock()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getCredentialsProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getEndpoint()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getExecutorProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getHeaderProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getInternalHeaderProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getQuotaProjectId()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getStubSettings()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getTransportChannelProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getWatchdogCheckInterval()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.getWatchdogProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.ClientSettings.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class CloudMemcacheSettings extends ClientSettings&lt;CloudMemcacheSettings&gt;</code></pre>
+  </div>
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_CloudMemcacheSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.CloudMemcacheSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_CloudMemcacheSettings_com_google_cloud_memcache_v1_CloudMemcacheSettings_Builder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.CloudMemcacheSettings(com.google.cloud.memcache.v1.CloudMemcacheSettings.Builder)" class="notranslate">CloudMemcacheSettings(CloudMemcacheSettings.Builder settingsBuilder)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected CloudMemcacheSettings(CloudMemcacheSettings.Builder settingsBuilder)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheSettings.Builder.html#com_google_cloud_memcache_v1_CloudMemcacheSettings_Builder">CloudMemcacheSettings.Builder</a></td>
+        <td><span class="parametername">settingsBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_applyParametersOperationSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.applyParametersOperationSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_applyParametersOperationSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.applyParametersOperationSettings()" class="notranslate">applyParametersOperationSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public OperationCallSettings&lt;ApplyParametersRequest,Instance,OperationMetadata&gt; applyParametersOperationSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to applyParameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ApplyParametersRequest.html">ApplyParametersRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_applyParametersSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.applyParametersSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_applyParametersSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.applyParametersSettings()" class="notranslate">applyParametersSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;ApplyParametersRequest,Operation&gt; applyParametersSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to applyParameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ApplyParametersRequest.html">ApplyParametersRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_create_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.create*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_create_com_google_cloud_memcache_v1_stub_CloudMemcacheStubSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.create(com.google.cloud.memcache.v1.stub.CloudMemcacheStubSettings)" class="notranslate">create(CloudMemcacheStubSettings stub)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final CloudMemcacheSettings create(CloudMemcacheStubSettings stub)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.stub.CloudMemcacheStubSettings.html">CloudMemcacheStubSettings</a></td>
+        <td><span class="parametername">stub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_createInstanceOperationSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.createInstanceOperationSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_createInstanceOperationSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.createInstanceOperationSettings()" class="notranslate">createInstanceOperationSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public OperationCallSettings&lt;CreateInstanceRequest,Instance,OperationMetadata&gt; createInstanceOperationSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to createInstance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.CreateInstanceRequest.html">CreateInstanceRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_createInstanceSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.createInstanceSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_createInstanceSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.createInstanceSettings()" class="notranslate">createInstanceSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;CreateInstanceRequest,Operation&gt; createInstanceSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to createInstance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.CreateInstanceRequest.html">CreateInstanceRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultApiClientHeaderProviderBuilder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultApiClientHeaderProviderBuilder*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultApiClientHeaderProviderBuilder__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultApiClientHeaderProviderBuilder()" class="notranslate">defaultApiClientHeaderProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.ApiClientHeaderProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultCredentialsProviderBuilder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultCredentialsProviderBuilder*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultCredentialsProviderBuilder__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultCredentialsProviderBuilder()" class="notranslate">defaultCredentialsProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder for the default credentials for this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.core.GoogleCredentialsProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultExecutorProviderBuilder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultExecutorProviderBuilder*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultExecutorProviderBuilder__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultExecutorProviderBuilder()" class="notranslate">defaultExecutorProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder for the default ExecutorProvider for this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.core.InstantiatingExecutorProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultGrpcTransportProviderBuilder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultGrpcTransportProviderBuilder*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultGrpcTransportProviderBuilder__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultGrpcTransportProviderBuilder()" class="notranslate">defaultGrpcTransportProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder for the default ChannelProvider for this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultTransportChannelProvider_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultTransportChannelProvider*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_defaultTransportChannelProvider__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.defaultTransportChannelProvider()" class="notranslate">defaultTransportChannelProvider()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static TransportChannelProvider defaultTransportChannelProvider()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.TransportChannelProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_deleteInstanceOperationSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.deleteInstanceOperationSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_deleteInstanceOperationSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.deleteInstanceOperationSettings()" class="notranslate">deleteInstanceOperationSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public OperationCallSettings&lt;DeleteInstanceRequest,Empty,OperationMetadata&gt; deleteInstanceOperationSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to deleteInstance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.DeleteInstanceRequest.html">DeleteInstanceRequest</a>,<span class="xref">com.google.protobuf.Empty</span>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_deleteInstanceSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.deleteInstanceSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_deleteInstanceSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.deleteInstanceSettings()" class="notranslate">deleteInstanceSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;DeleteInstanceRequest,Operation&gt; deleteInstanceSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to deleteInstance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.DeleteInstanceRequest.html">DeleteInstanceRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_getDefaultEndpoint_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.getDefaultEndpoint*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_getDefaultEndpoint__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.getDefaultEndpoint()" class="notranslate">getDefaultEndpoint()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static String getDefaultEndpoint()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the default service endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_getDefaultServiceScopes_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.getDefaultServiceScopes*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_getDefaultServiceScopes__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.getDefaultServiceScopes()" class="notranslate">getDefaultServiceScopes()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static List&lt;String&gt; getDefaultServiceScopes()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the default service scopes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_getInstanceSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.getInstanceSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_getInstanceSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.getInstanceSettings()" class="notranslate">getInstanceSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;GetInstanceRequest,Instance&gt; getInstanceSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to getInstance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.GetInstanceRequest.html">GetInstanceRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_listInstancesSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.listInstancesSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_listInstancesSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.listInstancesSettings()" class="notranslate">listInstancesSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public PagedCallSettings&lt;ListInstancesRequest,ListInstancesResponse,CloudMemcacheClient.ListInstancesPagedResponse&gt; listInstancesSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to listInstances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.PagedCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ListInstancesRequest.html">ListInstancesRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.ListInstancesResponse.html">ListInstancesResponse</a>,<a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheClient.ListInstancesPagedResponse.html#com_google_cloud_memcache_v1_CloudMemcacheClient_ListInstancesPagedResponse">ListInstancesPagedResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_newBuilder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.newBuilder*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_newBuilder__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.newBuilder()" class="notranslate">newBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static CloudMemcacheSettings.Builder newBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a new builder for this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheSettings.Builder.html#com_google_cloud_memcache_v1_CloudMemcacheSettings_Builder">CloudMemcacheSettings.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_newBuilder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.newBuilder*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_newBuilder_com_google_api_gax_rpc_ClientContext_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.newBuilder(com.google.api.gax.rpc.ClientContext)" class="notranslate">newBuilder(ClientContext clientContext)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static CloudMemcacheSettings.Builder newBuilder(ClientContext clientContext)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a new builder for this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.ClientContext</span></td>
+        <td><span class="parametername">clientContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheSettings.Builder.html#com_google_cloud_memcache_v1_CloudMemcacheSettings_Builder">CloudMemcacheSettings.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_toBuilder_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.toBuilder*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_toBuilder__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.toBuilder()" class="notranslate">toBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public CloudMemcacheSettings.Builder toBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder containing all the values of this settings class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheSettings.Builder.html#com_google_cloud_memcache_v1_CloudMemcacheSettings_Builder">CloudMemcacheSettings.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Overrides</strong>
+  <div><span class="xref">com.google.api.gax.rpc.ClientSettings.&lt;B&gt;toBuilder()</span></div>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateInstanceOperationSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateInstanceOperationSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateInstanceOperationSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateInstanceOperationSettings()" class="notranslate">updateInstanceOperationSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public OperationCallSettings&lt;UpdateInstanceRequest,Instance,OperationMetadata&gt; updateInstanceOperationSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to updateInstance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateInstanceRequest.html">UpdateInstanceRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateInstanceSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateInstanceSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateInstanceSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateInstanceSettings()" class="notranslate">updateInstanceSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;UpdateInstanceRequest,Operation&gt; updateInstanceSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to updateInstance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateInstanceRequest.html">UpdateInstanceRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateParametersOperationSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateParametersOperationSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateParametersOperationSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateParametersOperationSettings()" class="notranslate">updateParametersOperationSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public OperationCallSettings&lt;UpdateParametersRequest,Instance,OperationMetadata&gt; updateParametersOperationSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to updateParameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateParametersRequest.html">UpdateParametersRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateParametersSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateParametersSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheSettings_updateParametersSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheSettings.updateParametersSettings()" class="notranslate">updateParametersSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;UpdateParametersRequest,Operation&gt; updateParametersSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to updateParameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateParametersRequest.html">UpdateParametersRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+  </body>
+</html>

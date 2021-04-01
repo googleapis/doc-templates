@@ -1,0 +1,2046 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient">
+<h1 class="page-title">Class CloudMemcacheClient
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Service Description: Configures and manages Cloud Memorystore for Memcached instances.</p>
+<p>The `memcache.googleapis.com` service implements the Google Cloud Memorystore for Memcached API and defines the following resource model for managing Memorystore Memcached (also called Memcached below) instances:</p>
+<ul>
+<li>The service works with a collection of cloud projects, named: `/projects/*`</li>
+<li>Each project has a collection of available locations, named: `/locations/*`</li>
+<li>Each location has a collection of Memcached instances, named: `/instances/*`</li>
+<li>As such, Memcached instances are resources of the form: `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`</li>
+</ul>
+<p>Note that location_id must be a GCP `region`; for example:</p>
+<ul>
+<li>`projects/my-memcached-project/locations/us-central1/instances/my-memcached`</li>
+</ul>
+<p>This class provides the ability to make remote calls to the backing service through method calls that map to API methods. Sample code to get started:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   InstanceName name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;);
+   Instance response = cloudMemcacheClient.getInstance(name);
+ }
+</code></pre><p>Note: close() needs to be called on the CloudMemcacheClient object to clean up resources such as threads. In the example above, try-with-resources is used, which automatically calls close().</p>
+<p>The surface of this class includes several types of Java methods for each of the API&#39;s methods:</p>
+<ol>
+<li>A &quot;flattened&quot; method. With this type of method, the fields of the request type have been converted into function parameters. It may be the case that not all fields are available as parameters, and not every API method will have a flattened method entry point.</li>
+<li>A &quot;request object&quot; method. This type of method only takes one parameter, a request object, which must be constructed before the call. Not every API method will have a request object method.</li>
+<li>A &quot;callable&quot; method. This type of method takes no parameters and returns an immutable API callable object, which can be used to initiate calls to the service.</li>
+</ol>
+<p>See the individual methods for example code.</p>
+<p>Many parameters require resource names to be formatted in a particular way. To assist with these names, this class includes a format method for each type of name, and additionally a parse method to extract the individual identifiers contained within names that are returned.</p>
+<p>This class can be customized by passing in a custom instance of CloudMemcacheSettings to create(). For example:</p>
+<p>To customize credentials:</p>
+<pre><code class="prettyprint lang-java">CloudMemcacheSettings cloudMemcacheSettings =
+     CloudMemcacheSettings.newBuilder()
+         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+         .build();
+ CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create(cloudMemcacheSettings);
+</code></pre><p>To customize the endpoint:</p>
+<pre><code class="prettyprint lang-java">CloudMemcacheSettings cloudMemcacheSettings =
+     CloudMemcacheSettings.newBuilder().setEndpoint(myEndpoint).build();
+ CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create(cloudMemcacheSettings);
+</code></pre><p>Please refer to the GitHub repository&#39;s samples for more quickstart code snippets.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <span><span class="xref">java.lang.Object</span></span> <span> &gt; </span>
+    <span class="xref">CloudMemcacheClient</span>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <span><span class="xref">com.google.api.gax.core.BackgroundResource</span></span>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_memcache_v1_CloudMemcacheClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class CloudMemcacheClient implements BackgroundResource</code></pre>
+  </div>
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_CloudMemcacheClient_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.CloudMemcacheClient*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_CloudMemcacheClient_com_google_cloud_memcache_v1_CloudMemcacheSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.CloudMemcacheClient(com.google.cloud.memcache.v1.CloudMemcacheSettings)" class="notranslate">CloudMemcacheClient(CloudMemcacheSettings settings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected CloudMemcacheClient(CloudMemcacheSettings settings)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of CloudMemcacheClient, using the given settings. This is protected so that it is easy to make a subclass, but otherwise, the static factory methods should be preferred.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheSettings.html">CloudMemcacheSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_CloudMemcacheClient_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.CloudMemcacheClient*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_CloudMemcacheClient_com_google_cloud_memcache_v1_stub_CloudMemcacheStub_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.CloudMemcacheClient(com.google.cloud.memcache.v1.stub.CloudMemcacheStub)" class="notranslate">CloudMemcacheClient(CloudMemcacheStub stub)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected CloudMemcacheClient(CloudMemcacheStub stub)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.stub.CloudMemcacheStub.html">CloudMemcacheStub</a></td>
+        <td><span class="parametername">stub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersAsync_com_google_cloud_memcache_v1_ApplyParametersRequest_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersAsync(com.google.cloud.memcache.v1.ApplyParametersRequest)" class="notranslate">applyParametersAsync(ApplyParametersRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; applyParametersAsync(ApplyParametersRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>ApplyParameters will restart the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   ApplyParametersRequest request =
+       ApplyParametersRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .addAllNodeIds(new ArrayList())
+           .setApplyAll(true)
+           .build();
+   Instance response = cloudMemcacheClient.applyParametersAsync(request).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.ApplyParametersRequest.html">ApplyParametersRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersAsync_com_google_cloud_memcache_v1_InstanceName_java_util_List_java_lang_String__boolean_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersAsync(com.google.cloud.memcache.v1.InstanceName,java.util.List&lt;java.lang.String&gt;,boolean)" class="notranslate">applyParametersAsync(InstanceName name, List&lt;String&gt; nodeIds, boolean applyAll)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; applyParametersAsync(InstanceName name, List&lt;String&gt; nodeIds, boolean applyAll)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>ApplyParameters will restart the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   InstanceName name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;);
+   List nodeIds = new ArrayList&lt;&gt;();
+   boolean applyAll = true;
+   Instance response = cloudMemcacheClient.applyParametersAsync(name, nodeIds, applyAll).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.InstanceName.html">InstanceName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Resource name of the Memcached instance for which parameter group updates
+     should be applied.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td><span class="parametername">nodeIds</span></td>
+        <td><p>Nodes to which we should apply the instance-level parameter group.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><span class="parametername">applyAll</span></td>
+        <td><p>Whether to apply instance-level parameter group to all nodes. If set to true,
+     will explicitly restrict users from specifying any nodes, and apply parameter group updates
+     to all nodes within the instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersAsync_java_lang_String_java_util_List_java_lang_String__boolean_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersAsync(java.lang.String,java.util.List&lt;java.lang.String&gt;,boolean)" class="notranslate">applyParametersAsync(String name, List&lt;String&gt; nodeIds, boolean applyAll)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; applyParametersAsync(String name, List&lt;String&gt; nodeIds, boolean applyAll)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>ApplyParameters will restart the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   String name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString();
+   List nodeIds = new ArrayList&lt;&gt;();
+   boolean applyAll = true;
+   Instance response = cloudMemcacheClient.applyParametersAsync(name, nodeIds, applyAll).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Resource name of the Memcached instance for which parameter group updates
+     should be applied.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td><span class="parametername">nodeIds</span></td>
+        <td><p>Nodes to which we should apply the instance-level parameter group.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td><span class="parametername">applyAll</span></td>
+        <td><p>Whether to apply instance-level parameter group to all nodes. If set to true,
+     will explicitly restrict users from specifying any nodes, and apply parameter group updates
+     to all nodes within the instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersCallable()" class="notranslate">applyParametersCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;ApplyParametersRequest,Operation&gt; applyParametersCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>ApplyParameters will restart the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   ApplyParametersRequest request =
+       ApplyParametersRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .addAllNodeIds(new ArrayList())
+           .setApplyAll(true)
+           .build();
+   ApiFuture future =
+       cloudMemcacheClient.applyParametersCallable().futureCall(request);
+   // Do something.
+   Operation response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ApplyParametersRequest.html">ApplyParametersRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersOperationCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersOperationCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_applyParametersOperationCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.applyParametersOperationCallable()" class="notranslate">applyParametersOperationCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationCallable&lt;ApplyParametersRequest,Instance,OperationMetadata&gt; applyParametersOperationCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>ApplyParameters will restart the set of specified nodes in order to update them to the current set of parameters for the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   ApplyParametersRequest request =
+       ApplyParametersRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .addAllNodeIds(new ArrayList())
+           .setApplyAll(true)
+           .build();
+   OperationFuture future =
+       cloudMemcacheClient.applyParametersOperationCallable().futureCall(request);
+   // Do something.
+   Instance response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ApplyParametersRequest.html">ApplyParametersRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_awaitTermination_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.awaitTermination*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_awaitTermination_long_java_util_concurrent_TimeUnit_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.awaitTermination(long,java.util.concurrent.TimeUnit)" class="notranslate">awaitTermination(long duration, TimeUnit unit)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean awaitTermination(long duration, TimeUnit unit)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td><span class="parametername">duration</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.concurrent.TimeUnit</span></td>
+        <td><span class="parametername">unit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.InterruptedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_close_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.close*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_close__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.close()" class="notranslate">close()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void close()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_create_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.create*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_create__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.create()" class="notranslate">create()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final CloudMemcacheClient create()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of CloudMemcacheClient with default settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_create_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.create*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_create_com_google_cloud_memcache_v1_CloudMemcacheSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.create(com.google.cloud.memcache.v1.CloudMemcacheSettings)" class="notranslate">create(CloudMemcacheSettings settings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final CloudMemcacheClient create(CloudMemcacheSettings settings)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of CloudMemcacheClient, using the given settings. The channels are created based on the settings passed in, or defaults for any settings that are not set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheSettings.html">CloudMemcacheSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_create_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.create*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_create_com_google_cloud_memcache_v1_stub_CloudMemcacheStub_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.create(com.google.cloud.memcache.v1.stub.CloudMemcacheStub)" class="notranslate">create(CloudMemcacheStub stub)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final CloudMemcacheClient create(CloudMemcacheStub stub)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of CloudMemcacheClient, using the given stub for making calls. This is for advanced usage - prefer using create(CloudMemcacheSettings).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.stub.CloudMemcacheStub.html">CloudMemcacheStub</a></td>
+        <td><span class="parametername">stub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceAsync_com_google_cloud_memcache_v1_CreateInstanceRequest_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceAsync(com.google.cloud.memcache.v1.CreateInstanceRequest)" class="notranslate">createInstanceAsync(CreateInstanceRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; createInstanceAsync(CreateInstanceRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates a new Instance in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   CreateInstanceRequest request =
+       CreateInstanceRequest.newBuilder()
+           .setParent(LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;).toString())
+           .setInstanceId(&quot;instanceId902024336&quot;)
+           .setInstance(Instance.newBuilder().build())
+           .build();
+   Instance response = cloudMemcacheClient.createInstanceAsync(request).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CreateInstanceRequest.html">CreateInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceAsync_com_google_cloud_memcache_v1_LocationName_com_google_cloud_memcache_v1_Instance_java_lang_String_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceAsync(com.google.cloud.memcache.v1.LocationName,com.google.cloud.memcache.v1.Instance,java.lang.String)" class="notranslate">createInstanceAsync(LocationName parent, Instance instance, String instanceId)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; createInstanceAsync(LocationName parent, Instance instance, String instanceId)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates a new Instance in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   Instance instance = Instance.newBuilder().build();
+   String instanceId = &quot;instanceId902024336&quot;;
+   Instance response =
+       cloudMemcacheClient.createInstanceAsync(parent, instance, instanceId).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.LocationName.html">LocationName</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The resource name of the instance location using the form:
+     <code>projects/{project_id}/locations/{location_id}</code> where <code>location_id</code> refers to a GCP region</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a></td>
+        <td><span class="parametername">instance</span></td>
+        <td><p>Required. A Memcached Instance</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">instanceId</span></td>
+        <td><p>Required. The logical name of the Memcached instance in the user project with
+     the following restrictions:
+     <ul>
+       <li>Must contain only lowercase letters, numbers, and hyphens.
+       <li>Must start with a letter.
+       <li>Must be between 1-40 characters.
+       <li>Must end with a number or a letter.
+       <li>Must be unique within the user project / location
+     </li></li></li></li></li></ul>
+     <p>If any of the above are not met, will raise an invalid argument error.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceAsync_java_lang_String_com_google_cloud_memcache_v1_Instance_java_lang_String_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceAsync(java.lang.String,com.google.cloud.memcache.v1.Instance,java.lang.String)" class="notranslate">createInstanceAsync(String parent, Instance instance, String instanceId)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; createInstanceAsync(String parent, Instance instance, String instanceId)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates a new Instance in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   String parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;).toString();
+   Instance instance = Instance.newBuilder().build();
+   String instanceId = &quot;instanceId902024336&quot;;
+   Instance response =
+       cloudMemcacheClient.createInstanceAsync(parent, instance, instanceId).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The resource name of the instance location using the form:
+     <code>projects/{project_id}/locations/{location_id}</code> where <code>location_id</code> refers to a GCP region</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a></td>
+        <td><span class="parametername">instance</span></td>
+        <td><p>Required. A Memcached Instance</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">instanceId</span></td>
+        <td><p>Required. The logical name of the Memcached instance in the user project with
+     the following restrictions:
+     <ul>
+       <li>Must contain only lowercase letters, numbers, and hyphens.
+       <li>Must start with a letter.
+       <li>Must be between 1-40 characters.
+       <li>Must end with a number or a letter.
+       <li>Must be unique within the user project / location
+     </li></li></li></li></li></ul>
+     <p>If any of the above are not met, will raise an invalid argument error.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceCallable()" class="notranslate">createInstanceCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;CreateInstanceRequest,Operation&gt; createInstanceCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates a new Instance in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   CreateInstanceRequest request =
+       CreateInstanceRequest.newBuilder()
+           .setParent(LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;).toString())
+           .setInstanceId(&quot;instanceId902024336&quot;)
+           .setInstance(Instance.newBuilder().build())
+           .build();
+   ApiFuture future =
+       cloudMemcacheClient.createInstanceCallable().futureCall(request);
+   // Do something.
+   Operation response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.CreateInstanceRequest.html">CreateInstanceRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceOperationCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceOperationCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_createInstanceOperationCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.createInstanceOperationCallable()" class="notranslate">createInstanceOperationCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationCallable&lt;CreateInstanceRequest,Instance,OperationMetadata&gt; createInstanceOperationCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates a new Instance in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   CreateInstanceRequest request =
+       CreateInstanceRequest.newBuilder()
+           .setParent(LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;).toString())
+           .setInstanceId(&quot;instanceId902024336&quot;)
+           .setInstance(Instance.newBuilder().build())
+           .build();
+   OperationFuture future =
+       cloudMemcacheClient.createInstanceOperationCallable().futureCall(request);
+   // Do something.
+   Instance response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.CreateInstanceRequest.html">CreateInstanceRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceAsync_com_google_cloud_memcache_v1_DeleteInstanceRequest_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceAsync(com.google.cloud.memcache.v1.DeleteInstanceRequest)" class="notranslate">deleteInstanceAsync(DeleteInstanceRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Empty,OperationMetadata&gt; deleteInstanceAsync(DeleteInstanceRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Deletes a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   DeleteInstanceRequest request =
+       DeleteInstanceRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .build();
+   cloudMemcacheClient.deleteInstanceAsync(request).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.DeleteInstanceRequest.html">DeleteInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<span class="xref">com.google.protobuf.Empty</span>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceAsync_com_google_cloud_memcache_v1_InstanceName_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceAsync(com.google.cloud.memcache.v1.InstanceName)" class="notranslate">deleteInstanceAsync(InstanceName name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Empty,OperationMetadata&gt; deleteInstanceAsync(InstanceName name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Deletes a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   InstanceName name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;);
+   cloudMemcacheClient.deleteInstanceAsync(name).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.InstanceName.html">InstanceName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Memcached instance resource name in the format:
+     <code>projects/{project_id}/locations/{location_id}/instances/{instance_id}</code> where <code>location_id</code>
+     refers to a GCP region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<span class="xref">com.google.protobuf.Empty</span>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceAsync_java_lang_String_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceAsync(java.lang.String)" class="notranslate">deleteInstanceAsync(String name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Empty,OperationMetadata&gt; deleteInstanceAsync(String name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Deletes a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   String name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString();
+   cloudMemcacheClient.deleteInstanceAsync(name).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Memcached instance resource name in the format:
+     <code>projects/{project_id}/locations/{location_id}/instances/{instance_id}</code> where <code>location_id</code>
+     refers to a GCP region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<span class="xref">com.google.protobuf.Empty</span>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceCallable()" class="notranslate">deleteInstanceCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;DeleteInstanceRequest,Operation&gt; deleteInstanceCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Deletes a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   DeleteInstanceRequest request =
+       DeleteInstanceRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .build();
+   ApiFuture future =
+       cloudMemcacheClient.deleteInstanceCallable().futureCall(request);
+   // Do something.
+   future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.DeleteInstanceRequest.html">DeleteInstanceRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceOperationCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceOperationCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_deleteInstanceOperationCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.deleteInstanceOperationCallable()" class="notranslate">deleteInstanceOperationCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationCallable&lt;DeleteInstanceRequest,Empty,OperationMetadata&gt; deleteInstanceOperationCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Deletes a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   DeleteInstanceRequest request =
+       DeleteInstanceRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .build();
+   OperationFuture future =
+       cloudMemcacheClient.deleteInstanceOperationCallable().futureCall(request);
+   // Do something.
+   future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.DeleteInstanceRequest.html">DeleteInstanceRequest</a>,<span class="xref">com.google.protobuf.Empty</span>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstance_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstance*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstance_com_google_cloud_memcache_v1_GetInstanceRequest_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstance(com.google.cloud.memcache.v1.GetInstanceRequest)" class="notranslate">getInstance(GetInstanceRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final Instance getInstance(GetInstanceRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets details of a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   GetInstanceRequest request =
+       GetInstanceRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .build();
+   Instance response = cloudMemcacheClient.getInstance(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.GetInstanceRequest.html">GetInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstance_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstance*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstance_com_google_cloud_memcache_v1_InstanceName_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstance(com.google.cloud.memcache.v1.InstanceName)" class="notranslate">getInstance(InstanceName name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final Instance getInstance(InstanceName name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets details of a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   InstanceName name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;);
+   Instance response = cloudMemcacheClient.getInstance(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.InstanceName.html">InstanceName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Memcached instance resource name in the format:
+     <code>projects/{project_id}/locations/{location_id}/instances/{instance_id}</code> where <code>location_id</code>
+     refers to a GCP region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstance_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstance*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstance_java_lang_String_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstance(java.lang.String)" class="notranslate">getInstance(String name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final Instance getInstance(String name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets details of a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   String name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString();
+   Instance response = cloudMemcacheClient.getInstance(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Memcached instance resource name in the format:
+     <code>projects/{project_id}/locations/{location_id}/instances/{instance_id}</code> where <code>location_id</code>
+     refers to a GCP region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstanceCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstanceCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_getInstanceCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getInstanceCallable()" class="notranslate">getInstanceCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;GetInstanceRequest,Instance&gt; getInstanceCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets details of a single Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   GetInstanceRequest request =
+       GetInstanceRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .build();
+   ApiFuture future = cloudMemcacheClient.getInstanceCallable().futureCall(request);
+   // Do something.
+   Instance response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.GetInstanceRequest.html">GetInstanceRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_getOperationsClient_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getOperationsClient*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_getOperationsClient__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getOperationsClient()" class="notranslate">getOperationsClient()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationsClient getOperationsClient()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the OperationsClient that can be used to query the status of a long-running operation returned by another API method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.longrunning.OperationsClient</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_getSettings_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getSettings*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_getSettings__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getSettings()" class="notranslate">getSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CloudMemcacheSettings getSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheSettings.html">CloudMemcacheSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_getStub_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getStub*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_getStub__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.getStub()" class="notranslate">getStub()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public CloudMemcacheStub getStub()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.stub.CloudMemcacheStub.html">CloudMemcacheStub</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_isShutdown_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.isShutdown*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_isShutdown__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.isShutdown()" class="notranslate">isShutdown()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean isShutdown()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_isTerminated_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.isTerminated*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_isTerminated__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.isTerminated()" class="notranslate">isTerminated()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean isTerminated()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstances_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstances*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstances_com_google_cloud_memcache_v1_ListInstancesRequest_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstances(com.google.cloud.memcache.v1.ListInstancesRequest)" class="notranslate">listInstances(ListInstancesRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CloudMemcacheClient.ListInstancesPagedResponse listInstances(ListInstancesRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists Instances in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   ListInstancesRequest request =
+       ListInstancesRequest.newBuilder()
+           .setParent(LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;).toString())
+           .setPageSize(883849137)
+           .setPageToken(&quot;pageToken873572522&quot;)
+           .setFilter(&quot;filter-1274492040&quot;)
+           .setOrderBy(&quot;orderBy-1207110587&quot;)
+           .build();
+   for (Instance element : cloudMemcacheClient.listInstances(request).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.ListInstancesRequest.html">ListInstancesRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheClient.ListInstancesPagedResponse.html#com_google_cloud_memcache_v1_CloudMemcacheClient_ListInstancesPagedResponse">CloudMemcacheClient.ListInstancesPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstances_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstances*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstances_com_google_cloud_memcache_v1_LocationName_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstances(com.google.cloud.memcache.v1.LocationName)" class="notranslate">listInstances(LocationName parent)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CloudMemcacheClient.ListInstancesPagedResponse listInstances(LocationName parent)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists Instances in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   for (Instance element : cloudMemcacheClient.listInstances(parent).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.LocationName.html">LocationName</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The resource name of the instance location using the form:
+     <code>projects/{project_id}/locations/{location_id}</code> where <code>location_id</code> refers to a GCP region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheClient.ListInstancesPagedResponse.html#com_google_cloud_memcache_v1_CloudMemcacheClient_ListInstancesPagedResponse">CloudMemcacheClient.ListInstancesPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstances_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstances*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstances_java_lang_String_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstances(java.lang.String)" class="notranslate">listInstances(String parent)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CloudMemcacheClient.ListInstancesPagedResponse listInstances(String parent)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists Instances in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   String parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;).toString();
+   for (Instance element : cloudMemcacheClient.listInstances(parent).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The resource name of the instance location using the form:
+     <code>projects/{project_id}/locations/{location_id}</code> where <code>location_id</code> refers to a GCP region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheClient.ListInstancesPagedResponse.html#com_google_cloud_memcache_v1_CloudMemcacheClient_ListInstancesPagedResponse">CloudMemcacheClient.ListInstancesPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstancesCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstancesCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstancesCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstancesCallable()" class="notranslate">listInstancesCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;ListInstancesRequest,ListInstancesResponse&gt; listInstancesCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists Instances in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   while (true) {
+     ListInstancesResponse response = cloudMemcacheClient.listInstancesCallable().call(request);
+     for (Instance element : response.getResponsesList()) {
+       // doThingsWith(element);
+     }
+     String nextPageToken = response.getNextPageToken();
+     if (!Strings.isNullOrEmpty(nextPageToken)) {
+       request = request.toBuilder().setPageToken(nextPageToken).build();
+     } else {
+       break;
+     }
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ListInstancesRequest.html">ListInstancesRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.ListInstancesResponse.html">ListInstancesResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstancesPagedCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstancesPagedCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_listInstancesPagedCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.listInstancesPagedCallable()" class="notranslate">listInstancesPagedCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;ListInstancesRequest,CloudMemcacheClient.ListInstancesPagedResponse&gt; listInstancesPagedCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists Instances in a given location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   ListInstancesRequest request =
+       ListInstancesRequest.newBuilder()
+           .setParent(LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;).toString())
+           .setPageSize(883849137)
+           .setPageToken(&quot;pageToken873572522&quot;)
+           .setFilter(&quot;filter-1274492040&quot;)
+           .setOrderBy(&quot;orderBy-1207110587&quot;)
+           .build();
+   ApiFuture future =
+       cloudMemcacheClient.listInstancesPagedCallable().futureCall(request);
+   // Do something.
+   for (Instance element : future.get().iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ListInstancesRequest.html">ListInstancesRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.CloudMemcacheClient.ListInstancesPagedResponse.html#com_google_cloud_memcache_v1_CloudMemcacheClient_ListInstancesPagedResponse">ListInstancesPagedResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_shutdown_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.shutdown*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_shutdown__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.shutdown()" class="notranslate">shutdown()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void shutdown()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_shutdownNow_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.shutdownNow*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_shutdownNow__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.shutdownNow()" class="notranslate">shutdownNow()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void shutdownNow()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceAsync_com_google_cloud_memcache_v1_Instance_com_google_protobuf_FieldMask_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceAsync(com.google.cloud.memcache.v1.Instance,com.google.protobuf.FieldMask)" class="notranslate">updateInstanceAsync(Instance instance, FieldMask updateMask)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; updateInstanceAsync(Instance instance, FieldMask updateMask)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates an existing Instance in a given project and location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   Instance instance = Instance.newBuilder().build();
+   FieldMask updateMask = FieldMask.newBuilder().build();
+   Instance response = cloudMemcacheClient.updateInstanceAsync(instance, updateMask).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a></td>
+        <td><span class="parametername">instance</span></td>
+        <td><p>Required. A Memcached Instance. Only fields specified in update_mask are
+     updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">com.google.protobuf.FieldMask</span></td>
+        <td><span class="parametername">updateMask</span></td>
+        <td><p>Required. Mask of fields to update. &#42; <code>displayName</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceAsync_com_google_cloud_memcache_v1_UpdateInstanceRequest_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceAsync(com.google.cloud.memcache.v1.UpdateInstanceRequest)" class="notranslate">updateInstanceAsync(UpdateInstanceRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; updateInstanceAsync(UpdateInstanceRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates an existing Instance in a given project and location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   UpdateInstanceRequest request =
+       UpdateInstanceRequest.newBuilder()
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .setInstance(Instance.newBuilder().build())
+           .build();
+   Instance response = cloudMemcacheClient.updateInstanceAsync(request).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.UpdateInstanceRequest.html">UpdateInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceCallable()" class="notranslate">updateInstanceCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;UpdateInstanceRequest,Operation&gt; updateInstanceCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates an existing Instance in a given project and location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   UpdateInstanceRequest request =
+       UpdateInstanceRequest.newBuilder()
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .setInstance(Instance.newBuilder().build())
+           .build();
+   ApiFuture future =
+       cloudMemcacheClient.updateInstanceCallable().futureCall(request);
+   // Do something.
+   Operation response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateInstanceRequest.html">UpdateInstanceRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceOperationCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceOperationCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateInstanceOperationCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateInstanceOperationCallable()" class="notranslate">updateInstanceOperationCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationCallable&lt;UpdateInstanceRequest,Instance,OperationMetadata&gt; updateInstanceOperationCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates an existing Instance in a given project and location.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   UpdateInstanceRequest request =
+       UpdateInstanceRequest.newBuilder()
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .setInstance(Instance.newBuilder().build())
+           .build();
+   OperationFuture future =
+       cloudMemcacheClient.updateInstanceOperationCallable().futureCall(request);
+   // Do something.
+   Instance response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateInstanceRequest.html">UpdateInstanceRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersAsync_com_google_cloud_memcache_v1_InstanceName_com_google_protobuf_FieldMask_com_google_cloud_memcache_v1_MemcacheParameters_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersAsync(com.google.cloud.memcache.v1.InstanceName,com.google.protobuf.FieldMask,com.google.cloud.memcache.v1.MemcacheParameters)" class="notranslate">updateParametersAsync(InstanceName name, FieldMask updateMask, MemcacheParameters parameters)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; updateParametersAsync(InstanceName name, FieldMask updateMask, MemcacheParameters parameters)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates the defined Memcached Parameters for an existing Instance. This method only stages the parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   InstanceName name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;);
+   FieldMask updateMask = FieldMask.newBuilder().build();
+   MemcacheParameters parameters = MemcacheParameters.newBuilder().build();
+   Instance response =
+       cloudMemcacheClient.updateParametersAsync(name, updateMask, parameters).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.InstanceName.html">InstanceName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Resource name of the Memcached instance for which the parameters should
+     be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">com.google.protobuf.FieldMask</span></td>
+        <td><span class="parametername">updateMask</span></td>
+        <td><p>Required. Mask of fields to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.MemcacheParameters.html">MemcacheParameters</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td><p>The parameters to apply to the instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersAsync_com_google_cloud_memcache_v1_UpdateParametersRequest_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersAsync(com.google.cloud.memcache.v1.UpdateParametersRequest)" class="notranslate">updateParametersAsync(UpdateParametersRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; updateParametersAsync(UpdateParametersRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates the defined Memcached Parameters for an existing Instance. This method only stages the parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   UpdateParametersRequest request =
+       UpdateParametersRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .setParameters(MemcacheParameters.newBuilder().build())
+           .build();
+   Instance response = cloudMemcacheClient.updateParametersAsync(request).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.UpdateParametersRequest.html">UpdateParametersRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersAsync_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersAsync*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersAsync_java_lang_String_com_google_protobuf_FieldMask_com_google_cloud_memcache_v1_MemcacheParameters_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersAsync(java.lang.String,com.google.protobuf.FieldMask,com.google.cloud.memcache.v1.MemcacheParameters)" class="notranslate">updateParametersAsync(String name, FieldMask updateMask, MemcacheParameters parameters)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;Instance,OperationMetadata&gt; updateParametersAsync(String name, FieldMask updateMask, MemcacheParameters parameters)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates the defined Memcached Parameters for an existing Instance. This method only stages the parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   String name = InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString();
+   FieldMask updateMask = FieldMask.newBuilder().build();
+   MemcacheParameters parameters = MemcacheParameters.newBuilder().build();
+   Instance response =
+       cloudMemcacheClient.updateParametersAsync(name, updateMask, parameters).get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. Resource name of the Memcached instance for which the parameters should
+     be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">com.google.protobuf.FieldMask</span></td>
+        <td><span class="parametername">updateMask</span></td>
+        <td><p>Required. Mask of fields to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.MemcacheParameters.html">MemcacheParameters</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td><p>The parameters to apply to the instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersCallable()" class="notranslate">updateParametersCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;UpdateParametersRequest,Operation&gt; updateParametersCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates the defined Memcached Parameters for an existing Instance. This method only stages the parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   UpdateParametersRequest request =
+       UpdateParametersRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .setParameters(MemcacheParameters.newBuilder().build())
+           .build();
+   ApiFuture future =
+       cloudMemcacheClient.updateParametersCallable().futureCall(request);
+   // Do something.
+   Operation response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateParametersRequest.html">UpdateParametersRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersOperationCallable_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersOperationCallable*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheClient_updateParametersOperationCallable__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheClient.updateParametersOperationCallable()" class="notranslate">updateParametersOperationCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationCallable&lt;UpdateParametersRequest,Instance,OperationMetadata&gt; updateParametersOperationCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Updates the defined Memcached Parameters for an existing Instance. This method only stages the parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the Memcached Instance.</p>
+<p>Sample code:</p>
+<pre><code class="prettyprint lang-java">try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   UpdateParametersRequest request =
+       UpdateParametersRequest.newBuilder()
+           .setName(InstanceName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[INSTANCE]&quot;).toString())
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .setParameters(MemcacheParameters.newBuilder().build())
+           .build();
+   OperationFuture future =
+       cloudMemcacheClient.updateParametersOperationCallable().futureCall(request);
+   // Do something.
+   Instance response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallable</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.UpdateParametersRequest.html">UpdateParametersRequest</a>,<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>,<a class="xref" href="com.google.cloud.memcache.v1.OperationMetadata.html">OperationMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">com.google.api.gax.core.BackgroundResource</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

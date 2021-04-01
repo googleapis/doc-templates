@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="">
+<h1 class="page-title">
+  <h1 id="google-cloud-memcache-client-for-java">Google Cloud Memcache Client for Java</h1>
+</h1>
+
+<p>Java idiomatic client for <a href="https://cloud.google.com/memorystore/">Cloud Memcache</a>.</p>
+<p><a href="https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-memcache&amp;core=gav"><img src="https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-memcache.svg" alt="Maven"></a>
+<img src="https://img.shields.io/badge/stability-ga-green" alt="Stability"></p>
+<ul>
+<li><a href="https://cloud.google.com/memorystore/">Product Documentation</a></li>
+<li><a href="https://googleapis.dev/java/google-cloud-memcache/latest/index.html">Client Library Documentation</a></li>
+</ul>
+<h2 id="quickstart">Quickstart</h2>
+<p>If you are using Maven with <a href="https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM">BOM</a>, add this to your pom.xml file</p>
+<pre><code class="prettyprint lang-xml">&lt;dependencyManagement&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.google.cloud&lt;/groupId&gt;
+      &lt;artifactId&gt;libraries-bom&lt;/artifactId&gt;
+      &lt;version&gt;19.0.0&lt;/version&gt;
+      &lt;type&gt;pom&lt;/type&gt;
+      &lt;scope&gt;import&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;com.google.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;google-cloud-memcache&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+</code></pre><p>If you are using Maven without BOM, add this to your dependencies:</p>
+<pre><code class="prettyprint lang-xml">&lt;dependency&gt;
+  &lt;groupId&gt;com.google.cloud&lt;/groupId&gt;
+  &lt;artifactId&gt;google-cloud-memcache&lt;/artifactId&gt;
+  &lt;version&gt;1.0.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>If you are using Gradle 5.x or later, add this to your dependencies</p>
+<pre><code class="prettyprint lang-Groovy">implementation platform(&#39;com.google.cloud:libraries-bom:19.0.0&#39;)
+
+compile &#39;com.google.cloud:google-cloud-memcache&#39;
+</code></pre><p>If you are using Gradle without BOM, add this to your dependencies</p>
+<pre><code class="prettyprint lang-Groovy">compile &#39;com.google.cloud:google-cloud-memcache:1.0.1&#39;
+</code></pre><p>If you are using SBT, add this to your dependencies</p>
+<pre><code class="prettyprint lang-Scala">libraryDependencies += &quot;com.google.cloud&quot; % &quot;google-cloud-memcache&quot; % &quot;1.0.1&quot;
+</code></pre><h2 id="authentication">Authentication</h2>
+<p>See the <a href="https://github.com/googleapis/google-cloud-java#authentication">Authentication</a> section in the base directory&#39;s README.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>You will need a <a href="https://console.developers.google.com/">Google Cloud Platform Console</a> project with the Cloud Memcache <a href="https://console.cloud.google.com/flows/enableapi?apiid=memcache.googleapis.com">API enabled</a>.</p>
+<p><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects">Follow these instructions</a> to get your project set up. You will also need to set up the local development environment by
+<a href="https://cloud.google.com/sdk/">installing the Google Cloud SDK</a> and running the following commands in command line:
+<code>gcloud auth login</code> and <code>gcloud config set project [YOUR PROJECT ID]</code>.</p>
+<h3 id="installation-and-setup">Installation and setup</h3>
+<p>You&#39;ll need to obtain the <code>google-cloud-memcache</code> library.  See the <a href="#quickstart">Quickstart</a> section
+to add <code>google-cloud-memcache</code> as a dependency in your code.</p>
+<h2 id="about-cloud-memcache">About Cloud Memcache</h2>
+<p><a href="https://cloud.google.com/memorystore/">Cloud Memcache</a> is a fully-managed in-memory data store service for Memcache.</p>
+<p>See the <a href="https://googleapis.dev/java/google-cloud-memcache/latest/index.html">Cloud Memcache client library docs</a> to learn how to
+use this Cloud Memcache Client Library.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>To get help, follow the instructions in the <a href="https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting">shared Troubleshooting document</a>.</p>
+<h2 id="transport">Transport</h2>
+<p>Cloud Memcache uses gRPC for the transport layer.</p>
+<h2 id="java-versions">Java Versions</h2>
+<p>Java 7 or above is required for using this client.</p>
+<h2 id="versioning">Versioning</h2>
+<p>This library follows <a href="http://semver.org/">Semantic Versioning</a>.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions to this library are always welcome and highly encouraged.</p>
+<p>See <a href="https://github.com/googleapis/java-memcache/blob/master/CONTRIBUTING.md">CONTRIBUTING</a> for more information how to get started.</p>
+<p>Please note that this project is released with a Contributor Code of Conduct. By participating in
+this project you agree to abide by its terms. See <a href="https://github.com/googleapis/java-memcache/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct">Code of Conduct</a> for more
+information.</p>
+<h2 id="license">License</h2>
+<p>Apache 2.0 - See <a href="https://github.com/googleapis/java-memcache/blob/master/LICENSE">LICENSE</a> for more information.</p>
+<h2 id="ci-status">CI Status</h2>
+<table>
+<thead>
+<tr>
+<th>Java Version</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java 7</td>
+<td><a href="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java7.html"><img src="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java7.svg" alt="Kokoro CI"></a></td>
+</tr>
+<tr>
+<td>Java 8</td>
+<td><a href="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java8.html"><img src="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java8.svg" alt="Kokoro CI"></a></td>
+</tr>
+<tr>
+<td>Java 8 OSX</td>
+<td><a href="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java8-osx.html"><img src="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java8-osx.svg" alt="Kokoro CI"></a></td>
+</tr>
+<tr>
+<td>Java 8 Windows</td>
+<td><a href="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java8-win.html"><img src="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java8-win.svg" alt="Kokoro CI"></a></td>
+</tr>
+<tr>
+<td>Java 11</td>
+<td><a href="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java11.html"><img src="http://storage.googleapis.com/cloud-devrel-public/java/badges/java-memcache/java11.svg" alt="Kokoro CI"></a></td>
+</tr>
+</tbody>
+</table>
+<p>Java is a registered trademark of Oracle and/or its affiliates.</p>
+
+</article>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub">
+<h1 class="page-title">Class CloudMemcacheGrpc.CloudMemcacheStub
+</h1>
+  
+  
+  <div class="markdown level0 summary"><pre><code>Configures and manages Cloud Memorystore for Memcached instances.
+ The `memcache.googleapis.com` service implements the Google Cloud Memorystore
+ for Memcached API and defines the following resource model for managing
+ Memorystore Memcached (also called Memcached below) instances:
+ * The service works with a collection of cloud projects, named: `/projects/*`
+ * Each project has a collection of available locations, named: `/locations/*`
+ * Each location has a collection of Memcached instances, named:
+ `/instances/*`
+ * As such, Memcached instances are resources of the form:
+   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+ Note that location_id must be a GCP `region`; for example:
+ * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
+</code></pre></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <span><span class="xref">java.lang.Object</span></span> <span> &gt; </span>
+    <span><span class="xref">io.grpc.stub.AbstractStub</span></span> <span> &gt; </span>
+    <span><span class="xref">io.grpc.stub.AbstractAsyncStub</span></span> <span> &gt; </span>
+    <span class="xref">CloudMemcacheGrpc.CloudMemcacheStub</span>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractAsyncStub.&lt;T&gt;newStub(io.grpc.stub.AbstractStub.StubFactory&lt;T&gt;,io.grpc.Channel)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractAsyncStub.&lt;T&gt;newStub(io.grpc.stub.AbstractStub.StubFactory&lt;T&gt;,io.grpc.Channel,io.grpc.CallOptions)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.&lt;T&gt;withOption(io.grpc.CallOptions.Key&lt;T&gt;,T)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.getCallOptions()</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.getChannel()</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withCallCredentials(io.grpc.CallCredentials)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withChannel(io.grpc.Channel)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withCompression(java.lang.String)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withDeadline(io.grpc.Deadline)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withDeadlineAfter(long,java.util.concurrent.TimeUnit)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withExecutor(java.util.concurrent.Executor)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withInterceptors(io.grpc.ClientInterceptor...)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withMaxInboundMessageSize(int)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withMaxOutboundMessageSize(int)</span>
+    </div>
+    <div>
+      <span class="xref">io.grpc.stub.AbstractStub.withWaitForReady()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final class CloudMemcacheGrpc.CloudMemcacheStub extends AbstractAsyncStub&lt;CloudMemcacheGrpc.CloudMemcacheStub&gt;</code></pre>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_applyParameters_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.applyParameters*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_applyParameters_com_google_cloud_memcache_v1_ApplyParametersRequest_io_grpc_stub_StreamObserver_com_google_longrunning_Operation__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.applyParameters(com.google.cloud.memcache.v1.ApplyParametersRequest,io.grpc.stub.StreamObserver&lt;com.google.longrunning.Operation&gt;)" class="notranslate">applyParameters(ApplyParametersRequest request, StreamObserver&lt;Operation&gt; responseObserver)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void applyParameters(ApplyParametersRequest request, StreamObserver&lt;Operation&gt; responseObserver)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>ApplyParameters will restart the set of specified nodes in order to update
+ them to the current set of parameters for the Memcached Instance.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.ApplyParametersRequest.html">ApplyParametersRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.stub.StreamObserver</span>&lt;<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td><span class="parametername">responseObserver</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_build_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.build*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_build_io_grpc_Channel_io_grpc_CallOptions_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.build(io.grpc.Channel,io.grpc.CallOptions)" class="notranslate">build(Channel channel, CallOptions callOptions)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected CloudMemcacheGrpc.CloudMemcacheStub build(Channel channel, CallOptions callOptions)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">io.grpc.Channel</span></td>
+        <td><span class="parametername">channel</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.CallOptions</span></td>
+        <td><span class="parametername">callOptions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Overrides</strong>
+  <div><span class="xref">io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions)</span></div>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_createInstance_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.createInstance*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_createInstance_com_google_cloud_memcache_v1_CreateInstanceRequest_io_grpc_stub_StreamObserver_com_google_longrunning_Operation__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.createInstance(com.google.cloud.memcache.v1.CreateInstanceRequest,io.grpc.stub.StreamObserver&lt;com.google.longrunning.Operation&gt;)" class="notranslate">createInstance(CreateInstanceRequest request, StreamObserver&lt;Operation&gt; responseObserver)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void createInstance(CreateInstanceRequest request, StreamObserver&lt;Operation&gt; responseObserver)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Creates a new Instance in a given location.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.CreateInstanceRequest.html">CreateInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.stub.StreamObserver</span>&lt;<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td><span class="parametername">responseObserver</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_deleteInstance_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.deleteInstance*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_deleteInstance_com_google_cloud_memcache_v1_DeleteInstanceRequest_io_grpc_stub_StreamObserver_com_google_longrunning_Operation__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.deleteInstance(com.google.cloud.memcache.v1.DeleteInstanceRequest,io.grpc.stub.StreamObserver&lt;com.google.longrunning.Operation&gt;)" class="notranslate">deleteInstance(DeleteInstanceRequest request, StreamObserver&lt;Operation&gt; responseObserver)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void deleteInstance(DeleteInstanceRequest request, StreamObserver&lt;Operation&gt; responseObserver)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Deletes a single Instance.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.DeleteInstanceRequest.html">DeleteInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.stub.StreamObserver</span>&lt;<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td><span class="parametername">responseObserver</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_getInstance_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.getInstance*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_getInstance_com_google_cloud_memcache_v1_GetInstanceRequest_io_grpc_stub_StreamObserver_com_google_cloud_memcache_v1_Instance__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.getInstance(com.google.cloud.memcache.v1.GetInstanceRequest,io.grpc.stub.StreamObserver&lt;com.google.cloud.memcache.v1.Instance&gt;)" class="notranslate">getInstance(GetInstanceRequest request, StreamObserver&lt;Instance&gt; responseObserver)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void getInstance(GetInstanceRequest request, StreamObserver&lt;Instance&gt; responseObserver)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Gets details of a single Instance.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.GetInstanceRequest.html">GetInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.stub.StreamObserver</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.Instance.html">Instance</a>&gt;</td>
+        <td><span class="parametername">responseObserver</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_listInstances_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.listInstances*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_listInstances_com_google_cloud_memcache_v1_ListInstancesRequest_io_grpc_stub_StreamObserver_com_google_cloud_memcache_v1_ListInstancesResponse__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.listInstances(com.google.cloud.memcache.v1.ListInstancesRequest,io.grpc.stub.StreamObserver&lt;com.google.cloud.memcache.v1.ListInstancesResponse&gt;)" class="notranslate">listInstances(ListInstancesRequest request, StreamObserver&lt;ListInstancesResponse&gt; responseObserver)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void listInstances(ListInstancesRequest request, StreamObserver&lt;ListInstancesResponse&gt; responseObserver)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Lists Instances in a given location.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.ListInstancesRequest.html">ListInstancesRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.stub.StreamObserver</span>&lt;<a class="xref" href="com.google.cloud.memcache.v1.ListInstancesResponse.html">ListInstancesResponse</a>&gt;</td>
+        <td><span class="parametername">responseObserver</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_updateInstance_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.updateInstance*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_updateInstance_com_google_cloud_memcache_v1_UpdateInstanceRequest_io_grpc_stub_StreamObserver_com_google_longrunning_Operation__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.updateInstance(com.google.cloud.memcache.v1.UpdateInstanceRequest,io.grpc.stub.StreamObserver&lt;com.google.longrunning.Operation&gt;)" class="notranslate">updateInstance(UpdateInstanceRequest request, StreamObserver&lt;Operation&gt; responseObserver)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void updateInstance(UpdateInstanceRequest request, StreamObserver&lt;Operation&gt; responseObserver)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Updates an existing Instance in a given project and location.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.UpdateInstanceRequest.html">UpdateInstanceRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.stub.StreamObserver</span>&lt;<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td><span class="parametername">responseObserver</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_updateParameters_" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.updateParameters*"></a>
+  <h3 id="com_google_cloud_memcache_v1_CloudMemcacheGrpc_CloudMemcacheStub_updateParameters_com_google_cloud_memcache_v1_UpdateParametersRequest_io_grpc_stub_StreamObserver_com_google_longrunning_Operation__" data-uid="com.google.cloud.memcache.v1.CloudMemcacheGrpc.CloudMemcacheStub.updateParameters(com.google.cloud.memcache.v1.UpdateParametersRequest,io.grpc.stub.StreamObserver&lt;com.google.longrunning.Operation&gt;)" class="notranslate">updateParameters(UpdateParametersRequest request, StreamObserver&lt;Operation&gt; responseObserver)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void updateParameters(UpdateParametersRequest request, StreamObserver&lt;Operation&gt; responseObserver)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Updates the defined Memcached Parameters for an existing Instance.
+ This method only stages the parameters, it must be followed by
+ ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.memcache.v1.UpdateParametersRequest.html">UpdateParametersRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">io.grpc.stub.StreamObserver</span>&lt;<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td><span class="parametername">responseObserver</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+  </body>
+</html>
