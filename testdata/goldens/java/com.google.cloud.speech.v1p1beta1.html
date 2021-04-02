@@ -1,0 +1,763 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1p1beta1">
+<h1 class="page-title">Namespace com.google.cloud.speech.v1p1beta1
+</h1>
+  
+  {% verbatim %}
+  <div class="markdown level0 summary"><p>The interfaces provided are listed below, along with usage samples.</p>
+<p> <p>======================= SpeechClient =======================</p>
+<p> <p>Service Description: Service that implements Google Cloud Speech API.</p>
+<p> <p>Sample for SpeechClient:</p>
+ <pre><code>
+ try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+ </code></pre>
+
+<p> <p>======================= AdaptationClient =======================</p>
+<p> <p>Service Description: Service that implements Google Cloud Speech Adaptation API.</p>
+<p> <p>Sample for AdaptationClient:</p>
+ <pre><code>
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   PhraseSet phraseSet = PhraseSet.newBuilder().build();
+   String phraseSetId = "phraseSetId959902180";
+   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
+ }
+ </code></pre></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h2 id="classes">Classes
+  
+  </h2>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.html">AdaptationClient</a></h3>
+      <section><p>Service Description: Service that implements Google Cloud Speech Adaptation API.</p>
+<p>This class provides the ability to make remote calls to the backing service through method calls that map to API methods. Sample code to get started:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   PhraseSet phraseSet = PhraseSet.newBuilder().build();
+   String phraseSetId = &quot;phraseSetId959902180&quot;;
+   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
+ }
+</code></pre><p>Note: close() needs to be called on the AdaptationClient object to clean up resources such as threads. In the example above, try-with-resources is used, which automatically calls close().</p>
+<p>The surface of this class includes several types of Java methods for each of the API&#39;s methods:</p>
+<ol>
+<li>A &quot;flattened&quot; method. With this type of method, the fields of the request type have been converted into function parameters. It may be the case that not all fields are available as parameters, and not every API method will have a flattened method entry point.</li>
+<li>A &quot;request object&quot; method. This type of method only takes one parameter, a request object, which must be constructed before the call. Not every API method will have a request object method.</li>
+<li>A &quot;callable&quot; method. This type of method takes no parameters and returns an immutable API callable object, which can be used to initiate calls to the service.</li>
+</ol>
+<p>See the individual methods for example code.</p>
+<p>Many parameters require resource names to be formatted in a particular way. To assist with these names, this class includes a format method for each type of name, and additionally a parse method to extract the individual identifiers contained within names that are returned.</p>
+<p>This class can be customized by passing in a custom instance of AdaptationSettings to create(). For example:</p>
+<p>To customize credentials:</p>
+<pre><code class="lang-java">AdaptationSettings adaptationSettings =
+     AdaptationSettings.newBuilder()
+         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+         .build();
+ AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
+</code></pre><p>To customize the endpoint:</p>
+<pre><code class="lang-java">AdaptationSettings adaptationSettings =
+     AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();
+ AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
+</code></pre><p>Please refer to the GitHub repository&#39;s samples for more quickstart code snippets.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesFixedSizeCollection.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesFixedSizeCollection">AdaptationClient.ListCustomClassesFixedSizeCollection</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPage.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesPage">AdaptationClient.ListCustomClassesPage</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesPagedResponse">AdaptationClient.ListCustomClassesPagedResponse</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetFixedSizeCollection.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetFixedSizeCollection">AdaptationClient.ListPhraseSetFixedSizeCollection</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPage.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetPage">AdaptationClient.ListPhraseSetPage</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetPagedResponse">AdaptationClient.ListPhraseSetPagedResponse</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationGrpc.html">AdaptationGrpc</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech Adaptation API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationGrpc.AdaptationBlockingStub.html#com_google_cloud_speech_v1p1beta1_AdaptationGrpc_AdaptationBlockingStub">AdaptationGrpc.AdaptationBlockingStub</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech Adaptation API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationGrpc.AdaptationFutureStub.html#com_google_cloud_speech_v1p1beta1_AdaptationGrpc_AdaptationFutureStub">AdaptationGrpc.AdaptationFutureStub</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech Adaptation API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationGrpc.AdaptationImplBase.html#com_google_cloud_speech_v1p1beta1_AdaptationGrpc_AdaptationImplBase">AdaptationGrpc.AdaptationImplBase</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech Adaptation API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationGrpc.AdaptationStub.html#com_google_cloud_speech_v1p1beta1_AdaptationGrpc_AdaptationStub">AdaptationGrpc.AdaptationStub</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech Adaptation API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationSettings.html">AdaptationSettings</a></h3>
+      <section><p>Settings class to configure an instance of <a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.html">AdaptationClient</a>.</p>
+<p>The default instance has everything set to sensible defaults:</p>
+<ul>
+<li>The default service address (speech.googleapis.com) and default port (443) are used.</li>
+<li>Credentials are acquired automatically through Application Default Credentials.</li>
+<li>Retries are configured for idempotent methods but not for non-idempotent methods.</li>
+</ul>
+<p>The builder of this class is recursive, so contained classes are themselves builders. When build() is called, the tree of builders is called to create the complete settings object.</p>
+<p>For example, to set the total timeout of createPhraseSet to 30 seconds:</p>
+<pre><code class="lang-java">AdaptationSettings.Builder adaptationSettingsBuilder = AdaptationSettings.newBuilder();
+ adaptationSettingsBuilder
+     .createPhraseSetSettings()
+     .setRetrySettings(
+         adaptationSettingsBuilder
+             .createPhraseSetSettings()
+             .getRetrySettings()
+             .toBuilder()
+             .setTotalTimeout(Duration.ofSeconds(30))
+             .build());
+ AdaptationSettings adaptationSettings = adaptationSettingsBuilder.build();
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationSettings.Builder.html#com_google_cloud_speech_v1p1beta1_AdaptationSettings_Builder">AdaptationSettings.Builder</a></h3>
+      <section><p>Builder for AdaptationSettings.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest.html">CreateCustomClassRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `CreateCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CreateCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest.Builder.html#com_google_cloud_speech_v1p1beta1_CreateCustomClassRequest_Builder">CreateCustomClassRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `CreateCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CreateCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest.html">CreatePhraseSetRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `CreatePhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CreatePhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest.Builder.html#com_google_cloud_speech_v1p1beta1_CreatePhraseSetRequest_Builder">CreatePhraseSetRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `CreatePhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CreatePhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></h3>
+      <section><pre><code>A set of words or phrases that represents a common concept likely to appear
+ in your audio, for example a list of passenger ship names. CustomClass items
+ can be substituted into placeholders that you set in PhraseSet phrases.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CustomClass</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.Builder.html#com_google_cloud_speech_v1p1beta1_CustomClass_Builder">CustomClass.Builder</a></h3>
+      <section><pre><code>A set of words or phrases that represents a common concept likely to appear
+ in your audio, for example a list of passenger ship names. CustomClass items
+ can be substituted into placeholders that you set in PhraseSet phrases.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CustomClass</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem.html#com_google_cloud_speech_v1p1beta1_CustomClass_ClassItem">CustomClass.ClassItem</a></h3>
+      <section><pre><code>An item of the class.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CustomClass.ClassItem</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem.Builder.html#com_google_cloud_speech_v1p1beta1_CustomClass_ClassItem_Builder">CustomClass.ClassItem.Builder</a></h3>
+      <section><pre><code>An item of the class.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.CustomClass.ClassItem</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClassName.html">CustomClassName</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClassName.Builder.html#com_google_cloud_speech_v1p1beta1_CustomClassName_Builder">CustomClassName.Builder</a></h3>
+      <section><p>Builder for projects/{project}/locations/{location}/customClasses/{custom_class}.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest.html">DeleteCustomClassRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `DeleteCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.DeleteCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest.Builder.html#com_google_cloud_speech_v1p1beta1_DeleteCustomClassRequest_Builder">DeleteCustomClassRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `DeleteCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.DeleteCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest.html">DeletePhraseSetRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `DeletePhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.DeletePhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest.Builder.html#com_google_cloud_speech_v1p1beta1_DeletePhraseSetRequest_Builder">DeletePhraseSetRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `DeletePhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.DeletePhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetCustomClassRequest.html">GetCustomClassRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `GetCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.GetCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetCustomClassRequest.Builder.html#com_google_cloud_speech_v1p1beta1_GetCustomClassRequest_Builder">GetCustomClassRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `GetCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.GetCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest.html">GetPhraseSetRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `GetPhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.GetPhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest.Builder.html#com_google_cloud_speech_v1p1beta1_GetPhraseSetRequest_Builder">GetPhraseSetRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `GetPhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.GetPhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest.html">ListCustomClassesRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `ListCustomClasses` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListCustomClassesRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest.Builder.html#com_google_cloud_speech_v1p1beta1_ListCustomClassesRequest_Builder">ListCustomClassesRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `ListCustomClasses` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListCustomClassesRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse.html">ListCustomClassesResponse</a></h3>
+      <section><pre><code>Message returned to the client by the `ListCustomClasses` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListCustomClassesResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse.Builder.html#com_google_cloud_speech_v1p1beta1_ListCustomClassesResponse_Builder">ListCustomClassesResponse.Builder</a></h3>
+      <section><pre><code>Message returned to the client by the `ListCustomClasses` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListCustomClassesResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest.html">ListPhraseSetRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `ListPhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListPhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest.Builder.html#com_google_cloud_speech_v1p1beta1_ListPhraseSetRequest_Builder">ListPhraseSetRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `ListPhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListPhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse.html">ListPhraseSetResponse</a></h3>
+      <section><pre><code>Message returned to the client by the `ListPhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListPhraseSetResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse.Builder.html#com_google_cloud_speech_v1p1beta1_ListPhraseSetResponse_Builder">ListPhraseSetResponse.Builder</a></h3>
+      <section><pre><code>Message returned to the client by the `ListPhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.ListPhraseSetResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LocationName.html">LocationName</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LocationName.Builder.html#com_google_cloud_speech_v1p1beta1_LocationName_Builder">LocationName.Builder</a></h3>
+      <section><p>Builder for projects/{project}/locations/{location}.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata.html">LongRunningRecognizeMetadata</a></h3>
+      <section><pre><code>Describes the progress of a long-running `LongRunningRecognize` call. It is
+ included in the `metadata` field of the `Operation` returned by the
+ `GetOperation` call of the `google::longrunning::Operations` service.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata.Builder.html#com_google_cloud_speech_v1p1beta1_LongRunningRecognizeMetadata_Builder">LongRunningRecognizeMetadata.Builder</a></h3>
+      <section><pre><code>Describes the progress of a long-running `LongRunningRecognize` call. It is
+ included in the `metadata` field of the `Operation` returned by the
+ `GetOperation` call of the `google::longrunning::Operations` service.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest.html">LongRunningRecognizeRequest</a></h3>
+      <section><pre><code>The top-level message sent by the client for the `LongRunningRecognize`
+ method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest.Builder.html#com_google_cloud_speech_v1p1beta1_LongRunningRecognizeRequest_Builder">LongRunningRecognizeRequest.Builder</a></h3>
+      <section><pre><code>The top-level message sent by the client for the `LongRunningRecognize`
+ method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse.html">LongRunningRecognizeResponse</a></h3>
+      <section><pre><code>The only message returned to the client by the `LongRunningRecognize` method.
+ It contains the result as zero or more sequential `SpeechRecognitionResult`
+ messages. It is included in the `result.response` field of the `Operation`
+ returned by the `GetOperation` call of the `google::longrunning::Operations`
+ service.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse.Builder.html#com_google_cloud_speech_v1p1beta1_LongRunningRecognizeResponse_Builder">LongRunningRecognizeResponse.Builder</a></h3>
+      <section><pre><code>The only message returned to the client by the `LongRunningRecognize` method.
+ It contains the result as zero or more sequential `SpeechRecognitionResult`
+ messages. It is included in the `result.response` field of the `Operation`
+ returned by the `GetOperation` call of the `google::longrunning::Operations`
+ service.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></h3>
+      <section><pre><code>Provides &quot;hints&quot; to the speech recognizer to favor specific words and phrases
+ in the results.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.PhraseSet</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.Builder.html#com_google_cloud_speech_v1p1beta1_PhraseSet_Builder">PhraseSet.Builder</a></h3>
+      <section><pre><code>Provides &quot;hints&quot; to the speech recognizer to favor specific words and phrases
+ in the results.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.PhraseSet</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.html#com_google_cloud_speech_v1p1beta1_PhraseSet_Phrase">PhraseSet.Phrase</a></h3>
+      <section><pre><code>A phrases containing words and phrase &quot;hints&quot; so that
+ the speech recognition is more likely to recognize them. This can be used
+ to improve the accuracy for specific words and phrases, for example, if
+ specific commands are typically spoken by the user. This can also be used
+ to add additional words to the vocabulary of the recognizer. See
+ [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+ List items can also include pre-built or custom classes containing groups
+ of words that represent common concepts that occur in natural language. For
+ example, rather than providing a phrase hint for every month of the
+ year (e.g. &quot;i was born in january&quot;, &quot;i was born in febuary&quot;, ...), use the
+ pre-built `$MONTH` class improves the likelihood of correctly transcribing
+ audio that includes months (e.g. &quot;i was born in $month&quot;).
+ To refer to pre-built classes, use the class&#39; symbol prepended with `$`
+ e.g. `$MONTH`. To refer to custom classes that were defined inline in the
+ request, set the class&#39;s `custom_class_id` to a string unique to all class
+ resources and inline classes. Then use the class&#39; id wrapped in $`{...}`
+ e.g. &quot;${my-months}&quot;. To refer to custom classes resources, use the class&#39;
+ id wrapped in `${}` (e.g. `${my-months}`).
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.PhraseSet.Phrase</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.Builder.html#com_google_cloud_speech_v1p1beta1_PhraseSet_Phrase_Builder">PhraseSet.Phrase.Builder</a></h3>
+      <section><pre><code>A phrases containing words and phrase &quot;hints&quot; so that
+ the speech recognition is more likely to recognize them. This can be used
+ to improve the accuracy for specific words and phrases, for example, if
+ specific commands are typically spoken by the user. This can also be used
+ to add additional words to the vocabulary of the recognizer. See
+ [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+ List items can also include pre-built or custom classes containing groups
+ of words that represent common concepts that occur in natural language. For
+ example, rather than providing a phrase hint for every month of the
+ year (e.g. &quot;i was born in january&quot;, &quot;i was born in febuary&quot;, ...), use the
+ pre-built `$MONTH` class improves the likelihood of correctly transcribing
+ audio that includes months (e.g. &quot;i was born in $month&quot;).
+ To refer to pre-built classes, use the class&#39; symbol prepended with `$`
+ e.g. `$MONTH`. To refer to custom classes that were defined inline in the
+ request, set the class&#39;s `custom_class_id` to a string unique to all class
+ resources and inline classes. Then use the class&#39; id wrapped in $`{...}`
+ e.g. &quot;${my-months}&quot;. To refer to custom classes resources, use the class&#39;
+ id wrapped in `${}` (e.g. `${my-months}`).
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.PhraseSet.Phrase</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSetName.html">PhraseSetName</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSetName.Builder.html#com_google_cloud_speech_v1p1beta1_PhraseSetName_Builder">PhraseSetName.Builder</a></h3>
+      <section><p>Builder for projects/{project}/locations/{location}/phraseSets/{phrase_set}.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudio.html">RecognitionAudio</a></h3>
+      <section><pre><code>Contains audio data in the encoding specified in the `RecognitionConfig`.
+ Either `content` or `uri` must be supplied. Supplying both or neither
+ returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+ See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionAudio</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudio.Builder.html#com_google_cloud_speech_v1p1beta1_RecognitionAudio_Builder">RecognitionAudio.Builder</a></h3>
+      <section><pre><code>Contains audio data in the encoding specified in the `RecognitionConfig`.
+ Either `content` or `uri` must be supplied. Supplying both or neither
+ returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+ See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionAudio</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionConfig.html">RecognitionConfig</a></h3>
+      <section><pre><code>Provides information to the recognizer that specifies how to process the
+ request.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionConfig</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionConfig.Builder.html#com_google_cloud_speech_v1p1beta1_RecognitionConfig_Builder">RecognitionConfig.Builder</a></h3>
+      <section><pre><code>Provides information to the recognizer that specifies how to process the
+ request.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionConfig</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadata.html">RecognitionMetadata</a></h3>
+      <section><pre><code>Description of audio data to be recognized.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionMetadata</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadata.Builder.html#com_google_cloud_speech_v1p1beta1_RecognitionMetadata_Builder">RecognitionMetadata.Builder</a></h3>
+      <section><pre><code>Description of audio data to be recognized.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionMetadata</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeRequest.html">RecognizeRequest</a></h3>
+      <section><pre><code>The top-level message sent by the client for the `Recognize` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognizeRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeRequest.Builder.html#com_google_cloud_speech_v1p1beta1_RecognizeRequest_Builder">RecognizeRequest.Builder</a></h3>
+      <section><pre><code>The top-level message sent by the client for the `Recognize` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognizeRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeResponse.html">RecognizeResponse</a></h3>
+      <section><pre><code>The only message returned to the client by the `Recognize` method. It
+ contains the result as zero or more sequential `SpeechRecognitionResult`
+ messages.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognizeResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeResponse.Builder.html#com_google_cloud_speech_v1p1beta1_RecognizeResponse_Builder">RecognizeResponse.Builder</a></h3>
+      <section><pre><code>The only message returned to the client by the `Recognize` method. It
+ contains the result as zero or more sequential `SpeechRecognitionResult`
+ messages.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognizeResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.html">SpeakerDiarizationConfig</a></h3>
+      <section><pre><code>Config to enable speaker diarization.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.Builder.html#com_google_cloud_speech_v1p1beta1_SpeakerDiarizationConfig_Builder">SpeakerDiarizationConfig.Builder</a></h3>
+      <section><pre><code>Config to enable speaker diarization.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechAdaptation.html">SpeechAdaptation</a></h3>
+      <section><pre><code>Speech adaptation configuration.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechAdaptation</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder.html#com_google_cloud_speech_v1p1beta1_SpeechAdaptation_Builder">SpeechAdaptation.Builder</a></h3>
+      <section><pre><code>Speech adaptation configuration.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechAdaptation</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechAdaptationProto.html">SpeechAdaptationProto</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechClient.html">SpeechClient</a></h3>
+      <section><p>Service Description: Service that implements Google Cloud Speech API.</p>
+<p>This class provides the ability to make remote calls to the backing service through method calls that map to API methods. Sample code to get started:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+</code></pre><p>Note: close() needs to be called on the SpeechClient object to clean up resources such as threads. In the example above, try-with-resources is used, which automatically calls close().</p>
+<p>The surface of this class includes several types of Java methods for each of the API&#39;s methods:</p>
+<ol>
+<li>A &quot;flattened&quot; method. With this type of method, the fields of the request type have been converted into function parameters. It may be the case that not all fields are available as parameters, and not every API method will have a flattened method entry point.</li>
+<li>A &quot;request object&quot; method. This type of method only takes one parameter, a request object, which must be constructed before the call. Not every API method will have a request object method.</li>
+<li>A &quot;callable&quot; method. This type of method takes no parameters and returns an immutable API callable object, which can be used to initiate calls to the service.</li>
+</ol>
+<p>See the individual methods for example code.</p>
+<p>Many parameters require resource names to be formatted in a particular way. To assist with these names, this class includes a format method for each type of name, and additionally a parse method to extract the individual identifiers contained within names that are returned.</p>
+<p>This class can be customized by passing in a custom instance of SpeechSettings to create(). For example:</p>
+<p>To customize credentials:</p>
+<pre><code class="lang-java">SpeechSettings speechSettings =
+     SpeechSettings.newBuilder()
+         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+         .build();
+ SpeechClient speechClient = SpeechClient.create(speechSettings);
+</code></pre><p>To customize the endpoint:</p>
+<pre><code class="lang-java">SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
+ SpeechClient speechClient = SpeechClient.create(speechSettings);
+</code></pre><p>Please refer to the GitHub repository&#39;s samples for more quickstart code snippets.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechContext.html">SpeechContext</a></h3>
+      <section><pre><code>Provides &quot;hints&quot; to the speech recognizer to favor specific words and phrases
+ in the results.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechContext</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechContext.Builder.html#com_google_cloud_speech_v1p1beta1_SpeechContext_Builder">SpeechContext.Builder</a></h3>
+      <section><pre><code>Provides &quot;hints&quot; to the speech recognizer to favor specific words and phrases
+ in the results.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechContext</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechGrpc.html">SpeechGrpc</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechGrpc.SpeechBlockingStub.html#com_google_cloud_speech_v1p1beta1_SpeechGrpc_SpeechBlockingStub">SpeechGrpc.SpeechBlockingStub</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechGrpc.SpeechFutureStub.html#com_google_cloud_speech_v1p1beta1_SpeechGrpc_SpeechFutureStub">SpeechGrpc.SpeechFutureStub</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechGrpc.SpeechImplBase.html#com_google_cloud_speech_v1p1beta1_SpeechGrpc_SpeechImplBase">SpeechGrpc.SpeechImplBase</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechGrpc.SpeechStub.html#com_google_cloud_speech_v1p1beta1_SpeechGrpc_SpeechStub">SpeechGrpc.SpeechStub</a></h3>
+      <section><pre><code>Service that implements Google Cloud Speech API.
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechProto.html">SpeechProto</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.html">SpeechRecognitionAlternative</a></h3>
+      <section><pre><code>Alternative hypotheses (a.k.a. n-best list).
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder.html#com_google_cloud_speech_v1p1beta1_SpeechRecognitionAlternative_Builder">SpeechRecognitionAlternative.Builder</a></h3>
+      <section><pre><code>Alternative hypotheses (a.k.a. n-best list).
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.html">SpeechRecognitionResult</a></h3>
+      <section><pre><code>A speech recognition result corresponding to a portion of the audio.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechRecognitionResult</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.Builder.html#com_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_Builder">SpeechRecognitionResult.Builder</a></h3>
+      <section><pre><code>A speech recognition result corresponding to a portion of the audio.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.SpeechRecognitionResult</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechResourceProto.html">SpeechResourceProto</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechSettings.html">SpeechSettings</a></h3>
+      <section><p>Settings class to configure an instance of <a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechClient.html">SpeechClient</a>.</p>
+<p>The default instance has everything set to sensible defaults:</p>
+<ul>
+<li>The default service address (speech.googleapis.com) and default port (443) are used.</li>
+<li>Credentials are acquired automatically through Application Default Credentials.</li>
+<li>Retries are configured for idempotent methods but not for non-idempotent methods.</li>
+</ul>
+<p>The builder of this class is recursive, so contained classes are themselves builders. When build() is called, the tree of builders is called to create the complete settings object.</p>
+<p>For example, to set the total timeout of recognize to 30 seconds:</p>
+<pre><code class="lang-java">SpeechSettings.Builder speechSettingsBuilder = SpeechSettings.newBuilder();
+ speechSettingsBuilder
+     .recognizeSettings()
+     .setRetrySettings(
+         speechSettingsBuilder
+             .recognizeSettings()
+             .getRetrySettings()
+             .toBuilder()
+             .setTotalTimeout(Duration.ofSeconds(30))
+             .build());
+ SpeechSettings speechSettings = speechSettingsBuilder.build();
+</code></pre></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechSettings.Builder.html#com_google_cloud_speech_v1p1beta1_SpeechSettings_Builder">SpeechSettings.Builder</a></h3>
+      <section><p>Builder for SpeechSettings.</p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.html">StreamingRecognitionConfig</a></h3>
+      <section><pre><code>Provides information to the recognizer that specifies how to process the
+ request.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognitionConfig</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.Builder.html#com_google_cloud_speech_v1p1beta1_StreamingRecognitionConfig_Builder">StreamingRecognitionConfig.Builder</a></h3>
+      <section><pre><code>Provides information to the recognizer that specifies how to process the
+ request.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognitionConfig</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult.html">StreamingRecognitionResult</a></h3>
+      <section><pre><code>A streaming speech recognition result corresponding to a portion of the audio
+ that is currently being processed.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognitionResult</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult.Builder.html#com_google_cloud_speech_v1p1beta1_StreamingRecognitionResult_Builder">StreamingRecognitionResult.Builder</a></h3>
+      <section><pre><code>A streaming speech recognition result corresponding to a portion of the audio
+ that is currently being processed.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognitionResult</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest.html">StreamingRecognizeRequest</a></h3>
+      <section><pre><code>The top-level message sent by the client for the `StreamingRecognize` method.
+ Multiple `StreamingRecognizeRequest` messages are sent. The first message
+ must contain a `streaming_config` message and must not contain
+ `audio_content`. All subsequent messages must contain `audio_content` and
+ must not contain a `streaming_config` message.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognizeRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest.Builder.html#com_google_cloud_speech_v1p1beta1_StreamingRecognizeRequest_Builder">StreamingRecognizeRequest.Builder</a></h3>
+      <section><pre><code>The top-level message sent by the client for the `StreamingRecognize` method.
+ Multiple `StreamingRecognizeRequest` messages are sent. The first message
+ must contain a `streaming_config` message and must not contain
+ `audio_content`. All subsequent messages must contain `audio_content` and
+ must not contain a `streaming_config` message.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognizeRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></h3>
+      <section><pre><code>`StreamingRecognizeResponse` is the only message returned to the client by
+ `StreamingRecognize`. A series of zero or more `StreamingRecognizeResponse`
+ messages are streamed back to the client. If there is no recognizable
+ audio, and `single_utterance` is set to false, then no messages are streamed
+ back to the client.
+ Here&#39;s an example of a series of ten `StreamingRecognizeResponse`s that might
+ be returned while processing audio:
+ 1. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
+ 2. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
+ 3. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
+    results { alternatives { transcript: &quot; or not to be&quot; } stability: 0.01 }
+ 4. results { alternatives { transcript: &quot;to be or not to be&quot;
+                             confidence: 0.92 }
+              alternatives { transcript: &quot;to bee or not to bee&quot; }
+              is_final: true }
+ 5. results { alternatives { transcript: &quot; that&#39;s&quot; } stability: 0.01 }
+ 6. results { alternatives { transcript: &quot; that is&quot; } stability: 0.9 }
+    results { alternatives { transcript: &quot; the question&quot; } stability: 0.01 }
+ 7. results { alternatives { transcript: &quot; that is the question&quot;
+                             confidence: 0.98 }
+              alternatives { transcript: &quot; that was the question&quot; }
+              is_final: true }
+ Notes:
+ - Only two of the above responses #4 and #7 contain final results; they are
+   indicated by `is_final: true`. Concatenating these together generates the
+   full transcript: &quot;to be or not to be that is the question&quot;.
+ - The others contain interim `results`. #3 and #6 contain two interim
+   `results`: the first portion has a high stability and is less likely to
+   change; the second portion has a low stability and is very likely to
+   change. A UI designer might choose to show only high stability `results`.
+ - The specific `stability` and `confidence` values shown above are only for
+   illustrative purposes. Actual values may vary.
+ - In each response, only one of these fields will be set:
+     `error`,
+     `speech_event_type`, or
+     one or more (repeated) `results`.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognizeResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.html#com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_Builder">StreamingRecognizeResponse.Builder</a></h3>
+      <section><pre><code>`StreamingRecognizeResponse` is the only message returned to the client by
+ `StreamingRecognize`. A series of zero or more `StreamingRecognizeResponse`
+ messages are streamed back to the client. If there is no recognizable
+ audio, and `single_utterance` is set to false, then no messages are streamed
+ back to the client.
+ Here&#39;s an example of a series of ten `StreamingRecognizeResponse`s that might
+ be returned while processing audio:
+ 1. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
+ 2. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
+ 3. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
+    results { alternatives { transcript: &quot; or not to be&quot; } stability: 0.01 }
+ 4. results { alternatives { transcript: &quot;to be or not to be&quot;
+                             confidence: 0.92 }
+              alternatives { transcript: &quot;to bee or not to bee&quot; }
+              is_final: true }
+ 5. results { alternatives { transcript: &quot; that&#39;s&quot; } stability: 0.01 }
+ 6. results { alternatives { transcript: &quot; that is&quot; } stability: 0.9 }
+    results { alternatives { transcript: &quot; the question&quot; } stability: 0.01 }
+ 7. results { alternatives { transcript: &quot; that is the question&quot;
+                             confidence: 0.98 }
+              alternatives { transcript: &quot; that was the question&quot; }
+              is_final: true }
+ Notes:
+ - Only two of the above responses #4 and #7 contain final results; they are
+   indicated by `is_final: true`. Concatenating these together generates the
+   full transcript: &quot;to be or not to be that is the question&quot;.
+ - The others contain interim `results`. #3 and #6 contain two interim
+   `results`: the first portion has a high stability and is less likely to
+   change; the second portion has a low stability and is very likely to
+   change. A UI designer might choose to show only high stability `results`.
+ - The specific `stability` and `confidence` values shown above are only for
+   illustrative purposes. Actual values may vary.
+ - In each response, only one of these fields will be set:
+     `error`,
+     `speech_event_type`, or
+     one or more (repeated) `results`.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognizeResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest.html">UpdateCustomClassRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `UpdateCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.UpdateCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest.Builder.html#com_google_cloud_speech_v1p1beta1_UpdateCustomClassRequest_Builder">UpdateCustomClassRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `UpdateCustomClass` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.UpdateCustomClassRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest.html">UpdatePhraseSetRequest</a></h3>
+      <section><pre><code>Message sent by the client for the `UpdatePhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest.Builder.html#com_google_cloud_speech_v1p1beta1_UpdatePhraseSetRequest_Builder">UpdatePhraseSetRequest.Builder</a></h3>
+      <section><pre><code>Message sent by the client for the `UpdatePhraseSet` method.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.WordInfo.html">WordInfo</a></h3>
+      <section><pre><code>Word-specific information for recognized words.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.WordInfo</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.WordInfo.Builder.html#com_google_cloud_speech_v1p1beta1_WordInfo_Builder">WordInfo.Builder</a></h3>
+      <section><pre><code>Word-specific information for recognized words.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.WordInfo</code></p>
+</section>
+    <h2 id="interfaces">Interfaces
+  
+  </h2>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreateCustomClassRequestOrBuilder.html">CreateCustomClassRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequestOrBuilder.html">CreatePhraseSetRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.ClassItemOrBuilder.html#com_google_cloud_speech_v1p1beta1_CustomClass_ClassItemOrBuilder">CustomClass.ClassItemOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder.html">CustomClassOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequestOrBuilder.html">DeleteCustomClassRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequestOrBuilder.html">DeletePhraseSetRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetCustomClassRequestOrBuilder.html">GetCustomClassRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetPhraseSetRequestOrBuilder.html">GetPhraseSetRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesRequestOrBuilder.html">ListCustomClassesRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesResponseOrBuilder.html">ListCustomClassesResponseOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetRequestOrBuilder.html">ListPhraseSetRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetResponseOrBuilder.html">ListPhraseSetResponseOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadataOrBuilder.html">LongRunningRecognizeMetadataOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequestOrBuilder.html">LongRunningRecognizeRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponseOrBuilder.html">LongRunningRecognizeResponseOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.PhraseOrBuilder.html#com_google_cloud_speech_v1p1beta1_PhraseSet_PhraseOrBuilder">PhraseSet.PhraseOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.html">PhraseSetOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudioOrBuilder.html">RecognitionAudioOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionConfigOrBuilder.html">RecognitionConfigOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadataOrBuilder.html">RecognitionMetadataOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeRequestOrBuilder.html">RecognizeRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeResponseOrBuilder.html">RecognizeResponseOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfigOrBuilder.html">SpeakerDiarizationConfigOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechAdaptationOrBuilder.html">SpeechAdaptationOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.html">SpeechContextOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder.html">SpeechRecognitionAlternativeOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechRecognitionResultOrBuilder.html">SpeechRecognitionResultOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfigOrBuilder.html">StreamingRecognitionConfigOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognitionResultOrBuilder.html">StreamingRecognitionResultOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequestOrBuilder.html">StreamingRecognizeRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.html">StreamingRecognizeResponseOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequestOrBuilder.html">UpdateCustomClassRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequestOrBuilder.html">UpdatePhraseSetRequestOrBuilder</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.WordInfoOrBuilder.html">WordInfoOrBuilder</a></h3>
+      <section></section>
+    <h2 id="enums">Enums
+  
+  </h2>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudio.AudioSourceCase.html#com_google_cloud_speech_v1p1beta1_RecognitionAudio_AudioSourceCase">RecognitionAudio.AudioSourceCase</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.html#com_google_cloud_speech_v1p1beta1_RecognitionConfig_AudioEncoding">RecognitionConfig.AudioEncoding</a></h3>
+      <section><pre><code>The encoding of the audio data sent in the request.
+ All encodings support only 1 channel (mono) audio, unless the
+ `audio_channel_count` and `enable_separate_recognition_per_channel` fields
+ are set.
+ For best results, the audio source should be captured and transmitted using
+ a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
+ recognition can be reduced if lossy codecs are used to capture or transmit
+ audio, particularly if background noise is present. Lossy codecs include
+ `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, and `MP3`.
+ The `FLAC` and `WAV` audio file formats include a header that describes the
+ included audio content. You can request recognition for `WAV` files that
+ contain either `LINEAR16` or `MULAW` encoded audio.
+ If you send `FLAC` or `WAV` audio file format in
+ your request, you do not need to specify an `AudioEncoding`; the audio
+ encoding format is determined from the file header. If you specify
+ an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
+ encoding configuration must match the encoding described in the audio
+ header; otherwise the request returns an
+ [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
+ code.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType.html#com_google_cloud_speech_v1p1beta1_RecognitionMetadata_InteractionType">RecognitionMetadata.InteractionType</a></h3>
+      <section><pre><code>Use case categories that the audio recognition request can be described
+ by.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance.html#com_google_cloud_speech_v1p1beta1_RecognitionMetadata_MicrophoneDistance">RecognitionMetadata.MicrophoneDistance</a></h3>
+      <section><pre><code>Enumerates the types of capture settings describing an audio file.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType.html#com_google_cloud_speech_v1p1beta1_RecognitionMetadata_OriginalMediaType">RecognitionMetadata.OriginalMediaType</a></h3>
+      <section><pre><code>The original media the speech was recorded on.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType.html#com_google_cloud_speech_v1p1beta1_RecognitionMetadata_RecordingDeviceType">RecognitionMetadata.RecordingDeviceType</a></h3>
+      <section><pre><code>The type of device the speech was recorded with.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest.StreamingRequestCase.html#com_google_cloud_speech_v1p1beta1_StreamingRecognizeRequest_StreamingRequestCase">StreamingRecognizeRequest.StreamingRequestCase</a></h3>
+      <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType.html#com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType">StreamingRecognizeResponse.SpeechEventType</a></h3>
+      <section><pre><code>Indicates the type of speech event.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType</code></p>
+</section>
+  {% endverbatim %}
+</article>
+    </div>
+  </body>
+</html>

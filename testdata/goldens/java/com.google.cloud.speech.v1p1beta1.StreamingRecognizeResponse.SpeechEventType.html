@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType">
+<h1 class="page-title">Enum StreamingRecognizeResponse.SpeechEventType
+</h1>
+  
+  
+  <div class="markdown level0 summary"><pre><code>Indicates the type of speech event.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType</code></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <span><span class="xref">com.google.protobuf.ProtocolMessageEnum</span></span>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Enum.&lt;T&gt;valueOf(java.lang.Class&lt;T&gt;,java.lang.String)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.compareTo(E)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.getDeclaringClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.name()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.ordinal()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public enum StreamingRecognizeResponse.SpeechEventType extends Enum&lt;StreamingRecognizeResponse.SpeechEventType&gt; implements ProtocolMessageEnum</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_END_OF_SINGLE_UTTERANCE">END_OF_SINGLE_UTTERANCE</td>
+        <td><pre><code>This event indicates that the server has detected the end of the user&#39;s
+ speech utterance and expects no additional speech. Therefore, the server
+ will not process additional audio (although it may subsequently return
+ additional results). The client should stop sending additional audio
+ data, half-close the gRPC connection, and wait for any additional results
+ until the server closes the gRPC connection. This event is only sent if
+ `single_utterance` was set to `true`, and is not used otherwise.
+</code></pre><p><code>END_OF_SINGLE_UTTERANCE = 1;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_END_OF_SINGLE_UTTERANCE_VALUE">END_OF_SINGLE_UTTERANCE_VALUE</td>
+        <td><pre><code>This event indicates that the server has detected the end of the user&#39;s
+ speech utterance and expects no additional speech. Therefore, the server
+ will not process additional audio (although it may subsequently return
+ additional results). The client should stop sending additional audio
+ data, half-close the gRPC connection, and wait for any additional results
+ until the server closes the gRPC connection. This event is only sent if
+ `single_utterance` was set to `true`, and is not used otherwise.
+</code></pre><p><code>END_OF_SINGLE_UTTERANCE = 1;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_SPEECH_EVENT_UNSPECIFIED">SPEECH_EVENT_UNSPECIFIED</td>
+        <td><pre><code>No speech event specified.
+</code></pre><p><code>SPEECH_EVENT_UNSPECIFIED = 0;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_SPEECH_EVENT_UNSPECIFIED_VALUE">SPEECH_EVENT_UNSPECIFIED_VALUE</td>
+        <td><pre><code>No speech event specified.
+</code></pre><p><code>SPEECH_EVENT_UNSPECIFIED = 0;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_UNRECOGNIZED">UNRECOGNIZED</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_forNumber_int_">forNumber(int value)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_getDescriptor__">getDescriptor()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_getDescriptorForType__">getDescriptorForType()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_getNumber__">getNumber()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_getValueDescriptor__">getValueDescriptor()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_internalGetValueMap__">internalGetValueMap()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_valueOf_com_google_protobuf_Descriptors_EnumValueDescriptor_">valueOf(Descriptors.EnumValueDescriptor desc)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_valueOf_int_">valueOf(int value)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_valueOf_java_lang_String_">valueOf(String name)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1p1beta1_StreamingRecognizeResponse_SpeechEventType_values__">values()</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+</article>
+    </div>
+  </body>
+</html>
