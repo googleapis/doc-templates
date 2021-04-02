@@ -1,0 +1,665 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings">
+<h1 class="page-title">Class AdaptationStubSettings
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Settings class to configure an instance of <a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStub.html">AdaptationStub</a>.</p>
+<p>The default instance has everything set to sensible defaults:</p>
+<ul>
+<li>The default service address (speech.googleapis.com) and default port (443) are used.</li>
+<li>Credentials are acquired automatically through Application Default Credentials.</li>
+<li>Retries are configured for idempotent methods but not for non-idempotent methods.</li>
+</ul>
+<p>The builder of this class is recursive, so contained classes are themselves builders. When build() is called, the tree of builders is called to create the complete settings object.</p>
+<p>For example, to set the total timeout of createPhraseSet to 30 seconds:</p>
+<pre><code class="lang-java">AdaptationStubSettings.Builder adaptationSettingsBuilder = AdaptationStubSettings.newBuilder();
+ adaptationSettingsBuilder
+     .createPhraseSetSettings()
+     .setRetrySettings(
+         adaptationSettingsBuilder
+             .createPhraseSetSettings()
+             .getRetrySettings()
+             .toBuilder()
+             .setTotalTimeout(Duration.ofSeconds(30))
+             .build());
+ AdaptationStubSettings adaptationSettings = adaptationSettingsBuilder.build();
+</code></pre></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <span><span class="xref">java.lang.Object</span></span> <span> &gt; </span>
+    <span><span class="xref">com.google.api.gax.rpc.StubSettings</span></span> <span> &gt; </span>
+    <span class="xref">AdaptationStubSettings</span>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getClock()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getCredentialsProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getEndpoint()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getExecutorProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getHeaderProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getInternalHeaderProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getQuotaProjectId()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getStreamWatchdogCheckInterval()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getStreamWatchdogProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getTracerFactory()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.getTransportChannelProvider()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.toBuilder()</span>
+    </div>
+    <div>
+      <span class="xref">com.google.api.gax.rpc.StubSettings.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class AdaptationStubSettings extends StubSettings&lt;AdaptationStubSettings&gt;</code></pre>
+  </div>
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_AdaptationStubSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.AdaptationStubSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_AdaptationStubSettings_com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_Builder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.AdaptationStubSettings(com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.Builder)" class="notranslate">AdaptationStubSettings(AdaptationStubSettings.Builder settingsBuilder)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected AdaptationStubSettings(AdaptationStubSettings.Builder settingsBuilder)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.Builder.html#com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_Builder">AdaptationStubSettings.Builder</a></td>
+        <td><span class="parametername">settingsBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_createCustomClassSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.createCustomClassSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_createCustomClassSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.createCustomClassSettings()" class="notranslate">createCustomClassSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;CreateCustomClassRequest,CustomClass&gt; createCustomClassSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to createCustomClass.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest.html">CreateCustomClassRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_createPhraseSetSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.createPhraseSetSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_createPhraseSetSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.createPhraseSetSettings()" class="notranslate">createPhraseSetSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;CreatePhraseSetRequest,PhraseSet&gt; createPhraseSetSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to createPhraseSet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest.html">CreatePhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_createStub_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.createStub*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_createStub__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.createStub()" class="notranslate">createStub()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public AdaptationStub createStub()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStub.html">AdaptationStub</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultApiClientHeaderProviderBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultApiClientHeaderProviderBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultApiClientHeaderProviderBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultApiClientHeaderProviderBuilder()" class="notranslate">defaultApiClientHeaderProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.ApiClientHeaderProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultCredentialsProviderBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultCredentialsProviderBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultCredentialsProviderBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultCredentialsProviderBuilder()" class="notranslate">defaultCredentialsProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder for the default credentials for this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.core.GoogleCredentialsProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultExecutorProviderBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultExecutorProviderBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultExecutorProviderBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultExecutorProviderBuilder()" class="notranslate">defaultExecutorProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder for the default ExecutorProvider for this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.core.InstantiatingExecutorProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultGrpcTransportProviderBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultGrpcTransportProviderBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultGrpcTransportProviderBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultGrpcTransportProviderBuilder()" class="notranslate">defaultGrpcTransportProviderBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder for the default ChannelProvider for this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultTransportChannelProvider_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultTransportChannelProvider*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_defaultTransportChannelProvider__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.defaultTransportChannelProvider()" class="notranslate">defaultTransportChannelProvider()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static TransportChannelProvider defaultTransportChannelProvider()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.TransportChannelProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_deleteCustomClassSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.deleteCustomClassSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_deleteCustomClassSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.deleteCustomClassSettings()" class="notranslate">deleteCustomClassSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;DeleteCustomClassRequest,Empty&gt; deleteCustomClassSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to deleteCustomClass.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest.html">DeleteCustomClassRequest</a>,<span class="xref">com.google.protobuf.Empty</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_deletePhraseSetSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.deletePhraseSetSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_deletePhraseSetSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.deletePhraseSetSettings()" class="notranslate">deletePhraseSetSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;DeletePhraseSetRequest,Empty&gt; deletePhraseSetSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to deletePhraseSet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest.html">DeletePhraseSetRequest</a>,<span class="xref">com.google.protobuf.Empty</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getCustomClassSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getCustomClassSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getCustomClassSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getCustomClassSettings()" class="notranslate">getCustomClassSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;GetCustomClassRequest,CustomClass&gt; getCustomClassSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to getCustomClass.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.GetCustomClassRequest.html">GetCustomClassRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getDefaultEndpoint_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getDefaultEndpoint*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getDefaultEndpoint__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getDefaultEndpoint()" class="notranslate">getDefaultEndpoint()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static String getDefaultEndpoint()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the default service endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getDefaultServiceScopes_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getDefaultServiceScopes*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getDefaultServiceScopes__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getDefaultServiceScopes()" class="notranslate">getDefaultServiceScopes()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static List&lt;String&gt; getDefaultServiceScopes()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the default service scopes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getPhraseSetSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getPhraseSetSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_getPhraseSetSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.getPhraseSetSettings()" class="notranslate">getPhraseSetSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;GetPhraseSetRequest,PhraseSet&gt; getPhraseSetSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to getPhraseSet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest.html">GetPhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_listCustomClassesSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.listCustomClassesSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_listCustomClassesSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.listCustomClassesSettings()" class="notranslate">listCustomClassesSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public PagedCallSettings&lt;ListCustomClassesRequest,ListCustomClassesResponse,AdaptationClient.ListCustomClassesPagedResponse&gt; listCustomClassesSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to listCustomClasses.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.PagedCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest.html">ListCustomClassesRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse.html">ListCustomClassesResponse</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesPagedResponse">ListCustomClassesPagedResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_listPhraseSetSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.listPhraseSetSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_listPhraseSetSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.listPhraseSetSettings()" class="notranslate">listPhraseSetSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public PagedCallSettings&lt;ListPhraseSetRequest,ListPhraseSetResponse,AdaptationClient.ListPhraseSetPagedResponse&gt; listPhraseSetSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to listPhraseSet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.PagedCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest.html">ListPhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse.html">ListPhraseSetResponse</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetPagedResponse">ListPhraseSetPagedResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_newBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.newBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_newBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.newBuilder()" class="notranslate">newBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static AdaptationStubSettings.Builder newBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a new builder for this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.Builder.html#com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_Builder">AdaptationStubSettings.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_newBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.newBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_newBuilder_com_google_api_gax_rpc_ClientContext_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.newBuilder(com.google.api.gax.rpc.ClientContext)" class="notranslate">newBuilder(ClientContext clientContext)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static AdaptationStubSettings.Builder newBuilder(ClientContext clientContext)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a new builder for this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.ClientContext</span></td>
+        <td><span class="parametername">clientContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.Builder.html#com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_Builder">AdaptationStubSettings.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_toBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.toBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_toBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.toBuilder()" class="notranslate">toBuilder()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public AdaptationStubSettings.Builder toBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a builder containing all the values of this settings class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.Builder.html#com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_Builder">AdaptationStubSettings.Builder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Overrides</strong>
+  <div><span class="xref">com.google.api.gax.rpc.StubSettings.toBuilder()</span></div>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_updateCustomClassSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.updateCustomClassSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_updateCustomClassSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.updateCustomClassSettings()" class="notranslate">updateCustomClassSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;UpdateCustomClassRequest,CustomClass&gt; updateCustomClassSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to updateCustomClass.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest.html">UpdateCustomClassRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_updatePhraseSetSettings_" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.updatePhraseSetSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_stub_AdaptationStubSettings_updatePhraseSetSettings__" data-uid="com.google.cloud.speech.v1p1beta1.stub.AdaptationStubSettings.updatePhraseSetSettings()" class="notranslate">updatePhraseSetSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public UnaryCallSettings&lt;UpdatePhraseSetRequest,PhraseSet&gt; updatePhraseSetSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the object with the settings used for calls to updatePhraseSet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallSettings</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest.html">UpdatePhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+  </body>
+</html>

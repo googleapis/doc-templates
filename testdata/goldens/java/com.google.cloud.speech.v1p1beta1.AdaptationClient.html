@@ -1,0 +1,2120 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient">
+<h1 class="page-title">Class AdaptationClient
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Service Description: Service that implements Google Cloud Speech Adaptation API.</p>
+<p>This class provides the ability to make remote calls to the backing service through method calls that map to API methods. Sample code to get started:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   PhraseSet phraseSet = PhraseSet.newBuilder().build();
+   String phraseSetId = &quot;phraseSetId959902180&quot;;
+   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
+ }
+</code></pre><p>Note: close() needs to be called on the AdaptationClient object to clean up resources such as threads. In the example above, try-with-resources is used, which automatically calls close().</p>
+<p>The surface of this class includes several types of Java methods for each of the API&#39;s methods:</p>
+<ol>
+<li>A &quot;flattened&quot; method. With this type of method, the fields of the request type have been converted into function parameters. It may be the case that not all fields are available as parameters, and not every API method will have a flattened method entry point.</li>
+<li>A &quot;request object&quot; method. This type of method only takes one parameter, a request object, which must be constructed before the call. Not every API method will have a request object method.</li>
+<li>A &quot;callable&quot; method. This type of method takes no parameters and returns an immutable API callable object, which can be used to initiate calls to the service.</li>
+</ol>
+<p>See the individual methods for example code.</p>
+<p>Many parameters require resource names to be formatted in a particular way. To assist with these names, this class includes a format method for each type of name, and additionally a parse method to extract the individual identifiers contained within names that are returned.</p>
+<p>This class can be customized by passing in a custom instance of AdaptationSettings to create(). For example:</p>
+<p>To customize credentials:</p>
+<pre><code class="lang-java">AdaptationSettings adaptationSettings =
+     AdaptationSettings.newBuilder()
+         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+         .build();
+ AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
+</code></pre><p>To customize the endpoint:</p>
+<pre><code class="lang-java">AdaptationSettings adaptationSettings =
+     AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();
+ AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
+</code></pre><p>Please refer to the GitHub repository&#39;s samples for more quickstart code snippets.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <span><span class="xref">java.lang.Object</span></span> <span> &gt; </span>
+    <span class="xref">AdaptationClient</span>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <span><span class="xref">com.google.api.gax.core.BackgroundResource</span></span>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class AdaptationClient implements BackgroundResource</code></pre>
+  </div>
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_AdaptationClient_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.AdaptationClient*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_AdaptationClient_com_google_cloud_speech_v1p1beta1_AdaptationSettings_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.AdaptationClient(com.google.cloud.speech.v1p1beta1.AdaptationSettings)" class="notranslate">AdaptationClient(AdaptationSettings settings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected AdaptationClient(AdaptationSettings settings)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given settings. This is protected so that it is easy to make a subclass, but otherwise, the static factory methods should be preferred.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationSettings.html">AdaptationSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_AdaptationClient_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.AdaptationClient*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_AdaptationClient_com_google_cloud_speech_v1p1beta1_stub_AdaptationStub_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.AdaptationClient(com.google.cloud.speech.v1p1beta1.stub.AdaptationStub)" class="notranslate">AdaptationClient(AdaptationStub stub)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected AdaptationClient(AdaptationStub stub)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStub.html">AdaptationStub</a></td>
+        <td><span class="parametername">stub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_awaitTermination_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.awaitTermination*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_awaitTermination_long_java_util_concurrent_TimeUnit_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.awaitTermination(long,java.util.concurrent.TimeUnit)" class="notranslate">awaitTermination(long duration, TimeUnit unit)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean awaitTermination(long duration, TimeUnit unit)</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td><span class="parametername">duration</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.concurrent.TimeUnit</span></td>
+        <td><span class="parametername">unit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.InterruptedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_close_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.close*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_close__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.close()" class="notranslate">close()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void close()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_create_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.create*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_create__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.create()" class="notranslate">create()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final AdaptationClient create()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient with default settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_create_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.create*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_create_com_google_cloud_speech_v1p1beta1_AdaptationSettings_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.create(com.google.cloud.speech.v1p1beta1.AdaptationSettings)" class="notranslate">create(AdaptationSettings settings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final AdaptationClient create(AdaptationSettings settings)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given settings. The channels are created based on the settings passed in, or defaults for any settings that are not set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationSettings.html">AdaptationSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_create_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.create*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_create_com_google_cloud_speech_v1p1beta1_stub_AdaptationStub_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.create(com.google.cloud.speech.v1p1beta1.stub.AdaptationStub)" class="notranslate">create(AdaptationStub stub)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final AdaptationClient create(AdaptationStub stub)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given stub for making calls. This is for advanced usage - prefer using create(AdaptationSettings).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStub.html">AdaptationStub</a></td>
+        <td><span class="parametername">stub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClass_com_google_cloud_speech_v1p1beta1_CreateCustomClassRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass(com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest)" class="notranslate">createCustomClass(CreateCustomClassRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CustomClass createCustomClass(CreateCustomClassRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CreateCustomClassRequest request =
+       CreateCustomClassRequest.newBuilder()
+           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setCustomClassId(&quot;customClassId1871032322&quot;)
+           .setCustomClass(CustomClass.newBuilder().build())
+           .build();
+   CustomClass response = adaptationClient.createCustomClass(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest.html">CreateCustomClassRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClass_com_google_cloud_speech_v1p1beta1_LocationName_com_google_cloud_speech_v1p1beta1_CustomClass_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass(com.google.cloud.speech.v1p1beta1.LocationName,com.google.cloud.speech.v1p1beta1.CustomClass,java.lang.String)" class="notranslate">createCustomClass(LocationName parent, CustomClass customClass, String customClassId)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CustomClass createCustomClass(LocationName parent, CustomClass customClass, String customClassId)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   CustomClass customClass = CustomClass.newBuilder().build();
+   String customClassId = &quot;customClassId1871032322&quot;;
+   CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.LocationName.html">LocationName</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent resource where this custom class will be created. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td><span class="parametername">customClass</span></td>
+        <td><p>Required. The custom class to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">customClassId</span></td>
+        <td><p>The ID to use for the custom class, which will become the final component
+     of the custom class&#39; resource name.
+     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClass_java_lang_String_com_google_cloud_speech_v1p1beta1_CustomClass_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass(java.lang.String,com.google.cloud.speech.v1p1beta1.CustomClass,java.lang.String)" class="notranslate">createCustomClass(String parent, CustomClass customClass, String customClassId)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CustomClass createCustomClass(String parent, CustomClass customClass, String customClassId)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+   CustomClass customClass = CustomClass.newBuilder().build();
+   String customClassId = &quot;customClassId1871032322&quot;;
+   CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent resource where this custom class will be created. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td><span class="parametername">customClass</span></td>
+        <td><p>Required. The custom class to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">customClassId</span></td>
+        <td><p>The ID to use for the custom class, which will become the final component
+     of the custom class&#39; resource name.
+     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClassCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClassCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createCustomClassCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClassCallable()" class="notranslate">createCustomClassCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;CreateCustomClassRequest,CustomClass&gt; createCustomClassCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CreateCustomClassRequest request =
+       CreateCustomClassRequest.newBuilder()
+           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setCustomClassId(&quot;customClassId1871032322&quot;)
+           .setCustomClass(CustomClass.newBuilder().build())
+           .build();
+   ApiFuture future =
+       adaptationClient.createCustomClassCallable().futureCall(request);
+   // Do something.
+   CustomClass response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest.html">CreateCustomClassRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSet_com_google_cloud_speech_v1p1beta1_CreatePhraseSetRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet(com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest)" class="notranslate">createPhraseSet(CreatePhraseSetRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final PhraseSet createPhraseSet(CreatePhraseSetRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CreatePhraseSetRequest request =
+       CreatePhraseSetRequest.newBuilder()
+           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setPhraseSetId(&quot;phraseSetId959902180&quot;)
+           .setPhraseSet(PhraseSet.newBuilder().build())
+           .build();
+   PhraseSet response = adaptationClient.createPhraseSet(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest.html">CreatePhraseSetRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSet_com_google_cloud_speech_v1p1beta1_LocationName_com_google_cloud_speech_v1p1beta1_PhraseSet_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet(com.google.cloud.speech.v1p1beta1.LocationName,com.google.cloud.speech.v1p1beta1.PhraseSet,java.lang.String)" class="notranslate">createPhraseSet(LocationName parent, PhraseSet phraseSet, String phraseSetId)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final PhraseSet createPhraseSet(LocationName parent, PhraseSet phraseSet, String phraseSetId)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   PhraseSet phraseSet = PhraseSet.newBuilder().build();
+   String phraseSetId = &quot;phraseSetId959902180&quot;;
+   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.LocationName.html">LocationName</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent resource where this phrase set will be created. Format:
+     {api_version}/projects/{project}/locations/{location}/phraseSets</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td><span class="parametername">phraseSet</span></td>
+        <td><p>Required. The phrase set to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">phraseSetId</span></td>
+        <td><p>The ID to use for the phrase set, which will become the final component of
+     the phrase set&#39;s resource name.
+     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSet_java_lang_String_com_google_cloud_speech_v1p1beta1_PhraseSet_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet(java.lang.String,com.google.cloud.speech.v1p1beta1.PhraseSet,java.lang.String)" class="notranslate">createPhraseSet(String parent, PhraseSet phraseSet, String phraseSetId)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final PhraseSet createPhraseSet(String parent, PhraseSet phraseSet, String phraseSetId)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+   PhraseSet phraseSet = PhraseSet.newBuilder().build();
+   String phraseSetId = &quot;phraseSetId959902180&quot;;
+   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent resource where this phrase set will be created. Format:
+     {api_version}/projects/{project}/locations/{location}/phraseSets</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td><span class="parametername">phraseSet</span></td>
+        <td><p>Required. The phrase set to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">phraseSetId</span></td>
+        <td><p>The ID to use for the phrase set, which will become the final component of
+     the phrase set&#39;s resource name.
+     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSetCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSetCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_createPhraseSetCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSetCallable()" class="notranslate">createPhraseSetCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;CreatePhraseSetRequest,PhraseSet&gt; createPhraseSetCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CreatePhraseSetRequest request =
+       CreatePhraseSetRequest.newBuilder()
+           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setPhraseSetId(&quot;phraseSetId959902180&quot;)
+           .setPhraseSet(PhraseSet.newBuilder().build())
+           .build();
+   ApiFuture future = adaptationClient.createPhraseSetCallable().futureCall(request);
+   // Do something.
+   PhraseSet response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest.html">CreatePhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClass_com_google_cloud_speech_v1p1beta1_CustomClassName_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass(com.google.cloud.speech.v1p1beta1.CustomClassName)" class="notranslate">deleteCustomClass(CustomClassName name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void deleteCustomClass(CustomClassName name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CustomClassName name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;);
+   adaptationClient.deleteCustomClass(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClassName.html">CustomClassName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the custom class to delete. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClass_com_google_cloud_speech_v1p1beta1_DeleteCustomClassRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass(com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest)" class="notranslate">deleteCustomClass(DeleteCustomClassRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void deleteCustomClass(DeleteCustomClassRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   DeleteCustomClassRequest request =
+       DeleteCustomClassRequest.newBuilder()
+           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .build();
+   adaptationClient.deleteCustomClass(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest.html">DeleteCustomClassRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClass_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass(java.lang.String)" class="notranslate">deleteCustomClass(String name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void deleteCustomClass(String name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+   adaptationClient.deleteCustomClass(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the custom class to delete. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClassCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClassCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deleteCustomClassCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClassCallable()" class="notranslate">deleteCustomClassCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;DeleteCustomClassRequest,Empty&gt; deleteCustomClassCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   DeleteCustomClassRequest request =
+       DeleteCustomClassRequest.newBuilder()
+           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .build();
+   ApiFuture future = adaptationClient.deleteCustomClassCallable().futureCall(request);
+   // Do something.
+   future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest.html">DeleteCustomClassRequest</a>,<span class="xref">com.google.protobuf.Empty</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSet_com_google_cloud_speech_v1p1beta1_DeletePhraseSetRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet(com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest)" class="notranslate">deletePhraseSet(DeletePhraseSetRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void deletePhraseSet(DeletePhraseSetRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   DeletePhraseSetRequest request =
+       DeletePhraseSetRequest.newBuilder()
+           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .build();
+   adaptationClient.deletePhraseSet(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest.html">DeletePhraseSetRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSet_com_google_cloud_speech_v1p1beta1_PhraseSetName_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet(com.google.cloud.speech.v1p1beta1.PhraseSetName)" class="notranslate">deletePhraseSet(PhraseSetName name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void deletePhraseSet(PhraseSetName name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   PhraseSetName name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;);
+   adaptationClient.deletePhraseSet(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSetName.html">PhraseSetName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the phrase set to delete. Format:
+     {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSet_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet(java.lang.String)" class="notranslate">deletePhraseSet(String name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void deletePhraseSet(String name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+   adaptationClient.deletePhraseSet(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the phrase set to delete. Format:
+     {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSetCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSetCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_deletePhraseSetCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSetCallable()" class="notranslate">deletePhraseSetCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;DeletePhraseSetRequest,Empty&gt; deletePhraseSetCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Delete a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   DeletePhraseSetRequest request =
+       DeletePhraseSetRequest.newBuilder()
+           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .build();
+   ApiFuture future = adaptationClient.deletePhraseSetCallable().futureCall(request);
+   // Do something.
+   future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest.html">DeletePhraseSetRequest</a>,<span class="xref">com.google.protobuf.Empty</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClass_com_google_cloud_speech_v1p1beta1_CustomClassName_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass(com.google.cloud.speech.v1p1beta1.CustomClassName)" class="notranslate">getCustomClass(CustomClassName name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CustomClass getCustomClass(CustomClassName name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CustomClassName name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;);
+   CustomClass response = adaptationClient.getCustomClass(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClassName.html">CustomClassName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the custom class to retrieve. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClass_com_google_cloud_speech_v1p1beta1_GetCustomClassRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass(com.google.cloud.speech.v1p1beta1.GetCustomClassRequest)" class="notranslate">getCustomClass(GetCustomClassRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CustomClass getCustomClass(GetCustomClassRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   GetCustomClassRequest request =
+       GetCustomClassRequest.newBuilder()
+           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .build();
+   CustomClass response = adaptationClient.getCustomClass(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetCustomClassRequest.html">GetCustomClassRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClass_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass(java.lang.String)" class="notranslate">getCustomClass(String name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CustomClass getCustomClass(String name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+   CustomClass response = adaptationClient.getCustomClass(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the custom class to retrieve. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClassCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClassCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getCustomClassCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClassCallable()" class="notranslate">getCustomClassCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;GetCustomClassRequest,CustomClass&gt; getCustomClassCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   GetCustomClassRequest request =
+       GetCustomClassRequest.newBuilder()
+           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .build();
+   ApiFuture future = adaptationClient.getCustomClassCallable().futureCall(request);
+   // Do something.
+   CustomClass response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.GetCustomClassRequest.html">GetCustomClassRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSet_com_google_cloud_speech_v1p1beta1_GetPhraseSetRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet(com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest)" class="notranslate">getPhraseSet(GetPhraseSetRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final PhraseSet getPhraseSet(GetPhraseSetRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   GetPhraseSetRequest request =
+       GetPhraseSetRequest.newBuilder()
+           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .build();
+   PhraseSet response = adaptationClient.getPhraseSet(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest.html">GetPhraseSetRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSet_com_google_cloud_speech_v1p1beta1_PhraseSetName_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet(com.google.cloud.speech.v1p1beta1.PhraseSetName)" class="notranslate">getPhraseSet(PhraseSetName name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final PhraseSet getPhraseSet(PhraseSetName name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   PhraseSetName name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;);
+   PhraseSet response = adaptationClient.getPhraseSet(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSetName.html">PhraseSetName</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the phrase set to retrieve. Format:
+     {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSet_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet(java.lang.String)" class="notranslate">getPhraseSet(String name)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final PhraseSet getPhraseSet(String name)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+   PhraseSet response = adaptationClient.getPhraseSet(name);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Required. The name of the phrase set to retrieve. Format:
+     {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSetCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSetCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getPhraseSetCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSetCallable()" class="notranslate">getPhraseSetCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;GetPhraseSetRequest,PhraseSet&gt; getPhraseSetCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   GetPhraseSetRequest request =
+       GetPhraseSetRequest.newBuilder()
+           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .build();
+   ApiFuture future = adaptationClient.getPhraseSetCallable().futureCall(request);
+   // Do something.
+   PhraseSet response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest.html">GetPhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getSettings_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getSettings__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getSettings()" class="notranslate">getSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final AdaptationSettings getSettings()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationSettings.html">AdaptationSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getStub_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getStub*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_getStub__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.getStub()" class="notranslate">getStub()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public AdaptationStub getStub()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.AdaptationStub.html">AdaptationStub</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_isShutdown_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.isShutdown*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_isShutdown__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.isShutdown()" class="notranslate">isShutdown()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean isShutdown()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_isTerminated_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.isTerminated*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_isTerminated__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.isTerminated()" class="notranslate">isTerminated()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean isTerminated()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClasses_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClasses_com_google_cloud_speech_v1p1beta1_ListCustomClassesRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses(com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest)" class="notranslate">listCustomClasses(ListCustomClassesRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(ListCustomClassesRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List custom classes.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   ListCustomClassesRequest request =
+       ListCustomClassesRequest.newBuilder()
+           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setPageSize(883849137)
+           .setPageToken(&quot;pageToken873572522&quot;)
+           .build();
+   for (CustomClass element : adaptationClient.listCustomClasses(request).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest.html">ListCustomClassesRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesPagedResponse">AdaptationClient.ListCustomClassesPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClasses_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClasses_com_google_cloud_speech_v1p1beta1_LocationName_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses(com.google.cloud.speech.v1p1beta1.LocationName)" class="notranslate">listCustomClasses(LocationName parent)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(LocationName parent)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List custom classes.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.LocationName.html">LocationName</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent, which owns this collection of custom classes. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesPagedResponse">AdaptationClient.ListCustomClassesPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClasses_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClasses_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses(java.lang.String)" class="notranslate">listCustomClasses(String parent)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(String parent)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List custom classes.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent, which owns this collection of custom classes. Format:
+     {api_version}/projects/{project}/locations/{location}/customClasses</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesPagedResponse">AdaptationClient.ListCustomClassesPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClassesCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClassesCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesCallable()" class="notranslate">listCustomClassesCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;ListCustomClassesRequest,ListCustomClassesResponse&gt; listCustomClassesCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List custom classes.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   while (true) {
+     ListCustomClassesResponse response =
+         adaptationClient.listCustomClassesCallable().call(request);
+     for (CustomClass element : response.getResponsesList()) {
+       // doThingsWith(element);
+     }
+     String nextPageToken = response.getNextPageToken();
+     if (!Strings.isNullOrEmpty(nextPageToken)) {
+       request = request.toBuilder().setPageToken(nextPageToken).build();
+     } else {
+       break;
+     }
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest.html">ListCustomClassesRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse.html">ListCustomClassesResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClassesPagedCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesPagedCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listCustomClassesPagedCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesPagedCallable()" class="notranslate">listCustomClassesPagedCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;ListCustomClassesRequest,AdaptationClient.ListCustomClassesPagedResponse&gt; listCustomClassesPagedCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List custom classes.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   ListCustomClassesRequest request =
+       ListCustomClassesRequest.newBuilder()
+           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setPageSize(883849137)
+           .setPageToken(&quot;pageToken873572522&quot;)
+           .build();
+   ApiFuture future =
+       adaptationClient.listCustomClassesPagedCallable().futureCall(request);
+   // Do something.
+   for (CustomClass element : future.get().iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest.html">ListCustomClassesRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListCustomClassesPagedResponse">ListCustomClassesPagedResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSet_com_google_cloud_speech_v1p1beta1_ListPhraseSetRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet(com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest)" class="notranslate">listPhraseSet(ListPhraseSetRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(ListPhraseSetRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List phrase sets.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   ListPhraseSetRequest request =
+       ListPhraseSetRequest.newBuilder()
+           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setPageSize(883849137)
+           .setPageToken(&quot;pageToken873572522&quot;)
+           .build();
+   for (PhraseSet element : adaptationClient.listPhraseSet(request).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest.html">ListPhraseSetRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetPagedResponse">AdaptationClient.ListPhraseSetPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSet_com_google_cloud_speech_v1p1beta1_LocationName_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet(com.google.cloud.speech.v1p1beta1.LocationName)" class="notranslate">listPhraseSet(LocationName parent)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(LocationName parent)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List phrase sets.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.LocationName.html">LocationName</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent, which owns this collection of phrase set. Format:
+     projects/{project}/locations/{location}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetPagedResponse">AdaptationClient.ListPhraseSetPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSet_java_lang_String_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet(java.lang.String)" class="notranslate">listPhraseSet(String parent)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(String parent)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List phrase sets.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. The parent, which owns this collection of phrase set. Format:
+     projects/{project}/locations/{location}</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetPagedResponse">AdaptationClient.ListPhraseSetPagedResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSetCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSetCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetCallable()" class="notranslate">listPhraseSetCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;ListPhraseSetRequest,ListPhraseSetResponse&gt; listPhraseSetCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List phrase sets.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   while (true) {
+     ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);
+     for (PhraseSet element : response.getResponsesList()) {
+       // doThingsWith(element);
+     }
+     String nextPageToken = response.getNextPageToken();
+     if (!Strings.isNullOrEmpty(nextPageToken)) {
+       request = request.toBuilder().setPageToken(nextPageToken).build();
+     } else {
+       break;
+     }
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest.html">ListPhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse.html">ListPhraseSetResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSetPagedCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetPagedCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_listPhraseSetPagedCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetPagedCallable()" class="notranslate">listPhraseSetPagedCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;ListPhraseSetRequest,AdaptationClient.ListPhraseSetPagedResponse&gt; listPhraseSetPagedCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>List phrase sets.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   ListPhraseSetRequest request =
+       ListPhraseSetRequest.newBuilder()
+           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setPageSize(883849137)
+           .setPageToken(&quot;pageToken873572522&quot;)
+           .build();
+   ApiFuture future =
+       adaptationClient.listPhraseSetPagedCallable().futureCall(request);
+   // Do something.
+   for (PhraseSet element : future.get().iterateAll()) {
+     // doThingsWith(element);
+   }
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest.html">ListPhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse.html#com_google_cloud_speech_v1p1beta1_AdaptationClient_ListPhraseSetPagedResponse">ListPhraseSetPagedResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_shutdown_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdown*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_shutdown__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdown()" class="notranslate">shutdown()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void shutdown()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_shutdownNow_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdownNow*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_shutdownNow__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdownNow()" class="notranslate">shutdownNow()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void shutdownNow()</code></pre>
+  </div>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updateCustomClass_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updateCustomClass_com_google_cloud_speech_v1p1beta1_UpdateCustomClassRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass(com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest)" class="notranslate">updateCustomClass(UpdateCustomClassRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final CustomClass updateCustomClass(UpdateCustomClassRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Update a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   UpdateCustomClassRequest request =
+       UpdateCustomClassRequest.newBuilder()
+           .setCustomClass(CustomClass.newBuilder().build())
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .build();
+   CustomClass response = adaptationClient.updateCustomClass(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest.html">UpdateCustomClassRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updateCustomClassCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClassCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updateCustomClassCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClassCallable()" class="notranslate">updateCustomClassCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;UpdateCustomClassRequest,CustomClass&gt; updateCustomClassCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Update a custom class.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   UpdateCustomClassRequest request =
+       UpdateCustomClassRequest.newBuilder()
+           .setCustomClass(CustomClass.newBuilder().build())
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .build();
+   ApiFuture future =
+       adaptationClient.updateCustomClassCallable().futureCall(request);
+   // Do something.
+   CustomClass response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest.html">UpdateCustomClassRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.CustomClass.html">CustomClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updatePhraseSet_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updatePhraseSet_com_google_cloud_speech_v1p1beta1_UpdatePhraseSetRequest_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet(com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest)" class="notranslate">updatePhraseSet(UpdatePhraseSetRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final PhraseSet updatePhraseSet(UpdatePhraseSetRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Update a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   UpdatePhraseSetRequest request =
+       UpdatePhraseSetRequest.newBuilder()
+           .setPhraseSet(PhraseSet.newBuilder().build())
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .build();
+   PhraseSet response = adaptationClient.updatePhraseSet(request);
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest.html">UpdatePhraseSetRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updatePhraseSetCallable_" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSetCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_AdaptationClient_updatePhraseSetCallable__" data-uid="com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSetCallable()" class="notranslate">updatePhraseSetCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;UpdatePhraseSetRequest,PhraseSet&gt; updatePhraseSetCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Update a phrase set.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   UpdatePhraseSetRequest request =
+       UpdatePhraseSetRequest.newBuilder()
+           .setPhraseSet(PhraseSet.newBuilder().build())
+           .setUpdateMask(FieldMask.newBuilder().build())
+           .build();
+   ApiFuture future = adaptationClient.updatePhraseSetCallable().futureCall(request);
+   // Do something.
+   PhraseSet response = future.get();
+ }
+</code></pre></div>
+  <div class="markdown level1 conceptual"></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest.html">UpdatePhraseSetRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.html">PhraseSet</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">com.google.api.gax.core.BackgroundResource</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>
