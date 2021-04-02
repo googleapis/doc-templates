@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding">
+<h1 class="page-title">Enum RecognitionConfig.AudioEncoding
+</h1>
+  
+  
+  <div class="markdown level0 summary"><pre><code>The encoding of the audio data sent in the request.
+ All encodings support only 1 channel (mono) audio, unless the
+ `audio_channel_count` and `enable_separate_recognition_per_channel` fields
+ are set.
+ For best results, the audio source should be captured and transmitted using
+ a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
+ recognition can be reduced if lossy codecs are used to capture or transmit
+ audio, particularly if background noise is present. Lossy codecs include
+ `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, and `MP3`.
+ The `FLAC` and `WAV` audio file formats include a header that describes the
+ included audio content. You can request recognition for `WAV` files that
+ contain either `LINEAR16` or `MULAW` encoded audio.
+ If you send `FLAC` or `WAV` audio file format in
+ your request, you do not need to specify an `AudioEncoding`; the audio
+ encoding format is determined from the file header. If you specify
+ an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
+ encoding configuration must match the encoding described in the audio
+ header; otherwise the request returns an
+ [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
+</code></pre><p>Protobuf enum <code>google.cloud.speech.v1.RecognitionConfig.AudioEncoding</code></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <span><span class="xref">com.google.protobuf.ProtocolMessageEnum</span></span>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">java.lang.Enum.&lt;T&gt;valueOf(java.lang.Class&lt;T&gt;,java.lang.String)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.compareTo(E)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.getDeclaringClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.name()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.ordinal()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Enum.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: </h6>
+  <h6><strong>Assembly</strong>: .dll</h6>
+  <h5 id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public enum RecognitionConfig.AudioEncoding extends Enum&lt;RecognitionConfig.AudioEncoding&gt; implements ProtocolMessageEnum</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_AMR">AMR</td>
+        <td><pre><code>Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+</code></pre><p><code>AMR = 4;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_AMR_VALUE">AMR_VALUE</td>
+        <td><pre><code>Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
+</code></pre><p><code>AMR = 4;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_AMR_WB">AMR_WB</td>
+        <td><pre><code>Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+</code></pre><p><code>AMR_WB = 5;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_AMR_WB_VALUE">AMR_WB_VALUE</td>
+        <td><pre><code>Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
+</code></pre><p><code>AMR_WB = 5;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_ENCODING_UNSPECIFIED">ENCODING_UNSPECIFIED</td>
+        <td><pre><code>Not specified.
+</code></pre><p><code>ENCODING_UNSPECIFIED = 0;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_ENCODING_UNSPECIFIED_VALUE">ENCODING_UNSPECIFIED_VALUE</td>
+        <td><pre><code>Not specified.
+</code></pre><p><code>ENCODING_UNSPECIFIED = 0;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_FLAC">FLAC</td>
+        <td><pre><code>`FLAC` (Free Lossless Audio
+ Codec) is the recommended encoding because it is
+ lossless--therefore recognition is not compromised--and
+ requires only about half the bandwidth of `LINEAR16`. `FLAC` stream
+ encoding supports 16-bit and 24-bit samples, however, not all fields in
+ `STREAMINFO` are supported.
+</code></pre><p><code>FLAC = 2;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_FLAC_VALUE">FLAC_VALUE</td>
+        <td><pre><code>`FLAC` (Free Lossless Audio
+ Codec) is the recommended encoding because it is
+ lossless--therefore recognition is not compromised--and
+ requires only about half the bandwidth of `LINEAR16`. `FLAC` stream
+ encoding supports 16-bit and 24-bit samples, however, not all fields in
+ `STREAMINFO` are supported.
+</code></pre><p><code>FLAC = 2;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_LINEAR16">LINEAR16</td>
+        <td><pre><code>Uncompressed 16-bit signed little-endian samples (Linear PCM).
+</code></pre><p><code>LINEAR16 = 1;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_LINEAR16_VALUE">LINEAR16_VALUE</td>
+        <td><pre><code>Uncompressed 16-bit signed little-endian samples (Linear PCM).
+</code></pre><p><code>LINEAR16 = 1;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_MULAW">MULAW</td>
+        <td><pre><code>8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+</code></pre><p><code>MULAW = 3;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_MULAW_VALUE">MULAW_VALUE</td>
+        <td><pre><code>8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
+</code></pre><p><code>MULAW = 3;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_OGG_OPUS">OGG_OPUS</td>
+        <td><pre><code>Opus encoded audio frames in Ogg container
+ ([OggOpus](https://wiki.xiph.org/OggOpus)).
+ `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.
+</code></pre><p><code>OGG_OPUS = 6;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_OGG_OPUS_VALUE">OGG_OPUS_VALUE</td>
+        <td><pre><code>Opus encoded audio frames in Ogg container
+ ([OggOpus](https://wiki.xiph.org/OggOpus)).
+ `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.
+</code></pre><p><code>OGG_OPUS = 6;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_SPEEX_WITH_HEADER_BYTE">SPEEX_WITH_HEADER_BYTE</td>
+        <td><pre><code>Although the use of lossy encodings is not recommended, if a very low
+ bitrate encoding is required, `OGG_OPUS` is highly preferred over
+ Speex encoding. The [Speex](https://speex.org/)  encoding supported by
+ Cloud Speech API has a header byte in each block, as in MIME type
+ `audio/x-speex-with-header-byte`.
+ It is a variant of the RTP Speex encoding defined in
+ [RFC 5574](https://tools.ietf.org/html/rfc5574).
+ The stream is a sequence of blocks, one block per RTP packet. Each block
+ starts with a byte containing the length of the block, in bytes, followed
+ by one or more frames of Speex data, padded to an integral number of
+ bytes (octets) as specified in RFC 5574. In other words, each RTP header
+ is replaced with a single byte containing the block length. Only Speex
+ wideband is supported. `sample_rate_hertz` must be 16000.
+</code></pre><p><code>SPEEX_WITH_HEADER_BYTE = 7;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_SPEEX_WITH_HEADER_BYTE_VALUE">SPEEX_WITH_HEADER_BYTE_VALUE</td>
+        <td><pre><code>Although the use of lossy encodings is not recommended, if a very low
+ bitrate encoding is required, `OGG_OPUS` is highly preferred over
+ Speex encoding. The [Speex](https://speex.org/)  encoding supported by
+ Cloud Speech API has a header byte in each block, as in MIME type
+ `audio/x-speex-with-header-byte`.
+ It is a variant of the RTP Speex encoding defined in
+ [RFC 5574](https://tools.ietf.org/html/rfc5574).
+ The stream is a sequence of blocks, one block per RTP packet. Each block
+ starts with a byte containing the length of the block, in bytes, followed
+ by one or more frames of Speex data, padded to an integral number of
+ bytes (octets) as specified in RFC 5574. In other words, each RTP header
+ is replaced with a single byte containing the block length. Only Speex
+ wideband is supported. `sample_rate_hertz` must be 16000.
+</code></pre><p><code>SPEEX_WITH_HEADER_BYTE = 7;</code></p>
+</td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_UNRECOGNIZED">UNRECOGNIZED</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_forNumber_int_">forNumber(int value)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_getDescriptor__">getDescriptor()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_getDescriptorForType__">getDescriptorForType()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_getNumber__">getNumber()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_getValueDescriptor__">getValueDescriptor()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_internalGetValueMap__">internalGetValueMap()</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_valueOf_com_google_protobuf_Descriptors_EnumValueDescriptor_">valueOf(Descriptors.EnumValueDescriptor desc)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_valueOf_int_">valueOf(int value)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_valueOf_java_lang_String_">valueOf(String name)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="com_google_cloud_speech_v1_RecognitionConfig_AudioEncoding_values__">values()</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+</article>
+    </div>
+  </body>
+</html>
