@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder">
+<h1 class="page-title">Interface SpeechContextOrBuilder
+</h1>
+  
+  
+  {% verbatim %}
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public interface SpeechContextOrBuilder extends MessageOrBuilder</code></pre>
+  </div>
+  <div classs="implements">
+    <h2>Implements</h2>
+    <span><span class="xref">com.google.protobuf.MessageOrBuilder</span></span>
+  </div>
+  {% endverbatim %}
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getBoost_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getBoost*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getBoost__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getBoost()" class="notranslate">getBoost()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract float getBoost()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Hint Boost. Positive value will increase the probability that a specific
+ phrase will be recognized over other similar sounding phrases. The higher
+ the boost, the higher the chance of false positive recognition as well.
+ Negative boost values would correspond to anti-biasing. Anti-biasing is not
+ enabled, so negative boost will simply be ignored. Though `boost` can
+ accept a wide range of positive values, most use cases are best served with
+ values between 0 and 20. We recommend using a binary search approach to
+ finding the optimal value for your use case.
+</code></pre><p><code>float boost = 4;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><p>The boost.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrases_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrases*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrases_int_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrases(int)" class="notranslate">getPhrases(int index)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract String getPhrases(int index)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of strings containing words and phrases &quot;hints&quot; so that
+ the speech recognition is more likely to recognize them. This can be used
+ to improve the accuracy for specific words and phrases, for example, if
+ specific commands are typically spoken by the user. This can also be used
+ to add additional words to the vocabulary of the recognizer. See
+ [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+ List items can also be set to classes for groups of words that represent
+ common concepts that occur in natural language. For example, rather than
+ providing phrase hints for every month of the year, using the $MONTH class
+ improves the likelihood of correctly transcribing audio that includes
+ months.
+</code></pre><p><code>repeated string phrases = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the element to return.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><p>The phrases at the given index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrasesBytes_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrasesBytes*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrasesBytes_int_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrasesBytes(int)" class="notranslate">getPhrasesBytes(int index)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract ByteString getPhrasesBytes(int index)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of strings containing words and phrases &quot;hints&quot; so that
+ the speech recognition is more likely to recognize them. This can be used
+ to improve the accuracy for specific words and phrases, for example, if
+ specific commands are typically spoken by the user. This can also be used
+ to add additional words to the vocabulary of the recognizer. See
+ [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+ List items can also be set to classes for groups of words that represent
+ common concepts that occur in natural language. For example, rather than
+ providing phrase hints for every month of the year, using the $MONTH class
+ improves the likelihood of correctly transcribing audio that includes
+ months.
+</code></pre><p><code>repeated string phrases = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the value to return.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.protobuf.ByteString</span></td>
+        <td><p>The bytes of the phrases at the given index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrasesCount_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrasesCount*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrasesCount__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrasesCount()" class="notranslate">getPhrasesCount()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract int getPhrasesCount()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of strings containing words and phrases &quot;hints&quot; so that
+ the speech recognition is more likely to recognize them. This can be used
+ to improve the accuracy for specific words and phrases, for example, if
+ specific commands are typically spoken by the user. This can also be used
+ to add additional words to the vocabulary of the recognizer. See
+ [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+ List items can also be set to classes for groups of words that represent
+ common concepts that occur in natural language. For example, rather than
+ providing phrase hints for every month of the year, using the $MONTH class
+ improves the likelihood of correctly transcribing audio that includes
+ months.
+</code></pre><p><code>repeated string phrases = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><p>The count of phrases.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrasesList_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrasesList*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechContextOrBuilder_getPhrasesList__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder.getPhrasesList()" class="notranslate">getPhrasesList()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract List&lt;String&gt; getPhrasesList()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of strings containing words and phrases &quot;hints&quot; so that
+ the speech recognition is more likely to recognize them. This can be used
+ to improve the accuracy for specific words and phrases, for example, if
+ specific commands are typically spoken by the user. This can also be used
+ to add additional words to the vocabulary of the recognizer. See
+ [usage limits](https://cloud.google.com/speech-to-text/quotas#content).
+ List items can also be set to classes for groups of words that represent
+ common concepts that occur in natural language. For example, rather than
+ providing phrase hints for every month of the year, using the $MONTH class
+ improves the likelihood of correctly transcribing audio that includes
+ months.
+</code></pre><p><code>repeated string phrases = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">java.lang.String</span>&gt;</td>
+        <td><p>A list containing the phrases.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">com.google.protobuf.MessageOrBuilder</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

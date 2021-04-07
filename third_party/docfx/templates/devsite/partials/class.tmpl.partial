@@ -2,6 +2,7 @@
 
 {{>partials/class.header}}
 {{#children}}
+<h2 id="{{id}}">{{>partials/classSubtitle}}</h2>
 {{#children}}
 {{^_disableContribution}}
 {{#docurl}}
@@ -23,8 +24,12 @@
   <pre><code class="prettyprint">{{syntax.content.0.value}}</code></pre>
 </div>
 {{/syntax}}
+{{#summary}}
 <div class="markdown level1 summary">{{{summary}}}</div>
+{{/summary}}
+{{#conceptual}}
 <div class="markdown level1 conceptual">{{{conceptual}}}</div>
+{{/conceptual}}
 {{#syntax}}
 {{#parameters.0}}
 <strong>{{__global.parameter}}{{#parameters.1}}s{{/parameters.1}}</strong>

@@ -1,0 +1,790 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient">
+<h1 class="page-title">Class SpeechClient
+</h1>
+  
+  
+  {% verbatim %}
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public class SpeechClient implements BackgroundResource</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>Service Description: Service that implements Google Cloud Speech API.</p>
+<p>This class provides the ability to make remote calls to the backing service through method calls that map to API methods. Sample code to get started:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+</code></pre><p>Note: close() needs to be called on the SpeechClient object to clean up resources such as threads. In the example above, try-with-resources is used, which automatically calls close().</p>
+<p>The surface of this class includes several types of Java methods for each of the API&#39;s methods:</p>
+<ol>
+<li>A &quot;flattened&quot; method. With this type of method, the fields of the request type have been converted into function parameters. It may be the case that not all fields are available as parameters, and not every API method will have a flattened method entry point.</li>
+<li>A &quot;request object&quot; method. This type of method only takes one parameter, a request object, which must be constructed before the call. Not every API method will have a request object method.</li>
+<li>A &quot;callable&quot; method. This type of method takes no parameters and returns an immutable API callable object, which can be used to initiate calls to the service.</li>
+</ol>
+<p>See the individual methods for example code.</p>
+<p>Many parameters require resource names to be formatted in a particular way. To assist with these names, this class includes a format method for each type of name, and additionally a parse method to extract the individual identifiers contained within names that are returned.</p>
+<p>This class can be customized by passing in a custom instance of SpeechSettings to create(). For example:</p>
+<p>To customize credentials:</p>
+<pre><code class="lang-java">SpeechSettings speechSettings =
+     SpeechSettings.newBuilder()
+         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+         .build();
+ SpeechClient speechClient = SpeechClient.create(speechSettings);
+</code></pre><p>To customize the endpoint:</p>
+<pre><code class="lang-java">SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
+ SpeechClient speechClient = SpeechClient.create(speechSettings);
+</code></pre><p>Please refer to the GitHub repository&#39;s samples for more quickstart code snippets.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+    <span><span class="xref">java.lang.Object</span></span> <span> &gt; </span>
+    <span class="xref">SpeechClient</span>
+  </div>
+  <div classs="implements">
+    <h2>Implements</h2>
+    <span><span class="xref">com.google.api.gax.core.BackgroundResource</span></span>
+  </div>
+  <div class="inheritedMembers">
+    <h2>Inherited Members</h2>
+    <div>
+      <span class="xref">java.lang.Object.clone()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.equals(java.lang.Object)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.finalize()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.getClass()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.hashCode()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notify()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.notifyAll()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.toString()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait()</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long)</span>
+    </div>
+    <div>
+      <span class="xref">java.lang.Object.wait(long,int)</span>
+    </div>
+  </div>
+  {% endverbatim %}
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_SpeechClient_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.SpeechClient*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_SpeechClient_com_google_cloud_speech_v1p1beta1_SpeechSettings_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.SpeechClient(com.google.cloud.speech.v1p1beta1.SpeechSettings)" class="notranslate">SpeechClient(SpeechSettings settings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected SpeechClient(SpeechSettings settings)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of SpeechClient, using the given settings. This is protected so that it is easy to make a subclass, but otherwise, the static factory methods should be preferred.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechSettings.html">SpeechSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_SpeechClient_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.SpeechClient*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_SpeechClient_com_google_cloud_speech_v1p1beta1_stub_SpeechStub_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.SpeechClient(com.google.cloud.speech.v1p1beta1.stub.SpeechStub)" class="notranslate">SpeechClient(SpeechStub stub)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">protected SpeechClient(SpeechStub stub)</code></pre>
+  </div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.SpeechStub.html">SpeechStub</a></td>
+        <td><span class="parametername">stub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_awaitTermination_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.awaitTermination*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_awaitTermination_long_java_util_concurrent_TimeUnit_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.awaitTermination(long,java.util.concurrent.TimeUnit)" class="notranslate">awaitTermination(long duration, TimeUnit unit)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean awaitTermination(long duration, TimeUnit unit)</code></pre>
+  </div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">long</span></td>
+        <td><span class="parametername">duration</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">java.util.concurrent.TimeUnit</span></td>
+        <td><span class="parametername">unit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.InterruptedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_close_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.close*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_close__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.close()" class="notranslate">close()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final void close()</code></pre>
+  </div>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_create_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.create*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_create__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.create()" class="notranslate">create()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final SpeechClient create()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of SpeechClient with default settings.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_create_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.create*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_create_com_google_cloud_speech_v1p1beta1_SpeechSettings_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.create(com.google.cloud.speech.v1p1beta1.SpeechSettings)" class="notranslate">create(SpeechSettings settings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final SpeechClient create(SpeechSettings settings)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of SpeechClient, using the given settings. The channels are created based on the settings passed in, or defaults for any settings that are not set.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechSettings.html">SpeechSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.io.IOException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_create_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.create*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_create_com_google_cloud_speech_v1p1beta1_stub_SpeechStub_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.create(com.google.cloud.speech.v1p1beta1.stub.SpeechStub)" class="notranslate">create(SpeechStub stub)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public static final SpeechClient create(SpeechStub stub)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Constructs an instance of SpeechClient, using the given stub for making calls. This is for advanced usage - prefer using create(SpeechSettings).</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.SpeechStub.html">SpeechStub</a></td>
+        <td><span class="parametername">stub</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_getOperationsClient_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.getOperationsClient*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_getOperationsClient__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.getOperationsClient()" class="notranslate">getOperationsClient()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationsClient getOperationsClient()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns the OperationsClient that can be used to query the status of a long-running operation returned by another API method call.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.longrunning.OperationsClient</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_getSettings_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.getSettings*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_getSettings__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.getSettings()" class="notranslate">getSettings()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final SpeechSettings getSettings()</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.SpeechSettings.html">SpeechSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_getStub_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.getStub*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_getStub__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.getStub()" class="notranslate">getStub()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public SpeechStub getStub()</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.SpeechStub.html">SpeechStub</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_isShutdown_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.isShutdown*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_isShutdown__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.isShutdown()" class="notranslate">isShutdown()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean isShutdown()</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_isTerminated_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.isTerminated*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_isTerminated__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.isTerminated()" class="notranslate">isTerminated()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public boolean isTerminated()</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeAsync_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeAsync*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeAsync_com_google_cloud_speech_v1p1beta1_LongRunningRecognizeRequest_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeAsync(com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest)" class="notranslate">longRunningRecognizeAsync(LongRunningRecognizeRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;LongRunningRecognizeResponse,LongRunningRecognizeMetadata&gt; longRunningRecognizeAsync(LongRunningRecognizeRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](<a href="https://cloud.google.com/speech-to-text/docs/async-recognize">https://cloud.google.com/speech-to-text/docs/async-recognize</a>).</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   LongRunningRecognizeRequest request =
+       LongRunningRecognizeRequest.newBuilder()
+           .setConfig(RecognitionConfig.newBuilder().build())
+           .setAudio(RecognitionAudio.newBuilder().build())
+           .build();
+   LongRunningRecognizeResponse response = speechClient.longRunningRecognizeAsync(request).get();
+ }
+</code></pre></div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest.html">LongRunningRecognizeRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse.html">LongRunningRecognizeResponse</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata.html">LongRunningRecognizeMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeAsync_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeAsync*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeAsync_com_google_cloud_speech_v1p1beta1_RecognitionConfig_com_google_cloud_speech_v1p1beta1_RecognitionAudio_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeAsync(com.google.cloud.speech.v1p1beta1.RecognitionConfig,com.google.cloud.speech.v1p1beta1.RecognitionAudio)" class="notranslate">longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationFuture&lt;LongRunningRecognizeResponse,LongRunningRecognizeMetadata&gt; longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](<a href="https://cloud.google.com/speech-to-text/docs/async-recognize">https://cloud.google.com/speech-to-text/docs/async-recognize</a>).</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   LongRunningRecognizeResponse response =
+       speechClient.longRunningRecognizeAsync(config, audio).get();
+ }
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionConfig.html">RecognitionConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>Required. Provides information to the recognizer that specifies how to process
+     the request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudio.html">RecognitionAudio</a></td>
+        <td><span class="parametername">audio</span></td>
+        <td><p>Required. The audio data to be recognized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.longrunning.OperationFuture</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse.html">LongRunningRecognizeResponse</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata.html">LongRunningRecognizeMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeCallable_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeCallable__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeCallable()" class="notranslate">longRunningRecognizeCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;LongRunningRecognizeRequest,Operation&gt; longRunningRecognizeCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](<a href="https://cloud.google.com/speech-to-text/docs/async-recognize">https://cloud.google.com/speech-to-text/docs/async-recognize</a>).</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   LongRunningRecognizeRequest request =
+       LongRunningRecognizeRequest.newBuilder()
+           .setConfig(RecognitionConfig.newBuilder().build())
+           .setAudio(RecognitionAudio.newBuilder().build())
+           .build();
+   ApiFuture future = speechClient.longRunningRecognizeCallable().futureCall(request);
+   // Do something.
+   Operation response = future.get();
+ }
+</code></pre></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest.html">LongRunningRecognizeRequest</a>,<span class="xref">com.google.longrunning.Operation</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeOperationCallable_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeOperationCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_longRunningRecognizeOperationCallable__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.longRunningRecognizeOperationCallable()" class="notranslate">longRunningRecognizeOperationCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final OperationCallable&lt;LongRunningRecognizeRequest,LongRunningRecognizeResponse,LongRunningRecognizeMetadata&gt; longRunningRecognizeOperationCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](<a href="https://cloud.google.com/speech-to-text/docs/async-recognize">https://cloud.google.com/speech-to-text/docs/async-recognize</a>).</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   LongRunningRecognizeRequest request =
+       LongRunningRecognizeRequest.newBuilder()
+           .setConfig(RecognitionConfig.newBuilder().build())
+           .setAudio(RecognitionAudio.newBuilder().build())
+           .build();
+   OperationFuture future =
+       speechClient.longRunningRecognizeOperationCallable().futureCall(request);
+   // Do something.
+   LongRunningRecognizeResponse response = future.get();
+ }
+</code></pre></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.OperationCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest.html">LongRunningRecognizeRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse.html">LongRunningRecognizeResponse</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata.html">LongRunningRecognizeMetadata</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_recognize_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.recognize*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_recognize_com_google_cloud_speech_v1p1beta1_RecognitionConfig_com_google_cloud_speech_v1p1beta1_RecognitionAudio_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.recognize(com.google.cloud.speech.v1p1beta1.RecognitionConfig,com.google.cloud.speech.v1p1beta1.RecognitionAudio)" class="notranslate">recognize(RecognitionConfig config, RecognitionAudio audio)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final RecognizeResponse recognize(RecognitionConfig config, RecognitionAudio audio)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs synchronous speech recognition: receive results after all audio has been sent and processed.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   RecognizeResponse response = speechClient.recognize(config, audio);
+ }
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionConfig.html">RecognitionConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>Required. Provides information to the recognizer that specifies how to process
+     the request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudio.html">RecognitionAudio</a></td>
+        <td><span class="parametername">audio</span></td>
+        <td><p>Required. The audio data to be recognized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeResponse.html">RecognizeResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_recognize_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.recognize*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_recognize_com_google_cloud_speech_v1p1beta1_RecognizeRequest_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.recognize(com.google.cloud.speech.v1p1beta1.RecognizeRequest)" class="notranslate">recognize(RecognizeRequest request)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final RecognizeResponse recognize(RecognizeRequest request)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs synchronous speech recognition: receive results after all audio has been sent and processed.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognizeRequest request =
+       RecognizeRequest.newBuilder()
+           .setConfig(RecognitionConfig.newBuilder().build())
+           .setAudio(RecognitionAudio.newBuilder().build())
+           .build();
+   RecognizeResponse response = speechClient.recognize(request);
+ }
+</code></pre></div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeRequest.html">RecognizeRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeResponse.html">RecognizeResponse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_recognizeCallable_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.recognizeCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_recognizeCallable__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.recognizeCallable()" class="notranslate">recognizeCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final UnaryCallable&lt;RecognizeRequest,RecognizeResponse&gt; recognizeCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs synchronous speech recognition: receive results after all audio has been sent and processed.</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   RecognizeRequest request =
+       RecognizeRequest.newBuilder()
+           .setConfig(RecognitionConfig.newBuilder().build())
+           .setAudio(RecognitionAudio.newBuilder().build())
+           .build();
+   ApiFuture future = speechClient.recognizeCallable().futureCall(request);
+   // Do something.
+   RecognizeResponse response = future.get();
+ }
+</code></pre></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.UnaryCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeRequest.html">RecognizeRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognizeResponse.html">RecognizeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_shutdown_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.shutdown*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_shutdown__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.shutdown()" class="notranslate">shutdown()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void shutdown()</code></pre>
+  </div>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_shutdownNow_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.shutdownNow*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_shutdownNow__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.shutdownNow()" class="notranslate">shutdownNow()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public void shutdownNow()</code></pre>
+  </div>
+  <a id="com_google_cloud_speech_v1p1beta1_SpeechClient_streamingRecognizeCallable_" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.streamingRecognizeCallable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_SpeechClient_streamingRecognizeCallable__" data-uid="com.google.cloud.speech.v1p1beta1.SpeechClient.streamingRecognizeCallable()" class="notranslate">streamingRecognizeCallable()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public final BidiStreamingCallable&lt;StreamingRecognizeRequest,StreamingRecognizeResponse&gt; streamingRecognizeCallable()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Performs bidirectional streaming speech recognition: receive results while sending audio. This method is only available via the gRPC API (not REST).</p>
+<p>Sample code:</p>
+<pre><code class="lang-java">try (SpeechClient speechClient = SpeechClient.create()) {
+   BidiStream bidiStream =
+       speechClient.streamingRecognizeCallable().call();
+   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
+   bidiStream.send(request);
+   for (StreamingRecognizeResponse response : bidiStream) {
+     // Do something when a response is received.
+   }
+ }
+</code></pre></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.api.gax.rpc.BidiStreamingCallable</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest.html">StreamingRecognizeRequest</a>,<a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">com.google.api.gax.core.BackgroundResource</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>

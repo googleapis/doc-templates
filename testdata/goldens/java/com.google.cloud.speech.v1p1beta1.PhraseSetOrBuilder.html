@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/java/_project.yaml">
+    <meta name="book_path" value="/java/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder">
+<h1 class="page-title">Interface PhraseSetOrBuilder
+</h1>
+  
+  
+  {% verbatim %}
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public interface PhraseSetOrBuilder extends MessageOrBuilder</code></pre>
+  </div>
+  <div classs="implements">
+    <h2>Implements</h2>
+    <span><span class="xref">com.google.protobuf.MessageOrBuilder</span></span>
+  </div>
+  {% endverbatim %}
+  <h2 id="methods">Methods
+  </h2>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getBoost_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getBoost*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getBoost__" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getBoost()" class="notranslate">getBoost()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract float getBoost()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>Hint Boost. Positive value will increase the probability that a specific
+ phrase will be recognized over other similar sounding phrases. The higher
+ the boost, the higher the chance of false positive recognition as well.
+ Negative boost values would correspond to anti-biasing. Anti-biasing is not
+ enabled, so negative boost will simply be ignored. Though `boost` can
+ accept a wide range of positive values, most use cases are best served with
+ values between 0 (exclusive) and 20. We recommend using a binary search
+ approach to finding the optimal value for your use case. Speech recognition
+ will skip PhraseSets with a boost value of 0.
+</code></pre><p><code>float boost = 4;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td><p>The boost.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getName_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getName*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getName__" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getName()" class="notranslate">getName()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract String getName()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>The resource name of the phrase set.
+</code></pre><p><code>string name = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.lang.String</span></td>
+        <td><p>The name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getNameBytes_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getNameBytes*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getNameBytes__" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getNameBytes()" class="notranslate">getNameBytes()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract ByteString getNameBytes()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>The resource name of the phrase set.
+</code></pre><p><code>string name = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">com.google.protobuf.ByteString</span></td>
+        <td><p>The bytes for name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrases_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrases*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrases_int_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrases(int)" class="notranslate">getPhrases(int index)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract PhraseSet.Phrase getPhrases(int index)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of word and phrases.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.html#com_google_cloud_speech_v1p1beta1_PhraseSet_Phrase">PhraseSet.Phrase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesCount_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesCount*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesCount__" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesCount()" class="notranslate">getPhrasesCount()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract int getPhrasesCount()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of word and phrases.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesList_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesList*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesList__" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesList()" class="notranslate">getPhrasesList()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract List&lt;PhraseSet.Phrase&gt; getPhrasesList()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of word and phrases.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.html#com_google_cloud_speech_v1p1beta1_PhraseSet_Phrase">Phrase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesOrBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesOrBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesOrBuilder_int_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesOrBuilder(int)" class="notranslate">getPhrasesOrBuilder(int index)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract PhraseSet.PhraseOrBuilder getPhrasesOrBuilder(int index)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of word and phrases.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.PhraseSet.PhraseOrBuilder.html#com_google_cloud_speech_v1p1beta1_PhraseSet_PhraseOrBuilder">PhraseSet.PhraseOrBuilder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesOrBuilderList_" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesOrBuilderList*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_PhraseSetOrBuilder_getPhrasesOrBuilderList__" data-uid="com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder.getPhrasesOrBuilderList()" class="notranslate">getPhrasesOrBuilderList()</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public abstract List&lt;? extends PhraseSet.PhraseOrBuilder&gt; getPhrasesOrBuilderList()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of word and phrases.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.PhraseSet.Phrase phrases = 2;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">java.util.List</span>&lt;<span class="xref">? extends com.google.cloud.speech.v1p1beta1.PhraseSet.PhraseOrBuilder</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="implements">Implements</h2>
+  <div>
+      <span class="xref">com.google.protobuf.MessageOrBuilder</span>
+  </div>
+</article>
+    </div>
+  </body>
+</html>
