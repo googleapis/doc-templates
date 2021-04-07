@@ -11,13 +11,12 @@ document for details.
 
 Please note that this project is released with a Contributor Code of Conduct.
 By participating in this project you agree to abide by its terms.
-See [Contributor Code of Conduct](https://github.com/googleapis/doc-templates/blob/master/docs/CODE_OF_CONDUCT.md)
+See [Contributor Code of Conduct](https://github.com/googleapis/doc-templates/blob/master/CODE_OF_CONDUCT.md)
 for more information.
 
 ### Docs
 
-See the [`docs`](/docs) directory for additional documentation, like the code of
-conduct and an overall contributing guide.
+See the [`docs`](/docs) directory for additional documentation.
 
 ### Testing
 
