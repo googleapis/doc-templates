@@ -1,16 +1,26 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 {{#example.0}}
-<strong>{{__global.examples}}</strong>
+  <h4>{{__global.examples}}</h4>
 {{/example.0}}
 {{^example.0}}
 {{#codeexamples.0}}
-<strong>{{__global.examples}}</strong>
+{{#children}}
+  <h3>{{__global.examples}}</h3>
+{{/children}}
+{{^children}}
+  <h4>{{__global.examples}}</h4>
+{{/children}}
 {{/codeexamples.0}}
 {{/example.0}}
 {{#codeexamples}}
 {{#name}}
 {{^name.0}}
-<h6 class="notranslate">{{name}}</h6>
+{{#children}}
+  <h4 class="notranslate">{{name}}</h4>
+{{/children}}
+{{^children}}
+  <h5 class="notranslate">{{name}}</h5>
+{{/children}}
 {{/name.0}}
 {{/name}}
 <div class="codewrapper">
