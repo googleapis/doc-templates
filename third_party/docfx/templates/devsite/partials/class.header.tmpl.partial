@@ -22,21 +22,21 @@
 </div>
 {{/implements.0}}
 {{#inheritedMembers.0}}
-<div class="inheritedMembers">
-  <h5>{{__global.inheritedMembers}}</h5>
-{{/inheritedMembers.0}}
-{{#inheritedMembers}}
-  <div>
-  {{#definition}}
-    <xref uid="{{definition}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
-  {{/definition}}
-  {{^definition}}
-    <xref uid="{{uid}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
-  {{/definition}}
+<devsite-expandable>
+  <div class="inheritedMembers">
+    <h5 class="showalways">{{__global.inheritedMembers}}</h5>
+  {{#inheritedMembers}}
+    <div>
+    {{#definition}}
+      <xref uid="{{definition}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
+    {{/definition}}
+    {{^definition}}
+      <xref uid="{{uid}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
+    {{/definition}}
+    </div>
+  {{/inheritedMembers}}
   </div>
-{{/inheritedMembers}}
-{{#inheritedMembers.0}}
-</div>
+</devsite-expandable>
 {{/inheritedMembers.0}}
 {{#derivedClasses.0}}
 <div>
