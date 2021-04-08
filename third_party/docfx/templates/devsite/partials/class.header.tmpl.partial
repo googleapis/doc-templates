@@ -30,23 +30,21 @@
 </div>
 {{/implements.0}}
 {{#inheritedMembers.0}}
-<devsite-expandable>
-  <div class="inheritedMembers">
-    <h2 class="showalways">{{__global.inheritedMembers}}</h2>
-  {{/inheritedMembers.0}}
-  {{#inheritedMembers}}
-    <div>
-    {{#definition}}
-      <xref uid="{{definition}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
-    {{/definition}}
-    {{^definition}}
-      <xref uid="{{uid}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
-    {{/definition}}
-    </div>
-  {{/inheritedMembers}}
-  {{#inheritedMembers.0}}
+<div class="inheritedMembers expandable">
+  <h2 class="expand-control">{{__global.inheritedMembers}}</h2>
+{{/inheritedMembers.0}}
+{{#inheritedMembers}}
+  <div>
+  {{#definition}}
+    <xref uid="{{definition}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
+  {{/definition}}
+  {{^definition}}
+    <xref uid="{{uid}}" text="{{nameWithType.0.value}}" alt="{{fullName.0.value}}"/>
+  {{/definition}}
   </div>
-</devsite-expandable>
+{{/inheritedMembers}}
+{{#inheritedMembers.0}}
+</div>
 {{/inheritedMembers.0}}
 {{#derivedClasses.0}}
 <div>
