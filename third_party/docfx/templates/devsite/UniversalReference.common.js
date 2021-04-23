@@ -23,6 +23,7 @@ exports.transform = function (model) {
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
         break;
+      case 'module':
       case 'class':
       case 'interface':
       case 'struct':
@@ -293,6 +294,7 @@ function getDefinitions(category) {
     "package":      { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
     "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
     "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
+    "module":       { inModule: true,       typePropertyName: "inModule",       id: "modules" },
     "struct":       { inStruct: true,       typePropertyName: "inStruct",       id: "structs" },
     "interface":    { inInterface: true,    typePropertyName: "inInterface",    id: "interfaces" },
     "enum":         { inEnum: true,         typePropertyName: "inEnum",         id: "enums" },
