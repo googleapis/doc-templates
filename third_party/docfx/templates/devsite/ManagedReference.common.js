@@ -50,7 +50,7 @@ exports.getBookmarks = function (model, ignoreChildren) {
         var item = model.children[i]
 
         // skip adding anchors for inner classes
-        if ((model.langs[0] == "java" || model.langs[0] === "python") && item.parent != model.uid) {
+        if ((model.langs[0] === "java" || model.langs[0] === "python") && item.parent != model.uid) {
           continue;
         }
 
