@@ -46,12 +46,19 @@ exports.getBookmarks = function (model, ignoreChildren) {
 
   if (typeof ignoreChildren == 'undefined' || ignoreChildren === false) {
     if (model.children) {
-      model.children.forEach(function (item) {
+      for (var i = 0; i < model.children.length; i++) {
+        var item = model.children[i]
+
+        // skip adding anchors for inner classes
+        if ((model.langs[0] === "java" || model.langs[0] === "python") && item.parent != model.uid) {
+          continue;
+        }
+
         bookmarks[item.uid] = common.getHtmlId(item.uid);
         if (item.overload && item.overload.uid) {
           bookmarks[item.overload.uid] = common.getHtmlId(item.overload.uid);
         }
-      });
+      }
     }
   }
 
