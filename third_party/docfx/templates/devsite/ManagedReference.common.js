@@ -263,11 +263,27 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
     return array;
   }
 
-  // handles where return type doesn't include specName but includes uid
-  if (vm.syntax && vm.syntax.return && !vm.syntax.return.type.specName && vm.syntax.return.type.uid && langs[0]) {
-    vm.syntax.return.type.specName = [{
-      "lang": langs[0],
-      "value": "<xref uid=" + vm.syntax.return.type.uid + "\>"
-    }];
+  
+  // handles where item return/parameters type doesn't include specName but includes uid
+  if (vm.syntax && langs[0]) {
+
+    if (vm.syntax.return && vm.syntax.return.type && !vm.syntax.return.type.specName && vm.syntax.return.type.uid) {
+      vm.syntax.return.type.specName = [{
+        "lang": langs[0],
+        "value": "<xref uid=" + vm.syntax.return.type.uid + "\>"
+      }];
+    }
+
+    if (vm.syntax.parameters) {
+      for (var i = 0; i < vm.syntax.parameters.length; i++) {
+        param = vm.syntax.parameters[i]
+        if (!param.type.specName && param.type.uid) {
+          vm.syntax.parameters[i].type.specName = [{
+            "lang": langs[0],
+            "value": "<xref uid=" + param.type.uid + "\>"
+          }];
+        }
+      }
+    }
   }
 }
