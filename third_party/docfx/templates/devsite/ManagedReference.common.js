@@ -262,4 +262,12 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
 
     return array;
   }
+
+  // handles where return type doesn't include specName but includes uid
+  if (vm.syntax && vm.syntax.return && !vm.syntax.return.type.specName && vm.syntax.return.type.uid && langs[0]) {
+    vm.syntax.return.type.specName = [{
+      "lang": langs[0],
+      "value": "<xref uid=" + vm.syntax.return.type.uid + "\>"
+    }];
+  }
 }
