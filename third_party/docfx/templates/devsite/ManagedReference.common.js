@@ -241,6 +241,14 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
     }
   }
 
+  // handles where return type doesn't include specName but includes uid
+  if (vm.syntax && vm.syntax.return && !vm.syntax.return.type.specName && vm.syntax.return.type.uid && langs[0]) {
+    vm.syntax.return.type.specName = [{
+      "lang": langs[0],
+      "value": "<xref uid=" + vm.syntax.return.type.uid + "\>"
+    }];
+  }
+
   function shouldHideTitleType(vm) {
     var type = vm.type.toLowerCase();
     return ((type === 'namespace' && langs.length == 1 && (langs[0] === 'objectivec' || langs[0] === 'java' || langs[0] === 'c'))
