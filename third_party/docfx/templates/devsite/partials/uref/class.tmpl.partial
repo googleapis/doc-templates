@@ -45,8 +45,10 @@
 {{/parameters.0}}
 {{#parameters}}
     <tr>
-      {{#var_type}}<td>{{{var_type}}}</td>{{/var_type}}
-      {{^var_type}}<td>{{{type.specName.0.value}}}</td>{{/var_type}}
+      <td>
+        {{#var_type}}{{{var_type}}}{{/var_type}}
+        {{^var_type}}{{{type.specName.0.value}}}{{/var_type}}
+      </td>
       <td><em>{{{id}}}</em></td>
       <td>
         {{{description}}}
@@ -89,7 +91,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr> 
+    <tr>
       <td>{{{value.type.0.specName.0.value}}}</td>
       <td>{{{value.description}}}</td>
     </tr>
