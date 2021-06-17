@@ -45,7 +45,7 @@
 {{/parameters.0}}
 {{#parameters}}
     <tr>
-      <td>{{{type.specName.0.value}}}</td>
+      <td>{{#var_type}}{{{var_type}}}{{/var_type}}{{^var_type}}{{{type.specName.0.value}}}{{/var_type}}</td>
       <td><em>{{{id}}}</em></td>
       <td>
         {{{description}}}
@@ -57,6 +57,27 @@
   </tbody>
 </table>
 {{/parameters.0}}
+{{#exceptions.0}}
+<strong>{{__global.exceptions}}</strong>
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>{{__global.type}}</th>
+      <th>{{__global.condition}}</th>
+    </tr>
+  </thead>
+  <tbody>
+{{/exceptions.0}}
+{{#exceptions}}
+    <tr>
+      <td>{{{var_type}}}</td>
+      <td>{{{description}}}</td>
+    </tr>
+{{/exceptions}}
+{{#exceptions.0}}
+  </tbody>
+</table>
+{{/exceptions.0}}
 {{#return}}
 <strong>{{__global.returns}}</strong>
 <table class="table table-bordered table-striped table-condensed">
@@ -74,6 +95,27 @@
   </tbody>
 </table>
 {{/return}}
+{{#returns.0}}
+<strong>{{__global.returns}}</strong>
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>{{__global.type}}</th>
+      <th>{{__global.description}}</th>
+    </tr>
+  </thead>
+  <tbody>
+{{/returns.0}}
+{{#returns}}
+    <tr> 
+      <td>{{{var_type}}}</td>
+      <td>{{{description}}}</td>
+    </tr>
+{{/returns}}
+{{#returns.0}}
+  </tbody>
+</table>
+{{/returns.0}}
 {{#typeParameters.0}}
 <strong>{{__global.typeParameter}}{{#typeParameters.1}}s{{/typeParameters.1}}</strong>
 <table class="table table-bordered table-striped table-condensed">
