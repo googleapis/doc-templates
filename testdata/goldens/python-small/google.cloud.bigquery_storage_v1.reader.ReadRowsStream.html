@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream">
+<h1 class="page-title">Class ReadRowsStream
+</h1>
+  
+  
+  {% verbatim %}
+  <div class="markdown level0 summary"><p>A stream of results from a read rows request.</p>
+<p>This stream is an iterable of
+google.cloud.bigquery_storage_v1.types.ReadRowsResponse.
+Iterate over it to fetch all row messages.</p>
+<p>If the fastavro library is installed, use the
+:func:<code>rows()</code>
+method to parse all messages into a stream of row dictionaries.</p>
+<p>If the pandas and fastavro libraries are installed, use the
+:func:<code>to_dataframe()</code>
+method to parse all messages into a pandas.DataFrame.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+      <span><span class="xref">builtins.object</span></span>
+      <span> &gt; </span>
+      <span class="xref">ReadRowsStream</span>
+  </div>
+  {% endverbatim %}
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_reader_ReadRowsStream___iter__" data-uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.__iter__" class="notranslate">__iter__</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">__iter__()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>An iterable of messages.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <td>Iterable[ <xref:readrowsresponse> ]</xref:readrowsresponse></td>
+        <td>A sequence of row messages.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_reader_ReadRowsStream_rows" data-uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.rows" class="notranslate">rows</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">rows(read_session)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Iterate over all rows in the stream.</p>
+<p>This method requires the fastavro library in order to parse row
+messages in avro format.  For arrow format messages, the pyarrow
+library is required.</p>
+<p>.. warning::
+    DATETIME columns are not supported. They are currently parsed as
+    strings in the fastavro library.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><xref:readsession></xref:readsession></td>
+        <td><em>read_session</em></td>
+        <td>
+          <p>The read session associated with this read rows stream. This contains the schema, which is required to parse the data messages.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <td>Iterable[Mapping]</td>
+        <td>A sequence of rows, represented as dictionaries.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_reader_ReadRowsStream_to_arrow" data-uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_arrow" class="notranslate">to_arrow</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">to_arrow(read_session)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a &lt;xref:pyarrow.Table&gt; of all rows in the stream.</p>
+<p>This method requires the pyarrow library and a stream using the Arrow
+format.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><xref:readsession></xref:readsession></td>
+        <td><em>read_session</em></td>
+        <td>
+          <p>The read session associated with this read rows stream. This contains the schema, which is required to parse the data messages.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <td><xref:pyarrow.table></xref:pyarrow.table></td>
+        <td>A table of all rows in the stream.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_reader_ReadRowsStream_to_dataframe" data-uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_dataframe" class="notranslate">to_dataframe</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">to_dataframe(read_session, dtypes=None)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a &lt;xref:pandas.DataFrame&gt; of all rows in the stream.</p>
+<p>This method requires the pandas libary to create a data frame and the
+fastavro library to parse row messages.</p>
+<p>.. warning::
+    DATETIME columns are not supported. They are currently parsed as
+    strings.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><xref:readsession></xref:readsession></td>
+        <td><em>read_session</em></td>
+        <td>
+          <p>The read session associated with this read rows stream. This contains the schema, which is required to parse the data messages.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>Map[str, Union[str, pandas.Series.dtype]]</td>
+        <td><em>dtypes</em></td>
+        <td>
+          <p>Optional. A dictionary of column names pandas <code>dtype</code>s. The provided <code>dtype</code> is used when constructing the series for the column specified. Otherwise, the default pandas behavior is used.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <td><xref:pandas.dataframe></xref:pandas.dataframe></td>
+        <td>A data frame of all rows in the stream.</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+  </body>
+</html>

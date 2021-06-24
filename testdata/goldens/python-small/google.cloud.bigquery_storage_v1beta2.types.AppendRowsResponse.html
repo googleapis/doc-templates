@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse">
+<h1 class="page-title">Class AppendRowsResponse
+</h1>
+  
+  
+  {% verbatim %}
+  <div class="markdown level0 summary"><p>Response message for <code>AppendRows</code>.</p>
+<p>Attributes:
+    append_result (google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse.AppendResult):
+        Result if the append is successful.
+    error (google.rpc.status_pb2.Status):
+        Error returned when problems were encountered. If present,
+        it indicates rows were not accepted into the system. Users
+        can retry or continue with other append requests within the
+        same connection.</p>
+<pre><code>    Additional information about error signalling:
+
+
+    ALREADY_EXISTS: Happens when an append specified an offset,
+    and the backend already has received data at this offset.
+    Typically encountered in retry scenarios, and can be
+    ignored.
+
+
+    OUT_OF_RANGE: Returned when the specified offset in the
+    stream is beyond the current end of the stream.
+
+
+    INVALID_ARGUMENT: Indicates a malformed request or data.
+
+
+    ABORTED: Request processing is aborted because of prior
+    failures. The request can be retried if previous failure is
+    addressed.
+
+
+    INTERNAL: Indicates server side error(s) that can be
+    retried.
+updated_schema (google.cloud.bigquery_storage_v1beta2.types.TableSchema):
+    If backend detects a schema update, pass it
+    to user so that user can use it to input new
+    type of message. It will be empty when no schema
+    updates have occurred.
+</code></pre></div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">AppendRowsResponse</span>
+  </div>
+  {% endverbatim %}
+</article>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1beta2.types.WriteStream">
+<h1 class="page-title">Class WriteStream
+</h1>
+  
+  
+  {% verbatim %}
+  <div class="markdown level0 summary"><p>Information about a single stream that gets data inside the
+storage system.</p>
+<p>Attributes:
+    name (str):
+        Output only. Name of the stream, in the form
+        <code>projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}</code>.
+    type_ (google.cloud.bigquery_storage_v1beta2.types.WriteStream.Type):
+        Immutable. Type of the stream.
+    create_time (google.protobuf.timestamp_pb2.Timestamp):
+        Output only. Create time of the stream. For the _default
+        stream, this is the creation_time of the table.
+    commit_time (google.protobuf.timestamp_pb2.Timestamp):
+        Output only. Commit time of the stream. If a stream is of
+        <code>COMMITTED</code> type, then it will have a commit_time same as
+        <code>create_time</code>. If the stream is of <code>PENDING</code> type,
+        commit_time being empty means it is not committed.
+    table_schema (google.cloud.bigquery_storage_v1beta2.types.TableSchema):
+        Output only. The schema of the destination table. It is only
+        returned in <code>CreateWriteStream</code> response. Caller should
+        generate data that&#39;s compatible with this schema to send in
+        initial <code>AppendRowsRequest</code>. The table schema could go out
+        of date during the life time of the stream.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">WriteStream</span>
+  </div>
+  {% endverbatim %}
+</article>
+    </div>
+  </body>
+</html>
