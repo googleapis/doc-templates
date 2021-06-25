@@ -41,4 +41,4 @@ def test_generate():
     toc_file_path = out_dir / "toc.yaml"
     assert toc_file_path.is_file()
     got_text = toc_file_path.read_text("utf-8")
-    assert "/python/docs/reference/texttospeech/latest" in got_text
+    assert "/python/docs/reference/bigquerystorage/latest" in got_text

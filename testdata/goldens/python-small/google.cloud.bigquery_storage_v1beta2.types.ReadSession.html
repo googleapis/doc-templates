@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1beta2.types.ReadSession">
+<h1 class="page-title">Class ReadSession
+</h1>
+  
+  
+  {% verbatim %}
+  <div class="markdown level0 summary"><p>Information about the ReadSession.</p>
+<p>Attributes:
+    name (str):
+        Output only. Unique identifier for the session, in the form
+        <code>projects/{project_id}/locations/{location}/sessions/{session_id}</code>.
+    expire_time (google.protobuf.timestamp_pb2.Timestamp):
+        Output only. Time at which the session becomes invalid.
+        After this time, subsequent requests to read this Session
+        will return errors. The expire_time is automatically
+        assigned and currently cannot be specified or updated.
+    data_format (google.cloud.bigquery_storage_v1beta2.types.DataFormat):
+        Immutable. Data format of the output data.
+    avro_schema (google.cloud.bigquery_storage_v1beta2.types.AvroSchema):
+        Output only. Avro schema.
+    arrow_schema (google.cloud.bigquery_storage_v1beta2.types.ArrowSchema):
+        Output only. Arrow schema.
+    table (str):
+        Immutable. Table that this ReadSession is reading from, in
+        the form
+        `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+    table_modifiers (google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableModifiers):
+        Optional. Any modifiers which are applied
+        when reading from the specified table.
+    read_options (google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableReadOptions):
+        Optional. Read options for this session (e.g.
+        column selection, filters).
+    streams (Sequence[google.cloud.bigquery_storage_v1beta2.types.ReadStream]):
+        Output only. A list of streams created with the session.</p>
+<pre><code>    At least one stream is created with the session. In the
+    future, larger request_stream_count values *may* result in
+    this list being unpopulated, in that case, the user will
+    need to use a List method to get the streams instead, which
+    is not yet available.
+</code></pre></div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">ReadSession</span>
+  </div>
+  {% endverbatim %}
+</article>
+    </div>
+  </body>
+</html>
