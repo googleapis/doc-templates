@@ -9,13 +9,21 @@ items:
   - Google.Cloud.Asset.V1.ResourceSearchResult.#ctor(Google.Cloud.Asset.V1.ResourceSearchResult)
   - Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes
   - Google.Cloud.Asset.V1.ResourceSearchResult.AssetType
+  - Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime
   - Google.Cloud.Asset.V1.ResourceSearchResult.Description
   - Google.Cloud.Asset.V1.ResourceSearchResult.DisplayName
+  - Google.Cloud.Asset.V1.ResourceSearchResult.Folders
+  - Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey
   - Google.Cloud.Asset.V1.ResourceSearchResult.Labels
   - Google.Cloud.Asset.V1.ResourceSearchResult.Location
   - Google.Cloud.Asset.V1.ResourceSearchResult.Name
   - Google.Cloud.Asset.V1.ResourceSearchResult.NetworkTags
+  - Google.Cloud.Asset.V1.ResourceSearchResult.Organization
+  - Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType
+  - Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName
   - Google.Cloud.Asset.V1.ResourceSearchResult.Project
+  - Google.Cloud.Asset.V1.ResourceSearchResult.State
+  - Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime
   langs:
   - csharp
   - vb
@@ -25,34 +33,35 @@ items:
   type: Class
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ResourceSearchResult
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1494
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 1928
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
   summary: "\nA result of Resource Search, containing information of a cloud resource.\n"
   example: []
   syntax:
-    content: 'public sealed class ResourceSearchResult : IMessage<ResourceSearchResult>, IMessage, IEquatable<ResourceSearchResult>, IDeepCloneable<ResourceSearchResult>'
+    content: 'public sealed class ResourceSearchResult : IMessage<ResourceSearchResult>, IEquatable<ResourceSearchResult>, IDeepCloneable<ResourceSearchResult>, IBufferMessage, IMessage'
     content.vb: >-
       Public NotInheritable Class ResourceSearchResult
-          Implements IMessage(Of ResourceSearchResult), IMessage, IEquatable(Of ResourceSearchResult), IDeepCloneable(Of ResourceSearchResult)
+          Implements IMessage(Of ResourceSearchResult), IEquatable(Of ResourceSearchResult), IDeepCloneable(Of ResourceSearchResult), IBufferMessage, IMessage
   inheritance:
   - System.Object
   implements:
   - Google.Protobuf.IMessage{Google.Cloud.Asset.V1.ResourceSearchResult}
-  - Google.Protobuf.IMessage
   - System.IEquatable{Google.Cloud.Asset.V1.ResourceSearchResult}
   - Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.ResourceSearchResult}
+  - Google.Protobuf.IBufferMessage
+  - Google.Protobuf.IMessage
   inheritedMembers:
-  - System.Object.ToString
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - sealed
@@ -74,12 +83,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1510
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 1948
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -104,12 +113,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1517
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 1955
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -137,12 +146,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Name
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1551
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 1997
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -174,12 +183,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AssetType
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1569
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2015
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -211,16 +220,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Project
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1588
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2037
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nThe project that this resource belongs to, in the form of\nprojects/{PROJECT_NUMBER}.\n\nTo search against the `project`:\n\n* specify the `scope` field as this project in your search request.\n"
+  summary: "\nThe project that this resource belongs to, in the form of\nprojects/{PROJECT_NUMBER}. This field is available when the resource\nbelongs to a project.\n\nTo search against `project`:\n\n* use a field query. Example: `project:12345`\n* use a free text query. Example: `12345`\n* specify the `scope` field as this project in your search request.\n"
   example: []
   syntax:
     content: public string Project { get; set; }
@@ -229,6 +238,80 @@ items:
       type: System.String
     content.vb: Public Property Project As String
   overload: Google.Cloud.Asset.V1.ResourceSearchResult.Project*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.Folders
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.Folders
+  id: Folders
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: Folders
+  nameWithType: ResourceSearchResult.Folders
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.Folders
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Folders
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2061
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe folder(s) that this resource belongs to, in the form of\nfolders/{FOLDER_NUMBER}. This field is available when the resource\nbelongs to one or more folders.\n\nTo search against `folders`:\n\n* use a field query. Example: `folders:(123 OR 456)`\n* use a free text query. Example: `123`\n* specify the `scope` field as this folder in your search request.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<string> Folders { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{System.String}
+    content.vb: Public ReadOnly Property Folders As RepeatedField(Of String)
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.Folders*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.Organization
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.Organization
+  id: Organization
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: Organization
+  nameWithType: ResourceSearchResult.Organization
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.Organization
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: Organization
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2080
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe organization that this resource belongs to, in the form of\norganizations/{ORGANIZATION_NUMBER}. This field is available when the\nresource belongs to an organization.\n\nTo search against `organization`:\n\n* use a field query. Example: `organization:123`\n* use a free text query. Example: `123`\n* specify the `scope` field as this organization in your search request.\n"
+  example: []
+  syntax:
+    content: public string Organization { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Organization As String
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.Organization*
   modifiers.csharp:
   - public
   - get
@@ -248,16 +331,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DisplayName
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1607
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2100
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nThe display name of this resource.\n\nTo search against the `display_name`:\n\n* use a field query. Example: `displayName:&quot;My Instance&quot;`\n* use a free text query. Example: `&quot;My Instance&quot;`\n"
+  summary: "\nThe display name of this resource. This field is available only when the\nresource&apos;s proto contains it.\n\nTo search against the `display_name`:\n\n* use a field query. Example: `displayName:&quot;My Instance&quot;`\n* use a free text query. Example: `&quot;My Instance&quot;`\n"
   example: []
   syntax:
     content: public string DisplayName { get; set; }
@@ -285,16 +368,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Description
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1627
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2121
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nOne or more paragraphs of text description of this resource. Maximum length\ncould be up to 1M bytes.\n\nTo search against the `description`:\n\n* use a field query. Example: `description:&quot;*important instance*&quot;`\n* use a free text query. Example: `&quot;*important instance*&quot;`\n"
+  summary: "\nOne or more paragraphs of text description of this resource. Maximum length\ncould be up to 1M bytes. This field is available only when the resource&apos;s\nproto contains it.\n\nTo search against the `description`:\n\n* use a field query. Example: `description:&quot;important instance&quot;`\n* use a free text query. Example: `&quot;important instance&quot;`\n"
   example: []
   syntax:
     content: public string Description { get; set; }
@@ -322,16 +405,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Location
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1647
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2142
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nLocation can be `global`, regional like `us-east1`, or zonal like\n`us-west1-b`.\n\nTo search against the `location`:\n\n* use a field query. Example: `location:us-west*`\n* use a free text query. Example: `us-west*`\n"
+  summary: "\nLocation can be `global`, regional like `us-east1`, or zonal like\n`us-west1-b`. This field is available only when the resource&apos;s proto\ncontains it.\n\nTo search against the `location`:\n\n* use a field query. Example: `location:us-west*`\n* use a free text query. Example: `us-west*`\n"
   example: []
   syntax:
     content: public string Location { get; set; }
@@ -359,16 +442,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Labels
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1673
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2169
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nLabels associated with this resource. See [Labelling and grouping GCP\nresources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)\nfor more information.\n\nTo search against the `labels`:\n\n* use a field query:\n- query on any label&apos;s key or value. Example: `labels:prod`\n- query by a given label. Example: `labels.env:prod`\n- query by a given label&apos;s existence. Example: `labels.env:*`\n* use a free text query. Example: `prod`\n"
+  summary: "\nLabels associated with this resource. See [Labelling and grouping GCP\nresources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)\nfor more information. This field is available only when the resource&apos;s\nproto contains it.\n\nTo search against the `labels`:\n\n* use a field query:\n- query on any label&apos;s key or value. Example: `labels:prod`\n- query by a given label. Example: `labels.env:prod`\n- query by a given label&apos;s existence. Example: `labels.env:*`\n* use a free text query. Example: `prod`\n"
   example: []
   syntax:
     content: public MapField<string, string> Labels { get; }
@@ -396,16 +479,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: NetworkTags
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1694
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2191
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nNetwork tags associated with this resource. Like labels, network tags are a\ntype of annotations used to group GCP resources. See [Labelling GCP\nresources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)\nfor more information.\n\nTo search against the `network_tags`:\n\n* use a field query. Example: `networkTags:internal`\n* use a free text query. Example: `internal`\n"
+  summary: "\nNetwork tags associated with this resource. Like labels, network tags are a\ntype of annotations used to group GCP resources. See [Labelling GCP\nresources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)\nfor more information. This field is available only when the resource&apos;s\nproto contains it.\n\nTo search against the `network_tags`:\n\n* use a field query. Example: `networkTags:internal`\n* use a free text query. Example: `internal`\n"
   example: []
   syntax:
     content: public RepeatedField<string> NetworkTags { get; }
@@ -420,6 +503,154 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey
+  id: KmsKey
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: KmsKey
+  nameWithType: ResourceSearchResult.KmsKey
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: KmsKey
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2211
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe Cloud KMS\n[CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en)\nname or\n[CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en)\nname. This field is available only when the resource&apos;s proto contains it.\n\nTo search against the `kms_key`:\n\n* use a field query. Example: `kmsKey:key`\n* use a free text query. Example: `key`\n"
+  example: []
+  syntax:
+    content: public string KmsKey { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property KmsKey As String
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime
+  id: CreateTime
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: CreateTime
+  nameWithType: ResourceSearchResult.CreateTime
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: CreateTime
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2235
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe create timestamp of this resource, at which the resource was created.\nThe granularity is in seconds. Timestamp.nanos will always be 0. This field\nis available only when the resource&apos;s proto contains it.\n\nTo search against `create_time`:\n\n* use a field query.\n- value in seconds since unix epoch. Example: `createTime > 1609459200`\n- value in date string. Example: `createTime > 2021-01-01`\n- value in date-time string (must be quoted). Example: `createTime >\n&quot;2021-01-01T00:00:00&quot;`\n"
+  example: []
+  syntax:
+    content: public Timestamp CreateTime { get; set; }
+    parameters: []
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+    content.vb: Public Property CreateTime As Timestamp
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime
+  id: UpdateTime
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: UpdateTime
+  nameWithType: ResourceSearchResult.UpdateTime
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: UpdateTime
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2260
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe last update timestamp of this resource, at which the resource was last\nmodified or deleted. The granularity is in seconds. Timestamp.nanos will\nalways be 0. This field is available only when the resource&apos;s proto\ncontains it.\n\nTo search against `update_time`:\n\n* use a field query.\n- value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`\n- value in date string. Example: `updateTime &lt; 2021-01-01`\n- value in date-time string (must be quoted). Example: `updateTime &lt;\n&quot;2021-01-01T00:00:00&quot;`\n"
+  example: []
+  syntax:
+    content: public Timestamp UpdateTime { get; set; }
+    parameters: []
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+    content.vb: Public Property UpdateTime As Timestamp
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.State
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.State
+  id: State
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: ResourceSearchResult.State
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.State
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: State
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2292
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe state of this resource. Different resources types have different state\ndefinitions that are mapped from various fields of different resource\ntypes. This field is available only when the resource&apos;s proto contains it.\n\nExample:\nIf the resource is an instance provided by Compute Engine,\nits state will include PROVISIONING, STAGING, RUNNING, STOPPING,\nSUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition\nin [API\nReference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).\nIf the resource is a project provided by Cloud Resource Manager, its state\nwill include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and\nDELETE_IN_PROGRESS. See `lifecycleState` definition in [API\nReference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).\n\nTo search against the `state`:\n\n* use a field query. Example: `state:RUNNING`\n* use a free text query. Example: `RUNNING`\n"
+  example: []
+  syntax:
+    content: public string State { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property State As String
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.State*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes
   commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes
   id: AdditionalAttributes
@@ -433,16 +664,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AdditionalAttributes
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 1723
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2324
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nThe additional searchable attributes of this resource. The attributes may\nvary from one resource type to another. Examples: `projectId` for Project,\n`dnsName` for DNS ManagedZone. This field contains a subset of the resource\nmetadata fields that are returned by the List or Get APIs provided by the\ncorresponding GCP service (e.g., Compute Engine). see [API references and\nsupported searchable\nattributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)\nfor more information.\n\nYou can search values of these fields through free text search. However,\nyou should not consume the field programically as the field names and\nvalues may change as the GCP service updates to a new incompatible API\nversion.\n\nTo search against the `additional_attributes`:\n\n* use a free text query to match the attributes values. Example: to search\n`additional_attributes = { dnsName: &quot;foobar&quot; }`, you can issue a query\n`foobar`.\n"
+  summary: "\nThe additional searchable attributes of this resource. The attributes may\nvary from one resource type to another. Examples: `projectId` for Project,\n`dnsName` for DNS ManagedZone. This field contains a subset of the resource\nmetadata fields that are returned by the List or Get APIs provided by the\ncorresponding GCP service (e.g., Compute Engine). see [API references and\nsupported searchable\nattributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)\nto see which fields are included.\n\nYou can search values of these fields through free text search. However,\nyou should not consume the field programically as the field names and\nvalues may change as the GCP service updates to a new incompatible API\nversion.\n\nTo search against the `additional_attributes`:\n\n* use a free text query to match the attributes values. Example: to search\n`additional_attributes = { dnsName: &quot;foobar&quot; }`, you can issue a query\n`foobar`.\n"
   example: []
   syntax:
     content: public Struct AdditionalAttributes { get; set; }
@@ -451,6 +682,80 @@ items:
       type: Google.Protobuf.WellKnownTypes.Struct
     content.vb: Public Property AdditionalAttributes As Struct
   overload: Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName
+  id: ParentFullResourceName
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: ParentFullResourceName
+  nameWithType: ResourceSearchResult.ParentFullResourceName
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ParentFullResourceName
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2344
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe full resource name of this resource&apos;s parent, if it has one.\nTo search against the `parent_full_resource_name`:\n\n* use a field query. Example:\n`parentFullResourceName:&quot;project-name&quot;`\n* use a free text query. Example:\n`project-name`\n"
+  example: []
+  syntax:
+    content: public string ParentFullResourceName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ParentFullResourceName As String
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType
+  commentId: P:Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType
+  id: ParentAssetType
+  parent: Google.Cloud.Asset.V1.ResourceSearchResult
+  langs:
+  - csharp
+  - vb
+  name: ParentAssetType
+  nameWithType: ResourceSearchResult.ParentAssetType
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ParentAssetType
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 2365
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nThe type of this resource&apos;s immediate parent, if there is one.\n\nTo search against the `parent_asset_type`:\n\n* use a field query. Example:\n`parentAssetType:&quot;cloudresourcemanager.googleapis.com/Project&quot;`\n* use a free text query. Example:\n`cloudresourcemanager.googleapis.com/Project`\n"
+  example: []
+  syntax:
+    content: public string ParentAssetType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ParentAssetType As String
+  overload: Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType*
   modifiers.csharp:
   - public
   - get
@@ -512,13 +817,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Protobuf.IMessage
-  commentId: T:Google.Protobuf.IMessage
-  parent: Google.Protobuf
-  isExternal: true
-  name: IMessage
-  nameWithType: IMessage
-  fullName: Google.Protobuf.IMessage
 - uid: System.IEquatable{Google.Cloud.Asset.V1.ResourceSearchResult}
   commentId: T:System.IEquatable{Google.Cloud.Asset.V1.ResourceSearchResult}
   parent: System
@@ -603,37 +901,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
+- uid: Google.Protobuf.IBufferMessage
+  commentId: T:Google.Protobuf.IBufferMessage
+  parent: Google.Protobuf
   isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
+  name: IBufferMessage
+  nameWithType: IBufferMessage
+  fullName: Google.Protobuf.IBufferMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
@@ -720,6 +1001,37 @@ references:
     name: MemberwiseClone
     nameWithType: Object.MemberwiseClone
     fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
     isExternal: true
   - name: (
     nameWithType: (
@@ -889,6 +1201,105 @@ references:
   name: Project
   nameWithType: ResourceSearchResult.Project
   fullName: Google.Cloud.Asset.V1.ResourceSearchResult.Project
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.Folders*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.Folders
+  name: Folders
+  nameWithType: ResourceSearchResult.Folders
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.Folders
+- uid: Google.Protobuf.Collections.RepeatedField{System.String}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{System.String}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<String>
+  nameWithType: RepeatedField<String>
+  fullName: Google.Protobuf.Collections.RepeatedField<System.String>
+  nameWithType.vb: RepeatedField(Of String)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of System.String)
+  name.vb: RepeatedField(Of String)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: true
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.Organization*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.Organization
+  name: Organization
+  nameWithType: ResourceSearchResult.Organization
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.Organization
 - uid: Google.Cloud.Asset.V1.ResourceSearchResult.DisplayName*
   commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.DisplayName
   name: DisplayName
@@ -1020,100 +1431,44 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Protobuf.Collections
-  commentId: N:Google.Protobuf.Collections
-  isExternal: true
-  name: Google.Protobuf.Collections
-  nameWithType: Google.Protobuf.Collections
-  fullName: Google.Protobuf.Collections
 - uid: Google.Cloud.Asset.V1.ResourceSearchResult.NetworkTags*
   commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.NetworkTags
   name: NetworkTags
   nameWithType: ResourceSearchResult.NetworkTags
   fullName: Google.Cloud.Asset.V1.ResourceSearchResult.NetworkTags
-- uid: Google.Protobuf.Collections.RepeatedField{System.String}
-  commentId: T:Google.Protobuf.Collections.RepeatedField{System.String}
-  parent: Google.Protobuf.Collections
-  definition: Google.Protobuf.Collections.RepeatedField`1
-  name: RepeatedField<String>
-  nameWithType: RepeatedField<String>
-  fullName: Google.Protobuf.Collections.RepeatedField<System.String>
-  nameWithType.vb: RepeatedField(Of String)
-  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of System.String)
-  name.vb: RepeatedField(Of String)
-  spec.csharp:
-  - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
-    fullName: Google.Protobuf.Collections.RepeatedField
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
-    fullName: Google.Protobuf.Collections.RepeatedField
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf.Collections.RepeatedField`1
-  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey
+  name: KmsKey
+  nameWithType: ResourceSearchResult.KmsKey
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime
+  name: CreateTime
+  nameWithType: ResourceSearchResult.CreateTime
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime
+- uid: Google.Protobuf.WellKnownTypes.Timestamp
+  commentId: T:Google.Protobuf.WellKnownTypes.Timestamp
+  parent: Google.Protobuf.WellKnownTypes
   isExternal: true
-  name: RepeatedField<T>
-  nameWithType: RepeatedField<T>
-  fullName: Google.Protobuf.Collections.RepeatedField<T>
-  nameWithType.vb: RepeatedField(Of T)
-  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
-  name.vb: RepeatedField(Of T)
-  spec.csharp:
-  - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
-    fullName: Google.Protobuf.Collections.RepeatedField
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
-    fullName: Google.Protobuf.Collections.RepeatedField
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
+  name: Timestamp
+  nameWithType: Timestamp
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp
+- uid: Google.Protobuf.WellKnownTypes
+  commentId: N:Google.Protobuf.WellKnownTypes
+  isExternal: true
+  name: Google.Protobuf.WellKnownTypes
+  nameWithType: Google.Protobuf.WellKnownTypes
+  fullName: Google.Protobuf.WellKnownTypes
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime
+  name: UpdateTime
+  nameWithType: ResourceSearchResult.UpdateTime
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.State*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.State
+  name: State
+  nameWithType: ResourceSearchResult.State
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.State
 - uid: Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes*
   commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes
   name: AdditionalAttributes
@@ -1126,9 +1481,13 @@ references:
   name: Struct
   nameWithType: Struct
   fullName: Google.Protobuf.WellKnownTypes.Struct
-- uid: Google.Protobuf.WellKnownTypes
-  commentId: N:Google.Protobuf.WellKnownTypes
-  isExternal: true
-  name: Google.Protobuf.WellKnownTypes
-  nameWithType: Google.Protobuf.WellKnownTypes
-  fullName: Google.Protobuf.WellKnownTypes
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName
+  name: ParentFullResourceName
+  nameWithType: ResourceSearchResult.ParentFullResourceName
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName
+- uid: Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType*
+  commentId: Overload:Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType
+  name: ParentAssetType
+  nameWithType: ResourceSearchResult.ParentAssetType
+  fullName: Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType

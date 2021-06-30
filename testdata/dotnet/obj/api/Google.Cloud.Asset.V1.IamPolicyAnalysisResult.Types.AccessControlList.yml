@@ -8,6 +8,7 @@ items:
   - Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.#ctor
   - Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.#ctor(Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList)
   - Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.Accesses
+  - Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
   - Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ResourceEdges
   - Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.Resources
   langs:
@@ -19,34 +20,35 @@ items:
   type: Class
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AccessControlList
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 3706
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 5351
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
   summary: "\nAn access control list, derived from the above IAM policy binding, which\ncontains a set of resources and accesses. May include one\nitem from each set to compose an access control entry.\n\nNOTICE that there could be multiple access control lists for one IAM policy\nbinding. The access control lists are created based on resource and access\ncombinations.\n\nFor example, assume we have the following cases in one IAM policy binding:\n- Permission P1 and P2 apply to resource R1 and R2;\n- Permission P3 applies to resource R2 and R3;\n\nThis will result in the following access control lists:\n- AccessControlList 1: [R1, R2], [P1, P2]\n- AccessControlList 2: [R2, R3], [P3]\n"
   example: []
   syntax:
-    content: 'public sealed class AccessControlList : IMessage<IamPolicyAnalysisResult.Types.AccessControlList>, IMessage, IEquatable<IamPolicyAnalysisResult.Types.AccessControlList>, IDeepCloneable<IamPolicyAnalysisResult.Types.AccessControlList>'
+    content: 'public sealed class AccessControlList : IMessage<IamPolicyAnalysisResult.Types.AccessControlList>, IEquatable<IamPolicyAnalysisResult.Types.AccessControlList>, IDeepCloneable<IamPolicyAnalysisResult.Types.AccessControlList>, IBufferMessage, IMessage'
     content.vb: >-
       Public NotInheritable Class AccessControlList
-          Implements IMessage(Of IamPolicyAnalysisResult.Types.AccessControlList), IMessage, IEquatable(Of IamPolicyAnalysisResult.Types.AccessControlList), IDeepCloneable(Of IamPolicyAnalysisResult.Types.AccessControlList)
+          Implements IMessage(Of IamPolicyAnalysisResult.Types.AccessControlList), IEquatable(Of IamPolicyAnalysisResult.Types.AccessControlList), IDeepCloneable(Of IamPolicyAnalysisResult.Types.AccessControlList), IBufferMessage, IMessage
   inheritance:
   - System.Object
   implements:
   - Google.Protobuf.IMessage{Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList}
-  - Google.Protobuf.IMessage
   - System.IEquatable{Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList}
   - Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList}
+  - Google.Protobuf.IBufferMessage
+  - Google.Protobuf.IMessage
   inheritedMembers:
-  - System.Object.ToString
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - sealed
@@ -68,12 +70,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 3722
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 5371
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -98,12 +100,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 3729
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 5378
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -131,12 +133,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Resources
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 3752
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 5402
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -168,12 +170,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Accesses
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 3767
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 5417
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -205,16 +207,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ResourceEdges
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 3784
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 5434
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nResource edges of the graph starting from the policy attached\nresource to any descendant resources. The [Edge.source_node][] contains\nthe full resource name of a parent resource and [Edge.target_node][]\ncontains the full resource name of a child resource. This field is\npresent only if the output_resource_edges option is enabled in request.\n"
+  summary: "\nResource edges of the graph starting from the policy attached\nresource to any descendant resources. The [Edge.source_node][google.cloud.asset.v1.IamPolicyAnalysisResult.Edge.source_node] contains\nthe full resource name of a parent resource and [Edge.target_node][google.cloud.asset.v1.IamPolicyAnalysisResult.Edge.target_node]\ncontains the full resource name of a child resource. This field is\npresent only if the output_resource_edges option is enabled in request.\n"
   example: []
   syntax:
     content: public RepeatedField<IamPolicyAnalysisResult.Types.Edge> ResourceEdges { get; }
@@ -229,6 +231,43 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
+  commentId: P:Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
+  id: ConditionEvaluation
+  parent: Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList
+  langs:
+  - csharp
+  - vb
+  name: ConditionEvaluation
+  nameWithType: IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
+  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ConditionEvaluation
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 5446
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nCondition evaluation for this AccessControlList, if there is a condition\ndefined in the above IAM policy binding.\n"
+  example: []
+  syntax:
+    content: public ConditionEvaluation ConditionEvaluation { get; set; }
+    parameters: []
+    return:
+      type: Google.Cloud.Asset.V1.ConditionEvaluation
+    content.vb: Public Property ConditionEvaluation As ConditionEvaluation
+  overload: Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 references:
 - uid: Google.Cloud.Asset.V1
   commentId: N:Google.Cloud.Asset.V1
@@ -284,13 +323,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Protobuf.IMessage
-  commentId: T:Google.Protobuf.IMessage
-  parent: Google.Protobuf
-  isExternal: true
-  name: IMessage
-  nameWithType: IMessage
-  fullName: Google.Protobuf.IMessage
 - uid: System.IEquatable{Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList}
   commentId: T:System.IEquatable{Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList}
   parent: System
@@ -375,37 +407,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
+- uid: Google.Protobuf.IBufferMessage
+  commentId: T:Google.Protobuf.IBufferMessage
+  parent: Google.Protobuf
   isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
+  name: IBufferMessage
+  nameWithType: IBufferMessage
+  fullName: Google.Protobuf.IBufferMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
@@ -492,6 +507,37 @@ references:
     name: MemberwiseClone
     nameWithType: Object.MemberwiseClone
     fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
     isExternal: true
   - name: (
     nameWithType: (
@@ -825,3 +871,14 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation*
+  commentId: Overload:Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
+  name: ConditionEvaluation
+  nameWithType: IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
+  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.AccessControlList.ConditionEvaluation
+- uid: Google.Cloud.Asset.V1.ConditionEvaluation
+  commentId: T:Google.Cloud.Asset.V1.ConditionEvaluation
+  parent: Google.Cloud.Asset.V1
+  name: ConditionEvaluation
+  nameWithType: ConditionEvaluation
+  fullName: Google.Cloud.Asset.V1.ConditionEvaluation

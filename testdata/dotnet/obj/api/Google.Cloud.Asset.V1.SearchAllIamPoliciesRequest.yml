@@ -21,34 +21,35 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllIamPoliciesRequest
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1927
+    startLine: 2170
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
   summary: "\nSearch all IAM policies request.\n"
   example: []
   syntax:
-    content: 'public sealed class SearchAllIamPoliciesRequest : IMessage<SearchAllIamPoliciesRequest>, IMessage, IEquatable<SearchAllIamPoliciesRequest>, IDeepCloneable<SearchAllIamPoliciesRequest>, IPageRequest'
+    content: 'public sealed class SearchAllIamPoliciesRequest : IMessage<SearchAllIamPoliciesRequest>, IEquatable<SearchAllIamPoliciesRequest>, IDeepCloneable<SearchAllIamPoliciesRequest>, IBufferMessage, IMessage, IPageRequest'
     content.vb: >-
       Public NotInheritable Class SearchAllIamPoliciesRequest
-          Implements IMessage(Of SearchAllIamPoliciesRequest), IMessage, IEquatable(Of SearchAllIamPoliciesRequest), IDeepCloneable(Of SearchAllIamPoliciesRequest), IPageRequest
+          Implements IMessage(Of SearchAllIamPoliciesRequest), IEquatable(Of SearchAllIamPoliciesRequest), IDeepCloneable(Of SearchAllIamPoliciesRequest), IBufferMessage, IMessage, IPageRequest
   inheritance:
   - System.Object
   implements:
   - Google.Protobuf.IMessage{Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest}
-  - Google.Protobuf.IMessage
   - System.IEquatable{Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest}
   - Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest}
+  - Google.Protobuf.IBufferMessage
+  - Google.Protobuf.IMessage
   - Google.Api.Gax.Grpc.IPageRequest
   inheritedMembers:
-  - System.Object.ToString
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - sealed
@@ -70,12 +71,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 4168
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 6320
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -100,12 +101,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 4175
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 6327
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -133,16 +134,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Scope
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 4206
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 6358
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the IAM policies within the `scope`. The caller must be granted\nthe\n[`cloudasset.assets.searchAllIamPolicies`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
+  summary: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the IAM policies within the `scope`. The caller must be granted\nthe\n[`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
   example: []
   syntax:
     content: public string Scope { get; set; }
@@ -170,16 +171,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Query
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 4245
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 6409
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nIAM policies within the specified `scope`.\n\nExamples:\n\n* `policy:amy@gmail.com` to find IAM policy bindings that specify user\n&quot;amy@gmail.com&quot;.\n* `policy:roles/compute.admin` to find IAM policy bindings that specify\nthe Compute Admin role.\n* `policy.role.permissions:storage.buckets.update` to find IAM policy\nbindings that specify a role containing &quot;storage.buckets.update&quot;\npermission. Note that if callers don&apos;t have `iam.roles.get` access to a\nrole&apos;s included permissions, policy bindings that specify this role will\nbe dropped from the search results.\n* `resource:organizations/123456` to find IAM policy bindings\nthat are set on &quot;organizations/123456&quot;.\n* `Important` to find IAM policy bindings that contain &quot;Important&quot; as a\nword in any of the searchable fields (except for the included\npermissions).\n* `*por*` to find IAM policy bindings that contain &quot;por&quot; as a substring\nin any of the searchable fields (except for the included permissions).\n* `resource:(instance1 OR instance2) policy:amy` to find\nIAM policy bindings that are set on resources &quot;instance1&quot; or\n&quot;instance2&quot; and also specify user &quot;amy&quot;.\n"
+  summary: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nIAM policies within the specified `scope`. Note that the query string is\ncompared against each Cloud IAM policy binding, including its members,\nroles, and Cloud IAM conditions. The returned Cloud IAM policies will only\ncontain the bindings that match your query. To learn more about the IAM\npolicy structure, see [IAM policy\ndoc](https://cloud.google.com/iam/docs/policies#structure).\n\nExamples:\n\n* `policy:amy@gmail.com` to find IAM policy bindings that specify user\n&quot;amy@gmail.com&quot;.\n* `policy:roles/compute.admin` to find IAM policy bindings that specify\nthe Compute Admin role.\n* `policy:comp*` to find IAM policy bindings that contain &quot;comp&quot; as a\nprefix of any word in the binding.\n* `policy.role.permissions:storage.buckets.update` to find IAM policy\nbindings that specify a role containing &quot;storage.buckets.update&quot;\npermission. Note that if callers don&apos;t have `iam.roles.get` access to a\nrole&apos;s included permissions, policy bindings that specify this role will\nbe dropped from the search results.\n* `policy.role.permissions:upd*` to find IAM policy bindings that specify a\nrole containing &quot;upd&quot; as a prefix of any word in the role permission.\nNote that if callers don&apos;t have `iam.roles.get` access to a role&apos;s\nincluded permissions, policy bindings that specify this role will be\ndropped from the search results.\n* `resource:organizations/123456` to find IAM policy bindings\nthat are set on &quot;organizations/123456&quot;.\n* `resource=//cloudresourcemanager.googleapis.com/projects/myproject` to\nfind IAM policy bindings that are set on the project named &quot;myproject&quot;.\n* `Important` to find IAM policy bindings that contain &quot;Important&quot; as a\nword in any of the searchable fields (except for the included\npermissions).\n* `resource:(instance1 OR instance2) policy:amy` to find\nIAM policy bindings that are set on resources &quot;instance1&quot; or\n&quot;instance2&quot; and also specify user &quot;amy&quot;.\n"
   example: []
   syntax:
     content: public string Query { get; set; }
@@ -207,12 +208,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: PageSize
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 4262
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 6426
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -246,12 +247,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: PageToken
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 4279
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 6443
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -327,13 +328,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Protobuf.IMessage
-  commentId: T:Google.Protobuf.IMessage
-  parent: Google.Protobuf
-  isExternal: true
-  name: IMessage
-  nameWithType: IMessage
-  fullName: Google.Protobuf.IMessage
 - uid: System.IEquatable{Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest}
   commentId: T:System.IEquatable{Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest}
   parent: System
@@ -418,6 +412,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Protobuf.IBufferMessage
+  commentId: T:Google.Protobuf.IBufferMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IBufferMessage
+  nameWithType: IBufferMessage
+  fullName: Google.Protobuf.IBufferMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
 - uid: Google.Api.Gax.Grpc.IPageRequest
   commentId: T:Google.Api.Gax.Grpc.IPageRequest
   parent: Google.Api.Gax.Grpc
@@ -425,37 +433,6 @@ references:
   name: IPageRequest
   nameWithType: IPageRequest
   fullName: Google.Api.Gax.Grpc.IPageRequest
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
@@ -542,6 +519,37 @@ references:
     name: MemberwiseClone
     nameWithType: Object.MemberwiseClone
     fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
     isExternal: true
   - name: (
     nameWithType: (

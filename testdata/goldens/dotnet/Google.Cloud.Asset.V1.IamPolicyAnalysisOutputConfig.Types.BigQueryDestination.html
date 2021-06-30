@@ -13,7 +13,7 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class BigQueryDestination : IMessage&lt;IamPolicyAnalysisOutputConfig.Types.BigQueryDestination&gt;, IMessage, IEquatable&lt;IamPolicyAnalysisOutputConfig.Types.BigQueryDestination&gt;, IDeepCloneable&lt;IamPolicyAnalysisOutputConfig.Types.BigQueryDestination&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class BigQueryDestination : IMessage&lt;IamPolicyAnalysisOutputConfig.Types.BigQueryDestination&gt;, IEquatable&lt;IamPolicyAnalysisOutputConfig.Types.BigQueryDestination&gt;, IDeepCloneable&lt;IamPolicyAnalysisOutputConfig.Types.BigQueryDestination&gt;, IBufferMessage, IMessage</code></pre>
   </div>
   <div class="markdown level0 summary"><p>A BigQuery destination.</p>
 </div>
@@ -25,15 +25,13 @@
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.html">IamPolicyAnalysisOutputConfig.Types.BigQueryDestination</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.html">IamPolicyAnalysisOutputConfig.Types.BigQueryDestination</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.html">IamPolicyAnalysisOutputConfig.Types.BigQueryDestination</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.html">IamPolicyAnalysisOutputConfig.Types.BigQueryDestination</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -42,6 +40,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -85,7 +86,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Dataset { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The BigQuery dataset in format &quot;projects/projectId/datasets/datasetId&quot;,
+  <div class="markdown level1 summary"><p>Required. The BigQuery dataset in format &quot;projects/projectId/datasets/datasetId&quot;,
 to which the analysis results should be exported. If this dataset does
 not exist, the export call will return an INVALID_ARGUMENT error.</p>
 </div>
@@ -131,12 +132,12 @@ not exist, the export call will return an INVALID_ARGUMENT error.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string TablePrefix { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The prefix of the BigQuery tables to which the analysis results will be
+  <div class="markdown level1 summary"><p>Required. The prefix of the BigQuery tables to which the analysis results will be
 written. Tables will be created based on this table_prefix if not exist:</p>
 <ul>
 <li>&lt;table_prefix&gt;_analysis table will contain export operation&apos;s metadata.</li>
 <li>&lt;table_prefix&gt;_analysis_result will contain all the
-[IamPolicyAnalysisResult][].
+[IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
 When [partition_key] is specified, both tables will be partitioned based
 on the [partition_key].</li>
 </ul>
@@ -156,13 +157,24 @@ on the [partition_key].</li>
       </tr>
     </tbody>
   </table>
-  <a id="Google_Cloud_Asset_V1_IamPolicyAnalysisOutputConfig_Types_BigQueryDestination_WriteMode_" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.WriteMode*"></a>
-  <h3 id="Google_Cloud_Asset_V1_IamPolicyAnalysisOutputConfig_Types_BigQueryDestination_WriteMode" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.WriteMode" class="notranslate">WriteMode</h3>
+  <a id="Google_Cloud_Asset_V1_IamPolicyAnalysisOutputConfig_Types_BigQueryDestination_WriteDisposition_" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.WriteDisposition*"></a>
+  <h3 id="Google_Cloud_Asset_V1_IamPolicyAnalysisOutputConfig_Types_BigQueryDestination_WriteDisposition" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.WriteDisposition" class="notranslate">WriteDisposition</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">public IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode WriteMode { get; set; }</code></pre>
+    <pre><code class="prettyprint">public string WriteDisposition { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The write mode when table exists. WriteMode is ignored when no existing
-tables, or no existing partitions are found.</p>
+  <div class="markdown level1 summary"><p>Optional. Specifies the action that occurs if the destination table or partition
+already exists. The following values are supported:</p>
+<ul>
+<li>WRITE_TRUNCATE: If the table or partition already exists, BigQuery
+overwrites the entire table or all the partitions data.</li>
+<li>WRITE_APPEND: If the table or partition already exists, BigQuery
+appends the data to the table or the latest partition.</li>
+<li>WRITE_EMPTY: If the table already exists and contains data, an error is
+returned.</li>
+</ul>
+<p>The default value is WRITE_APPEND. Each action is atomic and only occurs
+if BigQuery is able to complete the job successfully. Details are at
+<a href="https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file">https://cloud.google.com/bigquery/docs/loading-data-local#appending_to_or_overwriting_a_table_using_a_local_file</a>.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,7 +186,7 @@ tables, or no existing partitions are found.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode.html">IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode</a></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -184,13 +196,16 @@ tables, or no existing partitions are found.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

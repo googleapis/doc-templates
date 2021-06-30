@@ -13,13 +13,14 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class Asset : IMessage&lt;Asset&gt;, IMessage, IEquatable&lt;Asset&gt;, IDeepCloneable&lt;Asset&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class Asset : IMessage&lt;Asset&gt;, IEquatable&lt;Asset&gt;, IDeepCloneable&lt;Asset&gt;, IBufferMessage, IMessage</code></pre>
   </div>
   <div class="markdown level0 summary"><p>An asset in Google Cloud. An asset can be any resource in the Google Cloud
 <a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy">resource
 hierarchy</a>,
 a resource outside the Google Cloud resource hierarchy (such as Google
-Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy),
+or a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship).
 See <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types">Supported asset
 types</a>
 for more information.</p>
@@ -32,15 +33,13 @@ for more information.</p>
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -49,6 +48,9 @@ for more information.</p>
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -287,6 +289,30 @@ set on a given resource.</p>
       </tr>
     </tbody>
   </table>
+  <a id="Google_Cloud_Asset_V1_Asset_OsInventory_" data-uid="Google.Cloud.Asset.V1.Asset.OsInventory*"></a>
+  <h3 id="Google_Cloud_Asset_V1_Asset_OsInventory" data-uid="Google.Cloud.Asset.V1.Asset.OsInventory" class="notranslate">OsInventory</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public Inventory OsInventory { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>A representation of runtime OS Inventory information. See <a href="https://cloud.google.com/compute/docs/instances/os-inventory-management">this
+topic</a>
+for more information.</p>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Cloud.OsConfig.V1.Inventory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Google_Cloud_Asset_V1_Asset_Resource_" data-uid="Google.Cloud.Asset.V1.Asset.Resource*"></a>
   <h3 id="Google_Cloud_Asset_V1_Asset_Resource" data-uid="Google.Cloud.Asset.V1.Asset.Resource" class="notranslate">Resource</h3>
   <div class="codewrapper">
@@ -382,13 +408,16 @@ create/update/delete operation is performed.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

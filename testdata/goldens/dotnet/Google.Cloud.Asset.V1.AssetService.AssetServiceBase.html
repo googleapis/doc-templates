@@ -26,9 +26,6 @@ public abstract class AssetServiceBase</code></pre>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
     <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-    <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
     <div>
@@ -36,6 +33,9 @@ public abstract class AssetServiceBase</code></pre>
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -88,6 +88,61 @@ which resources.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.html">AnalyzeIamPolicyResponse</a>&gt;</td>
+        <td><p>The response to send back to the client (wrapped by a task).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_AnalyzeIamPolicyLongrunning_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicyLongrunning*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_AnalyzeIamPolicyLongrunning_Google_Cloud_Asset_V1_AnalyzeIamPolicyLongrunningRequest_Grpc_Core_ServerCallContext_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicyLongrunning(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Grpc.Core.ServerCallContext)" class="notranslate">AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest, ServerCallContext)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual Task&lt;Operation&gt; AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest request, ServerCallContext context)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Analyzes IAM policies asynchronously to answer which identities have what
+accesses on which resources, and writes the analysis results to a Google
+Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+output format is the JSON format that represents a
+[AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+[google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+status. We recommend intervals of at least 2 seconds with exponential
+backoff retry to poll the operation result. The metadata contains the
+request to help callers to map responses to requests.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request received from the client.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Grpc.Core.ServerCallContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The context of the server-side call handler being invoked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&gt;</td>
         <td><p>The response to send back to the client (wrapped by a task).</p>
 </td>
       </tr>
@@ -297,61 +352,6 @@ finishes within 5 minutes.</p>
       </tr>
     </tbody>
   </table>
-  <a id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_ExportIamPolicyAnalysis_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis*"></a>
-  <h3 id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_ExportIamPolicyAnalysis_Google_Cloud_Asset_V1_ExportIamPolicyAnalysisRequest_Grpc_Core_ServerCallContext_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Grpc.Core.ServerCallContext)" class="notranslate">ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest, ServerCallContext)</h3>
-  <div class="codewrapper">
-    <pre><code class="prettyprint">public virtual Task&lt;Operation&gt; ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest request, ServerCallContext context)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Exports the answers of which identities have what accesses on which
-resources to a Google Cloud Storage or a BigQuery destination. For Cloud
-Storage destination, the output format is the JSON format that represents a
-[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
-This method implements the
-[google.longrunning.Operation][google.longrunning.Operation], which allows
-you to track the export status. We recommend intervals of at least 2
-seconds with exponential retry to poll the export operation result. The
-metadata contains the request to help callers to map responses to requests.</p>
-</div>
-  <strong>Parameters</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a></td>
-        <td><span class="parametername">request</span></td>
-        <td><p>The request received from the client.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Grpc.Core.ServerCallContext</span></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The context of the server-side call handler being invoked.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&gt;</td>
-        <td><p>The response to send back to the client (wrapped by a task).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_GetFeed_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed*"></a>
   <h3 id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_GetFeed_Google_Cloud_Asset_V1_GetFeedRequest_Grpc_Core_ServerCallContext_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.GetFeed(Google.Cloud.Asset.V1.GetFeedRequest,Grpc.Core.ServerCallContext)" class="notranslate">GetFeed(GetFeedRequest, ServerCallContext)</h3>
   <div class="codewrapper">
@@ -394,6 +394,54 @@ metadata contains the request to help callers to map responses to requests.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Feed.html">Feed</a>&gt;</td>
+        <td><p>The response to send back to the client (wrapped by a task).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_ListAssets_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListAssets*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_ListAssets_Google_Cloud_Asset_V1_ListAssetsRequest_Grpc_Core_ServerCallContext_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.ListAssets(Google.Cloud.Asset.V1.ListAssetsRequest,Grpc.Core.ServerCallContext)" class="notranslate">ListAssets(ListAssetsRequest, ServerCallContext)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual Task&lt;ListAssetsResponse&gt; ListAssets(ListAssetsRequest request, ServerCallContext context)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
+response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.ListAssetsRequest.html">ListAssetsRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request received from the client.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Grpc.Core.ServerCallContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The context of the server-side call handler being invoked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a>&gt;</td>
         <td><p>The response to send back to the client (wrapped by a task).</p>
 </td>
       </tr>

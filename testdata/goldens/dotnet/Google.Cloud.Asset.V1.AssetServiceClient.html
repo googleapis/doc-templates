@@ -25,9 +25,6 @@
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
     <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-    <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
     <div>
@@ -35,6 +32,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <div>
@@ -51,6 +51,28 @@
   {% endverbatim %}
   <h2 id="properties">Properties
   </h2>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunningOperationsClient_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunningOperationsClient" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient" class="notranslate">AnalyzeIamPolicyLongrunningOperationsClient</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual OperationsClient AnalyzeIamPolicyLongrunningOperationsClient { get; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The long-running operations client for <code>AnalyzeIamPolicyLongrunning</code>.</p>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.LongRunning.OperationsClient</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Google_Cloud_Asset_V1_AssetServiceClient_DefaultEndpoint_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.DefaultEndpoint*"></a>
   <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_DefaultEndpoint" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.DefaultEndpoint" class="notranslate">DefaultEndpoint</h3>
   <div class="codewrapper">
@@ -106,28 +128,6 @@ of 443.</p>
     <pre><code class="prettyprint">public virtual OperationsClient ExportAssetsOperationsClient { get; }</code></pre>
   </div>
   <div class="markdown level1 summary"><p>The long-running operations client for <code>ExportAssets</code>.</p>
-</div>
-  <strong>Property Value</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Google.LongRunning.OperationsClient</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysisOperationsClient_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient*"></a>
-  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysisOperationsClient" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient" class="notranslate">ExportIamPolicyAnalysisOperationsClient</h3>
-  <div class="codewrapper">
-    <pre><code class="prettyprint">public virtual OperationsClient ExportIamPolicyAnalysisOperationsClient { get; }</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>The long-running operations client for <code>ExportIamPolicyAnalysis</code>.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -307,6 +307,171 @@ which resources.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.html">AnalyzeIamPolicyResponse</a>&gt;</td>
+        <td><p>A Task containing the RPC response.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunning_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunning_Google_Cloud_Asset_V1_AnalyzeIamPolicyLongrunningRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual Operation&lt;AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest&gt; AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest request, CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Analyzes IAM policies asynchronously to answer which identities have what
+accesses on which resources, and writes the analysis results to a Google
+Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+output format is the JSON format that represents a
+[AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+[google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+status. We recommend intervals of at least 2 seconds with exponential
+backoff retry to poll the operation result. The metadata contains the
+request to help callers to map responses to requests.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse.html">AnalyzeIamPolicyLongrunningResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a>&gt;</td>
+        <td><p>The RPC response.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunningAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunningAsync_Google_Cloud_Asset_V1_AnalyzeIamPolicyLongrunningRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual Task&lt;Operation&lt;AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest&gt;&gt; AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request, CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Analyzes IAM policies asynchronously to answer which identities have what
+accesses on which resources, and writes the analysis results to a Google
+Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+output format is the JSON format that represents a
+[AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+[google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+status. We recommend intervals of at least 2 seconds with exponential
+backoff retry to poll the operation result. The metadata contains the
+request to help callers to map responses to requests.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse.html">AnalyzeIamPolicyLongrunningResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a>&gt;&gt;</td>
+        <td><p>A Task containing the RPC response.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunningAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_AnalyzeIamPolicyLongrunningAsync_Google_Cloud_Asset_V1_AnalyzeIamPolicyLongrunningRequest_System_Threading_CancellationToken_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,System.Threading.CancellationToken)" class="notranslate">AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest, CancellationToken)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual Task&lt;Operation&lt;AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest&gt;&gt; AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Analyzes IAM policies asynchronously to answer which identities have what
+accesses on which resources, and writes the analysis results to a Google
+Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
+output format is the JSON format that represents a
+[AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
+[google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
+status. We recommend intervals of at least 2 seconds with exponential
+backoff retry to poll the operation result. The metadata contains the
+request to help callers to map responses to requests.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A <span class="xref">System.Threading.CancellationToken</span> to use for this RPC.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse.html">AnalyzeIamPolicyLongrunningResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a>&gt;&gt;</td>
         <td><p>A Task containing the RPC response.</p>
 </td>
       </tr>
@@ -1398,171 +1563,6 @@ finishes within 5 minutes.</p>
       </tr>
     </tbody>
   </table>
-  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysis_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis*"></a>
-  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysis_Google_Cloud_Asset_V1_ExportIamPolicyAnalysisRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest, CallSettings)</h3>
-  <div class="codewrapper">
-    <pre><code class="prettyprint">public virtual Operation&lt;ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest&gt; ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest request, CallSettings callSettings = null)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Exports the answers of which identities have what accesses on which
-resources to a Google Cloud Storage or a BigQuery destination. For Cloud
-Storage destination, the output format is the JSON format that represents a
-[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
-This method implements the
-[google.longrunning.Operation][google.longrunning.Operation], which allows
-you to track the export status. We recommend intervals of at least 2
-seconds with exponential retry to poll the export operation result. The
-metadata contains the request to help callers to map responses to requests.</p>
-</div>
-  <strong>Parameters</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a></td>
-        <td><span class="parametername">request</span></td>
-        <td><p>The request object containing all of the parameters for the API call.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
-        <td><span class="parametername">callSettings</span></td>
-        <td><p>If not null, applies overrides to this RPC call.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse.html">ExportIamPolicyAnalysisResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a>&gt;</td>
-        <td><p>The RPC response.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysisAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync*"></a>
-  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysisAsync_Google_Cloud_Asset_V1_ExportIamPolicyAnalysisRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CallSettings)</h3>
-  <div class="codewrapper">
-    <pre><code class="prettyprint">public virtual Task&lt;Operation&lt;ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest&gt;&gt; ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest request, CallSettings callSettings = null)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Exports the answers of which identities have what accesses on which
-resources to a Google Cloud Storage or a BigQuery destination. For Cloud
-Storage destination, the output format is the JSON format that represents a
-[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
-This method implements the
-[google.longrunning.Operation][google.longrunning.Operation], which allows
-you to track the export status. We recommend intervals of at least 2
-seconds with exponential retry to poll the export operation result. The
-metadata contains the request to help callers to map responses to requests.</p>
-</div>
-  <strong>Parameters</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a></td>
-        <td><span class="parametername">request</span></td>
-        <td><p>The request object containing all of the parameters for the API call.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
-        <td><span class="parametername">callSettings</span></td>
-        <td><p>If not null, applies overrides to this RPC call.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse.html">ExportIamPolicyAnalysisResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a>&gt;&gt;</td>
-        <td><p>A Task containing the RPC response.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysisAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync*"></a>
-  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ExportIamPolicyAnalysisAsync_Google_Cloud_Asset_V1_ExportIamPolicyAnalysisRequest_System_Threading_CancellationToken_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,System.Threading.CancellationToken)" class="notranslate">ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CancellationToken)</h3>
-  <div class="codewrapper">
-    <pre><code class="prettyprint">public virtual Task&lt;Operation&lt;ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest&gt;&gt; ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest request, CancellationToken cancellationToken)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Exports the answers of which identities have what accesses on which
-resources to a Google Cloud Storage or a BigQuery destination. For Cloud
-Storage destination, the output format is the JSON format that represents a
-[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
-This method implements the
-[google.longrunning.Operation][google.longrunning.Operation], which allows
-you to track the export status. We recommend intervals of at least 2
-seconds with exponential retry to poll the export operation result. The
-metadata contains the request to help callers to map responses to requests.</p>
-</div>
-  <strong>Parameters</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a></td>
-        <td><span class="parametername">request</span></td>
-        <td><p>The request object containing all of the parameters for the API call.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A <span class="xref">System.Threading.CancellationToken</span> to use for this RPC.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse.html">ExportIamPolicyAnalysisResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a>&gt;&gt;</td>
-        <td><p>A Task containing the RPC response.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Google_Cloud_Asset_V1_AssetServiceClient_GetFeed_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.GetFeed*"></a>
   <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_GetFeed_Google_Cloud_Asset_V1_FeedName_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.GetFeed(Google.Cloud.Asset.V1.FeedName,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">GetFeed(FeedName, CallSettings)</h3>
   <div class="codewrapper">
@@ -2004,6 +2004,362 @@ organizations/organization_number/feeds/feed_id</p>
       </tr>
     </tbody>
   </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssets_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssets*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssets_Google_Api_Gax_IResourceName_System_String_System_Nullable_System_Int32__Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ListAssets(IResourceName, String, Nullable&lt;Int32&gt;, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual PagedEnumerable&lt;ListAssetsResponse, Asset&gt; ListAssets(IResourceName parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
+response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.IResourceName</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. Name of the organization or project the assets belong to. Format:
+&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),
+&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or
+&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pageToken</span></td>
+        <td><p>The token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first
+page.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">pageSize</span></td>
+        <td><p>The size of page to request. The response will not be larger than this, but may be smaller. A value of
+<code>null</code> or <code>0</code> uses a server-defined page size.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.PagedEnumerable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;</td>
+        <td><p>A pageable sequence of <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a> resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssets_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssets*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssets_Google_Cloud_Asset_V1_ListAssetsRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ListAssets(ListAssetsRequest, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual PagedEnumerable&lt;ListAssetsResponse, Asset&gt; ListAssets(ListAssetsRequest request, CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
+response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.ListAssetsRequest.html">ListAssetsRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.PagedEnumerable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;</td>
+        <td><p>A pageable sequence of <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a> resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssets_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssets*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssets_System_String_System_String_System_Nullable_System_Int32__Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ListAssets(String, String, Nullable&lt;Int32&gt;, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual PagedEnumerable&lt;ListAssetsResponse, Asset&gt; ListAssets(string parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
+response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. Name of the organization or project the assets belong to. Format:
+&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),
+&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or
+&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pageToken</span></td>
+        <td><p>The token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first
+page.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">pageSize</span></td>
+        <td><p>The size of page to request. The response will not be larger than this, but may be smaller. A value of
+<code>null</code> or <code>0</code> uses a server-defined page size.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.PagedEnumerable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;</td>
+        <td><p>A pageable sequence of <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a> resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssetsAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssetsAsync_Google_Api_Gax_IResourceName_System_String_System_Nullable_System_Int32__Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ListAssetsAsync(IResourceName, String, Nullable&lt;Int32&gt;, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual PagedAsyncEnumerable&lt;ListAssetsResponse, Asset&gt; ListAssetsAsync(IResourceName parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
+response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.IResourceName</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. Name of the organization or project the assets belong to. Format:
+&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),
+&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or
+&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pageToken</span></td>
+        <td><p>The token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first
+page.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">pageSize</span></td>
+        <td><p>The size of page to request. The response will not be larger than this, but may be smaller. A value of
+<code>null</code> or <code>0</code> uses a server-defined page size.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.PagedAsyncEnumerable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;</td>
+        <td><p>A pageable asynchronous sequence of <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a> resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssetsAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssetsAsync_Google_Cloud_Asset_V1_ListAssetsRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ListAssetsAsync(ListAssetsRequest, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual PagedAsyncEnumerable&lt;ListAssetsResponse, Asset&gt; ListAssetsAsync(ListAssetsRequest request, CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
+response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.ListAssetsRequest.html">ListAssetsRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request object containing all of the parameters for the API call.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.PagedAsyncEnumerable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;</td>
+        <td><p>A pageable asynchronous sequence of <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a> resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssetsAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ListAssetsAsync_System_String_System_String_System_Nullable_System_Int32__Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ListAssetsAsync(String, String, Nullable&lt;Int32&gt;, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual PagedAsyncEnumerable&lt;ListAssetsResponse, Asset&gt; ListAssetsAsync(string parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
+response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>Required. Name of the organization or project the assets belong to. Format:
+&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),
+&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or
+&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pageToken</span></td>
+        <td><p>The token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first
+page.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">pageSize</span></td>
+        <td><p>The size of page to request. The response will not be larger than this, but may be smaller. A value of
+<code>null</code> or <code>0</code> uses a server-defined page size.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.PagedAsyncEnumerable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a>&gt;</td>
+        <td><p>A pageable asynchronous sequence of <a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a> resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Google_Cloud_Asset_V1_AssetServiceClient_ListFeeds_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListFeeds*"></a>
   <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_ListFeeds_Google_Cloud_Asset_V1_ListFeedsRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.ListFeeds(Google.Cloud.Asset.V1.ListFeedsRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">ListFeeds(ListFeedsRequest, CallSettings)</h3>
   <div class="codewrapper">
@@ -2292,6 +2648,102 @@ listed. It can only be using project/folder/organization number (such as
       </tr>
     </tbody>
   </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceAnalyzeIamPolicyLongrunning_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceAnalyzeIamPolicyLongrunning_System_String_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(System.String,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">PollOnceAnalyzeIamPolicyLongrunning(String, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual Operation&lt;AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest&gt; PollOnceAnalyzeIamPolicyLongrunning(string operationName, CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Poll an operation once, using an <code>operationName</code> from a previous invocation of
+<code>AnalyzeIamPolicyLongrunning</code>.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">operationName</span></td>
+        <td><p>The name of a previously invoked operation. Must not be <code>null</code> or empty.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse.html">AnalyzeIamPolicyLongrunningResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a>&gt;</td>
+        <td><p>The result of polling the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceAnalyzeIamPolicyLongrunningAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync*"></a>
+  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceAnalyzeIamPolicyLongrunningAsync_System_String_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync(System.String,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">PollOnceAnalyzeIamPolicyLongrunningAsync(String, CallSettings)</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public virtual Task&lt;Operation&lt;AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest&gt;&gt; PollOnceAnalyzeIamPolicyLongrunningAsync(string operationName, CallSettings callSettings = null)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Asynchronously poll an operation once, using an <code>operationName</code> from a previous invocation of
+<code>AnalyzeIamPolicyLongrunning</code>.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">operationName</span></td>
+        <td><p>The name of a previously invoked operation. Must not be <code>null</code> or empty.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
+        <td><span class="parametername">callSettings</span></td>
+        <td><p>If not null, applies overrides to this RPC call.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse.html">AnalyzeIamPolicyLongrunningResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a>&gt;&gt;</td>
+        <td><p>A task representing the result of polling the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceExportAssets_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportAssets*"></a>
   <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceExportAssets_System_String_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportAssets(System.String,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">PollOnceExportAssets(String, CallSettings)</h3>
   <div class="codewrapper">
@@ -2387,102 +2839,6 @@ listed. It can only be using project/folder/organization number (such as
       </tr>
     </tbody>
   </table>
-  <a id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceExportIamPolicyAnalysis_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis*"></a>
-  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceExportIamPolicyAnalysis_System_String_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis(System.String,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">PollOnceExportIamPolicyAnalysis(String, CallSettings)</h3>
-  <div class="codewrapper">
-    <pre><code class="prettyprint">public virtual Operation&lt;ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest&gt; PollOnceExportIamPolicyAnalysis(string operationName, CallSettings callSettings = null)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Poll an operation once, using an <code>operationName</code> from a previous invocation of
-<code>ExportIamPolicyAnalysis</code>.</p>
-</div>
-  <strong>Parameters</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">operationName</span></td>
-        <td><p>The name of a previously invoked operation. Must not be <code>null</code> or empty.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
-        <td><span class="parametername">callSettings</span></td>
-        <td><p>If not null, applies overrides to this RPC call.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse.html">ExportIamPolicyAnalysisResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a>&gt;</td>
-        <td><p>The result of polling the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceExportIamPolicyAnalysisAsync_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync*"></a>
-  <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_PollOnceExportIamPolicyAnalysisAsync_System_String_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync(System.String,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">PollOnceExportIamPolicyAnalysisAsync(String, CallSettings)</h3>
-  <div class="codewrapper">
-    <pre><code class="prettyprint">public virtual Task&lt;Operation&lt;ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest&gt;&gt; PollOnceExportIamPolicyAnalysisAsync(string operationName, CallSettings callSettings = null)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Asynchronously poll an operation once, using an <code>operationName</code> from a previous invocation of
-<code>ExportIamPolicyAnalysis</code>.</p>
-</div>
-  <strong>Parameters</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">operationName</span></td>
-        <td><p>The name of a previously invoked operation. Must not be <code>null</code> or empty.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Google.Api.Gax.Grpc.CallSettings</span></td>
-        <td><span class="parametername">callSettings</span></td>
-        <td><p>If not null, applies overrides to this RPC call.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">Google.LongRunning.Operation</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse.html">ExportIamPolicyAnalysisResponse</a>, <a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a>&gt;&gt;</td>
-        <td><p>A task representing the result of polling the operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Google_Cloud_Asset_V1_AssetServiceClient_SearchAllIamPolicies_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.SearchAllIamPolicies*"></a>
   <h3 id="Google_Cloud_Asset_V1_AssetServiceClient_SearchAllIamPolicies_Google_Cloud_Asset_V1_SearchAllIamPoliciesRequest_Google_Api_Gax_Grpc_CallSettings_" data-uid="Google.Cloud.Asset.V1.AssetServiceClient.SearchAllIamPolicies(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest,Google.Api.Gax.Grpc.CallSettings)" class="notranslate">SearchAllIamPolicies(SearchAllIamPoliciesRequest, CallSettings)</h3>
   <div class="codewrapper">
@@ -2559,7 +2915,7 @@ otherwise the request will be rejected.</p>
         <td><p>Required. A scope can be a project, a folder, or an organization. The search is
 limited to the IAM policies within the <code>scope</code>. The caller must be granted
 the
-<a href="http://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllIamPolicies</code></a>
+<a href="https://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllIamPolicies</code></a>
 permission on the desired scope.</p>
 <p>The allowed values are:</p>
 <ul>
@@ -2576,25 +2932,37 @@ permission on the desired scope.</p>
         <td><p>Optional. The query statement. See <a href="https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query">how to construct a
 query</a>
 for more information. If not specified or empty, it will search all the
-IAM policies within the specified <code>scope</code>.</p>
+IAM policies within the specified <code>scope</code>. Note that the query string is
+compared against each Cloud IAM policy binding, including its members,
+roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+contain the bindings that match your query. To learn more about the IAM
+policy structure, see <a href="https://cloud.google.com/iam/docs/policies#structure">IAM policy
+doc</a>.</p>
 <p>Examples:</p>
 <ul>
 <li><code>policy:amy@gmail.com</code> to find IAM policy bindings that specify user
 &amp;quot;amy@gmail.com&quot;.</li>
 <li><code>policy:roles/compute.admin</code> to find IAM policy bindings that specify
 the Compute Admin role.</li>
+<li><code>policy:comp*</code> to find IAM policy bindings that contain &quot;comp&quot; as a
+prefix of any word in the binding.</li>
 <li><code>policy.role.permissions:storage.buckets.update</code> to find IAM policy
 bindings that specify a role containing &quot;storage.buckets.update&quot;
 permission. Note that if callers don&apos;t have <code>iam.roles.get</code> access to a
 role&apos;s included permissions, policy bindings that specify this role will
 be dropped from the search results.</li>
+<li><code>policy.role.permissions:upd*</code> to find IAM policy bindings that specify a
+role containing &quot;upd&quot; as a prefix of any word in the role permission.
+Note that if callers don&apos;t have <code>iam.roles.get</code> access to a role&apos;s
+included permissions, policy bindings that specify this role will be
+dropped from the search results.</li>
 <li><code>resource:organizations/123456</code> to find IAM policy bindings
 that are set on &quot;organizations/123456&quot;.</li>
+<li><code>resource=//cloudresourcemanager.googleapis.com/projects/myproject</code> to
+find IAM policy bindings that are set on the project named &quot;myproject&quot;.</li>
 <li><code>Important</code> to find IAM policy bindings that contain &quot;Important&quot; as a
 word in any of the searchable fields (except for the included
 permissions).</li>
-<li><code>*por*</code> to find IAM policy bindings that contain &quot;por&quot; as a substring
-in any of the searchable fields (except for the included permissions).</li>
 <li><code>resource:(instance1 OR instance2) policy:amy</code> to find
 IAM policy bindings that are set on resources &quot;instance1&quot; or
 &quot;instance2&quot; and also specify user &quot;amy&quot;.</li>
@@ -2715,7 +3083,7 @@ otherwise the request will be rejected.</p>
         <td><p>Required. A scope can be a project, a folder, or an organization. The search is
 limited to the IAM policies within the <code>scope</code>. The caller must be granted
 the
-<a href="http://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllIamPolicies</code></a>
+<a href="https://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllIamPolicies</code></a>
 permission on the desired scope.</p>
 <p>The allowed values are:</p>
 <ul>
@@ -2732,25 +3100,37 @@ permission on the desired scope.</p>
         <td><p>Optional. The query statement. See <a href="https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query">how to construct a
 query</a>
 for more information. If not specified or empty, it will search all the
-IAM policies within the specified <code>scope</code>.</p>
+IAM policies within the specified <code>scope</code>. Note that the query string is
+compared against each Cloud IAM policy binding, including its members,
+roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+contain the bindings that match your query. To learn more about the IAM
+policy structure, see <a href="https://cloud.google.com/iam/docs/policies#structure">IAM policy
+doc</a>.</p>
 <p>Examples:</p>
 <ul>
 <li><code>policy:amy@gmail.com</code> to find IAM policy bindings that specify user
 &amp;quot;amy@gmail.com&quot;.</li>
 <li><code>policy:roles/compute.admin</code> to find IAM policy bindings that specify
 the Compute Admin role.</li>
+<li><code>policy:comp*</code> to find IAM policy bindings that contain &quot;comp&quot; as a
+prefix of any word in the binding.</li>
 <li><code>policy.role.permissions:storage.buckets.update</code> to find IAM policy
 bindings that specify a role containing &quot;storage.buckets.update&quot;
 permission. Note that if callers don&apos;t have <code>iam.roles.get</code> access to a
 role&apos;s included permissions, policy bindings that specify this role will
 be dropped from the search results.</li>
+<li><code>policy.role.permissions:upd*</code> to find IAM policy bindings that specify a
+role containing &quot;upd&quot; as a prefix of any word in the role permission.
+Note that if callers don&apos;t have <code>iam.roles.get</code> access to a role&apos;s
+included permissions, policy bindings that specify this role will be
+dropped from the search results.</li>
 <li><code>resource:organizations/123456</code> to find IAM policy bindings
 that are set on &quot;organizations/123456&quot;.</li>
+<li><code>resource=//cloudresourcemanager.googleapis.com/projects/myproject</code> to
+find IAM policy bindings that are set on the project named &quot;myproject&quot;.</li>
 <li><code>Important</code> to find IAM policy bindings that contain &quot;Important&quot; as a
 word in any of the searchable fields (except for the included
 permissions).</li>
-<li><code>*por*</code> to find IAM policy bindings that contain &quot;por&quot; as a substring
-in any of the searchable fields (except for the included permissions).</li>
 <li><code>resource:(instance1 OR instance2) policy:amy</code> to find
 IAM policy bindings that are set on resources &quot;instance1&quot; or
 &quot;instance2&quot; and also specify user &quot;amy&quot;.</li>
@@ -2870,7 +3250,7 @@ otherwise the request will be rejected.</p>
         <td><span class="parametername">scope</span></td>
         <td><p>Required. A scope can be a project, a folder, or an organization. The search is
 limited to the resources within the <code>scope</code>. The caller must be granted the
-<a href="http://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllResources</code></a>
+<a href="https://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllResources</code></a>
 permission on the desired scope.</p>
 <p>The allowed values are:</p>
 <ul>
@@ -2884,36 +3264,41 @@ permission on the desired scope.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">query</span></td>
-        <td><p>Optional. The query statement. See <a href="http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query">how to construct a
+        <td><p>Optional. The query statement. See <a href="https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query">how to construct a
 query</a>
 for more information. If not specified or empty, it will search all the
-resources within the specified <code>scope</code>. Note that the query string is
-compared against each Cloud IAM policy binding, including its members,
-roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-contain the bindings that match your query. To learn more about the IAM
-policy structure, see <a href="https://cloud.google.com/iam/docs/policies#structure">IAM policy
-doc</a>.</p>
+resources within the specified <code>scope</code>.</p>
 <p>Examples:</p>
 <ul>
 <li><code>name:Important</code> to find Cloud resources whose name contains
 &quot;Important&quot; as a word.</li>
+<li><code>name=Important</code> to find the Cloud resource whose name is exactly
+&quot;Important&quot;.</li>
 <li><code>displayName:Impor*</code> to find Cloud resources whose display name
-contains &quot;Impor&quot; as a prefix.</li>
-<li><code>description:*por*</code> to find Cloud resources whose description
-contains &quot;por&quot; as a substring.</li>
-<li><code>location:us-west*</code> to find Cloud resources whose location is
-prefixed with &quot;us-west&quot;.</li>
+contains &quot;Impor&quot; as a prefix of any word in the field.</li>
+<li><code>location:us-west*</code> to find Cloud resources whose location contains both
+&quot;us&quot; and &quot;west&quot; as prefixes.</li>
 <li><code>labels:prod</code> to find Cloud resources whose labels contain &quot;prod&quot; as
 a key or value.</li>
 <li><code>labels.env:prod</code> to find Cloud resources that have a label &quot;env&quot;
 and its value is &quot;prod&quot;.</li>
 <li><code>labels.env:*</code> to find Cloud resources that have a label &quot;env&quot;.</li>
+<li><code>kmsKey:key</code> to find Cloud resources encrypted with a customer-managed
+encryption key whose name contains the word &quot;key&quot;.</li>
+<li><code>state:ACTIVE</code> to find Cloud resources whose state contains &quot;ACTIVE&quot; as a
+word.</li>
+<li><code>NOT state:ACTIVE</code> to find {{gcp_name}} resources whose state
+doesn&apos;t contain &quot;ACTIVE&quot; as a word.</li>
+<li><code>createTime&amp;amp;lt;1609459200</code> to find Cloud resources that were created before
+&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of
+&quot;2021-01-01 00:00:00 UTC&quot; in seconds.</li>
+<li><code>updateTime&amp;amp;gt;1609459200</code> to find Cloud resources that were updated after
+&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of
+&quot;2021-01-01 00:00:00 UTC&quot; in seconds.</li>
 <li><code>Important</code> to find Cloud resources that contain &quot;Important&quot; as a word
 in any of the searchable fields.</li>
-<li><code>Impor*</code> to find Cloud resources that contain &quot;Impor&quot; as a prefix
-in any of the searchable fields.</li>
-<li><code>*por*</code> to find Cloud resources that contain &quot;por&quot; as a substring in
-any of the searchable fields.</li>
+<li><code>Impor*</code> to find Cloud resources that contain &quot;Impor&quot; as a prefix of any
+word in any of the searchable fields.</li>
 <li><code>Important location:(us-west1 OR global)</code> to find Cloud
 resources that contain &quot;Important&quot; as a word in any of the searchable
 fields and are also located in the &quot;us-west1&quot; region or the &quot;global&quot;
@@ -2927,6 +3312,16 @@ location.</li>
         <td><p>Optional. A list of asset types that this request searches for. If empty, it will
 search all the <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types">searchable asset
 types</a>.</p>
+<p>Regular expressions are also supported. For example:</p>
+<ul>
+<li>&quot;compute.googleapis.com.*&quot; snapshots resources whose asset type starts
+with &quot;compute.googleapis.com&quot;.</li>
+<li>&quot;.*Instance&quot; snapshots resources whose asset type ends with &quot;Instance&quot;.</li>
+<li>&quot;.<em>Instance.</em>&quot; snapshots resources whose asset type contains &quot;Instance&quot;.</li>
+</ul>
+<p>See <a href="https://github.com/google/re2/wiki/Syntax">RE2</a> for all supported
+regular expression syntax. If the regular expression does not match any
+supported asset type, an INVALID_ARGUMENT error will be returned.</p>
 </td>
       </tr>
       <tr>
@@ -3042,7 +3437,7 @@ otherwise the request will be rejected.</p>
         <td><span class="parametername">scope</span></td>
         <td><p>Required. A scope can be a project, a folder, or an organization. The search is
 limited to the resources within the <code>scope</code>. The caller must be granted the
-<a href="http://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllResources</code></a>
+<a href="https://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllResources</code></a>
 permission on the desired scope.</p>
 <p>The allowed values are:</p>
 <ul>
@@ -3056,36 +3451,41 @@ permission on the desired scope.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">query</span></td>
-        <td><p>Optional. The query statement. See <a href="http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query">how to construct a
+        <td><p>Optional. The query statement. See <a href="https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query">how to construct a
 query</a>
 for more information. If not specified or empty, it will search all the
-resources within the specified <code>scope</code>. Note that the query string is
-compared against each Cloud IAM policy binding, including its members,
-roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-contain the bindings that match your query. To learn more about the IAM
-policy structure, see <a href="https://cloud.google.com/iam/docs/policies#structure">IAM policy
-doc</a>.</p>
+resources within the specified <code>scope</code>.</p>
 <p>Examples:</p>
 <ul>
 <li><code>name:Important</code> to find Cloud resources whose name contains
 &quot;Important&quot; as a word.</li>
+<li><code>name=Important</code> to find the Cloud resource whose name is exactly
+&quot;Important&quot;.</li>
 <li><code>displayName:Impor*</code> to find Cloud resources whose display name
-contains &quot;Impor&quot; as a prefix.</li>
-<li><code>description:*por*</code> to find Cloud resources whose description
-contains &quot;por&quot; as a substring.</li>
-<li><code>location:us-west*</code> to find Cloud resources whose location is
-prefixed with &quot;us-west&quot;.</li>
+contains &quot;Impor&quot; as a prefix of any word in the field.</li>
+<li><code>location:us-west*</code> to find Cloud resources whose location contains both
+&quot;us&quot; and &quot;west&quot; as prefixes.</li>
 <li><code>labels:prod</code> to find Cloud resources whose labels contain &quot;prod&quot; as
 a key or value.</li>
 <li><code>labels.env:prod</code> to find Cloud resources that have a label &quot;env&quot;
 and its value is &quot;prod&quot;.</li>
 <li><code>labels.env:*</code> to find Cloud resources that have a label &quot;env&quot;.</li>
+<li><code>kmsKey:key</code> to find Cloud resources encrypted with a customer-managed
+encryption key whose name contains the word &quot;key&quot;.</li>
+<li><code>state:ACTIVE</code> to find Cloud resources whose state contains &quot;ACTIVE&quot; as a
+word.</li>
+<li><code>NOT state:ACTIVE</code> to find {{gcp_name}} resources whose state
+doesn&apos;t contain &quot;ACTIVE&quot; as a word.</li>
+<li><code>createTime&amp;amp;lt;1609459200</code> to find Cloud resources that were created before
+&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of
+&quot;2021-01-01 00:00:00 UTC&quot; in seconds.</li>
+<li><code>updateTime&amp;amp;gt;1609459200</code> to find Cloud resources that were updated after
+&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of
+&quot;2021-01-01 00:00:00 UTC&quot; in seconds.</li>
 <li><code>Important</code> to find Cloud resources that contain &quot;Important&quot; as a word
 in any of the searchable fields.</li>
-<li><code>Impor*</code> to find Cloud resources that contain &quot;Impor&quot; as a prefix
-in any of the searchable fields.</li>
-<li><code>*por*</code> to find Cloud resources that contain &quot;por&quot; as a substring in
-any of the searchable fields.</li>
+<li><code>Impor*</code> to find Cloud resources that contain &quot;Impor&quot; as a prefix of any
+word in any of the searchable fields.</li>
 <li><code>Important location:(us-west1 OR global)</code> to find Cloud
 resources that contain &quot;Important&quot; as a word in any of the searchable
 fields and are also located in the &quot;us-west1&quot; region or the &quot;global&quot;
@@ -3099,6 +3499,16 @@ location.</li>
         <td><p>Optional. A list of asset types that this request searches for. If empty, it will
 search all the <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types">searchable asset
 types</a>.</p>
+<p>Regular expressions are also supported. For example:</p>
+<ul>
+<li>&quot;compute.googleapis.com.*&quot; snapshots resources whose asset type starts
+with &quot;compute.googleapis.com&quot;.</li>
+<li>&quot;.*Instance&quot; snapshots resources whose asset type ends with &quot;Instance&quot;.</li>
+<li>&quot;.<em>Instance.</em>&quot; snapshots resources whose asset type contains &quot;Instance&quot;.</li>
+</ul>
+<p>See <a href="https://github.com/google/re2/wiki/Syntax">RE2</a> for all supported
+regular expression syntax. If the regular expression does not match any
+supported asset type, an INVALID_ARGUMENT error will be returned.</p>
 </td>
       </tr>
       <tr>

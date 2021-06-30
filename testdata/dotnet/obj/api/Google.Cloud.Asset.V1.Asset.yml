@@ -15,6 +15,7 @@ items:
   - Google.Cloud.Asset.V1.Asset.IamPolicy
   - Google.Cloud.Asset.V1.Asset.Name
   - Google.Cloud.Asset.V1.Asset.OrgPolicy
+  - Google.Cloud.Asset.V1.Asset.OsInventory
   - Google.Cloud.Asset.V1.Asset.Resource
   - Google.Cloud.Asset.V1.Asset.ResourceName
   - Google.Cloud.Asset.V1.Asset.ServicePerimeter
@@ -29,7 +30,7 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetsResourceNames.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Asset
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetsResourceNames.g.cs
@@ -37,25 +38,26 @@ items:
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nAn asset in Google Cloud. An asset can be any resource in the Google Cloud\n[resource\nhierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),\na resource outside the Google Cloud resource hierarchy (such as Google\nKubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).\nSee [Supported asset\ntypes](https://cloud.google.com/asset-inventory/docs/supported-asset-types)\nfor more information.\n"
+  summary: "\nAn asset in Google Cloud. An asset can be any resource in the Google Cloud\n[resource\nhierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),\na resource outside the Google Cloud resource hierarchy (such as Google\nKubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy),\nor a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship).\nSee [Supported asset\ntypes](https://cloud.google.com/asset-inventory/docs/supported-asset-types)\nfor more information.\n"
   example: []
   syntax:
-    content: 'public sealed class Asset : IMessage<Asset>, IMessage, IEquatable<Asset>, IDeepCloneable<Asset>'
+    content: 'public sealed class Asset : IMessage<Asset>, IEquatable<Asset>, IDeepCloneable<Asset>, IBufferMessage, IMessage'
     content.vb: >-
       Public NotInheritable Class Asset
-          Implements IMessage(Of Asset), IMessage, IEquatable(Of Asset), IDeepCloneable(Of Asset)
+          Implements IMessage(Of Asset), IEquatable(Of Asset), IDeepCloneable(Of Asset), IBufferMessage, IMessage
   inheritance:
   - System.Object
   implements:
   - Google.Protobuf.IMessage{Google.Cloud.Asset.V1.Asset}
-  - Google.Protobuf.IMessage
   - System.IEquatable{Google.Cloud.Asset.V1.Asset}
   - Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.Asset}
+  - Google.Protobuf.IBufferMessage
+  - Google.Protobuf.IMessage
   inheritedMembers:
-  - System.Object.ToString
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - sealed
@@ -77,12 +79,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 652
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 813
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -107,12 +109,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 659
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 820
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -140,12 +142,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: UpdateTime
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 695
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 857
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -177,12 +179,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Name
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 714
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 876
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -214,12 +216,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AssetType
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 732
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 894
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -251,12 +253,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Resource
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 746
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 908
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -288,12 +290,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: IamPolicy
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 768
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 930
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -325,12 +327,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: OrgPolicy
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 787
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 949
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -362,12 +364,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AccessPolicy
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 798
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 960
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -399,12 +401,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AccessLevel
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 813
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 975
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -436,12 +438,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ServicePerimeter
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 828
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 990
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -454,6 +456,43 @@ items:
       type: Google.Identity.AccessContextManager.V1.ServicePerimeter
     content.vb: Public Property ServicePerimeter As ServicePerimeter
   overload: Google.Cloud.Asset.V1.Asset.ServicePerimeter*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Cloud.Asset.V1.Asset.OsInventory
+  commentId: P:Google.Cloud.Asset.V1.Asset.OsInventory
+  id: OsInventory
+  parent: Google.Cloud.Asset.V1.Asset
+  langs:
+  - csharp
+  - vb
+  name: OsInventory
+  nameWithType: Asset.OsInventory
+  fullName: Google.Cloud.Asset.V1.Asset.OsInventory
+  type: Property
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: OsInventory
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 1007
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nA representation of runtime OS Inventory information. See [this\ntopic](https://cloud.google.com/compute/docs/instances/os-inventory-management)\nfor more information.\n"
+  example: []
+  syntax:
+    content: public Inventory OsInventory { get; set; }
+    parameters: []
+    return:
+      type: Google.Cloud.OsConfig.V1.Inventory
+    content.vb: Public Property OsInventory As Inventory
+  overload: Google.Cloud.Asset.V1.Asset.OsInventory*
   modifiers.csharp:
   - public
   - get
@@ -473,12 +512,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Ancestors
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 852
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 1030
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -510,12 +549,12 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AccessContextPolicyCase
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.cs
-    startLine: 866
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/Assets.g.cs
+    startLine: 1044
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -546,7 +585,7 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetsResourceNames.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ResourceName
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetsResourceNames.g.cs
@@ -624,13 +663,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Protobuf.IMessage
-  commentId: T:Google.Protobuf.IMessage
-  parent: Google.Protobuf
-  isExternal: true
-  name: IMessage
-  nameWithType: IMessage
-  fullName: Google.Protobuf.IMessage
 - uid: System.IEquatable{Google.Cloud.Asset.V1.Asset}
   commentId: T:System.IEquatable{Google.Cloud.Asset.V1.Asset}
   parent: System
@@ -715,37 +747,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
+- uid: Google.Protobuf.IBufferMessage
+  commentId: T:Google.Protobuf.IBufferMessage
+  parent: Google.Protobuf
   isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
+  name: IBufferMessage
+  nameWithType: IBufferMessage
+  fullName: Google.Protobuf.IBufferMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
@@ -832,6 +847,37 @@ references:
     name: MemberwiseClone
     nameWithType: Object.MemberwiseClone
     fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
     isExternal: true
   - name: (
     nameWithType: (
@@ -988,8 +1034,8 @@ references:
   commentId: T:Google.Protobuf.WellKnownTypes.Timestamp
   parent: Google.Protobuf.WellKnownTypes
   isExternal: true
-  name: Protobuf.WellKnownTypes.Timestamp
-  nameWithType: Protobuf.WellKnownTypes.Timestamp
+  name: Timestamp
+  nameWithType: Timestamp
   fullName: Google.Protobuf.WellKnownTypes.Timestamp
 - uid: Google.Protobuf.WellKnownTypes
   commentId: N:Google.Protobuf.WellKnownTypes
@@ -1033,11 +1079,13 @@ references:
 - uid: Google.Cloud.Iam.V1.Policy
   commentId: T:Google.Cloud.Iam.V1.Policy
   parent: Google.Cloud.Iam.V1
+  isExternal: true
   name: Policy
   nameWithType: Policy
   fullName: Google.Cloud.Iam.V1.Policy
 - uid: Google.Cloud.Iam.V1
   commentId: N:Google.Cloud.Iam.V1
+  isExternal: true
   name: Google.Cloud.Iam.V1
   nameWithType: Google.Cloud.Iam.V1
   fullName: Google.Cloud.Iam.V1
@@ -1143,11 +1191,13 @@ references:
 - uid: Google.Identity.AccessContextManager.V1.AccessPolicy
   commentId: T:Google.Identity.AccessContextManager.V1.AccessPolicy
   parent: Google.Identity.AccessContextManager.V1
+  isExternal: true
   name: AccessPolicy
   nameWithType: AccessPolicy
   fullName: Google.Identity.AccessContextManager.V1.AccessPolicy
 - uid: Google.Identity.AccessContextManager.V1
   commentId: N:Google.Identity.AccessContextManager.V1
+  isExternal: true
   name: Google.Identity.AccessContextManager.V1
   nameWithType: Google.Identity.AccessContextManager.V1
   fullName: Google.Identity.AccessContextManager.V1
@@ -1159,6 +1209,7 @@ references:
 - uid: Google.Identity.AccessContextManager.V1.AccessLevel
   commentId: T:Google.Identity.AccessContextManager.V1.AccessLevel
   parent: Google.Identity.AccessContextManager.V1
+  isExternal: true
   name: AccessLevel
   nameWithType: AccessLevel
   fullName: Google.Identity.AccessContextManager.V1.AccessLevel
@@ -1170,9 +1221,28 @@ references:
 - uid: Google.Identity.AccessContextManager.V1.ServicePerimeter
   commentId: T:Google.Identity.AccessContextManager.V1.ServicePerimeter
   parent: Google.Identity.AccessContextManager.V1
+  isExternal: true
   name: ServicePerimeter
   nameWithType: ServicePerimeter
   fullName: Google.Identity.AccessContextManager.V1.ServicePerimeter
+- uid: Google.Cloud.Asset.V1.Asset.OsInventory*
+  commentId: Overload:Google.Cloud.Asset.V1.Asset.OsInventory
+  name: OsInventory
+  nameWithType: Asset.OsInventory
+  fullName: Google.Cloud.Asset.V1.Asset.OsInventory
+- uid: Google.Cloud.OsConfig.V1.Inventory
+  commentId: T:Google.Cloud.OsConfig.V1.Inventory
+  parent: Google.Cloud.OsConfig.V1
+  isExternal: true
+  name: Inventory
+  nameWithType: Inventory
+  fullName: Google.Cloud.OsConfig.V1.Inventory
+- uid: Google.Cloud.OsConfig.V1
+  commentId: N:Google.Cloud.OsConfig.V1
+  isExternal: true
+  name: Google.Cloud.OsConfig.V1
+  nameWithType: Google.Cloud.OsConfig.V1
+  fullName: Google.Cloud.OsConfig.V1
 - uid: Google.Cloud.Asset.V1.Asset.Ancestors*
   commentId: Overload:Google.Cloud.Asset.V1.Asset.Ancestors
   name: Ancestors
