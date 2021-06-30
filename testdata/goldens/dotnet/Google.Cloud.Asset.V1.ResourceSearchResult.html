@@ -72,12 +72,14 @@
       </tr>
     </thead>
     <tbody>
+    {% verbatim %}
       <tr>
         <td><a class="xref" href="Google.Cloud.Asset.V1.ResourceSearchResult.html">ResourceSearchResult</a></td>
         <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
     </tbody>
+    {% endverbatim %}
   </table>
   <h2 id="properties">Properties
   </h2>
@@ -86,6 +88,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public Struct AdditionalAttributes { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The additional searchable attributes of this resource. The attributes may
 vary from one resource type to another. Examples: <code>projectId</code> for Project,
 <code>dnsName</code> for DNS ManagedZone. This field contains a subset of the resource
@@ -105,6 +108,7 @@ version.</p>
 <code>foobar</code>.</li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -125,12 +129,14 @@ version.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string AssetType { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The type of this resource. Example: <code>compute.googleapis.com/Disk</code>.</p>
 <p>To search against the <code>asset_type</code>:</p>
 <ul>
 <li>specify the <code>asset_type</code> field in your search request.</li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -151,6 +157,7 @@ version.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public Timestamp CreateTime { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The create timestamp of this resource, at which the resource was created.
 The granularity is in seconds. Timestamp.nanos will always be 0. This field
 is available only when the resource&apos;s proto contains it.</p>
@@ -163,6 +170,7 @@ is available only when the resource&apos;s proto contains it.</p>
 &amp;quot;2021-01-01T00:00:00&amp;quot;</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -183,6 +191,7 @@ is available only when the resource&apos;s proto contains it.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Description { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>One or more paragraphs of text description of this resource. Maximum length
 could be up to 1M bytes. This field is available only when the resource&apos;s
 proto contains it.</p>
@@ -192,6 +201,7 @@ proto contains it.</p>
 <li>use a free text query. Example: <code>&amp;quot;important instance&amp;quot;</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -212,6 +222,7 @@ proto contains it.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string DisplayName { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The display name of this resource. This field is available only when the
 resource&apos;s proto contains it.</p>
 <p>To search against the <code>display_name</code>:</p>
@@ -220,6 +231,7 @@ resource&apos;s proto contains it.</p>
 <li>use a free text query. Example: <code>&amp;quot;My Instance&amp;quot;</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -240,6 +252,7 @@ resource&apos;s proto contains it.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; Folders { get; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The folder(s) that this resource belongs to, in the form of
 folders/{FOLDER_NUMBER}. This field is available when the resource
 belongs to one or more folders.</p>
@@ -250,6 +263,7 @@ belongs to one or more folders.</p>
 <li>specify the <code>scope</code> field as this folder in your search request.</li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -270,6 +284,7 @@ belongs to one or more folders.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string KmsKey { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The Cloud KMS
 <a href="https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en">CryptoKey</a>
 name or
@@ -281,6 +296,7 @@ name. This field is available only when the resource&apos;s proto contains it.</
 <li>use a free text query. Example: <code>key</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -301,6 +317,7 @@ name. This field is available only when the resource&apos;s proto contains it.</
   <div class="codewrapper">
     <pre><code class="prettyprint">public MapField&lt;string, string&gt; Labels { get; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Labels associated with this resource. See <a href="https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources">Labelling and grouping GCP
 resources</a>
 for more information. This field is available only when the resource&apos;s
@@ -314,6 +331,7 @@ proto contains it.</p>
 <li>use a free text query. Example: <code>prod</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -334,6 +352,7 @@ proto contains it.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Location { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Location can be <code>global</code>, regional like <code>us-east1</code>, or zonal like
 <code>us-west1-b</code>. This field is available only when the resource&apos;s proto
 contains it.</p>
@@ -343,6 +362,7 @@ contains it.</p>
 <li>use a free text query. Example: <code>us-west*</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -363,6 +383,7 @@ contains it.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Name { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The full resource name of this resource. Example:
 <code>//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1</code>.
 See <a href="https://cloud.google.com/asset-inventory/docs/resource-name-format">Cloud Asset Inventory Resource Name
@@ -374,6 +395,7 @@ for more information.</p>
 <li>use a free text query. Example: <code>instance1</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -394,6 +416,7 @@ for more information.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; NetworkTags { get; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Network tags associated with this resource. Like labels, network tags are a
 type of annotations used to group GCP resources. See <a href="https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources">Labelling GCP
 resources</a>
@@ -405,6 +428,7 @@ proto contains it.</p>
 <li>use a free text query. Example: <code>internal</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -425,6 +449,7 @@ proto contains it.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Organization { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The organization that this resource belongs to, in the form of
 organizations/{ORGANIZATION_NUMBER}. This field is available when the
 resource belongs to an organization.</p>
@@ -435,6 +460,7 @@ resource belongs to an organization.</p>
 <li>specify the <code>scope</code> field as this organization in your search request.</li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -455,6 +481,7 @@ resource belongs to an organization.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string ParentAssetType { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The type of this resource&apos;s immediate parent, if there is one.</p>
 <p>To search against the <code>parent_asset_type</code>:</p>
 <ul>
@@ -464,6 +491,7 @@ resource belongs to an organization.</p>
 <code>cloudresourcemanager.googleapis.com/Project</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -484,6 +512,7 @@ resource belongs to an organization.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string ParentFullResourceName { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The full resource name of this resource&apos;s parent, if it has one.
 To search against the <code>parent_full_resource_name</code>:</p>
 <ul>
@@ -493,6 +522,7 @@ To search against the <code>parent_full_resource_name</code>:</p>
 <code>project-name</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -513,6 +543,7 @@ To search against the <code>parent_full_resource_name</code>:</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Project { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The project that this resource belongs to, in the form of
 projects/{PROJECT_NUMBER}. This field is available when the resource
 belongs to a project.</p>
@@ -523,6 +554,7 @@ belongs to a project.</p>
 <li>specify the <code>scope</code> field as this project in your search request.</li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -543,6 +575,7 @@ belongs to a project.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string State { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The state of this resource. Different resources types have different state
 definitions that are mapped from various fields of different resource
 types. This field is available only when the resource&apos;s proto contains it.</p>
@@ -562,6 +595,7 @@ Reference</a>.</p>
 <li>use a free text query. Example: <code>RUNNING</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -582,6 +616,7 @@ Reference</a>.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public Timestamp UpdateTime { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The last update timestamp of this resource, at which the resource was last
 modified or deleted. The granularity is in seconds. Timestamp.nanos will
 always be 0. This field is available only when the resource&apos;s proto
@@ -595,6 +630,7 @@ contains it.</p>
 &amp;quot;2021-01-01T00:00:00&amp;quot;</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>

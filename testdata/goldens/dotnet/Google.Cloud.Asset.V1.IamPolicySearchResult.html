@@ -72,12 +72,14 @@
       </tr>
     </thead>
     <tbody>
+    {% verbatim %}
       <tr>
         <td><a class="xref" href="Google.Cloud.Asset.V1.IamPolicySearchResult.html">IamPolicySearchResult</a></td>
         <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
     </tbody>
+    {% endverbatim %}
   </table>
   <h2 id="properties">Properties
   </h2>
@@ -86,9 +88,11 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public IamPolicySearchResult.Types.Explanation Explanation { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Explanation about the IAM policy search result. It contains additional
 information to explain why the search result matches the query.</p>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -109,6 +113,7 @@ information to explain why the search result matches the query.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public Policy Policy { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The IAM policy directly set on the given resource. Note that the original
 IAM policy can contain multiple bindings. This only contains the bindings
 that match the given query. For queries that don&apos;t contain a constrain on
@@ -124,6 +129,7 @@ policies (e.g., an empty query), this contains all the bindings.</p>
 <code>policy.role.permissions:compute.instances.create</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -144,6 +150,7 @@ policies (e.g., an empty query), this contains all the bindings.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Project { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The project that the associated GCP resource belongs to, in the form of
 projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
 instance, Cloud Storage bucket), the project field will indicate the
@@ -154,6 +161,7 @@ orgnization, this field will be empty.</p>
 <li>specify the <code>scope</code> field as this project in your search request.</li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -174,6 +182,7 @@ orgnization, this field will be empty.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Resource { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>The full resource name of the resource associated with this IAM policy.
 Example:
 <code>//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1</code>.
@@ -185,6 +194,7 @@ for more information.</p>
 <li>use a field query. Example: <code>resource:organizations/123</code></li>
 </ul>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>

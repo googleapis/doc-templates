@@ -72,12 +72,14 @@
       </tr>
     </thead>
     <tbody>
+    {% verbatim %}
       <tr>
         <td><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.html">IamPolicyAnalysisQuery.Types.Options</a></td>
         <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
     </tbody>
+    {% endverbatim %}
   </table>
   <h2 id="properties">Properties
   </h2>
@@ -86,6 +88,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool AnalyzeServiceAccountImpersonation { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the response will include access analysis from identities to
 resources via service account impersonation. This is a very expensive
 operation, because many derived queries will be executed. We highly
@@ -107,6 +110,7 @@ F. And those advanced analysis results will be included in
 [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].</p>
 <p>Default is false.</p>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -127,6 +131,7 @@ F. And those advanced analysis results will be included in
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool ExpandGroups { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the identities section of the result will expand any
 Google groups appearing in an IAM policy binding.</p>
 <p>If [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the
@@ -134,6 +139,7 @@ identity in the result will be determined by the selector, and this flag
 is not allowed to set.</p>
 <p>Default is false.</p>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -154,6 +160,7 @@ is not allowed to set.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool ExpandResources { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not
 specified, the resource section of the result will expand any resource
 attached to an IAM policy to include resources lower in the resource
@@ -172,6 +179,7 @@ a GCP project with this option enabled, the results will include all
 users who have permission P on that project or any lower resource.</p>
 <p>Default is false.</p>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -192,6 +200,7 @@ users who have permission P on that project or any lower resource.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool ExpandRoles { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the access section of result will expand any roles
 appearing in IAM policy bindings to include their permissions.</p>
 <p>If [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access
@@ -199,6 +208,7 @@ section of the result will be determined by the selector, and this flag
 is not allowed to set.</p>
 <p>Default is false.</p>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -219,10 +229,12 @@ is not allowed to set.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool OutputGroupEdges { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the result will output group identity edges, starting
 from the binding&apos;s group members, to any expanded identities.
 Default is false.</p>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -243,10 +255,12 @@ Default is false.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool OutputResourceEdges { get; set; }</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the result will output resource edges, starting
 from the policy attached resource, to any expanded resources.
 Default is false.</p>
 </div>
+  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
