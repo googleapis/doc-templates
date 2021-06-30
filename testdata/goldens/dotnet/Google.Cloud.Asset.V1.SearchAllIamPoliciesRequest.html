@@ -13,7 +13,7 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class SearchAllIamPoliciesRequest : IMessage&lt;SearchAllIamPoliciesRequest&gt;, IMessage, IEquatable&lt;SearchAllIamPoliciesRequest&gt;, IDeepCloneable&lt;SearchAllIamPoliciesRequest&gt;, IPageRequest</code></pre>
+    <pre><code class="prettyprint">public sealed class SearchAllIamPoliciesRequest : IMessage&lt;SearchAllIamPoliciesRequest&gt;, IEquatable&lt;SearchAllIamPoliciesRequest&gt;, IDeepCloneable&lt;SearchAllIamPoliciesRequest&gt;, IBufferMessage, IMessage, IPageRequest</code></pre>
   </div>
   <div class="markdown level0 summary"><p>Search all IAM policies request.</p>
 </div>
@@ -25,16 +25,14 @@
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest.html">SearchAllIamPoliciesRequest</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest.html">SearchAllIamPoliciesRequest</a>&gt;,</span>
     <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest.html">SearchAllIamPoliciesRequest</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">Google.Api.Gax.Grpc.IPageRequest</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -43,6 +41,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -139,25 +140,37 @@ identical to those in the previous call.</p>
   <div class="markdown level1 summary"><p>Optional. The query statement. See <a href="https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query">how to construct a
 query</a>
 for more information. If not specified or empty, it will search all the
-IAM policies within the specified <code>scope</code>.</p>
+IAM policies within the specified <code>scope</code>. Note that the query string is
+compared against each Cloud IAM policy binding, including its members,
+roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
+contain the bindings that match your query. To learn more about the IAM
+policy structure, see <a href="https://cloud.google.com/iam/docs/policies#structure">IAM policy
+doc</a>.</p>
 <p>Examples:</p>
 <ul>
 <li><code>policy:amy@gmail.com</code> to find IAM policy bindings that specify user
 &amp;quot;amy@gmail.com&quot;.</li>
 <li><code>policy:roles/compute.admin</code> to find IAM policy bindings that specify
 the Compute Admin role.</li>
+<li><code>policy:comp*</code> to find IAM policy bindings that contain &quot;comp&quot; as a
+prefix of any word in the binding.</li>
 <li><code>policy.role.permissions:storage.buckets.update</code> to find IAM policy
 bindings that specify a role containing &quot;storage.buckets.update&quot;
 permission. Note that if callers don&apos;t have <code>iam.roles.get</code> access to a
 role&apos;s included permissions, policy bindings that specify this role will
 be dropped from the search results.</li>
+<li><code>policy.role.permissions:upd*</code> to find IAM policy bindings that specify a
+role containing &quot;upd&quot; as a prefix of any word in the role permission.
+Note that if callers don&apos;t have <code>iam.roles.get</code> access to a role&apos;s
+included permissions, policy bindings that specify this role will be
+dropped from the search results.</li>
 <li><code>resource:organizations/123456</code> to find IAM policy bindings
 that are set on &quot;organizations/123456&quot;.</li>
+<li><code>resource=//cloudresourcemanager.googleapis.com/projects/myproject</code> to
+find IAM policy bindings that are set on the project named &quot;myproject&quot;.</li>
 <li><code>Important</code> to find IAM policy bindings that contain &quot;Important&quot; as a
 word in any of the searchable fields (except for the included
 permissions).</li>
-<li><code>*por*</code> to find IAM policy bindings that contain &quot;por&quot; as a substring
-in any of the searchable fields (except for the included permissions).</li>
 <li><code>resource:(instance1 OR instance2) policy:amy</code> to find
 IAM policy bindings that are set on resources &quot;instance1&quot; or
 &quot;instance2&quot; and also specify user &quot;amy&quot;.</li>
@@ -186,7 +199,7 @@ IAM policy bindings that are set on resources &quot;instance1&quot; or
   <div class="markdown level1 summary"><p>Required. A scope can be a project, a folder, or an organization. The search is
 limited to the IAM policies within the <code>scope</code>. The caller must be granted
 the
-<a href="http://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllIamPolicies</code></a>
+<a href="https://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllIamPolicies</code></a>
 permission on the desired scope.</p>
 <p>The allowed values are:</p>
 <ul>
@@ -216,13 +229,16 @@ permission on the desired scope.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
   <div>
       <span class="xref">Google.Api.Gax.Grpc.IPageRequest</span>

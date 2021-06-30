@@ -13,7 +13,7 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class BigQueryDestination : IMessage&lt;BigQueryDestination&gt;, IMessage, IEquatable&lt;BigQueryDestination&gt;, IDeepCloneable&lt;BigQueryDestination&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class BigQueryDestination : IMessage&lt;BigQueryDestination&gt;, IEquatable&lt;BigQueryDestination&gt;, IDeepCloneable&lt;BigQueryDestination&gt;, IBufferMessage, IMessage</code></pre>
   </div>
   <div class="markdown level0 summary"><p>A BigQuery destination for exporting assets to.</p>
 </div>
@@ -25,15 +25,13 @@
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.BigQueryDestination.html">BigQueryDestination</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.BigQueryDestination.html">BigQueryDestination</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.BigQueryDestination.html">BigQueryDestination</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.BigQueryDestination.html">BigQueryDestination</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -42,6 +40,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -130,6 +131,87 @@ call returns an INVALID_ARGUMEMT error.</p>
       </tr>
     </tbody>
   </table>
+  <a id="Google_Cloud_Asset_V1_BigQueryDestination_PartitionSpec_" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.PartitionSpec*"></a>
+  <h3 id="Google_Cloud_Asset_V1_BigQueryDestination_PartitionSpec" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.PartitionSpec" class="notranslate">PartitionSpec</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public PartitionSpec PartitionSpec { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>[partition_spec] determines whether to export to partitioned table(s) and
+how to partition the data.</p>
+<p>If [partition_spec] is unset or [partition_spec.partition_key] is unset or
+<code>PARTITION_KEY_UNSPECIFIED</code>, the snapshot results will be exported to
+non-partitioned table(s). [force] will decide whether to overwrite existing
+table(s).</p>
+<p>If [partition_spec] is specified. First, the snapshot results will be
+written to partitioned table(s) with two additional timestamp columns,
+readTime and requestTime, one of which will be the partition key. Secondly,
+in the case when any destination table already exists, it will first try to
+update existing table&apos;s schema as necessary by appending additional
+columns. Then, if [force] is <code>TRUE</code>, the corresponding partition will be
+overwritten by the snapshot results (data in different partitions will
+remain intact); if [force] is unset or <code>FALSE</code>, it will append the data. An
+error will be returned if the schema update or data appension fails.</p>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.PartitionSpec.html">PartitionSpec</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_BigQueryDestination_SeparateTablesPerAssetType_" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.SeparateTablesPerAssetType*"></a>
+  <h3 id="Google_Cloud_Asset_V1_BigQueryDestination_SeparateTablesPerAssetType" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.SeparateTablesPerAssetType" class="notranslate">SeparateTablesPerAssetType</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public bool SeparateTablesPerAssetType { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>If this flag is <code>TRUE</code>, the snapshot results will be written to one or
+multiple tables, each of which contains results of one asset type. The
+[force] and [partition_spec] fields will apply to each of them.</p>
+<p>Field [table] will be concatenated with &quot;<em>&quot; and the asset type names (see
+<a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types">https://cloud.google.com/asset-inventory/docs/supported-asset-types</a> for
+supported asset types) to construct per-asset-type table names, in which
+all non-alphanumeric characters like &quot;.&quot; and &quot;/&quot; will be substituted by
+&quot;</em>&quot;. Example: if field [table] is &quot;mytable&quot; and snapshot results
+contain &quot;storage.googleapis.com/Bucket&quot; assets, the corresponding table
+name will be &quot;mytable_storage_googleapis_com_Bucket&quot;. If any of these
+tables does not exist, a new table with the concatenated name will be
+created.</p>
+<p>When [content_type] in the ExportAssetsRequest is <code>RESOURCE</code>, the schema of
+each table will include RECORD-type columns mapped to the nested fields in
+the Asset.resource.data field of that asset type (up to the 15 nested level
+BigQuery supports
+(<a href="https://cloud.google.com/bigquery/docs/nested-repeated#limitations">https://cloud.google.com/bigquery/docs/nested-repeated#limitations</a>)). The
+fields in &gt;15 nested levels will be stored in JSON format string as a child
+column of its parent RECORD column.</p>
+<p>If error occurs when exporting to any table, the whole export call will
+return an error but the export results that already succeed will persist.
+Example: if exporting to table_type_A succeeds when exporting to
+table_type_B fails during one export call, the results in table_type_A will
+persist and there will not be partial results persisting in a table.</p>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Google_Cloud_Asset_V1_BigQueryDestination_Table_" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.Table*"></a>
   <h3 id="Google_Cloud_Asset_V1_BigQueryDestination_Table" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.Table" class="notranslate">Table</h3>
   <div class="codewrapper">
@@ -159,13 +241,16 @@ will be created.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

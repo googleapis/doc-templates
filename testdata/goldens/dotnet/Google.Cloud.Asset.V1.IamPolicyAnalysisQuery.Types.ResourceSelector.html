@@ -13,7 +13,7 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class ResourceSelector : IMessage&lt;IamPolicyAnalysisQuery.Types.ResourceSelector&gt;, IMessage, IEquatable&lt;IamPolicyAnalysisQuery.Types.ResourceSelector&gt;, IDeepCloneable&lt;IamPolicyAnalysisQuery.Types.ResourceSelector&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class ResourceSelector : IMessage&lt;IamPolicyAnalysisQuery.Types.ResourceSelector&gt;, IEquatable&lt;IamPolicyAnalysisQuery.Types.ResourceSelector&gt;, IDeepCloneable&lt;IamPolicyAnalysisQuery.Types.ResourceSelector&gt;, IBufferMessage, IMessage</code></pre>
   </div>
   <div class="markdown level0 summary"><p>Specifies the resource to analyze for access policies, which may be set
 directly on the resource, or on ancestors such as organizations, folders or
@@ -27,15 +27,13 @@ projects.</p>
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ResourceSelector.html">IamPolicyAnalysisQuery.Types.ResourceSelector</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ResourceSelector.html">IamPolicyAnalysisQuery.Types.ResourceSelector</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ResourceSelector.html">IamPolicyAnalysisQuery.Types.ResourceSelector</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ResourceSelector.html">IamPolicyAnalysisQuery.Types.ResourceSelector</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -44,6 +42,9 @@ projects.</p>
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -87,7 +88,7 @@ projects.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string FullResourceName { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The <a href="https://cloud.google.com/asset-inventory/docs/resource-name-format">full resource name</a>
+  <div class="markdown level1 summary"><p>Required. The <a href="https://cloud.google.com/asset-inventory/docs/resource-name-format">full resource name</a>
 of a resource of <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types#analyzable_asset_types">supported resource
 types</a>.</p>
 </div>
@@ -111,13 +112,16 @@ types</a>.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

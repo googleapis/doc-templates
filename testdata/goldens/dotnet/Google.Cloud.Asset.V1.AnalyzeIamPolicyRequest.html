@@ -13,10 +13,9 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class AnalyzeIamPolicyRequest : IMessage&lt;AnalyzeIamPolicyRequest&gt;, IMessage, IEquatable&lt;AnalyzeIamPolicyRequest&gt;, IDeepCloneable&lt;AnalyzeIamPolicyRequest&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class AnalyzeIamPolicyRequest : IMessage&lt;AnalyzeIamPolicyRequest&gt;, IEquatable&lt;AnalyzeIamPolicyRequest&gt;, IDeepCloneable&lt;AnalyzeIamPolicyRequest&gt;, IBufferMessage, IMessage</code></pre>
   </div>
-  <div class="markdown level0 summary"><p>A request message for
-[google.cloud.asset.v1.AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
+  <div class="markdown level0 summary"><p>A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -26,15 +25,13 @@
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest.html">AnalyzeIamPolicyRequest</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest.html">AnalyzeIamPolicyRequest</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest.html">AnalyzeIamPolicyRequest</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest.html">AnalyzeIamPolicyRequest</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -43,6 +40,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -86,7 +86,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public IamPolicyAnalysisQuery AnalysisQuery { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The request query.</p>
+  <div class="markdown level1 summary"><p>Required. The request query.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -108,7 +108,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public Duration ExecutionTimeout { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Amount of time executable has to complete.  See JSON representation of
+  <div class="markdown level1 summary"><p>Optional. Amount of time executable has to complete.  See JSON representation of
 <a href="https://developers.google.com/protocol-buffers/docs/proto3#json">Duration</a>.</p>
 <p>If this field is set with a value less than the RPC deadline, and the
 execution of your query hasn&apos;t finished in the specified
@@ -116,20 +116,6 @@ execution timeout,  you will get a response with partial result.
 Otherwise, your query&apos;s execution will continue until the RPC deadline.
 If it&apos;s not finished until then, you will get a  DEADLINE_EXCEEDED error.</p>
 <p>Default is empty.</p>
-<p>(-- We had discussion of whether we should have this field in the    --)
-(-- request or use the RPC deadline instead. We finally choose this  --)
-(-- approach for the following reasons (detailed in                  --)
-(-- go/analyze-iam-policy-deadlines):                                --)
-(-- * HTTP clients have very limited support of the RPC deadline.    --)
-(--   There is an X-Server-Timeout header introduced in 2019/09, but --)
-(--   only implemented in the C++ HTTP server library.               --)
-(-- * The purpose of the RPC deadline is for RPC clients to          --)
-(--   communicate its max waiting time to the server. This deadline  --)
-(--   could be further propagated to the downstream servers. It is   --)
-(--   mainly used for servers to cancel the request processing       --)
-(--   to avoid resource wasting. Overloading the RPC deadline for    --)
-(--   other purposes could make our backend system harder to reason  --)
-(--   about.                                                         --)</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -151,13 +137,16 @@ If it&apos;s not finished until then, you will get a  DEADLINE_EXCEEDED error.</
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

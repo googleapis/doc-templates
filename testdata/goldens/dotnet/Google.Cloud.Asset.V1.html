@@ -14,13 +14,17 @@
     <h2 id="classes">Classes
   
   </h2>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest.html">AnalyzeIamPolicyLongrunningRequest</a></h3>
+      <section><p>A request message for [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse.html">AnalyzeIamPolicyLongrunningResponse</a></h3>
+      <section><p>A response message for [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].</p>
+</section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest.html">AnalyzeIamPolicyRequest</a></h3>
-      <section><p>A request message for
-[google.cloud.asset.v1.AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
+      <section><p>A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.html">AnalyzeIamPolicyResponse</a></h3>
-      <section><p>A response message for
-[google.cloud.asset.v1.AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
+      <section><p>A response message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.html">AnalyzeIamPolicyResponse.Types</a></h3>
       <section><p>Container for nested types declared in the AnalyzeIamPolicyResponse message type.</p>
@@ -28,33 +32,13 @@
       <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.html">AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis</a></h3>
       <section><p>An analysis message to group the query and results.</p>
 </section>
-      <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.html">AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types</a></h3>
-      <section><p>Container for nested types declared in the IamPolicyAnalysis message type.</p>
-</section>
-      <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.html">AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats</a></h3>
-      <section><p>A stats message that contains a set of analysis metrics.</p>
-<p>Here are some equations to show relationships of the explicitly specified
-metrics with other implicit metrics:</p>
-<ul>
-<li>node_count = discovered_node_count + undiscovered_node_count(implicit)</li>
-<li>discovered_node_count = explored_node_count +
-unexplored_node_count(implicit)</li>
-<li>explored_node_count = capped_node_count + uncapped_node_count(implicit)</li>
-<li>unexplored_node_count(implicit) = permission_denied_node_count +
-execution_timeout_node_count + other_unexplored_node_count(implicit)</li>
-<li>discovered_node_count = matched_node_count +
-unmatched_node_count(implicit)</li>
-</ul>
-</section>
-      <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.html">AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types</a></h3>
-      <section><p>Container for nested types declared in the Stats message type.</p>
-</section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.Asset.html">Asset</a></h3>
       <section><p>An asset in Google Cloud. An asset can be any resource in the Google Cloud
 <a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy">resource
 hierarchy</a>,
 a resource outside the Google Cloud resource hierarchy (such as Google
-Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy),
+or a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship).
 See <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types">Supported asset
 types</a>
 for more information.</p>
@@ -89,6 +73,12 @@ for more information.</p>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.BigQueryDestination.html">BigQueryDestination</a></h3>
       <section><p>A BigQuery destination for exporting assets to.</p>
 </section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.ConditionEvaluation.html">ConditionEvaluation</a></h3>
+      <section><p>The Condition evaluation.</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.ConditionEvaluation.Types.html">ConditionEvaluation.Types</a></h3>
+      <section><p>Container for nested types declared in the ConditionEvaluation message type.</p>
+</section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.CreateFeedRequest.html">CreateFeedRequest</a></h3>
       <section><p>Create asset feed request.</p>
 </section>
@@ -101,12 +91,6 @@ for more information.</p>
       <section><p>The export asset response. This message is returned by the
 [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
 [google.longrunning.Operation.response][google.longrunning.Operation.response] field.</p>
-</section>
-      <h3><a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest.html">ExportIamPolicyAnalysisRequest</a></h3>
-      <section><p>A request message for [AssetService.ExportIamPolicyAnalysis][].</p>
-</section>
-      <h3><a class="xref" href="Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse.html">ExportIamPolicyAnalysisResponse</a></h3>
-      <section><p>The export IAM policy analysis response.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.Feed.html">Feed</a></h3>
       <section><p>An asset feed used to export asset updates to a destinations.
@@ -146,7 +130,7 @@ Pub/Sub topics.</p>
       <section><p>A Cloud Storage location.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.html">IamPolicyAnalysisQuery</a></h3>
-      <section><p>IAM policy analysis query message.</p>
+      <section><h2 id="iam-policy-analysis-query-message">IAM policy analysis query message.</h2>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.html">IamPolicyAnalysisQuery.Types</a></h3>
       <section><p>Container for nested types declared in the IamPolicyAnalysisQuery message type.</p>
@@ -155,7 +139,11 @@ Pub/Sub topics.</p>
       <section><p>Specifies roles and/or permissions to analyze, to determine both the
 identities possessing them and the resources they control. If multiple
 values are specified, results will include roles or permissions matching
-any of them.</p>
+any of them. The total number of roles and permissions should be equal or
+less than 10.</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext.html">IamPolicyAnalysisQuery.Types.ConditionContext</a></h3>
+      <section><p>The IAM conditions context.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.IdentitySelector.html">IamPolicyAnalysisQuery.Types.IdentitySelector</a></h3>
       <section><p>Specifies an identity for which to determine resource access, based on
@@ -202,9 +190,7 @@ combinations.</p>
       <section><p>A directional edge.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.Identity.html">IamPolicyAnalysisResult.Types.Identity</a></h3>
-      <section><p>An identity under analysis.
-(-- api-linter: core::0123::resource-annotation=disabled
-aip.dev/not-precedent: Identity name is not a resource. --)</p>
+      <section><p>An identity under analysis.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.IdentityList.html">IamPolicyAnalysisResult.Types.IdentityList</a></h3>
       <section><p>The identities and group edges.</p>
@@ -231,6 +217,12 @@ resource, an identity or an access.</p>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicySearchResult.Types.Explanation.Types.Permissions.html">IamPolicySearchResult.Types.Explanation.Types.Permissions</a></h3>
       <section><p>IAM permissions</p>
 </section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.ListAssetsRequest.html">ListAssetsRequest</a></h3>
+      <section><p>ListAssets request.</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.ListAssetsResponse.html">ListAssetsResponse</a></h3>
+      <section><p>ListAssets response.</p>
+</section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.ListFeedsRequest.html">ListFeedsRequest</a></h3>
       <section><p>List asset feeds request.</p>
 </section>
@@ -241,6 +233,12 @@ resource, an identity or an access.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.OutputResult.html">OutputResult</a></h3>
       <section><p>Output result of export assets.</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.PartitionSpec.html">PartitionSpec</a></h3>
+      <section><p>Specifications of BigQuery partitioned table as export destination.</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.PartitionSpec.Types.html">PartitionSpec.Types</a></h3>
+      <section><p>Container for nested types declared in the PartitionSpec message type.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.PubsubDestination.html">PubsubDestination</a></h3>
       <section><p>A Pub/Sub destination.</p>
@@ -279,11 +277,11 @@ when it was observed and its status during that window.</p>
     <h2 id="enums">Enums
   
   </h2>
-      <h3><a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType.html">AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType</a></h3>
-      <section><p>Type of the node.</p>
-</section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.Asset.AccessContextPolicyOneofCase.html">Asset.AccessContextPolicyOneofCase</a></h3>
       <section><p>Enum of possible cases for the &quot;access_context_policy&quot; oneof.</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.ConditionEvaluation.Types.EvaluationValue.html">ConditionEvaluation.Types.EvaluationValue</a></h3>
+      <section><p>Value of this expression.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.ContentType.html">ContentType</a></h3>
       <section><p>Asset content type.</p>
@@ -306,8 +304,8 @@ Partitioning can improve query performance and reduce query cost by
 filtering partitions. Refer to
 <a href="https://cloud.google.com/bigquery/docs/partitioned-tables">https://cloud.google.com/bigquery/docs/partitioned-tables</a> for details.</p>
 </section>
-      <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode.html">IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode</a></h3>
-      <section><p>Write mode types if table exists.</p>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase.html">IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase</a></h3>
+      <section><p>Enum of possible cases for the &quot;TimeContext&quot; oneof.</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisResult.Types.Access.OneofAccessOneofCase.html">IamPolicyAnalysisResult.Types.Access.OneofAccessOneofCase</a></h3>
       <section><p>Enum of possible cases for the &quot;oneof_access&quot; oneof.</p>
@@ -317,6 +315,13 @@ filtering partitions. Refer to
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.OutputResult.ResultOneofCase.html">OutputResult.ResultOneofCase</a></h3>
       <section><p>Enum of possible cases for the &quot;result&quot; oneof.</p>
+</section>
+      <h3><a class="xref" href="Google.Cloud.Asset.V1.PartitionSpec.Types.PartitionKey.html">PartitionSpec.Types.PartitionKey</a></h3>
+      <section><p>This enum is used to determine the partition key column when exporting
+assets to BigQuery partitioned table(s). Note that, if the partition key is
+a timestamp column, the actual partition is based on its date value
+(expressed in UTC. see details in
+<a href="https://cloud.google.com/bigquery/docs/partitioned-tables#date_timestamp_partitioned_tables">https://cloud.google.com/bigquery/docs/partitioned-tables#date_timestamp_partitioned_tables</a>).</p>
 </section>
       <h3><a class="xref" href="Google.Cloud.Asset.V1.TemporalAsset.Types.PriorAssetState.html">TemporalAsset.Types.PriorAssetState</a></h3>
       <section><p>State of prior asset.</p>

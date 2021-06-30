@@ -13,7 +13,7 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class SearchAllResourcesRequest : IMessage&lt;SearchAllResourcesRequest&gt;, IMessage, IEquatable&lt;SearchAllResourcesRequest&gt;, IDeepCloneable&lt;SearchAllResourcesRequest&gt;, IPageRequest</code></pre>
+    <pre><code class="prettyprint">public sealed class SearchAllResourcesRequest : IMessage&lt;SearchAllResourcesRequest&gt;, IEquatable&lt;SearchAllResourcesRequest&gt;, IDeepCloneable&lt;SearchAllResourcesRequest&gt;, IBufferMessage, IMessage, IPageRequest</code></pre>
   </div>
   <div class="markdown level0 summary"><p>Search all resources request.</p>
 </div>
@@ -25,16 +25,14 @@
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.SearchAllResourcesRequest.html">SearchAllResourcesRequest</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.SearchAllResourcesRequest.html">SearchAllResourcesRequest</a>&gt;,</span>
     <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.SearchAllResourcesRequest.html">SearchAllResourcesRequest</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">Google.Api.Gax.Grpc.IPageRequest</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -43,6 +41,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -89,6 +90,16 @@
   <div class="markdown level1 summary"><p>Optional. A list of asset types that this request searches for. If empty, it will
 search all the <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types">searchable asset
 types</a>.</p>
+<p>Regular expressions are also supported. For example:</p>
+<ul>
+<li>&quot;compute.googleapis.com.*&quot; snapshots resources whose asset type starts
+with &quot;compute.googleapis.com&quot;.</li>
+<li>&quot;.*Instance&quot; snapshots resources whose asset type ends with &quot;Instance&quot;.</li>
+<li>&quot;.<em>Instance.</em>&quot; snapshots resources whose asset type contains &quot;Instance&quot;.</li>
+</ul>
+<p>See <a href="https://github.com/google/re2/wiki/Syntax">RE2</a> for all supported
+regular expression syntax. If the regular expression does not match any
+supported asset type, an INVALID_ARGUMENT error will be returned.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -110,14 +121,28 @@ types</a>.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string OrderBy { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Optional. A comma separated list of fields specifying the sorting order of the
+  <div class="markdown level1 summary"><p>Optional. A comma-separated list of fields specifying the sorting order of the
 results. The default order is ascending. Add &quot; DESC&quot; after the field name
 to indicate descending order. Redundant space characters are ignored.
-Example: &quot;location DESC, name&quot;. Only string fields in the response are
-sortable, including <code>name</code>, <code>displayName</code>, <code>description</code>, <code>location</code>. All
-the other fields such as repeated fields (e.g., <code>networkTags</code>), map
+Example: &quot;location DESC, name&quot;.
+Only singular primitive fields in the response are sortable:</p>
+<ul>
+<li>name</li>
+<li>assetType</li>
+<li>project</li>
+<li>displayName</li>
+<li>description</li>
+<li>location</li>
+<li>kmsKey</li>
+<li>createTime</li>
+<li>updateTime</li>
+<li>state</li>
+<li>parentFullResourceName</li>
+<li>parentAssetType
+All the other fields such as repeated fields (e.g., <code>networkTags</code>), map
 fields (e.g., <code>labels</code>) and struct fields (e.g., <code>additionalAttributes</code>)
-are not supported.</p>
+are not supported.</li>
+</ul>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -189,36 +214,41 @@ identical to those in the previous call.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Query { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Optional. The query statement. See <a href="http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query">how to construct a
+  <div class="markdown level1 summary"><p>Optional. The query statement. See <a href="https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query">how to construct a
 query</a>
 for more information. If not specified or empty, it will search all the
-resources within the specified <code>scope</code>. Note that the query string is
-compared against each Cloud IAM policy binding, including its members,
-roles, and Cloud IAM conditions. The returned Cloud IAM policies will only
-contain the bindings that match your query. To learn more about the IAM
-policy structure, see <a href="https://cloud.google.com/iam/docs/policies#structure">IAM policy
-doc</a>.</p>
+resources within the specified <code>scope</code>.</p>
 <p>Examples:</p>
 <ul>
 <li><code>name:Important</code> to find Cloud resources whose name contains
 &quot;Important&quot; as a word.</li>
+<li><code>name=Important</code> to find the Cloud resource whose name is exactly
+&quot;Important&quot;.</li>
 <li><code>displayName:Impor*</code> to find Cloud resources whose display name
-contains &quot;Impor&quot; as a prefix.</li>
-<li><code>description:*por*</code> to find Cloud resources whose description
-contains &quot;por&quot; as a substring.</li>
-<li><code>location:us-west*</code> to find Cloud resources whose location is
-prefixed with &quot;us-west&quot;.</li>
+contains &quot;Impor&quot; as a prefix of any word in the field.</li>
+<li><code>location:us-west*</code> to find Cloud resources whose location contains both
+&quot;us&quot; and &quot;west&quot; as prefixes.</li>
 <li><code>labels:prod</code> to find Cloud resources whose labels contain &quot;prod&quot; as
 a key or value.</li>
 <li><code>labels.env:prod</code> to find Cloud resources that have a label &quot;env&quot;
 and its value is &quot;prod&quot;.</li>
 <li><code>labels.env:*</code> to find Cloud resources that have a label &quot;env&quot;.</li>
+<li><code>kmsKey:key</code> to find Cloud resources encrypted with a customer-managed
+encryption key whose name contains the word &quot;key&quot;.</li>
+<li><code>state:ACTIVE</code> to find Cloud resources whose state contains &quot;ACTIVE&quot; as a
+word.</li>
+<li><code>NOT state:ACTIVE</code> to find {{gcp_name}} resources whose state
+doesn&apos;t contain &quot;ACTIVE&quot; as a word.</li>
+<li><code>createTime&amp;lt;1609459200</code> to find Cloud resources that were created before
+&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of
+&quot;2021-01-01 00:00:00 UTC&quot; in seconds.</li>
+<li><code>updateTime&gt;1609459200</code> to find Cloud resources that were updated after
+&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of
+&quot;2021-01-01 00:00:00 UTC&quot; in seconds.</li>
 <li><code>Important</code> to find Cloud resources that contain &quot;Important&quot; as a word
 in any of the searchable fields.</li>
-<li><code>Impor*</code> to find Cloud resources that contain &quot;Impor&quot; as a prefix
-in any of the searchable fields.</li>
-<li><code>*por*</code> to find Cloud resources that contain &quot;por&quot; as a substring in
-any of the searchable fields.</li>
+<li><code>Impor*</code> to find Cloud resources that contain &quot;Impor&quot; as a prefix of any
+word in any of the searchable fields.</li>
 <li><code>Important location:(us-west1 OR global)</code> to find Cloud
 resources that contain &quot;Important&quot; as a word in any of the searchable
 fields and are also located in the &quot;us-west1&quot; region or the &quot;global&quot;
@@ -247,7 +277,7 @@ location.</li>
   </div>
   <div class="markdown level1 summary"><p>Required. A scope can be a project, a folder, or an organization. The search is
 limited to the resources within the <code>scope</code>. The caller must be granted the
-<a href="http://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllResources</code></a>
+<a href="https://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllResources</code></a>
 permission on the desired scope.</p>
 <p>The allowed values are:</p>
 <ul>
@@ -277,13 +307,16 @@ permission on the desired scope.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
   <div>
       <span class="xref">Google.Api.Gax.Grpc.IPageRequest</span>

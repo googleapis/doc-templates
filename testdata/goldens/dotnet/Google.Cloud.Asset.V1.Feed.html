@@ -13,7 +13,7 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class Feed : IMessage&lt;Feed&gt;, IMessage, IEquatable&lt;Feed&gt;, IDeepCloneable&lt;Feed&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class Feed : IMessage&lt;Feed&gt;, IEquatable&lt;Feed&gt;, IDeepCloneable&lt;Feed&gt;, IBufferMessage, IMessage</code></pre>
   </div>
   <div class="markdown level0 summary"><p>An asset feed used to export asset updates to a destinations.
 An asset feed filter controls what updates are exported.
@@ -29,15 +29,13 @@ Pub/Sub topics.</p>
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Feed.html">Feed</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Feed.html">Feed</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Feed.html">Feed</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.Feed.html">Feed</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -46,6 +44,9 @@ Pub/Sub topics.</p>
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -272,13 +273,16 @@ project/folder/organization.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

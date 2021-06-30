@@ -4,14 +4,12 @@ items:
   commentId: N:Google.Cloud.Asset.V1
   id: Google.Cloud.Asset.V1
   children:
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+  - Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
   - Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest
   - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse
   - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types
   - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis
-  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types
-  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
-  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types
-  - Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
   - Google.Cloud.Asset.V1.Asset
   - Google.Cloud.Asset.V1.Asset.AccessContextPolicyOneofCase
   - Google.Cloud.Asset.V1.AssetService
@@ -24,13 +22,14 @@ items:
   - Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest
   - Google.Cloud.Asset.V1.BatchGetAssetsHistoryResponse
   - Google.Cloud.Asset.V1.BigQueryDestination
+  - Google.Cloud.Asset.V1.ConditionEvaluation
+  - Google.Cloud.Asset.V1.ConditionEvaluation.Types
+  - Google.Cloud.Asset.V1.ConditionEvaluation.Types.EvaluationValue
   - Google.Cloud.Asset.V1.ContentType
   - Google.Cloud.Asset.V1.CreateFeedRequest
   - Google.Cloud.Asset.V1.DeleteFeedRequest
   - Google.Cloud.Asset.V1.ExportAssetsRequest
   - Google.Cloud.Asset.V1.ExportAssetsResponse
-  - Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-  - Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
   - Google.Cloud.Asset.V1.Feed
   - Google.Cloud.Asset.V1.FeedName
   - Google.Cloud.Asset.V1.FeedName.ResourceNameType
@@ -46,11 +45,12 @@ items:
   - Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination
   - Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types
   - Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.PartitionKey
-  - Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode
   - Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.GcsDestination
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.AccessSelector
+  - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext
+  - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.IdentitySelector
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ResourceSelector
@@ -69,12 +69,17 @@ items:
   - Google.Cloud.Asset.V1.IamPolicySearchResult.Types.Explanation
   - Google.Cloud.Asset.V1.IamPolicySearchResult.Types.Explanation.Types
   - Google.Cloud.Asset.V1.IamPolicySearchResult.Types.Explanation.Types.Permissions
+  - Google.Cloud.Asset.V1.ListAssetsRequest
+  - Google.Cloud.Asset.V1.ListAssetsResponse
   - Google.Cloud.Asset.V1.ListFeedsRequest
   - Google.Cloud.Asset.V1.ListFeedsResponse
   - Google.Cloud.Asset.V1.OutputConfig
   - Google.Cloud.Asset.V1.OutputConfig.DestinationOneofCase
   - Google.Cloud.Asset.V1.OutputResult
   - Google.Cloud.Asset.V1.OutputResult.ResultOneofCase
+  - Google.Cloud.Asset.V1.PartitionSpec
+  - Google.Cloud.Asset.V1.PartitionSpec.Types
+  - Google.Cloud.Asset.V1.PartitionSpec.Types.PartitionKey
   - Google.Cloud.Asset.V1.PubsubDestination
   - Google.Cloud.Asset.V1.Resource
   - Google.Cloud.Asset.V1.ResourceSearchResult
@@ -178,6 +183,23 @@ references:
   name: IamPolicyAnalysisState
   nameWithType: IamPolicyAnalysisState
   fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisState
+- uid: Google.Cloud.Asset.V1.ConditionEvaluation
+  commentId: T:Google.Cloud.Asset.V1.ConditionEvaluation
+  parent: Google.Cloud.Asset.V1
+  name: ConditionEvaluation
+  nameWithType: ConditionEvaluation
+  fullName: Google.Cloud.Asset.V1.ConditionEvaluation
+- uid: Google.Cloud.Asset.V1.ConditionEvaluation.Types
+  commentId: T:Google.Cloud.Asset.V1.ConditionEvaluation.Types
+  name: ConditionEvaluation.Types
+  nameWithType: ConditionEvaluation.Types
+  fullName: Google.Cloud.Asset.V1.ConditionEvaluation.Types
+- uid: Google.Cloud.Asset.V1.ConditionEvaluation.Types.EvaluationValue
+  commentId: T:Google.Cloud.Asset.V1.ConditionEvaluation.Types.EvaluationValue
+  parent: Google.Cloud.Asset.V1
+  name: ConditionEvaluation.Types.EvaluationValue
+  nameWithType: ConditionEvaluation.Types.EvaluationValue
+  fullName: Google.Cloud.Asset.V1.ConditionEvaluation.Types.EvaluationValue
 - uid: Google.Cloud.Asset.V1.IamPolicyAnalysisResult
   commentId: T:Google.Cloud.Asset.V1.IamPolicyAnalysisResult
   parent: Google.Cloud.Asset.V1
@@ -249,6 +271,18 @@ references:
   name: ExportAssetsResponse
   nameWithType: ExportAssetsResponse
   fullName: Google.Cloud.Asset.V1.ExportAssetsResponse
+- uid: Google.Cloud.Asset.V1.ListAssetsRequest
+  commentId: T:Google.Cloud.Asset.V1.ListAssetsRequest
+  parent: Google.Cloud.Asset.V1
+  name: ListAssetsRequest
+  nameWithType: ListAssetsRequest
+  fullName: Google.Cloud.Asset.V1.ListAssetsRequest
+- uid: Google.Cloud.Asset.V1.ListAssetsResponse
+  commentId: T:Google.Cloud.Asset.V1.ListAssetsResponse
+  parent: Google.Cloud.Asset.V1
+  name: ListAssetsResponse
+  nameWithType: ListAssetsResponse
+  fullName: Google.Cloud.Asset.V1.ListAssetsResponse
 - uid: Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest
   commentId: T:Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest
   parent: Google.Cloud.Asset.V1
@@ -345,6 +379,23 @@ references:
   name: BigQueryDestination
   nameWithType: BigQueryDestination
   fullName: Google.Cloud.Asset.V1.BigQueryDestination
+- uid: Google.Cloud.Asset.V1.PartitionSpec
+  commentId: T:Google.Cloud.Asset.V1.PartitionSpec
+  parent: Google.Cloud.Asset.V1
+  name: PartitionSpec
+  nameWithType: PartitionSpec
+  fullName: Google.Cloud.Asset.V1.PartitionSpec
+- uid: Google.Cloud.Asset.V1.PartitionSpec.Types
+  commentId: T:Google.Cloud.Asset.V1.PartitionSpec.Types
+  name: PartitionSpec.Types
+  nameWithType: PartitionSpec.Types
+  fullName: Google.Cloud.Asset.V1.PartitionSpec.Types
+- uid: Google.Cloud.Asset.V1.PartitionSpec.Types.PartitionKey
+  commentId: T:Google.Cloud.Asset.V1.PartitionSpec.Types.PartitionKey
+  parent: Google.Cloud.Asset.V1
+  name: PartitionSpec.Types.PartitionKey
+  nameWithType: PartitionSpec.Types.PartitionKey
+  fullName: Google.Cloud.Asset.V1.PartitionSpec.Types.PartitionKey
 - uid: Google.Cloud.Asset.V1.PubsubDestination
   commentId: T:Google.Cloud.Asset.V1.PubsubDestination
   parent: Google.Cloud.Asset.V1
@@ -428,6 +479,18 @@ references:
   name: IamPolicyAnalysisQuery.Types.Options
   nameWithType: IamPolicyAnalysisQuery.Types.Options
   fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options
+- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext
+  commentId: T:Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext
+  parent: Google.Cloud.Asset.V1
+  name: IamPolicyAnalysisQuery.Types.ConditionContext
+  nameWithType: IamPolicyAnalysisQuery.Types.ConditionContext
+  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext
+- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase
+  commentId: T:Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase
+  parent: Google.Cloud.Asset.V1
+  name: IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase
+  nameWithType: IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase
+  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext.TimeContextOneofCase
 - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest
   commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest
   parent: Google.Cloud.Asset.V1
@@ -451,28 +514,6 @@ references:
   name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis
   nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis
   fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis
-- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types
-  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types
-  name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types
-  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types
-  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types
-- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
-  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
-  parent: Google.Cloud.Asset.V1
-  name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
-  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
-  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats
-- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types
-  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types
-  name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types
-  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types
-  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types
-- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
-  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
-  parent: Google.Cloud.Asset.V1
-  name: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
-  nameWithType: AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
-  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis.Types.Stats.Types.NodeType
 - uid: Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig
   commentId: T:Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig
   parent: Google.Cloud.Asset.V1
@@ -513,24 +554,18 @@ references:
   name: IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.PartitionKey
   nameWithType: IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.PartitionKey
   fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.PartitionKey
-- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode
-  commentId: T:Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
   parent: Google.Cloud.Asset.V1
-  name: IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode
-  nameWithType: IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode
-  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisOutputConfig.Types.BigQueryDestination.Types.WriteMode
-- uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-  commentId: T:Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+  name: AnalyzeIamPolicyLongrunningRequest
+  nameWithType: AnalyzeIamPolicyLongrunningRequest
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
+  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
   parent: Google.Cloud.Asset.V1
-  name: ExportIamPolicyAnalysisRequest
-  nameWithType: ExportIamPolicyAnalysisRequest
-  fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-- uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
-  commentId: T:Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
-  parent: Google.Cloud.Asset.V1
-  name: ExportIamPolicyAnalysisResponse
-  nameWithType: ExportIamPolicyAnalysisResponse
-  fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
+  name: AnalyzeIamPolicyLongrunningResponse
+  nameWithType: AnalyzeIamPolicyLongrunningResponse
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
 - uid: Google.Cloud.Asset.V1.AssetServiceSettings
   commentId: T:Google.Cloud.Asset.V1.AssetServiceSettings
   parent: Google.Cloud.Asset.V1

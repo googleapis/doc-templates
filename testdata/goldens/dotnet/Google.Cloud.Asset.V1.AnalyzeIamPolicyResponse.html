@@ -13,10 +13,9 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class AnalyzeIamPolicyResponse : IMessage&lt;AnalyzeIamPolicyResponse&gt;, IMessage, IEquatable&lt;AnalyzeIamPolicyResponse&gt;, IDeepCloneable&lt;AnalyzeIamPolicyResponse&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class AnalyzeIamPolicyResponse : IMessage&lt;AnalyzeIamPolicyResponse&gt;, IEquatable&lt;AnalyzeIamPolicyResponse&gt;, IDeepCloneable&lt;AnalyzeIamPolicyResponse&gt;, IBufferMessage, IMessage</code></pre>
   </div>
-  <div class="markdown level0 summary"><p>A response message for
-[google.cloud.asset.v1.AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
+  <div class="markdown level0 summary"><p>A response message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].</p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -26,15 +25,13 @@
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.html">AnalyzeIamPolicyResponse</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.html">AnalyzeIamPolicyResponse</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.html">AnalyzeIamPolicyResponse</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.AnalyzeIamPolicyResponse.html">AnalyzeIamPolicyResponse</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -43,6 +40,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -86,8 +86,8 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool FullyExplored { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Represents whether all entries in the [main_analysis][main_analysis] and
-[service_account_impersonation_analysis][] have been fully explored to
+  <div class="markdown level1 summary"><p>Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
+[service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
 answer the query in the request.</p>
 </div>
   <strong>Property Value</strong>
@@ -133,8 +133,8 @@ answer the query in the request.</p>
     <pre><code class="prettyprint">public RepeatedField&lt;AnalyzeIamPolicyResponse.Types.IamPolicyAnalysis&gt; ServiceAccountImpersonationAnalysis { get; }</code></pre>
   </div>
   <div class="markdown level1 summary"><p>The service account impersonation analysis if
-[google.cloud.asset.v1.AnalyzeIamPolicyRequest.analyze_service_account_impersonation][google.cloud.asset.v1.AnalyzeIamPolicyRequest.analyze_service_account_impersonation]
-is enabled.</p>
+[AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+enabled.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,13 +156,16 @@ is enabled.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

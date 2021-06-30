@@ -13,12 +13,13 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class AccessSelector : IMessage&lt;IamPolicyAnalysisQuery.Types.AccessSelector&gt;, IMessage, IEquatable&lt;IamPolicyAnalysisQuery.Types.AccessSelector&gt;, IDeepCloneable&lt;IamPolicyAnalysisQuery.Types.AccessSelector&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class AccessSelector : IMessage&lt;IamPolicyAnalysisQuery.Types.AccessSelector&gt;, IEquatable&lt;IamPolicyAnalysisQuery.Types.AccessSelector&gt;, IDeepCloneable&lt;IamPolicyAnalysisQuery.Types.AccessSelector&gt;, IBufferMessage, IMessage</code></pre>
   </div>
   <div class="markdown level0 summary"><p>Specifies roles and/or permissions to analyze, to determine both the
 identities possessing them and the resources they control. If multiple
 values are specified, results will include roles or permissions matching
-any of them.</p>
+any of them. The total number of roles and permissions should be equal or
+less than 10.</p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -28,15 +29,13 @@ any of them.</p>
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.AccessSelector.html">IamPolicyAnalysisQuery.Types.AccessSelector</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.AccessSelector.html">IamPolicyAnalysisQuery.Types.AccessSelector</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.AccessSelector.html">IamPolicyAnalysisQuery.Types.AccessSelector</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.AccessSelector.html">IamPolicyAnalysisQuery.Types.AccessSelector</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -45,6 +44,9 @@ any of them.</p>
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -88,7 +90,7 @@ any of them.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; Permissions { get; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The permissions to appear in result.</p>
+  <div class="markdown level1 summary"><p>Optional. The permissions to appear in result.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -110,7 +112,7 @@ any of them.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; Roles { get; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The roles to appear in result.</p>
+  <div class="markdown level1 summary"><p>Optional. The roles to appear in result.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -132,13 +134,16 @@ any of them.</p>
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>

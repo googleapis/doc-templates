@@ -8,6 +8,10 @@ items:
   - Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicy(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyRequest,System.Threading.CancellationToken)
+  - Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,System.Threading.CancellationToken)
+  - Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
   - Google.Cloud.Asset.V1.AssetServiceClient.BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.BatchGetAssetsHistoryAsync(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.BatchGetAssetsHistoryAsync(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,System.Threading.CancellationToken)
@@ -34,10 +38,6 @@ items:
   - Google.Cloud.Asset.V1.AssetServiceClient.ExportAssetsAsync(Google.Cloud.Asset.V1.ExportAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.ExportAssetsAsync(Google.Cloud.Asset.V1.ExportAssetsRequest,System.Threading.CancellationToken)
   - Google.Cloud.Asset.V1.AssetServiceClient.ExportAssetsOperationsClient
-  - Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
-  - Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
-  - Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,System.Threading.CancellationToken)
-  - Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
   - Google.Cloud.Asset.V1.AssetServiceClient.GetFeed(Google.Cloud.Asset.V1.FeedName,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.GetFeed(Google.Cloud.Asset.V1.GetFeedRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.GetFeed(System.String,Google.Api.Gax.Grpc.CallSettings)
@@ -48,16 +48,22 @@ items:
   - Google.Cloud.Asset.V1.AssetServiceClient.GetFeedAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.GetFeedAsync(System.String,System.Threading.CancellationToken)
   - Google.Cloud.Asset.V1.AssetServiceClient.GrpcClient
+  - Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.ListFeeds(Google.Cloud.Asset.V1.ListFeedsRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.ListFeeds(System.String,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.ListFeedsAsync(Google.Cloud.Asset.V1.ListFeedsRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.ListFeedsAsync(Google.Cloud.Asset.V1.ListFeedsRequest,System.Threading.CancellationToken)
   - Google.Cloud.Asset.V1.AssetServiceClient.ListFeedsAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.ListFeedsAsync(System.String,System.Threading.CancellationToken)
+  - Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(System.String,Google.Api.Gax.Grpc.CallSettings)
+  - Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportAssets(System.String,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportAssetsAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
-  - Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis(System.String,Google.Api.Gax.Grpc.CallSettings)
-  - Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.SearchAllIamPolicies(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest,Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.SearchAllIamPolicies(System.String,System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
   - Google.Cloud.Asset.V1.AssetServiceClient.SearchAllIamPoliciesAsync(Google.Cloud.Asset.V1.SearchAllIamPoliciesRequest,Google.Api.Gax.Grpc.CallSettings)
@@ -83,11 +89,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AssetServiceClient
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 323
+    startLine: 339
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -102,10 +108,10 @@ items:
   derivedClasses:
   - Google.Cloud.Asset.V1.AssetServiceClientImpl
   inheritedMembers:
-  - System.Object.ToString
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - abstract
@@ -128,11 +134,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DefaultEndpoint
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 329
+    startLine: 345
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -167,11 +173,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DefaultScopes
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 338
+    startLine: 354
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -207,11 +213,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: CreateAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 353
+    startLine: 369
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -248,11 +254,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Create
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 361
+    startLine: 377
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -285,11 +291,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ShutdownDefaultChannelsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 394
+    startLine: 410
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -323,11 +329,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GrpcClient
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 397
+    startLine: 413
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -362,11 +368,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ExportAssets
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 414
+    startLine: 430
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -406,11 +412,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ExportAssetsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 432
+    startLine: 448
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -450,11 +456,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ExportAssetsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 450
+    startLine: 466
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -494,11 +500,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ExportAssetsOperationsClient
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 454
+    startLine: 470
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -533,11 +539,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: PollOnceExportAssets
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 464
+    startLine: 480
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -577,11 +583,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: PollOnceExportAssetsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 476
+    startLine: 492
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -607,6 +613,306 @@ items:
   modifiers.vb:
   - Public
   - Overridable
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  id: ListAssets(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  parent: Google.Cloud.Asset.V1.AssetServiceClient
+  langs:
+  - csharp
+  - vb
+  name: ListAssets(ListAssetsRequest, CallSettings)
+  nameWithType: AssetServiceClient.ListAssets(ListAssetsRequest, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Cloud.Asset.V1.ListAssetsRequest, Google.Api.Gax.Grpc.CallSettings)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ListAssets
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+    startLine: 502
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nLists assets with time and resource types and returns paged results in\nresponse.\n"
+  example: []
+  syntax:
+    content: public virtual PagedEnumerable<ListAssetsResponse, Asset> ListAssets(ListAssetsRequest request, CallSettings callSettings = null)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.ListAssetsRequest
+      description: The request object containing all of the parameters for the API call.
+    - id: callSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: If not null, applies overrides to this RPC call.
+    return:
+      type: Google.Api.Gax.PagedEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+      description: A pageable sequence of <xref href="Google.Cloud.Asset.V1.Asset" data-throw-if-not-resolved="false"></xref> resources.
+    content.vb: Public Overridable Function ListAssets(request As ListAssetsRequest, callSettings As CallSettings = Nothing) As PagedEnumerable(Of ListAssetsResponse, Asset)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  id: ListAssetsAsync(Google.Cloud.Asset.V1.ListAssetsRequest,Google.Api.Gax.Grpc.CallSettings)
+  parent: Google.Cloud.Asset.V1.AssetServiceClient
+  langs:
+  - csharp
+  - vb
+  name: ListAssetsAsync(ListAssetsRequest, CallSettings)
+  nameWithType: AssetServiceClient.ListAssetsAsync(ListAssetsRequest, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Cloud.Asset.V1.ListAssetsRequest, Google.Api.Gax.Grpc.CallSettings)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ListAssetsAsync
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+    startLine: 512
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nLists assets with time and resource types and returns paged results in\nresponse.\n"
+  example: []
+  syntax:
+    content: public virtual PagedAsyncEnumerable<ListAssetsResponse, Asset> ListAssetsAsync(ListAssetsRequest request, CallSettings callSettings = null)
+    parameters:
+    - id: request
+      type: Google.Cloud.Asset.V1.ListAssetsRequest
+      description: The request object containing all of the parameters for the API call.
+    - id: callSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: If not null, applies overrides to this RPC call.
+    return:
+      type: Google.Api.Gax.PagedAsyncEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+      description: A pageable asynchronous sequence of <xref href="Google.Cloud.Asset.V1.Asset" data-throw-if-not-resolved="false"></xref> resources.
+    content.vb: Public Overridable Function ListAssetsAsync(request As ListAssetsRequest, callSettings As CallSettings = Nothing) As PagedAsyncEnumerable(Of ListAssetsResponse, Asset)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  id: ListAssets(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  parent: Google.Cloud.Asset.V1.AssetServiceClient
+  langs:
+  - csharp
+  - vb
+  name: ListAssets(String, String, Nullable<Int32>, CallSettings)
+  nameWithType: AssetServiceClient.ListAssets(String, String, Nullable<Int32>, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(System.String, System.String, System.Nullable<System.Int32>, Google.Api.Gax.Grpc.CallSettings)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ListAssets
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+    startLine: 535
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nLists assets with time and resource types and returns paged results in\nresponse.\n"
+  example: []
+  syntax:
+    content: public virtual PagedEnumerable<ListAssetsResponse, Asset> ListAssets(string parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)
+    parameters:
+    - id: parent
+      type: System.String
+      description: "\nRequired. Name of the organization or project the assets belong to. Format:\n&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),\n&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or\n&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).\n"
+    - id: pageToken
+      type: System.String
+      description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
+    - id: pageSize
+      type: System.Nullable{System.Int32}
+      description: "\nThe size of page to request. The response will not be larger than this, but may be smaller. A value of\n<code>null</code> or <code>0</code> uses a server-defined page size.\n"
+    - id: callSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: If not null, applies overrides to this RPC call.
+    return:
+      type: Google.Api.Gax.PagedEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+      description: A pageable sequence of <xref href="Google.Cloud.Asset.V1.Asset" data-throw-if-not-resolved="false"></xref> resources.
+    content.vb: Public Overridable Function ListAssets(parent As String, pageToken As String = Nothing, pageSize As Integer? = Nothing, callSettings As CallSettings = Nothing) As PagedEnumerable(Of ListAssetsResponse, Asset)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets*
+  nameWithType.vb: AssetServiceClient.ListAssets(String, String, Nullable(Of Int32), CallSettings)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(System.String, System.String, System.Nullable(Of System.Int32), Google.Api.Gax.Grpc.CallSettings)
+  name.vb: ListAssets(String, String, Nullable(Of Int32), CallSettings)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  id: ListAssetsAsync(System.String,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  parent: Google.Cloud.Asset.V1.AssetServiceClient
+  langs:
+  - csharp
+  - vb
+  name: ListAssetsAsync(String, String, Nullable<Int32>, CallSettings)
+  nameWithType: AssetServiceClient.ListAssetsAsync(String, String, Nullable<Int32>, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(System.String, System.String, System.Nullable<System.Int32>, Google.Api.Gax.Grpc.CallSettings)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ListAssetsAsync
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+    startLine: 563
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nLists assets with time and resource types and returns paged results in\nresponse.\n"
+  example: []
+  syntax:
+    content: public virtual PagedAsyncEnumerable<ListAssetsResponse, Asset> ListAssetsAsync(string parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)
+    parameters:
+    - id: parent
+      type: System.String
+      description: "\nRequired. Name of the organization or project the assets belong to. Format:\n&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),\n&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or\n&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).\n"
+    - id: pageToken
+      type: System.String
+      description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
+    - id: pageSize
+      type: System.Nullable{System.Int32}
+      description: "\nThe size of page to request. The response will not be larger than this, but may be smaller. A value of\n<code>null</code> or <code>0</code> uses a server-defined page size.\n"
+    - id: callSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: If not null, applies overrides to this RPC call.
+    return:
+      type: Google.Api.Gax.PagedAsyncEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+      description: A pageable asynchronous sequence of <xref href="Google.Cloud.Asset.V1.Asset" data-throw-if-not-resolved="false"></xref> resources.
+    content.vb: Public Overridable Function ListAssetsAsync(parent As String, pageToken As String = Nothing, pageSize As Integer? = Nothing, callSettings As CallSettings = Nothing) As PagedAsyncEnumerable(Of ListAssetsResponse, Asset)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync*
+  nameWithType.vb: AssetServiceClient.ListAssetsAsync(String, String, Nullable(Of Int32), CallSettings)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(System.String, System.String, System.Nullable(Of System.Int32), Google.Api.Gax.Grpc.CallSettings)
+  name.vb: ListAssetsAsync(String, String, Nullable(Of Int32), CallSettings)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  id: ListAssets(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  parent: Google.Cloud.Asset.V1.AssetServiceClient
+  langs:
+  - csharp
+  - vb
+  name: ListAssets(IResourceName, String, Nullable<Int32>, CallSettings)
+  nameWithType: AssetServiceClient.ListAssets(IResourceName, String, Nullable<Int32>, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Api.Gax.IResourceName, System.String, System.Nullable<System.Int32>, Google.Api.Gax.Grpc.CallSettings)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ListAssets
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+    startLine: 591
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nLists assets with time and resource types and returns paged results in\nresponse.\n"
+  example: []
+  syntax:
+    content: public virtual PagedEnumerable<ListAssetsResponse, Asset> ListAssets(IResourceName parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)
+    parameters:
+    - id: parent
+      type: Google.Api.Gax.IResourceName
+      description: "\nRequired. Name of the organization or project the assets belong to. Format:\n&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),\n&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or\n&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).\n"
+    - id: pageToken
+      type: System.String
+      description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
+    - id: pageSize
+      type: System.Nullable{System.Int32}
+      description: "\nThe size of page to request. The response will not be larger than this, but may be smaller. A value of\n<code>null</code> or <code>0</code> uses a server-defined page size.\n"
+    - id: callSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: If not null, applies overrides to this RPC call.
+    return:
+      type: Google.Api.Gax.PagedEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+      description: A pageable sequence of <xref href="Google.Cloud.Asset.V1.Asset" data-throw-if-not-resolved="false"></xref> resources.
+    content.vb: Public Overridable Function ListAssets(parent As IResourceName, pageToken As String = Nothing, pageSize As Integer? = Nothing, callSettings As CallSettings = Nothing) As PagedEnumerable(Of ListAssetsResponse, Asset)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets*
+  nameWithType.vb: AssetServiceClient.ListAssets(IResourceName, String, Nullable(Of Int32), CallSettings)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets(Google.Api.Gax.IResourceName, System.String, System.Nullable(Of System.Int32), Google.Api.Gax.Grpc.CallSettings)
+  name.vb: ListAssets(IResourceName, String, Nullable(Of Int32), CallSettings)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  id: ListAssetsAsync(Google.Api.Gax.IResourceName,System.String,System.Nullable{System.Int32},Google.Api.Gax.Grpc.CallSettings)
+  parent: Google.Cloud.Asset.V1.AssetServiceClient
+  langs:
+  - csharp
+  - vb
+  name: ListAssetsAsync(IResourceName, String, Nullable<Int32>, CallSettings)
+  nameWithType: AssetServiceClient.ListAssetsAsync(IResourceName, String, Nullable<Int32>, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Api.Gax.IResourceName, System.String, System.Nullable<System.Int32>, Google.Api.Gax.Grpc.CallSettings)
+  type: Method
+  source:
+    remote:
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
+      repo: git@github.com:googleapis/google-cloud-dotnet.git
+    id: ListAssetsAsync
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
+    startLine: 619
+  assemblies:
+  - Google.Cloud.Asset.V1
+  namespace: Google.Cloud.Asset.V1
+  summary: "\nLists assets with time and resource types and returns paged results in\nresponse.\n"
+  example: []
+  syntax:
+    content: public virtual PagedAsyncEnumerable<ListAssetsResponse, Asset> ListAssetsAsync(IResourceName parent, string pageToken = null, int? pageSize = default(int? ), CallSettings callSettings = null)
+    parameters:
+    - id: parent
+      type: Google.Api.Gax.IResourceName
+      description: "\nRequired. Name of the organization or project the assets belong to. Format:\n&quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),\n&quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or\n&quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).\n"
+    - id: pageToken
+      type: System.String
+      description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
+    - id: pageSize
+      type: System.Nullable{System.Int32}
+      description: "\nThe size of page to request. The response will not be larger than this, but may be smaller. A value of\n<code>null</code> or <code>0</code> uses a server-defined page size.\n"
+    - id: callSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: If not null, applies overrides to this RPC call.
+    return:
+      type: Google.Api.Gax.PagedAsyncEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+      description: A pageable asynchronous sequence of <xref href="Google.Cloud.Asset.V1.Asset" data-throw-if-not-resolved="false"></xref> resources.
+    content.vb: Public Overridable Function ListAssetsAsync(parent As IResourceName, pageToken As String = Nothing, pageSize As Integer? = Nothing, callSettings As CallSettings = Nothing) As PagedAsyncEnumerable(Of ListAssetsResponse, Asset)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync*
+  nameWithType.vb: AssetServiceClient.ListAssetsAsync(IResourceName, String, Nullable(Of Int32), CallSettings)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync(Google.Api.Gax.IResourceName, System.String, System.Nullable(Of System.Int32), Google.Api.Gax.Grpc.CallSettings)
+  name.vb: ListAssetsAsync(IResourceName, String, Nullable(Of Int32), CallSettings)
 - uid: Google.Cloud.Asset.V1.AssetServiceClient.BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Google.Api.Gax.Grpc.CallSettings)
   commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Google.Api.Gax.Grpc.CallSettings)
   id: BatchGetAssetsHistory(Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest,Google.Api.Gax.Grpc.CallSettings)
@@ -621,11 +927,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: BatchGetAssetsHistory
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 491
+    startLine: 639
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -665,11 +971,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: BatchGetAssetsHistoryAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 506
+    startLine: 654
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -709,11 +1015,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: BatchGetAssetsHistoryAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 521
+    startLine: 669
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -753,11 +1059,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: CreateFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 531
+    startLine: 679
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -797,11 +1103,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: CreateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 541
+    startLine: 689
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -841,11 +1147,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: CreateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 551
+    startLine: 699
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -885,11 +1191,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: CreateFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 567
+    startLine: 715
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -929,11 +1235,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: CreateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 586
+    startLine: 734
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -973,11 +1279,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: CreateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 605
+    startLine: 753
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1017,11 +1323,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 614
+    startLine: 762
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1061,11 +1367,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 623
+    startLine: 771
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1105,11 +1411,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 632
+    startLine: 780
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1149,11 +1455,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 646
+    startLine: 794
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1193,11 +1499,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 663
+    startLine: 811
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1237,11 +1543,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 680
+    startLine: 828
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1281,11 +1587,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 694
+    startLine: 842
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1325,11 +1631,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 711
+    startLine: 859
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1369,11 +1675,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: GetFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 728
+    startLine: 876
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1413,11 +1719,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ListFeeds
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 737
+    startLine: 885
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1457,11 +1763,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ListFeedsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 746
+    startLine: 894
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1501,11 +1807,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ListFeedsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 755
+    startLine: 903
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1545,11 +1851,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ListFeeds
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 768
+    startLine: 916
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1589,11 +1895,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ListFeedsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 784
+    startLine: 932
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1633,11 +1939,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ListFeedsAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 800
+    startLine: 948
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1677,11 +1983,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: UpdateFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 809
+    startLine: 957
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1721,11 +2027,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: UpdateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 818
+    startLine: 966
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1765,11 +2071,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: UpdateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 827
+    startLine: 975
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1809,11 +2115,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: UpdateFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 842
+    startLine: 990
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1853,11 +2159,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: UpdateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 860
+    startLine: 1008
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1897,11 +2203,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: UpdateFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 878
+    startLine: 1026
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1941,11 +2247,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 887
+    startLine: 1035
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -1982,11 +2288,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 896
+    startLine: 1044
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2026,11 +2332,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 905
+    startLine: 1053
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2070,11 +2376,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 919
+    startLine: 1067
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2111,11 +2417,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 936
+    startLine: 1084
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2155,11 +2461,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 953
+    startLine: 1101
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2199,11 +2505,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeed
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 967
+    startLine: 1115
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2240,11 +2546,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 984
+    startLine: 1132
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2284,11 +2590,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: DeleteFeedAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1001
+    startLine: 1149
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2328,11 +2634,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllResources
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1013
+    startLine: 1161
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2372,11 +2678,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllResourcesAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1025
+    startLine: 1173
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2416,11 +2722,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllResources
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1099
+    startLine: 1263
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2431,13 +2737,13 @@ items:
     parameters:
     - id: scope
       type: System.String
-      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the resources within the `scope`. The caller must be granted the\n[`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
+      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the resources within the `scope`. The caller must be granted the\n[`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
     - id: query
       type: System.String
-      description: "\nOptional. The query statement. See [how to construct a\nquery](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nresources within the specified `scope`. Note that the query string is\ncompared against each Cloud IAM policy binding, including its members,\nroles, and Cloud IAM conditions. The returned Cloud IAM policies will only\ncontain the bindings that match your query. To learn more about the IAM\npolicy structure, see [IAM policy\ndoc](https://cloud.google.com/iam/docs/policies#structure).\n\nExamples:\n\n* `name:Important` to find Cloud resources whose name contains\n&quot;Important&quot; as a word.\n* `displayName:Impor*` to find Cloud resources whose display name\ncontains &quot;Impor&quot; as a prefix.\n* `description:*por*` to find Cloud resources whose description\ncontains &quot;por&quot; as a substring.\n* `location:us-west*` to find Cloud resources whose location is\nprefixed with &quot;us-west&quot;.\n* `labels:prod` to find Cloud resources whose labels contain &quot;prod&quot; as\na key or value.\n* `labels.env:prod` to find Cloud resources that have a label &quot;env&quot;\nand its value is &quot;prod&quot;.\n* `labels.env:*` to find Cloud resources that have a label &quot;env&quot;.\n* `Important` to find Cloud resources that contain &quot;Important&quot; as a word\nin any of the searchable fields.\n* `Impor*` to find Cloud resources that contain &quot;Impor&quot; as a prefix\nin any of the searchable fields.\n* `*por*` to find Cloud resources that contain &quot;por&quot; as a substring in\nany of the searchable fields.\n* `Important location:(us-west1 OR global)` to find Cloud\nresources that contain &quot;Important&quot; as a word in any of the searchable\nfields and are also located in the &quot;us-west1&quot; region or the &quot;global&quot;\nlocation.\n"
+      description: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nresources within the specified `scope`.\n\nExamples:\n\n* `name:Important` to find Cloud resources whose name contains\n&quot;Important&quot; as a word.\n* `name=Important` to find the Cloud resource whose name is exactly\n&quot;Important&quot;.\n* `displayName:Impor*` to find Cloud resources whose display name\ncontains &quot;Impor&quot; as a prefix of any word in the field.\n* `location:us-west*` to find Cloud resources whose location contains both\n&quot;us&quot; and &quot;west&quot; as prefixes.\n* `labels:prod` to find Cloud resources whose labels contain &quot;prod&quot; as\na key or value.\n* `labels.env:prod` to find Cloud resources that have a label &quot;env&quot;\nand its value is &quot;prod&quot;.\n* `labels.env:*` to find Cloud resources that have a label &quot;env&quot;.\n* `kmsKey:key` to find Cloud resources encrypted with a customer-managed\nencryption key whose name contains the word &quot;key&quot;.\n* `state:ACTIVE` to find Cloud resources whose state contains &quot;ACTIVE&quot; as a\nword.\n* `NOT state:ACTIVE` to find {{gcp_name}} resources whose state\ndoesn&apos;t contain &quot;ACTIVE&quot; as a word.\n* `createTime&amp;lt;1609459200` to find Cloud resources that were created before\n&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of\n&quot;2021-01-01 00:00:00 UTC&quot; in seconds.\n* `updateTime&amp;gt;1609459200` to find Cloud resources that were updated after\n&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of\n&quot;2021-01-01 00:00:00 UTC&quot; in seconds.\n* `Important` to find Cloud resources that contain &quot;Important&quot; as a word\nin any of the searchable fields.\n* `Impor*` to find Cloud resources that contain &quot;Impor&quot; as a prefix of any\nword in any of the searchable fields.\n* `Important location:(us-west1 OR global)` to find Cloud\nresources that contain &quot;Important&quot; as a word in any of the searchable\nfields and are also located in the &quot;us-west1&quot; region or the &quot;global&quot;\nlocation.\n"
     - id: assetTypes
       type: System.Collections.Generic.IEnumerable{System.String}
-      description: "\nOptional. A list of asset types that this request searches for. If empty, it will\nsearch all the [searchable asset\ntypes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).\n"
+      description: "\nOptional. A list of asset types that this request searches for. If empty, it will\nsearch all the [searchable asset\ntypes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).\n\nRegular expressions are also supported. For example:\n\n* &quot;compute.googleapis.com.*&quot; snapshots resources whose asset type starts\nwith &quot;compute.googleapis.com&quot;.\n* &quot;.*Instance&quot; snapshots resources whose asset type ends with &quot;Instance&quot;.\n* &quot;.*Instance.*&quot; snapshots resources whose asset type contains &quot;Instance&quot;.\n\nSee [RE2](https://github.com/google/re2/wiki/Syntax) for all supported\nregular expression syntax. If the regular expression does not match any\nsupported asset type, an INVALID_ARGUMENT error will be returned.\n"
     - id: pageToken
       type: System.String
       description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
@@ -2475,11 +2781,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllResourcesAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1183
+    startLine: 1363
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2490,13 +2796,13 @@ items:
     parameters:
     - id: scope
       type: System.String
-      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the resources within the `scope`. The caller must be granted the\n[`cloudasset.assets.searchAllResources`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
+      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the resources within the `scope`. The caller must be granted the\n[`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
     - id: query
       type: System.String
-      description: "\nOptional. The query statement. See [how to construct a\nquery](http://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nresources within the specified `scope`. Note that the query string is\ncompared against each Cloud IAM policy binding, including its members,\nroles, and Cloud IAM conditions. The returned Cloud IAM policies will only\ncontain the bindings that match your query. To learn more about the IAM\npolicy structure, see [IAM policy\ndoc](https://cloud.google.com/iam/docs/policies#structure).\n\nExamples:\n\n* `name:Important` to find Cloud resources whose name contains\n&quot;Important&quot; as a word.\n* `displayName:Impor*` to find Cloud resources whose display name\ncontains &quot;Impor&quot; as a prefix.\n* `description:*por*` to find Cloud resources whose description\ncontains &quot;por&quot; as a substring.\n* `location:us-west*` to find Cloud resources whose location is\nprefixed with &quot;us-west&quot;.\n* `labels:prod` to find Cloud resources whose labels contain &quot;prod&quot; as\na key or value.\n* `labels.env:prod` to find Cloud resources that have a label &quot;env&quot;\nand its value is &quot;prod&quot;.\n* `labels.env:*` to find Cloud resources that have a label &quot;env&quot;.\n* `Important` to find Cloud resources that contain &quot;Important&quot; as a word\nin any of the searchable fields.\n* `Impor*` to find Cloud resources that contain &quot;Impor&quot; as a prefix\nin any of the searchable fields.\n* `*por*` to find Cloud resources that contain &quot;por&quot; as a substring in\nany of the searchable fields.\n* `Important location:(us-west1 OR global)` to find Cloud\nresources that contain &quot;Important&quot; as a word in any of the searchable\nfields and are also located in the &quot;us-west1&quot; region or the &quot;global&quot;\nlocation.\n"
+      description: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nresources within the specified `scope`.\n\nExamples:\n\n* `name:Important` to find Cloud resources whose name contains\n&quot;Important&quot; as a word.\n* `name=Important` to find the Cloud resource whose name is exactly\n&quot;Important&quot;.\n* `displayName:Impor*` to find Cloud resources whose display name\ncontains &quot;Impor&quot; as a prefix of any word in the field.\n* `location:us-west*` to find Cloud resources whose location contains both\n&quot;us&quot; and &quot;west&quot; as prefixes.\n* `labels:prod` to find Cloud resources whose labels contain &quot;prod&quot; as\na key or value.\n* `labels.env:prod` to find Cloud resources that have a label &quot;env&quot;\nand its value is &quot;prod&quot;.\n* `labels.env:*` to find Cloud resources that have a label &quot;env&quot;.\n* `kmsKey:key` to find Cloud resources encrypted with a customer-managed\nencryption key whose name contains the word &quot;key&quot;.\n* `state:ACTIVE` to find Cloud resources whose state contains &quot;ACTIVE&quot; as a\nword.\n* `NOT state:ACTIVE` to find {{gcp_name}} resources whose state\ndoesn&apos;t contain &quot;ACTIVE&quot; as a word.\n* `createTime&amp;lt;1609459200` to find Cloud resources that were created before\n&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of\n&quot;2021-01-01 00:00:00 UTC&quot; in seconds.\n* `updateTime&amp;gt;1609459200` to find Cloud resources that were updated after\n&quot;2021-01-01 00:00:00 UTC&quot;. 1609459200 is the epoch timestamp of\n&quot;2021-01-01 00:00:00 UTC&quot; in seconds.\n* `Important` to find Cloud resources that contain &quot;Important&quot; as a word\nin any of the searchable fields.\n* `Impor*` to find Cloud resources that contain &quot;Impor&quot; as a prefix of any\nword in any of the searchable fields.\n* `Important location:(us-west1 OR global)` to find Cloud\nresources that contain &quot;Important&quot; as a word in any of the searchable\nfields and are also located in the &quot;us-west1&quot; region or the &quot;global&quot;\nlocation.\n"
     - id: assetTypes
       type: System.Collections.Generic.IEnumerable{System.String}
-      description: "\nOptional. A list of asset types that this request searches for. If empty, it will\nsearch all the [searchable asset\ntypes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).\n"
+      description: "\nOptional. A list of asset types that this request searches for. If empty, it will\nsearch all the [searchable asset\ntypes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).\n\nRegular expressions are also supported. For example:\n\n* &quot;compute.googleapis.com.*&quot; snapshots resources whose asset type starts\nwith &quot;compute.googleapis.com&quot;.\n* &quot;.*Instance&quot; snapshots resources whose asset type ends with &quot;Instance&quot;.\n* &quot;.*Instance.*&quot; snapshots resources whose asset type contains &quot;Instance&quot;.\n\nSee [RE2](https://github.com/google/re2/wiki/Syntax) for all supported\nregular expression syntax. If the regular expression does not match any\nsupported asset type, an INVALID_ARGUMENT error will be returned.\n"
     - id: pageToken
       type: System.String
       description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
@@ -2534,11 +2840,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllIamPolicies
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1205
+    startLine: 1385
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2578,11 +2884,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllIamPoliciesAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1217
+    startLine: 1397
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2622,11 +2928,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllIamPolicies
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1278
+    startLine: 1470
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2637,10 +2943,10 @@ items:
     parameters:
     - id: scope
       type: System.String
-      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the IAM policies within the `scope`. The caller must be granted\nthe\n[`cloudasset.assets.searchAllIamPolicies`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
+      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the IAM policies within the `scope`. The caller must be granted\nthe\n[`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
     - id: query
       type: System.String
-      description: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nIAM policies within the specified `scope`.\n\nExamples:\n\n* `policy:amy@gmail.com` to find IAM policy bindings that specify user\n&quot;amy@gmail.com&quot;.\n* `policy:roles/compute.admin` to find IAM policy bindings that specify\nthe Compute Admin role.\n* `policy.role.permissions:storage.buckets.update` to find IAM policy\nbindings that specify a role containing &quot;storage.buckets.update&quot;\npermission. Note that if callers don&apos;t have `iam.roles.get` access to a\nrole&apos;s included permissions, policy bindings that specify this role will\nbe dropped from the search results.\n* `resource:organizations/123456` to find IAM policy bindings\nthat are set on &quot;organizations/123456&quot;.\n* `Important` to find IAM policy bindings that contain &quot;Important&quot; as a\nword in any of the searchable fields (except for the included\npermissions).\n* `*por*` to find IAM policy bindings that contain &quot;por&quot; as a substring\nin any of the searchable fields (except for the included permissions).\n* `resource:(instance1 OR instance2) policy:amy` to find\nIAM policy bindings that are set on resources &quot;instance1&quot; or\n&quot;instance2&quot; and also specify user &quot;amy&quot;.\n"
+      description: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nIAM policies within the specified `scope`. Note that the query string is\ncompared against each Cloud IAM policy binding, including its members,\nroles, and Cloud IAM conditions. The returned Cloud IAM policies will only\ncontain the bindings that match your query. To learn more about the IAM\npolicy structure, see [IAM policy\ndoc](https://cloud.google.com/iam/docs/policies#structure).\n\nExamples:\n\n* `policy:amy@gmail.com` to find IAM policy bindings that specify user\n&quot;amy@gmail.com&quot;.\n* `policy:roles/compute.admin` to find IAM policy bindings that specify\nthe Compute Admin role.\n* `policy:comp*` to find IAM policy bindings that contain &quot;comp&quot; as a\nprefix of any word in the binding.\n* `policy.role.permissions:storage.buckets.update` to find IAM policy\nbindings that specify a role containing &quot;storage.buckets.update&quot;\npermission. Note that if callers don&apos;t have `iam.roles.get` access to a\nrole&apos;s included permissions, policy bindings that specify this role will\nbe dropped from the search results.\n* `policy.role.permissions:upd*` to find IAM policy bindings that specify a\nrole containing &quot;upd&quot; as a prefix of any word in the role permission.\nNote that if callers don&apos;t have `iam.roles.get` access to a role&apos;s\nincluded permissions, policy bindings that specify this role will be\ndropped from the search results.\n* `resource:organizations/123456` to find IAM policy bindings\nthat are set on &quot;organizations/123456&quot;.\n* `resource=//cloudresourcemanager.googleapis.com/projects/myproject` to\nfind IAM policy bindings that are set on the project named &quot;myproject&quot;.\n* `Important` to find IAM policy bindings that contain &quot;Important&quot; as a\nword in any of the searchable fields (except for the included\npermissions).\n* `resource:(instance1 OR instance2) policy:amy` to find\nIAM policy bindings that are set on resources &quot;instance1&quot; or\n&quot;instance2&quot; and also specify user &quot;amy&quot;.\n"
     - id: pageToken
       type: System.String
       description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
@@ -2678,11 +2984,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: SearchAllIamPoliciesAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1345
+    startLine: 1549
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2693,10 +2999,10 @@ items:
     parameters:
     - id: scope
       type: System.String
-      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the IAM policies within the `scope`. The caller must be granted\nthe\n[`cloudasset.assets.searchAllIamPolicies`](http://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
+      description: "\nRequired. A scope can be a project, a folder, or an organization. The search is\nlimited to the IAM policies within the `scope`. The caller must be granted\nthe\n[`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)\npermission on the desired scope.\n\nThe allowed values are:\n\n* projects/{PROJECT_ID} (e.g., &quot;projects/foo-bar&quot;)\n* projects/{PROJECT_NUMBER} (e.g., &quot;projects/12345678&quot;)\n* folders/{FOLDER_NUMBER} (e.g., &quot;folders/1234567&quot;)\n* organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)\n"
     - id: query
       type: System.String
-      description: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nIAM policies within the specified `scope`.\n\nExamples:\n\n* `policy:amy@gmail.com` to find IAM policy bindings that specify user\n&quot;amy@gmail.com&quot;.\n* `policy:roles/compute.admin` to find IAM policy bindings that specify\nthe Compute Admin role.\n* `policy.role.permissions:storage.buckets.update` to find IAM policy\nbindings that specify a role containing &quot;storage.buckets.update&quot;\npermission. Note that if callers don&apos;t have `iam.roles.get` access to a\nrole&apos;s included permissions, policy bindings that specify this role will\nbe dropped from the search results.\n* `resource:organizations/123456` to find IAM policy bindings\nthat are set on &quot;organizations/123456&quot;.\n* `Important` to find IAM policy bindings that contain &quot;Important&quot; as a\nword in any of the searchable fields (except for the included\npermissions).\n* `*por*` to find IAM policy bindings that contain &quot;por&quot; as a substring\nin any of the searchable fields (except for the included permissions).\n* `resource:(instance1 OR instance2) policy:amy` to find\nIAM policy bindings that are set on resources &quot;instance1&quot; or\n&quot;instance2&quot; and also specify user &quot;amy&quot;.\n"
+      description: "\nOptional. The query statement. See [how to construct a\nquery](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)\nfor more information. If not specified or empty, it will search all the\nIAM policies within the specified `scope`. Note that the query string is\ncompared against each Cloud IAM policy binding, including its members,\nroles, and Cloud IAM conditions. The returned Cloud IAM policies will only\ncontain the bindings that match your query. To learn more about the IAM\npolicy structure, see [IAM policy\ndoc](https://cloud.google.com/iam/docs/policies#structure).\n\nExamples:\n\n* `policy:amy@gmail.com` to find IAM policy bindings that specify user\n&quot;amy@gmail.com&quot;.\n* `policy:roles/compute.admin` to find IAM policy bindings that specify\nthe Compute Admin role.\n* `policy:comp*` to find IAM policy bindings that contain &quot;comp&quot; as a\nprefix of any word in the binding.\n* `policy.role.permissions:storage.buckets.update` to find IAM policy\nbindings that specify a role containing &quot;storage.buckets.update&quot;\npermission. Note that if callers don&apos;t have `iam.roles.get` access to a\nrole&apos;s included permissions, policy bindings that specify this role will\nbe dropped from the search results.\n* `policy.role.permissions:upd*` to find IAM policy bindings that specify a\nrole containing &quot;upd&quot; as a prefix of any word in the role permission.\nNote that if callers don&apos;t have `iam.roles.get` access to a role&apos;s\nincluded permissions, policy bindings that specify this role will be\ndropped from the search results.\n* `resource:organizations/123456` to find IAM policy bindings\nthat are set on &quot;organizations/123456&quot;.\n* `resource=//cloudresourcemanager.googleapis.com/projects/myproject` to\nfind IAM policy bindings that are set on the project named &quot;myproject&quot;.\n* `Important` to find IAM policy bindings that contain &quot;Important&quot; as a\nword in any of the searchable fields (except for the included\npermissions).\n* `resource:(instance1 OR instance2) policy:amy` to find\nIAM policy bindings that are set on resources &quot;instance1&quot; or\n&quot;instance2&quot; and also specify user &quot;amy&quot;.\n"
     - id: pageToken
       type: System.String
       description: "\nThe token returned from the previous request. A value of <code>null</code> or an empty string retrieves the first\npage.\n"
@@ -2734,11 +3040,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AnalyzeIamPolicy
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1361
+    startLine: 1565
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2778,11 +3084,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AnalyzeIamPolicyAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1371
+    startLine: 1575
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2822,11 +3128,11 @@ items:
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AnalyzeIamPolicyAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1381
+    startLine: 1585
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -2852,169 +3158,169 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
-  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
-  id: ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
+  id: AnalyzeIamPolicyLongrunning(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
   parent: Google.Cloud.Asset.V1.AssetServiceClient
   langs:
   - csharp
   - vb
-  name: ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest, CallSettings)
-  nameWithType: AssetServiceClient.ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest, CallSettings)
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest, Google.Api.Gax.Grpc.CallSettings)
+  name: AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest, CallSettings)
+  nameWithType: AssetServiceClient.AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest, Google.Api.Gax.Grpc.CallSettings)
   type: Method
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: ExportIamPolicyAnalysis
+    id: AnalyzeIamPolicyLongrunning
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1398
+    startLine: 1602
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nExports the answers of which identities have what accesses on which\nresources to a Google Cloud Storage or a BigQuery destination. For Cloud\nStorage destination, the output format is the JSON format that represents a\n[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].\nThis method implements the\n[google.longrunning.Operation][google.longrunning.Operation], which allows\nyou to track the export status. We recommend intervals of at least 2\nseconds with exponential retry to poll the export operation result. The\nmetadata contains the request to help callers to map responses to requests.\n"
+  summary: "\nAnalyzes IAM policies asynchronously to answer which identities have what\naccesses on which resources, and writes the analysis results to a Google\nCloud Storage or a BigQuery destination. For Cloud Storage destination, the\noutput format is the JSON format that represents a\n[AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the\n[google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation\nstatus. We recommend intervals of at least 2 seconds with exponential\nbackoff retry to poll the operation result. The metadata contains the\nrequest to help callers to map responses to requests.\n"
   example: []
   syntax:
-    content: public virtual Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest> ExportIamPolicyAnalysis(ExportIamPolicyAnalysisRequest request, CallSettings callSettings = null)
+    content: public virtual Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest> AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest request, CallSettings callSettings = null)
     parameters:
     - id: request
-      type: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+      type: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
       description: The request object containing all of the parameters for the API call.
     - id: callSettings
       type: Google.Api.Gax.Grpc.CallSettings
       description: If not null, applies overrides to this RPC call.
     return:
-      type: Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}
+      type: Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}
       description: The RPC response.
-    content.vb: Public Overridable Function ExportIamPolicyAnalysis(request As ExportIamPolicyAnalysisRequest, callSettings As CallSettings = Nothing) As Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest)
-  overload: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis*
+    content.vb: Public Overridable Function AnalyzeIamPolicyLongrunning(request As AnalyzeIamPolicyLongrunningRequest, callSettings As CallSettings = Nothing) As Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning*
   modifiers.csharp:
   - public
   - virtual
   modifiers.vb:
   - Public
   - Overridable
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
-  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
-  id: ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,Google.Api.Gax.Grpc.CallSettings)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
+  id: AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,Google.Api.Gax.Grpc.CallSettings)
   parent: Google.Cloud.Asset.V1.AssetServiceClient
   langs:
   - csharp
   - vb
-  name: ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CallSettings)
-  nameWithType: AssetServiceClient.ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CallSettings)
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest, Google.Api.Gax.Grpc.CallSettings)
+  name: AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest, CallSettings)
+  nameWithType: AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest, Google.Api.Gax.Grpc.CallSettings)
   type: Method
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: ExportIamPolicyAnalysisAsync
+    id: AnalyzeIamPolicyLongrunningAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1415
+    startLine: 1619
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nExports the answers of which identities have what accesses on which\nresources to a Google Cloud Storage or a BigQuery destination. For Cloud\nStorage destination, the output format is the JSON format that represents a\n[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].\nThis method implements the\n[google.longrunning.Operation][google.longrunning.Operation], which allows\nyou to track the export status. We recommend intervals of at least 2\nseconds with exponential retry to poll the export operation result. The\nmetadata contains the request to help callers to map responses to requests.\n"
+  summary: "\nAnalyzes IAM policies asynchronously to answer which identities have what\naccesses on which resources, and writes the analysis results to a Google\nCloud Storage or a BigQuery destination. For Cloud Storage destination, the\noutput format is the JSON format that represents a\n[AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the\n[google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation\nstatus. We recommend intervals of at least 2 seconds with exponential\nbackoff retry to poll the operation result. The metadata contains the\nrequest to help callers to map responses to requests.\n"
   example: []
   syntax:
-    content: public virtual Task<Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>> ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest request, CallSettings callSettings = null)
+    content: public virtual Task<Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>> AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request, CallSettings callSettings = null)
     parameters:
     - id: request
-      type: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+      type: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
       description: The request object containing all of the parameters for the API call.
     - id: callSettings
       type: Google.Api.Gax.Grpc.CallSettings
       description: If not null, applies overrides to this RPC call.
     return:
-      type: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}}
+      type: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}}
       description: A Task containing the RPC response.
-    content.vb: Public Overridable Function ExportIamPolicyAnalysisAsync(request As ExportIamPolicyAnalysisRequest, callSettings As CallSettings = Nothing) As Task(Of Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest))
-  overload: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync*
+    content.vb: Public Overridable Function AnalyzeIamPolicyLongrunningAsync(request As AnalyzeIamPolicyLongrunningRequest, callSettings As CallSettings = Nothing) As Task(Of Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest))
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync*
   modifiers.csharp:
   - public
   - virtual
   modifiers.vb:
   - Public
   - Overridable
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,System.Threading.CancellationToken)
-  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,System.Threading.CancellationToken)
-  id: ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest,System.Threading.CancellationToken)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,System.Threading.CancellationToken)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,System.Threading.CancellationToken)
+  id: AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest,System.Threading.CancellationToken)
   parent: Google.Cloud.Asset.V1.AssetServiceClient
   langs:
   - csharp
   - vb
-  name: ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CancellationToken)
-  nameWithType: AssetServiceClient.ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CancellationToken)
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync(Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest, System.Threading.CancellationToken)
+  name: AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest, CancellationToken)
+  nameWithType: AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest, CancellationToken)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync(Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: ExportIamPolicyAnalysisAsync
+    id: AnalyzeIamPolicyLongrunningAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1432
+    startLine: 1636
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nExports the answers of which identities have what accesses on which\nresources to a Google Cloud Storage or a BigQuery destination. For Cloud\nStorage destination, the output format is the JSON format that represents a\n[google.cloud.asset.v1.AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].\nThis method implements the\n[google.longrunning.Operation][google.longrunning.Operation], which allows\nyou to track the export status. We recommend intervals of at least 2\nseconds with exponential retry to poll the export operation result. The\nmetadata contains the request to help callers to map responses to requests.\n"
+  summary: "\nAnalyzes IAM policies asynchronously to answer which identities have what\naccesses on which resources, and writes the analysis results to a Google\nCloud Storage or a BigQuery destination. For Cloud Storage destination, the\noutput format is the JSON format that represents a\n[AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the\n[google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation\nstatus. We recommend intervals of at least 2 seconds with exponential\nbackoff retry to poll the operation result. The metadata contains the\nrequest to help callers to map responses to requests.\n"
   example: []
   syntax:
-    content: public virtual Task<Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>> ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest request, CancellationToken cancellationToken)
+    content: public virtual Task<Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>> AnalyzeIamPolicyLongrunningAsync(AnalyzeIamPolicyLongrunningRequest request, CancellationToken cancellationToken)
     parameters:
     - id: request
-      type: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+      type: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
       description: The request object containing all of the parameters for the API call.
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to use for this RPC.
     return:
-      type: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}}
+      type: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}}
       description: A Task containing the RPC response.
-    content.vb: Public Overridable Function ExportIamPolicyAnalysisAsync(request As ExportIamPolicyAnalysisRequest, cancellationToken As CancellationToken) As Task(Of Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest))
-  overload: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync*
+    content.vb: Public Overridable Function AnalyzeIamPolicyLongrunningAsync(request As AnalyzeIamPolicyLongrunningRequest, cancellationToken As CancellationToken) As Task(Of Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest))
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync*
   modifiers.csharp:
   - public
   - virtual
   modifiers.vb:
   - Public
   - Overridable
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
-  commentId: P:Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
-  id: ExportIamPolicyAnalysisOperationsClient
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
+  commentId: P:Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
+  id: AnalyzeIamPolicyLongrunningOperationsClient
   parent: Google.Cloud.Asset.V1.AssetServiceClient
   langs:
   - csharp
   - vb
-  name: ExportIamPolicyAnalysisOperationsClient
-  nameWithType: AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
+  name: AnalyzeIamPolicyLongrunningOperationsClient
+  nameWithType: AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
   type: Property
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: ExportIamPolicyAnalysisOperationsClient
+    id: AnalyzeIamPolicyLongrunningOperationsClient
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1436
+    startLine: 1640
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: The long-running operations client for <code>ExportIamPolicyAnalysis</code>.
+  summary: The long-running operations client for <code>AnalyzeIamPolicyLongrunning</code>.
   example: []
   syntax:
-    content: public virtual OperationsClient ExportIamPolicyAnalysisOperationsClient { get; }
+    content: public virtual OperationsClient AnalyzeIamPolicyLongrunningOperationsClient { get; }
     parameters: []
     return:
       type: Google.LongRunning.OperationsClient
-    content.vb: Public Overridable ReadOnly Property ExportIamPolicyAnalysisOperationsClient As OperationsClient
-  overload: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient*
+    content.vb: Public Overridable ReadOnly Property AnalyzeIamPolicyLongrunningOperationsClient As OperationsClient
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient*
   modifiers.csharp:
   - public
   - virtual
@@ -3023,32 +3329,32 @@ items:
   - Public
   - Overridable
   - ReadOnly
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis(System.String,Google.Api.Gax.Grpc.CallSettings)
-  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis(System.String,Google.Api.Gax.Grpc.CallSettings)
-  id: PollOnceExportIamPolicyAnalysis(System.String,Google.Api.Gax.Grpc.CallSettings)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(System.String,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(System.String,Google.Api.Gax.Grpc.CallSettings)
+  id: PollOnceAnalyzeIamPolicyLongrunning(System.String,Google.Api.Gax.Grpc.CallSettings)
   parent: Google.Cloud.Asset.V1.AssetServiceClient
   langs:
   - csharp
   - vb
-  name: PollOnceExportIamPolicyAnalysis(String, CallSettings)
-  nameWithType: AssetServiceClient.PollOnceExportIamPolicyAnalysis(String, CallSettings)
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis(System.String, Google.Api.Gax.Grpc.CallSettings)
+  name: PollOnceAnalyzeIamPolicyLongrunning(String, CallSettings)
+  nameWithType: AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(String, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(System.String, Google.Api.Gax.Grpc.CallSettings)
   type: Method
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: PollOnceExportIamPolicyAnalysis
+    id: PollOnceAnalyzeIamPolicyLongrunning
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1447
+    startLine: 1651
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nPoll an operation once, using an <code>operationName</code> from a previous invocation of\n<code>ExportIamPolicyAnalysis</code>.\n"
+  summary: "\nPoll an operation once, using an <code>operationName</code> from a previous invocation of\n<code>AnalyzeIamPolicyLongrunning</code>.\n"
   example: []
   syntax:
-    content: public virtual Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest> PollOnceExportIamPolicyAnalysis(string operationName, CallSettings callSettings = null)
+    content: public virtual Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest> PollOnceAnalyzeIamPolicyLongrunning(string operationName, CallSettings callSettings = null)
     parameters:
     - id: operationName
       type: System.String
@@ -3057,42 +3363,42 @@ items:
       type: Google.Api.Gax.Grpc.CallSettings
       description: If not null, applies overrides to this RPC call.
     return:
-      type: Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}
+      type: Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}
       description: The result of polling the operation.
-    content.vb: Public Overridable Function PollOnceExportIamPolicyAnalysis(operationName As String, callSettings As CallSettings = Nothing) As Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest)
-  overload: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis*
+    content.vb: Public Overridable Function PollOnceAnalyzeIamPolicyLongrunning(operationName As String, callSettings As CallSettings = Nothing) As Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest)
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning*
   modifiers.csharp:
   - public
   - virtual
   modifiers.vb:
   - Public
   - Overridable
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
-  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
-  id: PollOnceExportIamPolicyAnalysisAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
+  id: PollOnceAnalyzeIamPolicyLongrunningAsync(System.String,Google.Api.Gax.Grpc.CallSettings)
   parent: Google.Cloud.Asset.V1.AssetServiceClient
   langs:
   - csharp
   - vb
-  name: PollOnceExportIamPolicyAnalysisAsync(String, CallSettings)
-  nameWithType: AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync(String, CallSettings)
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync(System.String, Google.Api.Gax.Grpc.CallSettings)
+  name: PollOnceAnalyzeIamPolicyLongrunningAsync(String, CallSettings)
+  nameWithType: AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync(String, CallSettings)
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync(System.String, Google.Api.Gax.Grpc.CallSettings)
   type: Method
   source:
     remote:
       path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: PollOnceExportIamPolicyAnalysisAsync
+    id: PollOnceAnalyzeIamPolicyLongrunningAsync
     path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetServiceClient.g.cs
-    startLine: 1459
+    startLine: 1663
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nAsynchronously poll an operation once, using an <code>operationName</code> from a previous invocation of\n<code>ExportIamPolicyAnalysis</code>.\n"
+  summary: "\nAsynchronously poll an operation once, using an <code>operationName</code> from a previous invocation of\n<code>AnalyzeIamPolicyLongrunning</code>.\n"
   example: []
   syntax:
-    content: public virtual Task<Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>> PollOnceExportIamPolicyAnalysisAsync(string operationName, CallSettings callSettings = null)
+    content: public virtual Task<Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>> PollOnceAnalyzeIamPolicyLongrunningAsync(string operationName, CallSettings callSettings = null)
     parameters:
     - id: operationName
       type: System.String
@@ -3101,10 +3407,10 @@ items:
       type: Google.Api.Gax.Grpc.CallSettings
       description: If not null, applies overrides to this RPC call.
     return:
-      type: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}}
+      type: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}}
       description: A task representing the result of polling the operation.
-    content.vb: Public Overridable Function PollOnceExportIamPolicyAnalysisAsync(operationName As String, callSettings As CallSettings = Nothing) As Task(Of Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest))
-  overload: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync*
+    content.vb: Public Overridable Function PollOnceAnalyzeIamPolicyLongrunningAsync(operationName As String, callSettings As CallSettings = Nothing) As Task(Of Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest))
+  overload: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync*
   modifiers.csharp:
   - public
   - virtual
@@ -3124,37 +3430,6 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
@@ -3241,6 +3516,37 @@ references:
     name: MemberwiseClone
     nameWithType: Object.MemberwiseClone
     fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
     isExternal: true
   - name: (
     nameWithType: (
@@ -3653,7 +3959,7 @@ references:
   fullName: Google.Api.Gax.Grpc
 - uid: Google.LongRunning.Operation`2
   commentId: T:Google.LongRunning.Operation`2
-  parent: Google.LongRunning
+  isExternal: true
   name: Operation<TResponse, TMetadata>
   nameWithType: Operation<TResponse, TMetadata>
   fullName: Google.LongRunning.Operation<TResponse, TMetadata>
@@ -3665,6 +3971,7 @@ references:
     name: Operation
     nameWithType: Operation
     fullName: Google.LongRunning.Operation
+    isExternal: true
   - name: <
     nameWithType: <
     fullName: <
@@ -3685,6 +3992,7 @@ references:
     name: Operation
     nameWithType: Operation
     fullName: Google.LongRunning.Operation
+    isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
@@ -3702,6 +4010,7 @@ references:
     fullName: )
 - uid: Google.LongRunning
   commentId: N:Google.LongRunning
+  isExternal: true
   name: Google.LongRunning
   nameWithType: Google.LongRunning
   fullName: Google.LongRunning
@@ -3796,6 +4105,7 @@ references:
 - uid: Google.LongRunning.OperationsClient
   commentId: T:Google.LongRunning.OperationsClient
   parent: Google.LongRunning
+  isExternal: true
   name: OperationsClient
   nameWithType: OperationsClient
   fullName: Google.LongRunning.OperationsClient
@@ -3809,6 +4119,338 @@ references:
   name: PollOnceExportAssetsAsync
   nameWithType: AssetServiceClient.PollOnceExportAssetsAsync
   fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportAssetsAsync
+- uid: Google.Cloud.Asset.V1.Asset
+  commentId: T:Google.Cloud.Asset.V1.Asset
+  parent: Google.Cloud.Asset.V1
+  name: Asset
+  nameWithType: Asset
+  fullName: Google.Cloud.Asset.V1.Asset
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.ListAssets
+  name: ListAssets
+  nameWithType: AssetServiceClient.ListAssets
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssets
+- uid: Google.Cloud.Asset.V1.ListAssetsRequest
+  commentId: T:Google.Cloud.Asset.V1.ListAssetsRequest
+  parent: Google.Cloud.Asset.V1
+  name: ListAssetsRequest
+  nameWithType: ListAssetsRequest
+  fullName: Google.Cloud.Asset.V1.ListAssetsRequest
+- uid: Google.Api.Gax.PagedEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+  commentId: T:Google.Api.Gax.PagedEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+  parent: Google.Api.Gax
+  definition: Google.Api.Gax.PagedEnumerable`2
+  name: PagedEnumerable<ListAssetsResponse, Asset>
+  nameWithType: PagedEnumerable<ListAssetsResponse, Asset>
+  fullName: Google.Api.Gax.PagedEnumerable<Google.Cloud.Asset.V1.ListAssetsResponse, Google.Cloud.Asset.V1.Asset>
+  nameWithType.vb: PagedEnumerable(Of ListAssetsResponse, Asset)
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of Google.Cloud.Asset.V1.ListAssetsResponse, Google.Cloud.Asset.V1.Asset)
+  name.vb: PagedEnumerable(Of ListAssetsResponse, Asset)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedEnumerable`2
+    name: PagedEnumerable
+    nameWithType: PagedEnumerable
+    fullName: Google.Api.Gax.PagedEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.ListAssetsResponse
+    name: ListAssetsResponse
+    nameWithType: ListAssetsResponse
+    fullName: Google.Cloud.Asset.V1.ListAssetsResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Cloud.Asset.V1.Asset
+    name: Asset
+    nameWithType: Asset
+    fullName: Google.Cloud.Asset.V1.Asset
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.PagedEnumerable`2
+    name: PagedEnumerable
+    nameWithType: PagedEnumerable
+    fullName: Google.Api.Gax.PagedEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.ListAssetsResponse
+    name: ListAssetsResponse
+    nameWithType: ListAssetsResponse
+    fullName: Google.Cloud.Asset.V1.ListAssetsResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Cloud.Asset.V1.Asset
+    name: Asset
+    nameWithType: Asset
+    fullName: Google.Cloud.Asset.V1.Asset
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedEnumerable`2
+  commentId: T:Google.Api.Gax.PagedEnumerable`2
+  isExternal: true
+  name: PagedEnumerable<TResponse, TResource>
+  nameWithType: PagedEnumerable<TResponse, TResource>
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource)
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource)
+  name.vb: PagedEnumerable(Of TResponse, TResource)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedEnumerable`2
+    name: PagedEnumerable
+    nameWithType: PagedEnumerable
+    fullName: Google.Api.Gax.PagedEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.PagedEnumerable`2
+    name: PagedEnumerable
+    nameWithType: PagedEnumerable
+    fullName: Google.Api.Gax.PagedEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: true
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync
+  name: ListAssetsAsync
+  nameWithType: AssetServiceClient.ListAssetsAsync
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ListAssetsAsync
+- uid: Google.Api.Gax.PagedAsyncEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+  commentId: T:Google.Api.Gax.PagedAsyncEnumerable{Google.Cloud.Asset.V1.ListAssetsResponse,Google.Cloud.Asset.V1.Asset}
+  parent: Google.Api.Gax
+  definition: Google.Api.Gax.PagedAsyncEnumerable`2
+  name: PagedAsyncEnumerable<ListAssetsResponse, Asset>
+  nameWithType: PagedAsyncEnumerable<ListAssetsResponse, Asset>
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<Google.Cloud.Asset.V1.ListAssetsResponse, Google.Cloud.Asset.V1.Asset>
+  nameWithType.vb: PagedAsyncEnumerable(Of ListAssetsResponse, Asset)
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of Google.Cloud.Asset.V1.ListAssetsResponse, Google.Cloud.Asset.V1.Asset)
+  name.vb: PagedAsyncEnumerable(Of ListAssetsResponse, Asset)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Cloud.Asset.V1.ListAssetsResponse
+    name: ListAssetsResponse
+    nameWithType: ListAssetsResponse
+    fullName: Google.Cloud.Asset.V1.ListAssetsResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Cloud.Asset.V1.Asset
+    name: Asset
+    nameWithType: Asset
+    fullName: Google.Cloud.Asset.V1.Asset
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Cloud.Asset.V1.ListAssetsResponse
+    name: ListAssetsResponse
+    nameWithType: ListAssetsResponse
+    fullName: Google.Cloud.Asset.V1.ListAssetsResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Cloud.Asset.V1.Asset
+    name: Asset
+    nameWithType: Asset
+    fullName: Google.Cloud.Asset.V1.Asset
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedAsyncEnumerable`2
+  commentId: T:Google.Api.Gax.PagedAsyncEnumerable`2
+  isExternal: true
+  name: PagedAsyncEnumerable<TResponse, TResource>
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource)
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource)
+  name.vb: PagedAsyncEnumerable(Of TResponse, TResource)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.IResourceName
+  commentId: T:Google.Api.Gax.IResourceName
+  parent: Google.Api.Gax
+  isExternal: true
+  name: IResourceName
+  nameWithType: IResourceName
+  fullName: Google.Api.Gax.IResourceName
 - uid: Google.Cloud.Asset.V1.AssetServiceClient.BatchGetAssetsHistory*
   commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.BatchGetAssetsHistory
   name: BatchGetAssetsHistory
@@ -4128,63 +4770,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Api.Gax.PagedEnumerable`2
-  commentId: T:Google.Api.Gax.PagedEnumerable`2
-  isExternal: true
-  name: PagedEnumerable<TResponse, TResource>
-  nameWithType: PagedEnumerable<TResponse, TResource>
-  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>
-  nameWithType.vb: PagedEnumerable(Of TResponse, TResource)
-  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource)
-  name.vb: PagedEnumerable(Of TResponse, TResource)
-  spec.csharp:
-  - uid: Google.Api.Gax.PagedEnumerable`2
-    name: PagedEnumerable
-    nameWithType: PagedEnumerable
-    fullName: Google.Api.Gax.PagedEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: TResponse
-    nameWithType: TResponse
-    fullName: TResponse
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResource
-    nameWithType: TResource
-    fullName: TResource
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Api.Gax.PagedEnumerable`2
-    name: PagedEnumerable
-    nameWithType: PagedEnumerable
-    fullName: Google.Api.Gax.PagedEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: TResponse
-    nameWithType: TResponse
-    fullName: TResponse
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResource
-    nameWithType: TResource
-    fullName: TResource
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Api.Gax
-  commentId: N:Google.Api.Gax
-  isExternal: true
-  name: Google.Api.Gax
-  nameWithType: Google.Api.Gax
-  fullName: Google.Api.Gax
 - uid: Google.Cloud.Asset.V1.AssetServiceClient.SearchAllResourcesAsync*
   commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.SearchAllResourcesAsync
   name: SearchAllResourcesAsync
@@ -4246,57 +4831,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Api.Gax.PagedAsyncEnumerable`2
-  commentId: T:Google.Api.Gax.PagedAsyncEnumerable`2
-  isExternal: true
-  name: PagedAsyncEnumerable<TResponse, TResource>
-  nameWithType: PagedAsyncEnumerable<TResponse, TResource>
-  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>
-  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource)
-  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource)
-  name.vb: PagedAsyncEnumerable(Of TResponse, TResource)
-  spec.csharp:
-  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
-    name: PagedAsyncEnumerable
-    nameWithType: PagedAsyncEnumerable
-    fullName: Google.Api.Gax.PagedAsyncEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: TResponse
-    nameWithType: TResponse
-    fullName: TResponse
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResource
-    nameWithType: TResource
-    fullName: TResource
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
-    name: PagedAsyncEnumerable
-    nameWithType: PagedAsyncEnumerable
-    fullName: Google.Api.Gax.PagedAsyncEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: TResponse
-    nameWithType: TResponse
-    fullName: TResponse
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResource
-    nameWithType: TResource
-    fullName: TResource
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.IEnumerable{System.String}
   commentId: T:System.Collections.Generic.IEnumerable{System.String}
   parent: System.Collections.Generic
@@ -4341,50 +4875,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Nullable{System.Int32}
-  commentId: T:System.Nullable{System.Int32}
-  parent: System
-  definition: System.Nullable`1
-  name: Nullable<Int32>
-  nameWithType: Nullable<Int32>
-  fullName: System.Nullable<System.Int32>
-  nameWithType.vb: Nullable(Of Int32)
-  fullName.vb: System.Nullable(Of System.Int32)
-  name.vb: Nullable(Of Int32)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -4414,45 +4904,6 @@ references:
     name: IEnumerable
     nameWithType: IEnumerable
     fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
-  isExternal: true
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -4661,27 +5112,27 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis*
-  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis
-  name: ExportIamPolicyAnalysis
-  nameWithType: AssetServiceClient.ExportIamPolicyAnalysis
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysis
-- uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-  commentId: T:Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning
+  name: AnalyzeIamPolicyLongrunning
+  nameWithType: AssetServiceClient.AnalyzeIamPolicyLongrunning
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunning
+- uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+  commentId: T:Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
   parent: Google.Cloud.Asset.V1
-  name: ExportIamPolicyAnalysisRequest
-  nameWithType: ExportIamPolicyAnalysisRequest
-  fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-- uid: Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}
-  commentId: T:Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}
+  name: AnalyzeIamPolicyLongrunningRequest
+  nameWithType: AnalyzeIamPolicyLongrunningRequest
+  fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+- uid: Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}
+  commentId: T:Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}
   parent: Google.LongRunning
   definition: Google.LongRunning.Operation`2
-  name: Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>
-  nameWithType: Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>
-  fullName: Google.LongRunning.Operation<Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse, Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest>
-  nameWithType.vb: Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest)
-  fullName.vb: Google.LongRunning.Operation(Of Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse, Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest)
-  name.vb: Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest)
+  name: Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>
+  nameWithType: Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>
+  fullName: Google.LongRunning.Operation<Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse, Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest>
+  nameWithType.vb: Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest)
+  fullName.vb: Google.LongRunning.Operation(Of Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse, Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest)
+  name.vb: Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest)
   spec.csharp:
   - uid: Google.LongRunning.Operation`2
     name: Operation
@@ -4691,17 +5142,17 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
-    name: ExportIamPolicyAnalysisResponse
-    nameWithType: ExportIamPolicyAnalysisResponse
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
+    name: AnalyzeIamPolicyLongrunningResponse
+    nameWithType: AnalyzeIamPolicyLongrunningResponse
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-    name: ExportIamPolicyAnalysisRequest
-    nameWithType: ExportIamPolicyAnalysisRequest
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+    name: AnalyzeIamPolicyLongrunningRequest
+    nameWithType: AnalyzeIamPolicyLongrunningRequest
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -4714,35 +5165,35 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
-    name: ExportIamPolicyAnalysisResponse
-    nameWithType: ExportIamPolicyAnalysisResponse
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
+    name: AnalyzeIamPolicyLongrunningResponse
+    nameWithType: AnalyzeIamPolicyLongrunningResponse
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-    name: ExportIamPolicyAnalysisRequest
-    nameWithType: ExportIamPolicyAnalysisRequest
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+    name: AnalyzeIamPolicyLongrunningRequest
+    nameWithType: AnalyzeIamPolicyLongrunningRequest
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync*
-  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync
-  name: ExportIamPolicyAnalysisAsync
-  nameWithType: AssetServiceClient.ExportIamPolicyAnalysisAsync
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisAsync
-- uid: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}}
-  commentId: T:System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse,Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest}}
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync
+  name: AnalyzeIamPolicyLongrunningAsync
+  nameWithType: AssetServiceClient.AnalyzeIamPolicyLongrunningAsync
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningAsync
+- uid: System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}}
+  commentId: T:System.Threading.Tasks.Task{Google.LongRunning.Operation{Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse,Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
-  name: Task<Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>>
-  nameWithType: Task<Operation<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest>>
-  fullName: System.Threading.Tasks.Task<Google.LongRunning.Operation<Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse, Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest>>
-  nameWithType.vb: Task(Of Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest))
-  fullName.vb: System.Threading.Tasks.Task(Of Google.LongRunning.Operation(Of Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse, Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest))
-  name.vb: Task(Of Operation(Of ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest))
+  name: Task<Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>>
+  nameWithType: Task<Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest>>
+  fullName: System.Threading.Tasks.Task<Google.LongRunning.Operation<Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse, Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest>>
+  nameWithType.vb: Task(Of Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest))
+  fullName.vb: System.Threading.Tasks.Task(Of Google.LongRunning.Operation(Of Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse, Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest))
+  name.vb: Task(Of Operation(Of AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
@@ -4760,17 +5211,17 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
-    name: ExportIamPolicyAnalysisResponse
-    nameWithType: ExportIamPolicyAnalysisResponse
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
+    name: AnalyzeIamPolicyLongrunningResponse
+    nameWithType: AnalyzeIamPolicyLongrunningResponse
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-    name: ExportIamPolicyAnalysisRequest
-    nameWithType: ExportIamPolicyAnalysisRequest
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+    name: AnalyzeIamPolicyLongrunningRequest
+    nameWithType: AnalyzeIamPolicyLongrunningRequest
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -4794,35 +5245,35 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
-    name: ExportIamPolicyAnalysisResponse
-    nameWithType: ExportIamPolicyAnalysisResponse
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisResponse
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
+    name: AnalyzeIamPolicyLongrunningResponse
+    nameWithType: AnalyzeIamPolicyLongrunningResponse
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningResponse
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
-    name: ExportIamPolicyAnalysisRequest
-    nameWithType: ExportIamPolicyAnalysisRequest
-    fullName: Google.Cloud.Asset.V1.ExportIamPolicyAnalysisRequest
+  - uid: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
+    name: AnalyzeIamPolicyLongrunningRequest
+    nameWithType: AnalyzeIamPolicyLongrunningRequest
+    fullName: Google.Cloud.Asset.V1.AnalyzeIamPolicyLongrunningRequest
   - name: )
     nameWithType: )
     fullName: )
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient*
-  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
-  name: ExportIamPolicyAnalysisOperationsClient
-  nameWithType: AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.ExportIamPolicyAnalysisOperationsClient
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis*
-  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis
-  name: PollOnceExportIamPolicyAnalysis
-  nameWithType: AssetServiceClient.PollOnceExportIamPolicyAnalysis
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysis
-- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync*
-  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync
-  name: PollOnceExportIamPolicyAnalysisAsync
-  nameWithType: AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync
-  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceExportIamPolicyAnalysisAsync
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
+  name: AnalyzeIamPolicyLongrunningOperationsClient
+  nameWithType: AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.AnalyzeIamPolicyLongrunningOperationsClient
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning
+  name: PollOnceAnalyzeIamPolicyLongrunning
+  nameWithType: AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunning
+- uid: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync*
+  commentId: Overload:Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync
+  name: PollOnceAnalyzeIamPolicyLongrunningAsync
+  nameWithType: AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync
+  fullName: Google.Cloud.Asset.V1.AssetServiceClient.PollOnceAnalyzeIamPolicyLongrunningAsync

@@ -11,8 +11,6 @@ items:
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.ExpandGroups
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.ExpandResources
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.ExpandRoles
-  - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-  - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.OutputGroupEdges
   - Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.OutputResourceEdges
   langs:
@@ -24,34 +22,35 @@ items:
   type: Class
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: Options
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5320
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 7862
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
   summary: "\nContains query options.\n"
   example: []
   syntax:
-    content: 'public sealed class Options : IMessage<IamPolicyAnalysisQuery.Types.Options>, IMessage, IEquatable<IamPolicyAnalysisQuery.Types.Options>, IDeepCloneable<IamPolicyAnalysisQuery.Types.Options>'
+    content: 'public sealed class Options : IMessage<IamPolicyAnalysisQuery.Types.Options>, IEquatable<IamPolicyAnalysisQuery.Types.Options>, IDeepCloneable<IamPolicyAnalysisQuery.Types.Options>, IBufferMessage, IMessage'
     content.vb: >-
       Public NotInheritable Class Options
-          Implements IMessage(Of IamPolicyAnalysisQuery.Types.Options), IMessage, IEquatable(Of IamPolicyAnalysisQuery.Types.Options), IDeepCloneable(Of IamPolicyAnalysisQuery.Types.Options)
+          Implements IMessage(Of IamPolicyAnalysisQuery.Types.Options), IEquatable(Of IamPolicyAnalysisQuery.Types.Options), IDeepCloneable(Of IamPolicyAnalysisQuery.Types.Options), IBufferMessage, IMessage
   inheritance:
   - System.Object
   implements:
   - Google.Protobuf.IMessage{Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options}
-  - Google.Protobuf.IMessage
   - System.IEquatable{Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options}
   - Google.Protobuf.IDeepCloneable{Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options}
+  - Google.Protobuf.IBufferMessage
+  - Google.Protobuf.IMessage
   inheritedMembers:
-  - System.Object.ToString
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+  - System.Object.ToString
   modifiers.csharp:
   - public
   - sealed
@@ -73,12 +72,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5336
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 7882
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -103,12 +102,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: .ctor
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5343
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 7889
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
@@ -136,16 +135,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ExpandGroups
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5375
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 7918
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nIf true, the identities section of the result will expand any\nGoogle groups appearing in an IAM policy binding.\n\nIf\n[google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector]\nis specified, the identity in the result will be determined by the\nselector, and this flag is not allowed to set.\n\nDefault is false.\n"
+  summary: "\nOptional. If true, the identities section of the result will expand any\nGoogle groups appearing in an IAM policy binding.\n\nIf [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the\nidentity in the result will be determined by the selector, and this flag\nis not allowed to set.\n\nDefault is false.\n"
   example: []
   syntax:
     content: public bool ExpandGroups { get; set; }
@@ -173,16 +172,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ExpandRoles
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5397
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 7939
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nIf true, the access section of result will expand any roles\nappearing in IAM policy bindings to include their permissions.\n\nIf\n[google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector]\nis specified, the access section of the result will be determined by the\nselector, and this flag is not allowed to set.\n\nDefault is false.\n"
+  summary: "\nOptional. If true, the access section of result will expand any roles\nappearing in IAM policy bindings to include their permissions.\n\nIf [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access\nsection of the result will be determined by the selector, and this flag\nis not allowed to set.\n\nDefault is false.\n"
   example: []
   syntax:
     content: public bool ExpandRoles { get; set; }
@@ -210,16 +209,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: ExpandResources
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5431
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 7973
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nIf true and\n[google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]\nis not specified, the resource section of the result will expand any\nresource attached to an IAM policy to include resources lower in the\nresource hierarchy.\n\nFor example, if the request analyzes for which resources user A has\npermission P, and the results include an IAM policy with P on a GCP\nfolder, the results will also include resources in that folder with\npermission P.\n\nIf true and\n[google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]\nis specified, the resource section of the result will expand the\nspecified resource to include resources lower in the resource hierarchy.\n\nFor example, if the request analyzes for which users have permission P on\na GCP folder with this option enabled, the results will include all users\nwho have permission P on that folder or any lower resource(ex. project).\n\nDefault is false.\n"
+  summary: "\nOptional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not\nspecified, the resource section of the result will expand any resource\nattached to an IAM policy to include resources lower in the resource\nhierarchy.\n\nFor example, if the request analyzes for which resources user A has\npermission P, and the results include an IAM policy with P on a GCP\nfolder, the results will also include resources in that folder with\npermission P.\n\nIf true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is specified,\nthe resource section of the result will expand the specified resource to\ninclude resources lower in the resource hierarchy. Only project or\nlower resources are supported. Folder and organization resource cannot be\nused together with this option.\n\nFor example, if the request analyzes for which users have permission P on\na GCP project with this option enabled, the results will include all\nusers who have permission P on that project or any lower resource.\n\nDefault is false.\n"
   example: []
   syntax:
     content: public bool ExpandResources { get; set; }
@@ -247,16 +246,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: OutputResourceEdges
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5447
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 7989
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nIf true, the result will output resource edges, starting\nfrom the policy attached resource, to any expanded resources.\nDefault is false.\n"
+  summary: "\nOptional. If true, the result will output resource edges, starting\nfrom the policy attached resource, to any expanded resources.\nDefault is false.\n"
   example: []
   syntax:
     content: public bool OutputResourceEdges { get; set; }
@@ -284,16 +283,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: OutputGroupEdges
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5463
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 8005
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nIf true, the result will output group identity edges, starting\nfrom the binding&apos;s group members, to any expanded identities.\nDefault is false.\n"
+  summary: "\nOptional. If true, the result will output group identity edges, starting\nfrom the binding&apos;s group members, to any expanded identities.\nDefault is false.\n"
   example: []
   syntax:
     content: public bool OutputGroupEdges { get; set; }
@@ -321,16 +320,16 @@ items:
   type: Property
   source:
     remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
+      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+      branch: 4452d3ba8345dd6cf2976f10876e28bd3e2e48a0
       repo: git@github.com:googleapis/google-cloud-dotnet.git
     id: AnalyzeServiceAccountImpersonation
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5500
+    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.g.cs
+    startLine: 8041
   assemblies:
   - Google.Cloud.Asset.V1
   namespace: Google.Cloud.Asset.V1
-  summary: "\nIf true, the response will include access analysis from identities to\nresources via service account impersonation. This is a very expensive\noperation, because many derived queries will be executed. We highly\nrecommend you use\n[google.cloud.asset.v1.AssetService.ExportIamPolicyAnalysis][google.cloud.asset.v1.AssetService.ExportIamPolicyAnalysis]\nrpc instead.\n\nFor example, if the request analyzes for which resources user A has\npermission P, and there&apos;s an IAM policy states user A has\niam.serviceAccounts.getAccessToken permission to a service account SA,\nand there&apos;s another IAM policy states service account SA has permission P\nto a GCP folder F, then user A potentially has access to the GCP folder\nF. And those advanced analysis results will be included in\n[google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].\n\nAnother example, if the request analyzes for who has\npermission P to a GCP folder F, and there&apos;s an IAM policy states user A\nhas iam.serviceAccounts.actAs permission to a service account SA, and\nthere&apos;s another IAM policy states service account SA has permission P to\nthe GCP folder F, then user A potentially has access to the GCP folder\nF. And those advanced analysis results will be included in\n[google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].\n\nDefault is false.\n"
+  summary: "\nOptional. If true, the response will include access analysis from identities to\nresources via service account impersonation. This is a very expensive\noperation, because many derived queries will be executed. We highly\nrecommend you use [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc\ninstead.\n\nFor example, if the request analyzes for which resources user A has\npermission P, and there&apos;s an IAM policy states user A has\niam.serviceAccounts.getAccessToken permission to a service account SA,\nand there&apos;s another IAM policy states service account SA has permission P\nto a GCP folder F, then user A potentially has access to the GCP folder\nF. And those advanced analysis results will be included in\n[AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].\n\nAnother example, if the request analyzes for who has\npermission P to a GCP folder F, and there&apos;s an IAM policy states user A\nhas iam.serviceAccounts.actAs permission to a service account SA, and\nthere&apos;s another IAM policy states service account SA has permission P to\nthe GCP folder F, then user A potentially has access to the GCP folder\nF. And those advanced analysis results will be included in\n[AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].\n\nDefault is false.\n"
   example: []
   syntax:
     content: public bool AnalyzeServiceAccountImpersonation { get; set; }
@@ -339,80 +338,6 @@ items:
       type: System.Boolean
     content.vb: Public Property AnalyzeServiceAccountImpersonation As Boolean
   overload: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.AnalyzeServiceAccountImpersonation*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-  commentId: P:Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-  id: MaxFanoutsPerGroup
-  parent: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options
-  langs:
-  - csharp
-  - vb
-  name: MaxFanoutsPerGroup
-  nameWithType: IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-  type: Property
-  source:
-    remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
-      repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: MaxFanoutsPerGroup
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5516
-  assemblies:
-  - Google.Cloud.Asset.V1
-  namespace: Google.Cloud.Asset.V1
-  summary: "\nThe maximum number of fanouts per group when [expand_groups][expand_groups]\nis enabled. This internal field is to help load testing and determine a\nproper value, and won&apos;t be public in the future.\n"
-  example: []
-  syntax:
-    content: public int MaxFanoutsPerGroup { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property MaxFanoutsPerGroup As Integer
-  overload: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource
-  commentId: P:Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource
-  id: MaxFanoutsPerResource
-  parent: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options
-  langs:
-  - csharp
-  - vb
-  name: MaxFanoutsPerResource
-  nameWithType: IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource
-  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource
-  type: Property
-  source:
-    remote:
-      path: apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-      branch: 1daa3cc51230def21dd12842ffe26401a7f22791
-      repo: git@github.com:googleapis/google-cloud-dotnet.git
-    id: MaxFanoutsPerResource
-    path: ../../../apis/Google.Cloud.Asset.V1/Google.Cloud.Asset.V1/AssetService.cs
-    startLine: 5533
-  assemblies:
-  - Google.Cloud.Asset.V1
-  namespace: Google.Cloud.Asset.V1
-  summary: "\nThe maximum number of fanouts per parent resource, such as\nGCP Project etc., when [expand_resources][] is enabled. This internal\nfield is to help load testing and determine a proper value, and won&apos;t be\npublic in the future.\n"
-  example: []
-  syntax:
-    content: public int MaxFanoutsPerResource { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property MaxFanoutsPerResource As Integer
-  overload: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource*
   modifiers.csharp:
   - public
   - get
@@ -474,13 +399,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Protobuf.IMessage
-  commentId: T:Google.Protobuf.IMessage
-  parent: Google.Protobuf
-  isExternal: true
-  name: IMessage
-  nameWithType: IMessage
-  fullName: Google.Protobuf.IMessage
 - uid: System.IEquatable{Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options}
   commentId: T:System.IEquatable{Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options}
   parent: System
@@ -565,37 +483,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
+- uid: Google.Protobuf.IBufferMessage
+  commentId: T:Google.Protobuf.IBufferMessage
+  parent: Google.Protobuf
   isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
+  name: IBufferMessage
+  nameWithType: IBufferMessage
+  fullName: Google.Protobuf.IBufferMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
@@ -682,6 +583,37 @@ references:
     name: MemberwiseClone
     nameWithType: Object.MemberwiseClone
     fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
     isExternal: true
   - name: (
     nameWithType: (
@@ -866,20 +798,3 @@ references:
   name: AnalyzeServiceAccountImpersonation
   nameWithType: IamPolicyAnalysisQuery.Types.Options.AnalyzeServiceAccountImpersonation
   fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.AnalyzeServiceAccountImpersonation
-- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup*
-  commentId: Overload:Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-  name: MaxFanoutsPerGroup
-  nameWithType: IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerGroup
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
-- uid: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource*
-  commentId: Overload:Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource
-  name: MaxFanoutsPerResource
-  nameWithType: IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource
-  fullName: Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.MaxFanoutsPerResource

@@ -13,9 +13,9 @@
   
   {% verbatim %}
   <div class="codewrapper">
-    <pre><code class="prettyprint">public sealed class IamPolicyAnalysisQuery : IMessage&lt;IamPolicyAnalysisQuery&gt;, IMessage, IEquatable&lt;IamPolicyAnalysisQuery&gt;, IDeepCloneable&lt;IamPolicyAnalysisQuery&gt;</code></pre>
+    <pre><code class="prettyprint">public sealed class IamPolicyAnalysisQuery : IMessage&lt;IamPolicyAnalysisQuery&gt;, IEquatable&lt;IamPolicyAnalysisQuery&gt;, IDeepCloneable&lt;IamPolicyAnalysisQuery&gt;, IBufferMessage, IMessage</code></pre>
   </div>
-  <div class="markdown level0 summary"><p>IAM policy analysis query message.</p>
+  <div class="markdown level0 summary"><h2 id="iam-policy-analysis-query-message">IAM policy analysis query message.</h2>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -25,15 +25,13 @@
   <div classs="implements">
     <h2>Implements</h2>
     <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.html">IamPolicyAnalysisQuery</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IMessage</span>,</span>
     <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.html">IamPolicyAnalysisQuery</a>&gt;,</span>
-    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.html">IamPolicyAnalysisQuery</a>&gt;</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.html">IamPolicyAnalysisQuery</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
@@ -42,6 +40,9 @@
     </div>
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h2>Namespace</h2>
@@ -85,7 +86,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public IamPolicyAnalysisQuery.Types.AccessSelector AccessSelector { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Specifies roles or permissions for analysis. This is optional.</p>
+  <div class="markdown level1 summary"><p>Optional. Specifies roles or permissions for analysis. This is optional.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -102,12 +103,34 @@
       </tr>
     </tbody>
   </table>
+  <a id="Google_Cloud_Asset_V1_IamPolicyAnalysisQuery_ConditionContext_" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.ConditionContext*"></a>
+  <h3 id="Google_Cloud_Asset_V1_IamPolicyAnalysisQuery_ConditionContext" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.ConditionContext" class="notranslate">ConditionContext</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">public IamPolicyAnalysisQuery.Types.ConditionContext ConditionContext { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Optional. The hypothetical context for IAM conditions evaluation.</p>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.ConditionContext.html">IamPolicyAnalysisQuery.Types.ConditionContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Google_Cloud_Asset_V1_IamPolicyAnalysisQuery_IdentitySelector_" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.IdentitySelector*"></a>
   <h3 id="Google_Cloud_Asset_V1_IamPolicyAnalysisQuery_IdentitySelector" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.IdentitySelector" class="notranslate">IdentitySelector</h3>
   <div class="codewrapper">
     <pre><code class="prettyprint">public IamPolicyAnalysisQuery.Types.IdentitySelector IdentitySelector { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Specifies an identity for analysis.</p>
+  <div class="markdown level1 summary"><p>Optional. Specifies an identity for analysis.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -129,7 +152,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public IamPolicyAnalysisQuery.Types.Options Options { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The query options.</p>
+  <div class="markdown level1 summary"><p>Optional. The query options.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -151,7 +174,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public IamPolicyAnalysisQuery.Types.ResourceSelector ResourceSelector { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Specifies a resource for analysis.</p>
+  <div class="markdown level1 summary"><p>Optional. Specifies a resource for analysis.</p>
 </div>
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -173,7 +196,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Scope { get; set; }</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>The relative name of the root asset. Only resources and IAM policies within
+  <div class="markdown level1 summary"><p>Required. The relative name of the root asset. Only resources and IAM policies within
 the scope will be analyzed.</p>
 <p>This can only be an organization number (such as &quot;organizations/123&quot;), a
 folder number (such as &quot;folders/123&quot;), a project ID (such as
@@ -203,13 +226,16 @@ folder number (such as &quot;folders/123&quot;), a project ID (such as
       <span class="xref">Google.Protobuf.IMessage&lt;T&gt;</span>
   </div>
   <div>
-      <span class="xref">Google.Protobuf.IMessage</span>
-  </div>
-  <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>
   <div>
       <span class="xref">Google.Protobuf.IDeepCloneable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IBufferMessage</span>
+  </div>
+  <div>
+      <span class="xref">Google.Protobuf.IMessage</span>
   </div>
 </article>
     </div>
