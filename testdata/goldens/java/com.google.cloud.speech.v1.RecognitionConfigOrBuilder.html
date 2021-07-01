@@ -27,6 +27,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getAudioChannelCount()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>The number of channels in the input audio data.
  ONLY set this for MULTI-CHANNEL recognition.
  Valid values for LINEAR16 and FLAC are `1`-`8`.
@@ -38,6 +39,7 @@
  `enable_separate_recognition_per_channel` to &#39;true&#39;.
 </code></pre><p><code>int32 audio_channel_count = 7;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -59,6 +61,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract SpeakerDiarizationConfig getDiarizationConfig()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Config to enable speaker diarization and set additional
  parameters to make diarization better suited for your application.
  Note: When this is enabled, we send all the words from the beginning of the
@@ -69,6 +72,7 @@
  in the top alternative of the FINAL SpeechRecognitionResult.
 </code></pre><p><code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -90,6 +94,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract SpeakerDiarizationConfigOrBuilder getDiarizationConfigOrBuilder()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Config to enable speaker diarization and set additional
  parameters to make diarization better suited for your application.
  Note: When this is enabled, we send all the words from the beginning of the
@@ -100,6 +105,7 @@
  in the top alternative of the FINAL SpeechRecognitionResult.
 </code></pre><p><code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -120,6 +126,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean getEnableAutomaticPunctuation()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>If &#39;true&#39;, adds punctuation to recognition result hypotheses.
  This feature is only available in select languages. Setting this for
  requests in other languages has no effect at all.
@@ -129,6 +136,7 @@
  premium feature.
 </code></pre><p><code>bool enable_automatic_punctuation = 11;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -150,6 +158,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean getEnableSeparateRecognitionPerChannel()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
  to get each channel recognized separately. The recognition result will
  contain a `channel_tag` field to state which channel that result belongs
@@ -158,6 +167,7 @@
  `audio_channel_count` multiplied by the length of the audio.
 </code></pre><p><code>bool enable_separate_recognition_per_channel = 12;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -179,12 +189,14 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean getEnableWordTimeOffsets()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>If `true`, the top result includes a list of words and
  the start and end time offsets (timestamps) for those words. If
  `false`, no word-level time offset information is returned. The default is
  `false`.
 </code></pre><p><code>bool enable_word_time_offsets = 8;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -206,11 +218,13 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract RecognitionConfig.AudioEncoding getEncoding()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Encoding of audio data sent in all `RecognitionAudio` messages.
  This field is optional for `FLAC` and `WAV` audio files and required
  for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
 </code></pre><p><code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -232,11 +246,13 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getEncodingValue()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Encoding of audio data sent in all `RecognitionAudio` messages.
  This field is optional for `FLAC` and `WAV` audio files and required
  for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
 </code></pre><p><code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -258,6 +274,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract String getLanguageCode()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Required. The language of the supplied audio as a
  [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
  Example: &quot;en-US&quot;.
@@ -266,6 +283,7 @@
  of the currently supported language codes.
 </code></pre><p><code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -287,6 +305,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract ByteString getLanguageCodeBytes()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Required. The language of the supplied audio as a
  [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
  Example: &quot;en-US&quot;.
@@ -295,6 +314,7 @@
  of the currently supported language codes.
 </code></pre><p><code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -316,6 +336,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getMaxAlternatives()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Maximum number of recognition hypotheses to be returned.
  Specifically, the maximum number of `SpeechRecognitionAlternative` messages
  within each `SpeechRecognitionResult`.
@@ -324,6 +345,7 @@
  one. If omitted, will return a maximum of one.
 </code></pre><p><code>int32 max_alternatives = 4;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -345,9 +367,11 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract RecognitionMetadata getMetadata()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Metadata regarding this request.
 </code></pre><p><code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -369,9 +393,11 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract RecognitionMetadataOrBuilder getMetadataOrBuilder()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Metadata regarding this request.
 </code></pre><p><code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -392,6 +418,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract String getModel()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Which model to select for the given request. Select the model
  best suited to your domain to get best results. If a model is not
  explicitly specified, then we auto-select a model based on the parameters
@@ -426,6 +453,7 @@
  &lt;/table&gt;
 </code></pre><p><code>string model = 13;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -447,6 +475,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract ByteString getModelBytes()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Which model to select for the given request. Select the model
  best suited to your domain to get best results. If a model is not
  explicitly specified, then we auto-select a model based on the parameters
@@ -481,6 +510,7 @@
  &lt;/table&gt;
 </code></pre><p><code>string model = 13;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -502,12 +532,14 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean getProfanityFilter()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>If set to `true`, the server will attempt to filter out
  profanities, replacing all but the initial character in each filtered word
  with asterisks, e.g. &quot;f***&quot;. If set to `false` or omitted, profanities
  won&#39;t be filtered out.
 </code></pre><p><code>bool profanity_filter = 5;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -529,6 +561,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getSampleRateHertz()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Sample rate in Hertz of the audio data sent in all
  `RecognitionAudio` messages. Valid values are: 8000-48000.
  16000 is optimal. For best results, set the sampling rate of the audio
@@ -538,6 +571,7 @@
  required for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
 </code></pre><p><code>int32 sample_rate_hertz = 2;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -559,6 +593,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract SpeechContext getSpeechContexts(int index)</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
  A means to provide context to assist the speech recognition. For more
  information, see
@@ -566,6 +601,7 @@
  adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
 </code></pre><p><code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -576,12 +612,14 @@
       </tr>
     </thead>
     <tbody>
+    {% verbatim %}
       <tr>
         <td><span class="xref">int</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
     </tbody>
+    {% endverbatim %}
   </table>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -603,6 +641,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getSpeechContextsCount()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
  A means to provide context to assist the speech recognition. For more
  information, see
@@ -610,6 +649,7 @@
  adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
 </code></pre><p><code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -630,6 +670,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract List&lt;SpeechContext&gt; getSpeechContextsList()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
  A means to provide context to assist the speech recognition. For more
  information, see
@@ -637,6 +678,7 @@
  adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
 </code></pre><p><code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -657,6 +699,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract SpeechContextOrBuilder getSpeechContextsOrBuilder(int index)</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
  A means to provide context to assist the speech recognition. For more
  information, see
@@ -664,6 +707,7 @@
  adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
 </code></pre><p><code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -674,12 +718,14 @@
       </tr>
     </thead>
     <tbody>
+    {% verbatim %}
       <tr>
         <td><span class="xref">int</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
     </tbody>
+    {% endverbatim %}
   </table>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -701,6 +747,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract List&lt;? extends SpeechContextOrBuilder&gt; getSpeechContextsOrBuilderList()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
  A means to provide context to assist the speech recognition. For more
  information, see
@@ -708,6 +755,7 @@
  adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
 </code></pre><p><code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -728,6 +776,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean getUseEnhanced()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Set to true to use an enhanced model for speech recognition.
  If `use_enhanced` is set to true and the `model` field is not set, then
  an appropriate enhanced model is chosen if an enhanced model exists for
@@ -737,6 +786,7 @@
  of the specified model.
 </code></pre><p><code>bool use_enhanced = 14;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -758,6 +808,7 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean hasDiarizationConfig()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Config to enable speaker diarization and set additional
  parameters to make diarization better suited for your application.
  Note: When this is enabled, we send all the words from the beginning of the
@@ -768,6 +819,7 @@
  in the top alternative of the FINAL SpeechRecognitionResult.
 </code></pre><p><code>.google.cloud.speech.v1.SpeakerDiarizationConfig diarization_config = 19;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -789,9 +841,11 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean hasMetadata()</code></pre>
   </div>
+  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>Metadata regarding this request.
 </code></pre><p><code>.google.cloud.speech.v1.RecognitionMetadata metadata = 9;</code></p>
 </div>
+  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
