@@ -19,6 +19,7 @@
   
   </h2>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ArrowRecordBatch.html">ArrowRecordBatch</a></h2>
+        {% verbatim %}
         <section><p>Arrow RecordBatch.</p>
 <p>Attributes:
     serialized_record_batch (bytes):
@@ -26,7 +27,9 @@
     row_count (int):
         The count of rows in <code>serialized_record_batch</code>.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ArrowSchema.html">ArrowSchema</a></h2>
+        {% verbatim %}
         <section><p>Arrow schema as specified in
 <a href="https://arrow.apache.org/docs/python/api/datatypes.html">https://arrow.apache.org/docs/python/api/datatypes.html</a> and
 serialized to bytes using IPC:
@@ -37,14 +40,18 @@ See code samples on how this message can be deserialized.</p>
     serialized_schema (bytes):
         IPC serialized Arrow schema.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ArrowSerializationOptions.html">ArrowSerializationOptions</a></h2>
+        {% verbatim %}
         <section><p>Contains options specific to Arrow Serialization.</p>
 <p>Attributes:
     buffer_compression (google.cloud.bigquery_storage_v1.types.ArrowSerializationOptions.CompressionCodec):
         The compression codec to use for Arrow
         buffers in serialized record batches.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.AvroRows.html">AvroRows</a></h2>
+        {% verbatim %}
         <section><p>Avro rows.</p>
 <p>Attributes:
     serialized_binary_rows (bytes):
@@ -52,14 +59,18 @@ See code samples on how this message can be deserialized.</p>
     row_count (int):
         The count of rows in the returning block.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.AvroSchema.html">AvroSchema</a></h2>
+        {% verbatim %}
         <section><p>Avro schema.</p>
 <p>Attributes:
     schema (str):
         Json serialized schema, as described at
         <a href="https://avro.apache.org/docs/1.8.1/spec.html">https://avro.apache.org/docs/1.8.1/spec.html</a>.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest.html">CreateReadSessionRequest</a></h2>
+        {% verbatim %}
         <section><p>Request message for <code>CreateReadSession</code>.</p>
 <p>Attributes:
     parent (str):
@@ -79,10 +90,14 @@ See code samples on how this message can be deserialized.</p>
         1,000.</p>
 <pre><code>    Streams must be read starting from offset 0.
 </code></pre></section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.DataFormat.html">DataFormat</a></h2>
+        {% verbatim %}
         <section><p>Data format for input or output data.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadRowsRequest.html">ReadRowsRequest</a></h2>
+        {% verbatim %}
         <section><p>Request message for <code>ReadRows</code>.</p>
 <p>Attributes:
     read_stream (str):
@@ -93,7 +108,9 @@ See code samples on how this message can be deserialized.</p>
         offset is undefined. If not specified, start
         reading from offset zero.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadRowsResponse.html">ReadRowsResponse</a></h2>
+        {% verbatim %}
         <section><p>Response from calling <code>ReadRows</code> may include row data, progress
 and throttling information.</p>
 <p>Attributes:
@@ -115,7 +132,9 @@ and throttling information.</p>
     arrow_schema (google.cloud.bigquery_storage_v1.types.ArrowSchema):
         Output only. Arrow schema.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadSession.html">ReadSession</a></h2>
+        {% verbatim %}
         <section><p>Information about the ReadSession.</p>
 <p>Attributes:
     name (str):
@@ -150,7 +169,9 @@ and throttling information.</p>
     need to use a List method to get the streams instead, which
     is not yet available.
 </code></pre></section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadStream.html">ReadStream</a></h2>
+        {% verbatim %}
         <section><p>Information about a single stream that gets data out of the storage
 system. Most of the information about <code>ReadStream</code> instances is
 aggregated, making <code>ReadStream</code> lightweight.</p>
@@ -159,7 +180,9 @@ aggregated, making <code>ReadStream</code> lightweight.</p>
         Output only. Name of the stream, in the form
         <code>projects/{project_id}/locations/{location}/sessions/{session_id}/streams/{stream_id}</code>.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest.html">SplitReadStreamRequest</a></h2>
+        {% verbatim %}
         <section><p>Request message for <code>SplitReadStream</code>.</p>
 <p>Attributes:
     name (str):
@@ -178,7 +201,9 @@ aggregated, making <code>ReadStream</code> lightweight.</p>
         map to a data storage boundary on the server
         side.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.SplitReadStreamResponse.html">SplitReadStreamResponse</a></h2>
+        {% verbatim %}
         <section><p>Response message for <code>SplitReadStream</code>.</p>
 <p>Attributes:
     primary_stream (google.cloud.bigquery_storage_v1.types.ReadStream):
@@ -190,14 +215,18 @@ aggregated, making <code>ReadStream</code> lightweight.</p>
         |original_stream|. An empty value indicates that the
         original stream can no longer be split.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.StreamStats.html">StreamStats</a></h2>
+        {% verbatim %}
         <section><p>Estimated stream statistics for a given Stream.</p>
 <p>Attributes:
     progress (google.cloud.bigquery_storage_v1.types.StreamStats.Progress):
         Represents the progress of the current
         stream.</p>
 </section>
+        {% endverbatim %}
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1.types.ThrottleState.html">ThrottleState</a></h2>
+        {% verbatim %}
         <section><p>Information on if the current connection is being throttled.</p>
 <p>Attributes:
     throttle_percent (int):
@@ -205,6 +234,7 @@ aggregated, making <code>ReadStream</code> lightweight.</p>
         Zero means no throttling, 100 means fully
         throttled.</p>
 </section>
+        {% endverbatim %}
 </article>
     </div>
   </body>
