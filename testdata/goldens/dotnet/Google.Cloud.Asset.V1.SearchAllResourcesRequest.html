@@ -5,13 +5,13 @@
     <meta name="book_path" value="/dotnet/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="Google.Cloud.Asset.V1.SearchAllResourcesRequest">
 <h1 class="page-title">Class SearchAllResourcesRequest
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">public sealed class SearchAllResourcesRequest : IMessage&lt;SearchAllResourcesRequest&gt;, IEquatable&lt;SearchAllResourcesRequest&gt;, IDeepCloneable&lt;SearchAllResourcesRequest&gt;, IBufferMessage, IMessage, IPageRequest</code></pre>
   </div>
@@ -50,7 +50,6 @@
   <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
   <h2>Assembly</h2>
   <p>Google.Cloud.Asset.V1.dll</p>
-  {% endverbatim %}
   <h2 id="constructors">Constructors
   </h2>
   <a id="Google_Cloud_Asset_V1_SearchAllResourcesRequest__ctor_" data-uid="Google.Cloud.Asset.V1.SearchAllResourcesRequest.#ctor*"></a>
@@ -64,7 +63,6 @@
     <pre><code class="prettyprint">public SearchAllResourcesRequest(SearchAllResourcesRequest other)</code></pre>
   </div>
   <strong>Parameter</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -81,7 +79,6 @@
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <h2 id="properties">Properties
   </h2>
   <a id="Google_Cloud_Asset_V1_SearchAllResourcesRequest_AssetTypes_" data-uid="Google.Cloud.Asset.V1.SearchAllResourcesRequest.AssetTypes*"></a>
@@ -89,7 +86,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; AssetTypes { get; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. A list of asset types that this request searches for. If empty, it will
 search all the <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types">searchable asset
 types</a>.</p>
@@ -104,7 +100,6 @@ with &quot;compute.googleapis.com&quot;.</li>
 regular expression syntax. If the regular expression does not match any
 supported asset type, an INVALID_ARGUMENT error will be returned.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -125,7 +120,6 @@ supported asset type, an INVALID_ARGUMENT error will be returned.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string OrderBy { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. A comma-separated list of fields specifying the sorting order of the
 results. The default order is ascending. Add &quot; DESC&quot; after the field name
 to indicate descending order. Redundant space characters are ignored.
@@ -149,7 +143,6 @@ fields (e.g., <code>labels</code>) and struct fields (e.g., <code>additionalAttr
 are not supported.</li>
 </ul>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -170,13 +163,11 @@ are not supported.</li>
   <div class="codewrapper">
     <pre><code class="prettyprint">public int PageSize { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. The page size for search result pagination. Page size is capped at 500 even
 if a larger value is given. If set to zero, server will pick an appropriate
 default. Returned results may be fewer than requested. When this happens,
 there could be more results as long as <code>next_page_token</code> is returned.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -197,13 +188,11 @@ there could be more results as long as <code>next_page_token</code> is returned.
   <div class="codewrapper">
     <pre><code class="prettyprint">public string PageToken { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If present, then retrieve the next batch of results from the preceding call
 to this method. <code>page_token</code> must be the value of <code>next_page_token</code> from
 the previous response. The values of all other method parameters, must be
 identical to those in the previous call.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -224,7 +213,6 @@ identical to those in the previous call.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Query { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. The query statement. See <a href="https://cloud.google.com/asset-inventory/docs/searching-resources#how_to_construct_a_query">how to construct a
 query</a>
 for more information. If not specified or empty, it will search all the
@@ -266,7 +254,6 @@ fields and are also located in the &quot;us-west1&quot; region or the &quot;glob
 location.</li>
 </ul>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -287,7 +274,6 @@ location.</li>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Scope { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Required. A scope can be a project, a folder, or an organization. The search is
 limited to the resources within the <code>scope</code>. The caller must be granted the
 <a href="https://cloud.google.com/asset-inventory/docs/access-control#required_permissions"><code>cloudasset.assets.searchAllResources</code></a>
@@ -300,7 +286,6 @@ permission on the desired scope.</p>
 <li>organizations/{ORGANIZATION_NUMBER} (e.g., &quot;organizations/123456&quot;)</li>
 </ul>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -337,5 +322,6 @@ permission on the desired scope.</p>
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>

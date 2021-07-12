@@ -5,13 +5,13 @@
     <meta name="book_path" value="/dotnet/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="Google.Cloud.Asset.V1.BigQueryDestination">
 <h1 class="page-title">Class BigQueryDestination
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">public sealed class BigQueryDestination : IMessage&lt;BigQueryDestination&gt;, IEquatable&lt;BigQueryDestination&gt;, IDeepCloneable&lt;BigQueryDestination&gt;, IBufferMessage, IMessage</code></pre>
   </div>
@@ -49,7 +49,6 @@
   <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
   <h2>Assembly</h2>
   <p>Google.Cloud.Asset.V1.dll</p>
-  {% endverbatim %}
   <h2 id="constructors">Constructors
   </h2>
   <a id="Google_Cloud_Asset_V1_BigQueryDestination__ctor_" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.#ctor*"></a>
@@ -63,7 +62,6 @@
     <pre><code class="prettyprint">public BigQueryDestination(BigQueryDestination other)</code></pre>
   </div>
   <strong>Parameter</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -80,7 +78,6 @@
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <h2 id="properties">Properties
   </h2>
   <a id="Google_Cloud_Asset_V1_BigQueryDestination_Dataset_" data-uid="Google.Cloud.Asset.V1.BigQueryDestination.Dataset*"></a>
@@ -88,13 +85,11 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Dataset { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Required. The BigQuery dataset in format
 &quot;projects/projectId/datasets/datasetId&quot;, to which the snapshot result
 should be exported. If this dataset does not exist, the export call returns
 an INVALID_ARGUMENT error.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -115,13 +110,11 @@ an INVALID_ARGUMENT error.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool Force { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>If the destination table already exists and this flag is <code>TRUE</code>, the
 table will be overwritten by the contents of assets snapshot. If the flag
 is <code>FALSE</code> or unset and the destination table already exists, the export
 call returns an INVALID_ARGUMEMT error.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -142,7 +135,6 @@ call returns an INVALID_ARGUMEMT error.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public PartitionSpec PartitionSpec { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>[partition_spec] determines whether to export to partitioned table(s) and
 how to partition the data.</p>
 <p>If [partition_spec] is unset or [partition_spec.partition_key] is unset or
@@ -159,7 +151,6 @@ overwritten by the snapshot results (data in different partitions will
 remain intact); if [force] is unset or <code>FALSE</code>, it will append the data. An
 error will be returned if the schema update or data appension fails.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -180,7 +171,6 @@ error will be returned if the schema update or data appension fails.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool SeparateTablesPerAssetType { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>If this flag is <code>TRUE</code>, the snapshot results will be written to one or
 multiple tables, each of which contains results of one asset type. The
 [force] and [partition_spec] fields will apply to each of them.</p>
@@ -206,7 +196,6 @@ Example: if exporting to table_type_A succeeds when exporting to
 table_type_B fails during one export call, the results in table_type_A will
 persist and there will not be partial results persisting in a table.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -227,12 +216,10 @@ persist and there will not be partial results persisting in a table.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Table { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Required. The BigQuery table to which the snapshot result should be
 written. If this table does not exist, a new table with the given name
 will be created.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -266,5 +253,6 @@ will be created.</p>
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>

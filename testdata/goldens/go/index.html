@@ -5,6 +5,7 @@
     <meta name="book_path" value="/go/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="cloud.google.com/go/storage">
 <h1 class="page-title">Package cloud.google.com/go/storage
@@ -13,7 +14,6 @@
   <aside class="note">
     <strong>Note:</strong> To get more information about this package, such as access to older versions, view <a href="https://pkg.go.dev/cloud.google.com/go/storage" class="external">this package on pkg.go.dev</a>.
   </aside>
-  {% verbatim %}
   <div class="markdown level0 summary"><p><p>
 Package storage provides an easy way to work with Google Cloud Storage.
 Google Cloud Storage stores data in named objects, which are grouped into buckets.
@@ -245,7 +245,6 @@ These errors can be introspected for more information by type asserting to the r
 }
 </pre>
 </div>
-  {% endverbatim %}
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
     <h2 id="consts">
@@ -352,7 +351,7 @@ URLs, see <a href="https://cloud.google.com/storage/docs/accesscontrol#Signed-UR
         <div class="markdown level1 conceptual"></div>
           <h4>Example</h4>
         <div class="codewrapper">
-        <pre><code class="prettyprint">{% verbatim %}package main
+        <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -377,7 +376,7 @@ func main() {
 	}
 	fmt.Println(url)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
         </div>
   
         <h2 id="cloud_google_com_go_storage_ACLEntity" data-uid="cloud.google.com/go/storage.ACLEntity" class="notranslate">ACLEntity</h2>
@@ -422,7 +421,7 @@ They are sometimes referred to as grantees.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -440,7 +439,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ACLHandle_List" data-uid="cloud.google.com/go/storage.ACLHandle.List" class="notranslate">func (*ACLHandle) List
 </h3>
@@ -452,7 +451,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -473,7 +472,7 @@ func main() {
 	}
 	fmt.Println(aclRules)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ACLHandle_Set" data-uid="cloud.google.com/go/storage.ACLHandle.Set" class="notranslate">func (*ACLHandle) Set
 </h3>
@@ -485,7 +484,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -504,7 +503,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
         <h2 id="cloud_google_com_go_storage_ACLRole" data-uid="cloud.google.com/go/storage.ACLRole" class="notranslate">ACLRole</h2>
         <div class="codewrapper">
@@ -785,7 +784,7 @@ Use Client.Bucket to get a handle.</p>
           <h3>Example</h3>
           <h4 class="notranslate">exists</h4>
         <div class="codewrapper">
-        <pre><code class="prettyprint">{% verbatim %}package main
+        <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -810,7 +809,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
         </div>
   
             <h3 id="cloud_google_com_go_storage_BucketHandle_ACL" data-uid="cloud.google.com/go/storage.BucketHandle.ACL" class="notranslate">func (*BucketHandle) ACL
@@ -826,7 +825,7 @@ This call does not perform any network operations.</p>
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -851,7 +850,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_AddNotification" data-uid="cloud.google.com/go/storage.BucketHandle.AddNotification" class="notranslate">func (*BucketHandle) AddNotification
 </h3>
@@ -865,7 +864,7 @@ returned Notification&#39;s ID can be used to refer to it.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -890,7 +889,7 @@ func main() {
 	}
 	fmt.Println(n.ID)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_Attrs" data-uid="cloud.google.com/go/storage.BucketHandle.Attrs" class="notranslate">func (*BucketHandle) Attrs
 </h3>
@@ -902,7 +901,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -922,7 +921,7 @@ func main() {
 	}
 	fmt.Println(attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_Create" data-uid="cloud.google.com/go/storage.BucketHandle.Create" class="notranslate">func (*BucketHandle) Create
 </h3>
@@ -935,7 +934,7 @@ If attrs is nil the API defaults will be used.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -952,7 +951,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_DefaultObjectACL" data-uid="cloud.google.com/go/storage.BucketHandle.DefaultObjectACL" class="notranslate">func (*BucketHandle) DefaultObjectACL
 </h3>
@@ -967,7 +966,7 @@ This call does not perform any network operations.</p>
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -992,7 +991,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_Delete" data-uid="cloud.google.com/go/storage.BucketHandle.Delete" class="notranslate">func (*BucketHandle) Delete
 </h3>
@@ -1004,7 +1003,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1021,7 +1020,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_DeleteNotification" data-uid="cloud.google.com/go/storage.BucketHandle.DeleteNotification" class="notranslate">func (*BucketHandle) DeleteNotification
 </h3>
@@ -1033,7 +1032,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1056,7 +1055,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_IAM" data-uid="cloud.google.com/go/storage.BucketHandle.IAM" class="notranslate">func (*BucketHandle) IAM
 </h3>
@@ -1069,7 +1068,7 @@ func main() {
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1094,7 +1093,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_If" data-uid="cloud.google.com/go/storage.BucketHandle.If" class="notranslate">func (*BucketHandle) If
 </h3>
@@ -1111,7 +1110,7 @@ and MetagenerationNotMatch.</p>
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1136,7 +1135,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_LockRetentionPolicy" data-uid="cloud.google.com/go/storage.BucketHandle.LockRetentionPolicy" class="notranslate">func (*BucketHandle) LockRetentionPolicy
 </h3>
@@ -1155,7 +1154,7 @@ subject to any SLA or deprecation policy.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1180,7 +1179,7 @@ func main() {
 		// TODO: handle err
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_Notifications" data-uid="cloud.google.com/go/storage.BucketHandle.Notifications" class="notranslate">func (*BucketHandle) Notifications
 </h3>
@@ -1193,7 +1192,7 @@ indexed by notification ID.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1216,7 +1215,7 @@ func main() {
 		fmt.Printf(&quot;%s: %+v\n&quot;, id, n)
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_Object" data-uid="cloud.google.com/go/storage.BucketHandle.Object" class="notranslate">func (*BucketHandle) Object
 </h3>
@@ -1233,7 +1232,7 @@ for valid object names can be found at:
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1258,7 +1257,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_Objects" data-uid="cloud.google.com/go/storage.BucketHandle.Objects" class="notranslate">func (*BucketHandle) Objects
 </h3>
@@ -1273,7 +1272,7 @@ lexicographically by name.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1289,7 +1288,7 @@ func main() {
 	it := client.Bucket(&quot;my-bucket&quot;).Objects(ctx, nil)
 	_ = it // TODO: iterate using Next or iterator.Pager.
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_Update" data-uid="cloud.google.com/go/storage.BucketHandle.Update" class="notranslate">func (*BucketHandle) Update
 </h3>
@@ -1301,7 +1300,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Examples</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1323,11 +1322,11 @@ func main() {
 	}
 	fmt.Println(attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">readModifyWrite</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1359,7 +1358,7 @@ func main() {
 	}
 	fmt.Println(attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketHandle_UserProject" data-uid="cloud.google.com/go/storage.BucketHandle.UserProject" class="notranslate">func (*BucketHandle) UserProject
 </h3>
@@ -1375,7 +1374,7 @@ project rather than to the bucket&#39;s owning project.</p>
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1400,7 +1399,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The bucket exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
         <h2 id="cloud_google_com_go_storage_BucketIterator" data-uid="cloud.google.com/go/storage.BucketIterator" class="notranslate">BucketIterator</h2>
         <div class="codewrapper">
@@ -1428,7 +1427,7 @@ calls will return iterator.Done.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1455,7 +1454,7 @@ func main() {
 		fmt.Println(bucketAttrs)
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_BucketIterator_PageInfo" data-uid="cloud.google.com/go/storage.BucketIterator.PageInfo" class="notranslate">func (*BucketIterator) PageInfo
 </h3>
@@ -1573,7 +1572,7 @@ are safe for concurrent use by multiple goroutines.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Examples</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1596,11 +1595,11 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">unauthenticated</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1621,7 +1620,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_Client_Bucket" data-uid="cloud.google.com/go/storage.Client.Bucket" class="notranslate">func (*Client) Bucket
 </h3>
@@ -1650,7 +1649,7 @@ are returned.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1666,7 +1665,7 @@ func main() {
 	it := client.Buckets(ctx, &quot;my-bucket&quot;)
 	_ = it // TODO: iterate using Next or iterator.Pager.
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_Client_Close" data-uid="cloud.google.com/go/storage.Client.Close" class="notranslate">func (*Client) Close
 </h3>
@@ -1688,7 +1687,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1708,7 +1707,7 @@ func main() {
 	}
 	_ = hkey // TODO: Use the HMAC Key.
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_Client_HMACKeyHandle" data-uid="cloud.google.com/go/storage.Client.HMACKeyHandle" class="notranslate">func (*Client) HMACKeyHandle
 </h3>
@@ -1731,7 +1730,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Examples</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1758,11 +1757,11 @@ func main() {
 		_ = key // TODO: Use the key.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">forServiceAccountEmail</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1789,11 +1788,11 @@ func main() {
 		_ = key // TODO: Use the key.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">showDeletedKeys</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1820,7 +1819,7 @@ func main() {
 		_ = key // TODO: Use the key.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_Client_ServiceAccount" data-uid="cloud.google.com/go/storage.Client.ServiceAccount" class="notranslate">func (*Client) ServiceAccount
 </h3>
@@ -1862,7 +1861,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -1902,7 +1901,7 @@ func main() {
 	}
 	fmt.Println(attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
         <h2 id="cloud_google_com_go_storage_Conditions" data-uid="cloud.google.com/go/storage.Conditions" class="notranslate">Conditions</h2>
         <div class="codewrapper">
@@ -1997,7 +1996,7 @@ for details on how these operate.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Examples</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2030,11 +2029,11 @@ func main() {
 	}
 	fmt.Println(attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">progress</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2060,7 +2059,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
         <h2 id="cloud_google_com_go_storage_HMACKey" data-uid="cloud.google.com/go/storage.HMACKey" class="notranslate">HMACKey</h2>
         <div class="codewrapper">
@@ -2142,7 +2141,7 @@ After deletion, a key cannot be used to authenticate requests.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2162,7 +2161,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_HMACKeyHandle_Get" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Get" class="notranslate">func (*HMACKeyHandle) Get
 </h3>
@@ -2178,7 +2177,7 @@ userProject to be billed against for operations.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2199,7 +2198,7 @@ func main() {
 	}
 	_ = hkey // TODO: Use the HMAC Key.
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_HMACKeyHandle_Update" data-uid="cloud.google.com/go/storage.HMACKeyHandle.Update" class="notranslate">func (*HMACKeyHandle) Update
 </h3>
@@ -2212,7 +2211,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2235,7 +2234,7 @@ func main() {
 	}
 	_ = ukey // TODO: Use the HMAC Key.
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
         <h2 id="cloud_google_com_go_storage_HMACKeyOption" data-uid="cloud.google.com/go/storage.HMACKeyOption" class="notranslate">HMACKeyOption</h2>
         <div class="codewrapper">
@@ -2698,7 +2697,7 @@ Use BucketHandle.Object to get a handle.</p>
           <h3>Example</h3>
           <h4 class="notranslate">exists</h4>
         <div class="codewrapper">
-        <pre><code class="prettyprint">{% verbatim %}package main
+        <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2723,7 +2722,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
         </div>
   
             <h3 id="cloud_google_com_go_storage_ObjectHandle_ACL" data-uid="cloud.google.com/go/storage.ObjectHandle.ACL" class="notranslate">func (*ObjectHandle) ACL
@@ -2739,7 +2738,7 @@ This call does not perform any network operations.</p>
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2764,7 +2763,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_Attrs" data-uid="cloud.google.com/go/storage.ObjectHandle.Attrs" class="notranslate">func (*ObjectHandle) Attrs
 </h3>
@@ -2777,7 +2776,7 @@ ErrObjectNotExist will be returned if the object is not found.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Examples</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2797,11 +2796,11 @@ func main() {
 	}
 	fmt.Println(objAttrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">withConditions</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2831,7 +2830,7 @@ func main() {
 	}
 	fmt.Println(objAttrs1, objAttrs2)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_BucketName" data-uid="cloud.google.com/go/storage.ObjectHandle.BucketName" class="notranslate">func (*ObjectHandle) BucketName
 </h3>
@@ -2844,7 +2843,7 @@ func main() {
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2869,7 +2868,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_ComposerFrom" data-uid="cloud.google.com/go/storage.ObjectHandle.ComposerFrom" class="notranslate">func (*ObjectHandle) ComposerFrom
 </h3>
@@ -2887,7 +2886,7 @@ to specify an encryption key for any of the source objects.</p>
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2912,7 +2911,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_CopierFrom" data-uid="cloud.google.com/go/storage.ObjectHandle.CopierFrom" class="notranslate">func (*ObjectHandle) CopierFrom
 </h3>
@@ -2929,7 +2928,7 @@ in which case the user project of src is billed.</p>
               <h4>Example</h4>
     <h5 class="notranslate">rotateEncryptionKeys</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -2952,7 +2951,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_Delete" data-uid="cloud.google.com/go/storage.ObjectHandle.Delete" class="notranslate">func (*ObjectHandle) Delete
 </h3>
@@ -2964,7 +2963,7 @@ func main() {
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3001,7 +3000,7 @@ func main() {
 	}
 	fmt.Println(&quot;deleted all object items in the bucket specified.&quot;)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_Generation" data-uid="cloud.google.com/go/storage.ObjectHandle.Generation" class="notranslate">func (*ObjectHandle) Generation
 </h3>
@@ -3017,7 +3016,7 @@ endpoints at <a href="https://cloud.google.com/storage/docs/json_api/">https://c
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3046,7 +3045,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_If" data-uid="cloud.google.com/go/storage.ObjectHandle.If" class="notranslate">func (*ObjectHandle) If
 </h3>
@@ -3062,7 +3061,7 @@ for more details.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3106,7 +3105,7 @@ func main() {
 		}
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_Key" data-uid="cloud.google.com/go/storage.ObjectHandle.Key" class="notranslate">func (*ObjectHandle) Key
 </h3>
@@ -3121,7 +3120,7 @@ See <a href="https://cloud.google.com/storage/docs/encryption">https://cloud.goo
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3146,7 +3145,7 @@ func main() {
 		// TODO: handle error.
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_NewRangeReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewRangeReader" class="notranslate">func (*ObjectHandle) NewRangeReader
 </h3>
@@ -3166,7 +3165,7 @@ Google Cloud Storage dictates.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Examples</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3194,11 +3193,11 @@ func main() {
 	}
 	fmt.Printf(&quot;first 64K of file contents:\n%s\n&quot;, slurp)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">lastNBytes</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3226,11 +3225,11 @@ func main() {
 	}
 	fmt.Printf(&quot;Last 10 bytes from the end of the file:\n%s\n&quot;, slurp)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">untilEnd</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3258,7 +3257,7 @@ func main() {
 	}
 	fmt.Printf(&quot;From 101st byte until the end:\n%s\n&quot;, slurp)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_NewReader" data-uid="cloud.google.com/go/storage.ObjectHandle.NewReader" class="notranslate">func (*ObjectHandle) NewReader
 </h3>
@@ -3273,7 +3272,7 @@ ErrObjectNotExist will be returned if the object is not found.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3299,7 +3298,7 @@ func main() {
 	}
 	fmt.Println(&quot;file contents:&quot;, slurp)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_NewWriter" data-uid="cloud.google.com/go/storage.ObjectHandle.NewWriter" class="notranslate">func (*ObjectHandle) NewWriter
 </h3>
@@ -3322,7 +3321,7 @@ stop writing without saving the data, cancel the context.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3338,7 +3337,7 @@ func main() {
 	wc := client.Bucket(&quot;bucketname&quot;).Object(&quot;filename1&quot;).NewWriter(ctx)
 	_ = wc // TODO: Use the Writer.
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_ObjectName" data-uid="cloud.google.com/go/storage.ObjectHandle.ObjectName" class="notranslate">func (*ObjectHandle) ObjectName
 </h3>
@@ -3351,7 +3350,7 @@ func main() {
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3376,7 +3375,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_ReadCompressed" data-uid="cloud.google.com/go/storage.ObjectHandle.ReadCompressed" class="notranslate">func (*ObjectHandle) ReadCompressed
 </h3>
@@ -3389,7 +3388,7 @@ func main() {
               <h4>Example</h4>
     <h5 class="notranslate">exists</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3414,7 +3413,7 @@ func main() {
 	}
 	fmt.Printf(&quot;The object exists and has attributes: %#v\n&quot;, attrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectHandle_Update" data-uid="cloud.google.com/go/storage.ObjectHandle.Update" class="notranslate">func (*ObjectHandle) Update
 </h3>
@@ -3428,7 +3427,7 @@ ErrObjectNotExist will be returned if the object is not found.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3452,7 +3451,7 @@ func main() {
 	}
 	fmt.Println(objAttrs)
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
         <h2 id="cloud_google_com_go_storage_ObjectIterator" data-uid="cloud.google.com/go/storage.ObjectIterator" class="notranslate">ObjectIterator</h2>
         <div class="codewrapper">
@@ -3487,7 +3486,7 @@ represent prefixes.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -3514,7 +3513,7 @@ func main() {
 		fmt.Println(objAttrs)
 	}
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
             <h3 id="cloud_google_com_go_storage_ObjectIterator_PageInfo" data-uid="cloud.google.com/go/storage.ObjectIterator.PageInfo" class="notranslate">func (*ObjectIterator) PageInfo
 </h3>
@@ -3588,7 +3587,7 @@ The generated URL and fields will then allow an unauthenticated client to perfor
             <div class="markdown level1 conceptual"></div>
               <h4>Example</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;bytes&quot;
@@ -3659,7 +3658,7 @@ func main() {
 	}
 	_ = res
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
         <h2 id="cloud_google_com_go_storage_PostPolicyV4Condition" data-uid="cloud.google.com/go/storage.PostPolicyV4Condition" class="notranslate">PostPolicyV4Condition</h2>
         <div class="codewrapper">
@@ -4268,7 +4267,7 @@ Writer.ChunkSize has been set to zero.</p>
             <div class="markdown level1 conceptual"></div>
               <h4>Examples</h4>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -4295,11 +4294,11 @@ func main() {
 	}
 	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">checksum</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -4328,11 +4327,11 @@ func main() {
 	}
 	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
     <h5 class="notranslate">timeout</h5>
   <div class="codewrapper">
-  <pre><code class="prettyprint">{% verbatim %}package main
+  <pre><code class="prettyprint">package main
 
 import (
 	&quot;cloud.google.com/go/storage&quot;
@@ -4362,9 +4361,10 @@ func main() {
 	}
 	fmt.Println(&quot;updated object:&quot;, wc.Attrs())
 }
-{% endverbatim %}</code></pre>
+</code></pre>
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>
