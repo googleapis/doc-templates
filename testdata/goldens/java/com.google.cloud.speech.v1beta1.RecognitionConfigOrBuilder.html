@@ -5,13 +5,13 @@
     <meta name="book_path" value="/java/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="com.google.cloud.speech.v1beta1.RecognitionConfigOrBuilder">
 <h1 class="page-title">Interface RecognitionConfigOrBuilder
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">public interface RecognitionConfigOrBuilder extends MessageOrBuilder</code></pre>
   </div>
@@ -19,7 +19,6 @@
     <h2>Implements</h2>
     <span><span class="xref">com.google.protobuf.MessageOrBuilder</span></span>
   </div>
-  {% endverbatim %}
   <h2 id="methods">Methods
   </h2>
   <a id="com_google_cloud_speech_v1beta1_RecognitionConfigOrBuilder_getEncoding_" data-uid="com.google.cloud.speech.v1beta1.RecognitionConfigOrBuilder.getEncoding*"></a>
@@ -27,11 +26,9 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract RecognitionConfig.AudioEncoding getEncoding()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Required* Encoding of audio data sent in all `RecognitionAudio` messages.
 </code></pre><p><code>.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -52,11 +49,9 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getEncodingValue()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Required* Encoding of audio data sent in all `RecognitionAudio` messages.
 </code></pre><p><code>.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -77,7 +72,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract String getLanguageCode()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Optional* The language of the supplied audio as a BCP-47 language tag.
  Example: &quot;en-GB&quot;  https://www.rfc-editor.org/rfc/bcp/bcp47.txt
  If omitted, defaults to &quot;en-US&quot;. See
@@ -85,7 +79,6 @@
  for a list of the currently supported language codes.
 </code></pre><p><code>string language_code = 3;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -106,7 +99,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract ByteString getLanguageCodeBytes()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Optional* The language of the supplied audio as a BCP-47 language tag.
  Example: &quot;en-GB&quot;  https://www.rfc-editor.org/rfc/bcp/bcp47.txt
  If omitted, defaults to &quot;en-US&quot;. See
@@ -114,7 +106,6 @@
  for a list of the currently supported language codes.
 </code></pre><p><code>string language_code = 3;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -135,7 +126,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getMaxAlternatives()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Optional* Maximum number of recognition hypotheses to be returned.
  Specifically, the maximum number of `SpeechRecognitionAlternative` messages
  within each `SpeechRecognitionResult`.
@@ -144,7 +134,6 @@
  one. If omitted, will return a maximum of one.
 </code></pre><p><code>int32 max_alternatives = 4;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -165,14 +154,12 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean getProfanityFilter()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Optional* If set to `true`, the server will attempt to filter out
  profanities, replacing all but the initial character in each filtered word
  with asterisks, e.g. &quot;f***&quot;. If set to `false` or omitted, profanities
  won&#39;t be filtered out.
 </code></pre><p><code>bool profanity_filter = 5;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -193,7 +180,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract int getSampleRate()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Required* Sample rate in Hertz of the audio data sent in all
  `RecognitionAudio` messages. Valid values are: 8000-48000.
  16000 is optimal. For best results, set the sampling rate of the audio
@@ -201,7 +187,6 @@
  the audio source (instead of re-sampling).
 </code></pre><p><code>int32 sample_rate = 2;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -222,11 +207,9 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract SpeechContext getSpeechContext()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Optional* A means to provide context to assist the speech recognition.
 </code></pre><p><code>.google.cloud.speech.v1beta1.SpeechContext speech_context = 6;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -247,11 +230,9 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract SpeechContextOrBuilder getSpeechContextOrBuilder()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Optional* A means to provide context to assist the speech recognition.
 </code></pre><p><code>.google.cloud.speech.v1beta1.SpeechContext speech_context = 6;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -272,11 +253,9 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public abstract boolean hasSpeechContext()</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><pre><code>*Optional* A means to provide context to assist the speech recognition.
 </code></pre><p><code>.google.cloud.speech.v1beta1.SpeechContext speech_context = 6;</code></p>
 </div>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -298,5 +277,6 @@
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>

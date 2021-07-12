@@ -5,13 +5,13 @@
     <meta name="book_path" value="/dotnet/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options">
 <h1 class="page-title">Class IamPolicyAnalysisQuery.Types.Options
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">public sealed class Options : IMessage&lt;IamPolicyAnalysisQuery.Types.Options&gt;, IEquatable&lt;IamPolicyAnalysisQuery.Types.Options&gt;, IDeepCloneable&lt;IamPolicyAnalysisQuery.Types.Options&gt;, IBufferMessage, IMessage</code></pre>
   </div>
@@ -49,7 +49,6 @@
   <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
   <h2>Assembly</h2>
   <p>Google.Cloud.Asset.V1.dll</p>
-  {% endverbatim %}
   <h2 id="constructors">Constructors
   </h2>
   <a id="Google_Cloud_Asset_V1_IamPolicyAnalysisQuery_Types_Options__ctor_" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.#ctor*"></a>
@@ -63,7 +62,6 @@
     <pre><code class="prettyprint">public Options(IamPolicyAnalysisQuery.Types.Options other)</code></pre>
   </div>
   <strong>Parameter</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -80,7 +78,6 @@
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <h2 id="properties">Properties
   </h2>
   <a id="Google_Cloud_Asset_V1_IamPolicyAnalysisQuery_Types_Options_AnalyzeServiceAccountImpersonation_" data-uid="Google.Cloud.Asset.V1.IamPolicyAnalysisQuery.Types.Options.AnalyzeServiceAccountImpersonation*"></a>
@@ -88,7 +85,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool AnalyzeServiceAccountImpersonation { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the response will include access analysis from identities to
 resources via service account impersonation. This is a very expensive
 operation, because many derived queries will be executed. We highly
@@ -110,7 +106,6 @@ F. And those advanced analysis results will be included in
 [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].</p>
 <p>Default is false.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -131,7 +126,6 @@ F. And those advanced analysis results will be included in
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool ExpandGroups { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the identities section of the result will expand any
 Google groups appearing in an IAM policy binding.</p>
 <p>If [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the
@@ -139,7 +133,6 @@ identity in the result will be determined by the selector, and this flag
 is not allowed to set.</p>
 <p>Default is false.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -160,7 +153,6 @@ is not allowed to set.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool ExpandResources { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not
 specified, the resource section of the result will expand any resource
 attached to an IAM policy to include resources lower in the resource
@@ -179,7 +171,6 @@ a GCP project with this option enabled, the results will include all
 users who have permission P on that project or any lower resource.</p>
 <p>Default is false.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -200,7 +191,6 @@ users who have permission P on that project or any lower resource.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool ExpandRoles { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the access section of result will expand any roles
 appearing in IAM policy bindings to include their permissions.</p>
 <p>If [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access
@@ -208,7 +198,6 @@ section of the result will be determined by the selector, and this flag
 is not allowed to set.</p>
 <p>Default is false.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -229,12 +218,10 @@ is not allowed to set.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool OutputGroupEdges { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the result will output group identity edges, starting
 from the binding&apos;s group members, to any expanded identities.
 Default is false.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -255,12 +242,10 @@ Default is false.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public bool OutputResourceEdges { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. If true, the result will output resource edges, starting
 from the policy attached resource, to any expanded resources.
 Default is false.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -294,5 +279,6 @@ Default is false.</p>
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>

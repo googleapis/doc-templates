@@ -5,13 +5,13 @@
     <meta name="book_path" value="/dotnet/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="Google.Cloud.Asset.V1.ListAssetsRequest">
 <h1 class="page-title">Class ListAssetsRequest
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">public sealed class ListAssetsRequest : IMessage&lt;ListAssetsRequest&gt;, IEquatable&lt;ListAssetsRequest&gt;, IDeepCloneable&lt;ListAssetsRequest&gt;, IBufferMessage, IMessage, IPageRequest</code></pre>
   </div>
@@ -50,7 +50,6 @@
   <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
   <h2>Assembly</h2>
   <p>Google.Cloud.Asset.V1.dll</p>
-  {% endverbatim %}
   <h2 id="constructors">Constructors
   </h2>
   <a id="Google_Cloud_Asset_V1_ListAssetsRequest__ctor_" data-uid="Google.Cloud.Asset.V1.ListAssetsRequest.#ctor*"></a>
@@ -64,7 +63,6 @@
     <pre><code class="prettyprint">public ListAssetsRequest(ListAssetsRequest other)</code></pre>
   </div>
   <strong>Parameter</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -81,7 +79,6 @@
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <h2 id="properties">Properties
   </h2>
   <a id="Google_Cloud_Asset_V1_ListAssetsRequest_AssetTypes_" data-uid="Google.Cloud.Asset.V1.ListAssetsRequest.AssetTypes*"></a>
@@ -89,7 +86,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; AssetTypes { get; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>A list of asset types to take a snapshot for. For example:
 &quot;compute.googleapis.com/Disk&quot;.</p>
 <p>Regular expression is also supported. For example:</p>
@@ -107,7 +103,6 @@ snapshot all asset types. See <a href="https://cloud.google.com/asset-inventory/
 Inventory</a>
 for all supported asset types.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -128,11 +123,9 @@ for all supported asset types.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public ContentType ContentType { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Asset content type. If not specified, no content but the asset name will
 be returned.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -153,11 +146,9 @@ be returned.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public int PageSize { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>The maximum number of assets to be returned in a single response. Default
 is 100, minimum is 1, and maximum is 1000.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -178,12 +169,10 @@ is 100, minimum is 1, and maximum is 1000.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string PageToken { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>The <code>next_page_token</code> returned from the previous <code>ListAssetsResponse</code>, or
 unspecified for the first <code>ListAssetsRequest</code>. It is a continuation of a
 prior <code>ListAssets</code> call, and the API should return the next page of assets.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -204,13 +193,11 @@ prior <code>ListAssets</code> call, and the API should return the next page of a
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Parent { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Required. Name of the organization or project the assets belong to. Format:
 &quot;organizations/[organization-number]&quot; (such as &quot;organizations/123&quot;),
 &quot;projects/[project-id]&quot; (such as &quot;projects/my-project-id&quot;), or
 &quot;projects/[project-number]&quot; (such as &quot;projects/12345&quot;).</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -231,10 +218,8 @@ prior <code>ListAssets</code> call, and the API should return the next page of a
   <div class="codewrapper">
     <pre><code class="prettyprint">public IResourceName ParentAsResourceName { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p><span class="xref">Google.Api.Gax.IResourceName</span>-typed view over the <a class="xref" href="Google.Cloud.Asset.V1.ListAssetsRequest.html#Google_Cloud_Asset_V1_ListAssetsRequest_Parent">Parent</a> resource name property.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -255,14 +240,12 @@ prior <code>ListAssets</code> call, and the API should return the next page of a
   <div class="codewrapper">
     <pre><code class="prettyprint">public Timestamp ReadTime { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Timestamp to take an asset snapshot. This can only be set to a timestamp
 between the current time and the current time minus 35 days (inclusive).
 If not specified, the current time will be used. Due to delays in resource
 data collection and indexing, there is a volatile window during which
 running the same query may get different results.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -299,5 +282,6 @@ running the same query may get different results.</p>
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>

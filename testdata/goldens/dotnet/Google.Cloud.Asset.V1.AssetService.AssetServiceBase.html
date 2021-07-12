@@ -5,13 +5,13 @@
     <meta name="book_path" value="/dotnet/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase">
 <h1 class="page-title">Class AssetService.AssetServiceBase
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">[BindServiceMethod(typeof(AssetService), &quot;BindService&quot;)]
 public abstract class AssetServiceBase</code></pre>
@@ -42,7 +42,6 @@ public abstract class AssetServiceBase</code></pre>
   <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
   <h2>Assembly</h2>
   <p>Google.Cloud.Asset.V1.dll</p>
-  {% endverbatim %}
   <h2 id="methods">Methods
   </h2>
   <a id="Google_Cloud_Asset_V1_AssetService_AssetServiceBase_AnalyzeIamPolicy_" data-uid="Google.Cloud.Asset.V1.AssetService.AssetServiceBase.AnalyzeIamPolicy*"></a>
@@ -50,13 +49,10 @@ public abstract class AssetServiceBase</code></pre>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;AnalyzeIamPolicyResponse&gt; AnalyzeIamPolicy(AnalyzeIamPolicyRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Analyzes IAM policies to answer which identities have what accesses on
 which resources.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -80,7 +76,6 @@ which resources.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -102,7 +97,6 @@ which resources.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;Operation&gt; AnalyzeIamPolicyLongrunning(AnalyzeIamPolicyLongrunningRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Analyzes IAM policies asynchronously to answer which identities have what
 accesses on which resources, and writes the analysis results to a Google
 Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
@@ -113,9 +107,7 @@ status. We recommend intervals of at least 2 seconds with exponential
 backoff retry to poll the operation result. The metadata contains the
 request to help callers to map responses to requests.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -139,7 +131,6 @@ request to help callers to map responses to requests.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -161,7 +152,6 @@ request to help callers to map responses to requests.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;BatchGetAssetsHistoryResponse&gt; BatchGetAssetsHistory(BatchGetAssetsHistoryRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Batch gets the update history of assets that overlap a time window.
 For IAM_POLICY content, this API outputs history when the asset and its
 attached IAM POLICY both exist. This can create gaps in the output history.
@@ -170,9 +160,7 @@ deleted status.
 If a specified asset does not exist, this API returns an INVALID_ARGUMENT
 error.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -196,7 +184,6 @@ error.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -218,13 +205,10 @@ error.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;Feed&gt; CreateFeed(CreateFeedRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Creates a feed in a parent project/folder/organization to listen to its
 asset updates.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -248,7 +232,6 @@ asset updates.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -270,12 +253,9 @@ asset updates.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;Empty&gt; DeleteFeed(DeleteFeedRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Deletes an asset feed.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -299,7 +279,6 @@ asset updates.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -321,7 +300,6 @@ asset updates.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;Operation&gt; ExportAssets(ExportAssetsRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Exports assets with time and resource types to a given Cloud Storage
 location/BigQuery table. For Cloud Storage location destinations, the
 output format is newline-delimited JSON. Each line represents a
@@ -333,9 +311,7 @@ at least 2 seconds with exponential retry to poll the export operation
 result. For regular-size resource parent, the export operation usually
 finishes within 5 minutes.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -359,7 +335,6 @@ finishes within 5 minutes.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -381,12 +356,9 @@ finishes within 5 minutes.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;Feed&gt; GetFeed(GetFeedRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Gets details about an asset feed.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -410,7 +382,6 @@ finishes within 5 minutes.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -432,13 +403,10 @@ finishes within 5 minutes.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;ListAssetsResponse&gt; ListAssets(ListAssetsRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Lists assets with time and resource types and returns paged results in
 response.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -462,7 +430,6 @@ response.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -484,12 +451,9 @@ response.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;ListFeedsResponse&gt; ListFeeds(ListFeedsRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Lists all asset feeds in a parent project/folder/organization.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -513,7 +477,6 @@ response.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -535,15 +498,12 @@ response.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;SearchAllIamPoliciesResponse&gt; SearchAllIamPolicies(SearchAllIamPoliciesRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Searches all IAM policies within the specified scope, such as a project,
 folder, or organization. The caller must be granted the
 <code>cloudasset.assets.searchAllIamPolicies</code> permission on the desired scope,
 otherwise the request will be rejected.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -567,7 +527,6 @@ otherwise the request will be rejected.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -589,15 +548,12 @@ otherwise the request will be rejected.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;SearchAllResourcesResponse&gt; SearchAllResources(SearchAllResourcesRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Searches all Cloud resources within the specified scope, such as a project,
 folder, or organization. The caller must be granted the
 <code>cloudasset.assets.searchAllResources</code> permission on the desired scope,
 otherwise the request will be rejected.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -621,7 +577,6 @@ otherwise the request will be rejected.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -643,12 +598,9 @@ otherwise the request will be rejected.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public virtual Task&lt;Feed&gt; UpdateFeed(UpdateFeedRequest request, ServerCallContext context)</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Updates an asset feed configuration.</p>
 </div>
-  {% endverbatim %}
   <strong>Parameters</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -672,7 +624,6 @@ otherwise the request will be rejected.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -691,5 +642,6 @@ otherwise the request will be rejected.</p>
   </table>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>

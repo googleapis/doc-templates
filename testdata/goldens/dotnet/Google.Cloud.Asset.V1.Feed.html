@@ -5,13 +5,13 @@
     <meta name="book_path" value="/dotnet/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="Google.Cloud.Asset.V1.Feed">
 <h1 class="page-title">Class Feed
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">public sealed class Feed : IMessage&lt;Feed&gt;, IEquatable&lt;Feed&gt;, IDeepCloneable&lt;Feed&gt;, IBufferMessage, IMessage</code></pre>
   </div>
@@ -53,7 +53,6 @@ Pub/Sub topics.</p>
   <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
   <h2>Assembly</h2>
   <p>Google.Cloud.Asset.V1.dll</p>
-  {% endverbatim %}
   <h2 id="constructors">Constructors
   </h2>
   <a id="Google_Cloud_Asset_V1_Feed__ctor_" data-uid="Google.Cloud.Asset.V1.Feed.#ctor*"></a>
@@ -67,7 +66,6 @@ Pub/Sub topics.</p>
     <pre><code class="prettyprint">public Feed(Feed other)</code></pre>
   </div>
   <strong>Parameter</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -84,7 +82,6 @@ Pub/Sub topics.</p>
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <h2 id="properties">Properties
   </h2>
   <a id="Google_Cloud_Asset_V1_Feed_AssetNames_" data-uid="Google.Cloud.Asset.V1.Feed.AssetNames*"></a>
@@ -92,7 +89,6 @@ Pub/Sub topics.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; AssetNames { get; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>A list of the full names of the assets to receive updates. You must specify
 either or both of asset_names and asset_types. Only asset updates matching
 specified asset_names or asset_types are exported to the feed.
@@ -102,7 +98,6 @@ See <a href="https://cloud.google.com/apis/design/resource_names#full_resource_n
 Names</a>
 for more info.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -123,7 +118,6 @@ for more info.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; AssetTypes { get; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>A list of types of the assets to receive updates. You must specify either
 or both of asset_names and asset_types. Only asset updates matching
 specified asset_names or asset_types are exported to the feed.
@@ -132,7 +126,6 @@ Example: <code>&amp;quot;compute.googleapis.com/Disk&amp;quot;</code></p>
 topic</a>
 for a list of all supported asset types.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -153,7 +146,6 @@ for a list of all supported asset types.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public Expr Condition { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>A condition which determines whether an asset update should be published.
 If specified, an asset will be returned only when the expression evaluates
 to true.
@@ -165,7 +157,6 @@ optional.</p>
 guide</a>
 for detailed instructions.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -186,11 +177,9 @@ for detailed instructions.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public ContentType ContentType { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Asset content type. If not specified, no content but the asset name and
 type will be returned.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -211,10 +200,8 @@ type will be returned.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public FeedName FeedName { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p><a class="xref" href="Google.Cloud.Asset.V1.FeedName.html">FeedName</a>-typed view over the <a class="xref" href="Google.Cloud.Asset.V1.Feed.html#Google_Cloud_Asset_V1_Feed_Name">Name</a> resource name property.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -235,11 +222,9 @@ type will be returned.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public FeedOutputConfig FeedOutputConfig { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Required. Feed output configuration defining where the asset updates are
 published to.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -260,7 +245,6 @@ published to.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Name { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Required. The format will be
 projects/{project_number}/feeds/{client-assigned_feed_identifier} or
 folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
@@ -268,7 +252,6 @@ organizations/{organization_number}/feeds/{client-assigned_feed_identifier}</p>
 <p>The client-assigned feed identifier must be unique within the parent
 project/folder/organization.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -302,5 +285,6 @@ project/folder/organization.</p>
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>

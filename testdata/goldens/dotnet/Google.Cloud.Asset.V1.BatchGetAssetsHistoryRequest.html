@@ -5,13 +5,13 @@
     <meta name="book_path" value="/dotnet/_book.yaml">
   </head>
   <body>
+    {% verbatim %}
     <div>
       <article data-uid="Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest">
 <h1 class="page-title">Class BatchGetAssetsHistoryRequest
 </h1>
   
   
-  {% verbatim %}
   <div class="codewrapper">
     <pre><code class="prettyprint">public sealed class BatchGetAssetsHistoryRequest : IMessage&lt;BatchGetAssetsHistoryRequest&gt;, IEquatable&lt;BatchGetAssetsHistoryRequest&gt;, IDeepCloneable&lt;BatchGetAssetsHistoryRequest&gt;, IBufferMessage, IMessage</code></pre>
   </div>
@@ -49,7 +49,6 @@
   <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
   <h2>Assembly</h2>
   <p>Google.Cloud.Asset.V1.dll</p>
-  {% endverbatim %}
   <h2 id="constructors">Constructors
   </h2>
   <a id="Google_Cloud_Asset_V1_BatchGetAssetsHistoryRequest__ctor_" data-uid="Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest.#ctor*"></a>
@@ -63,7 +62,6 @@
     <pre><code class="prettyprint">public BatchGetAssetsHistoryRequest(BatchGetAssetsHistoryRequest other)</code></pre>
   </div>
   <strong>Parameter</strong>
-  {% verbatim %}
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -80,7 +78,6 @@
       </tr>
     </tbody>
   </table>
-  {% endverbatim %}
   <h2 id="properties">Properties
   </h2>
   <a id="Google_Cloud_Asset_V1_BatchGetAssetsHistoryRequest_AssetNames_" data-uid="Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest.AssetNames*"></a>
@@ -88,7 +85,6 @@
   <div class="codewrapper">
     <pre><code class="prettyprint">public RepeatedField&lt;string&gt; AssetNames { get; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>A list of the full names of the assets.
 See: <a href="https://cloud.google.com/asset-inventory/docs/resource-name-format">https://cloud.google.com/asset-inventory/docs/resource-name-format</a>
 Example:</p>
@@ -96,7 +92,6 @@ Example:</p>
 <p>The request becomes a no-op if the asset name list is empty, and the max
 size of the asset name list is 100 in one request.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -117,10 +112,8 @@ size of the asset name list is 100 in one request.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public ContentType ContentType { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. The content type.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -141,12 +134,10 @@ size of the asset name list is 100 in one request.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">public string Parent { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Required. The relative name of the root asset. It can only be an
 organization number (such as &quot;organizations/123&quot;), a project ID (such as
 &quot;projects/my-project-id&quot;)&quot;, or a project number (such as &quot;projects/12345&quot;).</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -167,10 +158,8 @@ organization number (such as &quot;organizations/123&quot;), a project ID (such 
   <div class="codewrapper">
     <pre><code class="prettyprint">public IResourceName ParentAsResourceName { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p><span class="xref">Google.Api.Gax.IResourceName</span>-typed view over the <a class="xref" href="Google.Cloud.Asset.V1.BatchGetAssetsHistoryRequest.html#Google_Cloud_Asset_V1_BatchGetAssetsHistoryRequest_Parent">Parent</a> resource name property.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -191,7 +180,6 @@ organization number (such as &quot;organizations/123&quot;), a project ID (such 
   <div class="codewrapper">
     <pre><code class="prettyprint">public TimeWindow ReadTimeWindow { get; set; }</code></pre>
   </div>
-  {% verbatim %}
   <div class="markdown level1 summary"><p>Optional. The time window for the asset history. Both start_time and
 end_time are optional and if set, it must be after the current time minus
 35 days. If end_time is not set, it is default to current timestamp.
@@ -199,7 +187,6 @@ If start_time is not set, the snapshot of the assets at end_time will be
 returned. The returned results contain all temporal assets whose time
 window overlap with read_time_window.</p>
 </div>
-  {% endverbatim %}
   <strong>Property Value</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -233,5 +220,6 @@ window overlap with read_time_window.</p>
   </div>
 </article>
     </div>
+    {% endverbatim %}
   </body>
 </html>
