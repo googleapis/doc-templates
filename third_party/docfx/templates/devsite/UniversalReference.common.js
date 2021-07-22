@@ -300,6 +300,7 @@ function getDefinition(type) {
 function getDefinitions(category) {
   var namespaceItems = {
     "package":      { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
+    "subpackage":   { inSubpackage: true,   typePropertyName: "inSubpackage",   id: "subPackages" },
     "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
     "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
     "module":       { inModule: true,       typePropertyName: "inModule",       id: "modules" },
