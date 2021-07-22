@@ -23,6 +23,12 @@ exports.transform = function (model) {
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
         break;
+      // Handling subPackages differently for Python
+      case 'subpackage':
+        model.isSubpackage = true;
+        if (model.children) groupChildren(model, namespaceCategory);
+        model[getTypePropertyName(model.type)] = true;
+        break;
       case 'module':
       case 'class':
       case 'interface':
