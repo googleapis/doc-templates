@@ -23,12 +23,6 @@ exports.transform = function (model) {
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
         break;
-      // Handling subPackages differently for Python
-      case 'subpackage':
-        model.isSubpackage = true;
-        if (model.children) groupChildren(model, namespaceCategory);
-        model[getTypePropertyName(model.type)] = true;
-        break;
       case 'module':
       case 'class':
         if (model.langs && model.langs[0].toLowerCase() === "python" &&
@@ -316,7 +310,6 @@ function getDefinition(type) {
 function getDefinitions(category) {
   var namespaceItems = {
     "package":      { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
-    "subpackage":   { inSubpackage: true,   typePropertyName: "inSubpackage",   id: "subPackages" },
     "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
     "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
     "module":       { inModule: true,       typePropertyName: "inModule",       id: "modules" },
