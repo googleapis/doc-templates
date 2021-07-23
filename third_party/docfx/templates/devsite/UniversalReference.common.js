@@ -23,8 +23,24 @@ exports.transform = function (model) {
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
         break;
+      // Handling subPackages differently for Python
+      case 'subpackage':
+        model.isSubpackage = true;
+        if (model.children) groupChildren(model, namespaceCategory);
+        model[getTypePropertyName(model.type)] = true;
+        break;
       case 'module':
       case 'class':
+        if (model.langs && model.langs[0].toLowerCase() === "python" &&
+            model.children && model.children.length > 0) {
+          model.isClass = true;
+          // Handle classes and modules differently for Python
+          model.isPython = true;
+          model.isPythonHeader = true;
+          groupChildren(model, namespaceCategory);
+          model[getTypePropertyName(model.type)] = true;
+          break;
+        }
       case 'interface':
       case 'struct':
       case 'delegate':
@@ -300,6 +316,7 @@ function getDefinition(type) {
 function getDefinitions(category) {
   var namespaceItems = {
     "package":      { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
+    "subpackage":   { inSubpackage: true,   typePropertyName: "inSubpackage",   id: "subPackages" },
     "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
     "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
     "module":       { inModule: true,       typePropertyName: "inModule",       id: "modules" },
@@ -309,6 +326,7 @@ function getDefinitions(category) {
     "delegate":     { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" },
     "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts",       isEmbedded: true },
     "variable":     { inVariable: true,     typePropertyName: "inVariable",     id: "variables",    isEmbedded: true },
+    "property":     { inProperty: true,     typePropertyName: "inProperty",     id: "properties",   isEmbedded: true },
     "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
     "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
     "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods",      isEmbedded: true },
