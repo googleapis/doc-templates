@@ -19,13 +19,13 @@ exports.transform = function (model) {
       // packages and namespaces are both containers for other elements
       case 'package':
       case 'namespace':
-        model.isNamespace = true;
-        if (model.children) groupChildren(model, namespaceCategory);
-        model[getTypePropertyName(model.type)] = true;
-        break;
-      // Handling subPackages differently for Python
       case 'subpackage':
-        model.isSubpackage = true;
+        // Handling subPackages differently for Python
+        if (model.type.toLowerCase() == 'subpackage') {
+            model.isSubPackage = true;
+        } else {
+            model.isNamespace = true;
+        }
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
         break;
