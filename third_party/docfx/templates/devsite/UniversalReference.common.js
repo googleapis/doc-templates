@@ -29,7 +29,6 @@ exports.transform = function (model) {
             model.children && model.children.length > 0) {
           model.isClass = true;
           // Handle classes and modules differently for Python
-          model.isPython = true;
           model.isPythonHeader = true;
           groupChildren(model, namespaceCategory);
           model[getTypePropertyName(model.type)] = true;
