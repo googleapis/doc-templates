@@ -26,6 +26,15 @@ exports.transform = function (model) {
         break;
       case 'module':
       case 'class':
+        if (model.langs && model.langs[0].toLowerCase() === "python" &&
+            model.children && model.children.length > 0) {
+          model.isClass = true;
+          // Handle classes and modules differently for Python
+          model.isPythonHeader = true;
+          groupChildren(model, namespaceCategory);
+          model[getTypePropertyName(model.type)] = true;
+          break;
+        }
       case 'interface':
       case 'struct':
       case 'delegate':
@@ -311,6 +320,7 @@ function getDefinitions(category) {
     "delegate":     { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" },
     "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts",       isEmbedded: true },
     "variable":     { inVariable: true,     typePropertyName: "inVariable",     id: "variables",    isEmbedded: true },
+    "property":     { inProperty: true,     typePropertyName: "inProperty",     id: "properties",   isEmbedded: true },
     "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
     "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
     "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods",      isEmbedded: true },

@@ -18,7 +18,12 @@
 {{#overload}}
 <a id="{{id}}" data-uid="{{uid}}"></a>
 {{/overload}}
+{{#inModule}}
+<h3><xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/></h3>
+{{/inModule}}
+{{^inModule}}
 <h3 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h3>
+{{/inModule}}
 {{#syntax.content.0}}
 <div class="codewrapper">
   <pre><code class="prettyprint">{{syntax.content.0.value}}</code></pre>
