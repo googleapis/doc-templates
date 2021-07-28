@@ -20,12 +20,7 @@ exports.transform = function (model) {
       case 'package':
       case 'namespace':
       case 'subpackage':
-        // Handling subPackages differently for Python
-        if (model.type.toLowerCase() == 'subpackage') {
-            model.isSubPackage = true;
-        } else {
-            model.isNamespace = true;
-        }
+        model.isNamespace = true;
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
         break;
