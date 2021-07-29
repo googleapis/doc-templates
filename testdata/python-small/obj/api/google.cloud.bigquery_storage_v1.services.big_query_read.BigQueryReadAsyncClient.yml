@@ -51,7 +51,7 @@ items:
     content: 'BigQueryReadAsyncClient(*, credentials: google.auth.credentials.Credentials
       = None, transport: Union[str, google.cloud.bigquery_storage_v1.services.big_query_read.transports.base.BigQueryReadTransport]
       = ''grpc_asyncio'', client_options: <module ''google.api_core.client_options''
-      from ''/Users/dandhlee/cloudRAD/python-api-core/google/api_core/client_options.py''>
+      from ''/Users/dandhlee/cloudRAD/env/lib/python3.8/site-packages/google/api_core/client_options.py''>
       = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = <google.api_core.gapic_v1.client_info.ClientInfo
       object>)'
   type: class
@@ -188,9 +188,9 @@ items:
     startLine: 169
   summary: 'Creates a new read session. A read session divides
 
-    the contents of a BigQuery table <xref:int>o one or more
+    the contents of a BigQuery table into one or more
 
-    <xref:str>eams, which can then be used to read data from the
+    streams, which can then be used to read data from the
 
     table. The read session also specifies properties of the
 
@@ -200,23 +200,23 @@ items:
 
 
 
-    A particular row can be read by at most one <xref:str>eam. When
+    A particular row can be read by at most one stream. When
 
-    the caller has reached the end of each <xref:str>eam in the
+    the caller has reached the end of each stream in the
 
     session, then all the data in the table has been read.
 
 
 
-    Data is assigned to each <xref:str>eam such that roughly the
+    Data is assigned to each stream such that roughly the
 
-    same number of rows can be read from each <xref:str>eam.
+    same number of rows can be read from each stream.
 
     Because the server-side unit for assigning data is
 
     collections of rows, the API does not guarantee that
 
-    each <xref:str>eam will return the same number or rows.
+    each stream will return the same number or rows.
 
     Additionally, the limits are enforced based on the
 
@@ -245,10 +245,10 @@ items:
     - defaultValue: None
       description: The request object. Request message for `CreateReadSession`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest">CreateReadSessionRequest</xref>
     returns:
     - description: Information about the ReadSession.
-      var_type: <xref:google.cloud.bigquery_storage_v1.types.ReadSession>
+      var_type: google.cloud.bigquery_storage_v1.types.ReadSession
   type: method
   uid: google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.create_read_session
 - class: google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient
@@ -574,7 +574,7 @@ items:
       path: google/cloud/bigquery_storage_v1/services/big_query_read/async_client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 302
-  summary: 'Reads rows from the <xref:str>eam in the format prescribed
+  summary: 'Reads rows from the stream in the format prescribed
 
     by the ReadSession. Each response contains one or more
 
@@ -586,9 +586,9 @@ items:
 
 
 
-    Each request also returns a set of <xref:str>eam statistics
+    Each request also returns a set of stream statistics
 
-    reflecting the current state of the <xref:str>eam.
+    reflecting the current state of the stream.
 
 
 
@@ -602,7 +602,7 @@ items:
     - defaultValue: None
       description: The request object. Request message for `ReadRows`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1.types.ReadRowsRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ReadRowsRequest">ReadRowsRequest</xref>
     returns:
     - description: Response from calling ReadRows may include row data, progress and
         throttling information.
@@ -712,7 +712,7 @@ items:
     - defaultValue: None
       description: The request object. Request message for `SplitReadStream`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest">SplitReadStreamRequest</xref>
     returns:
     - description: Response message for SplitReadStream.
       var_type: google.cloud.bigquery_storage_v1.types.SplitReadStreamResponse

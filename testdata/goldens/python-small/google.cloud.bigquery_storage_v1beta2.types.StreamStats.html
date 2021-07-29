@@ -26,6 +26,30 @@ Attributes:
       <span> &gt; </span>
       <span class="xref">StreamStats</span>
   </div>
+  <h2 id="classes">Classes
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_types_StreamStats_Progress" data-uid="google.cloud.bigquery_storage_v1beta2.types.StreamStats.Progress" class="notranslate">Progress</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">Progress(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Attributes:
+    at_response_start (float):
+        The fraction of rows assigned to the stream that have been
+        processed by the server so far, not including the rows in
+        the current response message.</p>
+<pre><code>    This value, along with ``at_response_end``, can be used to
+    interpolate the progress made as the rows in the message are
+    being processed using the following formula:
+    ``at_response_start + (at_response_end - at_response_start) * rows_processed_from_response / rows_in_response``.
+
+
+    Note that if a filter is provided, the ``at_response_end``
+    value of the previous response may not necessarily be equal
+    to the ``at_response_start`` value of the current response.
+at_response_end (float):
+    Similar to ``at_response_start``, except that this value
+    includes the rows in the current response.
+</code></pre></div>
 </article>
     </div>
     {% endverbatim %}

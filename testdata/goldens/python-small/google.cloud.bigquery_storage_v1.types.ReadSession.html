@@ -54,6 +54,44 @@ Attributes:
       <span> &gt; </span>
       <span class="xref">ReadSession</span>
   </div>
+  <h2 id="classes">Classes
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_types_ReadSession_TableModifiers" data-uid="google.cloud.bigquery_storage_v1.types.ReadSession.TableModifiers" class="notranslate">TableModifiers</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">TableModifiers(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Additional attributes when reading a table.
+Attributes:
+    snapshot_time (google.protobuf.timestamp_pb2.Timestamp):
+        The snapshot time of the table. If not set,
+        interpreted as now.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_types_ReadSession_TableReadOptions" data-uid="google.cloud.bigquery_storage_v1.types.ReadSession.TableReadOptions" class="notranslate">TableReadOptions</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">TableReadOptions(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Options dictating how we read a table.
+Attributes:
+    selected_fields (Sequence[str]):
+        Names of the fields in the table that should be read. If
+        empty, all fields will be read. If the specified field is a
+        nested field, all the sub-fields in the field will be
+        selected. The output field order is unrelated to the order
+        of fields in selected_fields.
+    row_restriction (str):
+        SQL text filtering statement, similar to a WHERE clause in a
+        query. Aggregates are not supported.</p>
+<pre><code>    Examples: &quot;int_field &gt; 5&quot; &quot;date_field = CAST(&#39;2014-9-27&#39; as
+    DATE)&quot; &quot;nullable_field is not NULL&quot; &quot;st_equals(geo_field,
+    st_geofromtext(&quot;POINT(2, 2)&quot;))&quot; &quot;numeric_field BETWEEN 1.0
+    AND 5.0&quot;
+
+
+    Restricted to a maximum length for 1 MB.
+arrow_serialization_options (google.cloud.bigquery_storage_v1.types.ArrowSerializationOptions):
+    Optional. Options specific to the Apache
+    Arrow output format.
+</code></pre></div>
 </article>
     </div>
     {% endverbatim %}

@@ -188,19 +188,19 @@ use Write API at the same time.</p>
     <pre><code class="prettyprint">create_read_session(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.CreateReadSessionRequest] = None, *, parent: Optional[str] = None, read_session: Optional[google.cloud.bigquery_storage_v1beta2.types.stream.ReadSession] = None, max_stream_count: Optional[int] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Creates a new read session. A read session divides
-the contents of a BigQuery table &lt;xref:int&gt;o one or more
-&lt;xref:str&gt;eams, which can then be used to read data from the
+the contents of a BigQuery table into one or more
+streams, which can then be used to read data from the
 table. The read session also specifies properties of the
 data to be read, such as a list of columns or a push-
 down filter describing the rows to be returned.</p>
-<p>A particular row can be read by at most one &lt;xref:str&gt;eam. When
-the caller has reached the end of each &lt;xref:str&gt;eam in the
+<p>A particular row can be read by at most one stream. When
+the caller has reached the end of each stream in the
 session, then all the data in the table has been read.</p>
-<p>Data is assigned to each &lt;xref:str&gt;eam such that roughly the
-same number of rows can be read from each &lt;xref:str&gt;eam.
+<p>Data is assigned to each stream such that roughly the
+same number of rows can be read from each stream.
 Because the server-side unit for assigning data is
 collections of rows, the API does not guarantee that
-each &lt;xref:str&gt;eam will return the same number or rows.
+each stream will return the same number or rows.
 Additionally, the limits are enforced based on the
 number of pre-filtered rows, so some filters can lead to
 lopsided assignments.</p>
@@ -219,7 +219,7 @@ caller.</p>
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.createreadsessionrequest></xref:google.cloud.bigquery_storage_v1beta2.types.createreadsessionrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.CreateReadSessionRequest.html">CreateReadSessionRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for <code>CreateReadSession</code>.</p>
@@ -239,7 +239,7 @@ caller.</p>
     </thead>
     <tbody>
       <tr> 
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.readsession></xref:google.cloud.bigquery_storage_v1beta2.types.readsession></td>
+        <td>google.cloud.bigquery_storage_v1beta2.types.ReadSession</td>
         <td>Information about the ReadSession.</td>
       </tr>
     </tbody>
@@ -666,13 +666,13 @@ of the given arguments and keywords.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">read_rows(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.ReadRowsRequest] = None, *, read_stream: Optional[str] = None, offset: Optional[int] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Reads rows from the &lt;xref:str&gt;eam in the format prescribed
+  <div class="markdown level1 summary"><p>Reads rows from the stream in the format prescribed
 by the ReadSession. Each response contains one or more
 table rows, up to a maximum of 100 MiB per response;
 read requests which attempt to read individual rows
 larger than 100 MiB will fail.</p>
-<p>Each request also returns a set of &lt;xref:str&gt;eam statistics
-reflecting the current state of the &lt;xref:str&gt;eam.</p>
+<p>Each request also returns a set of stream statistics
+reflecting the current state of the stream.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -685,7 +685,7 @@ reflecting the current state of the &lt;xref:str&gt;eam.</p>
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.readrowsrequest></xref:google.cloud.bigquery_storage_v1beta2.types.readrowsrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ReadRowsRequest.html">ReadRowsRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for <code>ReadRows</code>.</p>
@@ -830,7 +830,7 @@ once the streams have been read to completion.</p>
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.splitreadstreamrequest></xref:google.cloud.bigquery_storage_v1beta2.types.splitreadstreamrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest.html">SplitReadStreamRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for <code>SplitReadStream</code>.</p>

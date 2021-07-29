@@ -52,7 +52,7 @@ items:
     content: 'BigQueryWriteAsyncClient(*, credentials: google.auth.credentials.Credentials
       = None, transport: Union[str, google.cloud.bigquery_storage_v1beta2.services.big_query_write.transports.base.BigQueryWriteTransport]
       = ''grpc_asyncio'', client_options: <module ''google.api_core.client_options''
-      from ''/Users/dandhlee/cloudRAD/python-api-core/google/api_core/client_options.py''>
+      from ''/Users/dandhlee/cloudRAD/env/lib/python3.8/site-packages/google/api_core/client_options.py''>
       = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = <google.api_core.gapic_v1.client_info.ClientInfo
       object>)'
   type: class
@@ -144,13 +144,13 @@ items:
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/async_client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 512
-  summary: 'Atomically commits a group of ``PENDING`` <xref:str>eams that belong to
+  summary: 'Atomically commits a group of ``PENDING`` streams that belong to
 
     the same ``parent`` table. Streams must be finalized before
 
-    commit and cannot be committed multiple times. Once a <xref:str>eam is
+    commit and cannot be committed multiple times. Once a stream is
 
-    committed, data in the <xref:str>eam becomes available for read
+    committed, data in the stream becomes available for read
 
     operations.
 
@@ -166,7 +166,7 @@ items:
     - defaultValue: None
       description: The request object. Request message for `BatchCommitWriteStreams`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest">BatchCommitWriteStreamsRequest</xref>
     returns:
     - description: Response message for BatchCommitWriteStreams.
       var_type: google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse
@@ -302,17 +302,17 @@ items:
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/async_client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 180
-  summary: 'Creates a write <xref:str>eam to the given table. Additionally, every
+  summary: 'Creates a write stream to the given table. Additionally, every
 
-    table has a special COMMITTED <xref:str>eam named ''_default'' to which
+    table has a special COMMITTED stream named ''_default'' to which
 
-    data can be written. This <xref:str>eam doesn''t need to be created
+    data can be written. This stream doesn''t need to be created
 
-    using CreateWriteStream. It is a <xref:str>eam that can be used
+    using CreateWriteStream. It is a stream that can be used
 
     simultaneously by any number of clients. Data written to this
 
-    <xref:str>eam is considered committed as soon as an acknowledgement is
+    stream is considered committed as soon as an acknowledgement is
 
     received.
 
@@ -328,11 +328,11 @@ items:
     - defaultValue: None
       description: The request object. Request message for `CreateWriteStream`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest">CreateWriteStreamRequest</xref>
     returns:
-    - description: Information about a single <xref:str>eam that gets data inside
-        the storage system.
-      var_type: <xref:google.cloud.bigquery_storage_v1beta2.types.WriteStream>
+    - description: Information about a single stream that gets data inside the storage
+        system.
+      var_type: google.cloud.bigquery_storage_v1beta2.types.WriteStream
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteAsyncClient.create_write_stream
 - class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteAsyncClient
@@ -349,9 +349,9 @@ items:
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/async_client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 432
-  summary: 'Finalize a write <xref:str>eam so that no new data can be appended to
+  summary: 'Finalize a write stream so that no new data can be appended to
 
-    the <xref:str>eam. Finalize is not supported on the ''_default'' <xref:str>eam.
+    the stream. Finalize is not supported on the ''_default'' stream.
 
 
 
@@ -365,7 +365,7 @@ items:
     - defaultValue: None
       description: The request object. Request message for invoking `FinalizeWriteStream`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest">FinalizeWriteStreamRequest</xref>
     returns:
     - description: Response message for FinalizeWriteStream.
       var_type: google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamResponse
@@ -385,17 +385,17 @@ items:
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/async_client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 596
-  summary: 'Flushes rows to a BUFFERED <xref:str>eam. If users are appending rows
+  summary: 'Flushes rows to a BUFFERED stream. If users are appending rows
 
-    to BUFFERED <xref:str>eam, flush operation is required in order for the
+    to BUFFERED stream, flush operation is required in order for the
 
     rows to become available for reading. A Flush operation flushes
 
-    up to any previously flushed offset in a BUFFERED <xref:str>eam, to the
+    up to any previously flushed offset in a BUFFERED stream, to the
 
     offset specified in the request. Flush is not supported on the
 
-    \_default <xref:str>eam, since it is not BUFFERED.
+    \_default stream, since it is not BUFFERED.
 
 
 
@@ -409,7 +409,7 @@ items:
     - defaultValue: None
       description: The request object. Request message for `FlushRows`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest">FlushRowsRequest</xref>
     returns:
     - description: Respond message for FlushRows.
       var_type: google.cloud.bigquery_storage_v1beta2.types.FlushRowsResponse
@@ -554,7 +554,7 @@ items:
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/async_client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 350
-  summary: 'Gets a write <xref:str>eam.
+  summary: 'Gets a write stream.
 
 
 
@@ -568,10 +568,10 @@ items:
     - defaultValue: None
       description: The request object. Request message for `GetWriteStreamRequest`.
       id: request
-      var_type: <xref:google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest">GetWriteStreamRequest</xref>
     returns:
-    - description: Information about a single <xref:str>eam that gets data inside
-        the storage system.
+    - description: Information about a single stream that gets data inside the storage
+        system.
       var_type: google.cloud.bigquery_storage_v1beta2.types.WriteStream
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteAsyncClient.get_write_stream

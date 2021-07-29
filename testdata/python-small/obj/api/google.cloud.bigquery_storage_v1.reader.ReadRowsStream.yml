@@ -28,7 +28,7 @@ items:
 
     This stream is an iterable of
 
-    google.cloud.bigquery_storage_v1.types.ReadRowsResponse.
+    <xref uid="google.cloud.bigquery_storage_v1.types.ReadRowsResponse">ReadRowsResponse</xref>.
 
     Iterate over it to fetch all row messages.
 
@@ -36,7 +36,7 @@ items:
 
     If the fastavro library is installed, use the
 
-    :func:`rows()`
+    <xref uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.rows">rows()</xref>
 
     method to parse all messages into a stream of row dictionaries.
 
@@ -44,9 +44,9 @@ items:
 
     If the pandas and fastavro libraries are installed, use the
 
-    :func:`to_dataframe()`
+    <xref uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_dataframe">to_dataframe()</xref>
 
-    method to parse all messages into a pandas.DataFrame.
+    method to parse all messages into a `DataFrame`.
 
     '
   syntax:
@@ -77,7 +77,8 @@ items:
     parameters: []
     returns:
     - description: A sequence of row messages.
-      var_type: Iterable[ <xref:ReadRowsResponse> ]
+      var_type: Iterable[ <xref uid="google.cloud.bigquery_storage_v1.types.ReadRowsResponse">ReadRowsResponse</xref>
+        ]
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.__iter__
 - class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
@@ -107,7 +108,7 @@ items:
         rows in the stream, but now the first message in a read stream contains this
         information.
       id: read_session
-      var_type: Optional[<xref:ReadSession>]
+      var_type: Optional[<xref uid="google.cloud.bigquery_storage_v1.types.ReadSession">ReadSession</xref>]
     returns:
     - description: A sequence of rows, represented as dictionaries.
       var_type: Iterable[Mapping]
@@ -127,7 +128,7 @@ items:
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 186
-  summary: 'Create a <xref:pyarrow.Table> of all rows in the stream.
+  summary: 'Create a `Table` of all rows in the stream.
 
 
 
@@ -146,10 +147,10 @@ items:
         rows in the stream, but now the first message in a read stream contains this
         information.
       id: read_session
-      var_type: <xref:ReadSession>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ReadSession">ReadSession</xref>
     returns:
     - description: A table of all rows in the stream.
-      var_type: <xref:pyarrow.Table>
+      var_type: pyarrow.Table
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_arrow
 - class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
@@ -166,10 +167,10 @@ items:
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 208
-  summary: "Create a <xref:pandas.DataFrame> of all rows in the stream.\n\n\nThis\
-    \ method requires the pandas libary to create a data frame and the\nfastavro library\
-    \ to parse row messages.\n\n\n.. warning::\n    DATETIME columns are not supported.\
-    \ They are currently parsed as\n    strings.\n\n\n"
+  summary: "Create a `DataFrame` of all rows in the stream.\n\n\nThis method requires\
+    \ the pandas libary to create a data frame and the\nfastavro library to parse\
+    \ row messages.\n\n\n.. warning::\n    DATETIME columns are not supported. They\
+    \ are currently parsed as\n    strings.\n\n\n"
   syntax:
     content: to_dataframe(read_session=None, dtypes=None)
     parameters:
@@ -178,7 +179,7 @@ items:
         rows in the stream, but now the first message in a read stream contains this
         information.
       id: read_session
-      var_type: <xref:ReadSession>
+      var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ReadSession">ReadSession</xref>
     - defaultValue: None
       description: Optional. A dictionary of column names pandas ``dtype``s. The provided
         ``dtype`` is used when constructing the series for the column specified. Otherwise,
@@ -187,7 +188,7 @@ items:
       var_type: Map[str, Union[str, pandas.Series.dtype]]
     returns:
     - description: A data frame of all rows in the stream.
-      var_type: <xref:pandas.DataFrame>
+      var_type: pandas.DataFrame
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_dataframe
 references:
