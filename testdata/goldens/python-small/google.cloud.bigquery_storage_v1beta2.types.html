@@ -8,18 +8,19 @@
     {% verbatim %}
     <div>
       <article data-uid="google.cloud.bigquery_storage_v1beta2.types">
-<h1 class="page-title">Package types
+<h1 class="page-title">Package bigquery_storage_v1beta2.types
 </h1>
   
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>API documentation for <code>bigquery_storage_v1beta2.types</code> package.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
     <h2 id="classes">Classes
   
   </h2>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.html">AppendRowsRequest</a></h2>
-        <section><p>Request message for <code>AppendRows</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>AppendRows</code>.
+Attributes:
     write_stream (str):
         Required. The stream that is the target of the append
         operation. This value must be specified for the initial
@@ -41,8 +42,8 @@
         Only initial request setting is respected.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse.html">AppendRowsResponse</a></h2>
-        <section><p>Response message for <code>AppendRows</code>.</p>
-<p>Attributes:
+        <section><p>Response message for <code>AppendRows</code>.
+Attributes:
     append_result (google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse.AppendResult):
         Result if the append is successful.
     error (google.rpc.status_pb2.Status):
@@ -103,21 +104,21 @@ See code samples on how this message can be deserialized.</p>
         The Arrow IPC format to use.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.AvroRows.html">AvroRows</a></h2>
-        <section><p>Avro rows.</p>
-<p>Attributes:
+        <section><p>Avro rows.
+Attributes:
     serialized_binary_rows (bytes):
         Binary serialized rows in a block.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.AvroSchema.html">AvroSchema</a></h2>
-        <section><p>Avro schema.</p>
-<p>Attributes:
+        <section><p>Avro schema.
+Attributes:
     schema (str):
         Json serialized schema, as described at
         <a href="https://avro.apache.org/docs/1.8.1/spec.html">https://avro.apache.org/docs/1.8.1/spec.html</a>.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest.html">BatchCommitWriteStreamsRequest</a></h2>
-        <section><p>Request message for <code>BatchCommitWriteStreams</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>BatchCommitWriteStreams</code>.
+Attributes:
     parent (str):
         Required. Parent table that all the streams should belong
         to, in the form of
@@ -127,8 +128,8 @@ See code samples on how this message can be deserialized.</p>
         committed atomically.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse.html">BatchCommitWriteStreamsResponse</a></h2>
-        <section><p>Response message for <code>BatchCommitWriteStreams</code>.</p>
-<p>Attributes:
+        <section><p>Response message for <code>BatchCommitWriteStreams</code>.
+Attributes:
     commit_time (google.protobuf.timestamp_pb2.Timestamp):
         The time at which streams were committed in microseconds
         granularity. This field will only exist when there are no
@@ -143,8 +144,8 @@ See code samples on how this message can be deserialized.</p>
         due to atomicity guarantee.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.CreateReadSessionRequest.html">CreateReadSessionRequest</a></h2>
-        <section><p>Request message for <code>CreateReadSession</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>CreateReadSession</code>.
+Attributes:
     parent (str):
         Required. The request project that owns the session, in the
         form of <code>projects/{project_id}</code>.
@@ -163,8 +164,8 @@ See code samples on how this message can be deserialized.</p>
 <pre><code>    Streams must be read starting from offset 0.
 </code></pre></section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest.html">CreateWriteStreamRequest</a></h2>
-        <section><p>Request message for <code>CreateWriteStream</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>CreateWriteStream</code>.
+Attributes:
     parent (str):
         Required. Reference to the table to which the stream
         belongs, in the format of
@@ -176,21 +177,21 @@ See code samples on how this message can be deserialized.</p>
         <section><p>Data format for input or output data.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest.html">FinalizeWriteStreamRequest</a></h2>
-        <section><p>Request message for invoking <code>FinalizeWriteStream</code>.</p>
-<p>Attributes:
+        <section><p>Request message for invoking <code>FinalizeWriteStream</code>.
+Attributes:
     name (str):
         Required. Name of the stream to finalize, in the form of
         <code>projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}</code>.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamResponse.html">FinalizeWriteStreamResponse</a></h2>
-        <section><p>Response message for <code>FinalizeWriteStream</code>.</p>
-<p>Attributes:
+        <section><p>Response message for <code>FinalizeWriteStream</code>.
+Attributes:
     row_count (int):
         Number of rows in the finalized stream.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest.html">FlushRowsRequest</a></h2>
-        <section><p>Request message for <code>FlushRows</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>FlushRows</code>.
+Attributes:
     write_stream (str):
         Required. The stream that is the target of
         the flush operation.
@@ -200,15 +201,15 @@ See code samples on how this message can be deserialized.</p>
         be flushed.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.FlushRowsResponse.html">FlushRowsResponse</a></h2>
-        <section><p>Respond message for <code>FlushRows</code>.</p>
-<p>Attributes:
+        <section><p>Respond message for <code>FlushRows</code>.
+Attributes:
     offset (int):
         The rows before this offset (including this
         offset) are flushed.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest.html">GetWriteStreamRequest</a></h2>
-        <section><p>Request message for <code>GetWriteStreamRequest</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>GetWriteStreamRequest</code>.
+Attributes:
     name (str):
         Required. Name of the stream to get, in the form of
         <code>projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}</code>.</p>
@@ -235,8 +236,8 @@ buffer data rows.</p>
         buffers/docs/reference/google.protobuf).</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ReadRowsRequest.html">ReadRowsRequest</a></h2>
-        <section><p>Request message for <code>ReadRows</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>ReadRows</code>.
+Attributes:
     read_stream (str):
         Required. Stream to read rows from.
     offset (int):
@@ -268,8 +269,8 @@ and throttling information.</p>
         Output only. Arrow schema.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ReadSession.html">ReadSession</a></h2>
-        <section><p>Information about the ReadSession.</p>
-<p>Attributes:
+        <section><p>Information about the ReadSession.
+Attributes:
     name (str):
         Output only. Unique identifier for the session, in the form
         <code>projects/{project_id}/locations/{location}/sessions/{session_id}</code>.
@@ -312,8 +313,8 @@ aggregated, making <code>ReadStream</code> lightweight.</p>
         <code>projects/{project_id}/locations/{location}/sessions/{session_id}/streams/{stream_id}</code>.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest.html">SplitReadStreamRequest</a></h2>
-        <section><p>Request message for <code>SplitReadStream</code>.</p>
-<p>Attributes:
+        <section><p>Request message for <code>SplitReadStream</code>.
+Attributes:
     name (str):
         Required. Name of the stream to split.
     fraction (float):
@@ -356,15 +357,15 @@ text strings.</p>
         Message that describes the error.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.StreamStats.html">StreamStats</a></h2>
-        <section><p>Estimated stream statistics for a given Stream.</p>
-<p>Attributes:
+        <section><p>Estimated stream statistics for a given Stream.
+Attributes:
     progress (google.cloud.bigquery_storage_v1beta2.types.StreamStats.Progress):
         Represents the progress of the current
         stream.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.html">TableFieldSchema</a></h2>
-        <section><p>A field in TableSchema</p>
-<p>Attributes:
+        <section><p>A field in TableSchema
+Attributes:
     name (str):
         Required. The field name. The name must contain only letters
         (a-z, A-Z), numbers (0-9), or underscores (<em>), and must
@@ -383,14 +384,14 @@ text strings.</p>
         length is 1,024 characters.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.TableSchema.html">TableSchema</a></h2>
-        <section><p>Schema of a table</p>
-<p>Attributes:
+        <section><p>Schema of a table
+Attributes:
     fields (Sequence[google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema]):
         Describes the fields in a table.</p>
 </section>
         <h2><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ThrottleState.html">ThrottleState</a></h2>
-        <section><p>Information on if the current connection is being throttled.</p>
-<p>Attributes:
+        <section><p>Information on if the current connection is being throttled.
+Attributes:
     throttle_percent (int):
         How much this connection is being throttled.
         Zero means no throttling, 100 means fully

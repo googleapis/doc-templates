@@ -24,7 +24,7 @@ The Write API can be used to write data to BigQuery.</p>
   <h2 id="properties">Properties
   </h2>
   <h3 id="google_cloud_bigquery_storage_v1beta2_services_big_query_write_BigQueryWriteAsyncClient_transport" data-uid="google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteAsyncClient.transport" class="notranslate">transport</h3>
-  <div class="markdown level1 summary"><p>Return the transport used by the client instance.</p>
+  <div class="markdown level1 summary"><p>Returns the transport used by the client instance.</p>
 </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -106,10 +106,10 @@ available for read operations after the stream is committed.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">batch_commit_write_streams(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.BatchCommitWriteStreamsRequest] = None, *, parent: Optional[str] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Atomically commits a group of <code>PENDING</code> &lt;xref:str&gt;eams that belong to
+  <div class="markdown level1 summary"><p>Atomically commits a group of <code>PENDING</code> streams that belong to
 the same <code>parent</code> table. Streams must be finalized before
-commit and cannot be committed multiple times. Once a &lt;xref:str&gt;eam is
-committed, data in the &lt;xref:str&gt;eam becomes available for read
+commit and cannot be committed multiple times. Once a stream is
+committed, data in the stream becomes available for read
 operations.</p>
 </div>
   <strong>Parameter</strong>
@@ -123,7 +123,7 @@ operations.</p>
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.batchcommitwritestreamsrequest></xref:google.cloud.bigquery_storage_v1beta2.types.batchcommitwritestreamsrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest.html">BatchCommitWriteStreamsRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for <code>BatchCommitWriteStreams</code>.</p>
@@ -152,7 +152,7 @@ operations.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">common_billing_account_path(billing_account: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Return a fully-qualified billing_account string.</p>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified billing_account string.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -178,7 +178,7 @@ operations.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">common_folder_path(folder: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Return a fully-qualified folder string.</p>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified folder string.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -204,7 +204,7 @@ operations.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">common_location_path(project: str, location: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Return a fully-qualified location string.</p>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified location string.</p>
 </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -238,7 +238,7 @@ operations.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">common_organization_path(organization: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Return a fully-qualified organization string.</p>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified organization string.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -264,7 +264,7 @@ operations.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">common_project_path(project: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Return a fully-qualified project string.</p>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified project string.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -290,12 +290,12 @@ operations.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">create_write_stream(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.CreateWriteStreamRequest] = None, *, parent: Optional[str] = None, write_stream: Optional[google.cloud.bigquery_storage_v1beta2.types.stream.WriteStream] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Creates a write &lt;xref:str&gt;eam to the given table. Additionally, every
-table has a special COMMITTED &lt;xref:str&gt;eam named &#39;_default&#39; to which
-data can be written. This &lt;xref:str&gt;eam doesn&#39;t need to be created
-using CreateWriteStream. It is a &lt;xref:str&gt;eam that can be used
+  <div class="markdown level1 summary"><p>Creates a write stream to the given table. Additionally, every
+table has a special COMMITTED stream named &#39;_default&#39; to which
+data can be written. This stream doesn&#39;t need to be created
+using CreateWriteStream. It is a stream that can be used
 simultaneously by any number of clients. Data written to this
-&lt;xref:str&gt;eam is considered committed as soon as an acknowledgement is
+stream is considered committed as soon as an acknowledgement is
 received.</p>
 </div>
   <strong>Parameter</strong>
@@ -309,7 +309,7 @@ received.</p>
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.createwritestreamrequest></xref:google.cloud.bigquery_storage_v1beta2.types.createwritestreamrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest.html">CreateWriteStreamRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for <code>CreateWriteStream</code>.</p>
@@ -329,8 +329,8 @@ received.</p>
     </thead>
     <tbody>
       <tr> 
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.writestream></xref:google.cloud.bigquery_storage_v1beta2.types.writestream></td>
-        <td>Information about a single <xref:str>eam that gets data inside the storage system.</xref:str></td>
+        <td>google.cloud.bigquery_storage_v1beta2.types.WriteStream</td>
+        <td>Information about a single stream that gets data inside the storage system.</td>
       </tr>
     </tbody>
   </table>
@@ -338,8 +338,8 @@ received.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">finalize_write_stream(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.FinalizeWriteStreamRequest] = None, *, name: Optional[str] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Finalize a write &lt;xref:str&gt;eam so that no new data can be appended to
-the &lt;xref:str&gt;eam. Finalize is not supported on the &#39;_default&#39; &lt;xref:str&gt;eam.</p>
+  <div class="markdown level1 summary"><p>Finalize a write stream so that no new data can be appended to
+the stream. Finalize is not supported on the &#39;_default&#39; stream.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -352,7 +352,7 @@ the &lt;xref:str&gt;eam. Finalize is not supported on the &#39;_default&#39; &lt
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.finalizewritestreamrequest></xref:google.cloud.bigquery_storage_v1beta2.types.finalizewritestreamrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest.html">FinalizeWriteStreamRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for invoking <code>FinalizeWriteStream</code>.</p>
@@ -381,12 +381,12 @@ the &lt;xref:str&gt;eam. Finalize is not supported on the &#39;_default&#39; &lt
   <div class="codewrapper">
     <pre><code class="prettyprint">flush_rows(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.FlushRowsRequest] = None, *, write_stream: Optional[str] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Flushes rows to a BUFFERED &lt;xref:str&gt;eam. If users are appending rows
-to BUFFERED &lt;xref:str&gt;eam, flush operation is required in order for the
+  <div class="markdown level1 summary"><p>Flushes rows to a BUFFERED stream. If users are appending rows
+to BUFFERED stream, flush operation is required in order for the
 rows to become available for reading. A Flush operation flushes
-up to any previously flushed offset in a BUFFERED &lt;xref:str&gt;eam, to the
+up to any previously flushed offset in a BUFFERED stream, to the
 offset specified in the request. Flush is not supported on the
-_default &lt;xref:str&gt;eam, since it is not BUFFERED.</p>
+_default stream, since it is not BUFFERED.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -399,7 +399,7 @@ _default &lt;xref:str&gt;eam, since it is not BUFFERED.</p>
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.flushrowsrequest></xref:google.cloud.bigquery_storage_v1beta2.types.flushrowsrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest.html">FlushRowsRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for <code>FlushRows</code>.</p>
@@ -429,7 +429,7 @@ _default &lt;xref:str&gt;eam, since it is not BUFFERED.</p>
     <pre><code class="prettyprint">from_service_account_file(filename: str, *args, **kwargs)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
-file.</p>
+    file.</p>
 </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -489,7 +489,8 @@ file.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">from_service_account_info(info: dict, *args, **kwargs)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials info.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
+    info.</p>
 </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -550,7 +551,7 @@ file.</p>
     <pre><code class="prettyprint">from_service_account_json(filename: str, *args, **kwargs)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
-file.</p>
+    file.</p>
 </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -637,7 +638,7 @@ of the given arguments and keywords.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">get_write_stream(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.GetWriteStreamRequest] = None, *, name: Optional[str] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Gets a write &lt;xref:str&gt;eam.</p>
+  <div class="markdown level1 summary"><p>Gets a write stream.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -650,7 +651,7 @@ of the given arguments and keywords.</p>
     </thead>
     <tbody>
       <tr>
-        <td><xref:google.cloud.bigquery_storage_v1beta2.types.getwritestreamrequest></xref:google.cloud.bigquery_storage_v1beta2.types.getwritestreamrequest></td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest.html">GetWriteStreamRequest</a></td>
         <td><em>request</em></td>
         <td>
           <p>The request object. Request message for <code>GetWriteStreamRequest</code>.</p>
@@ -671,7 +672,7 @@ of the given arguments and keywords.</p>
     <tbody>
       <tr> 
         <td>google.cloud.bigquery_storage_v1beta2.types.WriteStream</td>
-        <td>Information about a single <xref:str>eam that gets data inside the storage system.</xref:str></td>
+        <td>Information about a single stream that gets data inside the storage system.</td>
       </tr>
     </tbody>
   </table>
@@ -809,7 +810,7 @@ of the given arguments and keywords.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">parse_table_path(path: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Parse a table path into its component segments.</p>
+  <div class="markdown level1 summary"><p>Parses a table path into its component segments.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -835,7 +836,7 @@ of the given arguments and keywords.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">parse_write_stream_path(path: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Parse a write_stream path into its component segments.</p>
+  <div class="markdown level1 summary"><p>Parses a write_stream path into its component segments.</p>
 </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -861,7 +862,7 @@ of the given arguments and keywords.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">table_path(project: str, dataset: str, table: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Return a fully-qualified table string.</p>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified table string.</p>
 </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -903,7 +904,7 @@ of the given arguments and keywords.</p>
   <div class="codewrapper">
     <pre><code class="prettyprint">write_stream_path(project: str, dataset: str, table: str, stream: str)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Return a fully-qualified write_stream string.</p>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified write_stream string.</p>
 </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">

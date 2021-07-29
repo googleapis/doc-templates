@@ -19,6 +19,7 @@ exports.transform = function (model) {
       // packages and namespaces are both containers for other elements
       case 'package':
       case 'namespace':
+      case 'subpackage':
         model.isNamespace = true;
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
@@ -309,6 +310,7 @@ function getDefinition(type) {
 function getDefinitions(category) {
   var namespaceItems = {
     "package":      { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
+    "subpackage":   { inSubpackage: true,   typePropertyName: "inSubpackage",   id: "subPackages" },
     "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
     "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
     "module":       { inModule: true,       typePropertyName: "inModule",       id: "modules" },
