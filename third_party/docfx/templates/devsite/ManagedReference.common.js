@@ -206,6 +206,7 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   vm.syntax = vm.syntax || null;
   vm.implements = vm.implements || null;
   vm.example = vm.example || null;
+  vm.status = vm.status || null;
   common.processSeeAlso(vm);
 
   // id is used as default template's bookmark
@@ -285,5 +286,10 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
         }
       }
     }
+  }
+
+  // Set the status as a property so we can check it in the template.
+  if (vm.status) {
+    vm[vm.status] = true;
   }
 }
