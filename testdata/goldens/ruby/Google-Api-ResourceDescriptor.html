@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/ruby/_project.yaml">
+    <meta name="book_path" value="/ruby/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="Google::Api::ResourceDescriptor">
+<h1 class="page-title">Class Google::Api::ResourceDescriptor
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>A simple descriptor of a resource type.</p>
+<p>ResourceDescriptor annotates a resource message (either by means of a
+protobuf annotation or use in the service config), and associates the
+resource&#39;s schema, the resource type, and the pattern of the resource name.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">message Topic {
+  // Indicates this message defines a resource schema.
+  // Declares the resource type in the format of {service}/{kind}.
+  // For Kubernetes resources, the format is {api group}/{kind}.
+  option (google.api.resource) = {
+    type: "pubsub.googleapis.com/Topic"
+    name_descriptor: {
+      pattern: "projects/{project}/topics/{topic}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"
+    }
+  };
+}</pre>
+
+<p>The ResourceDescriptor Yaml config will look like:</p>
+<pre class="prettyprint lang-rb">resources:
+- type: "pubsub.googleapis.com/Topic"
+  name_descriptor:
+    - pattern: "projects/{project}/topics/{topic}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"</pre>
+
+<p>Sometimes, resources have multiple patterns, typically because they can
+live under multiple parents.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">message LogEntry {
+  option (google.api.resource) = {
+    type: "logging.googleapis.com/LogEntry"
+    name_descriptor: {
+      pattern: "projects/{project}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"
+    }
+    name_descriptor: {
+      pattern: "folders/{folder}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"
+      parent_name_extractor: "folders/{folder}"
+    }
+    name_descriptor: {
+      pattern: "organizations/{organization}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Organization"
+      parent_name_extractor: "organizations/{organization}"
+    }
+    name_descriptor: {
+      pattern: "billingAccounts/{billing_account}/logs/{log}"
+      parent_type: "billing.googleapis.com/BillingAccount"
+      parent_name_extractor: "billingAccounts/{billing_account}"
+    }
+  };
+}</pre>
+
+<p>The ResourceDescriptor Yaml config will look like:</p>
+<pre class="prettyprint lang-rb">resources:
+- type: 'logging.googleapis.com/LogEntry'
+  name_descriptor:
+    - pattern: "projects/{project}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"
+    - pattern: "folders/{folder}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"
+      parent_name_extractor: "folders/{folder}"
+    - pattern: "organizations/{organization}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Organization"
+      parent_name_extractor: "organizations/{organization}"
+    - pattern: "billingAccounts/{billing_account}/logs/{log}"
+      parent_type: "billing.googleapis.com/BillingAccount"
+      parent_name_extractor: "billingAccounts/{billing_account}"</pre>
+
+<p>For flexible resources, the resource name doesn&#39;t contain parent names, but
+the resource itself has parents for policy evaluation.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">message Shelf {
+  option (google.api.resource) = {
+    type: "library.googleapis.com/Shelf"
+    name_descriptor: {
+      pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+    }
+    name_descriptor: {
+      pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"
+    }
+  };
+}</pre>
+
+<p>The ResourceDescriptor Yaml config will look like:</p>
+<pre class="prettyprint lang-rb">resources:
+- type: 'library.googleapis.com/Shelf'
+  name_descriptor:
+    - pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+    - pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"</pre></div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="Google__Api__ResourceDescriptor_type" data-uid="Google::Api::ResourceDescriptor#type" class="notranslate">#type</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#type =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>The resource type. It must be in the format of
+{service_name}/{resource_type_kind}. The <code>resource_type_kind</code> must be
+singular and must not include version numbers.</p>
+<p>Example: <code>storage.googleapis.com/Bucket</code></p>
+<p>The value of the resource_type_kind must follow the regular expression
+/[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
+should use PascalCase (UpperCamelCase). The maximum number of
+characters allowed for the <code>resource_type_kind</code> is 100.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_type_" data-uid="Google::Api::ResourceDescriptor#type=" class="notranslate">#type=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#type=(value) =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>The resource type. It must be in the format of
+{service_name}/{resource_type_kind}. The <code>resource_type_kind</code> must be
+singular and must not include version numbers.</p>
+<p>Example: <code>storage.googleapis.com/Bucket</code></p>
+<p>The value of the resource_type_kind must follow the regular expression
+/[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
+should use PascalCase (UpperCamelCase). The maximum number of
+characters allowed for the <code>resource_type_kind</code> is 100.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_pattern" data-uid="Google::Api::ResourceDescriptor#pattern" class="notranslate">#pattern</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#pattern =&gt; ::Array&lt;::String&gt;</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Array&lt;::String&gt;</span></td>
+        <td><p>Optional. The relative resource name pattern associated with this resource
+type. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>
+<p>The path pattern must follow the syntax, which aligns with HTTP binding
+syntax:</p>
+<pre class="prettyprint lang-rb">Template = Segment { "/" Segment } ;
+Segment = LITERAL | Variable ;
+Variable = "{" LITERAL "}" ;</pre>
+
+<p>Examples:</p>
+<pre class="prettyprint lang-rb">- "projects/{project}/topics/{topic}"
+- "projects/{project}/knowledgeBases/{knowledge_base}"</pre>
+
+<p>The components in braces correspond to the IDs for each resource in the
+hierarchy. It is expected that, if multiple patterns are provided,
+the same component name (e.g. &quot;project&quot;) refers to IDs of the same
+type of resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_pattern_" data-uid="Google::Api::ResourceDescriptor#pattern=" class="notranslate">#pattern=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#pattern=(value) =&gt; ::Array&lt;::String&gt;</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Array&lt;::String&gt;</span></td>
+        <td><p>Optional. The relative resource name pattern associated with this resource
+type. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>
+<p>The path pattern must follow the syntax, which aligns with HTTP binding
+syntax:</p>
+<pre class="prettyprint lang-rb">Template = Segment { "/" Segment } ;
+Segment = LITERAL | Variable ;
+Variable = "{" LITERAL "}" ;</pre>
+
+<p>Examples:</p>
+<pre class="prettyprint lang-rb">- "projects/{project}/topics/{topic}"
+- "projects/{project}/knowledgeBases/{knowledge_base}"</pre>
+
+<p>The components in braces correspond to the IDs for each resource in the
+hierarchy. It is expected that, if multiple patterns are provided,
+the same component name (e.g. &quot;project&quot;) refers to IDs of the same
+type of resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_name_field" data-uid="Google::Api::ResourceDescriptor#name_field" class="notranslate">#name_field</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#name_field =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>Optional. The field on the resource that designates the resource name
+field. If omitted, this is assumed to be &quot;name&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_name_field_" data-uid="Google::Api::ResourceDescriptor#name_field=" class="notranslate">#name_field=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#name_field=(value) =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>Optional. The field on the resource that designates the resource name
+field. If omitted, this is assumed to be &quot;name&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_history" data-uid="Google::Api::ResourceDescriptor#history" class="notranslate">#history</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#history =&gt; ::Google::Api::ResourceDescriptor::History</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Api::ResourceDescriptor::History</span></td>
+        <td><p>Optional. The historical or future-looking state of the resource pattern.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">// The InspectTemplate message originally only supported resource
+// names with organization, and project was added later.
+message InspectTemplate {
+  option (google.api.resource) = {
+    type: "dlp.googleapis.com/InspectTemplate"
+    pattern:
+    "organizations/{organization}/inspectTemplates/{inspect_template}"
+    pattern: "projects/{project}/inspectTemplates/{inspect_template}"
+    history: ORIGINALLY_SINGLE_PATTERN
+  };
+}</pre></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_history_" data-uid="Google::Api::ResourceDescriptor#history=" class="notranslate">#history=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#history=(value) =&gt; ::Google::Api::ResourceDescriptor::History</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Api::ResourceDescriptor::History</span></td>
+        <td><p>Optional. The historical or future-looking state of the resource pattern.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">// The InspectTemplate message originally only supported resource
+// names with organization, and project was added later.
+message InspectTemplate {
+  option (google.api.resource) = {
+    type: "dlp.googleapis.com/InspectTemplate"
+    pattern:
+    "organizations/{organization}/inspectTemplates/{inspect_template}"
+    pattern: "projects/{project}/inspectTemplates/{inspect_template}"
+    history: ORIGINALLY_SINGLE_PATTERN
+  };
+}</pre></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_plural" data-uid="Google::Api::ResourceDescriptor#plural" class="notranslate">#plural</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#plural =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>The plural name used in the resource name and permission names, such as
+&#39;projects&#39; for the resource name of &#39;projects/{project}&#39; and the permission
+name of &#39;cloudresourcemanager.googleapis.com/projects.get&#39;. It is the same
+concept of the <code>plural</code> field in k8s CRD spec
+<a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/">https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</a></p>
+<p>Note: The plural form is required even for singleton resources. See
+<a href="https://aip.dev/156">https://aip.dev/156</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_plural_" data-uid="Google::Api::ResourceDescriptor#plural=" class="notranslate">#plural=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#plural=(value) =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>The plural name used in the resource name and permission names, such as
+&#39;projects&#39; for the resource name of &#39;projects/{project}&#39; and the permission
+name of &#39;cloudresourcemanager.googleapis.com/projects.get&#39;. It is the same
+concept of the <code>plural</code> field in k8s CRD spec
+<a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/">https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</a></p>
+<p>Note: The plural form is required even for singleton resources. See
+<a href="https://aip.dev/156">https://aip.dev/156</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_singular" data-uid="Google::Api::ResourceDescriptor#singular" class="notranslate">#singular</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#singular =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>The same concept of the <code>singular</code> field in k8s CRD spec
+<a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/">https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</a>
+Such as &quot;project&quot; for the <code>resourcemanager.googleapis.com/Project</code> type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_singular_" data-uid="Google::Api::ResourceDescriptor#singular=" class="notranslate">#singular=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#singular=(value) =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>The same concept of the <code>singular</code> field in k8s CRD spec
+<a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/">https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</a>
+Such as &quot;project&quot; for the <code>resourcemanager.googleapis.com/Project</code> type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_style" data-uid="Google::Api::ResourceDescriptor#style" class="notranslate">#style</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#style =&gt; ::Array&lt;::Google::Api::ResourceDescriptor::Style&gt;</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Array&lt;::Google::Api::ResourceDescriptor::Style&gt;</span></td>
+        <td><p>Style flag(s) for this resource.
+These indicate that a resource is expected to conform to a given
+style. See the specific style flags for additional information.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Api__ResourceDescriptor_style_" data-uid="Google::Api::ResourceDescriptor#style=" class="notranslate">#style=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#style=(value) =&gt; ::Array&lt;::Google::Api::ResourceDescriptor::Style&gt;</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Array&lt;::Google::Api::ResourceDescriptor::Style&gt;</span></td>
+        <td><p>Style flag(s) for this resource.
+These indicate that a resource is expected to conform to a given
+style. See the specific style flags for additional information.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

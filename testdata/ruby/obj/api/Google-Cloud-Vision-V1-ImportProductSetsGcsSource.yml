@@ -1,0 +1,51 @@
+### YamlMime:UniversalReference
+items:
+  - uid: Google::Cloud::Vision::V1::ImportProductSetsGcsSource
+    children: 
+      - Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri
+      - Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri=
+    fullName: Google::Cloud::Vision::V1::ImportProductSetsGcsSource
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: ImportProductSetsGcsSource
+    summary: "The Google Cloud Storage location for a csv file which preserves a list of\nImportProductSetRequests in each line."
+    type: "class"
+    name: Google::Cloud::Vision::V1::ImportProductSetsGcsSource
+  - uid: Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri
+    fullName: Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri
+    name: "#csv_file_uri"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#csv_file_uri"
+    summary: ""
+    type: method
+    syntax:
+      description: ""
+      content: "#csv_file_uri => ::String"
+      parameters:
+        []
+      return:
+          type:
+            - "::String"
+          description: "The Google Cloud Storage URI of the input csv file.\n\nThe URI must start with `gs://`.\n\nThe format of the input csv file should be one image per line.\nIn each line, there are 8 columns.\n\n1.  image-uri\n2.  image-id\n3.  product-set-id\n4.  product-id\n5.  product-category\n6.  product-display-name\n7.  labels\n8.  bounding-poly\n\nThe `image-uri`, `product-set-id`, `product-id`, and `product-category`\ncolumns are required. All other columns are optional.\n\nIf the `ProductSet` or `Product` specified by the `product-set-id` and\n`product-id` values does not exist, then the system will create a new\n`ProductSet` or `Product` for the image. In this case, the\n`product-display-name` column refers to\n{::Google::Cloud::Vision::V1::Product#display_name display_name}, the\n`product-category` column refers to\n{::Google::Cloud::Vision::V1::Product#product_category product_category}, and the\n`labels` column refers to {::Google::Cloud::Vision::V1::Product#product_labels product_labels}.\n\nThe `image-id` column is optional but must be unique if provided. If it is\nempty, the system will automatically assign a unique id to the image.\n\nThe `product-display-name` column is optional. If it is empty, the system\nsets the {::Google::Cloud::Vision::V1::Product#display_name display_name} field for the product to a\nspace (\" \"). You can update the `display_name` later by using the API.\n\nIf a `Product` with the specified `product-id` already exists, then the\nsystem ignores the `product-display-name`, `product-category`, and `labels`\ncolumns.\n\nThe `labels` column (optional) is a line containing a list of\ncomma-separated key-value pairs, in the following format:\n\n<pre class=\"prettyprint lang-rb\">\"key_1=value_1,key_2=value_2,...,key_n=value_n\"</pre>\n\nThe `bounding-poly` column (optional) identifies one region of\ninterest from the image in the same manner as `CreateReferenceImage`. If\nyou do not specify the `bounding-poly` column, then the system will try to\ndetect regions of interest automatically.\n\nAt most one `bounding-poly` column is allowed per line. If the image\ncontains multiple regions of interest, add a line to the CSV file that\nincludes the same product information, and the `bounding-poly` values for\neach region of interest.\n\nThe `bounding-poly` column must contain an even number of comma-separated\nnumbers, in the format \"p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y\". Use\nnon-negative integers for absolute bounding polygons, and float values\nin [0, 1] for normalized bounding polygons.\n\nThe system will resize the image if the image resolution is too\nlarge to process (larger than 20MP)."
+  - uid: Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri=
+    fullName: Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri=
+    name: "#csv_file_uri="
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#csv_file_uri="
+    summary: ""
+    type: method
+    syntax:
+      description: ""
+      content: "#csv_file_uri=(value) => ::String"
+      parameters:
+        []
+      return:
+          type:
+            - "::String"
+          description: "The Google Cloud Storage URI of the input csv file.\n\nThe URI must start with `gs://`.\n\nThe format of the input csv file should be one image per line.\nIn each line, there are 8 columns.\n\n1.  image-uri\n2.  image-id\n3.  product-set-id\n4.  product-id\n5.  product-category\n6.  product-display-name\n7.  labels\n8.  bounding-poly\n\nThe `image-uri`, `product-set-id`, `product-id`, and `product-category`\ncolumns are required. All other columns are optional.\n\nIf the `ProductSet` or `Product` specified by the `product-set-id` and\n`product-id` values does not exist, then the system will create a new\n`ProductSet` or `Product` for the image. In this case, the\n`product-display-name` column refers to\n{::Google::Cloud::Vision::V1::Product#display_name display_name}, the\n`product-category` column refers to\n{::Google::Cloud::Vision::V1::Product#product_category product_category}, and the\n`labels` column refers to {::Google::Cloud::Vision::V1::Product#product_labels product_labels}.\n\nThe `image-id` column is optional but must be unique if provided. If it is\nempty, the system will automatically assign a unique id to the image.\n\nThe `product-display-name` column is optional. If it is empty, the system\nsets the {::Google::Cloud::Vision::V1::Product#display_name display_name} field for the product to a\nspace (\" \"). You can update the `display_name` later by using the API.\n\nIf a `Product` with the specified `product-id` already exists, then the\nsystem ignores the `product-display-name`, `product-category`, and `labels`\ncolumns.\n\nThe `labels` column (optional) is a line containing a list of\ncomma-separated key-value pairs, in the following format:\n\n<pre class=\"prettyprint lang-rb\">\"key_1=value_1,key_2=value_2,...,key_n=value_n\"</pre>\n\nThe `bounding-poly` column (optional) identifies one region of\ninterest from the image in the same manner as `CreateReferenceImage`. If\nyou do not specify the `bounding-poly` column, then the system will try to\ndetect regions of interest automatically.\n\nAt most one `bounding-poly` column is allowed per line. If the image\ncontains multiple regions of interest, add a line to the CSV file that\nincludes the same product information, and the `bounding-poly` values for\neach region of interest.\n\nThe `bounding-poly` column must contain an even number of comma-separated\nnumbers, in the format \"p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y\". Use\nnon-negative integers for absolute bounding polygons, and float values\nin [0, 1] for normalized bounding polygons.\n\nThe system will resize the image if the image resolution is too\nlarge to process (larger than 20MP)."
+references: []

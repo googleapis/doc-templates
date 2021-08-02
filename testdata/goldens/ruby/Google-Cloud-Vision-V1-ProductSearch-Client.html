@@ -1,0 +1,684 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/ruby/_project.yaml">
+    <meta name="book_path" value="/ruby/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="Google::Cloud::Vision::V1::ProductSearch::Client">
+<h1 class="page-title">Class Google::Cloud::Vision::V1::ProductSearch::Client
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Client for the ProductSearch service.</p>
+<p>Manages Products and ProductSets of reference images for use in product
+search. It uses the following resource model:</p>
+<ul>
+<li>The API has a collection of {::Google::Cloud::Vision::V1::ProductSet ProductSet} resources, named
+<code>projects/*/locations/*/productSets/*</code>, which acts as a way to put different
+products into groups to limit identification.</li>
+</ul>
+<p>In parallel,</p>
+<ul>
+<li><p>The API has a collection of {::Google::Cloud::Vision::V1::Product Product} resources, named
+<code>projects/*/locations/*/products/*</code></p>
+</li>
+<li><p>Each {::Google::Cloud::Vision::V1::Product Product} has a collection of {::Google::Cloud::Vision::V1::ReferenceImage ReferenceImage} resources, named
+<code>projects/*/locations/*/products/*/referenceImages/*</code></p>
+</li>
+</ul>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_configure" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client.configure" class="notranslate">.configure</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">.configure { |config| ... } =&gt; Client::Configuration</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Configure the ProductSearch Client class.</p>
+<p>See {::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration}
+for a description of the configuration fields.</p>
+<h4 id="example">Example</h4>
+<p>To modify the configuration for all ProductSearch clients:</p>
+<pre class="prettyprint lang-rb">::Google::Cloud::Vision::V1::ProductSearch::Client.configure do |config|
+  config.timeout = 10.0
+end</pre></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Client::Configuration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_configure" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#configure" class="notranslate">#configure</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#configure { |config| ... } =&gt; Client::Configuration</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Configure the ProductSearch Client instance.</p>
+<p>The configuration is set to the derived mode, meaning that values can be changed,
+but structural changes (adding new fields, etc.) are not allowed. Structural changes
+should be made on {Client.configure}.</p>
+<p>See {::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration}
+for a description of the configuration fields.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Client::Configuration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_initialize" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#initialize" class="notranslate">#initialize</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#initialize { |config| ... } =&gt; Client</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a new ProductSearch client object.</p>
+<h4 id="examples">Examples</h4>
+<p>To create a new ProductSearch client with the default
+configuration:</p>
+<pre class="prettyprint lang-rb">client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new</pre>
+
+<p>To create a new ProductSearch client with a custom
+configuration:</p>
+<pre class="prettyprint lang-rb">client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|
+  config.timeout = 10.0
+end</pre></div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Client</span></td>
+        <td><p>a new instance of Client</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_operations_client" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#operations_client" class="notranslate">#operations_client</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#operations_client =&gt; ::Google::Cloud::Vision::V1::ProductSearch::Operations</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get the associated client for long-running operations.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::ProductSearch::Operations</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_product_set" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_product_set" class="notranslate">#create_product_set</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#create_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
+#create_product_set(parent: nil, product_set: nil, product_set_id: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates and returns a new ProductSet resource.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than
+4096 characters.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::ProductSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_product_sets" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_product_sets" class="notranslate">#list_product_sets</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#list_product_sets(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;
+#list_product_sets(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists ProductSets in an unspecified order.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less
+than 1.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product_set" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product_set" class="notranslate">#get_product_set</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#get_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
+#get_product_set(name: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets information associated with a ProductSet.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::ProductSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product_set" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product_set" class="notranslate">#update_product_set</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#update_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
+#update_product_set(product_set: nil, update_mask: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Makes changes to a ProductSet resource.
+Only display_name can be updated currently.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
+<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but
+missing from the request or longer than 4096 characters.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::ProductSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product_set" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product_set" class="notranslate">#delete_product_set</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#delete_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
+#delete_product_set(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Permanently deletes a ProductSet. Products and ReferenceImages in the
+ProductSet are not deleted.</p>
+<p>The actual image files are not deleted from Google Cloud Storage.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Protobuf::Empty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_product" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_product" class="notranslate">#create_product</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#create_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
+#create_product(parent: nil, product: nil, product_id: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates and returns a new product resource.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
+characters.</li>
+<li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if product_category is missing or invalid.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::Product</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_products" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_products" class="notranslate">#list_products</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#list_products(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
+#list_products(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists products in an unspecified order.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product" class="notranslate">#get_product</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#get_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
+#get_product(name: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets information associated with a Product.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the Product does not exist.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::Product</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product" class="notranslate">#update_product</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#update_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
+#update_product(product: nil, update_mask: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Makes changes to a Product resource.
+Only the <code>display_name</code>, <code>description</code>, and <code>labels</code> fields can be updated
+right now.</p>
+<p>If labels are updated, the change will not be reflected in queries until
+the next index time.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the Product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is
+missing from the request or longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if description is present in update_mask but is
+longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if product_category is present in update_mask.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::Product</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product" class="notranslate">#delete_product</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#delete_product(request, options = nil) =&gt; ::Google::Protobuf::Empty
+#delete_product(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Permanently deletes a product and its reference images.</p>
+<p>Metadata of the product and all its images will be deleted right away, but
+search queries against ProductSets containing the product may still work
+until all related caches are refreshed.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Protobuf::Empty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_reference_image" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_reference_image" class="notranslate">#create_reference_image</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#create_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage
+#create_reference_image(parent: nil, reference_image: nil, reference_image_id: nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates and returns a new ReferenceImage resource.</p>
+<p>The <code>bounding_poly</code> field is optional. If <code>bounding_poly</code> is not specified,
+the system will try to detect regions of interest in the image that are
+compatible with the product_category on the parent product. If it is
+specified, detection is ALWAYS skipped. The system converts polygons into
+non-rotated rectangles.</p>
+<p>Note that the pipeline will resize the image if the image resolution is too
+large to process (above 50MP).</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
+characters.</li>
+<li>Returns INVALID_ARGUMENT if the product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
+compatible with the parent product&#39;s product_category is detected.</li>
+<li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::ReferenceImage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_reference_image" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_reference_image" class="notranslate">#delete_reference_image</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#delete_reference_image(request, options = nil) =&gt; ::Google::Protobuf::Empty
+#delete_reference_image(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Permanently deletes a reference image.</p>
+<p>The image metadata will be deleted right away, but search queries
+against ProductSets containing the image may still work until all related
+caches are refreshed.</p>
+<p>The actual image files are not deleted from Google Cloud Storage.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Protobuf::Empty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_reference_images" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_reference_images" class="notranslate">#list_reference_images</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#list_reference_images(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;
+#list_reference_images(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists reference images.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the parent product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
+than 1.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_reference_image" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_reference_image" class="notranslate">#get_reference_image</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#get_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage
+#get_reference_image(name: nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets information associated with a ReferenceImage.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the specified image does not exist.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Cloud::Vision::V1::ReferenceImage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_add_product_to_product_set" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#add_product_to_product_set" class="notranslate">#add_product_to_product_set</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#add_product_to_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
+#add_product_to_product_set(name: nil, product: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Adds a Product to the specified ProductSet. If the Product is already
+present, no change is made.</p>
+<p>One Product can be added to at most 100 ProductSets.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the Product or the ProductSet doesn&#39;t exist.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Protobuf::Empty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_remove_product_from_product_set" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#remove_product_from_product_set" class="notranslate">#remove_product_from_product_set</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#remove_product_from_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
+#remove_product_from_product_set(name: nil, product: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Removes a Product from the specified ProductSet.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Google::Protobuf::Empty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_products_in_product_set" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_products_in_product_set" class="notranslate">#list_products_in_product_set</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#list_products_in_product_set(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
+#list_products_in_product_set(name: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists the Products in a ProductSet, in an unspecified order. If the
+ProductSet does not exist, the products field of the response will be
+empty.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.</li>
+</ul>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_import_product_sets" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#import_product_sets" class="notranslate">#import_product_sets</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#import_product_sets(request, options = nil) =&gt; ::Gapic::Operation
+#import_product_sets(parent: nil, input_config: nil) =&gt; ::Gapic::Operation</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Asynchronous API that imports a list of reference images to specified
+product sets based on a list of image information.</p>
+<p>The {::Google::Longrunning::Operation google.longrunning.Operation} API can be used to keep track of the
+progress and results of the request.
+<code>Operation.metadata</code> contains <code>BatchOperationMetadata</code>. (progress)
+<code>Operation.response</code> contains <code>ImportProductSetsResponse</code>. (results)</p>
+<p>The input source of this method is a csv file on Google Cloud Storage.
+For the format of the csv file please see
+{::Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri ImportProductSetsGcsSource.csv_file_uri}.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Gapic::Operation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_purge_products" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#purge_products" class="notranslate">#purge_products</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#purge_products(request, options = nil) =&gt; ::Gapic::Operation
+#purge_products(product_set_purge_config: nil, delete_orphan_products: nil, parent: nil, force: nil) =&gt; ::Gapic::Operation</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Asynchronous API to delete all Products in a ProductSet or all Products
+that are in no ProductSet.</p>
+<p>If a Product is a member of the specified ProductSet in addition to other
+ProductSets, the Product will still be deleted.</p>
+<p>It is recommended to not delete the specified ProductSet until after this
+operation has completed. It is also recommended to not add any of the
+Products involved in the batch delete to a new ProductSet while this
+operation is running because those Products may still end up deleted.</p>
+<p>It&#39;s not possible to undo the PurgeProducts operation. Therefore, it is
+recommended to keep the csv files used in ImportProductSets (if that was
+how you originally built the Product Set) before starting PurgeProducts, in
+case you need to re-import the data after deletion.</p>
+<p>If the plan is to purge all of the Products from a ProductSet and then
+re-use the empty ProductSet to re-import new Products into the empty
+ProductSet, you must wait until the PurgeProducts operation has finished
+for that ProductSet.</p>
+<p>The {::Google::Longrunning::Operation google.longrunning.Operation} API can be used to keep track of the
+progress and results of the request.
+<code>Operation.metadata</code> contains <code>BatchOperationMetadata</code>. (progress)</p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::Gapic::Operation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>
