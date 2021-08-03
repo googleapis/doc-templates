@@ -1,0 +1,796 @@
+### YamlMime:UniversalReference
+items:
+  - uid: Google::Cloud::Vision::V1
+    children: 
+      - Google::Cloud::Vision::V1::ProductSearch
+      - Google::Cloud::Vision::V1::ImageAnnotator
+      - Google::Cloud::Vision::V1::Vertex
+      - Google::Cloud::Vision::V1::NormalizedVertex
+      - Google::Cloud::Vision::V1::BoundingPoly
+      - Google::Cloud::Vision::V1::Position
+      - Google::Cloud::Vision::V1::WebDetection
+      - Google::Cloud::Vision::V1::ProductSearchParams
+      - Google::Cloud::Vision::V1::ProductSearchResults
+      - Google::Cloud::Vision::V1::Feature
+      - Google::Cloud::Vision::V1::ImageSource
+      - Google::Cloud::Vision::V1::Image
+      - Google::Cloud::Vision::V1::FaceAnnotation
+      - Google::Cloud::Vision::V1::LocationInfo
+      - Google::Cloud::Vision::V1::Property
+      - Google::Cloud::Vision::V1::EntityAnnotation
+      - Google::Cloud::Vision::V1::LocalizedObjectAnnotation
+      - Google::Cloud::Vision::V1::SafeSearchAnnotation
+      - Google::Cloud::Vision::V1::LatLongRect
+      - Google::Cloud::Vision::V1::ColorInfo
+      - Google::Cloud::Vision::V1::DominantColorsAnnotation
+      - Google::Cloud::Vision::V1::ImageProperties
+      - Google::Cloud::Vision::V1::CropHint
+      - Google::Cloud::Vision::V1::CropHintsAnnotation
+      - Google::Cloud::Vision::V1::CropHintsParams
+      - Google::Cloud::Vision::V1::WebDetectionParams
+      - Google::Cloud::Vision::V1::TextDetectionParams
+      - Google::Cloud::Vision::V1::ImageContext
+      - Google::Cloud::Vision::V1::AnnotateImageRequest
+      - Google::Cloud::Vision::V1::ImageAnnotationContext
+      - Google::Cloud::Vision::V1::AnnotateImageResponse
+      - Google::Cloud::Vision::V1::BatchAnnotateImagesRequest
+      - Google::Cloud::Vision::V1::BatchAnnotateImagesResponse
+      - Google::Cloud::Vision::V1::AnnotateFileRequest
+      - Google::Cloud::Vision::V1::AnnotateFileResponse
+      - Google::Cloud::Vision::V1::BatchAnnotateFilesRequest
+      - Google::Cloud::Vision::V1::BatchAnnotateFilesResponse
+      - Google::Cloud::Vision::V1::AsyncAnnotateFileRequest
+      - Google::Cloud::Vision::V1::AsyncAnnotateFileResponse
+      - Google::Cloud::Vision::V1::AsyncBatchAnnotateImagesRequest
+      - Google::Cloud::Vision::V1::AsyncBatchAnnotateImagesResponse
+      - Google::Cloud::Vision::V1::AsyncBatchAnnotateFilesRequest
+      - Google::Cloud::Vision::V1::AsyncBatchAnnotateFilesResponse
+      - Google::Cloud::Vision::V1::InputConfig
+      - Google::Cloud::Vision::V1::OutputConfig
+      - Google::Cloud::Vision::V1::GcsSource
+      - Google::Cloud::Vision::V1::GcsDestination
+      - Google::Cloud::Vision::V1::OperationMetadata
+      - Google::Cloud::Vision::V1::Likelihood
+      - Google::Cloud::Vision::V1::TextAnnotation
+      - Google::Cloud::Vision::V1::Page
+      - Google::Cloud::Vision::V1::Block
+      - Google::Cloud::Vision::V1::Paragraph
+      - Google::Cloud::Vision::V1::Word
+      - Google::Cloud::Vision::V1::Symbol
+      - Google::Cloud::Vision::V1::Product
+      - Google::Cloud::Vision::V1::ProductSet
+      - Google::Cloud::Vision::V1::ReferenceImage
+      - Google::Cloud::Vision::V1::CreateProductRequest
+      - Google::Cloud::Vision::V1::ListProductsRequest
+      - Google::Cloud::Vision::V1::ListProductsResponse
+      - Google::Cloud::Vision::V1::GetProductRequest
+      - Google::Cloud::Vision::V1::UpdateProductRequest
+      - Google::Cloud::Vision::V1::DeleteProductRequest
+      - Google::Cloud::Vision::V1::CreateProductSetRequest
+      - Google::Cloud::Vision::V1::ListProductSetsRequest
+      - Google::Cloud::Vision::V1::ListProductSetsResponse
+      - Google::Cloud::Vision::V1::GetProductSetRequest
+      - Google::Cloud::Vision::V1::UpdateProductSetRequest
+      - Google::Cloud::Vision::V1::DeleteProductSetRequest
+      - Google::Cloud::Vision::V1::CreateReferenceImageRequest
+      - Google::Cloud::Vision::V1::ListReferenceImagesRequest
+      - Google::Cloud::Vision::V1::ListReferenceImagesResponse
+      - Google::Cloud::Vision::V1::GetReferenceImageRequest
+      - Google::Cloud::Vision::V1::DeleteReferenceImageRequest
+      - Google::Cloud::Vision::V1::AddProductToProductSetRequest
+      - Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest
+      - Google::Cloud::Vision::V1::ListProductsInProductSetRequest
+      - Google::Cloud::Vision::V1::ListProductsInProductSetResponse
+      - Google::Cloud::Vision::V1::ImportProductSetsGcsSource
+      - Google::Cloud::Vision::V1::ImportProductSetsInputConfig
+      - Google::Cloud::Vision::V1::ImportProductSetsRequest
+      - Google::Cloud::Vision::V1::ImportProductSetsResponse
+      - Google::Cloud::Vision::V1::BatchOperationMetadata
+      - Google::Cloud::Vision::V1::ProductSetPurgeConfig
+      - Google::Cloud::Vision::V1::PurgeProductsRequest
+    fullName: Google::Cloud::Vision::V1
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: V1
+    summary: "To load this package, including all its services, and instantiate a client:\n\n<pre class=\"prettyprint lang-rb\">require \"google/cloud/vision/v1\"\nclient = ::Google::Cloud::Vision::V1::ProductSearch::Client.new</pre>"
+    type: "module"
+    name: Google::Cloud::Vision::V1
+  - uid: Google::Cloud::Vision::V1::VERSION
+    fullName: Google::Cloud::Vision::V1::VERSION
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: VERSION
+    summary: ""
+    type: 'constant'
+
+references: 
+  - uid: Google::Cloud::Vision::V1::ProductSearch
+    fullName: Google::Cloud::Vision::V1::ProductSearch
+    name: ProductSearch
+    module: google-cloud-vision-v1
+    id: ProductSearch
+    summary: "Manages Products and ProductSets of reference images for use in product\nsearch. It uses the following resource model:\n\n- The API has a collection of {::Google::Cloud::Vision::V1::ProductSet ProductSet} resources, named\n`projects/*/locations/*/productSets/*`, which acts as a way to put different\nproducts into groups to limit identification.\n\nIn parallel,\n\n- The API has a collection of {::Google::Cloud::Vision::V1::Product Product} resources, named\n  `projects/*/locations/*/products/*`\n\n- Each {::Google::Cloud::Vision::V1::Product Product} has a collection of {::Google::Cloud::Vision::V1::ReferenceImage ReferenceImage} resources, named\n  `projects/*/locations/*/products/*/referenceImages/*`\n\nTo load this service and instantiate a client:\n\n<pre class=\"prettyprint lang-rb\">require \"google/cloud/vision/v1/product_search\"\nclient = ::Google::Cloud::Vision::V1::ProductSearch::Client.new</pre>"
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImageAnnotator
+    fullName: Google::Cloud::Vision::V1::ImageAnnotator
+    name: ImageAnnotator
+    module: google-cloud-vision-v1
+    id: ImageAnnotator
+    summary: "Service that performs Google Cloud Vision API detection tasks over client\nimages, such as face, landmark, logo, label, and text detection. The\nImageAnnotator service returns detected entities from the images.\n\nTo load this service and instantiate a client:\n\n<pre class=\"prettyprint lang-rb\">require \"google/cloud/vision/v1/image_annotator\"\nclient = ::Google::Cloud::Vision::V1::ImageAnnotator::Client.new</pre>"
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Vertex
+    fullName: Google::Cloud::Vision::V1::Vertex
+    name: Vertex
+    module: google-cloud-vision-v1
+    id: Vertex
+    summary: "A vertex represents a 2D point in the image.\nNOTE: the vertex coordinates are in the same scale as the original image."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::NormalizedVertex
+    fullName: Google::Cloud::Vision::V1::NormalizedVertex
+    name: NormalizedVertex
+    module: google-cloud-vision-v1
+    id: NormalizedVertex
+    summary: "A vertex represents a 2D point in the image.\nNOTE: the normalized vertex coordinates are relative to the original image\nand range from 0 to 1."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::BoundingPoly
+    fullName: Google::Cloud::Vision::V1::BoundingPoly
+    name: BoundingPoly
+    module: google-cloud-vision-v1
+    id: BoundingPoly
+    summary: "A bounding polygon for the detected image annotation."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Position
+    fullName: Google::Cloud::Vision::V1::Position
+    name: Position
+    module: google-cloud-vision-v1
+    id: Position
+    summary: "A 3D position in the image, used primarily for Face detection landmarks.\nA valid Position must have both x and y coordinates.\nThe position coordinates are in the same scale as the original image."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::WebDetection
+    fullName: Google::Cloud::Vision::V1::WebDetection
+    name: WebDetection
+    module: google-cloud-vision-v1
+    id: WebDetection
+    summary: "Relevant information for the image from the Internet."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ProductSearchParams
+    fullName: Google::Cloud::Vision::V1::ProductSearchParams
+    name: ProductSearchParams
+    module: google-cloud-vision-v1
+    id: ProductSearchParams
+    summary: "Parameters for a product search request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ProductSearchResults
+    fullName: Google::Cloud::Vision::V1::ProductSearchResults
+    name: ProductSearchResults
+    module: google-cloud-vision-v1
+    id: ProductSearchResults
+    summary: "Results for a product search request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Feature
+    fullName: Google::Cloud::Vision::V1::Feature
+    name: Feature
+    module: google-cloud-vision-v1
+    id: Feature
+    summary: "The type of Google Cloud Vision API detection to perform, and the maximum\nnumber of results to return for that type. Multiple `Feature` objects can\nbe specified in the `features` list."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImageSource
+    fullName: Google::Cloud::Vision::V1::ImageSource
+    name: ImageSource
+    module: google-cloud-vision-v1
+    id: ImageSource
+    summary: "External image source (Google Cloud Storage or web URL image location)."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Image
+    fullName: Google::Cloud::Vision::V1::Image
+    name: Image
+    module: google-cloud-vision-v1
+    id: Image
+    summary: "Client image to perform Google Cloud Vision API tasks over."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::FaceAnnotation
+    fullName: Google::Cloud::Vision::V1::FaceAnnotation
+    name: FaceAnnotation
+    module: google-cloud-vision-v1
+    id: FaceAnnotation
+    summary: "A face annotation object contains the results of face detection."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::LocationInfo
+    fullName: Google::Cloud::Vision::V1::LocationInfo
+    name: LocationInfo
+    module: google-cloud-vision-v1
+    id: LocationInfo
+    summary: "Detected entity location information."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Property
+    fullName: Google::Cloud::Vision::V1::Property
+    name: Property
+    module: google-cloud-vision-v1
+    id: Property
+    summary: "A `Property` consists of a user-supplied name/value pair."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::EntityAnnotation
+    fullName: Google::Cloud::Vision::V1::EntityAnnotation
+    name: EntityAnnotation
+    module: google-cloud-vision-v1
+    id: EntityAnnotation
+    summary: "Set of detected entity features."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::LocalizedObjectAnnotation
+    fullName: Google::Cloud::Vision::V1::LocalizedObjectAnnotation
+    name: LocalizedObjectAnnotation
+    module: google-cloud-vision-v1
+    id: LocalizedObjectAnnotation
+    summary: "Set of detected objects with bounding boxes."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::SafeSearchAnnotation
+    fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation
+    name: SafeSearchAnnotation
+    module: google-cloud-vision-v1
+    id: SafeSearchAnnotation
+    summary: "Set of features pertaining to the image, computed by computer vision\nmethods over safe-search verticals (for example, adult, spoof, medical,\nviolence)."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::LatLongRect
+    fullName: Google::Cloud::Vision::V1::LatLongRect
+    name: LatLongRect
+    module: google-cloud-vision-v1
+    id: LatLongRect
+    summary: "Rectangle determined by min and max `LatLng` pairs."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ColorInfo
+    fullName: Google::Cloud::Vision::V1::ColorInfo
+    name: ColorInfo
+    module: google-cloud-vision-v1
+    id: ColorInfo
+    summary: "Color information consists of RGB channels, score, and the fraction of\nthe image that the color occupies in the image."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::DominantColorsAnnotation
+    fullName: Google::Cloud::Vision::V1::DominantColorsAnnotation
+    name: DominantColorsAnnotation
+    module: google-cloud-vision-v1
+    id: DominantColorsAnnotation
+    summary: "Set of dominant colors and their corresponding scores."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImageProperties
+    fullName: Google::Cloud::Vision::V1::ImageProperties
+    name: ImageProperties
+    module: google-cloud-vision-v1
+    id: ImageProperties
+    summary: "Stores image properties, such as dominant colors."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::CropHint
+    fullName: Google::Cloud::Vision::V1::CropHint
+    name: CropHint
+    module: google-cloud-vision-v1
+    id: CropHint
+    summary: "Single crop hint that is used to generate a new crop when serving an image."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::CropHintsAnnotation
+    fullName: Google::Cloud::Vision::V1::CropHintsAnnotation
+    name: CropHintsAnnotation
+    module: google-cloud-vision-v1
+    id: CropHintsAnnotation
+    summary: "Set of crop hints that are used to generate new crops when serving images."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::CropHintsParams
+    fullName: Google::Cloud::Vision::V1::CropHintsParams
+    name: CropHintsParams
+    module: google-cloud-vision-v1
+    id: CropHintsParams
+    summary: "Parameters for crop hints annotation request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::WebDetectionParams
+    fullName: Google::Cloud::Vision::V1::WebDetectionParams
+    name: WebDetectionParams
+    module: google-cloud-vision-v1
+    id: WebDetectionParams
+    summary: "Parameters for web detection request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::TextDetectionParams
+    fullName: Google::Cloud::Vision::V1::TextDetectionParams
+    name: TextDetectionParams
+    module: google-cloud-vision-v1
+    id: TextDetectionParams
+    summary: "Parameters for text detections. This is used to control TEXT_DETECTION and\nDOCUMENT_TEXT_DETECTION features."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImageContext
+    fullName: Google::Cloud::Vision::V1::ImageContext
+    name: ImageContext
+    module: google-cloud-vision-v1
+    id: ImageContext
+    summary: "Image context and/or feature-specific parameters."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AnnotateImageRequest
+    fullName: Google::Cloud::Vision::V1::AnnotateImageRequest
+    name: AnnotateImageRequest
+    module: google-cloud-vision-v1
+    id: AnnotateImageRequest
+    summary: "Request for performing Google Cloud Vision API tasks over a user-provided\nimage, with user-requested features, and with context information."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImageAnnotationContext
+    fullName: Google::Cloud::Vision::V1::ImageAnnotationContext
+    name: ImageAnnotationContext
+    module: google-cloud-vision-v1
+    id: ImageAnnotationContext
+    summary: "If an image was produced from a file (e.g. a PDF), this message gives\ninformation about the source of that image."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AnnotateImageResponse
+    fullName: Google::Cloud::Vision::V1::AnnotateImageResponse
+    name: AnnotateImageResponse
+    module: google-cloud-vision-v1
+    id: AnnotateImageResponse
+    summary: "Response to an image annotation request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::BatchAnnotateImagesRequest
+    fullName: Google::Cloud::Vision::V1::BatchAnnotateImagesRequest
+    name: BatchAnnotateImagesRequest
+    module: google-cloud-vision-v1
+    id: BatchAnnotateImagesRequest
+    summary: "Multiple image annotation requests are batched into a single service call."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::BatchAnnotateImagesResponse
+    fullName: Google::Cloud::Vision::V1::BatchAnnotateImagesResponse
+    name: BatchAnnotateImagesResponse
+    module: google-cloud-vision-v1
+    id: BatchAnnotateImagesResponse
+    summary: "Response to a batch image annotation request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AnnotateFileRequest
+    fullName: Google::Cloud::Vision::V1::AnnotateFileRequest
+    name: AnnotateFileRequest
+    module: google-cloud-vision-v1
+    id: AnnotateFileRequest
+    summary: "A request to annotate one single file, e.g. a PDF, TIFF or GIF file."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AnnotateFileResponse
+    fullName: Google::Cloud::Vision::V1::AnnotateFileResponse
+    name: AnnotateFileResponse
+    module: google-cloud-vision-v1
+    id: AnnotateFileResponse
+    summary: "Response to a single file annotation request. A file may contain one or more\nimages, which individually have their own responses."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::BatchAnnotateFilesRequest
+    fullName: Google::Cloud::Vision::V1::BatchAnnotateFilesRequest
+    name: BatchAnnotateFilesRequest
+    module: google-cloud-vision-v1
+    id: BatchAnnotateFilesRequest
+    summary: "A list of requests to annotate files using the BatchAnnotateFiles API."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::BatchAnnotateFilesResponse
+    fullName: Google::Cloud::Vision::V1::BatchAnnotateFilesResponse
+    name: BatchAnnotateFilesResponse
+    module: google-cloud-vision-v1
+    id: BatchAnnotateFilesResponse
+    summary: "A list of file annotation responses."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AsyncAnnotateFileRequest
+    fullName: Google::Cloud::Vision::V1::AsyncAnnotateFileRequest
+    name: AsyncAnnotateFileRequest
+    module: google-cloud-vision-v1
+    id: AsyncAnnotateFileRequest
+    summary: "An offline file annotation request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AsyncAnnotateFileResponse
+    fullName: Google::Cloud::Vision::V1::AsyncAnnotateFileResponse
+    name: AsyncAnnotateFileResponse
+    module: google-cloud-vision-v1
+    id: AsyncAnnotateFileResponse
+    summary: "The response for a single offline file annotation request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AsyncBatchAnnotateImagesRequest
+    fullName: Google::Cloud::Vision::V1::AsyncBatchAnnotateImagesRequest
+    name: AsyncBatchAnnotateImagesRequest
+    module: google-cloud-vision-v1
+    id: AsyncBatchAnnotateImagesRequest
+    summary: "Request for async image annotation for a list of images."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AsyncBatchAnnotateImagesResponse
+    fullName: Google::Cloud::Vision::V1::AsyncBatchAnnotateImagesResponse
+    name: AsyncBatchAnnotateImagesResponse
+    module: google-cloud-vision-v1
+    id: AsyncBatchAnnotateImagesResponse
+    summary: "Response to an async batch image annotation request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AsyncBatchAnnotateFilesRequest
+    fullName: Google::Cloud::Vision::V1::AsyncBatchAnnotateFilesRequest
+    name: AsyncBatchAnnotateFilesRequest
+    module: google-cloud-vision-v1
+    id: AsyncBatchAnnotateFilesRequest
+    summary: "Multiple async file annotation requests are batched into a single service\ncall."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AsyncBatchAnnotateFilesResponse
+    fullName: Google::Cloud::Vision::V1::AsyncBatchAnnotateFilesResponse
+    name: AsyncBatchAnnotateFilesResponse
+    module: google-cloud-vision-v1
+    id: AsyncBatchAnnotateFilesResponse
+    summary: "Response to an async batch file annotation request."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::InputConfig
+    fullName: Google::Cloud::Vision::V1::InputConfig
+    name: InputConfig
+    module: google-cloud-vision-v1
+    id: InputConfig
+    summary: "The desired input location and metadata."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::OutputConfig
+    fullName: Google::Cloud::Vision::V1::OutputConfig
+    name: OutputConfig
+    module: google-cloud-vision-v1
+    id: OutputConfig
+    summary: "The desired output location and metadata."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::GcsSource
+    fullName: Google::Cloud::Vision::V1::GcsSource
+    name: GcsSource
+    module: google-cloud-vision-v1
+    id: GcsSource
+    summary: "The Google Cloud Storage location where the input will be read from."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::GcsDestination
+    fullName: Google::Cloud::Vision::V1::GcsDestination
+    name: GcsDestination
+    module: google-cloud-vision-v1
+    id: GcsDestination
+    summary: "The Google Cloud Storage location where the output will be written to."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::OperationMetadata
+    fullName: Google::Cloud::Vision::V1::OperationMetadata
+    name: OperationMetadata
+    module: google-cloud-vision-v1
+    id: OperationMetadata
+    summary: "Contains metadata for the BatchAnnotateImages operation."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Likelihood
+    fullName: Google::Cloud::Vision::V1::Likelihood
+    name: Likelihood
+    module: google-cloud-vision-v1
+    id: Likelihood
+    summary: "A bucketized representation of likelihood, which is intended to give clients\nhighly stable results across model upgrades."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::TextAnnotation
+    fullName: Google::Cloud::Vision::V1::TextAnnotation
+    name: TextAnnotation
+    module: google-cloud-vision-v1
+    id: TextAnnotation
+    summary: "TextAnnotation contains a structured representation of OCR extracted text.\nThe hierarchy of an OCR extracted text structure is like this:\n<pre class=\"prettyprint lang-rb\">TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol\nEach structural component, starting from Page, may further have their own\nproperties. Properties describe detected languages, breaks etc.. Please refer\nto the {::Google::Cloud::Vision::V1::TextAnnotation::TextProperty TextAnnotation.TextProperty} message definition below for more\ndetail.</pre>"
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Page
+    fullName: Google::Cloud::Vision::V1::Page
+    name: Page
+    module: google-cloud-vision-v1
+    id: Page
+    summary: "Detected page from OCR."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Block
+    fullName: Google::Cloud::Vision::V1::Block
+    name: Block
+    module: google-cloud-vision-v1
+    id: Block
+    summary: "Logical element on the page."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Paragraph
+    fullName: Google::Cloud::Vision::V1::Paragraph
+    name: Paragraph
+    module: google-cloud-vision-v1
+    id: Paragraph
+    summary: "Structural unit of text representing a number of words in certain order."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Word
+    fullName: Google::Cloud::Vision::V1::Word
+    name: Word
+    module: google-cloud-vision-v1
+    id: Word
+    summary: "A word representation."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Symbol
+    fullName: Google::Cloud::Vision::V1::Symbol
+    name: Symbol
+    module: google-cloud-vision-v1
+    id: Symbol
+    summary: "A single symbol representation."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::Product
+    fullName: Google::Cloud::Vision::V1::Product
+    name: Product
+    module: google-cloud-vision-v1
+    id: Product
+    summary: "A Product contains ReferenceImages."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ProductSet
+    fullName: Google::Cloud::Vision::V1::ProductSet
+    name: ProductSet
+    module: google-cloud-vision-v1
+    id: ProductSet
+    summary: "A ProductSet contains Products. A ProductSet can contain a maximum of 1\nmillion reference images. If the limit is exceeded, periodic indexing will\nfail."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ReferenceImage
+    fullName: Google::Cloud::Vision::V1::ReferenceImage
+    name: ReferenceImage
+    module: google-cloud-vision-v1
+    id: ReferenceImage
+    summary: "A `ReferenceImage` represents a product image and its associated metadata,\nsuch as bounding boxes."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::CreateProductRequest
+    fullName: Google::Cloud::Vision::V1::CreateProductRequest
+    name: CreateProductRequest
+    module: google-cloud-vision-v1
+    id: CreateProductRequest
+    summary: "Request message for the `CreateProduct` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListProductsRequest
+    fullName: Google::Cloud::Vision::V1::ListProductsRequest
+    name: ListProductsRequest
+    module: google-cloud-vision-v1
+    id: ListProductsRequest
+    summary: "Request message for the `ListProducts` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListProductsResponse
+    fullName: Google::Cloud::Vision::V1::ListProductsResponse
+    name: ListProductsResponse
+    module: google-cloud-vision-v1
+    id: ListProductsResponse
+    summary: "Response message for the `ListProducts` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::GetProductRequest
+    fullName: Google::Cloud::Vision::V1::GetProductRequest
+    name: GetProductRequest
+    module: google-cloud-vision-v1
+    id: GetProductRequest
+    summary: "Request message for the `GetProduct` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::UpdateProductRequest
+    fullName: Google::Cloud::Vision::V1::UpdateProductRequest
+    name: UpdateProductRequest
+    module: google-cloud-vision-v1
+    id: UpdateProductRequest
+    summary: "Request message for the `UpdateProduct` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::DeleteProductRequest
+    fullName: Google::Cloud::Vision::V1::DeleteProductRequest
+    name: DeleteProductRequest
+    module: google-cloud-vision-v1
+    id: DeleteProductRequest
+    summary: "Request message for the `DeleteProduct` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::CreateProductSetRequest
+    fullName: Google::Cloud::Vision::V1::CreateProductSetRequest
+    name: CreateProductSetRequest
+    module: google-cloud-vision-v1
+    id: CreateProductSetRequest
+    summary: "Request message for the `CreateProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListProductSetsRequest
+    fullName: Google::Cloud::Vision::V1::ListProductSetsRequest
+    name: ListProductSetsRequest
+    module: google-cloud-vision-v1
+    id: ListProductSetsRequest
+    summary: "Request message for the `ListProductSets` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListProductSetsResponse
+    fullName: Google::Cloud::Vision::V1::ListProductSetsResponse
+    name: ListProductSetsResponse
+    module: google-cloud-vision-v1
+    id: ListProductSetsResponse
+    summary: "Response message for the `ListProductSets` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::GetProductSetRequest
+    fullName: Google::Cloud::Vision::V1::GetProductSetRequest
+    name: GetProductSetRequest
+    module: google-cloud-vision-v1
+    id: GetProductSetRequest
+    summary: "Request message for the `GetProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::UpdateProductSetRequest
+    fullName: Google::Cloud::Vision::V1::UpdateProductSetRequest
+    name: UpdateProductSetRequest
+    module: google-cloud-vision-v1
+    id: UpdateProductSetRequest
+    summary: "Request message for the `UpdateProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::DeleteProductSetRequest
+    fullName: Google::Cloud::Vision::V1::DeleteProductSetRequest
+    name: DeleteProductSetRequest
+    module: google-cloud-vision-v1
+    id: DeleteProductSetRequest
+    summary: "Request message for the `DeleteProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::CreateReferenceImageRequest
+    fullName: Google::Cloud::Vision::V1::CreateReferenceImageRequest
+    name: CreateReferenceImageRequest
+    module: google-cloud-vision-v1
+    id: CreateReferenceImageRequest
+    summary: "Request message for the `CreateReferenceImage` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListReferenceImagesRequest
+    fullName: Google::Cloud::Vision::V1::ListReferenceImagesRequest
+    name: ListReferenceImagesRequest
+    module: google-cloud-vision-v1
+    id: ListReferenceImagesRequest
+    summary: "Request message for the `ListReferenceImages` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListReferenceImagesResponse
+    fullName: Google::Cloud::Vision::V1::ListReferenceImagesResponse
+    name: ListReferenceImagesResponse
+    module: google-cloud-vision-v1
+    id: ListReferenceImagesResponse
+    summary: "Response message for the `ListReferenceImages` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::GetReferenceImageRequest
+    fullName: Google::Cloud::Vision::V1::GetReferenceImageRequest
+    name: GetReferenceImageRequest
+    module: google-cloud-vision-v1
+    id: GetReferenceImageRequest
+    summary: "Request message for the `GetReferenceImage` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::DeleteReferenceImageRequest
+    fullName: Google::Cloud::Vision::V1::DeleteReferenceImageRequest
+    name: DeleteReferenceImageRequest
+    module: google-cloud-vision-v1
+    id: DeleteReferenceImageRequest
+    summary: "Request message for the `DeleteReferenceImage` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::AddProductToProductSetRequest
+    fullName: Google::Cloud::Vision::V1::AddProductToProductSetRequest
+    name: AddProductToProductSetRequest
+    module: google-cloud-vision-v1
+    id: AddProductToProductSetRequest
+    summary: "Request message for the `AddProductToProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest
+    fullName: Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest
+    name: RemoveProductFromProductSetRequest
+    module: google-cloud-vision-v1
+    id: RemoveProductFromProductSetRequest
+    summary: "Request message for the `RemoveProductFromProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListProductsInProductSetRequest
+    fullName: Google::Cloud::Vision::V1::ListProductsInProductSetRequest
+    name: ListProductsInProductSetRequest
+    module: google-cloud-vision-v1
+    id: ListProductsInProductSetRequest
+    summary: "Request message for the `ListProductsInProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ListProductsInProductSetResponse
+    fullName: Google::Cloud::Vision::V1::ListProductsInProductSetResponse
+    name: ListProductsInProductSetResponse
+    module: google-cloud-vision-v1
+    id: ListProductsInProductSetResponse
+    summary: "Response message for the `ListProductsInProductSet` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImportProductSetsGcsSource
+    fullName: Google::Cloud::Vision::V1::ImportProductSetsGcsSource
+    name: ImportProductSetsGcsSource
+    module: google-cloud-vision-v1
+    id: ImportProductSetsGcsSource
+    summary: "The Google Cloud Storage location for a csv file which preserves a list of\nImportProductSetRequests in each line."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImportProductSetsInputConfig
+    fullName: Google::Cloud::Vision::V1::ImportProductSetsInputConfig
+    name: ImportProductSetsInputConfig
+    module: google-cloud-vision-v1
+    id: ImportProductSetsInputConfig
+    summary: "The input content for the `ImportProductSets` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImportProductSetsRequest
+    fullName: Google::Cloud::Vision::V1::ImportProductSetsRequest
+    name: ImportProductSetsRequest
+    module: google-cloud-vision-v1
+    id: ImportProductSetsRequest
+    summary: "Request message for the `ImportProductSets` method."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ImportProductSetsResponse
+    fullName: Google::Cloud::Vision::V1::ImportProductSetsResponse
+    name: ImportProductSetsResponse
+    module: google-cloud-vision-v1
+    id: ImportProductSetsResponse
+    summary: "Response message for the `ImportProductSets` method.\n\nThis message is returned by the\ngoogle.longrunning.Operations.GetOperation method in the returned\n{::Google::Longrunning::Operation#response google.longrunning.Operation.response} field."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::BatchOperationMetadata
+    fullName: Google::Cloud::Vision::V1::BatchOperationMetadata
+    name: BatchOperationMetadata
+    module: google-cloud-vision-v1
+    id: BatchOperationMetadata
+    summary: "Metadata for the batch operations such as the current state.\n\nThis is included in the `metadata` field of the `Operation` returned by the\n`GetOperation` call of the `google::longrunning::Operations` service."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::ProductSetPurgeConfig
+    fullName: Google::Cloud::Vision::V1::ProductSetPurgeConfig
+    name: ProductSetPurgeConfig
+    module: google-cloud-vision-v1
+    id: ProductSetPurgeConfig
+    summary: "Config to control which ProductSet contains the Products to be deleted."
+    parent: Google::Cloud::Vision::V1
+
+  - uid: Google::Cloud::Vision::V1::PurgeProductsRequest
+    fullName: Google::Cloud::Vision::V1::PurgeProductsRequest
+    name: PurgeProductsRequest
+    module: google-cloud-vision-v1
+    id: PurgeProductsRequest
+    summary: "Request message for the `PurgeProducts` method."
+    parent: Google::Cloud::Vision::V1
+

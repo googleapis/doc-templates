@@ -1,0 +1,89 @@
+### YamlMime:UniversalReference
+items:
+  - uid: Google::Protobuf::Any
+    children: 
+      - Google::Protobuf::Any#type_url
+      - Google::Protobuf::Any#type_url=
+      - Google::Protobuf::Any#value
+      - Google::Protobuf::Any#value=
+    fullName: Google::Protobuf::Any
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: Any
+    summary: "`Any` contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.\n\nProtobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.\n\nExample 1: Pack and unpack a message in C++.\n\n<pre class=\"prettyprint lang-rb\">Foo foo = ...;\nAny any;\nany.PackFrom(foo);\n...\nif (any.UnpackTo(&foo)) {\n  ...\n}</pre>\n\nExample 2: Pack and unpack a message in Java.\n\n<pre class=\"prettyprint lang-rb\">Foo foo = ...;\nAny any = Any.pack(foo);\n...\nif (any.is(Foo.class)) {\n  foo = any.unpack(Foo.class);\n}\n\n Example 3: Pack and unpack a message in Python.\n\nfoo = Foo(...)\nany = Any()\nany.Pack(foo)\n...\nif any.Is(Foo.DESCRIPTOR):\n  any.Unpack(foo)\n  ...\n\n Example 4: Pack and unpack a message in Go\n\n foo := &pb.Foo{...}\n any, err := anypb.New(foo)\n if err != nil {\n   ...\n }\n ...\n foo := &pb.Foo{}\n if err := any.UnmarshalTo(foo); err != nil {\n   ...\n }</pre>\n\nThe pack methods provided by protobuf library will by default use\n'type.googleapis.com/full.type.name' as the type URL and the unpack\nmethods only use the fully qualified type name after the last '/'\nin the type URL, for example \"foo.bar.com/x/y.z\" will yield type\nname \"y.z\".\n\n\nJSON\n====\nThe JSON representation of an `Any` value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field `@type` which contains the type URL. Example:\n\n<pre class=\"prettyprint lang-rb\">package google.profile;\nmessage Person {\n  string first_name = 1;\n  string last_name = 2;\n}\n\n{\n  \"@type\": \"type.googleapis.com/google.profile.Person\",\n  \"firstName\": <string>,\n  \"lastName\": <string>\n}</pre>\n\nIf the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n`value` which holds the custom JSON in addition to the `@type`\nfield. Example (for message [google.protobuf.Duration][]):\n\n<pre class=\"prettyprint lang-rb\">{\n  \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n  \"value\": \"1.212s\"\n}</pre>"
+    type: "class"
+    name: Google::Protobuf::Any
+  - uid: Google::Protobuf::Any#type_url
+    fullName: Google::Protobuf::Any#type_url
+    name: "#type_url"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#type_url"
+    summary: ""
+    type: method
+    syntax:
+      description: ""
+      content: "#type_url => ::String"
+      parameters:
+        []
+      return:
+          type:
+            - "::String"
+          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+  - uid: Google::Protobuf::Any#type_url=
+    fullName: Google::Protobuf::Any#type_url=
+    name: "#type_url="
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#type_url="
+    summary: ""
+    type: method
+    syntax:
+      description: ""
+      content: "#type_url=(value) => ::String"
+      parameters:
+        []
+      return:
+          type:
+            - "::String"
+          description: "A URL/resource name that uniquely identifies the type of the serialized\nprotocol buffer message. This string must contain at least\none \"/\" character. The last segment of the URL's path must represent\nthe fully qualified name of the type (as in\n`path/google.protobuf.Duration`). The name should be in a canonical form\n(e.g., leading \".\" is not accepted).\n\nIn practice, teams usually precompile into the binary all types that they\nexpect it to use in the context of Any. However, for URLs which use the\nscheme `http`, `https`, or no scheme, one can optionally set up a type\nserver that maps type URLs to message definitions as follows:\n\n* If no scheme is provided, `https` is assumed.\n* An HTTP GET on the URL must yield a [google.protobuf.Type][]\n  value in binary format, or produce an error.\n* Applications are allowed to cache lookup results based on the\n  URL, or have them precompiled into a binary to avoid any\n  lookup. Therefore, binary compatibility needs to be preserved\n  on changes to types. (Use versioned type names to manage\n  breaking changes.)\n\nNote: this functionality is not currently available in the official\nprotobuf release, and it is not used for type URLs beginning with\ntype.googleapis.com.\n\nSchemes other than `http`, `https` (or the empty scheme) might be\nused with implementation specific semantics."
+  - uid: Google::Protobuf::Any#value
+    fullName: Google::Protobuf::Any#value
+    name: "#value"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#value"
+    summary: ""
+    type: method
+    syntax:
+      description: ""
+      content: "#value => ::String"
+      parameters:
+        []
+      return:
+          type:
+            - "::String"
+          description: "Must be a valid serialized protocol buffer of the above specified type."
+  - uid: Google::Protobuf::Any#value=
+    fullName: Google::Protobuf::Any#value=
+    name: "#value="
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#value="
+    summary: ""
+    type: method
+    syntax:
+      description: ""
+      content: "#value=(value) => ::String"
+      parameters:
+        []
+      return:
+          type:
+            - "::String"
+          description: "Must be a valid serialized protocol buffer of the above specified type."
+references: []

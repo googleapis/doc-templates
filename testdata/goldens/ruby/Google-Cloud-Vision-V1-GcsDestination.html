@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/ruby/_project.yaml">
+    <meta name="book_path" value="/ruby/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="Google::Cloud::Vision::V1::GcsDestination">
+<h1 class="page-title">Class Google::Cloud::Vision::V1::GcsDestination
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>The Google Cloud Storage location where the output will be written to.</p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="Google__Cloud__Vision__V1__GcsDestination_uri" data-uid="Google::Cloud::Vision::V1::GcsDestination#uri" class="notranslate">#uri</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#uri =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>Google Cloud Storage URI prefix where the results will be stored. Results
+will be in JSON format and preceded by its corresponding input URI prefix.
+This field can either represent a gcs file prefix or gcs directory. In
+either case, the uri should be unique because in order to get all of the
+output files, you will need to do a wildcard gcs search on the uri prefix
+you provide.</p>
+<p>Examples:</p>
+<p>*<pre class="prettyprint lang-rb">File Prefix: gs://bucket-name/here/filenameprefix   The output files
+will be created in gs://bucket-name/here/ and the names of the
+output files will begin with &quot;filenameprefix&quot;.</pre></p>
+<p>*<pre class="prettyprint lang-rb">Directory Prefix: gs://bucket-name/some/location/   The output files
+will be created in gs://bucket-name/some/location/ and the names of the
+output files could be anything because there was no filename prefix
+specified.</pre></p>
+<p>If multiple outputs, each response is still AnnotateFileResponse, each of
+which contains some subset of the full list of AnnotateImageResponse.
+Multiple outputs can happen if, for example, the output JSON is too large
+and overflows into multiple sharded files.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Google__Cloud__Vision__V1__GcsDestination_uri_" data-uid="Google::Cloud::Vision::V1::GcsDestination#uri=" class="notranslate">#uri=</h3>
+  <div class="codewrapper">
+    <pre><code class="prettyprint">#uri=(value) =&gt; ::String</code></pre>
+  </div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">::String</span></td>
+        <td><p>Google Cloud Storage URI prefix where the results will be stored. Results
+will be in JSON format and preceded by its corresponding input URI prefix.
+This field can either represent a gcs file prefix or gcs directory. In
+either case, the uri should be unique because in order to get all of the
+output files, you will need to do a wildcard gcs search on the uri prefix
+you provide.</p>
+<p>Examples:</p>
+<p>*<pre class="prettyprint lang-rb">File Prefix: gs://bucket-name/here/filenameprefix   The output files
+will be created in gs://bucket-name/here/ and the names of the
+output files will begin with &quot;filenameprefix&quot;.</pre></p>
+<p>*<pre class="prettyprint lang-rb">Directory Prefix: gs://bucket-name/some/location/   The output files
+will be created in gs://bucket-name/some/location/ and the names of the
+output files could be anything because there was no filename prefix
+specified.</pre></p>
+<p>If multiple outputs, each response is still AnnotateFileResponse, each of
+which contains some subset of the full list of AnnotateImageResponse.
+Multiple outputs can happen if, for example, the output JSON is too large
+and overflows into multiple sharded files.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

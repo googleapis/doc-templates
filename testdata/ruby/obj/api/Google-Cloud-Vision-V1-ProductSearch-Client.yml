@@ -1,0 +1,437 @@
+### YamlMime:UniversalReference
+items:
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client
+    children: 
+      - Google::Cloud::Vision::V1::ProductSearch::Client.configure
+      - Google::Cloud::Vision::V1::ProductSearch::Client#configure
+      - Google::Cloud::Vision::V1::ProductSearch::Client#initialize
+      - Google::Cloud::Vision::V1::ProductSearch::Client#operations_client
+      - Google::Cloud::Vision::V1::ProductSearch::Client#create_product_set
+      - Google::Cloud::Vision::V1::ProductSearch::Client#list_product_sets
+      - Google::Cloud::Vision::V1::ProductSearch::Client#get_product_set
+      - Google::Cloud::Vision::V1::ProductSearch::Client#update_product_set
+      - Google::Cloud::Vision::V1::ProductSearch::Client#delete_product_set
+      - Google::Cloud::Vision::V1::ProductSearch::Client#create_product
+      - Google::Cloud::Vision::V1::ProductSearch::Client#list_products
+      - Google::Cloud::Vision::V1::ProductSearch::Client#get_product
+      - Google::Cloud::Vision::V1::ProductSearch::Client#update_product
+      - Google::Cloud::Vision::V1::ProductSearch::Client#delete_product
+      - Google::Cloud::Vision::V1::ProductSearch::Client#create_reference_image
+      - Google::Cloud::Vision::V1::ProductSearch::Client#delete_reference_image
+      - Google::Cloud::Vision::V1::ProductSearch::Client#list_reference_images
+      - Google::Cloud::Vision::V1::ProductSearch::Client#get_reference_image
+      - Google::Cloud::Vision::V1::ProductSearch::Client#add_product_to_product_set
+      - Google::Cloud::Vision::V1::ProductSearch::Client#remove_product_from_product_set
+      - Google::Cloud::Vision::V1::ProductSearch::Client#list_products_in_product_set
+      - Google::Cloud::Vision::V1::ProductSearch::Client#import_product_sets
+      - Google::Cloud::Vision::V1::ProductSearch::Client#purge_products
+      - Google::Cloud::Vision::V1::ProductSearch::Client::Configuration
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: Client
+    summary: "Client for the ProductSearch service.\n\nManages Products and ProductSets of reference images for use in product\nsearch. It uses the following resource model:\n\n- The API has a collection of {::Google::Cloud::Vision::V1::ProductSet ProductSet} resources, named\n`projects/*/locations/*/productSets/*`, which acts as a way to put different\nproducts into groups to limit identification.\n\nIn parallel,\n\n- The API has a collection of {::Google::Cloud::Vision::V1::Product Product} resources, named\n  `projects/*/locations/*/products/*`\n\n- Each {::Google::Cloud::Vision::V1::Product Product} has a collection of {::Google::Cloud::Vision::V1::ReferenceImage ReferenceImage} resources, named\n  `projects/*/locations/*/products/*/referenceImages/*`"
+    type: "class"
+    name: Google::Cloud::Vision::V1::ProductSearch::Client
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client.configure
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client.configure
+    name: ".configure"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: ".configure"
+    summary: "Configure the ProductSearch Client class.\n\nSee {::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration}\nfor a description of the configuration fields.\n\n#### Example\n\nTo modify the configuration for all ProductSearch clients:\n\n<pre class=\"prettyprint lang-rb\">::Google::Cloud::Vision::V1::ProductSearch::Client.configure do |config|\n  config.timeout = 10.0\nend</pre>"
+    type: method
+    syntax:
+      description: "Configure the ProductSearch Client class.\n\nSee {::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration}\nfor a description of the configuration fields.\n\n#### Example\n\nTo modify the configuration for all ProductSearch clients:\n\n<pre class=\"prettyprint lang-rb\">::Google::Cloud::Vision::V1::ProductSearch::Client.configure do |config|\n  config.timeout = 10.0\nend</pre>"
+      content: ".configure { |config| ... } => Client::Configuration"
+      parameters:
+        []
+      return:
+          type:
+            - "Client::Configuration"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#configure
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#configure
+    name: "#configure"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#configure"
+    summary: "Configure the ProductSearch Client instance.\n\nThe configuration is set to the derived mode, meaning that values can be changed,\nbut structural changes (adding new fields, etc.) are not allowed. Structural changes\nshould be made on {Client.configure}.\n\nSee {::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration}\nfor a description of the configuration fields."
+    type: method
+    syntax:
+      description: "Configure the ProductSearch Client instance.\n\nThe configuration is set to the derived mode, meaning that values can be changed,\nbut structural changes (adding new fields, etc.) are not allowed. Structural changes\nshould be made on {Client.configure}.\n\nSee {::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration}\nfor a description of the configuration fields."
+      content: "#configure { |config| ... } => Client::Configuration"
+      parameters:
+        []
+      return:
+          type:
+            - "Client::Configuration"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#initialize
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#initialize
+    name: "#initialize"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#initialize"
+    summary: "Create a new ProductSearch client object.\n\n#### Examples\n\nTo create a new ProductSearch client with the default\nconfiguration:\n\n<pre class=\"prettyprint lang-rb\">client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new</pre>\n\nTo create a new ProductSearch client with a custom\nconfiguration:\n\n<pre class=\"prettyprint lang-rb\">client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|\n  config.timeout = 10.0\nend</pre>"
+    type: method
+    syntax:
+      description: "Create a new ProductSearch client object.\n\n#### Examples\n\nTo create a new ProductSearch client with the default\nconfiguration:\n\n<pre class=\"prettyprint lang-rb\">client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new</pre>\n\nTo create a new ProductSearch client with a custom\nconfiguration:\n\n<pre class=\"prettyprint lang-rb\">client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|\n  config.timeout = 10.0\nend</pre>"
+      content: "#initialize { |config| ... } => Client"
+      parameters:
+        []
+      return:
+          type:
+            - "Client"
+          description: "a new instance of Client"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#operations_client
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#operations_client
+    name: "#operations_client"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#operations_client"
+    summary: "Get the associated client for long-running operations."
+    type: method
+    syntax:
+      description: "Get the associated client for long-running operations."
+      content: "#operations_client => ::Google::Cloud::Vision::V1::ProductSearch::Operations"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::ProductSearch::Operations"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#create_product_set
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#create_product_set
+    name: "#create_product_set"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#create_product_set"
+    summary: "Creates and returns a new ProductSet resource.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if display_name is missing, or is longer than\n  4096 characters."
+    type: method
+    syntax:
+      description: "Creates and returns a new ProductSet resource.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if display_name is missing, or is longer than\n  4096 characters."
+      content: "#create_product_set(request, options = nil) => ::Google::Cloud::Vision::V1::ProductSet\n#create_product_set(parent: nil, product_set: nil, product_set_id: nil) => ::Google::Cloud::Vision::V1::ProductSet"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::ProductSet"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#list_product_sets
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#list_product_sets
+    name: "#list_product_sets"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#list_product_sets"
+    summary: "Lists ProductSets in an unspecified order.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if page_size is greater than 100, or less\n  than 1."
+    type: method
+    syntax:
+      description: "Lists ProductSets in an unspecified order.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if page_size is greater than 100, or less\n  than 1."
+      content: "#list_product_sets(request, options = nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::ProductSet>\n#list_product_sets(parent: nil, page_size: nil, page_token: nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::ProductSet>"
+      parameters:
+        []
+      return:
+          type:
+            - "::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::ProductSet>"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#get_product_set
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#get_product_set
+    name: "#get_product_set"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#get_product_set"
+    summary: "Gets information associated with a ProductSet.\n\nPossible errors:\n\n* Returns NOT_FOUND if the ProductSet does not exist."
+    type: method
+    syntax:
+      description: "Gets information associated with a ProductSet.\n\nPossible errors:\n\n* Returns NOT_FOUND if the ProductSet does not exist."
+      content: "#get_product_set(request, options = nil) => ::Google::Cloud::Vision::V1::ProductSet\n#get_product_set(name: nil) => ::Google::Cloud::Vision::V1::ProductSet"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::ProductSet"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#update_product_set
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#update_product_set
+    name: "#update_product_set"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#update_product_set"
+    summary: "Makes changes to a ProductSet resource.\nOnly display_name can be updated currently.\n\nPossible errors:\n\n* Returns NOT_FOUND if the ProductSet does not exist.\n* Returns INVALID_ARGUMENT if display_name is present in update_mask but\n  missing from the request or longer than 4096 characters."
+    type: method
+    syntax:
+      description: "Makes changes to a ProductSet resource.\nOnly display_name can be updated currently.\n\nPossible errors:\n\n* Returns NOT_FOUND if the ProductSet does not exist.\n* Returns INVALID_ARGUMENT if display_name is present in update_mask but\n  missing from the request or longer than 4096 characters."
+      content: "#update_product_set(request, options = nil) => ::Google::Cloud::Vision::V1::ProductSet\n#update_product_set(product_set: nil, update_mask: nil) => ::Google::Cloud::Vision::V1::ProductSet"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::ProductSet"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#delete_product_set
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#delete_product_set
+    name: "#delete_product_set"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#delete_product_set"
+    summary: "Permanently deletes a ProductSet. Products and ReferenceImages in the\nProductSet are not deleted.\n\nThe actual image files are not deleted from Google Cloud Storage."
+    type: method
+    syntax:
+      description: "Permanently deletes a ProductSet. Products and ReferenceImages in the\nProductSet are not deleted.\n\nThe actual image files are not deleted from Google Cloud Storage."
+      content: "#delete_product_set(request, options = nil) => ::Google::Protobuf::Empty\n#delete_product_set(name: nil) => ::Google::Protobuf::Empty"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Protobuf::Empty"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#create_product
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#create_product
+    name: "#create_product"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#create_product"
+    summary: "Creates and returns a new product resource.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if display_name is missing or longer than 4096\n  characters.\n* Returns INVALID_ARGUMENT if description is longer than 4096 characters.\n* Returns INVALID_ARGUMENT if product_category is missing or invalid."
+    type: method
+    syntax:
+      description: "Creates and returns a new product resource.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if display_name is missing or longer than 4096\n  characters.\n* Returns INVALID_ARGUMENT if description is longer than 4096 characters.\n* Returns INVALID_ARGUMENT if product_category is missing or invalid."
+      content: "#create_product(request, options = nil) => ::Google::Cloud::Vision::V1::Product\n#create_product(parent: nil, product: nil, product_id: nil) => ::Google::Cloud::Vision::V1::Product"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::Product"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#list_products
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#list_products
+    name: "#list_products"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#list_products"
+    summary: "Lists products in an unspecified order.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1."
+    type: method
+    syntax:
+      description: "Lists products in an unspecified order.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1."
+      content: "#list_products(request, options = nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::Product>\n#list_products(parent: nil, page_size: nil, page_token: nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::Product>"
+      parameters:
+        []
+      return:
+          type:
+            - "::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::Product>"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#get_product
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#get_product
+    name: "#get_product"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#get_product"
+    summary: "Gets information associated with a Product.\n\nPossible errors:\n\n* Returns NOT_FOUND if the Product does not exist."
+    type: method
+    syntax:
+      description: "Gets information associated with a Product.\n\nPossible errors:\n\n* Returns NOT_FOUND if the Product does not exist."
+      content: "#get_product(request, options = nil) => ::Google::Cloud::Vision::V1::Product\n#get_product(name: nil) => ::Google::Cloud::Vision::V1::Product"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::Product"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#update_product
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#update_product
+    name: "#update_product"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#update_product"
+    summary: "Makes changes to a Product resource.\nOnly the `display_name`, `description`, and `labels` fields can be updated\nright now.\n\nIf labels are updated, the change will not be reflected in queries until\nthe next index time.\n\nPossible errors:\n\n* Returns NOT_FOUND if the Product does not exist.\n* Returns INVALID_ARGUMENT if display_name is present in update_mask but is\n  missing from the request or longer than 4096 characters.\n* Returns INVALID_ARGUMENT if description is present in update_mask but is\n  longer than 4096 characters.\n* Returns INVALID_ARGUMENT if product_category is present in update_mask."
+    type: method
+    syntax:
+      description: "Makes changes to a Product resource.\nOnly the `display_name`, `description`, and `labels` fields can be updated\nright now.\n\nIf labels are updated, the change will not be reflected in queries until\nthe next index time.\n\nPossible errors:\n\n* Returns NOT_FOUND if the Product does not exist.\n* Returns INVALID_ARGUMENT if display_name is present in update_mask but is\n  missing from the request or longer than 4096 characters.\n* Returns INVALID_ARGUMENT if description is present in update_mask but is\n  longer than 4096 characters.\n* Returns INVALID_ARGUMENT if product_category is present in update_mask."
+      content: "#update_product(request, options = nil) => ::Google::Cloud::Vision::V1::Product\n#update_product(product: nil, update_mask: nil) => ::Google::Cloud::Vision::V1::Product"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::Product"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#delete_product
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#delete_product
+    name: "#delete_product"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#delete_product"
+    summary: "Permanently deletes a product and its reference images.\n\nMetadata of the product and all its images will be deleted right away, but\nsearch queries against ProductSets containing the product may still work\nuntil all related caches are refreshed."
+    type: method
+    syntax:
+      description: "Permanently deletes a product and its reference images.\n\nMetadata of the product and all its images will be deleted right away, but\nsearch queries against ProductSets containing the product may still work\nuntil all related caches are refreshed."
+      content: "#delete_product(request, options = nil) => ::Google::Protobuf::Empty\n#delete_product(name: nil) => ::Google::Protobuf::Empty"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Protobuf::Empty"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#create_reference_image
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#create_reference_image
+    name: "#create_reference_image"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#create_reference_image"
+    summary: "Creates and returns a new ReferenceImage resource.\n\nThe `bounding_poly` field is optional. If `bounding_poly` is not specified,\nthe system will try to detect regions of interest in the image that are\ncompatible with the product_category on the parent product. If it is\nspecified, detection is ALWAYS skipped. The system converts polygons into\nnon-rotated rectangles.\n\nNote that the pipeline will resize the image if the image resolution is too\nlarge to process (above 50MP).\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096\n  characters.\n* Returns INVALID_ARGUMENT if the product does not exist.\n* Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing\n  compatible with the parent product's product_category is detected.\n* Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons."
+    type: method
+    syntax:
+      description: "Creates and returns a new ReferenceImage resource.\n\nThe `bounding_poly` field is optional. If `bounding_poly` is not specified,\nthe system will try to detect regions of interest in the image that are\ncompatible with the product_category on the parent product. If it is\nspecified, detection is ALWAYS skipped. The system converts polygons into\nnon-rotated rectangles.\n\nNote that the pipeline will resize the image if the image resolution is too\nlarge to process (above 50MP).\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096\n  characters.\n* Returns INVALID_ARGUMENT if the product does not exist.\n* Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing\n  compatible with the parent product's product_category is detected.\n* Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons."
+      content: "#create_reference_image(request, options = nil) => ::Google::Cloud::Vision::V1::ReferenceImage\n#create_reference_image(parent: nil, reference_image: nil, reference_image_id: nil) => ::Google::Cloud::Vision::V1::ReferenceImage"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::ReferenceImage"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#delete_reference_image
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#delete_reference_image
+    name: "#delete_reference_image"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#delete_reference_image"
+    summary: "Permanently deletes a reference image.\n\nThe image metadata will be deleted right away, but search queries\nagainst ProductSets containing the image may still work until all related\ncaches are refreshed.\n\nThe actual image files are not deleted from Google Cloud Storage."
+    type: method
+    syntax:
+      description: "Permanently deletes a reference image.\n\nThe image metadata will be deleted right away, but search queries\nagainst ProductSets containing the image may still work until all related\ncaches are refreshed.\n\nThe actual image files are not deleted from Google Cloud Storage."
+      content: "#delete_reference_image(request, options = nil) => ::Google::Protobuf::Empty\n#delete_reference_image(name: nil) => ::Google::Protobuf::Empty"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Protobuf::Empty"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#list_reference_images
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#list_reference_images
+    name: "#list_reference_images"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#list_reference_images"
+    summary: "Lists reference images.\n\nPossible errors:\n\n* Returns NOT_FOUND if the parent product does not exist.\n* Returns INVALID_ARGUMENT if the page_size is greater than 100, or less\n  than 1."
+    type: method
+    syntax:
+      description: "Lists reference images.\n\nPossible errors:\n\n* Returns NOT_FOUND if the parent product does not exist.\n* Returns INVALID_ARGUMENT if the page_size is greater than 100, or less\n  than 1."
+      content: "#list_reference_images(request, options = nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::ReferenceImage>\n#list_reference_images(parent: nil, page_size: nil, page_token: nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::ReferenceImage>"
+      parameters:
+        []
+      return:
+          type:
+            - "::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::ReferenceImage>"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#get_reference_image
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#get_reference_image
+    name: "#get_reference_image"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#get_reference_image"
+    summary: "Gets information associated with a ReferenceImage.\n\nPossible errors:\n\n* Returns NOT_FOUND if the specified image does not exist."
+    type: method
+    syntax:
+      description: "Gets information associated with a ReferenceImage.\n\nPossible errors:\n\n* Returns NOT_FOUND if the specified image does not exist."
+      content: "#get_reference_image(request, options = nil) => ::Google::Cloud::Vision::V1::ReferenceImage\n#get_reference_image(name: nil) => ::Google::Cloud::Vision::V1::ReferenceImage"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Cloud::Vision::V1::ReferenceImage"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#add_product_to_product_set
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#add_product_to_product_set
+    name: "#add_product_to_product_set"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#add_product_to_product_set"
+    summary: "Adds a Product to the specified ProductSet. If the Product is already\npresent, no change is made.\n\nOne Product can be added to at most 100 ProductSets.\n\nPossible errors:\n\n* Returns NOT_FOUND if the Product or the ProductSet doesn't exist."
+    type: method
+    syntax:
+      description: "Adds a Product to the specified ProductSet. If the Product is already\npresent, no change is made.\n\nOne Product can be added to at most 100 ProductSets.\n\nPossible errors:\n\n* Returns NOT_FOUND if the Product or the ProductSet doesn't exist."
+      content: "#add_product_to_product_set(request, options = nil) => ::Google::Protobuf::Empty\n#add_product_to_product_set(name: nil, product: nil) => ::Google::Protobuf::Empty"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Protobuf::Empty"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#remove_product_from_product_set
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#remove_product_from_product_set
+    name: "#remove_product_from_product_set"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#remove_product_from_product_set"
+    summary: "Removes a Product from the specified ProductSet."
+    type: method
+    syntax:
+      description: "Removes a Product from the specified ProductSet."
+      content: "#remove_product_from_product_set(request, options = nil) => ::Google::Protobuf::Empty\n#remove_product_from_product_set(name: nil, product: nil) => ::Google::Protobuf::Empty"
+      parameters:
+        []
+      return:
+          type:
+            - "::Google::Protobuf::Empty"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#list_products_in_product_set
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#list_products_in_product_set
+    name: "#list_products_in_product_set"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#list_products_in_product_set"
+    summary: "Lists the Products in a ProductSet, in an unspecified order. If the\nProductSet does not exist, the products field of the response will be\nempty.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1."
+    type: method
+    syntax:
+      description: "Lists the Products in a ProductSet, in an unspecified order. If the\nProductSet does not exist, the products field of the response will be\nempty.\n\nPossible errors:\n\n* Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1."
+      content: "#list_products_in_product_set(request, options = nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::Product>\n#list_products_in_product_set(name: nil, page_size: nil, page_token: nil) => ::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::Product>"
+      parameters:
+        []
+      return:
+          type:
+            - "::Gapic::PagedEnumerable<::Google::Cloud::Vision::V1::Product>"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#import_product_sets
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#import_product_sets
+    name: "#import_product_sets"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#import_product_sets"
+    summary: "Asynchronous API that imports a list of reference images to specified\nproduct sets based on a list of image information.\n\nThe {::Google::Longrunning::Operation google.longrunning.Operation} API can be used to keep track of the\nprogress and results of the request.\n`Operation.metadata` contains `BatchOperationMetadata`. (progress)\n`Operation.response` contains `ImportProductSetsResponse`. (results)\n\nThe input source of this method is a csv file on Google Cloud Storage.\nFor the format of the csv file please see\n{::Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri ImportProductSetsGcsSource.csv_file_uri}."
+    type: method
+    syntax:
+      description: "Asynchronous API that imports a list of reference images to specified\nproduct sets based on a list of image information.\n\nThe {::Google::Longrunning::Operation google.longrunning.Operation} API can be used to keep track of the\nprogress and results of the request.\n`Operation.metadata` contains `BatchOperationMetadata`. (progress)\n`Operation.response` contains `ImportProductSetsResponse`. (results)\n\nThe input source of this method is a csv file on Google Cloud Storage.\nFor the format of the csv file please see\n{::Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri ImportProductSetsGcsSource.csv_file_uri}."
+      content: "#import_product_sets(request, options = nil) => ::Gapic::Operation\n#import_product_sets(parent: nil, input_config: nil) => ::Gapic::Operation"
+      parameters:
+        []
+      return:
+          type:
+            - "::Gapic::Operation"
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client#purge_products
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client#purge_products
+    name: "#purge_products"
+    langs:
+      - ruby
+    module: google-cloud-vision-v1
+    id: "#purge_products"
+    summary: "Asynchronous API to delete all Products in a ProductSet or all Products\nthat are in no ProductSet.\n\nIf a Product is a member of the specified ProductSet in addition to other\nProductSets, the Product will still be deleted.\n\nIt is recommended to not delete the specified ProductSet until after this\noperation has completed. It is also recommended to not add any of the\nProducts involved in the batch delete to a new ProductSet while this\noperation is running because those Products may still end up deleted.\n\nIt's not possible to undo the PurgeProducts operation. Therefore, it is\nrecommended to keep the csv files used in ImportProductSets (if that was\nhow you originally built the Product Set) before starting PurgeProducts, in\ncase you need to re-import the data after deletion.\n\nIf the plan is to purge all of the Products from a ProductSet and then\nre-use the empty ProductSet to re-import new Products into the empty\nProductSet, you must wait until the PurgeProducts operation has finished\nfor that ProductSet.\n\nThe {::Google::Longrunning::Operation google.longrunning.Operation} API can be used to keep track of the\nprogress and results of the request.\n`Operation.metadata` contains `BatchOperationMetadata`. (progress)"
+    type: method
+    syntax:
+      description: "Asynchronous API to delete all Products in a ProductSet or all Products\nthat are in no ProductSet.\n\nIf a Product is a member of the specified ProductSet in addition to other\nProductSets, the Product will still be deleted.\n\nIt is recommended to not delete the specified ProductSet until after this\noperation has completed. It is also recommended to not add any of the\nProducts involved in the batch delete to a new ProductSet while this\noperation is running because those Products may still end up deleted.\n\nIt's not possible to undo the PurgeProducts operation. Therefore, it is\nrecommended to keep the csv files used in ImportProductSets (if that was\nhow you originally built the Product Set) before starting PurgeProducts, in\ncase you need to re-import the data after deletion.\n\nIf the plan is to purge all of the Products from a ProductSet and then\nre-use the empty ProductSet to re-import new Products into the empty\nProductSet, you must wait until the PurgeProducts operation has finished\nfor that ProductSet.\n\nThe {::Google::Longrunning::Operation google.longrunning.Operation} API can be used to keep track of the\nprogress and results of the request.\n`Operation.metadata` contains `BatchOperationMetadata`. (progress)"
+      content: "#purge_products(request, options = nil) => ::Gapic::Operation\n#purge_products(product_set_purge_config: nil, delete_orphan_products: nil, parent: nil, force: nil) => ::Gapic::Operation"
+      parameters:
+        []
+      return:
+          type:
+            - "::Gapic::Operation"
+references: 
+  - uid: Google::Cloud::Vision::V1::ProductSearch::Client::Configuration
+    fullName: Google::Cloud::Vision::V1::ProductSearch::Client::Configuration
+    name: Configuration
+    module: google-cloud-vision-v1
+    id: Configuration
+    summary: "Configuration class for the ProductSearch API.\n\nThis class represents the configuration for ProductSearch,\nproviding control over timeouts, retry behavior, logging, transport\nparameters, and other low-level controls. Certain parameters can also be\napplied individually to specific RPCs. See\n{::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration::Rpcs}\nfor a list of RPCs that can be configured independently.\n\nConfiguration can be applied globally to all clients, or to a single client\non construction.\n\n## Examples\n\nTo modify the global config, setting the timeout for create_product_set\nto 20 seconds, and all remaining timeouts to 10 seconds:\n\n<pre class=\"prettyprint lang-rb\">::Google::Cloud::Vision::V1::ProductSearch::Client.configure do |config|\n  config.timeout = 10.0\n  config.rpcs.create_product_set.timeout = 20.0\nend</pre>\n\nTo apply the above configuration only to a new client:\n\n<pre class=\"prettyprint lang-rb\">client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|\n  config.timeout = 10.0\n  config.rpcs.create_product_set.timeout = 20.0\nend</pre>"
+    parent: Google::Cloud::Vision::V1::ProductSearch::Client
+
