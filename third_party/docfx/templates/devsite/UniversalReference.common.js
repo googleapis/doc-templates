@@ -98,6 +98,7 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   vm.example = vm.example || null;
   vm.inheritance = vm.inheritance || null;
   vm.children = vm.children || null;
+  vm.status = vm.status || null;
   if (vm.inheritance) {
     normalizeLanguageValuePairs(vm.inheritance).forEach(handleInheritance);
   }
@@ -122,6 +123,11 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
     if (syntax.return) {
       syntax.return = joinType(syntax.return);
     }
+  }
+
+  // Set the status as a property so we can check it in the template.
+  if (vm.status) {
+    vm[vm.status] = true;
   }
 }
 
