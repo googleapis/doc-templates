@@ -1,592 +1,628 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation
-    children: 
-      - Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly
-      - Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly=
-      - Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly
-      - Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly=
-      - Google::Cloud::Vision::V1::FaceAnnotation#landmarks
-      - Google::Cloud::Vision::V1::FaceAnnotation#landmarks=
-      - Google::Cloud::Vision::V1::FaceAnnotation#roll_angle
-      - Google::Cloud::Vision::V1::FaceAnnotation#roll_angle=
-      - Google::Cloud::Vision::V1::FaceAnnotation#pan_angle
-      - Google::Cloud::Vision::V1::FaceAnnotation#pan_angle=
-      - Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle
-      - Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle=
-      - Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence
-      - Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence=
-      - Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence
-      - Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence=
-      - Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood
-      - Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood=
-      - Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood
-      - Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood=
-      - Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood
-      - Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood=
-      - Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood
-      - Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood=
-      - Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood
-      - Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood=
-      - Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood
-      - Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood=
-      - Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood
-      - Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood=
-      - Google::Cloud::Vision::V1::FaceAnnotation::Landmark
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: FaceAnnotation
-    summary: "A face annotation object contains the results of face detection."
-    type: "class"
-    name: Google::Cloud::Vision::V1::FaceAnnotation
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly
-    name: "#bounding_poly"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#bounding_poly"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#bounding_poly => ::Google::Cloud::Vision::V1::BoundingPoly"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::BoundingPoly"
-          description: "The bounding polygon around the face. The coordinates of the bounding box\nare in the original image's scale.\nThe bounding box is computed to \"frame\" the face in accordance with human\nexpectations. It is based on the landmarker results.\nNote that one or more x and/or y coordinates may not be generated in the\n`BoundingPoly` (the polygon will be unbounded) if only a partial face\nappears in the image to be annotated."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly=
-    name: "#bounding_poly="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#bounding_poly="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#bounding_poly=(value) => ::Google::Cloud::Vision::V1::BoundingPoly"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::BoundingPoly"
-          description: "The bounding polygon around the face. The coordinates of the bounding box\nare in the original image's scale.\nThe bounding box is computed to \"frame\" the face in accordance with human\nexpectations. It is based on the landmarker results.\nNote that one or more x and/or y coordinates may not be generated in the\n`BoundingPoly` (the polygon will be unbounded) if only a partial face\nappears in the image to be annotated."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly
-    name: "#fd_bounding_poly"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#fd_bounding_poly"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#fd_bounding_poly => ::Google::Cloud::Vision::V1::BoundingPoly"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::BoundingPoly"
-          description: "The `fd_bounding_poly` bounding polygon is tighter than the\n`boundingPoly`, and encloses only the skin part of the face. Typically, it\nis used to eliminate the face from any image analysis that detects the\n\"amount of skin\" visible in an image. It is not based on the\nlandmarker results, only on the initial face detection, hence\nthe <code>fd</code> (face detection) prefix."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly=
-    name: "#fd_bounding_poly="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#fd_bounding_poly="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#fd_bounding_poly=(value) => ::Google::Cloud::Vision::V1::BoundingPoly"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::BoundingPoly"
-          description: "The `fd_bounding_poly` bounding polygon is tighter than the\n`boundingPoly`, and encloses only the skin part of the face. Typically, it\nis used to eliminate the face from any image analysis that detects the\n\"amount of skin\" visible in an image. It is not based on the\nlandmarker results, only on the initial face detection, hence\nthe <code>fd</code> (face detection) prefix."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarks
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarks
-    name: "#landmarks"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#landmarks"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#landmarks => ::Array<::Google::Cloud::Vision::V1::FaceAnnotation::Landmark>"
-      parameters:
-        []
-      return:
-          type:
-            - "::Array<::Google::Cloud::Vision::V1::FaceAnnotation::Landmark>"
-          description: "Detected face landmarks."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarks=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarks=
-    name: "#landmarks="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#landmarks="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#landmarks=(value) => ::Array<::Google::Cloud::Vision::V1::FaceAnnotation::Landmark>"
-      parameters:
-        []
-      return:
-          type:
-            - "::Array<::Google::Cloud::Vision::V1::FaceAnnotation::Landmark>"
-          description: "Detected face landmarks."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle
-    name: "#roll_angle"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#roll_angle"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#roll_angle => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation\nof the face relative to the image vertical about the axis perpendicular to\nthe face. Range [-180,180]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle=
-    name: "#roll_angle="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#roll_angle="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#roll_angle=(value) => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation\nof the face relative to the image vertical about the axis perpendicular to\nthe face. Range [-180,180]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle
-    name: "#pan_angle"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#pan_angle"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#pan_angle => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Yaw angle, which indicates the leftward/rightward angle that the face is\npointing relative to the vertical plane perpendicular to the image. Range\n[-180,180]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle=
-    name: "#pan_angle="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#pan_angle="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#pan_angle=(value) => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Yaw angle, which indicates the leftward/rightward angle that the face is\npointing relative to the vertical plane perpendicular to the image. Range\n[-180,180]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle
-    name: "#tilt_angle"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#tilt_angle"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#tilt_angle => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Pitch angle, which indicates the upwards/downwards angle that the face is\npointing relative to the image's horizontal plane. Range [-180,180]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle=
-    name: "#tilt_angle="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#tilt_angle="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#tilt_angle=(value) => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Pitch angle, which indicates the upwards/downwards angle that the face is\npointing relative to the image's horizontal plane. Range [-180,180]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence
-    name: "#detection_confidence"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#detection_confidence"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#detection_confidence => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Detection confidence. Range [0, 1]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence=
-    name: "#detection_confidence="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#detection_confidence="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#detection_confidence=(value) => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Detection confidence. Range [0, 1]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence
-    name: "#landmarking_confidence"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#landmarking_confidence"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#landmarking_confidence => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Face landmarking confidence. Range [0, 1]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence=
-    name: "#landmarking_confidence="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#landmarking_confidence="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#landmarking_confidence=(value) => ::Float"
-      parameters:
-        []
-      return:
-          type:
-            - "::Float"
-          description: "Face landmarking confidence. Range [0, 1]."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood
-    name: "#joy_likelihood"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#joy_likelihood"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#joy_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Joy likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood=
-    name: "#joy_likelihood="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#joy_likelihood="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#joy_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Joy likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood
-    name: "#sorrow_likelihood"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#sorrow_likelihood"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#sorrow_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Sorrow likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood=
-    name: "#sorrow_likelihood="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#sorrow_likelihood="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#sorrow_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Sorrow likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood
-    name: "#anger_likelihood"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#anger_likelihood"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#anger_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Anger likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood=
-    name: "#anger_likelihood="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#anger_likelihood="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#anger_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Anger likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood
-    name: "#surprise_likelihood"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#surprise_likelihood"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#surprise_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Surprise likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood=
-    name: "#surprise_likelihood="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#surprise_likelihood="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#surprise_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Surprise likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood
-    name: "#under_exposed_likelihood"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#under_exposed_likelihood"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#under_exposed_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Under-exposed likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood=
-    name: "#under_exposed_likelihood="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#under_exposed_likelihood="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#under_exposed_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Under-exposed likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood
-    name: "#blurred_likelihood"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#blurred_likelihood"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#blurred_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Blurred likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood=
-    name: "#blurred_likelihood="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#blurred_likelihood="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#blurred_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Blurred likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood
-    name: "#headwear_likelihood"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#headwear_likelihood"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#headwear_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Headwear likelihood."
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood=
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood=
-    name: "#headwear_likelihood="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#headwear_likelihood="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#headwear_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-      parameters:
-        []
-      return:
-          type:
-            - "::Google::Cloud::Vision::V1::Likelihood"
-          description: "Headwear likelihood."
-references: 
-  - uid: Google::Cloud::Vision::V1::FaceAnnotation::Landmark
-    fullName: Google::Cloud::Vision::V1::FaceAnnotation::Landmark
-    name: Landmark
-    module: google-cloud-vision-v1
-    id: Landmark
-    summary: "A face-specific landmark (for example, a face feature)."
-    parent: Google::Cloud::Vision::V1::FaceAnnotation
-
+- uid: Google::Cloud::Vision::V1::FaceAnnotation
+  children: 
+  - Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#landmarks(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#landmarks=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#roll_angle(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#roll_angle=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#pan_angle(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#pan_angle=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood=(instance)
+  - Google::Cloud::Vision::V1::FaceAnnotation::Landmark
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation
+  langs:
+  - ruby
+  module: google-cloud-vision-v1
+  id: FaceAnnotation
+  summary: "A face annotation object contains the results of face detection."
+  type: "class"
+  name: Google::Cloud::Vision::V1::FaceAnnotation
+  example: []
+  inherits:
+  - "Object"
+  extendedBy:
+  - "Google::Protobuf::MessageExts::ClassMethods"
+  includes:
+  - "Google::Protobuf::MessageExts"
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly
+  name: "#bounding_poly"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#bounding_poly"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def bounding_poly => ::Google::Cloud::Vision::V1::BoundingPoly"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-BoundingPoly\">::Google::Cloud::Vision::V1::BoundingPoly</a>) — The bounding polygon around the face. The coordinates of the bounding box\nare in the original image's scale.\nThe bounding box is computed to \"frame\" the face in accordance with human\nexpectations. It is based on the landmarker results.\nNote that one or more x and/or y coordinates may not be generated in the\n<code>BoundingPoly</code> (the polygon will be unbounded) if only a partial face\nappears in the image to be annotated."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#bounding_poly=
+  name: "#bounding_poly="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#bounding_poly="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def bounding_poly=(value) => ::Google::Cloud::Vision::V1::BoundingPoly"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-BoundingPoly\">::Google::Cloud::Vision::V1::BoundingPoly</a>) — The bounding polygon around the face. The coordinates of the bounding box\nare in the original image's scale.\nThe bounding box is computed to \"frame\" the face in accordance with human\nexpectations. It is based on the landmarker results.\nNote that one or more x and/or y coordinates may not be generated in the\n<code>BoundingPoly</code> (the polygon will be unbounded) if only a partial face\nappears in the image to be annotated."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly
+  name: "#fd_bounding_poly"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#fd_bounding_poly"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def fd_bounding_poly => ::Google::Cloud::Vision::V1::BoundingPoly"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-BoundingPoly\">::Google::Cloud::Vision::V1::BoundingPoly</a>) — The <code>fd_bounding_poly</code> bounding polygon is tighter than the\n<code>boundingPoly</code>, and encloses only the skin part of the face. Typically, it\nis used to eliminate the face from any image analysis that detects the\n\"amount of skin\" visible in an image. It is not based on the\nlandmarker results, only on the initial face detection, hence\nthe <code>fd</code> (face detection) prefix."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#fd_bounding_poly=
+  name: "#fd_bounding_poly="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#fd_bounding_poly="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def fd_bounding_poly=(value) => ::Google::Cloud::Vision::V1::BoundingPoly"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-BoundingPoly\">::Google::Cloud::Vision::V1::BoundingPoly</a>) — The <code>fd_bounding_poly</code> bounding polygon is tighter than the\n<code>boundingPoly</code>, and encloses only the skin part of the face. Typically, it\nis used to eliminate the face from any image analysis that detects the\n\"amount of skin\" visible in an image. It is not based on the\nlandmarker results, only on the initial face detection, hence\nthe <code>fd</code> (face detection) prefix."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarks(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarks
+  name: "#landmarks"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#landmarks"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def landmarks => ::Array<::Google::Cloud::Vision::V1::FaceAnnotation::Landmark>"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-FaceAnnotation-Landmark\">::Google::Cloud::Vision::V1::FaceAnnotation::Landmark</a>&gt;) — Detected face landmarks."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarks=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarks=
+  name: "#landmarks="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#landmarks="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def landmarks=(value) => ::Array<::Google::Cloud::Vision::V1::FaceAnnotation::Landmark>"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-FaceAnnotation-Landmark\">::Google::Cloud::Vision::V1::FaceAnnotation::Landmark</a>&gt;) — Detected face landmarks."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle
+  name: "#roll_angle"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#roll_angle"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def roll_angle => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Roll angle, which indicates the amount of clockwise/anti-clockwise rotation\nof the face relative to the image vertical about the axis perpendicular to\nthe face. Range [-180,180]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#roll_angle=
+  name: "#roll_angle="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#roll_angle="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def roll_angle=(value) => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Roll angle, which indicates the amount of clockwise/anti-clockwise rotation\nof the face relative to the image vertical about the axis perpendicular to\nthe face. Range [-180,180]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle
+  name: "#pan_angle"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#pan_angle"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def pan_angle => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Yaw angle, which indicates the leftward/rightward angle that the face is\npointing relative to the vertical plane perpendicular to the image. Range\n[-180,180]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#pan_angle=
+  name: "#pan_angle="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#pan_angle="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def pan_angle=(value) => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Yaw angle, which indicates the leftward/rightward angle that the face is\npointing relative to the vertical plane perpendicular to the image. Range\n[-180,180]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle
+  name: "#tilt_angle"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#tilt_angle"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def tilt_angle => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Pitch angle, which indicates the upwards/downwards angle that the face is\npointing relative to the image's horizontal plane. Range [-180,180]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#tilt_angle=
+  name: "#tilt_angle="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#tilt_angle="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def tilt_angle=(value) => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Pitch angle, which indicates the upwards/downwards angle that the face is\npointing relative to the image's horizontal plane. Range [-180,180]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence
+  name: "#detection_confidence"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#detection_confidence"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def detection_confidence => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Detection confidence. Range [0, 1]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#detection_confidence=
+  name: "#detection_confidence="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#detection_confidence="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def detection_confidence=(value) => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Detection confidence. Range [0, 1]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence
+  name: "#landmarking_confidence"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#landmarking_confidence"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def landmarking_confidence => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Face landmarking confidence. Range [0, 1]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#landmarking_confidence=
+  name: "#landmarking_confidence="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#landmarking_confidence="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def landmarking_confidence=(value) => ::Float"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Face landmarking confidence. Range [0, 1]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood
+  name: "#joy_likelihood"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#joy_likelihood"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def joy_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Joy likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#joy_likelihood=
+  name: "#joy_likelihood="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#joy_likelihood="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def joy_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Joy likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood
+  name: "#sorrow_likelihood"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#sorrow_likelihood"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def sorrow_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Sorrow likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#sorrow_likelihood=
+  name: "#sorrow_likelihood="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#sorrow_likelihood="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def sorrow_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Sorrow likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood
+  name: "#anger_likelihood"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#anger_likelihood"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def anger_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Anger likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#anger_likelihood=
+  name: "#anger_likelihood="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#anger_likelihood="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def anger_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Anger likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood
+  name: "#surprise_likelihood"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#surprise_likelihood"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def surprise_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Surprise likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#surprise_likelihood=
+  name: "#surprise_likelihood="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#surprise_likelihood="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def surprise_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Surprise likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood
+  name: "#under_exposed_likelihood"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#under_exposed_likelihood"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def under_exposed_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Under-exposed likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#under_exposed_likelihood=
+  name: "#under_exposed_likelihood="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#under_exposed_likelihood="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def under_exposed_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Under-exposed likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood
+  name: "#blurred_likelihood"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#blurred_likelihood"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def blurred_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Blurred likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#blurred_likelihood=
+  name: "#blurred_likelihood="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#blurred_likelihood="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def blurred_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Blurred likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood
+  name: "#headwear_likelihood"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#headwear_likelihood"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def headwear_likelihood => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Headwear likelihood."
+    raises: []
+- uid: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood=(instance)
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation#headwear_likelihood=
+  name: "#headwear_likelihood="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#headwear_likelihood="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def headwear_likelihood=(value) => ::Google::Cloud::Vision::V1::Likelihood"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Headwear likelihood."
+    raises: []
+references:
+- uid: Google::Cloud::Vision::V1::FaceAnnotation::Landmark
+  fullName: Google::Cloud::Vision::V1::FaceAnnotation::Landmark
+  name: Landmark
+  module: google-cloud-vision-v1
+  id: Landmark
+  summary: "A face-specific landmark (for example, a face feature)."
+  parent: Google::Cloud::Vision::V1::FaceAnnotation

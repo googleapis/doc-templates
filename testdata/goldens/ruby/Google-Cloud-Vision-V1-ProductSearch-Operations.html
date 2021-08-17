@@ -8,7 +8,11 @@
     {% verbatim %}
     <div>
       <article data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations">
+<<<<<<< HEAD
 <h1 class="page-title">Class Google::Cloud::Vision::V1::ProductSearch::Operations
+=======
+<h1 class="page-title">Class Operations
+>>>>>>> 955c59f (asdf)
 </h1>
   
   
@@ -16,12 +20,14 @@
 </div>
   <h2 id="methods">Methods
   </h2>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_configure" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations.configure" class="notranslate">.configure</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_configure_class_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations.configure(class)" class="notranslate">.configure</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">.configure { |config| ... } =&gt; Operations::Configuration</code></pre>
+    <pre><code class="prettyprint">def self.configure { |config| ... } =&gt; Operations::Configuration</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Configuration for the ProductSearch Operations API.</p>
 </div>
+<<<<<<< HEAD
+=======
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -37,14 +43,19 @@
       </tr>
     </tbody>
   </table>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_configure" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#configure" class="notranslate">#configure</h3>
+>>>>>>> 955c59f (asdf)
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_configure_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#configure(instance)" class="notranslate">#configure</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#configure { |config| ... } =&gt; Operations::Configuration</code></pre>
+    <pre><code class="prettyprint">def configure { |config| ... } =&gt; Operations::Configuration</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Configure the ProductSearch Operations instance.</p>
 <p>The configuration is set to the derived mode, meaning that values can be changed,
 but structural changes (adding new fields, etc.) are not allowed. Structural changes
+<<<<<<< HEAD
 should be made on {Operations.configure}.</p>
+</div>
+=======
+should be made on <a href="./Google-Cloud-Vision-V1-ProductSearch-Operations#Google__Cloud__Vision__V1__ProductSearch__Operations_configure">Operations.configure</a>.</p>
 </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -61,12 +72,15 @@ should be made on {Operations.configure}.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_initialize" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#initialize" class="notranslate">#initialize</h3>
+>>>>>>> 955c59f (asdf)
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_initialize_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#initialize(instance)" class="notranslate">#initialize</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#initialize { |config| ... } =&gt; Operations</code></pre>
+    <pre><code class="prettyprint">def initialize { |config| ... } =&gt; Operations</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Create a new Operations client object.</p>
 </div>
+<<<<<<< HEAD
+=======
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -83,21 +97,50 @@ should be made on {Operations.configure}.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_list_operations" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#list_operations" class="notranslate">#list_operations</h3>
+>>>>>>> 955c59f (asdf)
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_list_operations_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#list_operations(instance)" class="notranslate">#list_operations</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#list_operations(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;
-#list_operations(name: nil, filter: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
+    <pre><code class="prettyprint">def list_operations(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;
+def list_operations(name: nil, filter: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Lists operations that match the specified filter in the request. If the
 server doesn&#39;t support this method, it returns <code>UNIMPLEMENTED</code>.</p>
 <p>NOTE: the <code>name</code> binding allows API services to override the binding
+<<<<<<< HEAD
+to use different resource name schemes, such as <code>users/&#42;/operations</code>. To
+override the binding, API services can add a binding such as
+<code>&quot;/v1/{name=users/&#42;}/operations&quot;</code> to their service configuration.
+=======
 to use different resource name schemes, such as <code>users/*/operations</code>. To
 override the binding, API services can add a binding such as
 <code>&quot;/v1/{name=users/*}/operations&quot;</code> to their service configuration.
+>>>>>>> 955c59f (asdf)
 For backwards compatibility, the default name includes the operations
 collection id, however overriding users must ensure the name binding
 is the parent resource, without the operations collection id.</p>
 </div>
+<<<<<<< HEAD
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">require "google/longrunning"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Longrunning::Operations::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Longrunning::ListOperationsRequest.new
+
+# Call the list_operations method.
+result = client.list_operations request
+
+# The returned object is of type Gapic::PagedEnumerable. You can
+# iterate over all elements by calling #each, and the enumerable
+# will lazily make API calls to fetch subsequent pages. Other
+# methods are also available for managing paging directly.
+result.each do |response|
+  # Each element is of type ::Google::Longrunning::Operation.
+  p response
+end</pre>
+=======
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -113,15 +156,39 @@ is the parent resource, without the operations collection id.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_get_operation" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#get_operation" class="notranslate">#get_operation</h3>
+>>>>>>> 955c59f (asdf)
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_get_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#get_operation(instance)" class="notranslate">#get_operation</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#get_operation(request, options = nil) =&gt; ::Gapic::Operation
-#get_operation(name: nil) =&gt; ::Gapic::Operation</code></pre>
+    <pre><code class="prettyprint">def get_operation(request, options = nil) =&gt; ::Gapic::Operation
+def get_operation(name: nil) =&gt; ::Gapic::Operation</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Gets the latest state of a long-running operation.  Clients can use this
 method to poll the operation result at intervals as recommended by the API
 service.</p>
 </div>
+<<<<<<< HEAD
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">require "google/longrunning"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Longrunning::Operations::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Longrunning::GetOperationRequest.new
+
+# Call the get_operation method.
+result = client.get_operation request
+
+# The returned object is of type Gapic::Operation. You can use this
+# object to check the status of an operation, cancel it, or wait
+# for results. Here is how to block until completion:
+result.wait_until_done! timeout: 60
+if result.response?
+  p result.response
+else
+  puts "Error!"
+end</pre>
+=======
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -137,16 +204,33 @@ service.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_delete_operation" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#delete_operation" class="notranslate">#delete_operation</h3>
+>>>>>>> 955c59f (asdf)
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_delete_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#delete_operation(instance)" class="notranslate">#delete_operation</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#delete_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty
-#delete_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+    <pre><code class="prettyprint">def delete_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty
+def delete_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Deletes a long-running operation. This method indicates that the client is
 no longer interested in the operation result. It does not cancel the
 operation. If the server doesn&#39;t support this method, it returns
 <code>google.rpc.Code.UNIMPLEMENTED</code>.</p>
 </div>
+<<<<<<< HEAD
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">require "google/longrunning"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Longrunning::Operations::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Longrunning::DeleteOperationRequest.new
+
+# Call the delete_operation method.
+result = client.delete_operation request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
+=======
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -162,10 +246,11 @@ operation. If the server doesn&#39;t support this method, it returns
       </tr>
     </tbody>
   </table>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_cancel_operation" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#cancel_operation" class="notranslate">#cancel_operation</h3>
+>>>>>>> 955c59f (asdf)
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_cancel_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#cancel_operation(instance)" class="notranslate">#cancel_operation</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#cancel_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty
-#cancel_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+    <pre><code class="prettyprint">def cancel_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty
+def cancel_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Starts asynchronous cancellation on a long-running operation.  The server
 makes a best effort to cancel the operation, but success is not
@@ -175,7 +260,26 @@ Operations.GetOperation or
 other methods to check whether the cancellation succeeded or whether the
 operation completed despite cancellation. On successful cancellation,
 the operation is not deleted; instead, it becomes an operation with
+<<<<<<< HEAD
 an {::Google::Longrunning::Operation#error Operation.error} value with a {::Google::Rpc::Status#code google.rpc.Status.code} of 1,
+corresponding to <code>Code.CANCELLED</code>.</p>
+</div>
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">require "google/longrunning"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Longrunning::Operations::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Longrunning::CancelOperationRequest.new
+
+# Call the cancel_operation method.
+result = client.cancel_operation request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
+=======
+an <a href="./Google-Longrunning-Operation#Google-Longrunning-Operation_error">Operation.error</a> value with a <a href="./Google-Rpc-Status#Google-Rpc-Status_code">google.rpc.Status.code</a> of 1,
 corresponding to <code>Code.CANCELLED</code>.</p>
 </div>
   <strong>Returns</strong>
@@ -193,10 +297,11 @@ corresponding to <code>Code.CANCELLED</code>.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_wait_operation" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#wait_operation" class="notranslate">#wait_operation</h3>
+>>>>>>> 955c59f (asdf)
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_wait_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#wait_operation(instance)" class="notranslate">#wait_operation</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#wait_operation(request, options = nil) =&gt; ::Gapic::Operation
-#wait_operation(name: nil, timeout: nil) =&gt; ::Gapic::Operation</code></pre>
+    <pre><code class="prettyprint">def wait_operation(request, options = nil) =&gt; ::Gapic::Operation
+def wait_operation(name: nil, timeout: nil) =&gt; ::Gapic::Operation</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Waits until the specified long-running operation is done or reaches at most
 a specified timeout, returning the latest state.  If the operation is
@@ -208,6 +313,29 @@ Note that this method is on a best-effort basis.  It may return the latest
 state before the specified timeout (including immediately), meaning even an
 immediate response is no guarantee that the operation is done.</p>
 </div>
+<<<<<<< HEAD
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">require "google/longrunning"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Longrunning::Operations::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Longrunning::WaitOperationRequest.new
+
+# Call the wait_operation method.
+result = client.wait_operation request
+
+# The returned object is of type Gapic::Operation. You can use this
+# object to check the status of an operation, cancel it, or wait
+# for results. Here is how to block until completion:
+result.wait_until_done! timeout: 60
+if result.response?
+  p result.response
+else
+  puts "Error!"
+end</pre>
+=======
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -223,6 +351,7 @@ immediate response is no guarantee that the operation is done.</p>
       </tr>
     </tbody>
   </table>
+>>>>>>> 955c59f (asdf)
 </article>
     </div>
     {% endverbatim %}

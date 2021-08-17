@@ -1,89 +1,100 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: Google::Protobuf::Timestamp
-    children: 
-      - Google::Protobuf::Timestamp#seconds
-      - Google::Protobuf::Timestamp#seconds=
-      - Google::Protobuf::Timestamp#nanos
-      - Google::Protobuf::Timestamp#nanos=
-    fullName: Google::Protobuf::Timestamp
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: Timestamp
-    summary: "A Timestamp represents a point in time independent of any time zone or local\ncalendar, encoded as a count of seconds and fractions of seconds at\nnanosecond resolution. The count is relative to an epoch at UTC midnight on\nJanuary 1, 1970, in the proleptic Gregorian calendar which extends the\nGregorian calendar backwards to year one.\n\nAll minutes are 60 seconds long. Leap seconds are \"smeared\" so that no leap\nsecond table is needed for interpretation, using a [24-hour linear\nsmear](https://developers.google.com/time/smear).\n\nThe range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By\nrestricting to that range, we ensure that we can convert to and from [RFC\n3339](https://www.ietf.org/rfc/rfc3339.txt) date strings.\n\n## Examples\n\nExample 1: Compute Timestamp from POSIX `time()`.\n\n<pre class=\"prettyprint lang-rb\">Timestamp timestamp;\ntimestamp.set_seconds(time(NULL));\ntimestamp.set_nanos(0);</pre>\n\nExample 2: Compute Timestamp from POSIX `gettimeofday()`.\n\n<pre class=\"prettyprint lang-rb\">struct timeval tv;\ngettimeofday(&tv, NULL);\n\nTimestamp timestamp;\ntimestamp.set_seconds(tv.tv_sec);\ntimestamp.set_nanos(tv.tv_usec * 1000);</pre>\n\nExample 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.\n\n<pre class=\"prettyprint lang-rb\">FILETIME ft;\nGetSystemTimeAsFileTime(&ft);\nUINT64 ticks = (((UINT64)ft.dwHighDateTime) << 32) | ft.dwLowDateTime;\n\n// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z\n// is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.\nTimestamp timestamp;\ntimestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));\ntimestamp.set_nanos((INT32) ((ticks % 10000000) * 100));</pre>\n\nExample 4: Compute Timestamp from Java `System.currentTimeMillis()`.\n\n<pre class=\"prettyprint lang-rb\">long millis = System.currentTimeMillis();\n\nTimestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)\n    .setNanos((int) ((millis % 1000) * 1000000)).build();</pre>\n\n\nExample 5: Compute Timestamp from Java `Instant.now()`.\n\n<pre class=\"prettyprint lang-rb\">Instant now = Instant.now();\n\nTimestamp timestamp =\n    Timestamp.newBuilder().setSeconds(now.getEpochSecond())\n        .setNanos(now.getNano()).build();</pre>\n\n\nExample 6: Compute Timestamp from current time in Python.\n\n<pre class=\"prettyprint lang-rb\">timestamp = Timestamp()\ntimestamp.GetCurrentTime()</pre>\n\n## JSON Mapping\n\nIn JSON format, the Timestamp type is encoded as a string in the\n[RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the\nformat is \"{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z\"\nwhere {year} is always expressed using four digits while {month}, {day},\n{hour}, {min}, and {sec} are zero-padded to two digits each. The fractional\nseconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution),\nare optional. The \"Z\" suffix indicates the timezone (\"UTC\"); the timezone\nis required. A proto3 JSON serializer should always use UTC (as indicated by\n\"Z\") when printing the Timestamp type and a proto3 JSON parser should be\nable to accept both UTC and other timezones (as indicated by an offset).\n\nFor example, \"2017-01-15T01:30:15.01Z\" encodes 15.01 seconds past\n01:30 UTC on January 15, 2017.\n\nIn JavaScript, one can convert a Date object to this format using the\nstandard\n[toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)\nmethod. In Python, a standard `datetime.datetime` object can be converted\nto this format using\n[`strftime`](https://docs.python.org/2/library/time.html#time.strftime) with\nthe time format spec '%Y-%m-%dT%H:%M:%S.%fZ'. Likewise, in Java, one can use\nthe Joda Time's [`ISODateTimeFormat.dateTime()`](\nhttp://www.joda.org/joda-time/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime%2D%2D\n) to obtain a formatter capable of generating timestamps in this format."
-    type: "class"
-    name: Google::Protobuf::Timestamp
-  - uid: Google::Protobuf::Timestamp#seconds
-    fullName: Google::Protobuf::Timestamp#seconds
-    name: "#seconds"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#seconds"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#seconds => ::Integer"
-      parameters:
-        []
-      return:
-          type:
-            - "::Integer"
-          description: "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive."
-  - uid: Google::Protobuf::Timestamp#seconds=
-    fullName: Google::Protobuf::Timestamp#seconds=
-    name: "#seconds="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#seconds="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#seconds=(value) => ::Integer"
-      parameters:
-        []
-      return:
-          type:
-            - "::Integer"
-          description: "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive."
-  - uid: Google::Protobuf::Timestamp#nanos
-    fullName: Google::Protobuf::Timestamp#nanos
-    name: "#nanos"
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#nanos"
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#nanos => ::Integer"
-      parameters:
-        []
-      return:
-          type:
-            - "::Integer"
-          description: "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive."
-  - uid: Google::Protobuf::Timestamp#nanos=
-    fullName: Google::Protobuf::Timestamp#nanos=
-    name: "#nanos="
-    langs:
-      - ruby
-    module: google-cloud-vision-v1
-    id: "#nanos="
-    summary: ""
-    type: method
-    syntax:
-      description: ""
-      content: "#nanos=(value) => ::Integer"
-      parameters:
-        []
-      return:
-          type:
-            - "::Integer"
-          description: "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive."
+- uid: Google::Protobuf::Timestamp
+  children: 
+  - Google::Protobuf::Timestamp#seconds(instance)
+  - Google::Protobuf::Timestamp#seconds=(instance)
+  - Google::Protobuf::Timestamp#nanos(instance)
+  - Google::Protobuf::Timestamp#nanos=(instance)
+  fullName: Google::Protobuf::Timestamp
+  langs:
+  - ruby
+  module: google-cloud-vision-v1
+  id: Timestamp
+  summary: "A Timestamp represents a point in time independent of any time zone or local\ncalendar, encoded as a count of seconds and fractions of seconds at\nnanosecond resolution. The count is relative to an epoch at UTC midnight on\nJanuary 1, 1970, in the proleptic Gregorian calendar which extends the\nGregorian calendar backwards to year one.\n\nAll minutes are 60 seconds long. Leap seconds are \"smeared\" so that no leap\nsecond table is needed for interpretation, using a [24-hour linear\nsmear](https://developers.google.com/time/smear).\n\nThe range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By\nrestricting to that range, we ensure that we can convert to and from [RFC\n3339](https://www.ietf.org/rfc/rfc3339.txt) date strings.\n\n## Examples\n\nExample 1: Compute Timestamp from POSIX <code>time()</code>.\n\n<pre class=\"prettyprint lang-rb\">Timestamp timestamp;\ntimestamp.set_seconds(time(NULL));\ntimestamp.set_nanos(0);</pre>\n\nExample 2: Compute Timestamp from POSIX <code>gettimeofday()</code>.\n\n<pre class=\"prettyprint lang-rb\">struct timeval tv;\ngettimeofday(&tv, NULL);\n\nTimestamp timestamp;\ntimestamp.set_seconds(tv.tv_sec);\ntimestamp.set_nanos(tv.tv_usec * 1000);</pre>\n\nExample 3: Compute Timestamp from Win32 <code>GetSystemTimeAsFileTime()</code>.\n\n<pre class=\"prettyprint lang-rb\">FILETIME ft;\nGetSystemTimeAsFileTime(&ft);\nUINT64 ticks = (((UINT64)ft.dwHighDateTime) << 32) | ft.dwLowDateTime;\n\n// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z\n// is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.\nTimestamp timestamp;\ntimestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));\ntimestamp.set_nanos((INT32) ((ticks % 10000000) * 100));</pre>\n\nExample 4: Compute Timestamp from Java <code>System.currentTimeMillis()</code>.\n\n<pre class=\"prettyprint lang-rb\">long millis = System.currentTimeMillis();\n\nTimestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)\n    .setNanos((int) ((millis % 1000) * 1000000)).build();</pre>\n\n\nExample 5: Compute Timestamp from Java <code>Instant.now()</code>.\n\n<pre class=\"prettyprint lang-rb\">Instant now = Instant.now();\n\nTimestamp timestamp =\n    Timestamp.newBuilder().setSeconds(now.getEpochSecond())\n        .setNanos(now.getNano()).build();</pre>\n\n\nExample 6: Compute Timestamp from current time in Python.\n\n<pre class=\"prettyprint lang-rb\">timestamp = Timestamp()\ntimestamp.GetCurrentTime()</pre>\n\n## JSON Mapping\n\nIn JSON format, the Timestamp type is encoded as a string in the\n[RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the\nformat is \"{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z\"\nwhere {year} is always expressed using four digits while {month}, {day},\n{hour}, {min}, and {sec} are zero-padded to two digits each. The fractional\nseconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution),\nare optional. The \"Z\" suffix indicates the timezone (\"UTC\"); the timezone\nis required. A proto3 JSON serializer should always use UTC (as indicated by\n\"Z\") when printing the Timestamp type and a proto3 JSON parser should be\nable to accept both UTC and other timezones (as indicated by an offset).\n\nFor example, \"2017-01-15T01:30:15.01Z\" encodes 15.01 seconds past\n01:30 UTC on January 15, 2017.\n\nIn JavaScript, one can convert a Date object to this format using the\nstandard\n[toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)\nmethod. In Python, a standard <code>datetime.datetime</code> object can be converted\nto this format using\n[<code>strftime</code>](https://docs.python.org/2/library/time.html#time.strftime) with\nthe time format spec '%Y-%m-%dT%H:%M:%S.%fZ'. Likewise, in Java, one can use\nthe Joda Time's [<code>ISODateTimeFormat.dateTime()</code>](\nhttp://www.joda.org/joda-time/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime%2D%2D\n) to obtain a formatter capable of generating timestamps in this format."
+  type: "class"
+  name: Google::Protobuf::Timestamp
+  example: []
+  inherits:
+  - "Object"
+  extendedBy:
+  - "Google::Protobuf::MessageExts::ClassMethods"
+  includes:
+  - "Google::Protobuf::MessageExts"
+- uid: Google::Protobuf::Timestamp#seconds(instance)
+  fullName: Google::Protobuf::Timestamp#seconds
+  name: "#seconds"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#seconds"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def seconds => ::Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive."
+    raises: []
+- uid: Google::Protobuf::Timestamp#seconds=(instance)
+  fullName: Google::Protobuf::Timestamp#seconds=
+  name: "#seconds="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#seconds="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def seconds=(value) => ::Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive."
+    raises: []
+- uid: Google::Protobuf::Timestamp#nanos(instance)
+  fullName: Google::Protobuf::Timestamp#nanos
+  name: "#nanos"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#nanos"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def nanos => ::Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive."
+    raises: []
+- uid: Google::Protobuf::Timestamp#nanos=(instance)
+  fullName: Google::Protobuf::Timestamp#nanos=
+  name: "#nanos="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#nanos="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def nanos=(value) => ::Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive."
+    raises: []
 references: []
