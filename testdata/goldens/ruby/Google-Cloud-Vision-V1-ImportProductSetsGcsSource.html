@@ -17,144 +17,14 @@ ImportProductSetRequests in each line.</p>
 </div>
   <h2 id="methods">Methods
   </h2>
-  <h3 id="Google__Cloud__Vision__V1__ImportProductSetsGcsSource_csv_file_uri" data-uid="Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri" class="notranslate">#csv_file_uri</h3>
+  <h3 id="Google__Cloud__Vision__V1__ImportProductSetsGcsSource_csv_file_uri_instance_" data-uid="Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri(instance)" class="notranslate">#csv_file_uri</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#csv_file_uri =&gt; ::String</code></pre>
+    <pre><code class="prettyprint">def csv_file_uri =&gt; ::String</code></pre>
   </div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">::String</span></td>
-        <td><p>The Google Cloud Storage URI of the input csv file.</p>
-<p>The URI must start with <code>gs://</code>.</p>
-<p>The format of the input csv file should be one image per line.
-In each line, there are 8 columns.</p>
-<ol>
-<li>image-uri</li>
-<li>image-id</li>
-<li>product-set-id</li>
-<li>product-id</li>
-<li>product-category</li>
-<li>product-display-name</li>
-<li>labels</li>
-<li>bounding-poly</li>
-</ol>
-<p>The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
-columns are required. All other columns are optional.</p>
-<p>If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
-<code>product-id</code> values does not exist, then the system will create a new
-<code>ProductSet</code> or <code>Product</code> for the image. In this case, the
-<code>product-display-name</code> column refers to
-{::Google::Cloud::Vision::V1::Product#display_name display_name}, the
-<code>product-category</code> column refers to
-{::Google::Cloud::Vision::V1::Product#product_category product_category}, and the
-<code>labels</code> column refers to {::Google::Cloud::Vision::V1::Product#product_labels product_labels}.</p>
-<p>The <code>image-id</code> column is optional but must be unique if provided. If it is
-empty, the system will automatically assign a unique id to the image.</p>
-<p>The <code>product-display-name</code> column is optional. If it is empty, the system
-sets the {::Google::Cloud::Vision::V1::Product#display_name display_name} field for the product to a
-space (&quot; &quot;). You can update the <code>display_name</code> later by using the API.</p>
-<p>If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
-system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code>
-columns.</p>
-<p>The <code>labels</code> column (optional) is a line containing a list of
-comma-separated key-value pairs, in the following format:</p>
-<pre class="prettyprint lang-rb">"key_1=value_1,key_2=value_2,...,key_n=value_n"</pre>
-
-<p>The <code>bounding-poly</code> column (optional) identifies one region of
-interest from the image in the same manner as <code>CreateReferenceImage</code>. If
-you do not specify the <code>bounding-poly</code> column, then the system will try to
-detect regions of interest automatically.</p>
-<p>At most one <code>bounding-poly</code> column is allowed per line. If the image
-contains multiple regions of interest, add a line to the CSV file that
-includes the same product information, and the <code>bounding-poly</code> values for
-each region of interest.</p>
-<p>The <code>bounding-poly</code> column must contain an even number of comma-separated
-numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use
-non-negative integers for absolute bounding polygons, and float values
-in [0, 1] for normalized bounding polygons.</p>
-<p>The system will resize the image if the image resolution is too
-large to process (larger than 20MP).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="Google__Cloud__Vision__V1__ImportProductSetsGcsSource_csv_file_uri_" data-uid="Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri=" class="notranslate">#csv_file_uri=</h3>
+  <h3 id="Google__Cloud__Vision__V1__ImportProductSetsGcsSource_csv_file_uri__instance_" data-uid="Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri=(instance)" class="notranslate">#csv_file_uri=</h3>
   <div class="codewrapper">
-    <pre><code class="prettyprint">#csv_file_uri=(value) =&gt; ::String</code></pre>
+    <pre><code class="prettyprint">def csv_file_uri=(value) =&gt; ::String</code></pre>
   </div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">::String</span></td>
-        <td><p>The Google Cloud Storage URI of the input csv file.</p>
-<p>The URI must start with <code>gs://</code>.</p>
-<p>The format of the input csv file should be one image per line.
-In each line, there are 8 columns.</p>
-<ol>
-<li>image-uri</li>
-<li>image-id</li>
-<li>product-set-id</li>
-<li>product-id</li>
-<li>product-category</li>
-<li>product-display-name</li>
-<li>labels</li>
-<li>bounding-poly</li>
-</ol>
-<p>The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
-columns are required. All other columns are optional.</p>
-<p>If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
-<code>product-id</code> values does not exist, then the system will create a new
-<code>ProductSet</code> or <code>Product</code> for the image. In this case, the
-<code>product-display-name</code> column refers to
-{::Google::Cloud::Vision::V1::Product#display_name display_name}, the
-<code>product-category</code> column refers to
-{::Google::Cloud::Vision::V1::Product#product_category product_category}, and the
-<code>labels</code> column refers to {::Google::Cloud::Vision::V1::Product#product_labels product_labels}.</p>
-<p>The <code>image-id</code> column is optional but must be unique if provided. If it is
-empty, the system will automatically assign a unique id to the image.</p>
-<p>The <code>product-display-name</code> column is optional. If it is empty, the system
-sets the {::Google::Cloud::Vision::V1::Product#display_name display_name} field for the product to a
-space (&quot; &quot;). You can update the <code>display_name</code> later by using the API.</p>
-<p>If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
-system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code>
-columns.</p>
-<p>The <code>labels</code> column (optional) is a line containing a list of
-comma-separated key-value pairs, in the following format:</p>
-<pre class="prettyprint lang-rb">"key_1=value_1,key_2=value_2,...,key_n=value_n"</pre>
-
-<p>The <code>bounding-poly</code> column (optional) identifies one region of
-interest from the image in the same manner as <code>CreateReferenceImage</code>. If
-you do not specify the <code>bounding-poly</code> column, then the system will try to
-detect regions of interest automatically.</p>
-<p>At most one <code>bounding-poly</code> column is allowed per line. If the image
-contains multiple regions of interest, add a line to the CSV file that
-includes the same product information, and the <code>bounding-poly</code> values for
-each region of interest.</p>
-<p>The <code>bounding-poly</code> column must contain an even number of comma-separated
-numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use
-non-negative integers for absolute bounding polygons, and float values
-in [0, 1] for normalized bounding polygons.</p>
-<p>The system will resize the image if the image resolution is too
-large to process (larger than 20MP).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
 </article>
     </div>
     {% endverbatim %}
