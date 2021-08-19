@@ -13,7 +13,10 @@ items:
   - "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getResultsOrBuilderList()"
   - "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getSpeechEventType()"
   - "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getSpeechEventTypeValue()"
+  - "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTime()"
+  - "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder()"
   - "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasError()"
+  - "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasTotalBilledTime()"
   langs:
   - "java"
   name: "StreamingRecognizeResponseOrBuilder"
@@ -178,6 +181,39 @@ items:
     return:
       type: "int"
       description: "The enum numeric value on the wire for speechEventType."
+- uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTime()"
+  id: "getTotalBilledTime()"
+  parent: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder"
+  langs:
+  - "java"
+  name: "getTotalBilledTime()"
+  nameWithType: "StreamingRecognizeResponseOrBuilder.getTotalBilledTime()"
+  fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTime()"
+  overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTime*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1p1beta1"
+  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  syntax:
+    content: "public abstract Duration getTotalBilledTime()"
+    return:
+      type: "com.google.protobuf.Duration"
+      description: "The totalBilledTime."
+- uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder()"
+  id: "getTotalBilledTimeOrBuilder()"
+  parent: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder"
+  langs:
+  - "java"
+  name: "getTotalBilledTimeOrBuilder()"
+  nameWithType: "StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder()"
+  fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder()"
+  overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1p1beta1"
+  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  syntax:
+    content: "public abstract DurationOrBuilder getTotalBilledTimeOrBuilder()"
+    return:
+      type: "com.google.protobuf.DurationOrBuilder"
 - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasError()"
   id: "hasError()"
   parent: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder"
@@ -195,12 +231,31 @@ items:
     return:
       type: "boolean"
       description: "Whether the error field is set."
+- uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasTotalBilledTime()"
+  id: "hasTotalBilledTime()"
+  parent: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder"
+  langs:
+  - "java"
+  name: "hasTotalBilledTime()"
+  nameWithType: "StreamingRecognizeResponseOrBuilder.hasTotalBilledTime()"
+  fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasTotalBilledTime()"
+  overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasTotalBilledTime*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1p1beta1"
+  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  syntax:
+    content: "public abstract boolean hasTotalBilledTime()"
+    return:
+      type: "boolean"
+      description: "Whether the totalBilledTime field is set."
 references:
 - uid: "boolean"
+  href: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
   spec.java:
   - uid: "boolean"
     name: "boolean"
     fullName: "boolean"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasError*"
   name: "hasError"
   nameWithType: "StreamingRecognizeResponseOrBuilder.hasError"
@@ -211,6 +266,7 @@ references:
   - uid: "com.google.rpc.Status"
     name: "Status"
     fullName: "com.google.rpc.Status"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getError*"
   name: "getError"
   nameWithType: "StreamingRecognizeResponseOrBuilder.getError"
@@ -221,33 +277,42 @@ references:
   - uid: "com.google.rpc.StatusOrBuilder"
     name: "StatusOrBuilder"
     fullName: "com.google.rpc.StatusOrBuilder"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getErrorOrBuilder*"
   name: "getErrorOrBuilder"
   nameWithType: "StreamingRecognizeResponseOrBuilder.getErrorOrBuilder"
   fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getErrorOrBuilder"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "java.util.List<com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult>"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/util/List<com/google/cloud/speech/v1p1beta1/StreamingRecognitionResult>.html"
   spec.java:
   - uid: "java.util.List"
     name: "List"
     fullName: "java.util.List"
+    isExternal: false
+    href: "https://docs.oracle.com/javase/8/docs/api/java/util/List.html"
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult"
     name: "StreamingRecognitionResult"
     fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getResultsList*"
   name: "getResultsList"
   nameWithType: "StreamingRecognizeResponseOrBuilder.getResultsList"
   fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getResultsList"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "int"
+  href: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
   spec.java:
   - uid: "int"
     name: "int"
     fullName: "int"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognitionResult"
   name: "StreamingRecognitionResult"
   nameWithType: "StreamingRecognitionResult"
@@ -263,17 +328,23 @@ references:
   fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getResultsCount"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "java.util.List<? extends com.google.cloud.speech.v1p1beta1.StreamingRecognitionResultOrBuilder>"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/util/List<? extends com/google/cloud/speech/v1p1beta1/StreamingRecognitionResultOrBuilder>.html"
   spec.java:
   - uid: "java.util.List"
     name: "List"
     fullName: "java.util.List"
+    isExternal: false
+    href: "https://docs.oracle.com/javase/8/docs/api/java/util/List.html"
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "? extends com.google.cloud.speech.v1p1beta1.StreamingRecognitionResultOrBuilder"
     name: "StreamingRecognitionResultOrBuilder"
     fullName: "? extends com.google.cloud.speech.v1p1beta1.StreamingRecognitionResultOrBuilder"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getResultsOrBuilderList*"
   name: "getResultsOrBuilderList"
   nameWithType: "StreamingRecognizeResponseOrBuilder.getResultsOrBuilderList"
@@ -302,11 +373,42 @@ references:
   nameWithType: "StreamingRecognizeResponseOrBuilder.getSpeechEventType"
   fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getSpeechEventType"
   package: "com.google.cloud.speech.v1p1beta1"
+- uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasTotalBilledTime*"
+  name: "hasTotalBilledTime"
+  nameWithType: "StreamingRecognizeResponseOrBuilder.hasTotalBilledTime"
+  fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.hasTotalBilledTime"
+  package: "com.google.cloud.speech.v1p1beta1"
+- uid: "com.google.protobuf.Duration"
+  isExternal: true
+  spec.java:
+  - uid: "com.google.protobuf.Duration"
+    name: "Duration"
+    fullName: "com.google.protobuf.Duration"
+    isExternal: true
+- uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTime*"
+  name: "getTotalBilledTime"
+  nameWithType: "StreamingRecognizeResponseOrBuilder.getTotalBilledTime"
+  fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTime"
+  package: "com.google.cloud.speech.v1p1beta1"
+- uid: "com.google.protobuf.DurationOrBuilder"
+  isExternal: true
+  spec.java:
+  - uid: "com.google.protobuf.DurationOrBuilder"
+    name: "DurationOrBuilder"
+    fullName: "com.google.protobuf.DurationOrBuilder"
+    isExternal: true
+- uid: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder*"
+  name: "getTotalBilledTimeOrBuilder"
+  nameWithType: "StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder"
+  fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.getTotalBilledTimeOrBuilder"
+  package: "com.google.cloud.speech.v1p1beta1"
 - uid: "com.google.protobuf.MessageOrBuilder"
+  isExternal: true
   name: "MessageOrBuilder"
   nameWithType: "MessageOrBuilder"
   fullName: "com.google.protobuf.MessageOrBuilder"
 - uid: "java.util.List"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/util/List.html"
   name: "List"
   nameWithType: "List"
   fullName: "java.util.List"

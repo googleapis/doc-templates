@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/ruby/_project.yaml">
+    <meta name="book_path" value="/ruby/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="">
+<h1 class="page-title">
+  <h1 id="ruby-client-for-the-cloud-vision-v1-api">Ruby Client for the Cloud Vision V1 API</h1>
+</h1>
+
+<p>API Client library for the Cloud Vision V1 API</p>
+<p>Cloud Vision API allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content.</p>
+<p><a href="https://github.com/googleapis/google-cloud-ruby">https://github.com/googleapis/google-cloud-ruby</a></p>
+<p>This gem is a <em>versioned</em> client. It provides basic client classes for a
+specific version of the Cloud Vision V1 API. Most users should consider using
+the main client gem,
+<a href="https://rubygems.org/gems/google-cloud-vision">google-cloud-vision</a>.
+See the section below titled <em>Which client should I use?</em> for more information.</p>
+<h2 id="installation">Installation</h2>
+<pre><code>$ gem install google-cloud-vision-v1
+</code></pre><h2 id="before-you-begin">Before You Begin</h2>
+<p>In order to use this library, you first need to go through the following steps:</p>
+<ol>
+<li><a href="https://console.cloud.google.com/project">Select or create a Cloud Platform project.</a></li>
+<li><a href="https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project">Enable billing for your project.</a></li>
+<li><a href="https://console.cloud.google.com/apis/library/vision.googleapis.com">Enable the API.</a></li>
+<li><a href="AUTHENTICATION.html">Set up authentication.</a></li>
+</ol>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="lang-ruby">require &quot;google/cloud/vision/v1&quot;
+
+client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
+request = ::Google::Cloud::Vision::V1::CreateProductSetRequest.new # (request fields as keyword arguments...)
+response = client.create_product_set request
+</code></pre><p>View the <a href="https://googleapis.dev/ruby/google-cloud-vision-v1/latest">Client Library Documentation</a>
+for class and method documentation.</p>
+<p>See also the <a href="https://cloud.google.com/vision">Product Documentation</a>
+for general usage information.</p>
+<h2 id="enabling-logging">Enabling Logging</h2>
+<p>To enable logging for this library, set the logger for the underlying <a href="https://github.com/grpc/grpc/tree/master/src/ruby">gRPC</a> library.
+The logger that you set may be a Ruby stdlib <a href="https://ruby-doc.org/stdlib/libdoc/logger/rdoc/Logger.html"><code>Logger</code></a> as shown below,
+or a <a href="https://googleapis.dev/ruby/google-cloud-logging/latest"><code>Google::Cloud::Logging::Logger</code></a>
+that will write logs to <a href="https://cloud.google.com/logging/">Cloud Logging</a>. See <a href="https://github.com/grpc/grpc/blob/master/src/ruby/lib/grpc/logconfig.rb">grpc/logconfig.rb</a>
+and the gRPC <a href="https://github.com/grpc/grpc/blob/master/src/ruby/spec/spec_helper.rb">spec_helper.rb</a> for additional information.</p>
+<p>Configuring a Ruby stdlib logger:</p>
+<pre><code class="lang-ruby">require &quot;logger&quot;
+
+module MyLogger
+  LOGGER = Logger.new $stderr, level: Logger::WARN
+  def logger
+    LOGGER
+  end
+end
+
+# Define a gRPC module-level logger method before grpc/logconfig.rb loads.
+module GRPC
+  extend MyLogger
+end
+</code></pre><h2 id="supported-ruby-versions">Supported Ruby Versions</h2>
+<p>This library is supported on Ruby 2.5+.</p>
+<p>Google provides official support for Ruby versions that are actively supported
+by Ruby Core—that is, Ruby versions that are either in normal maintenance or
+in security maintenance, and not end of life. Currently, this means Ruby 2.5
+and later. Older versions of Ruby <em>may</em> still work, but are unsupported and not
+recommended. See <a href="https://www.ruby-lang.org/en/downloads/branches/">https://www.ruby-lang.org/en/downloads/branches/</a> for details
+about the Ruby support schedule.</p>
+<h2 id="which-client-should-i-use">Which client should I use?</h2>
+<p>Most modern Ruby client libraries for Google APIs come in two flavors: the main
+client library with a name such as <code>google-cloud-vision</code>,
+and lower-level <em>versioned</em> client libraries with names such as
+<code>google-cloud-vision-v1</code>.
+<em>In most cases, you should install the main client.</em></p>
+<h3 id="whats-the-difference-between-the-main-client-and-a-versioned-client">What&#39;s the difference between the main client and a versioned client?</h3>
+<p>A <em>versioned client</em> provides a basic set of data types and client classes for
+a <em>single version</em> of a specific service. (That is, for a service with multiple
+versions, there might be a separate versioned client for each service version.)
+Most versioned clients are written and maintained by a code generator.</p>
+<p>The <em>main client</em> is designed to provide you with the <em>recommended</em> client
+interfaces for the service. There will be only one main client for any given
+service, even a service with multiple versions. The main client includes
+factory methods for constructing the client objects we recommend for most
+users. In some cases, those will be classes provided by an underlying versioned
+client; in other cases, they will be handwritten higher-level client objects
+with additional capabilities, convenience methods, or best practices built in.
+Generally, the main client will default to a recommended service version,
+although in some cases you can override this if you need to talk to a specific
+service version.</p>
+<h3 id="why-would-i-want-to-use-the-main-client">Why would I want to use the main client?</h3>
+<p>We recommend that most users install the main client gem for a service. You can
+identify this gem as the one <em>without</em> a version in its name, e.g.
+<code>google-cloud-vision</code>.
+The main client is recommended because it will embody the best practices for
+accessing the service, and may also provide more convenient interfaces or
+tighter integration into frameworks and third-party libraries. In addition, the
+documentation and samples published by Google will generally demonstrate use of
+the main client.</p>
+<h3 id="why-would-i-want-to-use-a-versioned-client">Why would I want to use a versioned client?</h3>
+<p>You can use a versioned client if you are content with a possibly lower-level
+class interface, you explicitly want to avoid features provided by the main
+client, or you want to access a specific service version not be covered by the
+main client. You can identify versioned client gems because the service version
+is part of the name, e.g. <code>google-cloud-vision-v1</code>.</p>
+<h3 id="what-about-the-google-apis-name-clients">What about the google-apis-<name> clients?</name></h3>
+<p>Client library gems with names that begin with <code>google-apis-</code> are based on an
+older code generation technology. They talk to a REST/JSON backend (whereas
+most modern clients talk to a <a href="https://grpc.io/">gRPC</a> backend) and they may
+not offer the same performance, features, and ease of use provided by more
+modern clients.</p>
+<p>The <code>google-apis-</code> clients have wide coverage across Google services, so you
+might need to use one if there is no modern client available for the service.
+However, if a modern client is available, we generally recommend it over the
+older <code>google-apis-</code> clients.</p>
+
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>
