@@ -328,15 +328,15 @@
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudio.html">RecognitionAudio</a></h3>
       <section><pre><code>Contains audio data in the encoding specified in the `RecognitionConfig`.
  Either `content` or `uri` must be supplied. Supplying both or neither
- returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
- See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+ returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. See
+ [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 </code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionAudio</code></p>
 </section>
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionAudio.Builder.html">RecognitionAudio.Builder</a></h3>
       <section><pre><code>Contains audio data in the encoding specified in the `RecognitionConfig`.
  Either `content` or `uri` must be supplied. Supplying both or neither
- returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
- See [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+ returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. See
+ [content limits](https://cloud.google.com/speech-to-text/quotas#content).
 </code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.RecognitionAudio</code></p>
 </section>
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionConfig.html">RecognitionConfig</a></h3>
@@ -536,8 +536,8 @@
  messages are streamed back to the client. If there is no recognizable
  audio, and `single_utterance` is set to false, then no messages are streamed
  back to the client.
- Here&#39;s an example of a series of ten `StreamingRecognizeResponse`s that might
- be returned while processing audio:
+ Here&#39;s an example of a series of `StreamingRecognizeResponse`s that might be
+ returned while processing audio:
  1. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
  2. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
  3. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
@@ -575,8 +575,8 @@
  messages are streamed back to the client. If there is no recognizable
  audio, and `single_utterance` is set to false, then no messages are streamed
  back to the client.
- Here&#39;s an example of a series of ten `StreamingRecognizeResponse`s that might
- be returned while processing audio:
+ Here&#39;s an example of a series of `StreamingRecognizeResponse`s that might be
+ returned while processing audio:
  1. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
  2. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
  3. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
@@ -607,6 +607,14 @@
      `speech_event_type`, or
      one or more (repeated) `results`.
 </code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognizeResponse</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.html">TranscriptOutputConfig</a></h3>
+      <section><pre><code>Specifies an optional destination for the recognition results.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.TranscriptOutputConfig</code></p>
+</section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.Builder.html">TranscriptOutputConfig.Builder</a></h3>
+      <section><pre><code>Specifies an optional destination for the recognition results.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.TranscriptOutputConfig</code></p>
 </section>
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest.html">UpdateCustomClassRequest</a></h3>
       <section><pre><code>Message sent by the client for the `UpdateCustomClass` method.
@@ -697,6 +705,8 @@
       <section></section>
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponseOrBuilder.html">StreamingRecognizeResponseOrBuilder</a></h3>
       <section></section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptOutputConfigOrBuilder.html">TranscriptOutputConfigOrBuilder</a></h3>
+      <section></section>
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequestOrBuilder.html">UpdateCustomClassRequestOrBuilder</a></h3>
       <section></section>
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequestOrBuilder.html">UpdatePhraseSetRequestOrBuilder</a></h3>
@@ -717,7 +727,7 @@
  a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech
  recognition can be reduced if lossy codecs are used to capture or transmit
  audio, particularly if background noise is present. Lossy codecs include
- `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, and `MP3`.
+ `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`.
  The `FLAC` and `WAV` audio file formats include a header that describes the
  included audio content. You can request recognition for `WAV` files that
  contain either `LINEAR16` or `MULAW` encoded audio.
@@ -727,8 +737,7 @@
  an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
  encoding configuration must match the encoding described in the audio
  header; otherwise the request returns an
- [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
- code.
+ [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
 </code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding</code></p>
 </section>
       <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType.html">RecognitionMetadata.InteractionType</a></h3>
@@ -754,6 +763,8 @@
       <section><pre><code>Indicates the type of speech event.
 </code></pre><p>Protobuf enum <code>google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType</code></p>
 </section>
+      <h3><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig.OutputTypeCase.html">TranscriptOutputConfig.OutputTypeCase</a></h3>
+      <section></section>
 </article>
     </div>
     {% endverbatim %}

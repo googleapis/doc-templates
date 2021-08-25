@@ -57,8 +57,10 @@ items:
   - "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetPagedCallable()"
   - "com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdown()"
   - "com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdownNow()"
+  - "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass(com.google.cloud.speech.v1p1beta1.CustomClass,com.google.protobuf.FieldMask)"
   - "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass(com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest)"
   - "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClassCallable()"
+  - "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet(com.google.cloud.speech.v1p1beta1.PhraseSet,com.google.protobuf.FieldMask)"
   - "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet(com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest)"
   - "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSetCallable()"
   langs:
@@ -256,7 +258,7 @@ items:
       description: "Required. The custom class to create."
     - id: "customClassId"
       type: "java.lang.String"
-      description: "The ID to use for the custom class, which will become the final component\n     of the custom class' resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
+      description: "Required. The ID to use for the custom class, which will become the final\n     component of the custom class' resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
     return:
       type: "com.google.cloud.speech.v1p1beta1.CustomClass"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass(java.lang.String,com.google.cloud.speech.v1p1beta1.CustomClass,java.lang.String)"
@@ -282,7 +284,7 @@ items:
       description: "Required. The custom class to create."
     - id: "customClassId"
       type: "java.lang.String"
-      description: "The ID to use for the custom class, which will become the final component\n     of the custom class' resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
+      description: "Required. The ID to use for the custom class, which will become the final\n     component of the custom class' resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
     return:
       type: "com.google.cloud.speech.v1p1beta1.CustomClass"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClassCallable()"
@@ -344,7 +346,7 @@ items:
       description: "Required. The phrase set to create."
     - id: "phraseSetId"
       type: "java.lang.String"
-      description: "The ID to use for the phrase set, which will become the final component of\n     the phrase set's resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
+      description: "Required. The ID to use for the phrase set, which will become the final\n     component of the phrase set's resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
     return:
       type: "com.google.cloud.speech.v1p1beta1.PhraseSet"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet(java.lang.String,com.google.cloud.speech.v1p1beta1.PhraseSet,java.lang.String)"
@@ -370,7 +372,7 @@ items:
       description: "Required. The phrase set to create."
     - id: "phraseSetId"
       type: "java.lang.String"
-      description: "The ID to use for the phrase set, which will become the final component of\n     the phrase set's resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
+      description: "Required. The ID to use for the phrase set, which will become the final\n     component of the phrase set's resource name.\n     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/."
     return:
       type: "com.google.cloud.speech.v1p1beta1.PhraseSet"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSetCallable()"
@@ -812,7 +814,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List custom classes.\n\nSample code:\n\n```java\ntry (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   while (true) {\n     ListCustomClassesResponse response =\n         adaptationClient.listCustomClassesCallable().call(request);\n     for (CustomClass element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n```"
+  summary: "List custom classes.\n\nSample code:\n\n```java\ntry (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListCustomClassesRequest request =\n       ListCustomClassesRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   while (true) {\n     ListCustomClassesResponse response =\n         adaptationClient.listCustomClassesCallable().call(request);\n     for (CustomClass element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n```"
   syntax:
     content: "public final UnaryCallable<ListCustomClassesRequest,ListCustomClassesResponse> listCustomClassesCallable()"
     return:
@@ -904,7 +906,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List phrase sets.\n\nSample code:\n\n```java\ntry (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   while (true) {\n     ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);\n     for (PhraseSet element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n```"
+  summary: "List phrase sets.\n\nSample code:\n\n```java\ntry (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListPhraseSetRequest request =\n       ListPhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   while (true) {\n     ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);\n     for (PhraseSet element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n```"
   syntax:
     content: "public final UnaryCallable<ListPhraseSetRequest,ListPhraseSetResponse> listPhraseSetCallable()"
     return:
@@ -951,6 +953,29 @@ items:
   package: "com.google.cloud.speech.v1p1beta1"
   syntax:
     content: "public void shutdownNow()"
+- uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass(com.google.cloud.speech.v1p1beta1.CustomClass,com.google.protobuf.FieldMask)"
+  id: "updateCustomClass(com.google.cloud.speech.v1p1beta1.CustomClass,com.google.protobuf.FieldMask)"
+  parent: "com.google.cloud.speech.v1p1beta1.AdaptationClient"
+  langs:
+  - "java"
+  name: "updateCustomClass(CustomClass customClass, FieldMask updateMask)"
+  nameWithType: "AdaptationClient.updateCustomClass(CustomClass customClass, FieldMask updateMask)"
+  fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass(CustomClass customClass, FieldMask updateMask)"
+  overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1p1beta1"
+  summary: "Update a custom class.\n\nSample code:\n\n```java\ntry (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CustomClass customClass = CustomClass.newBuilder().build();\n   FieldMask updateMask = FieldMask.newBuilder().build();\n   CustomClass response = adaptationClient.updateCustomClass(customClass, updateMask);\n }\n```"
+  syntax:
+    content: "public final CustomClass updateCustomClass(CustomClass customClass, FieldMask updateMask)"
+    parameters:
+    - id: "customClass"
+      type: "com.google.cloud.speech.v1p1beta1.CustomClass"
+      description: "Required. The custom class to update.\n     <p>The custom class's `name` field is used to identify the custom class to be updated.\n     Format: {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}"
+    - id: "updateMask"
+      type: "com.google.protobuf.FieldMask"
+      description: "The list of fields to be updated."
+    return:
+      type: "com.google.cloud.speech.v1p1beta1.CustomClass"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass(com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest)"
   id: "updateCustomClass(com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest)"
   parent: "com.google.cloud.speech.v1p1beta1.AdaptationClient"
@@ -987,6 +1012,29 @@ items:
     content: "public final UnaryCallable<UpdateCustomClassRequest,CustomClass> updateCustomClassCallable()"
     return:
       type: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest,com.google.cloud.speech.v1p1beta1.CustomClass>"
+- uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet(com.google.cloud.speech.v1p1beta1.PhraseSet,com.google.protobuf.FieldMask)"
+  id: "updatePhraseSet(com.google.cloud.speech.v1p1beta1.PhraseSet,com.google.protobuf.FieldMask)"
+  parent: "com.google.cloud.speech.v1p1beta1.AdaptationClient"
+  langs:
+  - "java"
+  name: "updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)"
+  nameWithType: "AdaptationClient.updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)"
+  fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)"
+  overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1p1beta1"
+  summary: "Update a phrase set.\n\nSample code:\n\n```java\ntry (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   FieldMask updateMask = FieldMask.newBuilder().build();\n   PhraseSet response = adaptationClient.updatePhraseSet(phraseSet, updateMask);\n }\n```"
+  syntax:
+    content: "public final PhraseSet updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)"
+    parameters:
+    - id: "phraseSet"
+      type: "com.google.cloud.speech.v1p1beta1.PhraseSet"
+      description: "Required. The phrase set to update.\n     <p>The phrase set's `name` field is used to identify the set to be updated. Format:\n     {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}"
+    - id: "updateMask"
+      type: "com.google.protobuf.FieldMask"
+      description: "The list of fields to be updated."
+    return:
+      type: "com.google.cloud.speech.v1p1beta1.PhraseSet"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet(com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest)"
   id: "updatePhraseSet(com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest)"
   parent: "com.google.cloud.speech.v1p1beta1.AdaptationClient"
@@ -1038,10 +1086,13 @@ references:
   nameWithType: "AdaptationStub"
   fullName: "com.google.cloud.speech.v1p1beta1.stub.AdaptationStub"
 - uid: "java.io.IOException"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html"
   spec.java:
   - uid: "java.io.IOException"
     name: "IOException"
     fullName: "java.io.IOException"
+    isExternal: false
+    href: "https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.create*"
   name: "create"
   nameWithType: "AdaptationClient.create"
@@ -1066,10 +1117,13 @@ references:
   nameWithType: "PhraseSet"
   fullName: "com.google.cloud.speech.v1p1beta1.PhraseSet"
 - uid: "java.lang.String"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/String.html"
   spec.java:
   - uid: "java.lang.String"
     name: "String"
     fullName: "java.lang.String"
+    isExternal: false
+    href: "https://docs.oracle.com/javase/8/docs/api/java/lang/String.html"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet*"
   name: "createPhraseSet"
   nameWithType: "AdaptationClient.createPhraseSet"
@@ -1080,22 +1134,29 @@ references:
   nameWithType: "CreatePhraseSetRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest,com.google.cloud.speech.v1p1beta1.PhraseSet>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest"
     name: "CreatePhraseSetRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.PhraseSet"
     name: "PhraseSet"
     fullName: "com.google.cloud.speech.v1p1beta1.PhraseSet"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSetCallable*"
   name: "createPhraseSetCallable"
   nameWithType: "AdaptationClient.createPhraseSetCallable"
@@ -1115,22 +1176,29 @@ references:
   nameWithType: "GetPhraseSetRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest,com.google.cloud.speech.v1p1beta1.PhraseSet>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest"
     name: "GetPhraseSetRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.PhraseSet"
     name: "PhraseSet"
     fullName: "com.google.cloud.speech.v1p1beta1.PhraseSet"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSetCallable*"
   name: "getPhraseSetCallable"
   nameWithType: "AdaptationClient.getPhraseSetCallable"
@@ -1150,75 +1218,103 @@ references:
   nameWithType: "ListPhraseSetRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest,com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest"
     name: "ListPhraseSetRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse"
     name: "ListPhraseSetPagedResponse"
     fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPagedResponse"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetPagedCallable*"
   name: "listPhraseSetPagedCallable"
   nameWithType: "AdaptationClient.listPhraseSetPagedCallable"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetPagedCallable"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest,com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest"
     name: "ListPhraseSetRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse"
     name: "ListPhraseSetResponse"
     fullName: "com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetCallable*"
   name: "listPhraseSetCallable"
   nameWithType: "AdaptationClient.listPhraseSetCallable"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetCallable"
   package: "com.google.cloud.speech.v1p1beta1"
-- uid: "com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest"
-  name: "UpdatePhraseSetRequest"
-  nameWithType: "UpdatePhraseSetRequest"
-  fullName: "com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest"
+- uid: "com.google.protobuf.FieldMask"
+  isExternal: true
+  spec.java:
+  - uid: "com.google.protobuf.FieldMask"
+    name: "FieldMask"
+    fullName: "com.google.protobuf.FieldMask"
+    isExternal: true
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet*"
   name: "updatePhraseSet"
   nameWithType: "AdaptationClient.updatePhraseSet"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet"
   package: "com.google.cloud.speech.v1p1beta1"
+- uid: "com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest"
+  name: "UpdatePhraseSetRequest"
+  nameWithType: "UpdatePhraseSetRequest"
+  fullName: "com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest,com.google.cloud.speech.v1p1beta1.PhraseSet>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest"
     name: "UpdatePhraseSetRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.PhraseSet"
     name: "PhraseSet"
     fullName: "com.google.cloud.speech.v1p1beta1.PhraseSet"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSetCallable*"
   name: "updatePhraseSetCallable"
   nameWithType: "AdaptationClient.updatePhraseSetCallable"
@@ -1234,22 +1330,29 @@ references:
   nameWithType: "DeletePhraseSetRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest,com.google.protobuf.Empty>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest"
     name: "DeletePhraseSetRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.protobuf.Empty"
     name: "Empty"
     fullName: "com.google.protobuf.Empty"
+    isExternal: true
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSetCallable*"
   name: "deletePhraseSetCallable"
   nameWithType: "AdaptationClient.deletePhraseSetCallable"
@@ -1269,22 +1372,29 @@ references:
   nameWithType: "CreateCustomClassRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest,com.google.cloud.speech.v1p1beta1.CustomClass>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest"
     name: "CreateCustomClassRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.CustomClass"
     name: "CustomClass"
     fullName: "com.google.cloud.speech.v1p1beta1.CustomClass"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClassCallable*"
   name: "createCustomClassCallable"
   nameWithType: "AdaptationClient.createCustomClassCallable"
@@ -1304,22 +1414,29 @@ references:
   nameWithType: "GetCustomClassRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.GetCustomClassRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.GetCustomClassRequest,com.google.cloud.speech.v1p1beta1.CustomClass>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.GetCustomClassRequest"
     name: "GetCustomClassRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.GetCustomClassRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.CustomClass"
     name: "CustomClass"
     fullName: "com.google.cloud.speech.v1p1beta1.CustomClass"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClassCallable*"
   name: "getCustomClassCallable"
   nameWithType: "AdaptationClient.getCustomClassCallable"
@@ -1339,75 +1456,96 @@ references:
   nameWithType: "ListCustomClassesRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest,com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest"
     name: "ListCustomClassesRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse"
     name: "ListCustomClassesPagedResponse"
     fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.ListCustomClassesPagedResponse"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesPagedCallable*"
   name: "listCustomClassesPagedCallable"
   nameWithType: "AdaptationClient.listCustomClassesPagedCallable"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesPagedCallable"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest,com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest"
     name: "ListCustomClassesRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse"
     name: "ListCustomClassesResponse"
     fullName: "com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesCallable*"
   name: "listCustomClassesCallable"
   nameWithType: "AdaptationClient.listCustomClassesCallable"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesCallable"
   package: "com.google.cloud.speech.v1p1beta1"
-- uid: "com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest"
-  name: "UpdateCustomClassRequest"
-  nameWithType: "UpdateCustomClassRequest"
-  fullName: "com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass*"
   name: "updateCustomClass"
   nameWithType: "AdaptationClient.updateCustomClass"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass"
   package: "com.google.cloud.speech.v1p1beta1"
+- uid: "com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest"
+  name: "UpdateCustomClassRequest"
+  nameWithType: "UpdateCustomClassRequest"
+  fullName: "com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest,com.google.cloud.speech.v1p1beta1.CustomClass>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest"
     name: "UpdateCustomClassRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.CustomClass"
     name: "CustomClass"
     fullName: "com.google.cloud.speech.v1p1beta1.CustomClass"
+    isExternal: false
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClassCallable*"
   name: "updateCustomClassCallable"
   nameWithType: "AdaptationClient.updateCustomClassCallable"
@@ -1423,22 +1561,29 @@ references:
   nameWithType: "DeleteCustomClassRequest"
   fullName: "com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest"
 - uid: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest,com.google.protobuf.Empty>"
+  isExternal: true
   spec.java:
   - uid: "com.google.api.gax.rpc.UnaryCallable"
     name: "UnaryCallable"
     fullName: "com.google.api.gax.rpc.UnaryCallable"
+    isExternal: true
   - name: "<"
     fullName: "<"
+    isExternal: false
   - uid: "com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest"
     name: "DeleteCustomClassRequest"
     fullName: "com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest"
+    isExternal: false
   - name: ","
     fullName: ","
+    isExternal: false
   - uid: "com.google.protobuf.Empty"
     name: "Empty"
     fullName: "com.google.protobuf.Empty"
+    isExternal: true
   - name: ">"
     fullName: ">"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClassCallable*"
   name: "deleteCustomClassCallable"
   nameWithType: "AdaptationClient.deleteCustomClassCallable"
@@ -1455,10 +1600,12 @@ references:
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdown"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "boolean"
+  href: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
   spec.java:
   - uid: "boolean"
     name: "boolean"
     fullName: "boolean"
+    isExternal: false
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.isShutdown*"
   name: "isShutdown"
   nameWithType: "AdaptationClient.isShutdown"
@@ -1475,70 +1622,90 @@ references:
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.shutdownNow"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "java.lang.InterruptedException"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html"
   spec.java:
   - uid: "java.lang.InterruptedException"
     name: "InterruptedException"
     fullName: "java.lang.InterruptedException"
+    isExternal: false
+    href: "https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html"
 - uid: "long"
+  href: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
   spec.java:
   - uid: "long"
     name: "long"
     fullName: "long"
+    isExternal: false
 - uid: "java.util.concurrent.TimeUnit"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"
   spec.java:
   - uid: "java.util.concurrent.TimeUnit"
     name: "TimeUnit"
     fullName: "java.util.concurrent.TimeUnit"
+    isExternal: false
+    href: "https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"
 - uid: "com.google.cloud.speech.v1p1beta1.AdaptationClient.awaitTermination*"
   name: "awaitTermination"
   nameWithType: "AdaptationClient.awaitTermination"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.awaitTermination"
   package: "com.google.cloud.speech.v1p1beta1"
 - uid: "com.google.api.gax.core.BackgroundResource"
+  isExternal: true
   name: "BackgroundResource"
   nameWithType: "BackgroundResource"
   fullName: "com.google.api.gax.core.BackgroundResource"
 - uid: "java.lang.Object.notify()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#notify--"
   name: "Object.notify()"
   nameWithType: "Object.notify()"
   fullName: "java.lang.Object.notify()"
 - uid: "java.lang.Object.wait()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#wait--"
   name: "Object.wait()"
   nameWithType: "Object.wait()"
   fullName: "java.lang.Object.wait()"
 - uid: "java.lang.Object.finalize()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#finalize--"
   name: "Object.finalize()"
   nameWithType: "Object.finalize()"
   fullName: "java.lang.Object.finalize()"
 - uid: "java.lang.Object.clone()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#clone--"
   name: "Object.clone()"
   nameWithType: "Object.clone()"
   fullName: "java.lang.Object.clone()"
 - uid: "java.lang.Object.notifyAll()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#notifyAll--"
   name: "Object.notifyAll()"
   nameWithType: "Object.notifyAll()"
   fullName: "java.lang.Object.notifyAll()"
 - uid: "java.lang.Object.equals(java.lang.Object)"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-"
   name: "Object.equals(Object)"
   nameWithType: "Object.equals(Object)"
   fullName: "java.lang.Object.equals(java.lang.Object)"
 - uid: "java.lang.Object.getClass()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#getClass--"
   name: "Object.getClass()"
   nameWithType: "Object.getClass()"
   fullName: "java.lang.Object.getClass()"
 - uid: "java.lang.Object.wait(long)"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#wait-long-"
   name: "Object.wait(long)"
   nameWithType: "Object.wait(long)"
   fullName: "java.lang.Object.wait(long)"
 - uid: "java.lang.Object.hashCode()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--"
   name: "Object.hashCode()"
   nameWithType: "Object.hashCode()"
   fullName: "java.lang.Object.hashCode()"
 - uid: "java.lang.Object.wait(long,int)"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#wait-long-int-"
   name: "Object.wait(long,int)"
   nameWithType: "Object.wait(long,int)"
   fullName: "java.lang.Object.wait(long,int)"
 - uid: "java.lang.Object.toString()"
+  href: "https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--"
   name: "Object.toString()"
   nameWithType: "Object.toString()"
   fullName: "java.lang.Object.toString()"
@@ -1559,6 +1726,7 @@ references:
   nameWithType: "AdaptationClient.ListPhraseSetPage"
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient.ListPhraseSetPage"
 - uid: "com.google.api.gax.rpc.UnaryCallable"
+  isExternal: true
   name: "UnaryCallable"
   nameWithType: "UnaryCallable"
   fullName: "com.google.api.gax.rpc.UnaryCallable"
