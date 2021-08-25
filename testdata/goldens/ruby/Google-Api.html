@@ -11,7 +11,126 @@
 <h1 class="page-title">Module Google::Api
 </h1>
   
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h2 id="classes">Modules
+  Classes
   
+  </h2>
+        <h3><a class="xref" href="Google-Api-ResourceDescriptor.html">Google::Api::ResourceDescriptor</a></h3>
+        <section><p>A simple descriptor of a resource type.</p>
+<p>ResourceDescriptor annotates a resource message (either by means of a
+protobuf annotation or use in the service config), and associates the
+resource&#39;s schema, the resource type, and the pattern of the resource name.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">message Topic {
+  // Indicates this message defines a resource schema.
+  // Declares the resource type in the format of {service}/{kind}.
+  // For Kubernetes resources, the format is {api group}/{kind}.
+  option (google.api.resource) = {
+    type: "pubsub.googleapis.com/Topic"
+    name_descriptor: {
+      pattern: "projects/{project}/topics/{topic}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"
+    }
+  };
+}</pre>
+
+<p>The ResourceDescriptor Yaml config will look like:</p>
+<pre class="prettyprint lang-rb">resources:
+- type: "pubsub.googleapis.com/Topic"
+  name_descriptor:
+    - pattern: "projects/{project}/topics/{topic}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"</pre>
+
+<p>Sometimes, resources have multiple patterns, typically because they can
+live under multiple parents.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">message LogEntry {
+  option (google.api.resource) = {
+    type: "logging.googleapis.com/LogEntry"
+    name_descriptor: {
+      pattern: "projects/{project}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"
+    }
+    name_descriptor: {
+      pattern: "folders/{folder}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"
+      parent_name_extractor: "folders/{folder}"
+    }
+    name_descriptor: {
+      pattern: "organizations/{organization}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Organization"
+      parent_name_extractor: "organizations/{organization}"
+    }
+    name_descriptor: {
+      pattern: "billingAccounts/{billing_account}/logs/{log}"
+      parent_type: "billing.googleapis.com/BillingAccount"
+      parent_name_extractor: "billingAccounts/{billing_account}"
+    }
+  };
+}</pre>
+
+<p>The ResourceDescriptor Yaml config will look like:</p>
+<pre class="prettyprint lang-rb">resources:
+- type: 'logging.googleapis.com/LogEntry'
+  name_descriptor:
+    - pattern: "projects/{project}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+      parent_name_extractor: "projects/{project}"
+    - pattern: "folders/{folder}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"
+      parent_name_extractor: "folders/{folder}"
+    - pattern: "organizations/{organization}/logs/{log}"
+      parent_type: "cloudresourcemanager.googleapis.com/Organization"
+      parent_name_extractor: "organizations/{organization}"
+    - pattern: "billingAccounts/{billing_account}/logs/{log}"
+      parent_type: "billing.googleapis.com/BillingAccount"
+      parent_name_extractor: "billingAccounts/{billing_account}"</pre>
+
+<p>For flexible resources, the resource name doesn&#39;t contain parent names, but
+the resource itself has parents for policy evaluation.</p>
+<p>Example:</p>
+<pre class="prettyprint lang-rb">message Shelf {
+  option (google.api.resource) = {
+    type: "library.googleapis.com/Shelf"
+    name_descriptor: {
+      pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+    }
+    name_descriptor: {
+      pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"
+    }
+  };
+}</pre>
+
+<p>The ResourceDescriptor Yaml config will look like:</p>
+<pre class="prettyprint lang-rb">resources:
+- type: 'library.googleapis.com/Shelf'
+  name_descriptor:
+    - pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Project"
+    - pattern: "shelves/{shelf}"
+      parent_type: "cloudresourcemanager.googleapis.com/Folder"</pre></section>
+        <h3><a class="xref" href="Google-Api-ResourceReference.html">Google::Api::ResourceReference</a></h3>
+        <section><p>Defines a proto annotation that describes a string field that refers to
+an API resource.</p>
+</section>
+    <h2 id="modules">Modules
+  
+  </h2>
+        <h3><a class="xref" href="Google-Api-FieldBehavior.html">Google::Api::FieldBehavior</a></h3>
+        <section><p>An indicator of the behavior of a given field (for example, that a field
+is required in requests, or given as output but ignored as input).
+This <strong>does not</strong> change the behavior in protocol buffers itself; it only
+denotes the behavior and may affect how API tooling handles the field.</p>
+<p>Note: This enum <strong>may</strong> receive new values in the future.</p>
+</section>
 </article>
     </div>
     {% endverbatim %}

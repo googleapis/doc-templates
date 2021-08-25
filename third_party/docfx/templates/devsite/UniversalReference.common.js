@@ -25,6 +25,13 @@ exports.transform = function (model) {
         model[getTypePropertyName(model.type)] = true;
         break;
       case 'module':
+        if (model.langs && model.langs[0].toLowerCase() === "ruby" &&
+          model.children && model.children.length > 0) {
+          model.isNamespace = true;
+          groupChildren(model, namespaceCategory);
+          model[getTypePropertyName(model.type)] = true;
+          break;
+        }
       case 'class':
         if (model.langs && model.langs[0].toLowerCase() === "python" &&
             model.children && model.children.length > 0) {
