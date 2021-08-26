@@ -25,6 +25,13 @@ exports.transform = function (model) {
         model[getTypePropertyName(model.type)] = true;
         break;
       case 'module':
+        if (model.langs && model.langs[0].toLowerCase() === "ruby" &&
+          model.children && model.children.length > 0) {
+          model.isClass = true;
+          groupChildren(model, classCategory);
+          model[getTypePropertyName(model.type)] = true;
+          break;
+        }
       case 'class':
         if (model.langs && model.langs[0].toLowerCase() === "python" &&
             model.children && model.children.length > 0) {
@@ -341,7 +348,8 @@ function getDefinitions(category) {
     "operator":     { inOperator: true,     typePropertyName: "inOperator",     id: "operators" },
     "eii":          { inEii: true,          typePropertyName: "inEii",          id: "eii" },
     "member":       { inMember: true,       typePropertyName: "inMember",       id: "members"},
-    "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions" }
+    "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions" },
+    "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts", isEmbedded: true }
   };
   if (category === 'class' || category === 'type') {
     return classItems;

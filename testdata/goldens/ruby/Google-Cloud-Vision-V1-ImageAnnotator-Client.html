@@ -42,11 +42,7 @@ ImageAnnotator service returns detected entities from the images.</p>
   <div class="markdown level1 summary"><p>Configure the ImageAnnotator Client class.</p>
 <p>See <a href="./Google-Cloud-Vision-V1-ImageAnnotator-Client-Configuration">::Google::Cloud::Vision::V1::ImageAnnotator::Client::Configuration</a>
 for a description of the configuration fields.</p>
-<h4 id="example">Example</h4>
-<p>To modify the configuration for all ImageAnnotator clients:</p>
-<pre class="prettyprint lang-rb">::Google::Cloud::Vision::V1::ImageAnnotator::Client.configure do |config|
-  config.timeout = 10.0
-end</pre></div>
+</div>
   <div class="level1 summary">
     <strong>Yields</strong>
     <ul>
@@ -71,6 +67,12 @@ end</pre></div>
       </li>
     </ul>
   </div>
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">
+# Modify the configuration for all ImageAnnotator clients
+::Google::Cloud::Vision::V1::ImageAnnotator::Client.configure do |config|
+  config.timeout = 10.0
+end</pre>
   <h3 id="Google__Cloud__Vision__V1__ImageAnnotator__Client_configure_instance_" data-uid="Google::Cloud::Vision::V1::ImageAnnotator::Client#configure(instance)" class="notranslate">#configure</h3>
   <div class="codewrapper">
     <pre><code class="prettyprint">def configure { |config| ... } =&gt; Client::Configuration</code></pre>
@@ -111,16 +113,7 @@ for a description of the configuration fields.</p>
     <pre><code class="prettyprint">def initialize { |config| ... } =&gt; Client</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Create a new ImageAnnotator client object.</p>
-<h4 id="examples">Examples</h4>
-<p>To create a new ImageAnnotator client with the default
-configuration:</p>
-<pre class="prettyprint lang-rb">client = ::Google::Cloud::Vision::V1::ImageAnnotator::Client.new</pre>
-
-<p>To create a new ImageAnnotator client with a custom
-configuration:</p>
-<pre class="prettyprint lang-rb">client = ::Google::Cloud::Vision::V1::ImageAnnotator::Client.new do |config|
-  config.timeout = 10.0
-end</pre></div>
+</div>
   <div class="level1 summary">
     <strong>Yields</strong>
     <ul>
@@ -145,6 +138,15 @@ end</pre></div>
       </li>
     </ul>
   </div>
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">
+# Create a client using the default configuration
+client = ::Google::Cloud::Vision::V1::ImageAnnotator::Client.new
+
+# Create a client using a custom configuration
+client = ::Google::Cloud::Vision::V1::ImageAnnotator::Client.new do |config|
+  config.timeout = 10.0
+end</pre>
   <h3 id="Google__Cloud__Vision__V1__ImageAnnotator__Client_operations_client_instance_" data-uid="Google::Cloud::Vision::V1::ImageAnnotator::Client#operations_client(instance)" class="notranslate">#operations_client</h3>
   <div class="codewrapper">
     <pre><code class="prettyprint">def operations_client =&gt; ::Google::Cloud::Vision::V1::ImageAnnotator::Operations</code></pre>
