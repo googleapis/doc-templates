@@ -19,7 +19,14 @@
 <a id="{{id}}" data-uid="{{uid}}"></a>
 {{/overload}}
 {{#inModule}}
+{{^isEmbedded}}
 <h3><xref uid="{{uid}}" altProperty="fullName" displayProperty="name"/></h3>
+{{/isEmbedded}}
+{{/inModule}}
+{{#inModule}}
+{{#isEmbedded}}
+<h3 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h3>
+{{/isEmbedded}}
 {{/inModule}}
 {{^inModule}}
 <h3 id="{{id}}" data-uid="{{uid}}" class="notranslate">{{name.0.value}}</h3>
