@@ -29,7 +29,15 @@ import pytest
 def test_goldens(update_goldens, test_dir):
     build_dir = Path("testdata") / test_dir
     golden_dir = Path("testdata/goldens") / test_dir
-    out_dir = build_dir / "site/api"
+    site_dir = build_dir / "site"
+    cache_dir = build_dir / "obj/.cache"
+
+    if site_dir.exists():
+        shutil.rmtree(site_dir)
+    if cache_dir.exists():
+        shutil.rmtree(cache_dir)
+
+    out_dir = site_dir / "api"
     # Generate!
     try:
         shell.run(
