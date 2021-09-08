@@ -7,51 +7,19 @@
   <body>
     {% verbatim %}
     <div>
-      <article data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse">
-<h1 class="page-title">Class StreamingRecognizeResponse
+      <article data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization">
+<h1 class="page-title">Class TranscriptNormalization
 </h1>
   
   
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public final class StreamingRecognizeResponse extends GeneratedMessageV3 implements StreamingRecognizeResponseOrBuilder</code></pre>
+    <pre class="prettyprint"><code>public final class TranscriptNormalization extends GeneratedMessageV3 implements TranscriptNormalizationOrBuilder</code></pre>
   </div>
-  <div class="markdown level0 summary"><pre><code>`StreamingRecognizeResponse` is the only message returned to the client by
- `StreamingRecognize`. A series of zero or more `StreamingRecognizeResponse`
- messages are streamed back to the client. If there is no recognizable
- audio, and `single_utterance` is set to false, then no messages are streamed
- back to the client.
- Here&#39;s an example of a series of `StreamingRecognizeResponse`s that might be
- returned while processing audio:
- 1. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
- 2. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
- 3. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
-    results { alternatives { transcript: &quot; or not to be&quot; } stability: 0.01 }
- 4. results { alternatives { transcript: &quot;to be or not to be&quot;
-                             confidence: 0.92 }
-              alternatives { transcript: &quot;to bee or not to bee&quot; }
-              is_final: true }
- 5. results { alternatives { transcript: &quot; that&#39;s&quot; } stability: 0.01 }
- 6. results { alternatives { transcript: &quot; that is&quot; } stability: 0.9 }
-    results { alternatives { transcript: &quot; the question&quot; } stability: 0.01 }
- 7. results { alternatives { transcript: &quot; that is the question&quot;
-                             confidence: 0.98 }
-              alternatives { transcript: &quot; that was the question&quot; }
-              is_final: true }
- Notes:
- - Only two of the above responses #4 and #7 contain final results; they are
-   indicated by `is_final: true`. Concatenating these together generates the
-   full transcript: &quot;to be or not to be that is the question&quot;.
- - The others contain interim `results`. #3 and #6 contain two interim
-   `results`: the first portion has a high stability and is less likely to
-   change; the second portion has a low stability and is very likely to
-   change. A UI designer might choose to show only high stability `results`.
- - The specific `stability` and `confidence` values shown above are only for
-   illustrative purposes. Actual values may vary.
- - In each response, only one of these fields will be set:
-     `error`,
-     `speech_event_type`, or
-     one or more (repeated) `results`.
-</code></pre><p>Protobuf type <code>google.cloud.speech.v1.StreamingRecognizeResponse</code></p>
+  <div class="markdown level0 summary"><pre><code>Transcription normalization configuration. Use transcription normalization
+ to automatically replace parts of the transcript with phrases of your
+ choosing. For StreamingRecognize, this normalization only applies to stable
+ partial transcripts (stability &gt; 0.8) and final transcripts.
+</code></pre><p>Protobuf type <code>google.cloud.speech.v1p1beta1.TranscriptNormalization</code></p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -59,11 +27,11 @@
     <span><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.AbstractMessageLite.html">AbstractMessageLite&lt;MessageType,BuilderType&gt;</a></span> <span> &gt; </span>
     <span><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.AbstractMessage.html">AbstractMessage</a></span> <span> &gt; </span>
     <span><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html">GeneratedMessageV3</a></span> <span> &gt; </span>
-    <span class="xref">StreamingRecognizeResponse</span>
+    <span class="xref">TranscriptNormalization</span>
   </div>
   <div classs="implements">
     <h2>Implements</h2>
-    <span><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponseOrBuilder.html">StreamingRecognizeResponseOrBuilder</a></span>
+    <span><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalizationOrBuilder.html">TranscriptNormalizationOrBuilder</a></span>
   </div>
   <div class="inheritedMembers expandable">
     <h2 class="showalways">Inherited Members</h2>
@@ -304,66 +272,9 @@
   </div>
   <h2 id="fields">Fields
   </h2>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_ERROR_FIELD_NUMBER" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.ERROR_FIELD_NUMBER" class="notranslate">ERROR_FIELD_NUMBER</h3>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_ENTRIES_FIELD_NUMBER" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.ENTRIES_FIELD_NUMBER" class="notranslate">ENTRIES_FIELD_NUMBER</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static final int ERROR_FIELD_NUMBER</code></pre>
-  </div>
-  <strong>Field Value</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_RESULTS_FIELD_NUMBER" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.RESULTS_FIELD_NUMBER" class="notranslate">RESULTS_FIELD_NUMBER</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public static final int RESULTS_FIELD_NUMBER</code></pre>
-  </div>
-  <strong>Field Value</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_SPEECH_EVENT_TYPE_FIELD_NUMBER" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.SPEECH_EVENT_TYPE_FIELD_NUMBER" class="notranslate">SPEECH_EVENT_TYPE_FIELD_NUMBER</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public static final int SPEECH_EVENT_TYPE_FIELD_NUMBER</code></pre>
-  </div>
-  <strong>Field Value</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_TOTAL_BILLED_TIME_FIELD_NUMBER" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.TOTAL_BILLED_TIME_FIELD_NUMBER" class="notranslate">TOTAL_BILLED_TIME_FIELD_NUMBER</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public static final int TOTAL_BILLED_TIME_FIELD_NUMBER</code></pre>
+    <pre class="prettyprint"><code>public static final int ENTRIES_FIELD_NUMBER</code></pre>
   </div>
   <strong>Field Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -382,8 +293,8 @@
   </table>
   <h2 id="methods">Methods
   </h2>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_equals_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.equals*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_equals_java_lang_Object_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.equals(java.lang.Object)" class="notranslate">equals(Object obj)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_equals_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.equals*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_equals_java_lang_Object_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.equals(java.lang.Object)" class="notranslate">equals(Object obj)</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public boolean equals(Object obj)</code></pre>
   </div>
@@ -421,10 +332,10 @@
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.AbstractMessage.html#com_google_protobuf_AbstractMessage_equals_java_lang_Object_">AbstractMessage.equals(Object other)</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getDefaultInstance_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getDefaultInstance*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getDefaultInstance__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getDefaultInstance()" class="notranslate">getDefaultInstance()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getDefaultInstance_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDefaultInstance*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getDefaultInstance__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDefaultInstance()" class="notranslate">getDefaultInstance()</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse getDefaultInstance()</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization getDefaultInstance()</code></pre>
   </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -436,15 +347,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getDefaultInstanceForType_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getDefaultInstanceForType*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getDefaultInstanceForType__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getDefaultInstanceForType()" class="notranslate">getDefaultInstanceForType()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getDefaultInstanceForType_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDefaultInstanceForType*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getDefaultInstanceForType__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDefaultInstanceForType()" class="notranslate">getDefaultInstanceForType()</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public StreamingRecognizeResponse getDefaultInstanceForType()</code></pre>
+    <pre class="prettyprint"><code>public TranscriptNormalization getDefaultInstanceForType()</code></pre>
   </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -456,13 +367,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getDescriptor_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getDescriptor*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getDescriptor__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getDescriptor()" class="notranslate">getDescriptor()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getDescriptor_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDescriptor*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getDescriptor__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getDescriptor()" class="notranslate">getDescriptor()</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public static final Descriptors.Descriptor getDescriptor()</code></pre>
   </div>
@@ -481,59 +392,174 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getError_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getError*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getError__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getError()" class="notranslate">getError()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntries_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntries*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntries_int_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntries(int)" class="notranslate">getEntries(int index)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public Status getError()</code></pre>
+    <pre class="prettyprint"><code>public TranscriptNormalization.Entry getEntries(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><pre><code>A list of replacement entries. We will perform replacement with one entry
+ at a time. For example, the second entry in [&quot;cat&quot; =&gt; &quot;dog&quot;, &quot;mountain cat&quot;
+ =&gt; &quot;mountain dog&quot;] will never be applied because we will always process the
+ first entry before it. At most 100 entries.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code></p>
 </div>
-  <strong>Returns</strong>
+  <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">com.google.rpc.Status</span></td>
-        <td><p>The error.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getErrorOrBuilder_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getErrorOrBuilder*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getErrorOrBuilder__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getErrorOrBuilder()" class="notranslate">getErrorOrBuilder()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public StatusOrBuilder getErrorOrBuilder()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">com.google.rpc.StatusOrBuilder</span></td>
+        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
+        <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getParserForType_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getParserForType*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getParserForType__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getParserForType()" class="notranslate">getParserForType()</h3>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry.html">TranscriptNormalization.Entry</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesCount_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesCount*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesCount__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesCount()" class="notranslate">getEntriesCount()</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public Parser&lt;StreamingRecognizeResponse&gt; getParserForType()</code></pre>
+    <pre class="prettyprint"><code>public int getEntriesCount()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of replacement entries. We will perform replacement with one entry
+ at a time. For example, the second entry in [&quot;cat&quot; =&gt; &quot;dog&quot;, &quot;mountain cat&quot;
+ =&gt; &quot;mountain dog&quot;] will never be applied because we will always process the
+ first entry before it. At most 100 entries.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesList_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesList*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesList__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesList()" class="notranslate">getEntriesList()</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public List&lt;TranscriptNormalization.Entry&gt; getEntriesList()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of replacement entries. We will perform replacement with one entry
+ at a time. For example, the second entry in [&quot;cat&quot; =&gt; &quot;dog&quot;, &quot;mountain cat&quot;
+ =&gt; &quot;mountain dog&quot;] will never be applied because we will always process the
+ first entry before it. At most 100 entries.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry.html">Entry</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesOrBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesOrBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesOrBuilder_int_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesOrBuilder(int)" class="notranslate">getEntriesOrBuilder(int index)</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public TranscriptNormalization.EntryOrBuilder getEntriesOrBuilder(int index)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of replacement entries. We will perform replacement with one entry
+ at a time. For example, the second entry in [&quot;cat&quot; =&gt; &quot;dog&quot;, &quot;mountain cat&quot;
+ =&gt; &quot;mountain dog&quot;] will never be applied because we will always process the
+ first entry before it. At most 100 entries.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.EntryOrBuilder.html">TranscriptNormalization.EntryOrBuilder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesOrBuilderList_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesOrBuilderList*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getEntriesOrBuilderList__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getEntriesOrBuilderList()" class="notranslate">getEntriesOrBuilderList()</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public List&lt;? extends TranscriptNormalization.EntryOrBuilder&gt; getEntriesOrBuilderList()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>A list of replacement entries. We will perform replacement with one entry
+ at a time. For example, the second entry in [&quot;cat&quot; =&gt; &quot;dog&quot;, &quot;mountain cat&quot;
+ =&gt; &quot;mountain dog&quot;] will never be applied because we will always process the
+ first entry before it. At most 100 entries.
+</code></pre><p><code>repeated .google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry entries = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>&lt;<span class="xref">? extends com.google.cloud.speech.v1p1beta1.TranscriptNormalization.EntryOrBuilder</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getParserForType_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getParserForType*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getParserForType__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getParserForType()" class="notranslate">getParserForType()</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public Parser&lt;TranscriptNormalization&gt; getParserForType()</code></pre>
   </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -545,179 +571,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.Parser.html">Parser</a>&lt;<a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a>&gt;</td>
+        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.Parser.html">Parser</a>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html#com_google_protobuf_GeneratedMessageV3_getParserForType__">GeneratedMessageV3.getParserForType()</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResults_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResults*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResults_int_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResults(int)" class="notranslate">getResults(int index)</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public StreamingRecognitionResult getResults(int index)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
- correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
-</div>
-  <strong>Parameter</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognitionResult.html">StreamingRecognitionResult</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsCount_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsCount*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsCount__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsCount()" class="notranslate">getResultsCount()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public int getResultsCount()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
- correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsList_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsList*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsList__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsList()" class="notranslate">getResultsList()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public List&lt;StreamingRecognitionResult&gt; getResultsList()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
- correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>&lt;<a class="xref" href="com.google.cloud.speech.v1.StreamingRecognitionResult.html">StreamingRecognitionResult</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsOrBuilder_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsOrBuilder*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsOrBuilder_int_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsOrBuilder(int)" class="notranslate">getResultsOrBuilder(int index)</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public StreamingRecognitionResultOrBuilder getResultsOrBuilder(int index)</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
- correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
-</div>
-  <strong>Parameter</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognitionResultOrBuilder.html">StreamingRecognitionResultOrBuilder</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsOrBuilderList_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsOrBuilderList*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getResultsOrBuilderList__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getResultsOrBuilderList()" class="notranslate">getResultsOrBuilderList()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public List&lt;? extends StreamingRecognitionResultOrBuilder&gt; getResultsOrBuilderList()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
- correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a>&lt;<span class="xref">? extends com.google.cloud.speech.v1.StreamingRecognitionResultOrBuilder</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getSerializedSize_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getSerializedSize*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getSerializedSize__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getSerializedSize()" class="notranslate">getSerializedSize()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getSerializedSize_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getSerializedSize*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getSerializedSize__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getSerializedSize()" class="notranslate">getSerializedSize()</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public int getSerializedSize()</code></pre>
   </div>
@@ -738,105 +600,8 @@
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html#com_google_protobuf_GeneratedMessageV3_getSerializedSize__">GeneratedMessageV3.getSerializedSize()</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getSpeechEventType_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getSpeechEventType*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getSpeechEventType__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getSpeechEventType()" class="notranslate">getSpeechEventType()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public StreamingRecognizeResponse.SpeechEventType getSpeechEventType()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>Indicates the type of speech event.
-</code></pre><p><code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType.html">StreamingRecognizeResponse.SpeechEventType</a></td>
-        <td><p>The speechEventType.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getSpeechEventTypeValue_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getSpeechEventTypeValue*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getSpeechEventTypeValue__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getSpeechEventTypeValue()" class="notranslate">getSpeechEventTypeValue()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public int getSpeechEventTypeValue()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>Indicates the type of speech event.
-</code></pre><p><code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
-        <td><p>The enum numeric value on the wire for speechEventType.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTime_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTime__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime()" class="notranslate">getTotalBilledTime()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public Duration getTotalBilledTime()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
- Set only if this is the last response in the stream.
-</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.Duration.html">Duration</a></td>
-        <td><p>The totalBilledTime.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTimeOrBuilder_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTimeOrBuilder__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder()" class="notranslate">getTotalBilledTimeOrBuilder()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public DurationOrBuilder getTotalBilledTimeOrBuilder()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
- Set only if this is the last response in the stream.
-</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.DurationOrBuilder.html">DurationOrBuilder</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getUnknownFields_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getUnknownFields*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getUnknownFields__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getUnknownFields()" class="notranslate">getUnknownFields()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getUnknownFields_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getUnknownFields*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_getUnknownFields__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.getUnknownFields()" class="notranslate">getUnknownFields()</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public final UnknownFieldSet getUnknownFields()</code></pre>
   </div>
@@ -857,58 +622,8 @@
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html#com_google_protobuf_GeneratedMessageV3_getUnknownFields__">GeneratedMessageV3.getUnknownFields()</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hasError_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hasError*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hasError__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hasError()" class="notranslate">hasError()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public boolean hasError()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">boolean</a></td>
-        <td><p>Whether the error field is set.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hasTotalBilledTime_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hasTotalBilledTime__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime()" class="notranslate">hasTotalBilledTime()</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>public boolean hasTotalBilledTime()</code></pre>
-  </div>
-  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
- Set only if this is the last response in the stream.
-</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
-</div>
-  <strong>Returns</strong>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">boolean</a></td>
-        <td><p>Whether the totalBilledTime field is set.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hashCode_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hashCode*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hashCode__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hashCode()" class="notranslate">hashCode()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_hashCode_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.hashCode*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_hashCode__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.hashCode()" class="notranslate">hashCode()</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public int hashCode()</code></pre>
   </div>
@@ -929,8 +644,8 @@
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.AbstractMessage.html#com_google_protobuf_AbstractMessage_hashCode__">AbstractMessage.hashCode()</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_internalGetFieldAccessorTable_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.internalGetFieldAccessorTable*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_internalGetFieldAccessorTable__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.internalGetFieldAccessorTable()" class="notranslate">internalGetFieldAccessorTable()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_internalGetFieldAccessorTable_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.internalGetFieldAccessorTable*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_internalGetFieldAccessorTable__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.internalGetFieldAccessorTable()" class="notranslate">internalGetFieldAccessorTable()</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable()</code></pre>
   </div>
@@ -951,8 +666,8 @@
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html#com_google_protobuf_GeneratedMessageV3_internalGetFieldAccessorTable__">GeneratedMessageV3.internalGetFieldAccessorTable()</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_isInitialized_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.isInitialized*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_isInitialized__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.isInitialized()" class="notranslate">isInitialized()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_isInitialized_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.isInitialized*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_isInitialized__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.isInitialized()" class="notranslate">isInitialized()</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public final boolean isInitialized()</code></pre>
   </div>
@@ -973,10 +688,10 @@
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html#com_google_protobuf_GeneratedMessageV3_isInitialized__">GeneratedMessageV3.isInitialized()</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilder_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilder*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilder__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilder()" class="notranslate">newBuilder()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilder()" class="notranslate">newBuilder()</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse.Builder newBuilder()</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization.Builder newBuilder()</code></pre>
   </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -988,15 +703,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.Builder.html">StreamingRecognizeResponse.Builder</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder.html">TranscriptNormalization.Builder</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilder_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilder*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilder_com_google_cloud_speech_v1_StreamingRecognizeResponse_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilder(com.google.cloud.speech.v1.StreamingRecognizeResponse)" class="notranslate">newBuilder(StreamingRecognizeResponse prototype)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilder_com_google_cloud_speech_v1p1beta1_TranscriptNormalization_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilder(com.google.cloud.speech.v1p1beta1.TranscriptNormalization)" class="notranslate">newBuilder(TranscriptNormalization prototype)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse.Builder newBuilder(StreamingRecognizeResponse prototype)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization.Builder newBuilder(TranscriptNormalization prototype)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1009,7 +724,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td><span class="parametername">prototype</span></td>
         <td></td>
       </tr>
@@ -1025,15 +740,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.Builder.html">StreamingRecognizeResponse.Builder</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder.html">TranscriptNormalization.Builder</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilderForType_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilderForType*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilderForType__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilderForType()" class="notranslate">newBuilderForType()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilderForType_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilderForType*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilderForType__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilderForType()" class="notranslate">newBuilderForType()</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder newBuilderForType()</code></pre>
+    <pre class="prettyprint"><code>public TranscriptNormalization.Builder newBuilderForType()</code></pre>
   </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1045,15 +760,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.Builder.html">StreamingRecognizeResponse.Builder</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder.html">TranscriptNormalization.Builder</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilderForType_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilderForType*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newBuilderForType_com_google_protobuf_GeneratedMessageV3_BuilderParent_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent)" class="notranslate">newBuilderForType(GeneratedMessageV3.BuilderParent parent)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilderForType_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilderForType*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newBuilderForType_com_google_protobuf_GeneratedMessageV3_BuilderParent_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent)" class="notranslate">newBuilderForType(GeneratedMessageV3.BuilderParent parent)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>protected StreamingRecognizeResponse.Builder newBuilderForType(GeneratedMessageV3.BuilderParent parent)</code></pre>
+    <pre class="prettyprint"><code>protected TranscriptNormalization.Builder newBuilderForType(GeneratedMessageV3.BuilderParent parent)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1082,15 +797,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.Builder.html">StreamingRecognizeResponse.Builder</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder.html">TranscriptNormalization.Builder</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html#com_google_protobuf_GeneratedMessageV3_newBuilderForType_com_google_protobuf_GeneratedMessageV3_BuilderParent_">GeneratedMessageV3.newBuilderForType(GeneratedMessageV3.BuilderParent parent)</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newInstance_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newInstance*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_newInstance_com_google_protobuf_GeneratedMessageV3_UnusedPrivateParameter_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.newInstance(com.google.protobuf.GeneratedMessageV3.UnusedPrivateParameter)" class="notranslate">newInstance(GeneratedMessageV3.UnusedPrivateParameter unused)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newInstance_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newInstance*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_newInstance_com_google_protobuf_GeneratedMessageV3_UnusedPrivateParameter_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.newInstance(com.google.protobuf.GeneratedMessageV3.UnusedPrivateParameter)" class="notranslate">newInstance(GeneratedMessageV3.UnusedPrivateParameter unused)</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unused)</code></pre>
   </div>
@@ -1128,10 +843,10 @@
   </table>
   <strong>Overrides</strong>
   <div><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.GeneratedMessageV3.html#com_google_protobuf_GeneratedMessageV3_newInstance_com_google_protobuf_GeneratedMessageV3_UnusedPrivateParameter_">GeneratedMessageV3.newInstance(GeneratedMessageV3.UnusedPrivateParameter unused)</a></div>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseDelimitedFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseDelimitedFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseDelimitedFrom_java_io_InputStream_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseDelimitedFrom(java.io.InputStream)" class="notranslate">parseDelimitedFrom(InputStream input)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseDelimitedFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseDelimitedFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseDelimitedFrom_java_io_InputStream_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseDelimitedFrom(java.io.InputStream)" class="notranslate">parseDelimitedFrom(InputStream input)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseDelimitedFrom(InputStream input)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseDelimitedFrom(InputStream input)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1160,7 +875,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1180,10 +895,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseDelimitedFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseDelimitedFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseDelimitedFrom_java_io_InputStream_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseDelimitedFrom(java.io.InputStream,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseDelimitedFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseDelimitedFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseDelimitedFrom_java_io_InputStream_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseDelimitedFrom(java.io.InputStream,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</code></pre>
   </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1217,7 +932,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1237,10 +952,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_byte___" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(byte[])" class="notranslate">parseFrom(byte[] data)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_byte___" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(byte[])" class="notranslate">parseFrom(byte[] data)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(byte[] data)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(byte[] data)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1269,7 +984,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1289,10 +1004,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_byte___com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(byte[],com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_byte___com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(byte[],com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry)</code></pre>
   </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1326,7 +1041,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1346,10 +1061,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_com_google_protobuf_ByteString_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(com.google.protobuf.ByteString)" class="notranslate">parseFrom(ByteString data)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_com_google_protobuf_ByteString_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(com.google.protobuf.ByteString)" class="notranslate">parseFrom(ByteString data)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(ByteString data)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(ByteString data)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1378,7 +1093,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1398,10 +1113,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_com_google_protobuf_ByteString_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(com.google.protobuf.ByteString,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_com_google_protobuf_ByteString_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(com.google.protobuf.ByteString,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry)</code></pre>
   </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1435,7 +1150,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1455,10 +1170,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_com_google_protobuf_CodedInputStream_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(com.google.protobuf.CodedInputStream)" class="notranslate">parseFrom(CodedInputStream input)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_com_google_protobuf_CodedInputStream_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(com.google.protobuf.CodedInputStream)" class="notranslate">parseFrom(CodedInputStream input)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(CodedInputStream input)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(CodedInputStream input)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1487,7 +1202,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1507,10 +1222,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_com_google_protobuf_CodedInputStream_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_com_google_protobuf_CodedInputStream_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry)</code></pre>
   </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1544,7 +1259,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1564,10 +1279,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_java_io_InputStream_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(java.io.InputStream)" class="notranslate">parseFrom(InputStream input)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_java_io_InputStream_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(java.io.InputStream)" class="notranslate">parseFrom(InputStream input)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(InputStream input)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(InputStream input)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1596,7 +1311,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1616,10 +1331,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_java_io_InputStream_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(java.io.InputStream,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_java_io_InputStream_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(java.io.InputStream,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry)</code></pre>
   </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1653,7 +1368,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1673,10 +1388,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_java_nio_ByteBuffer_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(java.nio.ByteBuffer)" class="notranslate">parseFrom(ByteBuffer data)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_java_nio_ByteBuffer_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(java.nio.ByteBuffer)" class="notranslate">parseFrom(ByteBuffer data)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(ByteBuffer data)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(ByteBuffer data)</code></pre>
   </div>
   <strong>Parameter</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1705,7 +1420,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1725,10 +1440,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parseFrom_java_nio_ByteBuffer_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parseFrom(java.nio.ByteBuffer,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parseFrom_java_nio_ByteBuffer_com_google_protobuf_ExtensionRegistryLite_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parseFrom(java.nio.ByteBuffer,com.google.protobuf.ExtensionRegistryLite)" class="notranslate">parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry)</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static StreamingRecognizeResponse parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry)</code></pre>
+    <pre class="prettyprint"><code>public static TranscriptNormalization parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry)</code></pre>
   </div>
   <strong>Parameters</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1762,7 +1477,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1782,10 +1497,10 @@
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parser_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parser*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_parser__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.parser()" class="notranslate">parser()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parser_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parser*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_parser__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.parser()" class="notranslate">parser()</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public static Parser&lt;StreamingRecognizeResponse&gt; parser()</code></pre>
+    <pre class="prettyprint"><code>public static Parser&lt;TranscriptNormalization&gt; parser()</code></pre>
   </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1797,15 +1512,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.Parser.html">Parser</a>&lt;<a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.html">StreamingRecognizeResponse</a>&gt;</td>
+        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.Parser.html">Parser</a>&lt;<a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.html">TranscriptNormalization</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_toBuilder_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.toBuilder*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_toBuilder__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.toBuilder()" class="notranslate">toBuilder()</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_toBuilder_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.toBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_toBuilder__" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.toBuilder()" class="notranslate">toBuilder()</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder toBuilder()</code></pre>
+    <pre class="prettyprint"><code>public TranscriptNormalization.Builder toBuilder()</code></pre>
   </div>
   <strong>Returns</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -1817,13 +1532,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="com.google.cloud.speech.v1.StreamingRecognizeResponse.Builder.html">StreamingRecognizeResponse.Builder</a></td>
+        <td><a class="xref" href="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.Builder.html">TranscriptNormalization.Builder</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_writeTo_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.writeTo*"></a>
-  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_writeTo_com_google_protobuf_CodedOutputStream_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.writeTo(com.google.protobuf.CodedOutputStream)" class="notranslate">writeTo(CodedOutputStream output)</h3>
+  <a id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_writeTo_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.writeTo*"></a>
+  <h3 id="com_google_cloud_speech_v1p1beta1_TranscriptNormalization_writeTo_com_google_protobuf_CodedOutputStream_" data-uid="com.google.cloud.speech.v1p1beta1.TranscriptNormalization.writeTo(com.google.protobuf.CodedOutputStream)" class="notranslate">writeTo(CodedOutputStream output)</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public void writeTo(CodedOutputStream output)</code></pre>
   </div>
