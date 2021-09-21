@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/ruby/_project.yaml">
+    <meta name="book_path" value="/ruby/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="Google::Cloud::Vision::V1::GcsDestination">
+<h1 class="page-title">Class Google::Cloud::Vision::V1::GcsDestination
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>The Google Cloud Storage location where the output will be written to.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inherits</h2>
+    <ul>
+      <li>
+        Object
+      </li>
+    </ul>
+  </div>
+  <div class="inheritance">
+    <h2>Extended By</h2>
+    <ul>
+      <li>
+        Google::Protobuf::MessageExts::ClassMethods
+      </li>
+    </ul>
+  </div>
+  <div class="inheritance">
+    <h2>Includes</h2>
+    <ul>
+      <li>
+        Google::Protobuf::MessageExts
+      </li>
+    </ul>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="Google__Cloud__Vision__V1__GcsDestination_uri_instance_" data-uid="Google::Cloud::Vision::V1::GcsDestination#uri(instance)" class="notranslate">#uri</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def uri =&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::String) — Google Cloud Storage URI prefix where the results will be stored. Results
+will be in JSON format and preceded by its corresponding input URI prefix.
+This field can either represent a gcs file prefix or gcs directory. In
+either case, the uri should be unique because in order to get all of the
+output files, you will need to do a wildcard gcs search on the uri prefix
+you provide.
+
+Examples:
+
+*<pre class="prettyprint lang-rb">File Prefix: gs://bucket-name/here/filenameprefix   The output files
+will be created in gs://bucket-name/here/ and the names of the
+output files will begin with "filenameprefix".</pre>
+
+*<pre class="prettyprint lang-rb">Directory Prefix: gs://bucket-name/some/location/   The output files
+will be created in gs://bucket-name/some/location/ and the names of the
+output files could be anything because there was no filename prefix
+specified.</pre>
+
+If multiple outputs, each response is still AnnotateFileResponse, each of
+which contains some subset of the full list of AnnotateImageResponse.
+Multiple outputs can happen if, for example, the output JSON is too large
+and overflows into multiple sharded files.
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Cloud__Vision__V1__GcsDestination_uri__instance_" data-uid="Google::Cloud::Vision::V1::GcsDestination#uri=(instance)" class="notranslate">#uri=</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def uri=(value) =&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::String) — Google Cloud Storage URI prefix where the results will be stored. Results
+will be in JSON format and preceded by its corresponding input URI prefix.
+This field can either represent a gcs file prefix or gcs directory. In
+either case, the uri should be unique because in order to get all of the
+output files, you will need to do a wildcard gcs search on the uri prefix
+you provide.
+
+Examples:
+
+*<pre class="prettyprint lang-rb">File Prefix: gs://bucket-name/here/filenameprefix   The output files
+will be created in gs://bucket-name/here/ and the names of the
+output files will begin with "filenameprefix".</pre>
+
+*<pre class="prettyprint lang-rb">Directory Prefix: gs://bucket-name/some/location/   The output files
+will be created in gs://bucket-name/some/location/ and the names of the
+output files could be anything because there was no filename prefix
+specified.</pre>
+
+If multiple outputs, each response is still AnnotateFileResponse, each of
+which contains some subset of the full list of AnnotateImageResponse.
+Multiple outputs can happen if, for example, the output JSON is too large
+and overflows into multiple sharded files.
+      </li>
+    </ul>
+  </div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

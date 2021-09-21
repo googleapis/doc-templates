@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/ruby/_project.yaml">
+    <meta name="book_path" value="/ruby/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="Google::Protobuf::FieldMask">
+<h1 class="page-title">Class Google::Protobuf::FieldMask
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p><code>FieldMask</code> represents a set of symbolic field paths, for example:</p>
+<pre class="prettyprint lang-rb">paths: "f.a"
+paths: "f.b.d"</pre>
+
+<p>Here <code>f</code> represents a field in some root message, <code>a</code> and <code>b</code>
+fields in the message found in <code>f</code>, and <code>d</code> a field found in the
+message in <code>f.b</code>.</p>
+<p>Field masks are used to specify a subset of fields that should be
+returned by a get operation or modified by an update operation.
+Field masks also have a custom JSON encoding (see below).</p>
+<h2 id="field-masks-in-projections">Field Masks in Projections</h2>
+<p>When used in the context of a projection, a response message or
+sub-message is filtered by the API to only contain those fields as
+specified in the mask. For example, if the mask in the previous
+example is applied to a response message as follows:</p>
+<pre class="prettyprint lang-rb">f {
+  a : 22
+  b {
+    d : 1
+    x : 2
+  }
+  y : 13
+}
+z: 8</pre>
+
+<p>The result will not contain specific values for fields x,y and z
+(their value will be set to the default, and omitted in proto text
+output):</p>
+<pre class="prettyprint lang-rb">f {
+  a : 22
+  b {
+    d : 1
+  }
+}</pre>
+
+<p>A repeated field is not allowed except at the last position of a
+paths string.</p>
+<p>If a FieldMask object is not present in a get operation, the
+operation applies to all fields (as if a FieldMask of all fields
+had been specified).</p>
+<p>Note that a field mask does not necessarily apply to the
+top-level response message. In case of a REST get operation, the
+field mask applies directly to the response, but in case of a REST
+list operation, the mask instead applies to each individual message
+in the returned resource list. In case of a REST custom method,
+other definitions may be used. Where the mask applies will be
+clearly documented together with its declaration in the API.  In
+any case, the effect on the returned resource/resources is required
+behavior for APIs.</p>
+<h2 id="field-masks-in-update-operations">Field Masks in Update Operations</h2>
+<p>A field mask in update operations specifies which fields of the
+targeted resource are going to be updated. The API is required
+to only change the values of the fields as specified in the mask
+and leave the others untouched. If a resource is passed in to
+describe the updated values, the API ignores the values of all
+fields not covered by the mask.</p>
+<p>If a repeated field is specified for an update operation, new values will
+be appended to the existing repeated field in the target resource. Note that
+a repeated field is only allowed in the last position of a <code>paths</code> string.</p>
+<p>If a sub-message is specified in the last position of the field mask for an
+update operation, then new value will be merged into the existing sub-message
+in the target resource.</p>
+<p>For example, given the target message:</p>
+<pre class="prettyprint lang-rb">f {
+  b {
+    d: 1
+    x: 2
+  }
+  c: [1]
+}</pre>
+
+<p>And an update message:</p>
+<pre class="prettyprint lang-rb">f {
+  b {
+    d: 10
+  }
+  c: [2]
+}</pre>
+
+<p>then if the field mask is:</p>
+<p> paths: [&quot;f.b&quot;, &quot;f.c&quot;]</p>
+<p>then the result will be:</p>
+<pre class="prettyprint lang-rb">f {
+  b {
+    d: 10
+    x: 2
+  }
+  c: [1, 2]
+}</pre>
+
+<p>An implementation may provide options to override this default behavior for
+repeated and message fields.</p>
+<p>In order to reset a field&#39;s value to the default, the field must
+be in the mask and set to the default value in the provided resource.
+Hence, in order to reset all fields of a resource, provide a default
+instance of the resource and set all fields in the mask, or do
+not provide a mask as described below.</p>
+<p>If a field mask is not present on update, the operation applies to
+all fields (as if a field mask of all fields has been specified).
+Note that in the presence of schema evolution, this may mean that
+fields the client does not know and has therefore not filled into
+the request will be reset to their default. If this is unwanted
+behavior, a specific service may require a client to always specify
+a field mask, producing an error if not.</p>
+<p>As with get operations, the location of the resource which
+describes the updated values in the request message depends on the
+operation kind. In any case, the effect of the field mask is
+required to be honored by the API.</p>
+<h3 id="considerations-for-http-rest">Considerations for HTTP REST</h3>
+<p>The HTTP kind of an update operation which uses a field mask must
+be set to PATCH instead of PUT in order to satisfy HTTP semantics
+(PUT must only be used for full updates).</p>
+<h2 id="json-encoding-of-field-masks">JSON Encoding of Field Masks</h2>
+<p>In JSON, a field mask is encoded as a single string where paths are
+separated by a comma. Fields name in each path are converted
+to/from lower-camel naming conventions.</p>
+<p>As an example, consider the following message declarations:</p>
+<pre class="prettyprint lang-rb">message Profile {
+  User user = 1;
+  Photo photo = 2;
+}
+message User {
+  string display_name = 1;
+  string address = 2;
+}</pre>
+
+<p>In proto a field mask for <code>Profile</code> may look as such:</p>
+<pre class="prettyprint lang-rb">mask {
+  paths: "user.display_name"
+  paths: "photo"
+}</pre>
+
+<p>In JSON, the same mask is represented as below:</p>
+<pre class="prettyprint lang-rb">{
+  mask: "user.displayName,photo"
+}</pre>
+
+<h2 id="field-masks-and-oneof-fields">Field Masks and Oneof Fields</h2>
+<p>Field masks treat fields in oneofs just as regular fields. Consider the
+following message:</p>
+<pre class="prettyprint lang-rb">message SampleMessage {
+  oneof test_oneof {
+    string name = 4;
+    SubMessage sub_message = 9;
+  }
+}</pre>
+
+<p>The field mask can be:</p>
+<pre class="prettyprint lang-rb">mask {
+  paths: "name"
+}</pre>
+
+<p>Or:</p>
+<pre class="prettyprint lang-rb">mask {
+  paths: "sub_message"
+}</pre>
+
+<p>Note that oneof type names (&quot;test_oneof&quot; in this case) cannot be used in
+paths.</p>
+<h3 id="field-mask-verification">Field Mask Verification</h3>
+<p>The implementation of any API method which has a FieldMask type field in the
+request should verify the included field paths, and return an
+<code>INVALID_ARGUMENT</code> error if any path is unmappable.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inherits</h2>
+    <ul>
+      <li>
+        Object
+      </li>
+    </ul>
+  </div>
+  <div class="inheritance">
+    <h2>Extended By</h2>
+    <ul>
+      <li>
+        Google::Protobuf::MessageExts::ClassMethods
+      </li>
+    </ul>
+  </div>
+  <div class="inheritance">
+    <h2>Includes</h2>
+    <ul>
+      <li>
+        Google::Protobuf::MessageExts
+      </li>
+    </ul>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="Google__Protobuf__FieldMask_paths_instance_" data-uid="Google::Protobuf::FieldMask#paths(instance)" class="notranslate">#paths</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def paths =&gt; ::Array&lt;::String&gt;</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::Array&lt;::String&gt;) — The set of field mask paths.
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Protobuf__FieldMask_paths__instance_" data-uid="Google::Protobuf::FieldMask#paths=(instance)" class="notranslate">#paths=</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def paths=(value) =&gt; ::Array&lt;::String&gt;</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::Array&lt;::String&gt;) — The set of field mask paths.
+      </li>
+    </ul>
+  </div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

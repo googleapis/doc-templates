@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1beta2.types.ReadSession">
+<h1 class="page-title">Class ReadSession
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Information about the ReadSession.
+Attributes:
+    name (str):
+        Output only. Unique identifier for the session, in the form
+        <code>projects/{project_id}/locations/{location}/sessions/{session_id}</code>.
+    expire_time (google.protobuf.timestamp_pb2.Timestamp):
+        Output only. Time at which the session becomes invalid.
+        After this time, subsequent requests to read this Session
+        will return errors. The expire_time is automatically
+        assigned and currently cannot be specified or updated.
+    data_format (google.cloud.bigquery_storage_v1beta2.types.DataFormat):
+        Immutable. Data format of the output data.
+    avro_schema (google.cloud.bigquery_storage_v1beta2.types.AvroSchema):
+        Output only. Avro schema.
+    arrow_schema (google.cloud.bigquery_storage_v1beta2.types.ArrowSchema):
+        Output only. Arrow schema.
+    table (str):
+        Immutable. Table that this ReadSession is reading from, in
+        the form
+        `projects/{project_id}/datasets/{dataset_id}/tables/{table_id}
+    table_modifiers (google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableModifiers):
+        Optional. Any modifiers which are applied
+        when reading from the specified table.
+    read_options (google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableReadOptions):
+        Optional. Read options for this session (e.g.
+        column selection, filters).
+    streams (Sequence[google.cloud.bigquery_storage_v1beta2.types.ReadStream]):
+        Output only. A list of streams created with the session.</p>
+<pre><code>    At least one stream is created with the session. In the
+    future, larger request_stream_count values *may* result in
+    this list being unpopulated, in that case, the user will
+    need to use a List method to get the streams instead, which
+    is not yet available.
+</code></pre></div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">ReadSession</span>
+  </div>
+  <h2 id="classes">Classes
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_types_ReadSession_TableModifiers" data-uid="google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableModifiers" class="notranslate">TableModifiers</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>TableModifiers(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Additional attributes when reading a table.
+Attributes:
+    snapshot_time (google.protobuf.timestamp_pb2.Timestamp):
+        The snapshot time of the table. If not set,
+        interpreted as now.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_types_ReadSession_TableReadOptions" data-uid="google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableReadOptions" class="notranslate">TableReadOptions</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>TableReadOptions(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Options dictating how we read a table.
+Attributes:
+    selected_fields (Sequence[str]):
+        Names of the fields in the table that should be read. If
+        empty, all fields will be read. If the specified field is a
+        nested field, all the sub-fields in the field will be
+        selected. The output field order is unrelated to the order
+        of fields in selected_fields.
+    row_restriction (str):
+        SQL text filtering statement, similar to a WHERE clause in a
+        query. Aggregates are not supported.</p>
+<pre><code>    Examples: &quot;int_field &gt; 5&quot; &quot;date_field = CAST(&#39;2014-9-27&#39; as
+    DATE)&quot; &quot;nullable_field is not NULL&quot; &quot;st_equals(geo_field,
+    st_geofromtext(&quot;POINT(2, 2)&quot;))&quot; &quot;numeric_field BETWEEN 1.0
+    AND 5.0&quot;
+
+
+    Restricted to a maximum length for 1 MB.
+arrow_serialization_options (google.cloud.bigquery_storage_v1beta2.types.ArrowSerializationOptions):
+    Optional. Options specific to the Apache
+    Arrow output format.
+</code></pre></div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

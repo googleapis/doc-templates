@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/dotnet/_project.yaml">
+    <meta name="book_path" value="/dotnet/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="">
+<h1 class="page-title">
+  <h1 id="version-history">Version history</h1>
+</h1>
+
+<h1 id="version-280-released-2021-05-27">Version 2.8.0, released 2021-05-27</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/2722d51">Commit 2722d51</a>:<ul>
+<li>feat: add Cloud Asset List API</li>
+<li>feat: add access time as condition context in request and evaluation value in response for Cloud Asset AnalyzeIamPolicy API</li>
+<li>feat: add more info in response for Cloud Asset SearchAllResources API</li>
+</ul>
+</li>
+</ul>
+<h1 id="version-270-released-2021-04-29">Version 2.7.0, released 2021-04-29</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/cb59fb9">Commit cb59fb9</a>: chore: fix typo &#39;partion_key&#39; in comments</li>
+</ul>
+<p>Note: even though there are no API surface changes, this is a minor
+version bump due to dependency changes</p>
+<h1 id="version-260-released-2020-11-17">Version 2.6.0, released 2020-11-17</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/3733849">Commit 3733849</a>: feat: added support OSInventory in Assets. docs: updated existing docs.</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/c42363f">Commit c42363f</a>: feat: add AnalyzeIamPolicy and AnalyzeIamPolicyLongrunning RPCs</li>
+</ul>
+<h1 id="version-250-released-2020-09-28">Version 2.5.0, released 2020-09-28</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/0790924">Commit 0790924</a>: fix: Add gRPC compatibility constructors</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/0ca05f5">Commit 0ca05f5</a>: feat: Regenerate all APIs using protoc 3.13 and Grpc.Tools 2.31</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/6eed2d8">Commit 6eed2d8</a>: feat: Added support for per type and partition export for Cloud Asset API</li>
+</ul>
+<h1 id="version-240-released-2020-09-15">Version 2.4.0, released 2020-09-15</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/c9ca107">Commit c9ca107</a>: Remove AnalyzeIamPolicy and ExportIamPolicyAnalysis RPCs</li>
+</ul>
+<p>BREAKING CHANGE: The change here effectively reverts part of <a href="https://github.com/googleapis/google-cloud-dotnet/commit/8ef5dc2">commit 8ef5dc2</a>,
+so removes part of the public API.</p>
+<p>We have taken the decision to publish this as a minor version rather than going to version 3.0, as we don&#39;t expect customers to be affected by the nature of the breaking change:</p>
+<ul>
+<li>The affected version (2.3.0) has been delisted, and had only been installed by a small number of customers, as reported on NuGet</li>
+<li>This version <em>is</em> compatible with 2.2.0 and earlier versions</li>
+<li>The accidentally-included new APIs were not enabled server-side, so customers could not have started relying on the server implementation yet</li>
+</ul>
+<p>We apologise for any confusion this causes.</p>
+<h1 id="version-230-released-2020-08-25-then-delisted-2020-09-14">Version 2.3.0, released 2020-08-25 (then delisted 2020-09-14)</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/8ef5dc2">Commit 8ef5dc2</a>: feat: add AnalyzeIamPolicy and ExportIamPolicyAnalysis RPCs</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/e7b75e6">Commit e7b75e6</a>: feat: added support OutputResult in ExportAssetsResponse.</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/6bde7a3">Commit 6bde7a3</a>: Adds service comments in client documentation</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/5b06141">Commit 5b06141</a>: fix: add missing RPCs to grpc_service_config</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/f83bdf1">Commit f83bdf1</a>: Enables RPCs without retries to still have timeouts specified.</li>
+</ul>
+<h1 id="version-220-released-2020-06-17">Version 2.2.0, released 2020-06-17</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/46ae081">Commit 46ae081</a>:<ul>
+<li>feat: added support for condition in Feed</li>
+<li>docs: updated existing docs.</li>
+</ul>
+</li>
+</ul>
+<p>Clients can now specify conditions in Asset Feed. For details, see <a href="https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes">https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes</a>.</p>
+<h1 id="version-210-released-2020-06-02">Version 2.1.0, released 2020-06-02</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/89ca277">Commit 89ca277</a>: docs: Properly format literal strings.</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/372df03">Commit 372df03</a>: feat: add SearchAllResources and SearchAllIamPolicies RPCs (<a href="https://github.com/googleapis/google-cloud-dotnet/issues/4974">issue 4974</a>)</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/947a573">Commit 947a573</a>: docs: Regenerate all clients with more explicit documentation</li>
+</ul>
+<h1 id="version-200-released-2020-04-08">Version 2.0.0, released 2020-04-08</h1>
+<p>No API surface changes since 2.0.0-beta03.</p>
+<h1 id="version-200-beta03-released-2020-03-30">Version 2.0.0-beta03, released 2020-03-30</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/4a5abd3">Commit 4a5abd3</a>: Feature: support for AccessContextPolicy, AccessLevel, ServicePerimeter and OrgPolicy</li>
+</ul>
+<p>This is the first release that depends on the
+Google.Cloud.OrgPolicy.V1, Google.Identity.AccessContextManager.Type
+and Google.Identity.AccessContextManager.V1 packages.</p>
+<h1 id="version-200-beta02-released-2020-03-18">Version 2.0.0-beta02, released 2020-03-18</h1>
+<p>No API surface changes compared with 2.0.0-beta01, just dependency
+and implementation changes.</p>
+<h1 id="version-200-beta01-released-2020-02-17">Version 2.0.0-beta01, released 2020-02-17</h1>
+<p>This is the first prerelease targeting GAX v3. Please see the <a href="https://googleapis.github.io/google-cloud-dotnet/docs/guides/breaking-gax2.html">breaking changes
+guide</a>
+for details of changes to both GAX and code generation.</p>
+<p>Additional breaking changes not covered in the guide:</p>
+<ul>
+<li><code>BatchGetAssetsHistoryRequest</code> and <code>ExportAssetsRequest</code> now express the parent resource as <code>IResourceName</code> rather than <code>ProjectName</code>.</li>
+</ul>
+<h1 id="version-110-released-2019-12-09">Version 1.1.0, released 2019-12-09</h1>
+<ul>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/4f2ccbe">Commit 4f2ccbe</a>: Real-time feed support</li>
+<li><a href="https://github.com/googleapis/google-cloud-dotnet/commit/f4e3eaf">Commit f4e3eaf</a>:<ul>
+<li>BigQuery output support</li>
+<li>Storage URI prefix support</li>
+<li>Added ContentType.OrgPolicy and ContentType.AccessPolicy</li>
+</ul>
+</li>
+</ul>
+<h1 id="version-100-released-2019-07-10">Version 1.0.0, released 2019-07-10</h1>
+<p>Initial release.</p>
+
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

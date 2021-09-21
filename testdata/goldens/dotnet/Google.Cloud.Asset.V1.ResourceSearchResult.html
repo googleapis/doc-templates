@@ -1,0 +1,616 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/dotnet/_project.yaml">
+    <meta name="book_path" value="/dotnet/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="Google.Cloud.Asset.V1.ResourceSearchResult">
+<h1 class="page-title">Class ResourceSearchResult
+</h1>
+  
+  
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public sealed class ResourceSearchResult : IMessage&lt;ResourceSearchResult&gt;, IEquatable&lt;ResourceSearchResult&gt;, IDeepCloneable&lt;ResourceSearchResult&gt;, IBufferMessage, IMessage</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>A result of Resource Search, containing information of a cloud resource.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+    <span><span class="xref">System.Object</span></span> <span> &gt; </span>
+    <span class="xref">ResourceSearchResult</span>
+  </div>
+  <div classs="implements">
+    <h2>Implements</h2>
+    <span><span class="xref">Google.Protobuf.IMessage</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ResourceSearchResult.html">ResourceSearchResult</a>&gt;,</span>
+    <span><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ResourceSearchResult.html">ResourceSearchResult</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IDeepCloneable</span>&lt;<a class="xref" href="Google.Cloud.Asset.V1.ResourceSearchResult.html">ResourceSearchResult</a>&gt;,</span>
+    <span><span class="xref">Google.Protobuf.IBufferMessage</span>,</span>
+    <span><span class="xref">Google.Protobuf.IMessage</span></span>
+  </div>
+  <div class="inheritedMembers expandable">
+    <h2 class="showalways">Inherited Members</h2>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h2>Namespace</h2>
+  <a class="xref" href="Google.Cloud.Asset.V1.html">Google.Cloud.Asset.V1</a>
+  <h2>Assembly</h2>
+  <p>Google.Cloud.Asset.V1.dll</p>
+  <h2 id="constructors">Constructors
+  </h2>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult__ctor_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.#ctor*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult__ctor" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.#ctor" class="notranslate">ResourceSearchResult()</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public ResourceSearchResult()</code></pre>
+  </div>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult__ctor_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.#ctor*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult__ctor_Google_Cloud_Asset_V1_ResourceSearchResult_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.#ctor(Google.Cloud.Asset.V1.ResourceSearchResult)" class="notranslate">ResourceSearchResult(ResourceSearchResult)</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public ResourceSearchResult(ResourceSearchResult other)</code></pre>
+  </div>
+  <strong>Parameter</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Google.Cloud.Asset.V1.ResourceSearchResult.html">ResourceSearchResult</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="properties">Properties
+  </h2>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_AdditionalAttributes_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_AdditionalAttributes" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.AdditionalAttributes" class="notranslate">AdditionalAttributes</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public Struct AdditionalAttributes { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The additional searchable attributes of this resource. The attributes may
+vary from one resource type to another. Examples: <code>projectId</code> for Project,
+<code>dnsName</code> for DNS ManagedZone. This field contains a subset of the resource
+metadata fields that are returned by the List or Get APIs provided by the
+corresponding GCP service (e.g., Compute Engine). see <a href="https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types">API references and
+supported searchable
+attributes</a>
+to see which fields are included.</p>
+<p>You can search values of these fields through free text search. However,
+you should not consume the field programically as the field names and
+values may change as the GCP service updates to a new incompatible API
+version.</p>
+<p>To search against the <code>additional_attributes</code>:</p>
+<ul>
+<li>use a free text query to match the attributes values. Example: to search
+<code>additional_attributes = { dnsName: &amp;quot;foobar&amp;quot; }</code>, you can issue a query
+<code>foobar</code>.</li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Protobuf.WellKnownTypes.Struct</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_AssetType_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.AssetType*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_AssetType" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.AssetType" class="notranslate">AssetType</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string AssetType { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The type of this resource. Example: <code>compute.googleapis.com/Disk</code>.</p>
+<p>To search against the <code>asset_type</code>:</p>
+<ul>
+<li>specify the <code>asset_type</code> field in your search request.</li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_CreateTime_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_CreateTime" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.CreateTime" class="notranslate">CreateTime</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public Timestamp CreateTime { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The create timestamp of this resource, at which the resource was created.
+The granularity is in seconds. Timestamp.nanos will always be 0. This field
+is available only when the resource&apos;s proto contains it.</p>
+<p>To search against <code>create_time</code>:</p>
+<ul>
+<li>use a field query.</li>
+<li>value in seconds since unix epoch. Example: <code>createTime &gt; 1609459200</code></li>
+<li>value in date string. Example: <code>createTime &gt; 2021-01-01</code></li>
+<li>value in date-time string (must be quoted). Example: <code>createTime &gt;
+&amp;quot;2021-01-01T00:00:00&amp;quot;</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Protobuf.WellKnownTypes.Timestamp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_Description_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Description*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_Description" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Description" class="notranslate">Description</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string Description { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>One or more paragraphs of text description of this resource. Maximum length
+could be up to 1M bytes. This field is available only when the resource&apos;s
+proto contains it.</p>
+<p>To search against the <code>description</code>:</p>
+<ul>
+<li>use a field query. Example: <code>description:&amp;quot;important instance&amp;quot;</code></li>
+<li>use a free text query. Example: <code>&amp;quot;important instance&amp;quot;</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_DisplayName_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.DisplayName*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_DisplayName" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.DisplayName" class="notranslate">DisplayName</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string DisplayName { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The display name of this resource. This field is available only when the
+resource&apos;s proto contains it.</p>
+<p>To search against the <code>display_name</code>:</p>
+<ul>
+<li>use a field query. Example: <code>displayName:&amp;quot;My Instance&amp;quot;</code></li>
+<li>use a free text query. Example: <code>&amp;quot;My Instance&amp;quot;</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_Folders_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Folders*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_Folders" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Folders" class="notranslate">Folders</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public RepeatedField&lt;string&gt; Folders { get; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The folder(s) that this resource belongs to, in the form of
+folders/{FOLDER_NUMBER}. This field is available when the resource
+belongs to one or more folders.</p>
+<p>To search against <code>folders</code>:</p>
+<ul>
+<li>use a field query. Example: <code>folders:(123 OR 456)</code></li>
+<li>use a free text query. Example: <code>123</code></li>
+<li>specify the <code>scope</code> field as this folder in your search request.</li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Protobuf.Collections.RepeatedField</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_KmsKey_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_KmsKey" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.KmsKey" class="notranslate">KmsKey</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string KmsKey { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The Cloud KMS
+<a href="https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys?hl=en">CryptoKey</a>
+name or
+<a href="https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions?hl=en">CryptoKeyVersion</a>
+name. This field is available only when the resource&apos;s proto contains it.</p>
+<p>To search against the <code>kms_key</code>:</p>
+<ul>
+<li>use a field query. Example: <code>kmsKey:key</code></li>
+<li>use a free text query. Example: <code>key</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_Labels_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Labels*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_Labels" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Labels" class="notranslate">Labels</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public MapField&lt;string, string&gt; Labels { get; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Labels associated with this resource. See <a href="https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources">Labelling and grouping GCP
+resources</a>
+for more information. This field is available only when the resource&apos;s
+proto contains it.</p>
+<p>To search against the <code>labels</code>:</p>
+<ul>
+<li>use a field query:</li>
+<li>query on any label&apos;s key or value. Example: <code>labels:prod</code></li>
+<li>query by a given label. Example: <code>labels.env:prod</code></li>
+<li>query by a given label&apos;s existence. Example: <code>labels.env:*</code></li>
+<li>use a free text query. Example: <code>prod</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Protobuf.Collections.MapField</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_Location_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Location*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_Location" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Location" class="notranslate">Location</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string Location { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Location can be <code>global</code>, regional like <code>us-east1</code>, or zonal like
+<code>us-west1-b</code>. This field is available only when the resource&apos;s proto
+contains it.</p>
+<p>To search against the <code>location</code>:</p>
+<ul>
+<li>use a field query. Example: <code>location:us-west*</code></li>
+<li>use a free text query. Example: <code>us-west*</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_Name_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Name*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_Name" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Name" class="notranslate">Name</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string Name { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The full resource name of this resource. Example:
+<code>//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1</code>.
+See <a href="https://cloud.google.com/asset-inventory/docs/resource-name-format">Cloud Asset Inventory Resource Name
+Format</a>
+for more information.</p>
+<p>To search against the <code>name</code>:</p>
+<ul>
+<li>use a field query. Example: <code>name:instance1</code></li>
+<li>use a free text query. Example: <code>instance1</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_NetworkTags_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.NetworkTags*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_NetworkTags" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.NetworkTags" class="notranslate">NetworkTags</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public RepeatedField&lt;string&gt; NetworkTags { get; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Network tags associated with this resource. Like labels, network tags are a
+type of annotations used to group GCP resources. See <a href="https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources">Labelling GCP
+resources</a>
+for more information. This field is available only when the resource&apos;s
+proto contains it.</p>
+<p>To search against the <code>network_tags</code>:</p>
+<ul>
+<li>use a field query. Example: <code>networkTags:internal</code></li>
+<li>use a free text query. Example: <code>internal</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Protobuf.Collections.RepeatedField</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_Organization_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Organization*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_Organization" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Organization" class="notranslate">Organization</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string Organization { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The organization that this resource belongs to, in the form of
+organizations/{ORGANIZATION_NUMBER}. This field is available when the
+resource belongs to an organization.</p>
+<p>To search against <code>organization</code>:</p>
+<ul>
+<li>use a field query. Example: <code>organization:123</code></li>
+<li>use a free text query. Example: <code>123</code></li>
+<li>specify the <code>scope</code> field as this organization in your search request.</li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_ParentAssetType_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_ParentAssetType" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.ParentAssetType" class="notranslate">ParentAssetType</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string ParentAssetType { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The type of this resource&apos;s immediate parent, if there is one.</p>
+<p>To search against the <code>parent_asset_type</code>:</p>
+<ul>
+<li>use a field query. Example:
+<code>parentAssetType:&amp;quot;cloudresourcemanager.googleapis.com/Project&amp;quot;</code></li>
+<li>use a free text query. Example:
+<code>cloudresourcemanager.googleapis.com/Project</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_ParentFullResourceName_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_ParentFullResourceName" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.ParentFullResourceName" class="notranslate">ParentFullResourceName</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string ParentFullResourceName { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The full resource name of this resource&apos;s parent, if it has one.
+To search against the <code>parent_full_resource_name</code>:</p>
+<ul>
+<li>use a field query. Example:
+<code>parentFullResourceName:&amp;quot;project-name&amp;quot;</code></li>
+<li>use a free text query. Example:
+<code>project-name</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_Project_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Project*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_Project" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.Project" class="notranslate">Project</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string Project { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The project that this resource belongs to, in the form of
+projects/{PROJECT_NUMBER}. This field is available when the resource
+belongs to a project.</p>
+<p>To search against <code>project</code>:</p>
+<ul>
+<li>use a field query. Example: <code>project:12345</code></li>
+<li>use a free text query. Example: <code>12345</code></li>
+<li>specify the <code>scope</code> field as this project in your search request.</li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_State_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.State*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_State" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.State" class="notranslate">State</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public string State { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The state of this resource. Different resources types have different state
+definitions that are mapped from various fields of different resource
+types. This field is available only when the resource&apos;s proto contains it.</p>
+<p>Example:
+If the resource is an instance provided by Compute Engine,
+its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
+SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See <code>status</code> definition
+in <a href="https://cloud.google.com/compute/docs/reference/rest/v1/instances">API
+Reference</a>.
+If the resource is a project provided by Cloud Resource Manager, its state
+will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+DELETE_IN_PROGRESS. See <code>lifecycleState</code> definition in <a href="https://cloud.google.com/resource-manager/reference/rest/v1/projects">API
+Reference</a>.</p>
+<p>To search against the <code>state</code>:</p>
+<ul>
+<li>use a field query. Example: <code>state:RUNNING</code></li>
+<li>use a free text query. Example: <code>RUNNING</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Google_Cloud_Asset_V1_ResourceSearchResult_UpdateTime_" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime*"></a>
+  <h3 id="Google_Cloud_Asset_V1_ResourceSearchResult_UpdateTime" data-uid="Google.Cloud.Asset.V1.ResourceSearchResult.UpdateTime" class="notranslate">UpdateTime</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public Timestamp UpdateTime { get; set; }</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The last update timestamp of this resource, at which the resource was last
+modified or deleted. The granularity is in seconds. Timestamp.nanos will
+always be 0. This field is available only when the resource&apos;s proto
+contains it.</p>
+<p>To search against <code>update_time</code>:</p>
+<ul>
+<li>use a field query.</li>
+<li>value in seconds since unix epoch. Example: <code>updateTime &amp;lt; 1609459200</code></li>
+<li>value in date string. Example: <code>updateTime &amp;lt; 2021-01-01</code></li>
+<li>value in date-time string (must be quoted). Example: <code>updateTime &amp;lt;
+&amp;quot;2021-01-01T00:00:00&amp;quot;</code></li>
+</ul>
+</div>
+  <strong>Property Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Google.Protobuf.WellKnownTypes.Timestamp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

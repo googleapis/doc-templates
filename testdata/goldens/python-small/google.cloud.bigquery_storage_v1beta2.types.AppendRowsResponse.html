@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse">
+<h1 class="page-title">Class AppendRowsResponse
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Response message for <code>AppendRows</code>.
+Attributes:
+    append_result (google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse.AppendResult):
+        Result if the append is successful.
+    error (google.rpc.status_pb2.Status):
+        Error returned when problems were encountered. If present,
+        it indicates rows were not accepted into the system. Users
+        can retry or continue with other append requests within the
+        same connection.</p>
+<pre><code>    Additional information about error signalling:
+
+
+    ALREADY_EXISTS: Happens when an append specified an offset,
+    and the backend already has received data at this offset.
+    Typically encountered in retry scenarios, and can be
+    ignored.
+
+
+    OUT_OF_RANGE: Returned when the specified offset in the
+    stream is beyond the current end of the stream.
+
+
+    INVALID_ARGUMENT: Indicates a malformed request or data.
+
+
+    ABORTED: Request processing is aborted because of prior
+    failures. The request can be retried if previous failure is
+    addressed.
+
+
+    INTERNAL: Indicates server side error(s) that can be
+    retried.
+updated_schema (google.cloud.bigquery_storage_v1beta2.types.TableSchema):
+    If backend detects a schema update, pass it
+    to user so that user can use it to input new
+    type of message. It will be empty when no schema
+    updates have occurred.
+</code></pre></div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">AppendRowsResponse</span>
+  </div>
+  <h2 id="classes">Classes
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_types_AppendRowsResponse_AppendResult" data-uid="google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse.AppendResult" class="notranslate">AppendResult</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>AppendResult(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>AppendResult is returned for successful append requests.
+Attributes:
+    offset (google.protobuf.wrappers_pb2.Int64Value):
+        The row offset at which the last append
+        occurred. The offset will not be set if
+        appending using default streams.</p>
+</div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>
