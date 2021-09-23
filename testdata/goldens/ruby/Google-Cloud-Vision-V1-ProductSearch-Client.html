@@ -81,11 +81,13 @@ for a description of the configuration fields.</p>
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">
 # Modify the configuration for all ProductSearch clients
 ::Google::Cloud::Vision::V1::ProductSearch::Client.configure do |config|
   config.timeout = 10.0
-end</pre>
+end</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_configure_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#configure(instance)" class="notranslate">#configure</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def configure { |config| ... } =&gt; Client::Configuration</code></pre>
@@ -152,14 +154,16 @@ for a description of the configuration fields.</p>
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">
 # Create a client using the default configuration
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
 
 # Create a client using a custom configuration
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|
   config.timeout = 10.0
-end</pre>
+end</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_operations_client_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#operations_client(instance)" class="notranslate">#operations_client</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def operations_client =&gt; ::Google::Cloud::Vision::V1::ProductSearch::Operations</code></pre>
@@ -271,7 +275,8 @@ long. It cannot contain the character <code>/</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -283,7 +288,8 @@ request = Google::Cloud::Vision::V1::CreateProductSetRequest.new
 result = client.create_product_set request
 
 # The returned object is of type Google::Cloud::Vision::V1::ProductSet.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_product_sets_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_product_sets(instance)" class="notranslate">#list_product_sets</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def list_product_sets(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;
@@ -378,7 +384,8 @@ Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -396,7 +403,8 @@ result = client.list_product_sets request
 result.each do |response|
   # Each element is of type ::Google::Cloud::Vision::V1::ProductSet.
   p response
-end</pre>
+end</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product_set(instance)" class="notranslate">#get_product_set</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def get_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
@@ -485,7 +493,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -497,7 +506,8 @@ request = Google::Cloud::Vision::V1::GetProductSetRequest.new
 result = client.get_product_set request
 
 # The returned object is of type Google::Cloud::Vision::V1::ProductSet.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product_set(instance)" class="notranslate">#update_product_set</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def update_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
@@ -592,7 +602,8 @@ Valid mask path is <code>display_name</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -604,7 +615,8 @@ request = Google::Cloud::Vision::V1::UpdateProductSetRequest.new
 result = client.update_product_set request
 
 # The returned object is of type Google::Cloud::Vision::V1::ProductSet.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product_set(instance)" class="notranslate">#delete_product_set</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def delete_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
@@ -691,7 +703,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -703,7 +716,8 @@ request = Google::Cloud::Vision::V1::DeleteProductSetRequest.new
 result = client.delete_product_set request
 
 # The returned object is of type Google::Protobuf::Empty.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_product(instance)" class="notranslate">#create_product</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def create_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
@@ -804,7 +818,8 @@ long. It cannot contain the character <code>/</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -816,7 +831,8 @@ request = Google::Cloud::Vision::V1::CreateProductRequest.new
 result = client.create_product request
 
 # The returned object is of type Google::Cloud::Vision::V1::Product.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_products_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_products(instance)" class="notranslate">#list_products</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def list_products(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
@@ -911,7 +927,8 @@ Format:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -929,7 +946,8 @@ result = client.list_products request
 result.each do |response|
   # Each element is of type ::Google::Cloud::Vision::V1::Product.
   p response
-end</pre>
+end</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product(instance)" class="notranslate">#get_product</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def get_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
@@ -1018,7 +1036,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1030,7 +1049,8 @@ request = Google::Cloud::Vision::V1::GetProductRequest.new
 result = client.get_product request
 
 # The returned object is of type Google::Cloud::Vision::V1::Product.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product(instance)" class="notranslate">#update_product</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def update_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
@@ -1133,7 +1153,8 @@ Valid mask paths include <code>product_labels</code>, <code>display_name</code>,
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1145,7 +1166,8 @@ request = Google::Cloud::Vision::V1::UpdateProductRequest.new
 result = client.update_product request
 
 # The returned object is of type Google::Cloud::Vision::V1::Product.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product(instance)" class="notranslate">#delete_product</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def delete_product(request, options = nil) =&gt; ::Google::Protobuf::Empty
@@ -1233,7 +1255,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1245,7 +1268,8 @@ request = Google::Cloud::Vision::V1::DeleteProductRequest.new
 result = client.delete_product request
 
 # The returned object is of type Google::Protobuf::Empty.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_reference_image(instance)" class="notranslate">#create_reference_image</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def create_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage
@@ -1356,7 +1380,8 @@ most 128 characters long. It cannot contain the character <code>/</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1368,7 +1393,8 @@ request = Google::Cloud::Vision::V1::CreateReferenceImageRequest.new
 result = client.create_reference_image request
 
 # The returned object is of type Google::Cloud::Vision::V1::ReferenceImage.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_reference_image(instance)" class="notranslate">#delete_reference_image</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def delete_reference_image(request, options = nil) =&gt; ::Google::Protobuf::Empty
@@ -1457,7 +1483,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1469,7 +1496,8 @@ request = Google::Cloud::Vision::V1::DeleteReferenceImageRequest.new
 result = client.delete_reference_image request
 
 # The returned object is of type Google::Protobuf::Empty.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_reference_images_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_reference_images(instance)" class="notranslate">#list_reference_images</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def list_reference_images(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;
@@ -1569,7 +1597,8 @@ Defaults to the first page if not specified.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1587,7 +1616,8 @@ result = client.list_reference_images request
 result.each do |response|
   # Each element is of type ::Google::Cloud::Vision::V1::ReferenceImage.
   p response
-end</pre>
+end</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_reference_image(instance)" class="notranslate">#get_reference_image</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def get_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage
@@ -1676,7 +1706,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1688,7 +1719,8 @@ request = Google::Cloud::Vision::V1::GetReferenceImageRequest.new
 result = client.get_reference_image request
 
 # The returned object is of type Google::Cloud::Vision::V1::ReferenceImage.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_add_product_to_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#add_product_to_product_set(instance)" class="notranslate">#add_product_to_product_set</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def add_product_to_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
@@ -1785,7 +1817,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1797,7 +1830,8 @@ request = Google::Cloud::Vision::V1::AddProductToProductSetRequest.new
 result = client.add_product_to_product_set request
 
 # The returned object is of type Google::Protobuf::Empty.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_remove_product_from_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#remove_product_from_product_set(instance)" class="notranslate">#remove_product_from_product_set</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def remove_product_from_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
@@ -1888,7 +1922,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1900,7 +1935,8 @@ request = Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest.new
 result = client.remove_product_from_product_set request
 
 # The returned object is of type Google::Protobuf::Empty.
-p result</pre>
+p result</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_products_in_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_products_in_product_set(instance)" class="notranslate">#list_products_in_product_set</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def list_products_in_product_set(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
@@ -1997,7 +2033,8 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -2015,7 +2052,8 @@ result = client.list_products_in_product_set request
 result.each do |response|
   # Each element is of type ::Google::Cloud::Vision::V1::Product.
   p response
-end</pre>
+end</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_import_product_sets_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#import_product_sets(instance)" class="notranslate">#import_product_sets</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def import_product_sets(request, options = nil) =&gt; ::Gapic::Operation
@@ -2110,7 +2148,8 @@ Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -2129,7 +2168,8 @@ if result.response?
   p result.response
 else
   puts "Error!"
-end</pre>
+end</pre></code></pre>
+  </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_purge_products_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#purge_products(instance)" class="notranslate">#purge_products</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>def purge_products(request, options = nil) =&gt; ::Gapic::Operation
@@ -2242,7 +2282,8 @@ the purge.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <div class="codewrapper">
+  <pre class="prettyprint"><code><pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -2261,7 +2302,8 @@ if result.response?
   p result.response
 else
   puts "Error!"
-end</pre>
+end</pre></code></pre>
+  </div>
 </article>
     </div>
     {% endverbatim %}
