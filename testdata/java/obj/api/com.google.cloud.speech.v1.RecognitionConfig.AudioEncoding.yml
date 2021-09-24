@@ -38,7 +38,7 @@ items:
   fullName: "com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding"
   type: "Enum"
   package: "com.google.cloud.speech.v1"
-  summary: "```\nThe encoding of the audio data sent in the request.\n All encodings support only 1 channel (mono) audio, unless the\n `audio_channel_count` and `enable_separate_recognition_per_channel` fields\n are set.\n For best results, the audio source should be captured and transmitted using\n a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech\n recognition can be reduced if lossy codecs are used to capture or transmit\n audio, particularly if background noise is present. Lossy codecs include\n `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, and `MP3`.\n The `FLAC` and `WAV` audio file formats include a header that describes the\n included audio content. You can request recognition for `WAV` files that\n contain either `LINEAR16` or `MULAW` encoded audio.\n If you send `FLAC` or `WAV` audio file format in\n your request, you do not need to specify an `AudioEncoding`; the audio\n encoding format is determined from the file header. If you specify\n an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the\n encoding configuration must match the encoding described in the audio\n header; otherwise the request returns an\n [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.\n```\n\nProtobuf enum `google.cloud.speech.v1.RecognitionConfig.AudioEncoding`"
+  summary: "```\nThe encoding of the audio data sent in the request.\n All encodings support only 1 channel (mono) audio, unless the\n `audio_channel_count` and `enable_separate_recognition_per_channel` fields\n are set.\n For best results, the audio source should be captured and transmitted using\n a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech\n recognition can be reduced if lossy codecs are used to capture or transmit\n audio, particularly if background noise is present. Lossy codecs include\n `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`.\n The `FLAC` and `WAV` audio file formats include a header that describes the\n included audio content. You can request recognition for `WAV` files that\n contain either `LINEAR16` or `MULAW` encoded audio.\n If you send `FLAC` or `WAV` audio file format in\n your request, you do not need to specify an `AudioEncoding`; the audio\n encoding format is determined from the file header. If you specify\n an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the\n encoding configuration must match the encoding described in the audio\n header; otherwise the request returns an\n [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.\n```\n\nProtobuf enum `google.cloud.speech.v1.RecognitionConfig.AudioEncoding`"
   syntax:
     content: "public enum RecognitionConfig.AudioEncoding extends Enum<RecognitionConfig.AudioEncoding> implements ProtocolMessageEnum"
   inheritance:
@@ -457,6 +457,7 @@ items:
   overload: "com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
+  summary: "(deprecated) Use <xref uid=\"com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.forNumber(int)\" data-throw-if-not-resolved=\"false\">#forNumber(int)</xref> instead."
   syntax:
     content: "public static RecognitionConfig.AudioEncoding valueOf(int value)"
     parameters:
@@ -466,6 +467,7 @@ items:
     return:
       type: "com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding"
       description: "The enum associated with the given numeric wire value."
+  status: "deprecated"
 - uid: "com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf(java.lang.String)"
   id: "valueOf(java.lang.String)"
   parent: "com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding"

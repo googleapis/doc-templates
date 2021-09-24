@@ -20,8 +20,8 @@
  messages are streamed back to the client. If there is no recognizable
  audio, and `single_utterance` is set to false, then no messages are streamed
  back to the client.
- Here&#39;s an example of a series of ten `StreamingRecognizeResponse`s that might
- be returned while processing audio:
+ Here&#39;s an example of a series of `StreamingRecognizeResponse`s that might be
+ returned while processing audio:
  1. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
  2. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
  3. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
@@ -345,6 +345,25 @@
   <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_SPEECH_EVENT_TYPE_FIELD_NUMBER" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.SPEECH_EVENT_TYPE_FIELD_NUMBER" class="notranslate">SPEECH_EVENT_TYPE_FIELD_NUMBER</h3>
   <div class="codewrapper">
     <pre class="prettyprint"><code>public static final int SPEECH_EVENT_TYPE_FIELD_NUMBER</code></pre>
+  </div>
+  <strong>Field Value</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_TOTAL_BILLED_TIME_FIELD_NUMBER" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.TOTAL_BILLED_TIME_FIELD_NUMBER" class="notranslate">TOTAL_BILLED_TIME_FIELD_NUMBER</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public static final int TOTAL_BILLED_TIME_FIELD_NUMBER</code></pre>
   </div>
   <strong>Field Value</strong>
   <table class="table table-bordered table-striped table-condensed">
@@ -767,6 +786,55 @@
       </tr>
     </tbody>
   </table>
+  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTime_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime*"></a>
+  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTime__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime()" class="notranslate">getTotalBilledTime()</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public Duration getTotalBilledTime()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
+ Set only if this is the last response in the stream.
+</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.Duration.html">Duration</a></td>
+        <td><p>The totalBilledTime.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTimeOrBuilder_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder*"></a>
+  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getTotalBilledTimeOrBuilder__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder()" class="notranslate">getTotalBilledTimeOrBuilder()</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public DurationOrBuilder getTotalBilledTimeOrBuilder()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
+ Set only if this is the last response in the stream.
+</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://cloud.google.com/java/docs/reference/protobuf/latest/com.google.protobuf.DurationOrBuilder.html">DurationOrBuilder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getUnknownFields_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getUnknownFields*"></a>
   <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_getUnknownFields__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.getUnknownFields()" class="notranslate">getUnknownFields()</h3>
   <div class="codewrapper">
@@ -810,6 +878,31 @@
       <tr>
         <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">boolean</a></td>
         <td><p>Whether the error field is set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hasTotalBilledTime_" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime*"></a>
+  <h3 id="com_google_cloud_speech_v1_StreamingRecognizeResponse_hasTotalBilledTime__" data-uid="com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime()" class="notranslate">hasTotalBilledTime()</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>public boolean hasTotalBilledTime()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
+ Set only if this is the last response in the stream.
+</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">boolean</a></td>
+        <td><p>Whether the totalBilledTime field is set.</p>
 </td>
       </tr>
     </tbody>

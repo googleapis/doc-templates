@@ -23,6 +23,7 @@ exports.transform = function (model) {
     item.topicHref = item.topicHref || null;
     item.tocHref = item.tocHref || null;
     item.name = item.name || null;
+    item.status = item.status || null;
 
     item.level = level;
     if (item.items && item.items.length > 0) {

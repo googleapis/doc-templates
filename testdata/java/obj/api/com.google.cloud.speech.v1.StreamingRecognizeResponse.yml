@@ -9,6 +9,7 @@ items:
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.RESULTS_FIELD_NUMBER"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.SPEECH_EVENT_TYPE_FIELD_NUMBER"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType"
+  - "com.google.cloud.speech.v1.StreamingRecognizeResponse.TOTAL_BILLED_TIME_FIELD_NUMBER"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.equals(java.lang.Object)"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getDefaultInstance()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getDefaultInstanceForType()"
@@ -24,8 +25,11 @@ items:
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getSerializedSize()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getSpeechEventType()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getSpeechEventTypeValue()"
+  - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime()"
+  - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.getUnknownFields()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.hasError()"
+  - "com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.hashCode()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.internalGetFieldAccessorTable()"
   - "com.google.cloud.speech.v1.StreamingRecognizeResponse.isInitialized()"
@@ -56,7 +60,7 @@ items:
   fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
   type: "Class"
   package: "com.google.cloud.speech.v1"
-  summary: "```\n`StreamingRecognizeResponse` is the only message returned to the client by\n `StreamingRecognize`. A series of zero or more `StreamingRecognizeResponse`\n messages are streamed back to the client. If there is no recognizable\n audio, and `single_utterance` is set to false, then no messages are streamed\n back to the client.\n Here's an example of a series of ten `StreamingRecognizeResponse`s that might\n be returned while processing audio:\n 1. results { alternatives { transcript: \"tube\" } stability: 0.01 }\n 2. results { alternatives { transcript: \"to be a\" } stability: 0.01 }\n 3. results { alternatives { transcript: \"to be\" } stability: 0.9 }\n    results { alternatives { transcript: \" or not to be\" } stability: 0.01 }\n 4. results { alternatives { transcript: \"to be or not to be\"\n                             confidence: 0.92 }\n              alternatives { transcript: \"to bee or not to bee\" }\n              is_final: true }\n 5. results { alternatives { transcript: \" that's\" } stability: 0.01 }\n 6. results { alternatives { transcript: \" that is\" } stability: 0.9 }\n    results { alternatives { transcript: \" the question\" } stability: 0.01 }\n 7. results { alternatives { transcript: \" that is the question\"\n                             confidence: 0.98 }\n              alternatives { transcript: \" that was the question\" }\n              is_final: true }\n Notes:\n - Only two of the above responses #4 and #7 contain final results; they are\n   indicated by `is_final: true`. Concatenating these together generates the\n   full transcript: \"to be or not to be that is the question\".\n - The others contain interim `results`. #3 and #6 contain two interim\n   `results`: the first portion has a high stability and is less likely to\n   change; the second portion has a low stability and is very likely to\n   change. A UI designer might choose to show only high stability `results`.\n - The specific `stability` and `confidence` values shown above are only for\n   illustrative purposes. Actual values may vary.\n - In each response, only one of these fields will be set:\n     `error`,\n     `speech_event_type`, or\n     one or more (repeated) `results`.\n```\n\nProtobuf type `google.cloud.speech.v1.StreamingRecognizeResponse`"
+  summary: "```\n`StreamingRecognizeResponse` is the only message returned to the client by\n `StreamingRecognize`. A series of zero or more `StreamingRecognizeResponse`\n messages are streamed back to the client. If there is no recognizable\n audio, and `single_utterance` is set to false, then no messages are streamed\n back to the client.\n Here's an example of a series of `StreamingRecognizeResponse`s that might be\n returned while processing audio:\n 1. results { alternatives { transcript: \"tube\" } stability: 0.01 }\n 2. results { alternatives { transcript: \"to be a\" } stability: 0.01 }\n 3. results { alternatives { transcript: \"to be\" } stability: 0.9 }\n    results { alternatives { transcript: \" or not to be\" } stability: 0.01 }\n 4. results { alternatives { transcript: \"to be or not to be\"\n                             confidence: 0.92 }\n              alternatives { transcript: \"to bee or not to bee\" }\n              is_final: true }\n 5. results { alternatives { transcript: \" that's\" } stability: 0.01 }\n 6. results { alternatives { transcript: \" that is\" } stability: 0.9 }\n    results { alternatives { transcript: \" the question\" } stability: 0.01 }\n 7. results { alternatives { transcript: \" that is the question\"\n                             confidence: 0.98 }\n              alternatives { transcript: \" that was the question\" }\n              is_final: true }\n Notes:\n - Only two of the above responses #4 and #7 contain final results; they are\n   indicated by `is_final: true`. Concatenating these together generates the\n   full transcript: \"to be or not to be that is the question\".\n - The others contain interim `results`. #3 and #6 contain two interim\n   `results`: the first portion has a high stability and is less likely to\n   change; the second portion has a low stability and is very likely to\n   change. A UI designer might choose to show only high stability `results`.\n - The specific `stability` and `confidence` values shown above are only for\n   illustrative purposes. Actual values may vary.\n - In each response, only one of these fields will be set:\n     `error`,\n     `speech_event_type`, or\n     one or more (repeated) `results`.\n```\n\nProtobuf type `google.cloud.speech.v1.StreamingRecognizeResponse`"
   syntax:
     content: "public final class StreamingRecognizeResponse extends GeneratedMessageV3 implements StreamingRecognizeResponseOrBuilder"
   inheritance:
@@ -234,6 +238,20 @@ items:
     parameters:
     - id: "builder"
       type: "com.google.protobuf.GeneratedMessageV3.Builder<?>"
+- uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.TOTAL_BILLED_TIME_FIELD_NUMBER"
+  id: "TOTAL_BILLED_TIME_FIELD_NUMBER"
+  parent: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
+  langs:
+  - "java"
+  name: "TOTAL_BILLED_TIME_FIELD_NUMBER"
+  nameWithType: "StreamingRecognizeResponse.TOTAL_BILLED_TIME_FIELD_NUMBER"
+  fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.TOTAL_BILLED_TIME_FIELD_NUMBER"
+  type: "Field"
+  package: "com.google.cloud.speech.v1"
+  syntax:
+    content: "public static final int TOTAL_BILLED_TIME_FIELD_NUMBER"
+    return:
+      type: "int"
 - uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.equals(java.lang.Object)"
   id: "equals(java.lang.Object)"
   parent: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
@@ -483,6 +501,39 @@ items:
     return:
       type: "int"
       description: "The enum numeric value on the wire for speechEventType."
+- uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime()"
+  id: "getTotalBilledTime()"
+  parent: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
+  langs:
+  - "java"
+  name: "getTotalBilledTime()"
+  nameWithType: "StreamingRecognizeResponse.getTotalBilledTime()"
+  fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime()"
+  overload: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1"
+  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  syntax:
+    content: "public Duration getTotalBilledTime()"
+    return:
+      type: "com.google.protobuf.Duration"
+      description: "The totalBilledTime."
+- uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder()"
+  id: "getTotalBilledTimeOrBuilder()"
+  parent: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
+  langs:
+  - "java"
+  name: "getTotalBilledTimeOrBuilder()"
+  nameWithType: "StreamingRecognizeResponse.getTotalBilledTimeOrBuilder()"
+  fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder()"
+  overload: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1"
+  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  syntax:
+    content: "public DurationOrBuilder getTotalBilledTimeOrBuilder()"
+    return:
+      type: "com.google.protobuf.DurationOrBuilder"
 - uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getUnknownFields()"
   id: "getUnknownFields()"
   parent: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
@@ -516,6 +567,23 @@ items:
     return:
       type: "boolean"
       description: "Whether the error field is set."
+- uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime()"
+  id: "hasTotalBilledTime()"
+  parent: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
+  langs:
+  - "java"
+  name: "hasTotalBilledTime()"
+  nameWithType: "StreamingRecognizeResponse.hasTotalBilledTime()"
+  fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime()"
+  overload: "com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime*"
+  type: "Method"
+  package: "com.google.cloud.speech.v1"
+  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  syntax:
+    content: "public boolean hasTotalBilledTime()"
+    return:
+      type: "boolean"
+      description: "Whether the totalBilledTime field is set."
 - uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.hashCode()"
   id: "hashCode()"
   parent: "com.google.cloud.speech.v1.StreamingRecognizeResponse"
@@ -1167,6 +1235,35 @@ references:
   name: "getSpeechEventType"
   nameWithType: "StreamingRecognizeResponse.getSpeechEventType"
   fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getSpeechEventType"
+  package: "com.google.cloud.speech.v1"
+- uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime*"
+  name: "hasTotalBilledTime"
+  nameWithType: "StreamingRecognizeResponse.hasTotalBilledTime"
+  fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.hasTotalBilledTime"
+  package: "com.google.cloud.speech.v1"
+- uid: "com.google.protobuf.Duration"
+  isExternal: true
+  spec.java:
+  - uid: "com.google.protobuf.Duration"
+    name: "Duration"
+    fullName: "com.google.protobuf.Duration"
+    isExternal: true
+- uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime*"
+  name: "getTotalBilledTime"
+  nameWithType: "StreamingRecognizeResponse.getTotalBilledTime"
+  fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTime"
+  package: "com.google.cloud.speech.v1"
+- uid: "com.google.protobuf.DurationOrBuilder"
+  isExternal: true
+  spec.java:
+  - uid: "com.google.protobuf.DurationOrBuilder"
+    name: "DurationOrBuilder"
+    fullName: "com.google.protobuf.DurationOrBuilder"
+    isExternal: true
+- uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder*"
+  name: "getTotalBilledTimeOrBuilder"
+  nameWithType: "StreamingRecognizeResponse.getTotalBilledTimeOrBuilder"
+  fullName: "com.google.cloud.speech.v1.StreamingRecognizeResponse.getTotalBilledTimeOrBuilder"
   package: "com.google.cloud.speech.v1"
 - uid: "com.google.cloud.speech.v1.StreamingRecognizeResponse.isInitialized*"
   name: "isInitialized"
