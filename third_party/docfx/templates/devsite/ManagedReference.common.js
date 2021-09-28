@@ -288,8 +288,27 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
     }
   }
 
-  // Set the status as a property so we can check it in the template.
   if (vm.status) {
+    // Set the status as a property so we can check it in the template.
     vm[vm.status] = true;
+    // Set status_title to use in any preview disclaimers as needed.
+    if (vm.status == "preview") {
+      vm.status_title = "Preview"
+    }
+    else if (vm.status == "private_preview") {
+      vm.status_title = "Private preview"
+    }
+    else if (vm.status == "experimental") {
+      vm.status_title = "Experimental"
+    }
+    else if (vm.status == "alpha") {
+      vm.status_title = "Alpha"
+    }
+    else if (vm.status == "beta") {
+      vm.status_title = "Beta"
+    }
+    else if (vm.status == "eap") {
+      vm.status_title = "Early access"
+    }
   }
 }
