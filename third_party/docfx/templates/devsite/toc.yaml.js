@@ -24,6 +24,7 @@ exports.transform = function (model) {
     item.tocHref = item.tocHref || null;
     item.name = item.name || null;
     item.status = item.status || null;
+    item.heading = item.heading || null;
 
     item.level = level;
     if (item.items && item.items.length > 0) {
