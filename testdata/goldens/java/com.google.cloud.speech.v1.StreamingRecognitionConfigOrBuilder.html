@@ -26,9 +26,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public abstract RecognitionConfig getConfig()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>Required. Provides information to the recognizer that specifies how to
- process the request.
-</code></pre><p><code>.google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];</code></p>
+  <div class="markdown level1 summary"><p> Required. Provides information to the recognizer that specifies how to
+ process the request.</p>
+<p> <code>
+ .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -49,9 +51,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public abstract RecognitionConfigOrBuilder getConfigOrBuilder()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>Required. Provides information to the recognizer that specifies how to
- process the request.
-</code></pre><p><code>.google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];</code></p>
+  <div class="markdown level1 summary"><p> Required. Provides information to the recognizer that specifies how to
+ process the request.</p>
+<p> <code>
+ .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -71,11 +75,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public abstract boolean getInterimResults()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>If `true`, interim results (tentative hypotheses) may be
+  <div class="markdown level1 summary"><p> If <code>true</code>, interim results (tentative hypotheses) may be
  returned as they become available (these interim results are indicated with
- the `is_final=false` flag).
- If `false` or omitted, only `is_final=true` result(s) are returned.
-</code></pre><p><code>bool interim_results = 3;</code></p>
+ the <code>is_final=false</code> flag).
+ If <code>false</code> or omitted, only <code>is_final=true</code> result(s) are returned.</p>
+<p> <code>bool interim_results = 3;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -96,25 +100,27 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public abstract boolean getSingleUtterance()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>If `false` or omitted, the recognizer will perform continuous
+  <div class="markdown level1 summary"><p> If <code>false</code> or omitted, the recognizer will perform continuous
  recognition (continuing to wait for and process audio even if the user
  pauses speaking) until the client closes the input stream (gRPC API) or
  until the maximum time limit has been reached. May return multiple
- `StreamingRecognitionResult`s with the `is_final` flag set to `true`.
- If `true`, the recognizer will detect a single spoken utterance. When it
+ <code>StreamingRecognitionResult</code>s with the <code>is_final</code> flag set to <code>true</code>.
+ If <code>true</code>, the recognizer will detect a single spoken utterance. When it
  detects that the user has paused or stopped speaking, it will return an
- `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
- more than one `StreamingRecognitionResult` with the `is_final` flag set to
- `true`.
- The `single_utterance` field can only be used with specified models,
- otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
- must be set to:
- * `command_and_search`
- * `phone_call` AND additional field `useEnhanced`=`true`
- * The `model` field is left undefined. In this case the API auto-selects
-   a model based on any other parameters that you set in
-   `RecognitionConfig`.
-</code></pre><p><code>bool single_utterance = 2;</code></p>
+ <code>END_OF_SINGLE_UTTERANCE</code> event and cease recognition. It will return no
+ more than one <code>StreamingRecognitionResult</code> with the <code>is_final</code> flag set to
+ <code>true</code>.
+ The <code>single_utterance</code> field can only be used with specified models,
+ otherwise an error is thrown. The <code>model</code> field in [<code>RecognitionConfig</code>][]
+ must be set to:</p>
+<ul>
+<li><code>command_and_search</code></li>
+<li><code>phone_call</code> AND additional field <code>useEnhanced</code>=<code>true</code></li>
+<li>The <code>model</code> field is left undefined. In this case the API auto-selects
+a model based on any other parameters that you set in
+<code>RecognitionConfig</code>.</li>
+</ul>
+<p> <code>bool single_utterance = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -135,9 +141,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public abstract boolean hasConfig()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>Required. Provides information to the recognizer that specifies how to
- process the request.
-</code></pre><p><code>.google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];</code></p>
+  <div class="markdown level1 summary"><p> Required. Provides information to the recognizer that specifies how to
+ process the request.</p>
+<p> <code>
+ .google.cloud.speech.v1.RecognitionConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">

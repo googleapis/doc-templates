@@ -16,34 +16,55 @@
     <pre class="prettyprint"><code>public class AdaptationClient implements BackgroundResource</code></pre>
   </div>
   <div class="markdown level0 summary"><p>Service Description: Service that implements Google Cloud Speech Adaptation API.</p>
-<p>This class provides the ability to make remote calls to the backing service through method calls that map to API methods. Sample code to get started:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+<p> <p>This class provides the ability to make remote calls to the backing service through method
+ calls that map to API methods. Sample code to get started:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
-   String phraseSetId = &quot;phraseSetId959902180&quot;;
+   String phraseSetId = "phraseSetId959902180";
    PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
  }
-</code></pre><p>Note: close() needs to be called on the AdaptationClient object to clean up resources such as threads. In the example above, try-with-resources is used, which automatically calls close().</p>
-<p>The surface of this class includes several types of Java methods for each of the API&#39;s methods:</p>
-<ol>
-<li>A &quot;flattened&quot; method. With this type of method, the fields of the request type have been converted into function parameters. It may be the case that not all fields are available as parameters, and not every API method will have a flattened method entry point.</li>
-<li>A &quot;request object&quot; method. This type of method only takes one parameter, a request object, which must be constructed before the call. Not every API method will have a request object method.</li>
-<li>A &quot;callable&quot; method. This type of method takes no parameters and returns an immutable API callable object, which can be used to initiate calls to the service.</li>
-</ol>
-<p>See the individual methods for example code.</p>
-<p>Many parameters require resource names to be formatted in a particular way. To assist with these names, this class includes a format method for each type of name, and additionally a parse method to extract the individual identifiers contained within names that are returned.</p>
-<p>This class can be customized by passing in a custom instance of AdaptationSettings to create(). For example:</p>
-<p>To customize credentials:</p>
-<pre><code class="lang-java">AdaptationSettings adaptationSettings =
+ </code></pre>
+
+<p> <p>Note: close() needs to be called on the AdaptationClient object to clean up resources such as
+ threads. In the example above, try-with-resources is used, which automatically calls close().</p>
+<p> <p>The surface of this class includes several types of Java methods for each of the API&#39;s
+ methods:</p>
+ <ol>
+   <li>A &quot;flattened&quot; method. With this type of method, the fields of the request type have been
+       converted into function parameters. It may be the case that not all fields are available as
+       parameters, and not every API method will have a flattened method entry point.
+   <li>A &quot;request object&quot; method. This type of method only takes one parameter, a request object,
+       which must be constructed before the call. Not every API method will have a request object
+       method.
+   <li>A &quot;callable&quot; method. This type of method takes no parameters and returns an immutable API
+       callable object, which can be used to initiate calls to the service.
+ </li></li></li></ol>
+
+<p> <p>See the individual methods for example code.</p>
+<p> <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ these names, this class includes a format method for each type of name, and additionally a parse
+ method to extract the individual identifiers contained within names that are returned.</p>
+<p> <p>This class can be customized by passing in a custom instance of AdaptationSettings to
+ create(). For example:</p>
+<p> <p>To customize credentials:</p>
+ <pre><code class="pretty-print">
+ AdaptationSettings adaptationSettings =
      AdaptationSettings.newBuilder()
          .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
          .build();
  AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
-</code></pre><p>To customize the endpoint:</p>
-<pre><code class="lang-java">AdaptationSettings adaptationSettings =
+ </code></pre>
+
+<p> <p>To customize the endpoint:</p>
+ <pre><code class="pretty-print">
+ AdaptationSettings adaptationSettings =
      AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();
  AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
-</code></pre><p>Please refer to the GitHub repository&#39;s samples for more quickstart code snippets.</p>
+ </code></pre>
+
+<p> <p>Please refer to the GitHub repository&#39;s samples for more quickstart code snippets.</p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -97,7 +118,8 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>protected AdaptationClient(AdaptationSettings settings)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given settings. This is protected so that it is easy to make a subclass, but otherwise, the static factory methods should be preferred.</p>
+  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given settings. This is protected so that
+ it is easy to make a subclass, but otherwise, the static factory methods should be preferred.</p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -223,7 +245,8 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public static final AdaptationClient create(AdaptationSettings settings)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given settings. The channels are created based on the settings passed in, or defaults for any settings that are not set.</p>
+  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given settings. The channels are created
+ based on the settings passed in, or defaults for any settings that are not set.</p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -269,7 +292,8 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public static final AdaptationClient create(AdaptationStub stub)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given stub for making calls. This is for advanced usage - prefer using create(AdaptationSettings).</p>
+  <div class="markdown level1 summary"><p>Constructs an instance of AdaptationClient, using the given stub for making calls. This is for
+ advanced usage - prefer using create(AdaptationSettings).</p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -303,17 +327,18 @@
     <pre class="prettyprint"><code>public final CustomClass createCustomClass(CreateCustomClassRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreateCustomClassRequest request =
        CreateCustomClassRequest.newBuilder()
-           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
-           .setCustomClassId(&quot;customClassId1871032322&quot;)
+           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+           .setCustomClassId("customClassId1871032322")
            .setCustomClass(CustomClass.newBuilder().build())
            .build();
    CustomClass response = adaptationClient.createCustomClass(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -347,14 +372,15 @@
     <pre class="prettyprint"><code>public final CustomClass createCustomClass(LocationName parent, CustomClass customClass, String customClassId)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    CustomClass customClass = CustomClass.newBuilder().build();
-   String customClassId = &quot;customClassId1871032322&quot;;
+   String customClassId = "customClassId1871032322";
    CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
@@ -377,7 +403,7 @@
         <td><span class="parametername">customClassId</span></td>
         <td><code><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></code><br><p>Required. The ID to use for the custom class, which will become the final
      component of the custom class&#39; resource name.
-     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+     <p>This value should be 4-63 characters, and valid characters are /<span class="xref">a-z</span>-/.</p>
 </td>
       </tr>
     </tbody>
@@ -401,14 +427,15 @@
     <pre class="prettyprint"><code>public final CustomClass createCustomClass(String parent, CustomClass customClass, String customClassId)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String parent = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    CustomClass customClass = CustomClass.newBuilder().build();
-   String customClassId = &quot;customClassId1871032322&quot;;
+   String customClassId = "customClassId1871032322";
    CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
@@ -431,7 +458,7 @@
         <td><span class="parametername">customClassId</span></td>
         <td><code><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></code><br><p>Required. The ID to use for the custom class, which will become the final
      component of the custom class&#39; resource name.
-     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+     <p>This value should be 4-63 characters, and valid characters are /<span class="xref">a-z</span>-/.</p>
 </td>
       </tr>
     </tbody>
@@ -455,20 +482,21 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;CreateCustomClassRequest,CustomClass&gt; createCustomClassCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreateCustomClassRequest request =
        CreateCustomClassRequest.newBuilder()
-           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
-           .setCustomClassId(&quot;customClassId1871032322&quot;)
+           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
+           .setCustomClassId("customClassId1871032322")
            .setCustomClass(CustomClass.newBuilder().build())
            .build();
-   ApiFuture future =
+   ApiFuture<customclass> future =
        adaptationClient.createCustomClassCallable().futureCall(request);
    // Do something.
    CustomClass response = future.get();
  }
-</code></pre></div>
+ </customclass></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -487,18 +515,21 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public final PhraseSet createPhraseSet(CreatePhraseSetRequest request)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.
+ The items in the PhraseSet are favored by the recognition model when you send a call that
+ includes the PhraseSet.</p>
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreatePhraseSetRequest request =
        CreatePhraseSetRequest.newBuilder()
-           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
-           .setPhraseSetId(&quot;phraseSetId959902180&quot;)
+           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+           .setPhraseSetId("phraseSetId959902180")
            .setPhraseSet(PhraseSet.newBuilder().build())
            .build();
    PhraseSet response = adaptationClient.createPhraseSet(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -531,15 +562,18 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public final PhraseSet createPhraseSet(LocationName parent, PhraseSet phraseSet, String phraseSetId)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.
+ The items in the PhraseSet are favored by the recognition model when you send a call that
+ includes the PhraseSet.</p>
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
-   String phraseSetId = &quot;phraseSetId959902180&quot;;
+   String phraseSetId = "phraseSetId959902180";
    PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
@@ -562,7 +596,7 @@
         <td><span class="parametername">phraseSetId</span></td>
         <td><code><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></code><br><p>Required. The ID to use for the phrase set, which will become the final
      component of the phrase set&#39;s resource name.
-     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+     <p>This value should be 4-63 characters, and valid characters are /<span class="xref">a-z</span>-/.</p>
 </td>
       </tr>
     </tbody>
@@ -585,15 +619,18 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public final PhraseSet createPhraseSet(String parent, PhraseSet phraseSet, String phraseSetId)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String parent = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.
+ The items in the PhraseSet are favored by the recognition model when you send a call that
+ includes the PhraseSet.</p>
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
-   String phraseSetId = &quot;phraseSetId959902180&quot;;
+   String phraseSetId = "phraseSetId959902180";
    PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
@@ -616,7 +653,7 @@
         <td><span class="parametername">phraseSetId</span></td>
         <td><code><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></code><br><p>Required. The ID to use for the phrase set, which will become the final
      component of the phrase set&#39;s resource name.
-     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.</p>
+     <p>This value should be 4-63 characters, and valid characters are /<span class="xref">a-z</span>-/.</p>
 </td>
       </tr>
     </tbody>
@@ -639,20 +676,23 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public final UnaryCallable&lt;CreatePhraseSetRequest,PhraseSet&gt; createPhraseSetCallable()</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+  <div class="markdown level1 summary"><p>Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.
+ The items in the PhraseSet are favored by the recognition model when you send a call that
+ includes the PhraseSet.</p>
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreatePhraseSetRequest request =
        CreatePhraseSetRequest.newBuilder()
-           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
-           .setPhraseSetId(&quot;phraseSetId959902180&quot;)
+           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
+           .setPhraseSetId("phraseSetId959902180")
            .setPhraseSet(PhraseSet.newBuilder().build())
            .build();
-   ApiFuture future = adaptationClient.createPhraseSetCallable().futureCall(request);
+   ApiFuture<phraseset> future = adaptationClient.createPhraseSetCallable().futureCall(request);
    // Do something.
    PhraseSet response = future.get();
  }
-</code></pre></div>
+ </phraseset></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -672,12 +712,13 @@
     <pre class="prettyprint"><code>public final void deleteCustomClass(CustomClassName name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   CustomClassName name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;);
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CustomClassName name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]");
    adaptationClient.deleteCustomClass(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -699,15 +740,16 @@
     <pre class="prettyprint"><code>public final void deleteCustomClass(DeleteCustomClassRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeleteCustomClassRequest request =
        DeleteCustomClassRequest.newBuilder()
-           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
            .build();
    adaptationClient.deleteCustomClass(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -728,12 +770,13 @@
     <pre class="prettyprint"><code>public final void deleteCustomClass(String name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    adaptationClient.deleteCustomClass(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -755,17 +798,18 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;DeleteCustomClassRequest,Empty&gt; deleteCustomClassCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeleteCustomClassRequest request =
        DeleteCustomClassRequest.newBuilder()
-           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
            .build();
-   ApiFuture future = adaptationClient.deleteCustomClassCallable().futureCall(request);
+   ApiFuture<empty> future = adaptationClient.deleteCustomClassCallable().futureCall(request);
    // Do something.
    future.get();
  }
-</code></pre></div>
+ </empty></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -785,15 +829,16 @@
     <pre class="prettyprint"><code>public final void deletePhraseSet(DeletePhraseSetRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeletePhraseSetRequest request =
        DeletePhraseSetRequest.newBuilder()
-           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
            .build();
    adaptationClient.deletePhraseSet(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -814,12 +859,13 @@
     <pre class="prettyprint"><code>public final void deletePhraseSet(PhraseSetName name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   PhraseSetName name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;);
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   PhraseSetName name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]");
    adaptationClient.deletePhraseSet(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -841,12 +887,13 @@
     <pre class="prettyprint"><code>public final void deletePhraseSet(String name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    adaptationClient.deletePhraseSet(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -868,17 +915,18 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;DeletePhraseSetRequest,Empty&gt; deletePhraseSetCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeletePhraseSetRequest request =
        DeletePhraseSetRequest.newBuilder()
-           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
            .build();
-   ApiFuture future = adaptationClient.deletePhraseSetCallable().futureCall(request);
+   ApiFuture<empty> future = adaptationClient.deletePhraseSetCallable().futureCall(request);
    // Do something.
    future.get();
  }
-</code></pre></div>
+ </empty></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -898,12 +946,13 @@
     <pre class="prettyprint"><code>public final CustomClass getCustomClass(CustomClassName name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   CustomClassName name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;);
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   CustomClassName name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]");
    CustomClass response = adaptationClient.getCustomClass(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -938,15 +987,16 @@
     <pre class="prettyprint"><code>public final CustomClass getCustomClass(GetCustomClassRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetCustomClassRequest request =
        GetCustomClassRequest.newBuilder()
-           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
            .build();
    CustomClass response = adaptationClient.getCustomClass(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -980,12 +1030,13 @@
     <pre class="prettyprint"><code>public final CustomClass getCustomClass(String name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String name = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    CustomClass response = adaptationClient.getCustomClass(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1020,17 +1071,18 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;GetCustomClassRequest,CustomClass&gt; getCustomClassCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetCustomClassRequest request =
        GetCustomClassRequest.newBuilder()
-           .setName(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
            .build();
-   ApiFuture future = adaptationClient.getCustomClassCallable().futureCall(request);
+   ApiFuture<customclass> future = adaptationClient.getCustomClassCallable().futureCall(request);
    // Do something.
    CustomClass response = future.get();
  }
-</code></pre></div>
+ </customclass></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -1050,15 +1102,16 @@
     <pre class="prettyprint"><code>public final PhraseSet getPhraseSet(GetPhraseSetRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetPhraseSetRequest request =
        GetPhraseSetRequest.newBuilder()
-           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
            .build();
    PhraseSet response = adaptationClient.getPhraseSet(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1092,12 +1145,13 @@
     <pre class="prettyprint"><code>public final PhraseSet getPhraseSet(PhraseSetName name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   PhraseSetName name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;);
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   PhraseSetName name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]");
    PhraseSet response = adaptationClient.getPhraseSet(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1132,12 +1186,13 @@
     <pre class="prettyprint"><code>public final PhraseSet getPhraseSet(String name)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String name = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    PhraseSet response = adaptationClient.getPhraseSet(name);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1172,17 +1227,18 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;GetPhraseSetRequest,PhraseSet&gt; getPhraseSetCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetPhraseSetRequest request =
        GetPhraseSetRequest.newBuilder()
-           .setName(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
            .build();
-   ApiFuture future = adaptationClient.getPhraseSetCallable().futureCall(request);
+   ApiFuture<phraseset> future = adaptationClient.getPhraseSetCallable().futureCall(request);
    // Do something.
    PhraseSet response = future.get();
  }
-</code></pre></div>
+ </phraseset></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -1274,19 +1330,20 @@
     <pre class="prettyprint"><code>public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(ListCustomClassesRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListCustomClassesRequest request =
        ListCustomClassesRequest.newBuilder()
-           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
            .setPageSize(883849137)
-           .setPageToken(&quot;pageToken873572522&quot;)
+           .setPageToken("pageToken873572522")
            .build();
    for (CustomClass element : adaptationClient.listCustomClasses(request).iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1320,14 +1377,15 @@
     <pre class="prettyprint"><code>public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(LocationName parent)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1362,14 +1420,15 @@
     <pre class="prettyprint"><code>public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(String parent)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String parent = CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString();
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1404,13 +1463,14 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;ListCustomClassesRequest,ListCustomClassesResponse&gt; listCustomClassesCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListCustomClassesRequest request =
        ListCustomClassesRequest.newBuilder()
-           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
            .setPageSize(883849137)
-           .setPageToken(&quot;pageToken873572522&quot;)
+           .setPageToken("pageToken873572522")
            .build();
    while (true) {
      ListCustomClassesResponse response =
@@ -1426,7 +1486,7 @@
      }
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -1446,22 +1506,23 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;ListCustomClassesRequest,AdaptationClient.ListCustomClassesPagedResponse&gt; listCustomClassesPagedCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListCustomClassesRequest request =
        ListCustomClassesRequest.newBuilder()
-           .setParent(CustomClassName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[CUSTOM_CLASS]&quot;).toString())
+           .setParent(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
            .setPageSize(883849137)
-           .setPageToken(&quot;pageToken873572522&quot;)
+           .setPageToken("pageToken873572522")
            .build();
-   ApiFuture future =
+   ApiFuture<customclass> future =
        adaptationClient.listCustomClassesPagedCallable().futureCall(request);
    // Do something.
    for (CustomClass element : future.get().iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </customclass></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -1481,19 +1542,20 @@
     <pre class="prettyprint"><code>public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(ListPhraseSetRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListPhraseSetRequest request =
        ListPhraseSetRequest.newBuilder()
-           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
            .setPageSize(883849137)
-           .setPageToken(&quot;pageToken873572522&quot;)
+           .setPageToken("pageToken873572522")
            .build();
    for (PhraseSet element : adaptationClient.listPhraseSet(request).iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1527,14 +1589,15 @@
     <pre class="prettyprint"><code>public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(LocationName parent)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   LocationName parent = LocationName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;);
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1569,14 +1632,15 @@
     <pre class="prettyprint"><code>public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(String parent)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
-   String parent = PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString();
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+   String parent = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1611,13 +1675,14 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;ListPhraseSetRequest,ListPhraseSetResponse&gt; listPhraseSetCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListPhraseSetRequest request =
        ListPhraseSetRequest.newBuilder()
-           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
            .setPageSize(883849137)
-           .setPageToken(&quot;pageToken873572522&quot;)
+           .setPageToken("pageToken873572522")
            .build();
    while (true) {
      ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);
@@ -1632,7 +1697,7 @@
      }
    }
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -1652,22 +1717,23 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;ListPhraseSetRequest,AdaptationClient.ListPhraseSetPagedResponse&gt; listPhraseSetPagedCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListPhraseSetRequest request =
        ListPhraseSetRequest.newBuilder()
-           .setParent(PhraseSetName.of(&quot;[PROJECT]&quot;, &quot;[LOCATION]&quot;, &quot;[PHRASE_SET]&quot;).toString())
+           .setParent(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
            .setPageSize(883849137)
-           .setPageToken(&quot;pageToken873572522&quot;)
+           .setPageToken("pageToken873572522")
            .build();
-   ApiFuture future =
+   ApiFuture<phraseset> future =
        adaptationClient.listPhraseSetPagedCallable().futureCall(request);
    // Do something.
    for (PhraseSet element : future.get().iterateAll()) {
      // doThingsWith(element);
    }
  }
-</code></pre></div>
+ </phraseset></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -1697,13 +1763,14 @@
     <pre class="prettyprint"><code>public final CustomClass updateCustomClass(CustomClass customClass, FieldMask updateMask)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Update a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CustomClass customClass = CustomClass.newBuilder().build();
    FieldMask updateMask = FieldMask.newBuilder().build();
    CustomClass response = adaptationClient.updateCustomClass(customClass, updateMask);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
@@ -1744,8 +1811,9 @@
     <pre class="prettyprint"><code>public final CustomClass updateCustomClass(UpdateCustomClassRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Update a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdateCustomClassRequest request =
        UpdateCustomClassRequest.newBuilder()
            .setCustomClass(CustomClass.newBuilder().build())
@@ -1753,7 +1821,7 @@
            .build();
    CustomClass response = adaptationClient.updateCustomClass(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1787,19 +1855,20 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;UpdateCustomClassRequest,CustomClass&gt; updateCustomClassCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Update a custom class.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdateCustomClassRequest request =
        UpdateCustomClassRequest.newBuilder()
            .setCustomClass(CustomClass.newBuilder().build())
            .setUpdateMask(FieldMask.newBuilder().build())
            .build();
-   ApiFuture future =
+   ApiFuture<customclass> future =
        adaptationClient.updateCustomClassCallable().futureCall(request);
    // Do something.
    CustomClass response = future.get();
  }
-</code></pre></div>
+ </customclass></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>
@@ -1819,13 +1888,14 @@
     <pre class="prettyprint"><code>public final PhraseSet updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Update a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
    FieldMask updateMask = FieldMask.newBuilder().build();
    PhraseSet response = adaptationClient.updatePhraseSet(phraseSet, updateMask);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
@@ -1866,8 +1936,9 @@
     <pre class="prettyprint"><code>public final PhraseSet updatePhraseSet(UpdatePhraseSetRequest request)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Update a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdatePhraseSetRequest request =
        UpdatePhraseSetRequest.newBuilder()
            .setPhraseSet(PhraseSet.newBuilder().build())
@@ -1875,7 +1946,7 @@
            .build();
    PhraseSet response = adaptationClient.updatePhraseSet(request);
  }
-</code></pre></div>
+ </code></pre></div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
@@ -1909,18 +1980,19 @@
     <pre class="prettyprint"><code>public final UnaryCallable&lt;UpdatePhraseSetRequest,PhraseSet&gt; updatePhraseSetCallable()</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Update a phrase set.</p>
-<p>Sample code:</p>
-<pre><code class="lang-java">try (AdaptationClient adaptationClient = AdaptationClient.create()) {
+<p> <p>Sample code:</p>
+ <pre><code class="pretty-print">
+ try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdatePhraseSetRequest request =
        UpdatePhraseSetRequest.newBuilder()
            .setPhraseSet(PhraseSet.newBuilder().build())
            .setUpdateMask(FieldMask.newBuilder().build())
            .build();
-   ApiFuture future = adaptationClient.updatePhraseSetCallable().futureCall(request);
+   ApiFuture<phraseset> future = adaptationClient.updatePhraseSetCallable().futureCall(request);
    // Do something.
    PhraseSet response = future.get();
  }
-</code></pre></div>
+ </phraseset></code></pre></div>
   <strong>Returns</strong>
   <table class="responsive">
     <tbody>

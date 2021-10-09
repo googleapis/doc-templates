@@ -15,43 +15,45 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public final class StreamingRecognizeResponse extends GeneratedMessageV3 implements StreamingRecognizeResponseOrBuilder</code></pre>
   </div>
-  <div class="markdown level0 summary"><pre><code>`StreamingRecognizeResponse` is the only message returned to the client by
- `StreamingRecognize`. A series of zero or more `StreamingRecognizeResponse`
+  <div class="markdown level0 summary"><p> <code>StreamingRecognizeResponse</code> is the only message returned to the client by
+ <code>StreamingRecognize</code>. A series of zero or more <code>StreamingRecognizeResponse</code>
  messages are streamed back to the client. If there is no recognizable
- audio, and `single_utterance` is set to false, then no messages are streamed
+ audio, and <code>single_utterance</code> is set to false, then no messages are streamed
  back to the client.
- Here&#39;s an example of a series of `StreamingRecognizeResponse`s that might be
- returned while processing audio:
- 1. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
- 2. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
- 3. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
-    results { alternatives { transcript: &quot; or not to be&quot; } stability: 0.01 }
- 4. results { alternatives { transcript: &quot;to be or not to be&quot;
-                             confidence: 0.92 }
-              alternatives { transcript: &quot;to bee or not to bee&quot; }
-              is_final: true }
- 5. results { alternatives { transcript: &quot; that&#39;s&quot; } stability: 0.01 }
- 6. results { alternatives { transcript: &quot; that is&quot; } stability: 0.9 }
-    results { alternatives { transcript: &quot; the question&quot; } stability: 0.01 }
- 7. results { alternatives { transcript: &quot; that is the question&quot;
-                             confidence: 0.98 }
-              alternatives { transcript: &quot; that was the question&quot; }
-              is_final: true }
- Notes:
- - Only two of the above responses #4 and #7 contain final results; they are
-   indicated by `is_final: true`. Concatenating these together generates the
-   full transcript: &quot;to be or not to be that is the question&quot;.
- - The others contain interim `results`. #3 and #6 contain two interim
-   `results`: the first portion has a high stability and is less likely to
-   change; the second portion has a low stability and is very likely to
-   change. A UI designer might choose to show only high stability `results`.
- - The specific `stability` and `confidence` values shown above are only for
-   illustrative purposes. Actual values may vary.
- - In each response, only one of these fields will be set:
-     `error`,
-     `speech_event_type`, or
-     one or more (repeated) `results`.
-</code></pre><p>Protobuf type <code>google.cloud.speech.v1.StreamingRecognizeResponse</code></p>
+ Here&#39;s an example of a series of <code>StreamingRecognizeResponse</code>s that might be
+ returned while processing audio:</p>
+<ol>
+<li>results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }</li>
+<li>results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }</li>
+<li>results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
+results { alternatives { transcript: &quot; or not to be&quot; } stability: 0.01 }</li>
+<li>results { alternatives { transcript: &quot;to be or not to be&quot;
+                         confidence: 0.92 }
+          alternatives { transcript: &quot;to bee or not to bee&quot; }
+          is_final: true }</li>
+<li>results { alternatives { transcript: &quot; that&#39;s&quot; } stability: 0.01 }</li>
+<li>results { alternatives { transcript: &quot; that is&quot; } stability: 0.9 }
+results { alternatives { transcript: &quot; the question&quot; } stability: 0.01 }</li>
+<li>results { alternatives { transcript: &quot; that is the question&quot;
+                         confidence: 0.98 }
+          alternatives { transcript: &quot; that was the question&quot; }
+          is_final: true }
+Notes:</li>
+<li>Only two of the above responses #4 and #7 contain final results; they are
+indicated by <code>is_final: true</code>. Concatenating these together generates the
+full transcript: &quot;to be or not to be that is the question&quot;.</li>
+<li>The others contain interim <code>results</code>. #3 and #6 contain two interim
+<code>results</code>: the first portion has a high stability and is less likely to
+change; the second portion has a low stability and is very likely to
+change. A UI designer might choose to show only high stability <code>results</code>.</li>
+<li>The specific <code>stability</code> and <code>confidence</code> values shown above are only for
+illustrative purposes. Actual values may vary.</li>
+<li>In each response, only one of these fields will be set:
+  <code>error</code>,
+  <code>speech_event_type</code>, or
+  one or more (repeated) <code>results</code>.</li>
+</ol>
+<p> Protobuf type <code>google.cloud.speech.v1.StreamingRecognizeResponse</code></p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -466,9 +468,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public Status getError()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -489,9 +491,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StatusOrBuilder getErrorOrBuilder()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -531,11 +533,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognitionResult getResults(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results (the interim results).</p>
+<p> <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -568,11 +570,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public int getResultsCount()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results (the interim results).</p>
+<p> <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -592,11 +594,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public List&lt;StreamingRecognitionResult&gt; getResultsList()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results (the interim results).</p>
+<p> <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -616,11 +618,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognitionResultOrBuilder getResultsOrBuilder(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results (the interim results).</p>
+<p> <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -653,11 +655,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public List&lt;? extends StreamingRecognitionResultOrBuilder&gt; getResultsOrBuilderList()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results (the interim results).
-</code></pre><p><code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results (the interim results).</p>
+<p> <code>repeated .google.cloud.speech.v1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -697,8 +699,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.SpeechEventType getSpeechEventType()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>Indicates the type of speech event.
-</code></pre><p><code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code></p>
+  <div class="markdown level1 summary"><p> Indicates the type of speech event.</p>
+<p> <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -719,8 +722,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public int getSpeechEventTypeValue()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>Indicates the type of speech event.
-</code></pre><p><code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code></p>
+  <div class="markdown level1 summary"><p> Indicates the type of speech event.</p>
+<p> <code>.google.cloud.speech.v1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -741,9 +745,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public Duration getTotalBilledTime()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
- Set only if this is the last response in the stream.
-</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
+  <div class="markdown level1 summary"><p> When available, billed audio seconds for the stream.
+ Set only if this is the last response in the stream.</p>
+<p> <code>.google.protobuf.Duration total_billed_time = 5;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -764,9 +768,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public DurationOrBuilder getTotalBilledTimeOrBuilder()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
- Set only if this is the last response in the stream.
-</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
+  <div class="markdown level1 summary"><p> When available, billed audio seconds for the stream.
+ Set only if this is the last response in the stream.</p>
+<p> <code>.google.protobuf.Duration total_billed_time = 5;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -806,9 +810,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public boolean hasError()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -829,9 +833,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public boolean hasTotalBilledTime()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>When available, billed audio seconds for the stream.
- Set only if this is the last response in the stream.
-</code></pre><p><code>.google.protobuf.Duration total_billed_time = 5;</code></p>
+  <div class="markdown level1 summary"><p> When available, billed audio seconds for the stream.
+ Set only if this is the last response in the stream.</p>
+<p> <code>.google.protobuf.Duration total_billed_time = 5;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">

@@ -16,15 +16,18 @@
     <pre class="prettyprint"><code>public class SpeechStubSettings extends StubSettings&lt;SpeechStubSettings&gt;</code></pre>
   </div>
   <div class="markdown level0 summary"><p>Settings class to configure an instance of <a class="xref" href="com.google.cloud.speech.v1p1beta1.stub.SpeechStub.html">SpeechStub</a>.</p>
-<p>The default instance has everything set to sensible defaults:</p>
-<ul>
-<li>The default service address (speech.googleapis.com) and default port (443) are used.</li>
-<li>Credentials are acquired automatically through Application Default Credentials.</li>
-<li>Retries are configured for idempotent methods but not for non-idempotent methods.</li>
-</ul>
-<p>The builder of this class is recursive, so contained classes are themselves builders. When build() is called, the tree of builders is called to create the complete settings object.</p>
-<p>For example, to set the total timeout of recognize to 30 seconds:</p>
-<pre><code class="lang-java">SpeechStubSettings.Builder speechSettingsBuilder = SpeechStubSettings.newBuilder();
+<p> <p>The default instance has everything set to sensible defaults:</p>
+ <ul>
+   <li>The default service address (speech.googleapis.com) and default port (443) are used.
+   <li>Credentials are acquired automatically through Application Default Credentials.
+   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ </li></li></li></ul>
+
+<p> <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ build() is called, the tree of builders is called to create the complete settings object.</p>
+<p> <p>For example, to set the total timeout of recognize to 30 seconds:</p>
+ <pre><code class="pretty-print">
+ SpeechStubSettings.Builder speechSettingsBuilder = SpeechStubSettings.newBuilder();
  speechSettingsBuilder
      .recognizeSettings()
      .setRetrySettings(
@@ -35,7 +38,7 @@
              .setTotalTimeout(Duration.ofSeconds(30))
              .build());
  SpeechStubSettings speechSettings = speechSettingsBuilder.build();
-</code></pre></div>
+ </code></pre></div>
   <div class="inheritance">
     <h2>Inheritance</h2>
     <span><a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">java.lang.Object</a></span> <span> &gt; </span>

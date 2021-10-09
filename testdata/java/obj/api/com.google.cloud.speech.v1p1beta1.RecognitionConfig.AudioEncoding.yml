@@ -42,7 +42,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding"
   type: "Enum"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThe encoding of the audio data sent in the request.\n All encodings support only 1 channel (mono) audio, unless the\n `audio_channel_count` and `enable_separate_recognition_per_channel` fields\n are set.\n For best results, the audio source should be captured and transmitted using\n a lossless encoding (`FLAC` or `LINEAR16`). The accuracy of the speech\n recognition can be reduced if lossy codecs are used to capture or transmit\n audio, particularly if background noise is present. Lossy codecs include\n `MULAW`, `AMR`, `AMR_WB`, `OGG_OPUS`, `SPEEX_WITH_HEADER_BYTE`, `MP3`.\n The `FLAC` and `WAV` audio file formats include a header that describes the\n included audio content. You can request recognition for `WAV` files that\n contain either `LINEAR16` or `MULAW` encoded audio.\n If you send `FLAC` or `WAV` audio file format in\n your request, you do not need to specify an `AudioEncoding`; the audio\n encoding format is determined from the file header. If you specify\n an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the\n encoding configuration must match the encoding described in the audio\n header; otherwise the request returns an\n [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.\n```\n\nProtobuf enum `google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding`"
+  summary: "\n The encoding of the audio data sent in the request.\n All encodings support only 1 channel (mono) audio, unless the\n <code>audio_channel_count</code> and <code>enable_separate_recognition_per_channel</code> fields\n are set.\n For best results, the audio source should be captured and transmitted using\n a lossless encoding (<code>FLAC</code> or <code>LINEAR16</code>). The accuracy of the speech\n recognition can be reduced if lossy codecs are used to capture or transmit\n audio, particularly if background noise is present. Lossy codecs include\n <code>MULAW</code>, <code>AMR</code>, <code>AMR_WB</code>, <code>OGG_OPUS</code>, <code>SPEEX_WITH_HEADER_BYTE</code>, <code>MP3</code>.\n The <code>FLAC</code> and <code>WAV</code> audio file formats include a header that describes the\n included audio content. You can request recognition for <code>WAV</code> files that\n contain either <code>LINEAR16</code> or <code>MULAW</code> encoded audio.\n If you send <code>FLAC</code> or <code>WAV</code> audio file format in\n your request, you do not need to specify an <code>AudioEncoding</code>; the audio\n encoding format is determined from the file header. If you specify\n an <code>AudioEncoding</code> when you send  send <code>FLAC</code> or <code>WAV</code> audio, the\n encoding configuration must match the encoding described in the audio\n header; otherwise the request returns an\n <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Code.INVALID_ARGUMENT</xref> error code.\n \n\n Protobuf enum <code>google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding</code>"
   syntax:
     content: "public enum RecognitionConfig.AudioEncoding extends Enum<RecognitionConfig.AudioEncoding> implements ProtocolMessageEnum"
   inheritance:
@@ -77,7 +77,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.AMR"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nAdaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.\n```\n\n`AMR = 4;`"
+  summary: "\n Adaptive Multi-Rate Narrowband codec. <code>sample_rate_hertz</code> must be 8000.\n \n\n <code>AMR = 4;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding AMR"
     return:
@@ -92,7 +92,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.AMR_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nAdaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.\n```\n\n`AMR = 4;`"
+  summary: "\n Adaptive Multi-Rate Narrowband codec. <code>sample_rate_hertz</code> must be 8000.\n \n\n <code>AMR = 4;</code>"
   syntax:
     content: "public static final int AMR_VALUE"
     return:
@@ -107,7 +107,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.AMR_WB"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nAdaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.\n```\n\n`AMR_WB = 5;`"
+  summary: "\n Adaptive Multi-Rate Wideband codec. <code>sample_rate_hertz</code> must be 16000.\n \n\n <code>AMR_WB = 5;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding AMR_WB"
     return:
@@ -122,7 +122,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.AMR_WB_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nAdaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.\n```\n\n`AMR_WB = 5;`"
+  summary: "\n Adaptive Multi-Rate Wideband codec. <code>sample_rate_hertz</code> must be 16000.\n \n\n <code>AMR_WB = 5;</code>"
   syntax:
     content: "public static final int AMR_WB_VALUE"
     return:
@@ -153,7 +153,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nNot specified.\n```\n\n`ENCODING_UNSPECIFIED = 0;`"
+  summary: "\n Not specified.\n \n\n <code>ENCODING_UNSPECIFIED = 0;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding ENCODING_UNSPECIFIED"
     return:
@@ -168,7 +168,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nNot specified.\n```\n\n`ENCODING_UNSPECIFIED = 0;`"
+  summary: "\n Not specified.\n \n\n <code>ENCODING_UNSPECIFIED = 0;</code>"
   syntax:
     content: "public static final int ENCODING_UNSPECIFIED_VALUE"
     return:
@@ -183,7 +183,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.FLAC"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\n`FLAC` (Free Lossless Audio\n Codec) is the recommended encoding because it is\n lossless--therefore recognition is not compromised--and\n requires only about half the bandwidth of `LINEAR16`. `FLAC` stream\n encoding supports 16-bit and 24-bit samples, however, not all fields in\n `STREAMINFO` are supported.\n```\n\n`FLAC = 2;`"
+  summary: "\n <code>FLAC</code> (Free Lossless Audio\n Codec) is the recommended encoding because it is\n lossless--therefore recognition is not compromised--and\n requires only about half the bandwidth of <code>LINEAR16</code>. <code>FLAC</code> stream\n encoding supports 16-bit and 24-bit samples, however, not all fields in\n <code>STREAMINFO</code> are supported.\n \n\n <code>FLAC = 2;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding FLAC"
     return:
@@ -198,7 +198,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.FLAC_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\n`FLAC` (Free Lossless Audio\n Codec) is the recommended encoding because it is\n lossless--therefore recognition is not compromised--and\n requires only about half the bandwidth of `LINEAR16`. `FLAC` stream\n encoding supports 16-bit and 24-bit samples, however, not all fields in\n `STREAMINFO` are supported.\n```\n\n`FLAC = 2;`"
+  summary: "\n <code>FLAC</code> (Free Lossless Audio\n Codec) is the recommended encoding because it is\n lossless--therefore recognition is not compromised--and\n requires only about half the bandwidth of <code>LINEAR16</code>. <code>FLAC</code> stream\n encoding supports 16-bit and 24-bit samples, however, not all fields in\n <code>STREAMINFO</code> are supported.\n \n\n <code>FLAC = 2;</code>"
   syntax:
     content: "public static final int FLAC_VALUE"
     return:
@@ -213,7 +213,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.LINEAR16"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nUncompressed 16-bit signed little-endian samples (Linear PCM).\n```\n\n`LINEAR16 = 1;`"
+  summary: "\n Uncompressed 16-bit signed little-endian samples (Linear PCM).\n \n\n <code>LINEAR16 = 1;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding LINEAR16"
     return:
@@ -228,7 +228,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.LINEAR16_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nUncompressed 16-bit signed little-endian samples (Linear PCM).\n```\n\n`LINEAR16 = 1;`"
+  summary: "\n Uncompressed 16-bit signed little-endian samples (Linear PCM).\n \n\n <code>LINEAR16 = 1;</code>"
   syntax:
     content: "public static final int LINEAR16_VALUE"
     return:
@@ -243,7 +243,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.MP3"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nMP3 audio. MP3 encoding is a Beta feature and only available in\n v1p1beta1. Support all standard MP3 bitrates (which range from 32-320\n kbps). When using this encoding, `sample_rate_hertz` has to match the\n sample rate of the file being used.\n```\n\n`MP3 = 8;`"
+  summary: "\n MP3 audio. MP3 encoding is a Beta feature and only available in\n v1p1beta1. Support all standard MP3 bitrates (which range from 32-320\n kbps). When using this encoding, <code>sample_rate_hertz</code> has to match the\n sample rate of the file being used.\n \n\n <code>MP3 = 8;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding MP3"
     return:
@@ -258,7 +258,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.MP3_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nMP3 audio. MP3 encoding is a Beta feature and only available in\n v1p1beta1. Support all standard MP3 bitrates (which range from 32-320\n kbps). When using this encoding, `sample_rate_hertz` has to match the\n sample rate of the file being used.\n```\n\n`MP3 = 8;`"
+  summary: "\n MP3 audio. MP3 encoding is a Beta feature and only available in\n v1p1beta1. Support all standard MP3 bitrates (which range from 32-320\n kbps). When using this encoding, <code>sample_rate_hertz</code> has to match the\n sample rate of the file being used.\n \n\n <code>MP3 = 8;</code>"
   syntax:
     content: "public static final int MP3_VALUE"
     return:
@@ -273,7 +273,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.MULAW"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\n8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.\n```\n\n`MULAW = 3;`"
+  summary: "\n 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.\n \n\n <code>MULAW = 3;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding MULAW"
     return:
@@ -288,7 +288,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.MULAW_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\n8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.\n```\n\n`MULAW = 3;`"
+  summary: "\n 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.\n \n\n <code>MULAW = 3;</code>"
   syntax:
     content: "public static final int MULAW_VALUE"
     return:
@@ -303,7 +303,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.OGG_OPUS"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nOpus encoded audio frames in Ogg container\n ([OggOpus](https://wiki.xiph.org/OggOpus)).\n `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.\n```\n\n`OGG_OPUS = 6;`"
+  summary: "\n Opus encoded audio frames in Ogg container\n (<a href=\"https://wiki.xiph.org/OggOpus\">OggOpus</a>).\n <code>sample_rate_hertz</code> must be one of 8000, 12000, 16000, 24000, or 48000.\n \n\n <code>OGG_OPUS = 6;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding OGG_OPUS"
     return:
@@ -318,7 +318,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.OGG_OPUS_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nOpus encoded audio frames in Ogg container\n ([OggOpus](https://wiki.xiph.org/OggOpus)).\n `sample_rate_hertz` must be one of 8000, 12000, 16000, 24000, or 48000.\n```\n\n`OGG_OPUS = 6;`"
+  summary: "\n Opus encoded audio frames in Ogg container\n (<a href=\"https://wiki.xiph.org/OggOpus\">OggOpus</a>).\n <code>sample_rate_hertz</code> must be one of 8000, 12000, 16000, 24000, or 48000.\n \n\n <code>OGG_OPUS = 6;</code>"
   syntax:
     content: "public static final int OGG_OPUS_VALUE"
     return:
@@ -333,7 +333,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.SPEEX_WITH_HEADER_BYTE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nAlthough the use of lossy encodings is not recommended, if a very low\n bitrate encoding is required, `OGG_OPUS` is highly preferred over\n Speex encoding. The [Speex](https://speex.org/)  encoding supported by\n Cloud Speech API has a header byte in each block, as in MIME type\n `audio/x-speex-with-header-byte`.\n It is a variant of the RTP Speex encoding defined in\n [RFC 5574](https://tools.ietf.org/html/rfc5574).\n The stream is a sequence of blocks, one block per RTP packet. Each block\n starts with a byte containing the length of the block, in bytes, followed\n by one or more frames of Speex data, padded to an integral number of\n bytes (octets) as specified in RFC 5574. In other words, each RTP header\n is replaced with a single byte containing the block length. Only Speex\n wideband is supported. `sample_rate_hertz` must be 16000.\n```\n\n`SPEEX_WITH_HEADER_BYTE = 7;`"
+  summary: "\n Although the use of lossy encodings is not recommended, if a very low\n bitrate encoding is required, <code>OGG_OPUS</code> is highly preferred over\n Speex encoding. The <a href=\"https://speex.org/\">Speex</a>  encoding supported by\n Cloud Speech API has a header byte in each block, as in MIME type\n <code>audio/x-speex-with-header-byte</code>.\n It is a variant of the RTP Speex encoding defined in\n <a href=\"https://tools.ietf.org/html/rfc5574\">RFC 5574</a>.\n The stream is a sequence of blocks, one block per RTP packet. Each block\n starts with a byte containing the length of the block, in bytes, followed\n by one or more frames of Speex data, padded to an integral number of\n bytes (octets) as specified in RFC 5574. In other words, each RTP header\n is replaced with a single byte containing the block length. Only Speex\n wideband is supported. <code>sample_rate_hertz</code> must be 16000.\n \n\n <code>SPEEX_WITH_HEADER_BYTE = 7;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding SPEEX_WITH_HEADER_BYTE"
     return:
@@ -348,7 +348,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.SPEEX_WITH_HEADER_BYTE_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nAlthough the use of lossy encodings is not recommended, if a very low\n bitrate encoding is required, `OGG_OPUS` is highly preferred over\n Speex encoding. The [Speex](https://speex.org/)  encoding supported by\n Cloud Speech API has a header byte in each block, as in MIME type\n `audio/x-speex-with-header-byte`.\n It is a variant of the RTP Speex encoding defined in\n [RFC 5574](https://tools.ietf.org/html/rfc5574).\n The stream is a sequence of blocks, one block per RTP packet. Each block\n starts with a byte containing the length of the block, in bytes, followed\n by one or more frames of Speex data, padded to an integral number of\n bytes (octets) as specified in RFC 5574. In other words, each RTP header\n is replaced with a single byte containing the block length. Only Speex\n wideband is supported. `sample_rate_hertz` must be 16000.\n```\n\n`SPEEX_WITH_HEADER_BYTE = 7;`"
+  summary: "\n Although the use of lossy encodings is not recommended, if a very low\n bitrate encoding is required, <code>OGG_OPUS</code> is highly preferred over\n Speex encoding. The <a href=\"https://speex.org/\">Speex</a>  encoding supported by\n Cloud Speech API has a header byte in each block, as in MIME type\n <code>audio/x-speex-with-header-byte</code>.\n It is a variant of the RTP Speex encoding defined in\n <a href=\"https://tools.ietf.org/html/rfc5574\">RFC 5574</a>.\n The stream is a sequence of blocks, one block per RTP packet. Each block\n starts with a byte containing the length of the block, in bytes, followed\n by one or more frames of Speex data, padded to an integral number of\n bytes (octets) as specified in RFC 5574. In other words, each RTP header\n is replaced with a single byte containing the block length. Only Speex\n wideband is supported. <code>sample_rate_hertz</code> must be 16000.\n \n\n <code>SPEEX_WITH_HEADER_BYTE = 7;</code>"
   syntax:
     content: "public static final int SPEEX_WITH_HEADER_BYTE_VALUE"
     return:
@@ -377,7 +377,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.WEBM_OPUS"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nOpus encoded audio frames in WebM container\n ([OggOpus](https://wiki.xiph.org/OggOpus)). This is a Beta features and\n only available in v1p1beta1. `sample_rate_hertz` must be one of 8000,\n 12000, 16000, 24000, or 48000.\n```\n\n`WEBM_OPUS = 9;`"
+  summary: "\n Opus encoded audio frames in WebM container\n (<a href=\"https://wiki.xiph.org/OggOpus\">OggOpus</a>). This is a Beta features and\n only available in v1p1beta1. <code>sample_rate_hertz</code> must be one of 8000,\n 12000, 16000, 24000, or 48000.\n \n\n <code>WEBM_OPUS = 9;</code>"
   syntax:
     content: "public static final RecognitionConfig.AudioEncoding WEBM_OPUS"
     return:
@@ -392,7 +392,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.WEBM_OPUS_VALUE"
   type: "Field"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nOpus encoded audio frames in WebM container\n ([OggOpus](https://wiki.xiph.org/OggOpus)). This is a Beta features and\n only available in v1p1beta1. `sample_rate_hertz` must be one of 8000,\n 12000, 16000, 24000, or 48000.\n```\n\n`WEBM_OPUS = 9;`"
+  summary: "\n Opus encoded audio frames in WebM container\n (<a href=\"https://wiki.xiph.org/OggOpus\">OggOpus</a>). This is a Beta features and\n only available in v1p1beta1. <code>sample_rate_hertz</code> must be one of 8000,\n 12000, 16000, 24000, or 48000.\n \n\n <code>WEBM_OPUS = 9;</code>"
   syntax:
     content: "public static final int WEBM_OPUS_VALUE"
     return:
@@ -521,7 +521,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.valueOf*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "(deprecated) Use <xref uid=\"com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.forNumber(int)\" data-throw-if-not-resolved=\"false\">#forNumber(int)</xref> instead."
+  summary: "<p>(deprecated) Use <xref uid=\"com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding.forNumber(int)\" data-throw-if-not-resolved=\"false\">#forNumber(int)</xref> instead.</p>"
   syntax:
     content: "public static RecognitionConfig.AudioEncoding valueOf(int value)"
     parameters:
