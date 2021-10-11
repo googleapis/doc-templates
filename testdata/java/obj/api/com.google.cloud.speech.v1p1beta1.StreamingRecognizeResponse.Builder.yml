@@ -69,7 +69,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder"
   type: "Class"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\n`StreamingRecognizeResponse` is the only message returned to the client by\n `StreamingRecognize`. A series of zero or more `StreamingRecognizeResponse`\n messages are streamed back to the client. If there is no recognizable\n audio, and `single_utterance` is set to false, then no messages are streamed\n back to the client.\n Here's an example of a series of `StreamingRecognizeResponse`s that might be\n returned while processing audio:\n 1. results { alternatives { transcript: \"tube\" } stability: 0.01 }\n 2. results { alternatives { transcript: \"to be a\" } stability: 0.01 }\n 3. results { alternatives { transcript: \"to be\" } stability: 0.9 }\n    results { alternatives { transcript: \" or not to be\" } stability: 0.01 }\n 4. results { alternatives { transcript: \"to be or not to be\"\n                             confidence: 0.92 }\n              alternatives { transcript: \"to bee or not to bee\" }\n              is_final: true }\n 5. results { alternatives { transcript: \" that's\" } stability: 0.01 }\n 6. results { alternatives { transcript: \" that is\" } stability: 0.9 }\n    results { alternatives { transcript: \" the question\" } stability: 0.01 }\n 7. results { alternatives { transcript: \" that is the question\"\n                             confidence: 0.98 }\n              alternatives { transcript: \" that was the question\" }\n              is_final: true }\n Notes:\n - Only two of the above responses #4 and #7 contain final results; they are\n   indicated by `is_final: true`. Concatenating these together generates the\n   full transcript: \"to be or not to be that is the question\".\n - The others contain interim `results`. #3 and #6 contain two interim\n   `results`: the first portion has a high stability and is less likely to\n   change; the second portion has a low stability and is very likely to\n   change. A UI designer might choose to show only high stability `results`.\n - The specific `stability` and `confidence` values shown above are only for\n   illustrative purposes. Actual values may vary.\n - In each response, only one of these fields will be set:\n     `error`,\n     `speech_event_type`, or\n     one or more (repeated) `results`.\n```\n\nProtobuf type `google.cloud.speech.v1p1beta1.StreamingRecognizeResponse`"
+  summary: "\n <code>StreamingRecognizeResponse</code> is the only message returned to the client by\n <code>StreamingRecognize</code>. A series of zero or more <code>StreamingRecognizeResponse</code>\n messages are streamed back to the client. If there is no recognizable\n audio, and <code>single_utterance</code> is set to false, then no messages are streamed\n back to the client.\n Here's an example of a series of <code>StreamingRecognizeResponse</code>s that might be\n returned while processing audio:\n 1. results { alternatives { transcript: \"tube\" } stability: 0.01 }\n 2. results { alternatives { transcript: \"to be a\" } stability: 0.01 }\n 3. results { alternatives { transcript: \"to be\" } stability: 0.9 }\n    results { alternatives { transcript: \" or not to be\" } stability: 0.01 }\n 4. results { alternatives { transcript: \"to be or not to be\"\n                             confidence: 0.92 }\n              alternatives { transcript: \"to bee or not to bee\" }\n              is_final: true }\n 5. results { alternatives { transcript: \" that's\" } stability: 0.01 }\n 6. results { alternatives { transcript: \" that is\" } stability: 0.9 }\n    results { alternatives { transcript: \" the question\" } stability: 0.01 }\n 7. results { alternatives { transcript: \" that is the question\"\n                             confidence: 0.98 }\n              alternatives { transcript: \" that was the question\" }\n              is_final: true }\n Notes:\n - Only two of the above responses #4 and #7 contain final results; they are\n   indicated by <code>is_final: true</code>. Concatenating these together generates the\n   full transcript: \"to be or not to be that is the question\".\n - The others contain interim <code>results</code>. #3 and #6 contain two interim\n   <code>results</code>: the first portion has a high stability and is less likely to\n   change; the second portion has a low stability and is very likely to\n   change. A UI designer might choose to show only high stability <code>results</code>.\n - The specific <code>stability</code> and <code>confidence</code> values shown above are only for\n   illustrative purposes. Actual values may vary.\n - In each response, only one of these fields will be set:\n     <code>error</code>,\n     <code>speech_event_type</code>, or\n     one or more (repeated) <code>results</code>.\n \n\n Protobuf type <code>google.cloud.speech.v1p1beta1.StreamingRecognizeResponse</code>"
   syntax:
     content: "public static final class StreamingRecognizeResponse.Builder extends GeneratedMessageV3.Builder<StreamingRecognizeResponse.Builder> implements StreamingRecognizeResponseOrBuilder"
   inheritance:
@@ -183,7 +183,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.addAllResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder addAllResults(Iterable<? extends StreamingRecognitionResult> values)"
     parameters:
@@ -223,7 +223,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.addResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder addResults(StreamingRecognitionResult value)"
     parameters:
@@ -242,7 +242,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.addResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder addResults(StreamingRecognitionResult.Builder builderForValue)"
     parameters:
@@ -261,7 +261,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.addResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder addResults(int index, StreamingRecognitionResult value)"
     parameters:
@@ -282,7 +282,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.addResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder addResults(int index, StreamingRecognitionResult.Builder builderForValue)"
     parameters:
@@ -303,7 +303,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.addResultsBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognitionResult.Builder addResultsBuilder()"
     return:
@@ -319,7 +319,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.addResultsBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognitionResult.Builder addResultsBuilder(int index)"
     parameters:
@@ -384,7 +384,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.clearError*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder clearError()"
     return:
@@ -438,7 +438,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.clearResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder clearResults()"
     return:
@@ -454,7 +454,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.clearSpeechEventType*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIndicates the type of speech event.\n```\n\n`.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;`"
+  summary: "\n Indicates the type of speech event.\n \n\n <code>\n .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;\n </code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder clearSpeechEventType()"
     return:
@@ -471,7 +471,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.clearTotalBilledTime*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder clearTotalBilledTime()"
     return:
@@ -549,7 +549,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getError*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public Status getError()"
     return:
@@ -566,7 +566,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getErrorBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public Status.Builder getErrorBuilder()"
     return:
@@ -582,7 +582,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getErrorOrBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public StatusOrBuilder getErrorOrBuilder()"
     return:
@@ -598,7 +598,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognitionResult getResults(int index)"
     parameters:
@@ -617,7 +617,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getResultsBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognitionResult.Builder getResultsBuilder(int index)"
     parameters:
@@ -636,7 +636,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getResultsBuilderList*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public List<StreamingRecognitionResult.Builder> getResultsBuilderList()"
     return:
@@ -652,7 +652,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getResultsCount*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public int getResultsCount()"
     return:
@@ -668,7 +668,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getResultsList*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public List<StreamingRecognitionResult> getResultsList()"
     return:
@@ -684,7 +684,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getResultsOrBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognitionResultOrBuilder getResultsOrBuilder(int index)"
     parameters:
@@ -703,7 +703,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getResultsOrBuilderList*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public List<? extends StreamingRecognitionResultOrBuilder> getResultsOrBuilderList()"
     return:
@@ -719,7 +719,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getSpeechEventType*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIndicates the type of speech event.\n```\n\n`.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;`"
+  summary: "\n Indicates the type of speech event.\n \n\n <code>\n .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;\n </code>"
   syntax:
     content: "public StreamingRecognizeResponse.SpeechEventType getSpeechEventType()"
     return:
@@ -736,7 +736,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getSpeechEventTypeValue*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIndicates the type of speech event.\n```\n\n`.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;`"
+  summary: "\n Indicates the type of speech event.\n \n\n <code>\n .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;\n </code>"
   syntax:
     content: "public int getSpeechEventTypeValue()"
     return:
@@ -753,7 +753,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getTotalBilledTime*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public Duration getTotalBilledTime()"
     return:
@@ -770,7 +770,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getTotalBilledTimeBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public Duration.Builder getTotalBilledTimeBuilder()"
     return:
@@ -786,7 +786,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.getTotalBilledTimeOrBuilder*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public DurationOrBuilder getTotalBilledTimeOrBuilder()"
     return:
@@ -802,7 +802,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.hasError*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public boolean hasError()"
     return:
@@ -819,7 +819,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.hasTotalBilledTime*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public boolean hasTotalBilledTime()"
     return:
@@ -868,7 +868,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.mergeError*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder mergeError(Status value)"
     parameters:
@@ -947,7 +947,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.mergeTotalBilledTime*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder mergeTotalBilledTime(Duration value)"
     parameters:
@@ -985,7 +985,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.removeResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder removeResults(int index)"
     parameters:
@@ -1004,7 +1004,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setError*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setError(Status value)"
     parameters:
@@ -1023,7 +1023,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setError*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIf set, returns a [google.rpc.Status][google.rpc.Status] message that\n specifies the error for the operation.\n```\n\n`.google.rpc.Status error = 1;`"
+  summary: "\n If set, returns a <xref uid=\"\" data-throw-if-not-resolved=\"false\">google.rpc.Status</xref> message that\n specifies the error for the operation.\n \n\n <code>.google.rpc.Status error = 1;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setError(Status.Builder builderForValue)"
     parameters:
@@ -1086,7 +1086,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setResults(int index, StreamingRecognitionResult value)"
     parameters:
@@ -1107,7 +1107,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setResults*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThis repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one `is_final=true` result (the newly settled portion),\n followed by zero or more `is_final=false` results (the interim results).\n```\n\n`repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;`"
+  summary: "\n This repeated list contains zero or more results that\n correspond to consecutive portions of the audio currently being processed.\n It contains zero or one <code>is_final=true</code> result (the newly settled portion),\n followed by zero or more <code>is_final=false</code> results (the interim results).\n \n\n <code>repeated .google.cloud.speech.v1p1beta1.StreamingRecognitionResult results = 2;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setResults(int index, StreamingRecognitionResult.Builder builderForValue)"
     parameters:
@@ -1128,7 +1128,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setSpeechEventType*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIndicates the type of speech event.\n```\n\n`.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;`"
+  summary: "\n Indicates the type of speech event.\n \n\n <code>\n .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;\n </code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setSpeechEventType(StreamingRecognizeResponse.SpeechEventType value)"
     parameters:
@@ -1149,7 +1149,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setSpeechEventTypeValue*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nIndicates the type of speech event.\n```\n\n`.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;`"
+  summary: "\n Indicates the type of speech event.\n \n\n <code>\n .google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;\n </code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setSpeechEventTypeValue(int value)"
     parameters:
@@ -1170,7 +1170,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setTotalBilledTime*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setTotalBilledTime(Duration value)"
     parameters:
@@ -1189,7 +1189,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.Builder.setTotalBilledTime*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nWhen available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n```\n\n`.google.protobuf.Duration total_billed_time = 5;`"
+  summary: "\n When available, billed audio seconds for the stream.\n Set only if this is the last response in the stream.\n \n\n <code>.google.protobuf.Duration total_billed_time = 5;</code>"
   syntax:
     content: "public StreamingRecognizeResponse.Builder setTotalBilledTime(Duration.Builder builderForValue)"
     parameters:

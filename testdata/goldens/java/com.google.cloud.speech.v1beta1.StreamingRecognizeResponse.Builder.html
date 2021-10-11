@@ -15,51 +15,53 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public static final class StreamingRecognizeResponse.Builder extends GeneratedMessageV3.Builder&lt;StreamingRecognizeResponse.Builder&gt; implements StreamingRecognizeResponseOrBuilder</code></pre>
   </div>
-  <div class="markdown level0 summary"><pre><code>`StreamingRecognizeResponse` is the only message returned to the client by
- `StreamingRecognize`. A series of one or more `StreamingRecognizeResponse`
+  <div class="markdown level0 summary"><p> <code>StreamingRecognizeResponse</code> is the only message returned to the client by
+ <code>StreamingRecognize</code>. A series of one or more <code>StreamingRecognizeResponse</code>
  messages are streamed back to the client.
- Here&#39;s an example of a series of ten `StreamingRecognizeResponse`s that might
- be returned while processing audio:
- 1. endpointer_type: START_OF_SPEECH
- 2. results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
-    result_index: 0
- 3. results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
-    result_index: 0
- 4. results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
-    results { alternatives { transcript: &quot; or not to be&quot; } stability: 0.01 }
-    result_index: 0
- 5. results { alternatives { transcript: &quot;to be or not to be&quot;
-                             confidence: 0.92 }
-              alternatives { transcript: &quot;to bee or not to bee&quot; }
-              is_final: true }
-    result_index: 0
- 6. results { alternatives { transcript: &quot; that&#39;s&quot; } stability: 0.01 }
-    result_index: 1
- 7. results { alternatives { transcript: &quot; that is&quot; } stability: 0.9 }
-    results { alternatives { transcript: &quot; the question&quot; } stability: 0.01 }
-    result_index: 1
- 8. endpointer_type: END_OF_SPEECH
- 9. results { alternatives { transcript: &quot; that is the question&quot;
-                             confidence: 0.98 }
-              alternatives { transcript: &quot; that was the question&quot; }
-              is_final: true }
-    result_index: 1
- 10. endpointer_type: END_OF_AUDIO
- Notes:
- - Only two of the above responses #5 and #9 contain final results, they are
-   indicated by `is_final: true`. Concatenating these together generates the
-   full transcript: &quot;to be or not to be that is the question&quot;.
- - The others contain interim `results`. #4 and #7 contain two interim
-   `results`, the first portion has a high stability and is less likely to
-   change, the second portion has a low stability and is very likely to
-   change. A UI designer might choose to show only high stability `results`.
- - The specific `stability` and `confidence` values shown above are only for
-   illustrative purposes. Actual values may vary.
- - The `result_index` indicates the portion of audio that has had final
-   results returned, and is no longer being processed. For example, the
-   `results` in #6 and later correspond to the portion of audio after
-   &quot;to be or not to be&quot;.
-</code></pre><p>Protobuf type <code>google.cloud.speech.v1beta1.StreamingRecognizeResponse</code></p>
+ Here&#39;s an example of a series of ten <code>StreamingRecognizeResponse</code>s that might
+ be returned while processing audio:</p>
+<ol>
+<li>endpointer_type: START_OF_SPEECH</li>
+<li>results { alternatives { transcript: &quot;tube&quot; } stability: 0.01 }
+result_index: 0</li>
+<li>results { alternatives { transcript: &quot;to be a&quot; } stability: 0.01 }
+result_index: 0</li>
+<li>results { alternatives { transcript: &quot;to be&quot; } stability: 0.9 }
+results { alternatives { transcript: &quot; or not to be&quot; } stability: 0.01 }
+result_index: 0</li>
+<li>results { alternatives { transcript: &quot;to be or not to be&quot;
+                         confidence: 0.92 }
+          alternatives { transcript: &quot;to bee or not to bee&quot; }
+          is_final: true }
+result_index: 0</li>
+<li>results { alternatives { transcript: &quot; that&#39;s&quot; } stability: 0.01 }
+result_index: 1</li>
+<li>results { alternatives { transcript: &quot; that is&quot; } stability: 0.9 }
+results { alternatives { transcript: &quot; the question&quot; } stability: 0.01 }
+result_index: 1</li>
+<li>endpointer_type: END_OF_SPEECH</li>
+<li>results { alternatives { transcript: &quot; that is the question&quot;
+                         confidence: 0.98 }
+          alternatives { transcript: &quot; that was the question&quot; }
+          is_final: true }
+result_index: 1</li>
+<li>endpointer_type: END_OF_AUDIO
+Notes:</li>
+<li>Only two of the above responses #5 and #9 contain final results, they are
+indicated by <code>is_final: true</code>. Concatenating these together generates the
+full transcript: &quot;to be or not to be that is the question&quot;.</li>
+<li>The others contain interim <code>results</code>. #4 and #7 contain two interim
+<code>results</code>, the first portion has a high stability and is less likely to
+change, the second portion has a low stability and is very likely to
+change. A UI designer might choose to show only high stability <code>results</code>.</li>
+<li>The specific <code>stability</code> and <code>confidence</code> values shown above are only for
+illustrative purposes. Actual values may vary.</li>
+<li>The <code>result_index</code> indicates the portion of audio that has had final
+results returned, and is no longer being processed. For example, the
+<code>results</code> in #6 and later correspond to the portion of audio after
+&quot;to be or not to be&quot;.</li>
+</ol>
+<p> Protobuf type <code>google.cloud.speech.v1beta1.StreamingRecognizeResponse</code></p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -272,11 +274,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder addAllResults(Iterable&lt;? extends StreamingRecognitionResult&gt; values)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -346,11 +348,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder addResults(StreamingRecognitionResult value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -383,11 +385,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder addResults(StreamingRecognitionResult.Builder builderForValue)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -420,11 +422,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder addResults(int index, StreamingRecognitionResult value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameters</strong>
   <table class="responsive">
@@ -461,11 +463,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder addResults(int index, StreamingRecognitionResult.Builder builderForValue)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameters</strong>
   <table class="responsive">
@@ -502,11 +504,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognitionResult.Builder addResultsBuilder()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -526,11 +528,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognitionResult.Builder addResultsBuilder(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -619,8 +621,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder clearEndpointerType()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the type of endpointer event.
-</code></pre><p><code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the type of endpointer event.</p>
+<p> <code>
+ .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -640,9 +644,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder clearError()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -728,10 +732,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder clearResultIndex()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the lowest index in the `results` array that has
- changed. The repeated `StreamingRecognitionResult` results overwrite past
- results at this index and higher.
-</code></pre><p><code>int32 result_index = 3;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the lowest index in the <code>results</code> array that has
+ changed. The repeated <code>StreamingRecognitionResult</code> results overwrite past
+ results at this index and higher.</p>
+<p> <code>int32 result_index = 3;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -751,11 +755,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder clearResults()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -851,8 +855,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.EndpointerType getEndpointerType()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the type of endpointer event.
-</code></pre><p><code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the type of endpointer event.</p>
+<p> <code>
+ .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -872,8 +878,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public int getEndpointerTypeValue()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the type of endpointer event.
-</code></pre><p><code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the type of endpointer event.</p>
+<p> <code>
+ .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+ </code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -893,9 +901,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public Status getError()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -915,9 +923,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public Status.Builder getErrorBuilder()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -937,9 +945,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StatusOrBuilder getErrorOrBuilder()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -959,10 +967,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public int getResultIndex()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the lowest index in the `results` array that has
- changed. The repeated `StreamingRecognitionResult` results overwrite past
- results at this index and higher.
-</code></pre><p><code>int32 result_index = 3;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the lowest index in the <code>results</code> array that has
+ changed. The repeated <code>StreamingRecognitionResult</code> results overwrite past
+ results at this index and higher.</p>
+<p> <code>int32 result_index = 3;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -982,11 +990,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognitionResult getResults(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1019,11 +1027,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognitionResult.Builder getResultsBuilder(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1056,11 +1064,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public List&lt;StreamingRecognitionResult.Builder&gt; getResultsBuilderList()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -1080,11 +1088,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public int getResultsCount()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -1104,11 +1112,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public List&lt;StreamingRecognitionResult&gt; getResultsList()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -1128,11 +1136,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognitionResultOrBuilder getResultsOrBuilder(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1165,11 +1173,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public List&lt;? extends StreamingRecognitionResultOrBuilder&gt; getResultsOrBuilderList()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -1189,9 +1197,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public boolean hasError()</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Returns</strong>
   <table class="responsive">
@@ -1251,9 +1259,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder mergeError(Status value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1433,11 +1441,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder removeResults(int index)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1470,8 +1478,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder setEndpointerType(StreamingRecognizeResponse.EndpointerType value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the type of endpointer event.
-</code></pre><p><code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the type of endpointer event.</p>
+<p> <code>
+ .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+ </code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1504,8 +1514,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder setEndpointerTypeValue(int value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the type of endpointer event.
-</code></pre><p><code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the type of endpointer event.</p>
+<p> <code>
+ .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+ </code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1538,9 +1550,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder setError(Status value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1573,9 +1585,9 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder setError(Status.Builder builderForValue)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
- specifies the error for the operation.
-</code></pre><p><code>.google.rpc.Status error = 1;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> If set, returns a <span class="xref">google.rpc.Status</span> message that
+ specifies the error for the operation.</p>
+<p> <code>.google.rpc.Status error = 1;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1686,10 +1698,10 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder setResultIndex(int value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* Indicates the lowest index in the `results` array that has
- changed. The repeated `StreamingRecognitionResult` results overwrite past
- results at this index and higher.
-</code></pre><p><code>int32 result_index = 3;</code></p>
+  <div class="markdown level1 summary"><p> <em>Output-only</em> Indicates the lowest index in the <code>results</code> array that has
+ changed. The repeated <code>StreamingRecognitionResult</code> results overwrite past
+ results at this index and higher.</p>
+<p> <code>int32 result_index = 3;</code></p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
@@ -1722,11 +1734,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder setResults(int index, StreamingRecognitionResult value)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameters</strong>
   <table class="responsive">
@@ -1763,11 +1775,11 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public StreamingRecognizeResponse.Builder setResults(int index, StreamingRecognitionResult.Builder builderForValue)</code></pre>
   </div>
-  <div class="markdown level1 summary"><pre><code>*Output-only* This repeated list contains zero or more results that
+  <div class="markdown level1 summary"><p> <em>Output-only</em> This repeated list contains zero or more results that
  correspond to consecutive portions of the audio currently being processed.
- It contains zero or one `is_final=true` result (the newly settled portion),
- followed by zero or more `is_final=false` results.
-</code></pre><p><code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
+ It contains zero or one <code>is_final=true</code> result (the newly settled portion),
+ followed by zero or more <code>is_final=false</code> results.</p>
+<p> <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code></p>
 </div>
   <strong>Parameters</strong>
   <table class="responsive">

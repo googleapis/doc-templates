@@ -47,7 +47,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase"
   type: "Class"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nA phrases containing words and phrase \"hints\" so that\n the speech recognition is more likely to recognize them. This can be used\n to improve the accuracy for specific words and phrases, for example, if\n specific commands are typically spoken by the user. This can also be used\n to add additional words to the vocabulary of the recognizer. See\n [usage limits](https://cloud.google.com/speech-to-text/quotas#content).\n List items can also include pre-built or custom classes containing groups\n of words that represent common concepts that occur in natural language. For\n example, rather than providing a phrase hint for every month of the\n year (e.g. \"i was born in january\", \"i was born in febuary\", ...), use the\n pre-built `$MONTH` class improves the likelihood of correctly transcribing\n audio that includes months (e.g. \"i was born in $month\").\n To refer to pre-built classes, use the class' symbol prepended with `$`\n e.g. `$MONTH`. To refer to custom classes that were defined inline in the\n request, set the class's `custom_class_id` to a string unique to all class\n resources and inline classes. Then use the class' id wrapped in $`{...}`\n e.g. \"${my-months}\". To refer to custom classes resources, use the class'\n id wrapped in `${}` (e.g. `${my-months}`).\n```\n\nProtobuf type `google.cloud.speech.v1p1beta1.PhraseSet.Phrase`"
+  summary: "\n A phrases containing words and phrase \"hints\" so that\n the speech recognition is more likely to recognize them. This can be used\n to improve the accuracy for specific words and phrases, for example, if\n specific commands are typically spoken by the user. This can also be used\n to add additional words to the vocabulary of the recognizer. See\n <a href=\"https://cloud.google.com/speech-to-text/quotas#content\">usage limits</a>.\n List items can also include pre-built or custom classes containing groups\n of words that represent common concepts that occur in natural language. For\n example, rather than providing a phrase hint for every month of the\n year (e.g. \"i was born in january\", \"i was born in febuary\", ...), use the\n pre-built <code>$MONTH</code> class improves the likelihood of correctly transcribing\n audio that includes months (e.g. \"i was born in $month\").\n To refer to pre-built classes, use the class' symbol prepended with <code>$</code>\n e.g. <code>$MONTH</code>. To refer to custom classes that were defined inline in the\n request, set the class's <code>custom_class_id</code> to a string unique to all class\n resources and inline classes. Then use the class' id wrapped in $<code>{...}</code>\n e.g. \"${my-months}\". To refer to custom classes resources, use the class'\n id wrapped in <code>${}</code> (e.g. <code>${my-months}</code>).\n \n\n Protobuf type <code>google.cloud.speech.v1p1beta1.PhraseSet.Phrase</code>"
   syntax:
     content: "public static final class PhraseSet.Phrase extends GeneratedMessageV3 implements PhraseSet.PhraseOrBuilder"
   inheritance:
@@ -241,7 +241,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.getBoost*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nHint Boost. Overrides the boost set at the phrase set level.\n Positive value will increase the probability that a specific phrase will\n be recognized over other similar sounding phrases. The higher the boost,\n the higher the chance of false positive recognition as well. Negative\n boost values would correspond to anti-biasing. Anti-biasing is not\n enabled, so negative boost will simply be ignored. Though `boost` can\n accept a wide range of positive values, most use cases are best served\n with values between 0 and 20. We recommend using a binary search approach\n to finding the optimal value for your use case. Speech recognition\n will skip PhraseSets with a boost value of 0.\n```\n\n`float boost = 2;`"
+  summary: "\n Hint Boost. Overrides the boost set at the phrase set level.\n Positive value will increase the probability that a specific phrase will\n be recognized over other similar sounding phrases. The higher the boost,\n the higher the chance of false positive recognition as well. Negative\n boost values would correspond to anti-biasing. Anti-biasing is not\n enabled, so negative boost will simply be ignored. Though <code>boost</code> can\n accept a wide range of positive values, most use cases are best served\n with values between 0 and 20. We recommend using a binary search approach\n to finding the optimal value for your use case. Speech recognition\n will skip PhraseSets with a boost value of 0.\n \n\n <code>float boost = 2;</code>"
   syntax:
     content: "public float getBoost()"
     return:
@@ -351,7 +351,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.getValue*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThe phrase itself.\n```\n\n`string value = 1;`"
+  summary: "\n The phrase itself.\n \n\n <code>string value = 1;</code>"
   syntax:
     content: "public String getValue()"
     return:
@@ -368,7 +368,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.getValueBytes*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "```\nThe phrase itself.\n```\n\n`string value = 1;`"
+  summary: "\n The phrase itself.\n \n\n <code>string value = 1;</code>"
   syntax:
     content: "public ByteString getValueBytes()"
     return:

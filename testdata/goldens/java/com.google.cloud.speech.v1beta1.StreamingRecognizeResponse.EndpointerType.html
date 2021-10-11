@@ -15,8 +15,8 @@
   <div class="codewrapper">
     <pre class="prettyprint"><code>public enum StreamingRecognizeResponse.EndpointerType extends Enum&lt;StreamingRecognizeResponse.EndpointerType&gt; implements ProtocolMessageEnum</code></pre>
   </div>
-  <div class="markdown level0 summary"><pre><code>Indicates the type of endpointer event.
-</code></pre><p>Protobuf enum <code>google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType</code></p>
+  <div class="markdown level0 summary"><p> Indicates the type of endpointer event.</p>
+<p> Protobuf enum <code>google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType</code></p>
 </div>
   <div classs="implements">
     <h2>Implements</h2>
@@ -83,88 +83,88 @@
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_ENDPOINTER_EVENT_UNSPECIFIED">ENDPOINTER_EVENT_UNSPECIFIED</td>
-        <td><pre><code>No endpointer event specified.
-</code></pre><p><code>ENDPOINTER_EVENT_UNSPECIFIED = 0;</code></p>
+        <td><p> No endpointer event specified.</p>
+<p> <code>ENDPOINTER_EVENT_UNSPECIFIED = 0;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_ENDPOINTER_EVENT_UNSPECIFIED_VALUE">ENDPOINTER_EVENT_UNSPECIFIED_VALUE</td>
-        <td><pre><code>No endpointer event specified.
-</code></pre><p><code>ENDPOINTER_EVENT_UNSPECIFIED = 0;</code></p>
+        <td><p> No endpointer event specified.</p>
+<p> <code>ENDPOINTER_EVENT_UNSPECIFIED = 0;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_END_OF_AUDIO">END_OF_AUDIO</td>
-        <td><pre><code>This event is sent after the client has half-closed the input stream gRPC
+        <td><p> This event is sent after the client has half-closed the input stream gRPC
  connection and the server has received all of the audio. (The server may
  still be processing the audio and may subsequently return additional
- results.)
-</code></pre><p><code>END_OF_AUDIO = 3;</code></p>
+ results.)</p>
+<p> <code>END_OF_AUDIO = 3;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_END_OF_AUDIO_VALUE">END_OF_AUDIO_VALUE</td>
-        <td><pre><code>This event is sent after the client has half-closed the input stream gRPC
+        <td><p> This event is sent after the client has half-closed the input stream gRPC
  connection and the server has received all of the audio. (The server may
  still be processing the audio and may subsequently return additional
- results.)
-</code></pre><p><code>END_OF_AUDIO = 3;</code></p>
+ results.)</p>
+<p> <code>END_OF_AUDIO = 3;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_END_OF_SPEECH">END_OF_SPEECH</td>
-        <td><pre><code>Speech has ceased to be detected in the audio stream. (For example, the
- user may have paused after speaking.) If `single_utterance` is `false`,
+        <td><p> Speech has ceased to be detected in the audio stream. (For example, the
+ user may have paused after speaking.) If <code>single_utterance</code> is <code>false</code>,
  the service will continue to process audio, and if subsequent speech is
- detected, will send another START_OF_SPEECH event.
-</code></pre><p><code>END_OF_SPEECH = 2;</code></p>
+ detected, will send another START_OF_SPEECH event.</p>
+<p> <code>END_OF_SPEECH = 2;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_END_OF_SPEECH_VALUE">END_OF_SPEECH_VALUE</td>
-        <td><pre><code>Speech has ceased to be detected in the audio stream. (For example, the
- user may have paused after speaking.) If `single_utterance` is `false`,
+        <td><p> Speech has ceased to be detected in the audio stream. (For example, the
+ user may have paused after speaking.) If <code>single_utterance</code> is <code>false</code>,
  the service will continue to process audio, and if subsequent speech is
- detected, will send another START_OF_SPEECH event.
-</code></pre><p><code>END_OF_SPEECH = 2;</code></p>
+ detected, will send another START_OF_SPEECH event.</p>
+<p> <code>END_OF_SPEECH = 2;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_END_OF_UTTERANCE">END_OF_UTTERANCE</td>
-        <td><pre><code>This event is only sent when `single_utterance` is `true`. It indicates
+        <td><p> This event is only sent when <code>single_utterance</code> is <code>true</code>. It indicates
  that the server has detected the end of the user&#39;s speech utterance and
  expects no additional speech. Therefore, the server will not process
  additional audio (although it may subsequently return additional
  results). The client should stop sending additional audio data,
  half-close the gRPC connection, and wait for any additional results
- until the server closes the gRPC connection.
-</code></pre><p><code>END_OF_UTTERANCE = 4;</code></p>
+ until the server closes the gRPC connection.</p>
+<p> <code>END_OF_UTTERANCE = 4;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_END_OF_UTTERANCE_VALUE">END_OF_UTTERANCE_VALUE</td>
-        <td><pre><code>This event is only sent when `single_utterance` is `true`. It indicates
+        <td><p> This event is only sent when <code>single_utterance</code> is <code>true</code>. It indicates
  that the server has detected the end of the user&#39;s speech utterance and
  expects no additional speech. Therefore, the server will not process
  additional audio (although it may subsequently return additional
  results). The client should stop sending additional audio data,
  half-close the gRPC connection, and wait for any additional results
- until the server closes the gRPC connection.
-</code></pre><p><code>END_OF_UTTERANCE = 4;</code></p>
+ until the server closes the gRPC connection.</p>
+<p> <code>END_OF_UTTERANCE = 4;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_START_OF_SPEECH">START_OF_SPEECH</td>
-        <td><pre><code>Speech has been detected in the audio stream, and the service is
- beginning to process it.
-</code></pre><p><code>START_OF_SPEECH = 1;</code></p>
+        <td><p> Speech has been detected in the audio stream, and the service is
+ beginning to process it.</p>
+<p> <code>START_OF_SPEECH = 1;</code></p>
 </td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_START_OF_SPEECH_VALUE">START_OF_SPEECH_VALUE</td>
-        <td><pre><code>Speech has been detected in the audio stream, and the service is
- beginning to process it.
-</code></pre><p><code>START_OF_SPEECH = 1;</code></p>
+        <td><p> Speech has been detected in the audio stream, and the service is
+ beginning to process it.</p>
+<p> <code>START_OF_SPEECH = 1;</code></p>
 </td>
       </tr>
       <tr>
@@ -211,8 +211,7 @@
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_valueOf_int_">valueOf(int value)</td>
-        <td><p>(deprecated) Use <a class="xref" href="com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.html#com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_forNumber_int_">#forNumber(int)</a> instead.</p>
-</td>
+        <td><p>(deprecated) Use <a class="xref" href="com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.html#com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_forNumber_int_">#forNumber(int)</a> instead.</p></td>
       </tr>
       <tr>
         <td id="com_google_cloud_speech_v1beta1_StreamingRecognizeResponse_EndpointerType_valueOf_java_lang_String_">valueOf(String name)</td>
