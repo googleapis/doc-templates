@@ -1,0 +1,766 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Project
+  children: 
+  - Google::Cloud::PubSub::Project#create_schema(instance)
+  - Google::Cloud::PubSub::Project#create_topic(instance)
+  - Google::Cloud::PubSub::Project#find_schema(instance)
+  - Google::Cloud::PubSub::Project#find_schemas(instance)
+  - Google::Cloud::PubSub::Project#find_snapshots(instance)
+  - Google::Cloud::PubSub::Project#find_subscription(instance)
+  - Google::Cloud::PubSub::Project#find_subscriptions(instance)
+  - Google::Cloud::PubSub::Project#find_topic(instance)
+  - Google::Cloud::PubSub::Project#find_topics(instance)
+  - Google::Cloud::PubSub::Project#get_schema(instance)
+  - Google::Cloud::PubSub::Project#get_subscription(instance)
+  - Google::Cloud::PubSub::Project#get_topic(instance)
+  - Google::Cloud::PubSub::Project#list_schemas(instance)
+  - Google::Cloud::PubSub::Project#list_snapshots(instance)
+  - Google::Cloud::PubSub::Project#list_subscriptions(instance)
+  - Google::Cloud::PubSub::Project#list_topics(instance)
+  - Google::Cloud::PubSub::Project#new_schema(instance)
+  - Google::Cloud::PubSub::Project#new_topic(instance)
+  - Google::Cloud::PubSub::Project#project(instance)
+  - Google::Cloud::PubSub::Project#project_id(instance)
+  - Google::Cloud::PubSub::Project#publish_batch_messages(instance)
+  - Google::Cloud::PubSub::Project#schema(instance)
+  - Google::Cloud::PubSub::Project#schemas(instance)
+  - Google::Cloud::PubSub::Project#snapshots(instance)
+  - Google::Cloud::PubSub::Project#subscription(instance)
+  - Google::Cloud::PubSub::Project#subscriptions(instance)
+  - Google::Cloud::PubSub::Project#topic(instance)
+  - Google::Cloud::PubSub::Project#topics(instance)
+  - Google::Cloud::PubSub::Project#valid_schema?(instance)
+  - Google::Cloud::PubSub::Project#validate_schema(instance)
+  fullName: Google::Cloud::PubSub::Project
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: Project
+  summary: "<h1>Project</h1>\n\n<p>Represents the project that pubsub messages are pushed to and pulled\nfrom. <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> is a named resource to which messages are sent by\npublishers. <a href=\"./Google-Cloud-PubSub-Subscription\">Subscription</a> is a named resource representing the stream\nof messages from a single, specific topic, to be delivered to the\nsubscribing application. <a href=\"./Google-Cloud-PubSub-Message\">Message</a> is a combination of data and\nattributes that a publisher sends to a topic and is eventually delivered\nto subscribers.</p>\n\n<p>See <a href=\"./Google-Cloud#Google__Cloud_pubsub_instance_\">Google::Cloud#pubsub</a></p>"
+  type: "class"
+  name: Google::Cloud::PubSub::Project
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopic = pubsub.topic \"my-topic\"\ntopic.publish \"task completed\"</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::Project#create_schema(instance)
+  fullName: Google::Cloud::PubSub::Project#create_schema
+  name: "#create_schema"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#create_schema"
+  summary: "Creates a new schema."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ndefinition = \"...\"\nschema = pubsub.create_schema \"my-schema\", :avro, definition\nschema.name #=> \"projects/my-project/schemas/my-schema\"</pre>"
+  syntax:
+    description: "Creates a new schema."
+    content: "def create_schema(schema_id, type, definition, project: nil) => Google::Cloud::PubSub::Schema"
+    arguments:
+    - description: "<strong>schema_id</strong> (String) — The ID to use for the schema, which will\nbecome the final component of the schema&#39;s resource name. Required.</p>\n\n<p>The schema ID (relative name) must start with a letter, and\ncontain only letters (<code>[A-Za-z]</code>), numbers (<code>[0-9]</code>), dashes (<code>-</code>),\nunderscores (<code>_</code>), periods (<code>.</code>), tildes (<code>~</code>), plus (<code>+</code>) or percent\nsigns (<code>%</code>). It must be between 3 and 255 characters in length, and\nit must not start with <code>goog</code>."
+    - description: "<strong>type</strong> (String, Symbol) — <p>The type of the schema. Required. Possible\nvalues are case-insensitive and include:</p>\n\n<ul>\n<li><code>PROTOCOL_BUFFER</code> - A Protocol Buffer schema definition.</li>\n<li><code>AVRO</code> - An Avro schema definition.</li>\n</ul>"
+    - description: "<strong>definition</strong> (String) — The definition of the schema. Required. This\nshould be a string representing the full definition of the schema that\nis a valid schema definition of the type specified in <code>type</code>."
+    - description: "<strong>project</strong> (String) <em>(defaults to: nil)</em> — If the schema belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Optional."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#create_topic(instance)
+  fullName: Google::Cloud::PubSub::Project#create_topic
+  name: "#create_topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#create_topic"
+  summary: "Creates a new topic."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.create_topic \"my-topic\"</pre>"
+  syntax:
+    description: "Creates a new topic."
+    content: "def create_topic(topic_name, labels: nil, kms_key: nil, persistence_regions: nil, async: nil, schema_name: nil, message_encoding: nil, retention: nil) => Google::Cloud::PubSub::Topic"
+    arguments:
+    - description: "<strong>topic_name</strong> (String) — Name of a topic. Required.\nThe value can be a simple topic ID (relative name), in which\ncase the current project ID will be supplied, or a fully-qualified\ntopic name in the form <code>projects/{project_id}/topics/{topic_id}</code>.</p>\n\n<p>The topic ID (relative name) must start with a letter, and\ncontain only letters (<code>[A-Za-z]</code>), numbers (<code>[0-9]</code>), dashes (<code>-</code>),\nunderscores (<code>_</code>), periods (<code>.</code>), tildes (<code>~</code>), plus (<code>+</code>) or percent\nsigns (<code>%</code>). It must be between 3 and 255 characters in length, and\nit must not start with <code>goog</code>."
+    - description: "<strong>labels</strong> (Hash) <em>(defaults to: nil)</em> — A hash of user-provided labels associated with\nthe topic. You can use these to organize and group your topics.\nLabel keys and values can be no longer than 63 characters, can only\ncontain lowercase letters, numeric characters, underscores and\ndashes. International characters are allowed. Label values are\noptional. Label keys must start with a letter and each label in the\nlist must have a different key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and Managing\nLabels</a>."
+    - description: "<strong>kms_key</strong> (String) <em>(defaults to: nil)</em> — The Cloud KMS encryption key that will be used\nto protect access to messages published on this topic. Optional.\nFor example: <code>projects/a/locations/b/keyRings/c/cryptoKeys/d</code>"
+    - description: "<strong>persistence_regions</strong> (Array&lt;String&gt;) <em>(defaults to: nil)</em> — The list of GCP region IDs\nwhere messages that are published to the topic may be persisted in\nstorage. Optional."
+    - description: "<strong>async</strong> (Hash) <em>(defaults to: nil)</em> — <p>A hash of values to configure the topic&#39;s\n<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a> that is created when <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a>\nis called. Optional.</p>\n\n<p>Hash keys and values may include the following:</p>\n\n<ul>\n<li><code>:max_bytes</code> (Integer) The maximum size of messages to be collected\nbefore the batch is published. Default is 1,000,000 (1MB).</li>\n<li><code>:max_messages</code> (Integer) The maximum number of messages to be\ncollected before the batch is published. Default is 100.</li>\n<li><code>:interval</code> (Numeric) The number of seconds to collect messages before\nthe batch is published. Default is 0.01.</li>\n<li><p><code>:threads</code> (Hash) The number of threads to create to handle concurrent\ncalls by the publisher:</p>\n\n<ul>\n<li><code>:publish</code> (Integer) The number of threads used to publish messages.\nDefault is 2.</li>\n<li><code>:callback</code> (Integer) The number of threads to handle the published\nmessages&#39; callbacks. Default is 4.</li>\n</ul></li>\n<li><p><code>:flow_control</code> (Hash) The client flow control settings for message publishing:</p>\n\n<ul>\n<li><code>:message_limit</code> (Integer) The maximum number of messages allowed to wait to be published. Default is\n<code>10 * max_messages</code>.</li>\n<li><code>:byte_limit</code> (Integer) The maximum total size of messages allowed to wait to be published. Default is\n<code>10 * max_bytes</code>.</li>\n<li><code>:limit_exceeded_behavior</code> (Symbol) The action to take when publish flow control limits are exceeded.\nPossible values include: <code>:ignore</code> - Flow control is disabled. <code>:error</code> - Calls to Topic#publish&lt;em&gt;async\nwill raise <a href=\"./Google-Cloud-PubSub-FlowControlLimitError\">FlowControlLimitError</a> when publish flow control limits are exceeded. <code>:block</code> - Calls to\nTopic#publish&lt;/em&gt;async will block until capacity is available when publish flow control limits are\nexceeded. The default value is <code>:ignore</code>.</li>\n</ul></li>\n</ul>"
+    - description: "<strong>schema_name</strong> (String) <em>(defaults to: nil)</em> — The name of the schema that messages\npublished should be validated against. Optional. The value can be a\nsimple schema ID (relative name), in which case the current project\nID will be supplied, or a fully-qualified schema name in the form\n<code>projects/{project_id}/schemas/{schema_id}</code>. If provided,\n<code>message_encoding</code> must also be provided."
+    - description: "<strong>message_encoding</strong> (String, Symbol) <em>(defaults to: nil)</em> — <p>The encoding of messages validated\nagainst the schema identified by <code>schema_name</code>. Optional. Values include:</p>\n\n<ul>\n<li><code>JSON</code> - JSON encoding.</li>\n<li><code>BINARY</code> - Binary encoding, as defined by the schema type. For some\nschema types, binary encoding may not be available.</li>\n</ul>"
+    - description: "<strong>retention</strong> (Numeric) <em>(defaults to: nil)</em> — Indicates the minimum number of seconds to retain a message\nafter it is published to the topic. If this field is set, messages published\nto the topic within the <code>retention</code> number of seconds are always available to\nsubscribers. For instance, it allows any attached subscription to <a href=\"https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time\">seek to a\ntimestamp</a>\nthat is up to <code>retention</code> number of seconds in the past. If this field is\nnot set, message retention is controlled by settings on individual\nsubscriptions. Cannot be less than 600 (10 minutes) or more than 604,800 (7 days)."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#find_schema(instance)
+  fullName: Google::Cloud::PubSub::Project#find_schema
+  name: "#find_schema"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#find_schema"
+  summary: "Retrieves schema by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\"\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> :PROTOCOL_BUFFER\nschema.definition # The schema definition</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\n# No API call is made to retrieve the schema information.\n# The default project is used in the name.\nschema = pubsub.schema \"my-schema\", skip_lookup: true\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> nil\nschema.definition #=> nil</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\", view: :basic\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> :PROTOCOL_BUFFER\nschema.definition #=> nil</pre>"
+  syntax:
+    description: "Retrieves schema by name."
+    content: "def find_schema => Google::Cloud::PubSub::Schema, nil"
+    arguments:
+    - description: "<strong>schema_name</strong> (String) — Name of a schema. The value can\nbe a simple schema ID, in which case the current project ID\nwill be supplied, or a fully-qualified schema name in the form\n<code>projects/{project_id}/schemas/{schema_id}</code>."
+    - description: "<strong>view</strong> (Symbol, String, nil) — Possible values:\n* <code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.\n* <code>FULL</code> - Include all Schema object fields.</p>\n\n<p>The default value is <code>FULL</code>."
+    - description: "<strong>project</strong> (String) — If the schema belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Not used if a fully-qualified schema name is\nprovided for <code>schema_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) — Optionally create a <a href=\"./Google-Cloud-PubSub-Schema\">Schema</a> object\nwithout verifying the schema resource exists on the Pub/Sub\nservice. Calls made on this object will raise errors if the service\nresource does not exist. Default is <code>false</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>, nil) — Returns <code>nil</code> if\nthe schema does not exist."
+    raises: []
+- uid: Google::Cloud::PubSub::Project#find_schemas(instance)
+  fullName: Google::Cloud::PubSub::Project#find_schemas
+  name: "#find_schemas"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#find_schemas"
+  summary: "Retrieves a list of schemas for the given project.</p>\n\n<p>The default value is <code>FULL</code>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschemas = pubsub.schemas\nschemas.each do |schema|\n  puts schema.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschemas = pubsub.schemas\nschemas.all do |schema|\n  puts schema.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of schemas for the given project.</p>\n\n<p>The default value is <code>FULL</code>."
+    content: "def find_schemas => Array<Google::Cloud::PubSub::Schema>"
+    arguments:
+    - description: "<strong>view</strong> (String, Symbol, nil) — <p>The set of fields to return in the response. Possible values:</p>\n\n<ul>\n<li><code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.</li>\n<li><code>FULL</code> - Include all Schema object fields.</li>\n</ul>"
+    - description: "<strong>token</strong> (String) — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) — Maximum number of schemas to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Schema-List\">Schema::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#find_snapshots(instance)
+  fullName: Google::Cloud::PubSub::Project#find_snapshots
+  name: "#find_snapshots"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#find_snapshots"
+  summary: "Retrieves a list of snapshots for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.each do |snapshot|\n  puts snapshot.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.all do |snapshot|\n  puts snapshot.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of snapshots for the given project."
+    content: "def find_snapshots => Array<Google::Cloud::PubSub::Snapshot>"
+    arguments:
+    - description: "<strong>token</strong> (String) — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) — Maximum number of snapshots to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Snapshot\">Google::Cloud::PubSub::Snapshot</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Snapshot-List\">Snapshot::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#find_subscription(instance)
+  fullName: Google::Cloud::PubSub::Project#find_subscription
+  name: "#find_subscription"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#find_subscription"
+  summary: "Retrieves subscription by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-sub\"\nsub.name #=> \"projects/my-project/subscriptions/my-sub\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\n# No API call is made to retrieve the subscription information.\nsub = pubsub.subscription \"my-sub\", skip_lookup: true\nsub.name #=> \"projects/my-project/subscriptions/my-sub\"</pre>"
+  syntax:
+    description: "Retrieves subscription by name."
+    content: "def find_subscription => Google::Cloud::PubSub::Subscription, nil"
+    arguments:
+    - description: "<strong>subscription_name</strong> (String) — Name of a subscription. The value can\nbe a simple subscription ID, in which case the current project ID\nwill be supplied, or a fully-qualified subscription name in the form\n<code>projects/{project_id}/subscriptions/{subscription_id}</code>."
+    - description: "<strong>project</strong> (String) — If the subscription belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Not used if a fully-qualified subscription name is\nprovided for <code>subscription_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) — Optionally create a <a href=\"./Google-Cloud-PubSub-Subscription\">Subscription</a> object\nwithout verifying the subscription resource exists on the Pub/Sub\nservice. Calls made on this object will raise errors if the service\nresource does not exist. Default is <code>false</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>, nil) — Returns <code>nil</code> if\nthe subscription does not exist"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#find_subscriptions(instance)
+  fullName: Google::Cloud::PubSub::Project#find_subscriptions
+  name: "#find_subscriptions"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#find_subscriptions"
+  summary: "Retrieves a list of subscriptions for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsubs = pubsub.subscriptions\nsubs.each do |sub|\n  puts sub.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsubs = pubsub.subscriptions\nsubs.all do |sub|\n  puts sub.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of subscriptions for the given project."
+    content: "def find_subscriptions => Array<Google::Cloud::PubSub::Subscription>"
+    arguments:
+    - description: "<strong>token</strong> (String) — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) — Maximum number of subscriptions to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Subscription-List\">Subscription::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#find_topic(instance)
+  fullName: Google::Cloud::PubSub::Project#find_topic
+  name: "#find_topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#find_topic"
+  summary: "Retrieves topic by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"existing-topic\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"non-existing-topic\" # nil</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"another-topic\", project: \"another-project\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"another-topic\", skip_lookup: true</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\",\n                     async: { threads: { callback: 16 } }\n\ntopic.publish_async \"task completed\" do |result|\n  if result.succeeded?\n    log_publish_success result.data\n  else\n    log_publish_failure result.data, result.error\n  end\nend\n\ntopic.async_publisher.stop!</pre>"
+  syntax:
+    description: "Retrieves topic by name."
+    content: "def find_topic => Google::Cloud::PubSub::Topic, nil"
+    arguments:
+    - description: "<strong>topic_name</strong> (String) — Name of a topic. The value can be a simple\ntopic ID (relative name), in which case the current project ID will\nbe supplied, or a fully-qualified topic name in the form\n<code>projects/{project_id}/topics/{topic_id}</code>."
+    - description: "<strong>project</strong> (String) — If the topic belongs to a project other than\nthe one currently connected to, the alternate project ID can be\nspecified here. Optional. Not used if a fully-qualified topic name\nis provided for <code>topic_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) — Optionally create a <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> object\nwithout verifying the topic resource exists on the Pub/Sub service.\nCalls made on this object will raise errors if the topic resource\ndoes not exist. Default is <code>false</code>. Optional."
+    - description: "<strong>async</strong> (Hash) — <p>A hash of values to configure the topic&#39;s\n<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a> that is created when <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a>\nis called. Optional.</p>\n\n<p>Hash keys and values may include the following:</p>\n\n<ul>\n<li><code>:max_bytes</code> (Integer) The maximum size of messages to be collected before the batch is published. Default\nis 1,000,000 (1MB).</li>\n<li><code>:max_messages</code> (Integer) The maximum number of messages to be collected before the batch is published.\nDefault is 100.</li>\n<li><code>:interval</code> (Numeric) The number of seconds to collect messages before the batch is published. Default is\n0.01.</li>\n<li><code>:threads</code> (Hash) The number of threads to create to handle concurrent calls by the publisher:\n\n<ul>\n<li><code>:publish</code> (Integer) The number of threads used to publish messages. Default is 2.</li>\n<li><code>:callback</code> (Integer) The number of threads to handle the published messages&#39; callbacks. Default is 4.</li>\n</ul></li>\n<li><code>:flow_control</code> (Hash) The client flow control settings for message publishing:\n\n<ul>\n<li><code>:message_limit</code> (Integer) The maximum number of messages allowed to wait to be published. Default is\n<code>10 * max_messages</code>.</li>\n<li><code>:byte_limit</code> (Integer) The maximum total size of messages allowed to wait to be published. Default is\n<code>10 * max_bytes</code>.</li>\n<li><code>:limit_exceeded_behavior</code> (Symbol) The action to take when publish flow control limits are exceeded.\nPossible values include: <code>:ignore</code> - Flow control is disabled. <code>:error</code> - Calls to Topic#publish&lt;em&gt;async\nwill raise <a href=\"./Google-Cloud-PubSub-FlowControlLimitError\">FlowControlLimitError</a> when publish flow control limits are exceeded. <code>:block</code> - Calls to\nTopic#publish&lt;/em&gt;async will block until capacity is available when publish flow control limits are\nexceeded. The default value is <code>:ignore</code>.</li>\n</ul></li>\n</ul>"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>, nil) — Returns <code>nil</code> if topic\ndoes not exist."
+    raises: []
+- uid: Google::Cloud::PubSub::Project#find_topics(instance)
+  fullName: Google::Cloud::PubSub::Project#find_topics
+  name: "#find_topics"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#find_topics"
+  summary: "Retrieves a list of topics for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopics = pubsub.topics\ntopics.each do |topic|\n  puts topic.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopics = pubsub.topics\ntopics.all do |topic|\n  puts topic.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of topics for the given project."
+    content: "def find_topics => Array<Google::Cloud::PubSub::Topic>"
+    arguments:
+    - description: "<strong>token</strong> (String) — The <code>token</code> value returned by the last call to\n<code>topics</code>; indicates that this is a continuation of a call, and that\nthe system should return the next page of data."
+    - description: "<strong>max</strong> (Integer) — Maximum number of topics to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Topic-List\">Topic::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#get_schema(instance)
+  fullName: Google::Cloud::PubSub::Project#get_schema
+  name: "#get_schema"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#get_schema"
+  summary: "Retrieves schema by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\"\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> :PROTOCOL_BUFFER\nschema.definition # The schema definition</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\n# No API call is made to retrieve the schema information.\n# The default project is used in the name.\nschema = pubsub.schema \"my-schema\", skip_lookup: true\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> nil\nschema.definition #=> nil</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\", view: :basic\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> :PROTOCOL_BUFFER\nschema.definition #=> nil</pre>"
+  syntax:
+    description: "Retrieves schema by name."
+    content: "def get_schema => Google::Cloud::PubSub::Schema, nil"
+    arguments:
+    - description: "<strong>schema_name</strong> (String) — Name of a schema. The value can\nbe a simple schema ID, in which case the current project ID\nwill be supplied, or a fully-qualified schema name in the form\n<code>projects/{project_id}/schemas/{schema_id}</code>."
+    - description: "<strong>view</strong> (Symbol, String, nil) — Possible values:\n* <code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.\n* <code>FULL</code> - Include all Schema object fields.</p>\n\n<p>The default value is <code>FULL</code>."
+    - description: "<strong>project</strong> (String) — If the schema belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Not used if a fully-qualified schema name is\nprovided for <code>schema_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) — Optionally create a <a href=\"./Google-Cloud-PubSub-Schema\">Schema</a> object\nwithout verifying the schema resource exists on the Pub/Sub\nservice. Calls made on this object will raise errors if the service\nresource does not exist. Default is <code>false</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>, nil) — Returns <code>nil</code> if\nthe schema does not exist."
+    raises: []
+- uid: Google::Cloud::PubSub::Project#get_subscription(instance)
+  fullName: Google::Cloud::PubSub::Project#get_subscription
+  name: "#get_subscription"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#get_subscription"
+  summary: "Retrieves subscription by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-sub\"\nsub.name #=> \"projects/my-project/subscriptions/my-sub\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\n# No API call is made to retrieve the subscription information.\nsub = pubsub.subscription \"my-sub\", skip_lookup: true\nsub.name #=> \"projects/my-project/subscriptions/my-sub\"</pre>"
+  syntax:
+    description: "Retrieves subscription by name."
+    content: "def get_subscription => Google::Cloud::PubSub::Subscription, nil"
+    arguments:
+    - description: "<strong>subscription_name</strong> (String) — Name of a subscription. The value can\nbe a simple subscription ID, in which case the current project ID\nwill be supplied, or a fully-qualified subscription name in the form\n<code>projects/{project_id}/subscriptions/{subscription_id}</code>."
+    - description: "<strong>project</strong> (String) — If the subscription belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Not used if a fully-qualified subscription name is\nprovided for <code>subscription_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) — Optionally create a <a href=\"./Google-Cloud-PubSub-Subscription\">Subscription</a> object\nwithout verifying the subscription resource exists on the Pub/Sub\nservice. Calls made on this object will raise errors if the service\nresource does not exist. Default is <code>false</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>, nil) — Returns <code>nil</code> if\nthe subscription does not exist"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#get_topic(instance)
+  fullName: Google::Cloud::PubSub::Project#get_topic
+  name: "#get_topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#get_topic"
+  summary: "Retrieves topic by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"existing-topic\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"non-existing-topic\" # nil</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"another-topic\", project: \"another-project\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"another-topic\", skip_lookup: true</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\",\n                     async: { threads: { callback: 16 } }\n\ntopic.publish_async \"task completed\" do |result|\n  if result.succeeded?\n    log_publish_success result.data\n  else\n    log_publish_failure result.data, result.error\n  end\nend\n\ntopic.async_publisher.stop!</pre>"
+  syntax:
+    description: "Retrieves topic by name."
+    content: "def get_topic => Google::Cloud::PubSub::Topic, nil"
+    arguments:
+    - description: "<strong>topic_name</strong> (String) — Name of a topic. The value can be a simple\ntopic ID (relative name), in which case the current project ID will\nbe supplied, or a fully-qualified topic name in the form\n<code>projects/{project_id}/topics/{topic_id}</code>."
+    - description: "<strong>project</strong> (String) — If the topic belongs to a project other than\nthe one currently connected to, the alternate project ID can be\nspecified here. Optional. Not used if a fully-qualified topic name\nis provided for <code>topic_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) — Optionally create a <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> object\nwithout verifying the topic resource exists on the Pub/Sub service.\nCalls made on this object will raise errors if the topic resource\ndoes not exist. Default is <code>false</code>. Optional."
+    - description: "<strong>async</strong> (Hash) — <p>A hash of values to configure the topic&#39;s\n<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a> that is created when <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a>\nis called. Optional.</p>\n\n<p>Hash keys and values may include the following:</p>\n\n<ul>\n<li><code>:max_bytes</code> (Integer) The maximum size of messages to be collected before the batch is published. Default\nis 1,000,000 (1MB).</li>\n<li><code>:max_messages</code> (Integer) The maximum number of messages to be collected before the batch is published.\nDefault is 100.</li>\n<li><code>:interval</code> (Numeric) The number of seconds to collect messages before the batch is published. Default is\n0.01.</li>\n<li><code>:threads</code> (Hash) The number of threads to create to handle concurrent calls by the publisher:\n\n<ul>\n<li><code>:publish</code> (Integer) The number of threads used to publish messages. Default is 2.</li>\n<li><code>:callback</code> (Integer) The number of threads to handle the published messages&#39; callbacks. Default is 4.</li>\n</ul></li>\n<li><code>:flow_control</code> (Hash) The client flow control settings for message publishing:\n\n<ul>\n<li><code>:message_limit</code> (Integer) The maximum number of messages allowed to wait to be published. Default is\n<code>10 * max_messages</code>.</li>\n<li><code>:byte_limit</code> (Integer) The maximum total size of messages allowed to wait to be published. Default is\n<code>10 * max_bytes</code>.</li>\n<li><code>:limit_exceeded_behavior</code> (Symbol) The action to take when publish flow control limits are exceeded.\nPossible values include: <code>:ignore</code> - Flow control is disabled. <code>:error</code> - Calls to Topic#publish&lt;em&gt;async\nwill raise <a href=\"./Google-Cloud-PubSub-FlowControlLimitError\">FlowControlLimitError</a> when publish flow control limits are exceeded. <code>:block</code> - Calls to\nTopic#publish&lt;/em&gt;async will block until capacity is available when publish flow control limits are\nexceeded. The default value is <code>:ignore</code>.</li>\n</ul></li>\n</ul>"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>, nil) — Returns <code>nil</code> if topic\ndoes not exist."
+    raises: []
+- uid: Google::Cloud::PubSub::Project#list_schemas(instance)
+  fullName: Google::Cloud::PubSub::Project#list_schemas
+  name: "#list_schemas"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#list_schemas"
+  summary: "Retrieves a list of schemas for the given project.</p>\n\n<p>The default value is <code>FULL</code>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschemas = pubsub.schemas\nschemas.each do |schema|\n  puts schema.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschemas = pubsub.schemas\nschemas.all do |schema|\n  puts schema.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of schemas for the given project.</p>\n\n<p>The default value is <code>FULL</code>."
+    content: "def list_schemas => Array<Google::Cloud::PubSub::Schema>"
+    arguments:
+    - description: "<strong>view</strong> (String, Symbol, nil) — <p>The set of fields to return in the response. Possible values:</p>\n\n<ul>\n<li><code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.</li>\n<li><code>FULL</code> - Include all Schema object fields.</li>\n</ul>"
+    - description: "<strong>token</strong> (String) — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) — Maximum number of schemas to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Schema-List\">Schema::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#list_snapshots(instance)
+  fullName: Google::Cloud::PubSub::Project#list_snapshots
+  name: "#list_snapshots"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#list_snapshots"
+  summary: "Retrieves a list of snapshots for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.each do |snapshot|\n  puts snapshot.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.all do |snapshot|\n  puts snapshot.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of snapshots for the given project."
+    content: "def list_snapshots => Array<Google::Cloud::PubSub::Snapshot>"
+    arguments:
+    - description: "<strong>token</strong> (String) — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) — Maximum number of snapshots to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Snapshot\">Google::Cloud::PubSub::Snapshot</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Snapshot-List\">Snapshot::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#list_subscriptions(instance)
+  fullName: Google::Cloud::PubSub::Project#list_subscriptions
+  name: "#list_subscriptions"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#list_subscriptions"
+  summary: "Retrieves a list of subscriptions for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsubs = pubsub.subscriptions\nsubs.each do |sub|\n  puts sub.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsubs = pubsub.subscriptions\nsubs.all do |sub|\n  puts sub.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of subscriptions for the given project."
+    content: "def list_subscriptions => Array<Google::Cloud::PubSub::Subscription>"
+    arguments:
+    - description: "<strong>token</strong> (String) — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) — Maximum number of subscriptions to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Subscription-List\">Subscription::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#list_topics(instance)
+  fullName: Google::Cloud::PubSub::Project#list_topics
+  name: "#list_topics"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#list_topics"
+  summary: "Retrieves a list of topics for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopics = pubsub.topics\ntopics.each do |topic|\n  puts topic.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopics = pubsub.topics\ntopics.all do |topic|\n  puts topic.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of topics for the given project."
+    content: "def list_topics => Array<Google::Cloud::PubSub::Topic>"
+    arguments:
+    - description: "<strong>token</strong> (String) — The <code>token</code> value returned by the last call to\n<code>topics</code>; indicates that this is a continuation of a call, and that\nthe system should return the next page of data."
+    - description: "<strong>max</strong> (Integer) — Maximum number of topics to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Topic-List\">Topic::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#new_schema(instance)
+  fullName: Google::Cloud::PubSub::Project#new_schema
+  name: "#new_schema"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#new_schema"
+  summary: "Creates a new schema."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ndefinition = \"...\"\nschema = pubsub.create_schema \"my-schema\", :avro, definition\nschema.name #=> \"projects/my-project/schemas/my-schema\"</pre>"
+  syntax:
+    description: "Creates a new schema."
+    content: "def new_schema => Google::Cloud::PubSub::Schema"
+    arguments:
+    - description: "<strong>schema_id</strong> (String) — The ID to use for the schema, which will\nbecome the final component of the schema&#39;s resource name. Required.</p>\n\n<p>The schema ID (relative name) must start with a letter, and\ncontain only letters (<code>[A-Za-z]</code>), numbers (<code>[0-9]</code>), dashes (<code>-</code>),\nunderscores (<code>_</code>), periods (<code>.</code>), tildes (<code>~</code>), plus (<code>+</code>) or percent\nsigns (<code>%</code>). It must be between 3 and 255 characters in length, and\nit must not start with <code>goog</code>."
+    - description: "<strong>type</strong> (String, Symbol) — <p>The type of the schema. Required. Possible\nvalues are case-insensitive and include:</p>\n\n<ul>\n<li><code>PROTOCOL_BUFFER</code> - A Protocol Buffer schema definition.</li>\n<li><code>AVRO</code> - An Avro schema definition.</li>\n</ul>"
+    - description: "<strong>definition</strong> (String) — The definition of the schema. Required. This\nshould be a string representing the full definition of the schema that\nis a valid schema definition of the type specified in <code>type</code>."
+    - description: "<strong>project</strong> (String) — If the schema belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Optional."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#new_topic(instance)
+  fullName: Google::Cloud::PubSub::Project#new_topic
+  name: "#new_topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#new_topic"
+  summary: "Creates a new topic."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.create_topic \"my-topic\"</pre>"
+  syntax:
+    description: "Creates a new topic."
+    content: "def new_topic => Google::Cloud::PubSub::Topic"
+    arguments:
+    - description: "<strong>topic_name</strong> (String) — Name of a topic. Required.\nThe value can be a simple topic ID (relative name), in which\ncase the current project ID will be supplied, or a fully-qualified\ntopic name in the form <code>projects/{project_id}/topics/{topic_id}</code>.</p>\n\n<p>The topic ID (relative name) must start with a letter, and\ncontain only letters (<code>[A-Za-z]</code>), numbers (<code>[0-9]</code>), dashes (<code>-</code>),\nunderscores (<code>_</code>), periods (<code>.</code>), tildes (<code>~</code>), plus (<code>+</code>) or percent\nsigns (<code>%</code>). It must be between 3 and 255 characters in length, and\nit must not start with <code>goog</code>."
+    - description: "<strong>labels</strong> (Hash) — A hash of user-provided labels associated with\nthe topic. You can use these to organize and group your topics.\nLabel keys and values can be no longer than 63 characters, can only\ncontain lowercase letters, numeric characters, underscores and\ndashes. International characters are allowed. Label values are\noptional. Label keys must start with a letter and each label in the\nlist must have a different key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and Managing\nLabels</a>."
+    - description: "<strong>kms_key</strong> (String) — The Cloud KMS encryption key that will be used\nto protect access to messages published on this topic. Optional.\nFor example: <code>projects/a/locations/b/keyRings/c/cryptoKeys/d</code>"
+    - description: "<strong>persistence_regions</strong> (Array&lt;String&gt;) — The list of GCP region IDs\nwhere messages that are published to the topic may be persisted in\nstorage. Optional."
+    - description: "<strong>async</strong> (Hash) — <p>A hash of values to configure the topic&#39;s\n<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a> that is created when <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a>\nis called. Optional.</p>\n\n<p>Hash keys and values may include the following:</p>\n\n<ul>\n<li><code>:max_bytes</code> (Integer) The maximum size of messages to be collected\nbefore the batch is published. Default is 1,000,000 (1MB).</li>\n<li><code>:max_messages</code> (Integer) The maximum number of messages to be\ncollected before the batch is published. Default is 100.</li>\n<li><code>:interval</code> (Numeric) The number of seconds to collect messages before\nthe batch is published. Default is 0.01.</li>\n<li><p><code>:threads</code> (Hash) The number of threads to create to handle concurrent\ncalls by the publisher:</p>\n\n<ul>\n<li><code>:publish</code> (Integer) The number of threads used to publish messages.\nDefault is 2.</li>\n<li><code>:callback</code> (Integer) The number of threads to handle the published\nmessages&#39; callbacks. Default is 4.</li>\n</ul></li>\n<li><p><code>:flow_control</code> (Hash) The client flow control settings for message publishing:</p>\n\n<ul>\n<li><code>:message_limit</code> (Integer) The maximum number of messages allowed to wait to be published. Default is\n<code>10 * max_messages</code>.</li>\n<li><code>:byte_limit</code> (Integer) The maximum total size of messages allowed to wait to be published. Default is\n<code>10 * max_bytes</code>.</li>\n<li><code>:limit_exceeded_behavior</code> (Symbol) The action to take when publish flow control limits are exceeded.\nPossible values include: <code>:ignore</code> - Flow control is disabled. <code>:error</code> - Calls to Topic#publish&lt;em&gt;async\nwill raise <a href=\"./Google-Cloud-PubSub-FlowControlLimitError\">FlowControlLimitError</a> when publish flow control limits are exceeded. <code>:block</code> - Calls to\nTopic#publish&lt;/em&gt;async will block until capacity is available when publish flow control limits are\nexceeded. The default value is <code>:ignore</code>.</li>\n</ul></li>\n</ul>"
+    - description: "<strong>schema_name</strong> (String) — The name of the schema that messages\npublished should be validated against. Optional. The value can be a\nsimple schema ID (relative name), in which case the current project\nID will be supplied, or a fully-qualified schema name in the form\n<code>projects/{project_id}/schemas/{schema_id}</code>. If provided,\n<code>message_encoding</code> must also be provided."
+    - description: "<strong>message_encoding</strong> (String, Symbol) — <p>The encoding of messages validated\nagainst the schema identified by <code>schema_name</code>. Optional. Values include:</p>\n\n<ul>\n<li><code>JSON</code> - JSON encoding.</li>\n<li><code>BINARY</code> - Binary encoding, as defined by the schema type. For some\nschema types, binary encoding may not be available.</li>\n</ul>"
+    - description: "<strong>retention</strong> (Numeric) — Indicates the minimum number of seconds to retain a message\nafter it is published to the topic. If this field is set, messages published\nto the topic within the <code>retention</code> number of seconds are always available to\nsubscribers. For instance, it allows any attached subscription to <a href=\"https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time\">seek to a\ntimestamp</a>\nthat is up to <code>retention</code> number of seconds in the past. If this field is\nnot set, message retention is controlled by settings on individual\nsubscriptions. Cannot be less than 600 (10 minutes) or more than 604,800 (7 days)."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#project(instance)
+  fullName: Google::Cloud::PubSub::Project#project
+  name: "#project"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#project"
+  summary: "The Pub/Sub project connected to."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new(\n  project_id: \"my-project\",\n  credentials: \"/path/to/keyfile.json\"\n)\n\npubsub.project_id #=> \"my-project\"</pre>"
+  syntax:
+    description: "The Pub/Sub project connected to."
+    content: "def project"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Project#project_id(instance)
+  fullName: Google::Cloud::PubSub::Project#project_id
+  name: "#project_id"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#project_id"
+  summary: "The Pub/Sub project connected to."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new(\n  project_id: \"my-project\",\n  credentials: \"/path/to/keyfile.json\"\n)\n\npubsub.project_id #=> \"my-project\"</pre>"
+  syntax:
+    description: "The Pub/Sub project connected to."
+    content: "def project_id"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Project#publish_batch_messages(instance)
+  fullName: Google::Cloud::PubSub::Project#publish_batch_messages
+  name: "#publish_batch_messages"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish_batch_messages"
+  summary: "Call the publish API with arrays of data data and attrs."
+  type: method
+  example: []
+  syntax:
+    description: "Call the publish API with arrays of data data and attrs."
+    content: "def publish_batch_messages(topic_name, batch)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Project#schema(instance)
+  fullName: Google::Cloud::PubSub::Project#schema
+  name: "#schema"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#schema"
+  summary: "Retrieves schema by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\"\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> :PROTOCOL_BUFFER\nschema.definition # The schema definition</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\n# No API call is made to retrieve the schema information.\n# The default project is used in the name.\nschema = pubsub.schema \"my-schema\", skip_lookup: true\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> nil\nschema.definition #=> nil</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\", view: :basic\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> :PROTOCOL_BUFFER\nschema.definition #=> nil</pre>"
+  syntax:
+    description: "Retrieves schema by name."
+    content: "def schema(schema_name, view: nil, project: nil, skip_lookup: nil) => Google::Cloud::PubSub::Schema, nil"
+    arguments:
+    - description: "<strong>schema_name</strong> (String) — Name of a schema. The value can\nbe a simple schema ID, in which case the current project ID\nwill be supplied, or a fully-qualified schema name in the form\n<code>projects/{project_id}/schemas/{schema_id}</code>."
+    - description: "<strong>view</strong> (Symbol, String, nil) <em>(defaults to: nil)</em> — Possible values:\n* <code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.\n* <code>FULL</code> - Include all Schema object fields.</p>\n\n<p>The default value is <code>FULL</code>."
+    - description: "<strong>project</strong> (String) <em>(defaults to: nil)</em> — If the schema belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Not used if a fully-qualified schema name is\nprovided for <code>schema_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) <em>(defaults to: nil)</em> — Optionally create a <a href=\"./Google-Cloud-PubSub-Schema\">Schema</a> object\nwithout verifying the schema resource exists on the Pub/Sub\nservice. Calls made on this object will raise errors if the service\nresource does not exist. Default is <code>false</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>, nil) — Returns <code>nil</code> if\nthe schema does not exist."
+    raises: []
+- uid: Google::Cloud::PubSub::Project#schemas(instance)
+  fullName: Google::Cloud::PubSub::Project#schemas
+  name: "#schemas"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#schemas"
+  summary: "Retrieves a list of schemas for the given project.</p>\n\n<p>The default value is <code>FULL</code>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschemas = pubsub.schemas\nschemas.each do |schema|\n  puts schema.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschemas = pubsub.schemas\nschemas.all do |schema|\n  puts schema.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of schemas for the given project.</p>\n\n<p>The default value is <code>FULL</code>."
+    content: "def schemas(view: nil, token: nil, max: nil) => Array<Google::Cloud::PubSub::Schema>"
+    arguments:
+    - description: "<strong>view</strong> (String, Symbol, nil) <em>(defaults to: nil)</em> — <p>The set of fields to return in the response. Possible values:</p>\n\n<ul>\n<li><code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.</li>\n<li><code>FULL</code> - Include all Schema object fields.</li>\n</ul>"
+    - description: "<strong>token</strong> (String) <em>(defaults to: nil)</em> — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) <em>(defaults to: nil)</em> — Maximum number of schemas to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Schema-List\">Schema::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#snapshots(instance)
+  fullName: Google::Cloud::PubSub::Project#snapshots
+  name: "#snapshots"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#snapshots"
+  summary: "Retrieves a list of snapshots for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.each do |snapshot|\n  puts snapshot.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.all do |snapshot|\n  puts snapshot.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of snapshots for the given project."
+    content: "def snapshots(token: nil, max: nil) => Array<Google::Cloud::PubSub::Snapshot>"
+    arguments:
+    - description: "<strong>token</strong> (String) <em>(defaults to: nil)</em> — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) <em>(defaults to: nil)</em> — Maximum number of snapshots to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Snapshot\">Google::Cloud::PubSub::Snapshot</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Snapshot-List\">Snapshot::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#subscription(instance)
+  fullName: Google::Cloud::PubSub::Project#subscription
+  name: "#subscription"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#subscription"
+  summary: "Retrieves subscription by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-sub\"\nsub.name #=> \"projects/my-project/subscriptions/my-sub\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\n# No API call is made to retrieve the subscription information.\nsub = pubsub.subscription \"my-sub\", skip_lookup: true\nsub.name #=> \"projects/my-project/subscriptions/my-sub\"</pre>"
+  syntax:
+    description: "Retrieves subscription by name."
+    content: "def subscription(subscription_name, project: nil, skip_lookup: nil) => Google::Cloud::PubSub::Subscription, nil"
+    arguments:
+    - description: "<strong>subscription_name</strong> (String) — Name of a subscription. The value can\nbe a simple subscription ID, in which case the current project ID\nwill be supplied, or a fully-qualified subscription name in the form\n<code>projects/{project_id}/subscriptions/{subscription_id}</code>."
+    - description: "<strong>project</strong> (String) <em>(defaults to: nil)</em> — If the subscription belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Not used if a fully-qualified subscription name is\nprovided for <code>subscription_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) <em>(defaults to: nil)</em> — Optionally create a <a href=\"./Google-Cloud-PubSub-Subscription\">Subscription</a> object\nwithout verifying the subscription resource exists on the Pub/Sub\nservice. Calls made on this object will raise errors if the service\nresource does not exist. Default is <code>false</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>, nil) — Returns <code>nil</code> if\nthe subscription does not exist"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#subscriptions(instance)
+  fullName: Google::Cloud::PubSub::Project#subscriptions
+  name: "#subscriptions"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#subscriptions"
+  summary: "Retrieves a list of subscriptions for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsubs = pubsub.subscriptions\nsubs.each do |sub|\n  puts sub.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsubs = pubsub.subscriptions\nsubs.all do |sub|\n  puts sub.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of subscriptions for the given project."
+    content: "def subscriptions(token: nil, max: nil) => Array<Google::Cloud::PubSub::Subscription>"
+    arguments:
+    - description: "<strong>token</strong> (String) <em>(defaults to: nil)</em> — A previously-returned page token representing\npart of the larger set of results to view."
+    - description: "<strong>max</strong> (Integer) <em>(defaults to: nil)</em> — Maximum number of subscriptions to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Subscription-List\">Subscription::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#topic(instance)
+  fullName: Google::Cloud::PubSub::Project#topic
+  name: "#topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#topic"
+  summary: "Retrieves topic by name."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"existing-topic\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"non-existing-topic\" # nil</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"another-topic\", project: \"another-project\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"another-topic\", skip_lookup: true</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\",\n                     async: { threads: { callback: 16 } }\n\ntopic.publish_async \"task completed\" do |result|\n  if result.succeeded?\n    log_publish_success result.data\n  else\n    log_publish_failure result.data, result.error\n  end\nend\n\ntopic.async_publisher.stop!</pre>"
+  syntax:
+    description: "Retrieves topic by name."
+    content: "def topic(topic_name, project: nil, skip_lookup: nil, async: nil) => Google::Cloud::PubSub::Topic, nil"
+    arguments:
+    - description: "<strong>topic_name</strong> (String) — Name of a topic. The value can be a simple\ntopic ID (relative name), in which case the current project ID will\nbe supplied, or a fully-qualified topic name in the form\n<code>projects/{project_id}/topics/{topic_id}</code>."
+    - description: "<strong>project</strong> (String) <em>(defaults to: nil)</em> — If the topic belongs to a project other than\nthe one currently connected to, the alternate project ID can be\nspecified here. Optional. Not used if a fully-qualified topic name\nis provided for <code>topic_name</code>."
+    - description: "<strong>skip_lookup</strong> (Boolean) <em>(defaults to: nil)</em> — Optionally create a <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> object\nwithout verifying the topic resource exists on the Pub/Sub service.\nCalls made on this object will raise errors if the topic resource\ndoes not exist. Default is <code>false</code>. Optional."
+    - description: "<strong>async</strong> (Hash) <em>(defaults to: nil)</em> — <p>A hash of values to configure the topic&#39;s\n<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a> that is created when <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a>\nis called. Optional.</p>\n\n<p>Hash keys and values may include the following:</p>\n\n<ul>\n<li><code>:max_bytes</code> (Integer) The maximum size of messages to be collected before the batch is published. Default\nis 1,000,000 (1MB).</li>\n<li><code>:max_messages</code> (Integer) The maximum number of messages to be collected before the batch is published.\nDefault is 100.</li>\n<li><code>:interval</code> (Numeric) The number of seconds to collect messages before the batch is published. Default is\n0.01.</li>\n<li><code>:threads</code> (Hash) The number of threads to create to handle concurrent calls by the publisher:\n\n<ul>\n<li><code>:publish</code> (Integer) The number of threads used to publish messages. Default is 2.</li>\n<li><code>:callback</code> (Integer) The number of threads to handle the published messages&#39; callbacks. Default is 4.</li>\n</ul></li>\n<li><code>:flow_control</code> (Hash) The client flow control settings for message publishing:\n\n<ul>\n<li><code>:message_limit</code> (Integer) The maximum number of messages allowed to wait to be published. Default is\n<code>10 * max_messages</code>.</li>\n<li><code>:byte_limit</code> (Integer) The maximum total size of messages allowed to wait to be published. Default is\n<code>10 * max_bytes</code>.</li>\n<li><code>:limit_exceeded_behavior</code> (Symbol) The action to take when publish flow control limits are exceeded.\nPossible values include: <code>:ignore</code> - Flow control is disabled. <code>:error</code> - Calls to Topic#publish&lt;em&gt;async\nwill raise <a href=\"./Google-Cloud-PubSub-FlowControlLimitError\">FlowControlLimitError</a> when publish flow control limits are exceeded. <code>:block</code> - Calls to\nTopic#publish&lt;/em&gt;async will block until capacity is available when publish flow control limits are\nexceeded. The default value is <code>:ignore</code>.</li>\n</ul></li>\n</ul>"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>, nil) — Returns <code>nil</code> if topic\ndoes not exist."
+    raises: []
+- uid: Google::Cloud::PubSub::Project#topics(instance)
+  fullName: Google::Cloud::PubSub::Project#topics
+  name: "#topics"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#topics"
+  summary: "Retrieves a list of topics for the given project."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopics = pubsub.topics\ntopics.each do |topic|\n  puts topic.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopics = pubsub.topics\ntopics.all do |topic|\n  puts topic.name\nend</pre>"
+  syntax:
+    description: "Retrieves a list of topics for the given project."
+    content: "def topics(token: nil, max: nil) => Array<Google::Cloud::PubSub::Topic>"
+    arguments:
+    - description: "<strong>token</strong> (String) <em>(defaults to: nil)</em> — The <code>token</code> value returned by the last call to\n<code>topics</code>; indicates that this is a continuation of a call, and that\nthe system should return the next page of data."
+    - description: "<strong>max</strong> (Integer) <em>(defaults to: nil)</em> — Maximum number of topics to return."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-Topic\">Google::Cloud::PubSub::Topic</a>&gt;) — (See\n<a href=\"./Google-Cloud-PubSub-Topic-List\">Topic::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Project#valid_schema?(instance)
+  fullName: Google::Cloud::PubSub::Project#valid_schema?
+  name: "#valid_schema?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#valid_schema?"
+  summary: "Validates a schema type and definition."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ndefinition = \"...\"\npubsub.validate_schema :avro, definition #=> true</pre>"
+  syntax:
+    description: "Validates a schema type and definition."
+    content: "def valid_schema?(type, definition, project: nil) => Boolean"
+    arguments:
+    - description: "<strong>type</strong> (String, Symbol) — <p>The type of the schema. Required. Possible\nvalues are case-insensitive and include:</p>\n\n<ul>\n<li><code>PROTOCOL_BUFFER</code> - A Protocol Buffer schema definition.</li>\n<li><code>AVRO</code> - An Avro schema definition.</li>\n</ul>"
+    - description: "<strong>definition</strong> (String) — The definition of the schema. Required. This\nshould be a string representing the full definition of the schema that\nis a valid schema definition of the type specified in <code>type</code>."
+    - description: "<strong>project</strong> (String) <em>(defaults to: nil)</em> — If the schema belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Optional."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> if the schema is valid, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Project#validate_schema(instance)
+  fullName: Google::Cloud::PubSub::Project#validate_schema
+  name: "#validate_schema"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#validate_schema"
+  summary: "Validates a schema type and definition."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ndefinition = \"...\"\npubsub.validate_schema :avro, definition #=> true</pre>"
+  syntax:
+    description: "Validates a schema type and definition."
+    content: "def validate_schema => Boolean"
+    arguments:
+    - description: "<strong>type</strong> (String, Symbol) — <p>The type of the schema. Required. Possible\nvalues are case-insensitive and include:</p>\n\n<ul>\n<li><code>PROTOCOL_BUFFER</code> - A Protocol Buffer schema definition.</li>\n<li><code>AVRO</code> - An Avro schema definition.</li>\n</ul>"
+    - description: "<strong>definition</strong> (String) — The definition of the schema. Required. This\nshould be a string representing the full definition of the schema that\nis a valid schema definition of the type specified in <code>type</code>."
+    - description: "<strong>project</strong> (String) — If the schema belongs to a project other\nthan the one currently connected to, the alternate project ID can be\nspecified here. Optional."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> if the schema is valid, <code>false</code> otherwise."
+    raises: []
+references: []

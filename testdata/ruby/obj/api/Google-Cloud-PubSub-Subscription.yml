@@ -1,0 +1,1055 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Subscription
+  children: 
+  - Google::Cloud::PubSub::Subscription#ack(instance)
+  - Google::Cloud::PubSub::Subscription#acknowledge(instance)
+  - Google::Cloud::PubSub::Subscription#coerce_ack_ids(instance)
+  - Google::Cloud::PubSub::Subscription#create_snapshot(instance)
+  - Google::Cloud::PubSub::Subscription#dead_letter_max_delivery_attempts(instance)
+  - Google::Cloud::PubSub::Subscription#dead_letter_max_delivery_attempts=(instance)
+  - Google::Cloud::PubSub::Subscription#dead_letter_topic(instance)
+  - Google::Cloud::PubSub::Subscription#dead_letter_topic=(instance)
+  - Google::Cloud::PubSub::Subscription#deadline(instance)
+  - Google::Cloud::PubSub::Subscription#deadline=(instance)
+  - Google::Cloud::PubSub::Subscription#delete(instance)
+  - Google::Cloud::PubSub::Subscription#detach(instance)
+  - Google::Cloud::PubSub::Subscription#detached?(instance)
+  - Google::Cloud::PubSub::Subscription#endpoint(instance)
+  - Google::Cloud::PubSub::Subscription#endpoint=(instance)
+  - Google::Cloud::PubSub::Subscription#ensure_grpc!(instance)
+  - Google::Cloud::PubSub::Subscription#exists?(instance)
+  - Google::Cloud::PubSub::Subscription#expires_in(instance)
+  - Google::Cloud::PubSub::Subscription#expires_in=(instance)
+  - Google::Cloud::PubSub::Subscription#filter(instance)
+  - Google::Cloud::PubSub::Subscription#labels(instance)
+  - Google::Cloud::PubSub::Subscription#labels=(instance)
+  - Google::Cloud::PubSub::Subscription#listen(instance)
+  - Google::Cloud::PubSub::Subscription#message_ordering?(instance)
+  - Google::Cloud::PubSub::Subscription#modify_ack_deadline(instance)
+  - Google::Cloud::PubSub::Subscription#name(instance)
+  - Google::Cloud::PubSub::Subscription#new_snapshot(instance)
+  - Google::Cloud::PubSub::Subscription#policy(instance)
+  - Google::Cloud::PubSub::Subscription#policy=(instance)
+  - Google::Cloud::PubSub::Subscription#pull(instance)
+  - Google::Cloud::PubSub::Subscription#push_config(instance)
+  - Google::Cloud::PubSub::Subscription#reference?(instance)
+  - Google::Cloud::PubSub::Subscription#refresh!(instance)
+  - Google::Cloud::PubSub::Subscription#reload!(instance)
+  - Google::Cloud::PubSub::Subscription#remove_dead_letter_policy(instance)
+  - Google::Cloud::PubSub::Subscription#resource?(instance)
+  - Google::Cloud::PubSub::Subscription#retain_acked(instance)
+  - Google::Cloud::PubSub::Subscription#retain_acked=(instance)
+  - Google::Cloud::PubSub::Subscription#retention(instance)
+  - Google::Cloud::PubSub::Subscription#retention=(instance)
+  - Google::Cloud::PubSub::Subscription#retry_policy(instance)
+  - Google::Cloud::PubSub::Subscription#retry_policy=(instance)
+  - Google::Cloud::PubSub::Subscription#seek(instance)
+  - Google::Cloud::PubSub::Subscription#test_permissions(instance)
+  - Google::Cloud::PubSub::Subscription#topic(instance)
+  - Google::Cloud::PubSub::Subscription#topic_retention(instance)
+  - Google::Cloud::PubSub::Subscription#update_policy(instance)
+  - Google::Cloud::PubSub::Subscription#wait_for_messages(instance)
+  - Google::Cloud::PubSub::Subscription::List
+  - Google::Cloud::PubSub::Subscription::PushConfig
+  fullName: Google::Cloud::PubSub::Subscription
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: Subscription
+  summary: "<h1>Subscription</h1>\n\n<p>A named resource representing the stream of messages from a single,\nspecific <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a>, to be delivered to the subscribing application.</p>"
+  type: "class"
+  name: Google::Cloud::PubSub::Subscription
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsubscriber = sub.listen do |received_message|\n  # process message\n  received_message.acknowledge!\nend\n\n# Handle exceptions from listener\nsubscriber.on_error do |exception|\n   puts \"Exception: #{exception.class} #{exception.message}\"\nend\n\n# Gracefully shut down the subscriber\nat_exit do\n  subscriber.stop!\nend\n\n# Start background threads that will call the block passed to listen.\nsubscriber.start\nsleep</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::Subscription#ack(instance)
+  fullName: Google::Cloud::PubSub::Subscription#ack
+  name: "#ack"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#ack"
+  summary: "Acknowledges receipt of a message. After an ack,\nthe Pub/Sub system can remove the message from the subscription.\nAcknowledging a message whose ack deadline has expired may succeed,\nalthough the message may have been sent again.\nAcknowledging a message more than once will not result in an error.\nThis is only used for messages received via pull.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_acknowledge__instance_\">ReceivedMessage#acknowledge!</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nreceived_messages = sub.pull immediate: false\nsub.acknowledge received_messages</pre>"
+  syntax:
+    description: "Acknowledges receipt of a message. After an ack,\nthe Pub/Sub system can remove the message from the subscription.\nAcknowledging a message whose ack deadline has expired may succeed,\nalthough the message may have been sent again.\nAcknowledging a message more than once will not result in an error.\nThis is only used for messages received via pull.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_acknowledge__instance_\">ReceivedMessage#acknowledge!</a>."
+    content: "def ack"
+    arguments:
+    - description: "<strong>messages</strong> (<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a>, String) — One or more\n<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> objects or ack_id values."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#acknowledge(instance)
+  fullName: Google::Cloud::PubSub::Subscription#acknowledge
+  name: "#acknowledge"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#acknowledge"
+  summary: "Acknowledges receipt of a message. After an ack,\nthe Pub/Sub system can remove the message from the subscription.\nAcknowledging a message whose ack deadline has expired may succeed,\nalthough the message may have been sent again.\nAcknowledging a message more than once will not result in an error.\nThis is only used for messages received via pull.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_acknowledge__instance_\">ReceivedMessage#acknowledge!</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nreceived_messages = sub.pull immediate: false\nsub.acknowledge received_messages</pre>"
+  syntax:
+    description: "Acknowledges receipt of a message. After an ack,\nthe Pub/Sub system can remove the message from the subscription.\nAcknowledging a message whose ack deadline has expired may succeed,\nalthough the message may have been sent again.\nAcknowledging a message more than once will not result in an error.\nThis is only used for messages received via pull.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_acknowledge__instance_\">ReceivedMessage#acknowledge!</a>."
+    content: "def acknowledge(*messages)"
+    arguments:
+    - description: "<strong>messages</strong> (<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a>, String) — One or more\n<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> objects or ack_id values."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#coerce_ack_ids(instance)
+  fullName: Google::Cloud::PubSub::Subscription#coerce_ack_ids
+  name: "#coerce_ack_ids"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#coerce_ack_ids"
+  summary: "Makes sure the values are the <code>ack_id</code>. If given several\n<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> objects extract the <code>ack_id</code> values."
+  type: method
+  example: []
+  syntax:
+    description: "Makes sure the values are the <code>ack_id</code>. If given several\n<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> objects extract the <code>ack_id</code> values."
+    content: "def coerce_ack_ids(messages)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#create_snapshot(instance)
+  fullName: Google::Cloud::PubSub::Subscription#create_snapshot
+  name: "#create_snapshot"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#create_snapshot"
+  summary: "<p>Creates a new <a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a> from the subscription. The created snapshot\nis guaranteed to retain:</p>\n\n<ul>\n<li>The existing backlog on the subscription. More precisely, this is\ndefined as the messages in the subscription&#39;s backlog that are\nunacknowledged upon the successful completion of the\n<code>create_snapshot</code> operation; as well as:</li>\n<li>Any messages published to the subscription&#39;s topic following the\nsuccessful completion of the <code>create_snapshot</code> operation.</li>\n</ul>"
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot \"my-snapshot\"\nsnapshot.name #=> \"projects/my-project/snapshots/my-snapshot\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot\nsnapshot.name #=> \"projects/my-project/snapshots/gcr-analysis-...\"</pre>"
+  syntax:
+    description: "<p>Creates a new <a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a> from the subscription. The created snapshot\nis guaranteed to retain:</p>\n\n<ul>\n<li>The existing backlog on the subscription. More precisely, this is\ndefined as the messages in the subscription&#39;s backlog that are\nunacknowledged upon the successful completion of the\n<code>create_snapshot</code> operation; as well as:</li>\n<li>Any messages published to the subscription&#39;s topic following the\nsuccessful completion of the <code>create_snapshot</code> operation.</li>\n</ul>"
+    content: "def create_snapshot(snapshot_name = nil, labels: nil) => Google::Cloud::PubSub::Snapshot"
+    arguments:
+    - description: "<strong>snapshot_name</strong> (String, nil) — Name of the new snapshot. Optional.\nIf the name is not provided, the server will assign a random name\nfor this snapshot on the same project as the subscription.\nThe value can be a simple snapshot ID (relative name), in which\ncase the current project ID will be supplied, or a fully-qualified\nsnapshot name in the form\n<code>projects/{project_id}/snapshots/{snapshot_id}</code>.</p>\n\n<p>The snapshot ID (relative name) must start with a letter, and\ncontain only letters (<code>[A-Za-z]</code>), numbers (<code>[0-9]</code>), dashes (<code>-</code>),\nunderscores (<code>_</code>), periods (<code>.</code>), tildes (<code>~</code>), plus (<code>+</code>) or percent\nsigns (<code>%</code>). It must be between 3 and 255 characters in length, and\nit must not start with <code>goog</code>."
+    - description: "<strong>labels</strong> (Hash) <em>(defaults to: nil)</em> — A hash of user-provided labels associated with\nthe snapshot. You can use these to organize and group your\nsnapshots. Label keys and values can be no longer than 63\ncharacters, can only contain lowercase letters, numeric characters,\nunderscores and dashes. International characters are allowed. Label\nvalues are optional. Label keys must start with a letter and each\nlabel in the list must have a different key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and\nManaging Labels</a>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Snapshot\">Google::Cloud::PubSub::Snapshot</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#dead_letter_max_delivery_attempts(instance)
+  fullName: Google::Cloud::PubSub::Subscription#dead_letter_max_delivery_attempts
+  name: "#dead_letter_max_delivery_attempts"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#dead_letter_max_delivery_attempts"
+  summary: "Returns the maximum number of delivery attempts for any message in the subscription&#39;s dead letter policy if a\ndead letter policy is configured, otherwise <code>nil</code>. Dead lettering is done on a best effort basis. The same\nmessage might be dead lettered multiple times. The value must be between 5 and 100.</p>\n\n<p>The number of delivery attempts is defined as 1 + (the sum of number of NACKs and number of times the\nacknowledgement deadline has been exceeded for the message). A NACK is any call to ModifyAckDeadline with a 0\ndeadline. Note that client libraries may automatically extend ack_deadlines.</p>\n\n<p>This field will be honored on a best effort basis. If this parameter is <code>nil</code> or <code>0</code>, a default value of <code>5</code>\nis used.</p>\n\n<p>See also #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=, #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;topic\nand #remove&lt;em&gt;dead&lt;/em&gt;letter_policy.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.dead_letter_topic.name #=> \"projects/my-project/topics/my-dead-letter-topic\"\nsub.dead_letter_max_delivery_attempts #=> 10</pre>"
+  syntax:
+    description: "Returns the maximum number of delivery attempts for any message in the subscription&#39;s dead letter policy if a\ndead letter policy is configured, otherwise <code>nil</code>. Dead lettering is done on a best effort basis. The same\nmessage might be dead lettered multiple times. The value must be between 5 and 100.</p>\n\n<p>The number of delivery attempts is defined as 1 + (the sum of number of NACKs and number of times the\nacknowledgement deadline has been exceeded for the message). A NACK is any call to ModifyAckDeadline with a 0\ndeadline. Note that client libraries may automatically extend ack_deadlines.</p>\n\n<p>This field will be honored on a best effort basis. If this parameter is <code>nil</code> or <code>0</code>, a default value of <code>5</code>\nis used.</p>\n\n<p>See also #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=, #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;topic\nand #remove&lt;em&gt;dead&lt;/em&gt;letter_policy.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def dead_letter_max_delivery_attempts => Integer, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer, nil) — A value between <code>5</code> and <code>100</code>, or <code>nil</code> if no dead letter policy is configured."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#dead_letter_max_delivery_attempts=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#dead_letter_max_delivery_attempts=
+  name: "#dead_letter_max_delivery_attempts="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#dead_letter_max_delivery_attempts="
+  summary: "Sets the maximum number of delivery attempts for any message in the subscription&#39;s dead letter policy.\nDead lettering is done on a best effort basis. The same message might be dead lettered multiple times.\nThe value must be between 5 and 100.</p>\n\n<p>The number of delivery attempts is defined as 1 + (the sum of number of NACKs and number of times the\nacknowledgement deadline has been exceeded for the message). A NACK is any call to ModifyAckDeadline with a 0\ndeadline. Note that client libraries may automatically extend ack_deadlines.</p>\n\n<p>This field will be honored on a best effort basis. If this parameter is 0, a default value of 5 is used.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>.</p>\n\n<p>The dead letter topic must be set first. See #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;topic and\n#remove&lt;em&gt;dead&lt;/em&gt;letter_policy."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.dead_letter_topic.name #=> \"projects/my-project/topics/my-dead-letter-topic\"\n\nsub.dead_letter_max_delivery_attempts = 20</pre>"
+  syntax:
+    description: "Sets the maximum number of delivery attempts for any message in the subscription&#39;s dead letter policy.\nDead lettering is done on a best effort basis. The same message might be dead lettered multiple times.\nThe value must be between 5 and 100.</p>\n\n<p>The number of delivery attempts is defined as 1 + (the sum of number of NACKs and number of times the\nacknowledgement deadline has been exceeded for the message). A NACK is any call to ModifyAckDeadline with a 0\ndeadline. Note that client libraries may automatically extend ack_deadlines.</p>\n\n<p>This field will be honored on a best effort basis. If this parameter is 0, a default value of 5 is used.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>.</p>\n\n<p>The dead letter topic must be set first. See #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;topic and\n#remove&lt;em&gt;dead&lt;/em&gt;letter_policy."
+    content: "def dead_letter_max_delivery_attempts=(new_dead_letter_max_delivery_attempts)"
+    arguments:
+    - description: "<strong>new_dead_letter_max_delivery_attempts</strong> (Integer, nil) — A value between 5 and 100. If this parameter is\n<code>nil</code> or <code>0</code>, a default value of 5 is used."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises:
+    - description: "(ArgumentError) — if the dead letter topic has not been set. See #dead&lt;em&gt;letter&lt;/em&gt;topic=."
+- uid: Google::Cloud::PubSub::Subscription#dead_letter_topic(instance)
+  fullName: Google::Cloud::PubSub::Subscription#dead_letter_topic
+  name: "#dead_letter_topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#dead_letter_topic"
+  summary: "Returns the <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> to which dead letter messages should be published if a dead letter policy is configured,\notherwise <code>nil</code>. Dead lettering is done on a best effort basis. The same message might be dead lettered\nmultiple times.</p>\n\n<p>See also #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts\nand #remove&lt;em&gt;dead&lt;/em&gt;letter_policy.</p>\n\n<p>Makes an API call to retrieve the topic name when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.dead_letter_topic.name #=> \"projects/my-project/topics/my-dead-letter-topic\"\nsub.dead_letter_max_delivery_attempts #=> 10</pre>"
+  syntax:
+    description: "Returns the <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> to which dead letter messages should be published if a dead letter policy is configured,\notherwise <code>nil</code>. Dead lettering is done on a best effort basis. The same message might be dead lettered\nmultiple times.</p>\n\n<p>See also #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts\nand #remove&lt;em&gt;dead&lt;/em&gt;letter_policy.</p>\n\n<p>Makes an API call to retrieve the topic name when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def dead_letter_topic => Topic, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Topic</a>, nil)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#dead_letter_topic=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#dead_letter_topic=
+  name: "#dead_letter_topic="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#dead_letter_topic="
+  summary: "Sets the <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> to which dead letter messages for the subscription should be published. Dead lettering is\ndone on a best effort basis. The same message might be dead lettered multiple times.\nThe Cloud Pub/Sub service account associated with the enclosing subscription&#39;s parent project (i.e.,\n<code>service-\\{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com</code>) must have permission to Publish() to this\ntopic.</p>\n\n<p>The operation will fail if the topic does not exist. Users should ensure that there is a subscription attached\nto this topic since messages published to a topic with no subscriptions are lost.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>.</p>\n\n<p>See also #dead&lt;em&gt;letter&lt;/em&gt;topic, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts\nand #remove&lt;em&gt;dead&lt;/em&gt;letter_policy."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\ndead_letter_topic = pubsub.topic \"my-dead-letter-topic\", skip_lookup: true\nsub.dead_letter_topic = dead_letter_topic</pre>"
+  syntax:
+    description: "Sets the <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> to which dead letter messages for the subscription should be published. Dead lettering is\ndone on a best effort basis. The same message might be dead lettered multiple times.\nThe Cloud Pub/Sub service account associated with the enclosing subscription&#39;s parent project (i.e.,\n<code>service-\\{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com</code>) must have permission to Publish() to this\ntopic.</p>\n\n<p>The operation will fail if the topic does not exist. Users should ensure that there is a subscription attached\nto this topic since messages published to a topic with no subscriptions are lost.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>.</p>\n\n<p>See also #dead&lt;em&gt;letter&lt;/em&gt;topic, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts\nand #remove&lt;em&gt;dead&lt;/em&gt;letter_policy."
+    content: "def dead_letter_topic=(new_dead_letter_topic)"
+    arguments:
+    - description: "<strong>new_dead_letter_topic</strong> (<a href=\"./Google-Cloud-PubSub-Topic\">Topic</a>) — The topic to which dead letter messages for the subscription should be\npublished."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#deadline(instance)
+  fullName: Google::Cloud::PubSub::Subscription#deadline
+  name: "#deadline"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#deadline"
+  summary: "This value is the maximum number of seconds after a subscriber\nreceives a message before the subscriber should acknowledge the\nmessage.</p>\n\n<p>Makes an API call to retrieve the deadline value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "This value is the maximum number of seconds after a subscriber\nreceives a message before the subscriber should acknowledge the\nmessage.</p>\n\n<p>Makes an API call to retrieve the deadline value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def deadline => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#deadline=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#deadline=
+  name: "#deadline="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#deadline="
+  summary: "Sets the maximum number of seconds after a subscriber\nreceives a message before the subscriber should acknowledge the\nmessage."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the maximum number of seconds after a subscriber\nreceives a message before the subscriber should acknowledge the\nmessage."
+    content: "def deadline=(new_deadline)"
+    arguments:
+    - description: "<strong>new_deadline</strong> (Integer) — The new deadline value."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#delete(instance)
+  fullName: Google::Cloud::PubSub::Subscription#delete
+  name: "#delete"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#delete"
+  summary: "Deletes an existing subscription.\nAll pending messages in the subscription are immediately dropped."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.delete</pre>"
+  syntax:
+    description: "Deletes an existing subscription.\nAll pending messages in the subscription are immediately dropped."
+    content: "def delete => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — Returns <code>true</code> if the subscription was deleted."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#detach(instance)
+  fullName: Google::Cloud::PubSub::Subscription#detach
+  name: "#detach"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#detach"
+  summary: "Detaches a subscription from its topic. All messages retained in the subscription are dropped. Detached\nsubscriptions don&#39;t receive messages from their topic and don&#39;t retain any backlog. Subsequent <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_pull_instance_\">#pull</a> and\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> (pull and streaming pull) operations will raise <code>FAILED_PRECONDITION</code>. If the subscription is a push\nsubscription (see <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_push_config_instance_\">#push_config</a>), pushes to the endpoint will stop. It may take a few minutes for the\nsubscription&#39;s detached state to be reflected in subsequent calls to <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_detached__instance_\">#detached?</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.detach\n\n# sleep 120\nsub.detached? #=> true</pre>"
+  syntax:
+    description: "Detaches a subscription from its topic. All messages retained in the subscription are dropped. Detached\nsubscriptions don&#39;t receive messages from their topic and don&#39;t retain any backlog. Subsequent <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_pull_instance_\">#pull</a> and\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> (pull and streaming pull) operations will raise <code>FAILED_PRECONDITION</code>. If the subscription is a push\nsubscription (see <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_push_config_instance_\">#push_config</a>), pushes to the endpoint will stop. It may take a few minutes for the\nsubscription&#39;s detached state to be reflected in subsequent calls to <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_detached__instance_\">#detached?</a>."
+    content: "def detach => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — Returns <code>true</code> if the detach operation was successful."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#detached?(instance)
+  fullName: Google::Cloud::PubSub::Subscription#detached?
+  name: "#detached?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#detached?"
+  summary: "Whether the subscription is detached from its topic. Detached subscriptions don&#39;t receive messages from their\ntopic and don&#39;t retain any backlog. <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_pull_instance_\">#pull</a> and <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> (pull and streaming pull) operations will raise\n<code>FAILED_PRECONDITION</code>. If the subscription is a push subscription (see <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_push_config_instance_\">#push_config</a>), pushes to the endpoint\nwill not be made. The default value is <code>false</code>.</p>\n\n<p>See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_subscribe_instance_\">Topic#subscribe</a> and <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_detach_instance_\">#detach</a>.</p>\n\n<p>Makes an API call to retrieve the detached value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.detach\n\n# sleep 120\nsub.detached? #=> true</pre>"
+  syntax:
+    description: "Whether the subscription is detached from its topic. Detached subscriptions don&#39;t receive messages from their\ntopic and don&#39;t retain any backlog. <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_pull_instance_\">#pull</a> and <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> (pull and streaming pull) operations will raise\n<code>FAILED_PRECONDITION</code>. If the subscription is a push subscription (see <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_push_config_instance_\">#push_config</a>), pushes to the endpoint\nwill not be made. The default value is <code>false</code>.</p>\n\n<p>See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_subscribe_instance_\">Topic#subscribe</a> and <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_detach_instance_\">#detach</a>.</p>\n\n<p>Makes an API call to retrieve the detached value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def detached? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#endpoint(instance)
+  fullName: Google::Cloud::PubSub::Subscription#endpoint
+  name: "#endpoint"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#endpoint"
+  summary: "Returns the URL locating the endpoint to which messages should be\npushed. For example, a Webhook endpoint might use\n<code>https://example.com/push</code>.</p>\n\n<p>Makes an API call to retrieve the endpoint value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Returns the URL locating the endpoint to which messages should be\npushed. For example, a Webhook endpoint might use\n<code>https://example.com/push</code>.</p>\n\n<p>Makes an API call to retrieve the endpoint value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def endpoint => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#endpoint=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#endpoint=
+  name: "#endpoint="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#endpoint="
+  summary: "Sets the URL locating the endpoint to which messages should be pushed.\nFor example, a Webhook endpoint might use <code>https://example.com/push</code>."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the URL locating the endpoint to which messages should be pushed.\nFor example, a Webhook endpoint might use <code>https://example.com/push</code>."
+    content: "def endpoint=(new_endpoint)"
+    arguments:
+    - description: "<strong>new_endpoint</strong> (String) — The new endpoint value."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#ensure_grpc!(instance)
+  fullName: Google::Cloud::PubSub::Subscription#ensure_grpc!
+  name: "#ensure_grpc!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#ensure_grpc!"
+  summary: "Ensures a Google::Cloud::PubSub::V1::Subscription object exists."
+  type: method
+  example: []
+  syntax:
+    description: "Ensures a Google::Cloud::PubSub::V1::Subscription object exists."
+    content: "def ensure_grpc!"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#exists?(instance)
+  fullName: Google::Cloud::PubSub::Subscription#exists?
+  name: "#exists?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#exists?"
+  summary: "Determines whether the subscription exists in the Pub/Sub service.</p>\n\n<p>Makes an API call to determine whether the subscription resource\nexists when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.exists? #=> true</pre>"
+  syntax:
+    description: "Determines whether the subscription exists in the Pub/Sub service.</p>\n\n<p>Makes an API call to determine whether the subscription resource\nexists when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def exists? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#expires_in(instance)
+  fullName: Google::Cloud::PubSub::Subscription#expires_in
+  name: "#expires_in"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#expires_in"
+  summary: "The duration (in seconds) for when a subscription expires after the\nsubscription goes inactive. A subscription is considered active as\nlong as any connected subscriber is successfully consuming messages\nfrom the subscription or is issuing operations on the subscription.</p>\n\n<p>If <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_expires_in=_instance_\">#expires_in=</a> is not set, a <em>default</em> value of of 31 days will be\nused. The minimum allowed value is 1 day.</p>\n\n<p>Makes an API call to retrieve the expires_in value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "The duration (in seconds) for when a subscription expires after the\nsubscription goes inactive. A subscription is considered active as\nlong as any connected subscriber is successfully consuming messages\nfrom the subscription or is issuing operations on the subscription.</p>\n\n<p>If <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_expires_in=_instance_\">#expires_in=</a> is not set, a <em>default</em> value of of 31 days will be\nused. The minimum allowed value is 1 day.</p>\n\n<p>Makes an API call to retrieve the expires_in value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def expires_in => Numeric, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric, nil) — The expiration duration, or <code>nil</code> if unset."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#expires_in=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#expires_in=
+  name: "#expires_in="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#expires_in="
+  summary: "Sets the duration (in seconds) for when a subscription expires after\nthe subscription goes inactive.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_expires_in_instance_\">#expires_in</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the duration (in seconds) for when a subscription expires after\nthe subscription goes inactive.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_expires_in_instance_\">#expires_in</a>."
+    content: "def expires_in=(ttl)"
+    arguments:
+    - description: "<strong>ttl</strong> (Numeric, nil) — The expiration duration in seconds, or <code>nil</code>\nto unset."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#filter(instance)
+  fullName: Google::Cloud::PubSub::Subscription#filter
+  name: "#filter"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#filter"
+  summary: "An expression written in the Cloud Pub/Sub filter language. If non-empty, then only <a href=\"./Google-Cloud-PubSub-Message\">Message</a> instances whose\n<code>attributes</code> field matches the filter are delivered on this subscription. If empty, then no messages are\nfiltered out.</p>\n\n<p>Makes an API call to retrieve the filter value when called on a reference\nobject. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "An expression written in the Cloud Pub/Sub filter language. If non-empty, then only <a href=\"./Google-Cloud-PubSub-Message\">Message</a> instances whose\n<code>attributes</code> field matches the filter are delivered on this subscription. If empty, then no messages are\nfiltered out.</p>\n\n<p>Makes an API call to retrieve the filter value when called on a reference\nobject. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def filter => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — The frozen filter string."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#labels(instance)
+  fullName: Google::Cloud::PubSub::Subscription#labels
+  name: "#labels"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#labels"
+  summary: "A hash of user-provided labels associated with this subscription.\nLabels can be used to organize and group subscriptions.See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating\nand Managing Labels</a>.</p>\n\n<p>The returned hash is frozen and changes are not allowed. Use\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_labels=_instance_\">#labels=</a> to update the labels for this subscription.</p>\n\n<p>Makes an API call to retrieve the labels value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "A hash of user-provided labels associated with this subscription.\nLabels can be used to organize and group subscriptions.See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating\nand Managing Labels</a>.</p>\n\n<p>The returned hash is frozen and changes are not allowed. Use\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_labels=_instance_\">#labels=</a> to update the labels for this subscription.</p>\n\n<p>Makes an API call to retrieve the labels value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def labels => Hash"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Hash) — The frozen labels hash."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#labels=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#labels=
+  name: "#labels="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#labels="
+  summary: "Sets the hash of user-provided labels associated with this\nsubscription. Labels can be used to organize and group subscriptions.\nLabel keys and values can be no longer than 63 characters, can only\ncontain lowercase letters, numeric characters, underscores and dashes.\nInternational characters are allowed. Label values are optional. Label\nkeys must start with a letter and each label in the list must have a\ndifferent key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and Managing\nLabels</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the hash of user-provided labels associated with this\nsubscription. Labels can be used to organize and group subscriptions.\nLabel keys and values can be no longer than 63 characters, can only\ncontain lowercase letters, numeric characters, underscores and dashes.\nInternational characters are allowed. Label values are optional. Label\nkeys must start with a letter and each label in the list must have a\ndifferent key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and Managing\nLabels</a>."
+    content: "def labels=(new_labels)"
+    arguments:
+    - description: "<strong>new_labels</strong> (Hash) — The new labels hash."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises:
+    - description: "(ArgumentError)"
+- uid: Google::Cloud::PubSub::Subscription#listen(instance)
+  fullName: Google::Cloud::PubSub::Subscription#listen
+  name: "#listen"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#listen"
+  summary: "Create a <a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a> object that receives and processes messages\nusing the code provided in the callback. Messages passed to the\ncallback should acknowledge (<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_acknowledge__instance_\">ReceivedMessage#acknowledge!</a>) or reject\n(<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_reject__instance_\">ReceivedMessage#reject!</a>) the message. If no action is taken, the\nmessage will be removed from the subscriber and made available for\nredelivery after the callback is completed.</p>\n\n<p>Google Cloud Pub/Sub ordering keys provide the ability to ensure\nrelated messages are sent to subscribers in the order in which they\nwere published. Messages can be tagged with an ordering key, a string\nthat identifies related messages for which publish order should be\nrespected. The service guarantees that, for a given ordering key and\npublisher, messages are sent to subscribers in the order in which they\nwere published. Ordering does not require sacrificing high throughput\nor scalability, as the service automatically distributes messages for\ndifferent ordering keys across subscribers.</p>\n\n<p>To use ordering keys, the subscription must be created with message\nordering enabled (See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_subscribe_instance_\">Topic#subscribe</a> and #message&lt;em&gt;ordering?)\nbefore calling <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a>. When enabled, the subscriber will deliver\nmessages with the same `ordering</em>key` in the order they were\npublished."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsubscriber = sub.listen do |received_message|\n  # process message\n  puts \"Data: #{received_message.message.data}, published at #{received_message.message.published_at}\"\n  received_message.acknowledge!\nend\n\n# Start background threads that will call block passed to listen.\nsubscriber.start\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsubscriber = sub.listen threads: { callback: 16 } do |rec_message|\n  # store the message somewhere before acknowledging\n  store_in_backend rec_message.data # takes a few seconds\n  rec_message.acknowledge!\nend\n\n# Start background threads that will call block passed to listen.\nsubscriber.start\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-ordered-topic-sub\"\nsub.message_ordering? #=> true\n\nsubscriber = sub.listen do |received_message|\n  # messsages with the same ordering_key are received\n  # in the order in which they were published.\n  received_message.acknowledge!\nend\n\n# Start background threads that will call block passed to listen.\nsubscriber.start\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsubscriber = sub.listen inventory: { max_duration_per_lease_extension: 20 } do |received_message|\n  # Process message very slowly with possibility of failure.\n  process rec_message.data # takes minutes\n  rec_message.acknowledge!\nend\n\n# Start background threads that will call block passed to listen.\nsubscriber.start\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+  syntax:
+    description: "Create a <a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a> object that receives and processes messages\nusing the code provided in the callback. Messages passed to the\ncallback should acknowledge (<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_acknowledge__instance_\">ReceivedMessage#acknowledge!</a>) or reject\n(<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_reject__instance_\">ReceivedMessage#reject!</a>) the message. If no action is taken, the\nmessage will be removed from the subscriber and made available for\nredelivery after the callback is completed.</p>\n\n<p>Google Cloud Pub/Sub ordering keys provide the ability to ensure\nrelated messages are sent to subscribers in the order in which they\nwere published. Messages can be tagged with an ordering key, a string\nthat identifies related messages for which publish order should be\nrespected. The service guarantees that, for a given ordering key and\npublisher, messages are sent to subscribers in the order in which they\nwere published. Ordering does not require sacrificing high throughput\nor scalability, as the service automatically distributes messages for\ndifferent ordering keys across subscribers.</p>\n\n<p>To use ordering keys, the subscription must be created with message\nordering enabled (See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_subscribe_instance_\">Topic#subscribe</a> and #message&lt;em&gt;ordering?)\nbefore calling <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a>. When enabled, the subscriber will deliver\nmessages with the same `ordering</em>key` in the order they were\npublished."
+    content: "def listen(deadline: nil, message_ordering: nil, streams: nil, inventory: nil, threads: {}, &block) { |received_message| ... } => Subscriber"
+    arguments:
+    - description: "<strong>deadline</strong> (Numeric) <em>(defaults to: nil)</em> — The default number of seconds the stream\nwill hold received messages before modifying the message&#39;s ack\ndeadline. The minimum is 10, the maximum is 600. Default is\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_deadline_instance_\">#deadline</a>. Optional.</p>\n\n<p>When using a reference object an API call will be made to retrieve\nthe default deadline value for the subscription when this argument\nis not provided. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    - description: "<strong>message_ordering</strong> (Boolean) <em>(defaults to: nil)</em> — Whether message ordering has been\nenabled. The value provided must match the value set on the Pub/Sub\nservice. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_message_ordering__instance_\">#message_ordering?</a>. Optional.</p>\n\n<p>When using a reference object an API call will be made to retrieve\nthe default message_ordering value for the subscription when this\nargument is not provided. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    - description: "<strong>streams</strong> (Integer) <em>(defaults to: nil)</em> — The number of concurrent streams to open to\npull messages from the subscription. Default is 4. Optional."
+    - description: "<strong>inventory</strong> (Hash, Integer) <em>(defaults to: nil)</em> — <p>The settings to control how received messages are to be handled by the\nsubscriber. When provided as an Integer instead of a Hash only <code>max_outstanding_messages</code> will be set.\nOptional.</p>\n\n<p>Hash keys and values may include the following:</p>\n\n<ul>\n<li><code>:max_outstanding_messages</code> [Integer] The number of received messages to be collected by subscriber.\nDefault is 1,000. (Note: replaces <code>:limit</code>, which is deprecated.)</li>\n<li><code>:max_outstanding_bytes</code> [Integer] The total byte size of received messages to be collected by\nsubscriber. Default is 100,000,000 (100MB). (Note: replaces <code>:bytesize</code>, which is deprecated.)</li>\n<li><code>:use_legacy_flow_control</code> [Boolean] Disables enforcing flow control settings at the Cloud PubSub\nserver and the less accurate method of only enforcing flow control at the client side is used instead.\nDefault is false.</li>\n<li><code>:max_total_lease_duration</code> [Integer] The number of seconds that received messages can be held awaiting\nprocessing. Default is 3,600 (1 hour). (Note: replaces <code>:extension</code>, which is deprecated.)</li>\n<li><code>:max_duration_per_lease_extension</code> [Integer] The maximum amount of time in seconds for a single lease\nextension attempt. Bounds the delay before a message redelivery if the subscriber fails to extend the\ndeadline. Default is 0 (disabled).</li>\n</ul>"
+    - description: "<strong>threads</strong> (Hash) <em>(defaults to: {})</em> — <p>The number of threads to create to handle\nconcurrent calls by each stream opened by the subscriber. Optional.</p>\n\n<p>Hash keys and values may include the following:</p>\n\n<ul>\n<li><code>:callback</code> (Integer) The number of threads used to handle the\nreceived messages. Default is 8.</li>\n<li><code>:push</code> (Integer) The number of threads to handle\nacknowledgement (<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_ack__instance_\">ReceivedMessage#ack!</a>) and modify ack deadline\nmessages (<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_nack__instance_\">ReceivedMessage#nack!</a>,\nReceivedMessage#modify&lt;em&gt;ack&lt;/em&gt;deadline!). Default is 4.</li>\n</ul>"
+    yields:
+    - description: "(received_message) — a block for processing new messages"
+    yieldparams:
+    - description: "<strong>received_message</strong> (<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a>) — the newly received\nmessage"
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#message_ordering?(instance)
+  fullName: Google::Cloud::PubSub::Subscription#message_ordering?
+  name: "#message_ordering?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#message_ordering?"
+  summary: "Whether message ordering has been enabled. When enabled, messages\npublished with the same <code>ordering_key</code> will be delivered in the order\nthey were published. When disabled, messages may be delivered in any\norder.</p>\n\n<p>See Topic#publish&lt;em&gt;async, <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a>, and Message#ordering&lt;/em&gt;key.</p>\n\n<p>Makes an API call to retrieve the enable<em>message</em>ordering value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Whether message ordering has been enabled. When enabled, messages\npublished with the same <code>ordering_key</code> will be delivered in the order\nthey were published. When disabled, messages may be delivered in any\norder.</p>\n\n<p>See Topic#publish&lt;em&gt;async, <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a>, and Message#ordering&lt;/em&gt;key.</p>\n\n<p>Makes an API call to retrieve the enable<em>message</em>ordering value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def message_ordering? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#modify_ack_deadline(instance)
+  fullName: Google::Cloud::PubSub::Subscription#modify_ack_deadline
+  name: "#modify_ack_deadline"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#modify_ack_deadline"
+  summary: "Modifies the acknowledge deadline for messages.</p>\n\n<p>This indicates that more time is needed to process the messages, or to\nmake the messages available for redelivery if the processing was\ninterrupted.</p>\n\n<p>See also ReceivedMessage#modify&lt;em&gt;ack&lt;/em&gt;deadline!."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nreceived_messages = sub.pull immediate: false\nsub.modify_ack_deadline 120, received_messages</pre>"
+  syntax:
+    description: "Modifies the acknowledge deadline for messages.</p>\n\n<p>This indicates that more time is needed to process the messages, or to\nmake the messages available for redelivery if the processing was\ninterrupted.</p>\n\n<p>See also ReceivedMessage#modify&lt;em&gt;ack&lt;/em&gt;deadline!."
+    content: "def modify_ack_deadline(new_deadline, *messages)"
+    arguments:
+    - description: "<strong>new_deadline</strong> (Integer) — The new ack deadline in seconds from the\ntime this request is sent to the Pub/Sub system. Must be &gt;= 0. For\nexample, if the value is <code>10</code>, the new ack deadline will expire 10\nseconds after the call is made. Specifying <code>0</code> may immediately make\nthe message available for another pull request."
+    - description: "<strong>messages</strong> (<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a>, String) — One or more\n<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> objects or ack_id values."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#name(instance)
+  fullName: Google::Cloud::PubSub::Subscription#name
+  name: "#name"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#name"
+  summary: "The name of the subscription."
+  type: method
+  example: []
+  syntax:
+    description: "The name of the subscription."
+    content: "def name => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — A fully-qualified subscription name in the form\n<code>projects/{project_id}/subscriptions/{subscription_id}</code>."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#new_snapshot(instance)
+  fullName: Google::Cloud::PubSub::Subscription#new_snapshot
+  name: "#new_snapshot"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#new_snapshot"
+  summary: "<p>Creates a new <a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a> from the subscription. The created snapshot\nis guaranteed to retain:</p>\n\n<ul>\n<li>The existing backlog on the subscription. More precisely, this is\ndefined as the messages in the subscription&#39;s backlog that are\nunacknowledged upon the successful completion of the\n<code>create_snapshot</code> operation; as well as:</li>\n<li>Any messages published to the subscription&#39;s topic following the\nsuccessful completion of the <code>create_snapshot</code> operation.</li>\n</ul>"
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot \"my-snapshot\"\nsnapshot.name #=> \"projects/my-project/snapshots/my-snapshot\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot\nsnapshot.name #=> \"projects/my-project/snapshots/gcr-analysis-...\"</pre>"
+  syntax:
+    description: "<p>Creates a new <a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a> from the subscription. The created snapshot\nis guaranteed to retain:</p>\n\n<ul>\n<li>The existing backlog on the subscription. More precisely, this is\ndefined as the messages in the subscription&#39;s backlog that are\nunacknowledged upon the successful completion of the\n<code>create_snapshot</code> operation; as well as:</li>\n<li>Any messages published to the subscription&#39;s topic following the\nsuccessful completion of the <code>create_snapshot</code> operation.</li>\n</ul>"
+    content: "def new_snapshot => Google::Cloud::PubSub::Snapshot"
+    arguments:
+    - description: "<strong>snapshot_name</strong> (String, nil) — Name of the new snapshot. Optional.\nIf the name is not provided, the server will assign a random name\nfor this snapshot on the same project as the subscription.\nThe value can be a simple snapshot ID (relative name), in which\ncase the current project ID will be supplied, or a fully-qualified\nsnapshot name in the form\n<code>projects/{project_id}/snapshots/{snapshot_id}</code>.</p>\n\n<p>The snapshot ID (relative name) must start with a letter, and\ncontain only letters (<code>[A-Za-z]</code>), numbers (<code>[0-9]</code>), dashes (<code>-</code>),\nunderscores (<code>_</code>), periods (<code>.</code>), tildes (<code>~</code>), plus (<code>+</code>) or percent\nsigns (<code>%</code>). It must be between 3 and 255 characters in length, and\nit must not start with <code>goog</code>."
+    - description: "<strong>labels</strong> (Hash) — A hash of user-provided labels associated with\nthe snapshot. You can use these to organize and group your\nsnapshots. Label keys and values can be no longer than 63\ncharacters, can only contain lowercase letters, numeric characters,\nunderscores and dashes. International characters are allowed. Label\nvalues are optional. Label keys must start with a letter and each\nlabel in the list must have a different key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and\nManaging Labels</a>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Snapshot\">Google::Cloud::PubSub::Snapshot</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#policy(instance)
+  fullName: Google::Cloud::PubSub::Subscription#policy
+  name: "#policy"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#policy"
+  summary: "Gets the <a href=\"https://cloud.google.com/iam/\">Cloud IAM</a> access control\npolicy for this subscription."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-subscription\"\n\npolicy = sub.policy</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-subscription\"\n\nsub.policy do |p|\n  p.add \"roles/owner\", \"user:owner@example.com\"\nend</pre>"
+  syntax:
+    description: "Gets the <a href=\"https://cloud.google.com/iam/\">Cloud IAM</a> access control\npolicy for this subscription."
+    content: "def policy { |policy| ... } => Policy"
+    arguments: []
+    yields:
+    - description: "(policy) — A block for updating the policy. The latest policy\nwill be read from the Pub/Sub service and passed to the block. After\nthe block completes, the modified policy will be written to the\nservice."
+    yieldparams:
+    - description: "<strong>policy</strong> (Policy) — the current Cloud IAM Policy for this\nsubscription"
+    returnValues:
+    - description: "(Policy) — the current Cloud IAM Policy for this subscription"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#policy=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#policy=
+  name: "#policy="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#policy="
+  summary: "Updates the <a href=\"https://cloud.google.com/iam/\">Cloud IAM</a> access control\npolicy for this subscription. The policy should be read from\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>. See <a href=\"./Google-Cloud-PubSub-Policy\">Policy</a> for an explanation of\nthe policy <code>etag</code> property and how to modify policies.</p>\n\n<p>You can also update the policy by passing a block to <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>, which\nwill call this method internally after the block completes."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-subscription\"\n\npolicy = sub.policy # API call\n\npolicy.add \"roles/owner\", \"user:owner@example.com\"\n\nsub.update_policy policy # API call</pre>"
+  syntax:
+    description: "Updates the <a href=\"https://cloud.google.com/iam/\">Cloud IAM</a> access control\npolicy for this subscription. The policy should be read from\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>. See <a href=\"./Google-Cloud-PubSub-Policy\">Policy</a> for an explanation of\nthe policy <code>etag</code> property and how to modify policies.</p>\n\n<p>You can also update the policy by passing a block to <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>, which\nwill call this method internally after the block completes."
+    content: "def policy= => Policy"
+    arguments:
+    - description: "<strong>new_policy</strong> (Policy) — a new or modified Cloud IAM Policy for this\nsubscription"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Policy) — the policy returned by the API update operation"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#pull(instance)
+  fullName: Google::Cloud::PubSub::Subscription#pull
+  name: "#pull"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#pull"
+  summary: "Pulls messages from the server, blocking until messages are available\nwhen called with the <code>immediate: false</code> option, which is recommended\nto avoid adverse impacts on the performance of pull operations.</p>\n\n<p>Raises an API error with status <code>UNAVAILABLE</code> if there are too many\nconcurrent pull requests pending for the given subscription.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> for the preferred way to process messages as they\nbecome available."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nreceived_messages = sub.pull immediate: false\nreceived_messages.each do |received_message|\n  received_message.acknowledge!\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nreceived_messages = sub.pull immediate: false, max: 10\nreceived_messages.each do |received_message|\n  received_message.acknowledge!\nend</pre>"
+  syntax:
+    description: "Pulls messages from the server, blocking until messages are available\nwhen called with the <code>immediate: false</code> option, which is recommended\nto avoid adverse impacts on the performance of pull operations.</p>\n\n<p>Raises an API error with status <code>UNAVAILABLE</code> if there are too many\nconcurrent pull requests pending for the given subscription.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> for the preferred way to process messages as they\nbecome available."
+    content: "def pull(immediate: true, max: 100) => Array<Google::Cloud::PubSub::ReceivedMessage>"
+    arguments:
+    - description: "<strong>immediate</strong> (Boolean) <em>(defaults to: true)</em> — Whether to return immediately or block until\nmessages are available.</p>\n\n<p><strong>Warning:</strong> The default value of this field is <code>true</code>. However, sending\n<code>true</code> is discouraged because it adversely impacts the performance of\npull operations. We recommend that users always explicitly set this field\nto <code>false</code>.</p>\n\n<p>If this field set to <code>true</code>, the system will respond immediately\neven if it there are no messages available to return in the pull\nresponse. Otherwise, the system may wait (for a bounded amount of time)\nuntil at least one message is available, rather than returning no messages.</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> for the preferred way to process messages as they\nbecome available."
+    - description: "<strong>max</strong> (Integer) <em>(defaults to: 100)</em> — The maximum number of messages to return for this\nrequest. The Pub/Sub system may return fewer than the number\nspecified. The default value is <code>100</code>, the maximum value is <code>1000</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">Google::Cloud::PubSub::ReceivedMessage</a>&gt;)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#push_config(instance)
+  fullName: Google::Cloud::PubSub::Subscription#push_config
+  name: "#push_config"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#push_config"
+  summary: "Inspect the Subscription&#39;s push configuration settings. The\nconfiguration can be changed by modifying the values in the method&#39;s\nblock.</p>\n\n<p>Subscription objects that are reference only will return an empty\n<a href=\"./Google-Cloud-PubSub-Subscription-PushConfig\">PushConfig</a> object, which can be configured and saved\nusing the method&#39;s block. Unlike <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_endpoint_instance_\">#endpoint</a>, which will retrieve the\nfull resource from the API before returning. To get the actual values\nfor a reference object, call <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reload__instance_\">#reload!</a> before calling <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_push_config_instance_\">#push_config</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.push_config.endpoint #=> \"http://example.com/callback\"\nsub.push_config.authentication.email #=> \"user@example.com\"\nsub.push_config.authentication.audience #=> \"client-12345\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-subscription\"\n\nsub.push_config do |pc|\n  pc.endpoint = \"http://example.net/callback\"\n  pc.set_oidc_token \"user@example.net\", \"client-67890\"\nend</pre>"
+  syntax:
+    description: "Inspect the Subscription&#39;s push configuration settings. The\nconfiguration can be changed by modifying the values in the method&#39;s\nblock.</p>\n\n<p>Subscription objects that are reference only will return an empty\n<a href=\"./Google-Cloud-PubSub-Subscription-PushConfig\">PushConfig</a> object, which can be configured and saved\nusing the method&#39;s block. Unlike <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_endpoint_instance_\">#endpoint</a>, which will retrieve the\nfull resource from the API before returning. To get the actual values\nfor a reference object, call <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reload__instance_\">#reload!</a> before calling <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_push_config_instance_\">#push_config</a>."
+    content: "def push_config { |push_config| ... } => Subscription::PushConfig"
+    arguments: []
+    yields:
+    - description: "(push_config) — a block for modifying the push configuration"
+    yieldparams:
+    - description: "<strong>push_config</strong> (<a href=\"./Google-Cloud-PubSub-Subscription-PushConfig\">Subscription::PushConfig</a>) — the push\nconfiguration"
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription-PushConfig\">Subscription::PushConfig</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#reference?(instance)
+  fullName: Google::Cloud::PubSub::Subscription#reference?
+  name: "#reference?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#reference?"
+  summary: "Determines whether the subscription object was created without\nretrieving the resource representation from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.get_subscription \"my-topic-sub\", skip_lookup: true\nsub.reference? #=> true</pre>"
+  syntax:
+    description: "Determines whether the subscription object was created without\nretrieving the resource representation from the Pub/Sub service."
+    content: "def reference? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> when the subscription was created without a\nresource representation, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#refresh!(instance)
+  fullName: Google::Cloud::PubSub::Subscription#refresh!
+  name: "#refresh!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#refresh!"
+  summary: "Reloads the subscription with current data from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.get_subscription \"my-topic-sub\"\nsub.reload!</pre>"
+  syntax:
+    description: "Reloads the subscription with current data from the Pub/Sub service."
+    content: "def refresh! => Google::Cloud::PubSub::Subscription"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>) — Returns the reloaded\nsubscription"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#reload!(instance)
+  fullName: Google::Cloud::PubSub::Subscription#reload!
+  name: "#reload!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#reload!"
+  summary: "Reloads the subscription with current data from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.get_subscription \"my-topic-sub\"\nsub.reload!</pre>"
+  syntax:
+    description: "Reloads the subscription with current data from the Pub/Sub service."
+    content: "def reload! => Google::Cloud::PubSub::Subscription"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription\">Google::Cloud::PubSub::Subscription</a>) — Returns the reloaded\nsubscription"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#remove_dead_letter_policy(instance)
+  fullName: Google::Cloud::PubSub::Subscription#remove_dead_letter_policy
+  name: "#remove_dead_letter_policy"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#remove_dead_letter_policy"
+  summary: "Removes an existing dead letter policy. A dead letter policy specifies the conditions for dead lettering\nmessages in the subscription. If a dead letter policy is not set, dead lettering is disabled.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>.</p>\n\n<p>See #dead&lt;em&gt;letter&lt;/em&gt;topic, #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts and\n#dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsub.dead_letter_topic.name #=> \"projects/my-project/topics/my-dead-letter-topic\"\nsub.dead_letter_max_delivery_attempts #=> 10\n\nsub.remove_dead_letter_policy\n\nsub.dead_letter_topic #=> nil\nsub.dead_letter_max_delivery_attempts #=> nil</pre>"
+  syntax:
+    description: "Removes an existing dead letter policy. A dead letter policy specifies the conditions for dead lettering\nmessages in the subscription. If a dead letter policy is not set, dead lettering is disabled.</p>\n\n<p>Makes an API call to retrieve the dead<em>letter</em>policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>.</p>\n\n<p>See #dead&lt;em&gt;letter&lt;/em&gt;topic, #dead&lt;em&gt;letter&lt;/em&gt;topic=, #dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts and\n#dead&lt;em&gt;letter&lt;/em&gt;max&lt;em&gt;delivery&lt;/em&gt;attempts=."
+    content: "def remove_dead_letter_policy => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> if an existing dead letter policy was removed, <code>false</code> if no existing dead letter\npolicy was present."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#resource?(instance)
+  fullName: Google::Cloud::PubSub::Subscription#resource?
+  name: "#resource?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#resource?"
+  summary: "Determines whether the subscription object was created with a resource\nrepresentation from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.get_subscription \"my-topic-sub\"\nsub.resource? #=> true</pre>"
+  syntax:
+    description: "Determines whether the subscription object was created with a resource\nrepresentation from the Pub/Sub service."
+    content: "def resource? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> when the subscription was created with a\nresource representation, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#retain_acked(instance)
+  fullName: Google::Cloud::PubSub::Subscription#retain_acked
+  name: "#retain_acked"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#retain_acked"
+  summary: "Indicates whether to retain acknowledged messages. If <code>true</code>, then\nmessages are not expunged from the subscription&#39;s backlog, even if\nthey are acknowledged, until they fall out of the <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_retention_instance_\">#retention</a> window.\nDefault is <code>false</code>.</p>\n\n<p>Makes an API call to retrieve the retain_acked value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Indicates whether to retain acknowledged messages. If <code>true</code>, then\nmessages are not expunged from the subscription&#39;s backlog, even if\nthey are acknowledged, until they fall out of the <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_retention_instance_\">#retention</a> window.\nDefault is <code>false</code>.</p>\n\n<p>Makes an API call to retrieve the retain_acked value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def retain_acked => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — Returns <code>true</code> if acknowledged messages are\nretained."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#retain_acked=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#retain_acked=
+  name: "#retain_acked="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#retain_acked="
+  summary: "Sets whether to retain acknowledged messages."
+  type: method
+  example: []
+  syntax:
+    description: "Sets whether to retain acknowledged messages."
+    content: "def retain_acked=(new_retain_acked)"
+    arguments:
+    - description: "<strong>new_retain_acked</strong> (Boolean) — The new retain acknowledged messages\nvalue."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#retention(instance)
+  fullName: Google::Cloud::PubSub::Subscription#retention
+  name: "#retention"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#retention"
+  summary: "How long to retain unacknowledged messages in the subscription&#39;s\nbacklog, from the moment a message is published. If\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_retain_acked_instance_\">#retain_acked</a> is <code>true</code>, then this also configures the retention of\nacknowledged messages, and thus configures how far back in time a\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_seek_instance_\">#seek</a> can be done. Cannot be less than 600 (10 minutes) or more\nthan 604,800 (7 days). Default is 604,800 seconds (7 days).</p>\n\n<p>Makes an API call to retrieve the retention value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "How long to retain unacknowledged messages in the subscription&#39;s\nbacklog, from the moment a message is published. If\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_retain_acked_instance_\">#retain_acked</a> is <code>true</code>, then this also configures the retention of\nacknowledged messages, and thus configures how far back in time a\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_seek_instance_\">#seek</a> can be done. Cannot be less than 600 (10 minutes) or more\nthan 604,800 (7 days). Default is 604,800 seconds (7 days).</p>\n\n<p>Makes an API call to retrieve the retention value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def retention => Numeric"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — The message retention duration in seconds."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#retention=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#retention=
+  name: "#retention="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#retention="
+  summary: "Sets the message retention duration in seconds."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the message retention duration in seconds."
+    content: "def retention=(new_retention)"
+    arguments:
+    - description: "<strong>new_retention</strong> (Numeric) — The new retention value."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#retry_policy(instance)
+  fullName: Google::Cloud::PubSub::Subscription#retry_policy
+  name: "#retry_policy"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#retry_policy"
+  summary: "A policy that specifies how Cloud Pub/Sub retries message delivery for this subscription. If <code>nil</code>, the\ndefault retry policy is applied. This generally implies that messages will be retried as soon as possible\nfor healthy subscribers. Retry Policy will be triggered on NACKs or acknowledgement deadline exceeded events\nfor a given message.</p>\n\n<p>Makes an API call to retrieve the retry_policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsub.retry_policy = Google::Cloud::PubSub::RetryPolicy.new minimum_backoff: 5, maximum_backoff: 300\n\nsub.retry_policy.minimum_backoff #=> 5\nsub.retry_policy.maximum_backoff #=> 300</pre>"
+  syntax:
+    description: "A policy that specifies how Cloud Pub/Sub retries message delivery for this subscription. If <code>nil</code>, the\ndefault retry policy is applied. This generally implies that messages will be retried as soon as possible\nfor healthy subscribers. Retry Policy will be triggered on NACKs or acknowledgement deadline exceeded events\nfor a given message.</p>\n\n<p>Makes an API call to retrieve the retry_policy when called on a reference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def retry_policy => RetryPolicy, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-RetryPolicy\">RetryPolicy</a>, nil) — The retry policy for the subscription, or <code>nil</code>."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#retry_policy=(instance)
+  fullName: Google::Cloud::PubSub::Subscription#retry_policy=
+  name: "#retry_policy="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#retry_policy="
+  summary: "Sets a policy that specifies how Cloud Pub/Sub retries message delivery for this subscription. If <code>nil</code>, the\ndefault retry policy is applied. This generally implies that messages will be retried as soon as possible\nfor healthy subscribers. Retry Policy will be triggered on NACKs or acknowledgement deadline exceeded events\nfor a given message."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsub.retry_policy = Google::Cloud::PubSub::RetryPolicy.new minimum_backoff: 5, maximum_backoff: 300\n\nsub.retry_policy.minimum_backoff #=> 5\nsub.retry_policy.maximum_backoff #=> 300</pre>"
+  syntax:
+    description: "Sets a policy that specifies how Cloud Pub/Sub retries message delivery for this subscription. If <code>nil</code>, the\ndefault retry policy is applied. This generally implies that messages will be retried as soon as possible\nfor healthy subscribers. Retry Policy will be triggered on NACKs or acknowledgement deadline exceeded events\nfor a given message."
+    content: "def retry_policy=(new_retry_policy)"
+    arguments:
+    - description: "<strong>new_retry_policy</strong> (<a href=\"./Google-Cloud-PubSub-RetryPolicy\">RetryPolicy</a>, nil) — A new retry policy for the subscription, or <code>nil</code>."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#seek(instance)
+  fullName: Google::Cloud::PubSub::Subscription#seek
+  name: "#seek"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#seek"
+  summary: "Resets the subscription&#39;s backlog to a given <a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a> or to a point\nin time, whichever is provided in the request."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot\n\nreceived_messages = sub.pull immediate: false\nsub.acknowledge received_messages\n\nsub.seek snapshot</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\ntime = Time.now\n\nreceived_messages = sub.pull immediate: false\nsub.acknowledge received_messages\n\nsub.seek time</pre>"
+  syntax:
+    description: "Resets the subscription&#39;s backlog to a given <a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a> or to a point\nin time, whichever is provided in the request."
+    content: "def seek(snapshot) => Boolean"
+    arguments:
+    - description: "<strong>snapshot</strong> (<a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a>, String, Time) — The <code>Snapshot</code> instance,\nsnapshot name, or time to which to perform the seek.\nIf the argument is a snapshot, the snapshot&#39;s topic must be the\nsame as that of the subscription. If it is a time, messages retained\nin the subscription that were published before this time are marked\nas acknowledged, and messages retained in the subscription that were\npublished after this time are marked as unacknowledged. Note that\nthis operation affects only those messages retained in the\nsubscription. For example, if the time corresponds to a point before\nthe message retention window (or to a point before the system&#39;s\nnotion of the subscription creation time), only retained messages\nwill be marked as unacknowledged, and already-expunged messages will\nnot be restored."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — Returns <code>true</code> if the seek was successful."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#test_permissions(instance)
+  fullName: Google::Cloud::PubSub::Subscription#test_permissions
+  name: "#test_permissions"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#test_permissions"
+  summary: "Tests the specified permissions against the <a href=\"https://cloud.google.com/iam/\">Cloud\nIAM</a> access control policy."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-subscription\"\nperms = sub.test_permissions \"pubsub.subscriptions.get\",\n                             \"pubsub.subscriptions.consume\"\nperms.include? \"pubsub.subscriptions.get\" #=> true\nperms.include? \"pubsub.subscriptions.consume\" #=> false</pre>"
+  syntax:
+    description: "Tests the specified permissions against the <a href=\"https://cloud.google.com/iam/\">Cloud\nIAM</a> access control policy."
+    content: "def test_permissions(*permissions) => Array<String>"
+    arguments:
+    - description: "<strong>permissions</strong> (String, Array&lt;String&gt;) — <p>The set of permissions to\ncheck access for. Permissions with wildcards (such as <code>*</code> or\n<code>storage.*</code>) are not allowed.</p>\n\n<p>The permissions that can be checked on a subscription are:</p>\n\n<ul>\n<li>pubsub.subscriptions.consume</li>\n<li>pubsub.subscriptions.get</li>\n<li>pubsub.subscriptions.delete</li>\n<li>pubsub.subscriptions.update</li>\n<li>pubsub.subscriptions.getIamPolicy</li>\n<li>pubsub.subscriptions.setIamPolicy</li>\n</ul>"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;String&gt;) — The permissions that have access."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#topic(instance)
+  fullName: Google::Cloud::PubSub::Subscription#topic
+  name: "#topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#topic"
+  summary: "The <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> from which this subscription receives messages.</p>\n\n<p>Makes an API call to retrieve the topic information when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.topic.name #=> \"projects/my-project/topics/my-topic\"</pre>"
+  syntax:
+    description: "The <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> from which this subscription receives messages.</p>\n\n<p>Makes an API call to retrieve the topic information when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def topic => Topic"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Topic</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#topic_retention(instance)
+  fullName: Google::Cloud::PubSub::Subscription#topic_retention
+  name: "#topic_retention"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#topic_retention"
+  summary: "Indicates the minimum duration for which a message is retained after\nit is published to the subscription&#39;s topic. If this field is set,\nmessages published to the subscription&#39;s topic in the last\n<code>topic_message_retention_duration</code> are always available to subscribers.\nOutput only. See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_retention_instance_\">Topic#retention</a>.</p>\n\n<p>Makes an API call to retrieve the retention value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Indicates the minimum duration for which a message is retained after\nit is published to the subscription&#39;s topic. If this field is set,\nmessages published to the subscription&#39;s topic in the last\n<code>topic_message_retention_duration</code> are always available to subscribers.\nOutput only. See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_retention_instance_\">Topic#retention</a>.</p>\n\n<p>Makes an API call to retrieve the retention value when called on a\nreference object. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_reference__instance_\">#reference?</a>."
+    content: "def topic_retention => Numeric, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric, nil) — The topic message retention duration in seconds,\nor <code>nil</code> if not set."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#update_policy(instance)
+  fullName: Google::Cloud::PubSub::Subscription#update_policy
+  name: "#update_policy"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#update_policy"
+  summary: "Updates the <a href=\"https://cloud.google.com/iam/\">Cloud IAM</a> access control\npolicy for this subscription. The policy should be read from\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>. See <a href=\"./Google-Cloud-PubSub-Policy\">Policy</a> for an explanation of\nthe policy <code>etag</code> property and how to modify policies.</p>\n\n<p>You can also update the policy by passing a block to <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>, which\nwill call this method internally after the block completes."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-subscription\"\n\npolicy = sub.policy # API call\n\npolicy.add \"roles/owner\", \"user:owner@example.com\"\n\nsub.update_policy policy # API call</pre>"
+  syntax:
+    description: "Updates the <a href=\"https://cloud.google.com/iam/\">Cloud IAM</a> access control\npolicy for this subscription. The policy should be read from\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>. See <a href=\"./Google-Cloud-PubSub-Policy\">Policy</a> for an explanation of\nthe policy <code>etag</code> property and how to modify policies.</p>\n\n<p>You can also update the policy by passing a block to <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_policy_instance_\">#policy</a>, which\nwill call this method internally after the block completes."
+    content: "def update_policy(new_policy) => Policy"
+    arguments:
+    - description: "<strong>new_policy</strong> (Policy) — a new or modified Cloud IAM Policy for this\nsubscription"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Policy) — the policy returned by the API update operation"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription#wait_for_messages(instance)
+  fullName: Google::Cloud::PubSub::Subscription#wait_for_messages
+  name: "#wait_for_messages"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#wait_for_messages"
+  summary: "Pulls from the server while waiting for messages to become available.\nThis is the same as:</p>\n\n<p>subscription.pull immediate: false</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> for the preferred way to process messages as they\nbecome available."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nreceived_messages = sub.wait_for_messages\nreceived_messages.each do |received_message|\n  received_message.acknowledge!\nend</pre>"
+  syntax:
+    description: "Pulls from the server while waiting for messages to become available.\nThis is the same as:</p>\n\n<p>subscription.pull immediate: false</p>\n\n<p>See also <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">#listen</a> for the preferred way to process messages as they\nbecome available."
+    content: "def wait_for_messages(max: 100) => Array<Google::Cloud::PubSub::ReceivedMessage>"
+    arguments:
+    - description: "<strong>max</strong> (Integer) <em>(defaults to: 100)</em> — The maximum number of messages to return for this\nrequest. The Pub/Sub system may return fewer than the number\nspecified. The default value is <code>100</code>, the maximum value is <code>1000</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;<a href=\"./Google-Cloud-PubSub-ReceivedMessage\">Google::Cloud::PubSub::ReceivedMessage</a>&gt;)"
+    raises: []
+references:
+- uid: Google::Cloud::PubSub::Subscription::List
+  fullName: Google::Cloud::PubSub::Subscription::List
+  name: List
+  module: google-cloud-pubsub
+  id: List
+  summary: "Subscription::List is a special case Array with additional values."
+  parent: Google::Cloud::PubSub::Subscription
+- uid: Google::Cloud::PubSub::Subscription::PushConfig
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig
+  name: PushConfig
+  module: google-cloud-pubsub
+  id: PushConfig
+  summary: "Configuration for a push delivery endpoint."
+  parent: Google::Cloud::PubSub::Subscription

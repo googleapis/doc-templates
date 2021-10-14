@@ -1,0 +1,212 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Subscription::PushConfig
+  children: 
+  - Google::Cloud::PubSub::Subscription::PushConfig#authentication(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#authentication=(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#endpoint(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#endpoint=(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#initialize(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#oidc_token?(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#set_oidc_token(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#version(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig#version=(instance)
+  - Google::Cloud::PubSub::Subscription::PushConfig::OidcToken
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: PushConfig
+  summary: "Configuration for a push delivery endpoint."
+  type: "class"
+  name: Google::Cloud::PubSub::Subscription::PushConfig
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\"\n\npush_config = Google::Cloud::PubSub::Subscription::PushConfig.new endpoint: \"http://example.net/callback\"\npush_config.set_oidc_token \"service-account@example.net\", \"audience-header-value\"\n\nsub = topic.subscribe \"my-subscription\", push_config: push_config</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\nsub.push_config.endpoint #=> \"http://example.com/callback\"\nsub.push_config.authentication.email #=> \"user@example.com\"\nsub.push_config.authentication.audience #=> \"client-12345\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-subscription\"\n\nsub.push_config do |pc|\n  pc.endpoint = \"http://example.net/callback\"\n  pc.set_oidc_token \"user@example.net\", \"client-67890\"\nend</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#authentication(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#authentication
+  name: "#authentication"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#authentication"
+  summary: "The authentication method used by push endpoints to verify the source of push requests."
+  type: method
+  example: []
+  syntax:
+    description: "The authentication method used by push endpoints to verify the source of push requests."
+    content: "def authentication => OidcToken, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription-PushConfig-OidcToken\">OidcToken</a>, nil) — An OIDC JWT token if specified, <code>nil</code>\notherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#authentication=(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#authentication=
+  name: "#authentication="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#authentication="
+  summary: "Sets the authentication method used by push endpoints to verify the source of push requests."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the authentication method used by push endpoints to verify the source of push requests."
+    content: "def authentication=(new_auth)"
+    arguments:
+    - description: "<strong>new_auth</strong> (<a href=\"./Google-Cloud-PubSub-Subscription-PushConfig-OidcToken\">OidcToken</a>, nil) — An authentication value."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#endpoint(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#endpoint
+  name: "#endpoint"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#endpoint"
+  summary: "A URL locating the endpoint to which messages should be pushed. For example, a Webhook endpoint might use\n<code>https://example.com/push</code>."
+  type: method
+  example: []
+  syntax:
+    description: "A URL locating the endpoint to which messages should be pushed. For example, a Webhook endpoint might use\n<code>https://example.com/push</code>."
+    content: "def endpoint => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#endpoint=(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#endpoint=
+  name: "#endpoint="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#endpoint="
+  summary: "Sets the URL locating the endpoint to which messages should be pushed. For example, a Webhook endpoint might\nuse <code>https://example.com/push</code>."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the URL locating the endpoint to which messages should be pushed. For example, a Webhook endpoint might\nuse <code>https://example.com/push</code>."
+    content: "def endpoint=(new_endpoint)"
+    arguments:
+    - description: "<strong>new_endpoint</strong> (String, nil) — New URL value"
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#initialize(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#initialize
+  name: "#initialize"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#initialize"
+  summary: "Creates a new push configuration."
+  type: method
+  example: []
+  syntax:
+    description: "Creates a new push configuration."
+    content: "def initialize(endpoint: nil, email: nil, audience: nil) => PushConfig"
+    arguments:
+    - description: "<strong>endpoint</strong> (String) <em>(defaults to: nil)</em> — A URL locating the endpoint to which messages should be pushed. For\nexample, a Webhook endpoint might use <code>https://example.com/push</code>."
+    - description: "<strong>email</strong> (String) <em>(defaults to: nil)</em> — The service account email to be used for generating the OIDC token.\nThe caller must have the <code>iam.serviceAccounts.actAs</code> permission for the service account."
+    - description: "<strong>audience</strong> (String) <em>(defaults to: nil)</em> — The audience to be used when generating OIDC token. The audience claim identifies\nthe recipients that the JWT is intended for. The audience value is a single case-sensitive string. Having\nmultiple values (array) for the audience field is not supported. More info about the OIDC JWT token\naudience here: https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if not specified, the <code>endpoint</code>\nURL will be used."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscription-PushConfig\">PushConfig</a>) — a new instance of PushConfig"
+    raises:
+    - description: "(ArgumentError)"
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#oidc_token?(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#oidc_token?
+  name: "#oidc_token?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#oidc_token?"
+  summary: "Checks whether authentication is an <a href=\"./Google-Cloud-PubSub-Subscription-PushConfig-OidcToken\">OidcToken</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Checks whether authentication is an <a href=\"./Google-Cloud-PubSub-Subscription-PushConfig-OidcToken\">OidcToken</a>."
+    content: "def oidc_token? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#set_oidc_token(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#set_oidc_token
+  name: "#set_oidc_token"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#set_oidc_token"
+  summary: "Sets the authentication method to use an <a href=\"./Google-Cloud-PubSub-Subscription-PushConfig-OidcToken\">OidcToken</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the authentication method to use an <a href=\"./Google-Cloud-PubSub-Subscription-PushConfig-OidcToken\">OidcToken</a>."
+    content: "def set_oidc_token(email, audience)"
+    arguments:
+    - description: "<strong>email</strong> (String) — Service account email."
+    - description: "<strong>audience</strong> (String) — Audience to be used."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#version(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#version
+  name: "#version"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#version"
+  summary: "<p>The format of the pushed message. This attribute indicates the version of the data expected by the endpoint.\nThis controls the shape of the pushed message (i.e., its fields and metadata). The endpoint version is based\non the version of the Pub/Sub API.</p>\n\n<p>If not present during the Subscription creation, it will default to the version of the API used to make such\ncall.</p>\n\n<p>The possible values for this attribute are:</p>\n\n<ul>\n<li><code>v1beta1</code>: uses the push format defined in the v1beta1 Pub/Sub\nAPI.</li>\n<li><code>v1</code> or <code>v1beta2</code>: uses the push format defined in the v1 Pub/Sub\nAPI.</li>\n</ul>"
+  type: method
+  example: []
+  syntax:
+    description: "<p>The format of the pushed message. This attribute indicates the version of the data expected by the endpoint.\nThis controls the shape of the pushed message (i.e., its fields and metadata). The endpoint version is based\non the version of the Pub/Sub API.</p>\n\n<p>If not present during the Subscription creation, it will default to the version of the API used to make such\ncall.</p>\n\n<p>The possible values for this attribute are:</p>\n\n<ul>\n<li><code>v1beta1</code>: uses the push format defined in the v1beta1 Pub/Sub\nAPI.</li>\n<li><code>v1</code> or <code>v1beta2</code>: uses the push format defined in the v1 Pub/Sub\nAPI.</li>\n</ul>"
+    content: "def version => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String)"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscription::PushConfig#version=(instance)
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig#version=
+  name: "#version="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#version="
+  summary: "<p>Sets the format of the pushed message.</p>\n\n<p>The possible values for this attribute are:</p>\n\n<ul>\n<li><code>v1beta1</code>: uses the push format defined in the v1beta1 Pub/Sub\nAPI.</li>\n<li><code>v1</code> or <code>v1beta2</code>: uses the push format defined in the v1 Pub/Sub\nAPI.</li>\n</ul>"
+  type: method
+  example: []
+  syntax:
+    description: "<p>Sets the format of the pushed message.</p>\n\n<p>The possible values for this attribute are:</p>\n\n<ul>\n<li><code>v1beta1</code>: uses the push format defined in the v1beta1 Pub/Sub\nAPI.</li>\n<li><code>v1</code> or <code>v1beta2</code>: uses the push format defined in the v1 Pub/Sub\nAPI.</li>\n</ul>"
+    content: "def version=(new_version)"
+    arguments:
+    - description: "<strong>new_version</strong> (String, nil) — The new version value."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+references:
+- uid: Google::Cloud::PubSub::Subscription::PushConfig::OidcToken
+  fullName: Google::Cloud::PubSub::Subscription::PushConfig::OidcToken
+  name: OidcToken
+  module: google-cloud-pubsub
+  id: OidcToken
+  summary: "Contains information needed for generating an <a href=\"https://developers.google.com/identity/protocols/OpenIDConnect\">OpenID Connect\ntoken</a>."
+  parent: Google::Cloud::PubSub::Subscription::PushConfig

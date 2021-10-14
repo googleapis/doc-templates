@@ -2,22 +2,82 @@
 items:
 - uid: Google::Cloud
   children: 
-  - Google::Cloud::Vision
+  - Google::Cloud.pubsub(class)
+  - Google::Cloud#pubsub(instance)
+  - Google::Cloud::PubSub
+  - Google::Cloud::Pubsub
   fullName: Google::Cloud
   langs:
   - ruby
-  module: google-cloud-vision-v1
+  module: google-cloud-pubsub
   id: Cloud
   summary: ""
   type: "module"
   name: Google::Cloud
   example: []
 
+- uid: Google::Cloud.pubsub(class)
+  fullName: Google::Cloud.pubsub
+  name: ".pubsub"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: ".pubsub"
+  summary: "Creates a new object for connecting to the Pub/Sub service.\nEach call creates a new connection.</p>\n\n<p>For more information on connecting to Google Cloud see the\n<a href=\"../file.AUTHENTICATION.yml\" title=\"Authentication Guide\">Authentication Guide</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud\"\n\npubsub = Google::Cloud.pubsub\n\ntopic = pubsub.topic \"my-topic\"\ntopic.publish \"task completed\"</pre>"
+  syntax:
+    description: "Creates a new object for connecting to the Pub/Sub service.\nEach call creates a new connection.</p>\n\n<p>For more information on connecting to Google Cloud see the\n<a href=\"../file.AUTHENTICATION.yml\" title=\"Authentication Guide\">Authentication Guide</a>."
+    content: "def self.pubsub(project_id = nil, credentials = nil, scope: nil, timeout: nil) => Google::Cloud::PubSub::Project"
+    arguments:
+    - description: "<strong>project_id</strong> (String) — Project identifier for the Pub/Sub service you\nare connecting to. If not present, the default project for the\ncredentials is used."
+    - description: "<strong>credentials</strong> (String, Hash, Google::Auth::Credentials) — The path to\nthe keyfile as a String, the contents of the keyfile as a Hash, or a\nGoogle::Auth::Credentials object.\n(See <a href=\"./Google-Cloud-PubSub-Credentials\">PubSub::Credentials</a>)"
+    - description: "<strong>scope</strong> (String, Array&lt;String&gt;) <em>(defaults to: nil)</em> — <p>The OAuth 2.0 scopes controlling the\nset of resources and operations that the connection can access. See\n<a href=\"https://developers.google.com/identity/protocols/OAuth2\">Using OAuth 2.0 to Access Google\nAPIs</a>.</p>\n\n<p>The default scope is:</p>\n\n<ul>\n<li><code>https://www.googleapis.com/auth/pubsub</code></li>\n</ul>"
+    - description: "<strong>timeout</strong> (Integer) <em>(defaults to: nil)</em> — Default timeout to use in requests. Optional."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Project\">Google::Cloud::PubSub::Project</a>)"
+    raises: []
+- uid: Google::Cloud#pubsub(instance)
+  fullName: Google::Cloud#pubsub
+  name: "#pubsub"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#pubsub"
+  summary: "Creates a new object for connecting to the Pub/Sub service.\nEach call creates a new connection.</p>\n\n<p>For more information on connecting to Google Cloud see the\n<a href=\"../file.AUTHENTICATION.yml\" title=\"Authentication Guide\">Authentication Guide</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud\"\n\ngcloud = Google::Cloud.new\npubsub = gcloud.pubsub\ntopic = pubsub.topic \"my-topic\"\ntopic.publish \"task completed\"</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud\"\n\ngcloud  = Google::Cloud.new\nplatform_scope = \"https://www.googleapis.com/auth/cloud-platform\"\npubsub = gcloud.pubsub scope: platform_scope</pre>"
+  syntax:
+    description: "Creates a new object for connecting to the Pub/Sub service.\nEach call creates a new connection.</p>\n\n<p>For more information on connecting to Google Cloud see the\n<a href=\"../file.AUTHENTICATION.yml\" title=\"Authentication Guide\">Authentication Guide</a>."
+    content: "def pubsub(scope: nil, timeout: nil) => Google::Cloud::PubSub::Project"
+    arguments:
+    - description: "<strong>scope</strong> (String, Array&lt;String&gt;) <em>(defaults to: nil)</em> — <p>The OAuth 2.0 scopes controlling the\nset of resources and operations that the connection can access. See\n<a href=\"https://developers.google.com/identity/protocols/OAuth2\">Using OAuth 2.0 to Access Google\nAPIs</a>.</p>\n\n<p>The default scope is:</p>\n\n<ul>\n<li><code>https://www.googleapis.com/auth/pubsub</code></li>\n</ul>"
+    - description: "<strong>timeout</strong> (Integer) <em>(defaults to: nil)</em> — Default timeout to use in requests. Optional."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Project\">Google::Cloud::PubSub::Project</a>)"
+    raises: []
+- uid: Google::Cloud::Pubsub
+  fullName: Google::Cloud::Pubsub
+  name: Pubsub
+  parent: Google::Cloud
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: Pubsub
+  summary: "<b>value: </b>PubSub<br>Legacy veneer namespace"
+  type: const
 references:
-- uid: Google::Cloud::Vision
-  fullName: Google::Cloud::Vision
-  name: Vision
-  module: google-cloud-vision-v1
-  id: Vision
-  summary: ""
+- uid: Google::Cloud::PubSub
+  fullName: Google::Cloud::PubSub
+  name: PubSub
+  module: google-cloud-pubsub
+  id: PubSub
+  summary: "<h1>Google Cloud Pub/Sub</h1>\n\n<p>Google Cloud Pub/Sub is designed to provide reliable, many-to-many,\nasynchronous messaging between applications. Publisher applications can\nsend messages to a &quot;topic&quot; and other applications can subscribe to that\ntopic to receive the messages. By decoupling senders and receivers, Google\nCloud Pub/Sub allows developers to communicate between independently\nwritten applications.</p>\n\n<p>See <a href=\"../file.OVERVIEW.yml\" title=\"Google Cloud Pub/Sub Overview\">Google Cloud Pub/Sub Overview</a>.</p>"
   parent: Google::Cloud

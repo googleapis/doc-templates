@@ -1,0 +1,40 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::BatchPublisher
+  children: 
+  - Google::Cloud::PubSub::BatchPublisher#publish(instance)
+  fullName: Google::Cloud::PubSub::BatchPublisher
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: BatchPublisher
+  summary: "Topic Batch Publisher object used to publish multiple messages at\nonce."
+  type: "class"
+  name: Google::Cloud::PubSub::BatchPublisher
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopic = pubsub.topic \"my-topic\"\nmsgs = topic.publish do |batch_publisher|\n  batch_publisher.publish \"task 1 completed\", foo: :bar\n  batch_publisher.publish \"task 2 completed\", foo: :baz\n  batch_publisher.publish \"task 3 completed\", foo: :bif\nend</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::BatchPublisher#publish(instance)
+  fullName: Google::Cloud::PubSub::BatchPublisher#publish
+  name: "#publish"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish"
+  summary: "Add a message to the batch to be published to the topic.\nAll messages added to the batch will be published at once.\nSee <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_instance_\">Topic#publish</a>"
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopic = pubsub.topic \"my-topic\"\nmsgs = topic.publish do |batch_publisher|\n  batch_publisher.publish \"task 1 completed\", foo: :bar\n  batch_publisher.publish \"task 2 completed\", foo: :baz\n  batch_publisher.publish \"task 3 completed\", foo: :bif\nend</pre>"
+  syntax:
+    description: "Add a message to the batch to be published to the topic.\nAll messages added to the batch will be published at once.\nSee <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_instance_\">Topic#publish</a>"
+    content: "def publish(data, attributes = nil, ordering_key: nil, **extra_attrs)"
+    arguments:
+    - description: "<strong>data</strong> (String, File) — The message payload. This will be converted\nto bytes encoded as ASCII-8BIT."
+    - description: "<strong>attributes</strong> (Hash) — Optional attributes for the message."
+    - description: "<strong>ordering_key</strong> (String) <em>(defaults to: nil)</em> — Identifies related messages for which\npublish order should be respected."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+references: []

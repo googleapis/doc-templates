@@ -1,0 +1,171 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Message
+  children: 
+  - Google::Cloud::PubSub::Message#attributes(instance)
+  - Google::Cloud::PubSub::Message#data(instance)
+  - Google::Cloud::PubSub::Message#initialize(instance)
+  - Google::Cloud::PubSub::Message#message_id(instance)
+  - Google::Cloud::PubSub::Message#msg_id(instance)
+  - Google::Cloud::PubSub::Message#ordering_key(instance)
+  - Google::Cloud::PubSub::Message#publish_time(instance)
+  - Google::Cloud::PubSub::Message#published_at(instance)
+  fullName: Google::Cloud::PubSub::Message
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: Message
+  summary: "<h1>Message</h1>\n\n<p>Represents a Pub/Sub Message.</p>\n\n<p>Message objects are created by <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_instance_\">Topic#publish</a>. <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_pull_instance_\">Subscription#pull</a>\nreturns an array of <a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> objects, each of which contains a\nMessage object. Each <a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> object can be acknowledged and/or\ndelayed.</p>"
+  type: "class"
+  name: Google::Cloud::PubSub::Message
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\n# Publish a message\ntopic = pubsub.topic \"my-topic\"\nmessage = topic.publish \"task completed\"\nmessage.data #=> \"task completed\"\n\n# Listen for messages\nsub = pubsub.subscription \"my-topic-sub\"\nsubscriber = sub.listen do |received_message|\n  # process message\n  received_message.acknowledge!\nend\n\n# Start background threads that will call the block passed to listen.\nsubscriber.start\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::Message#attributes(instance)
+  fullName: Google::Cloud::PubSub::Message#attributes
+  name: "#attributes"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#attributes"
+  summary: "Optional attributes for the message."
+  type: method
+  example: []
+  syntax:
+    description: "Optional attributes for the message."
+    content: "def attributes"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Message#data(instance)
+  fullName: Google::Cloud::PubSub::Message#data
+  name: "#data"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#data"
+  summary: "The message payload. This data is a list of bytes encoded as\nASCII-8BIT."
+  type: method
+  example: []
+  syntax:
+    description: "The message payload. This data is a list of bytes encoded as\nASCII-8BIT."
+    content: "def data"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Message#initialize(instance)
+  fullName: Google::Cloud::PubSub::Message#initialize
+  name: "#initialize"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#initialize"
+  summary: "Create an empty Message object.\nThis can be used to publish several messages in bulk."
+  type: method
+  example: []
+  syntax:
+    description: "Create an empty Message object.\nThis can be used to publish several messages in bulk."
+    content: "def initialize(data = nil, attributes = {}) => Message"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Message\">Message</a>) — a new instance of Message"
+    raises: []
+- uid: Google::Cloud::PubSub::Message#message_id(instance)
+  fullName: Google::Cloud::PubSub::Message#message_id
+  name: "#message_id"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#message_id"
+  summary: "The ID of this message, assigned by the server at publication time.\nGuaranteed to be unique within the topic."
+  type: method
+  example: []
+  syntax:
+    description: "The ID of this message, assigned by the server at publication time.\nGuaranteed to be unique within the topic."
+    content: "def message_id"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Message#msg_id(instance)
+  fullName: Google::Cloud::PubSub::Message#msg_id
+  name: "#msg_id"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#msg_id"
+  summary: "The ID of this message, assigned by the server at publication time.\nGuaranteed to be unique within the topic."
+  type: method
+  example: []
+  syntax:
+    description: "The ID of this message, assigned by the server at publication time.\nGuaranteed to be unique within the topic."
+    content: "def msg_id"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Message#ordering_key(instance)
+  fullName: Google::Cloud::PubSub::Message#ordering_key
+  name: "#ordering_key"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#ordering_key"
+  summary: "Identifies related messages for which publish order should be\nrespected.</p>\n\n<p>Google Cloud Pub/Sub ordering keys provide the ability to ensure\nrelated messages are sent to subscribers in the order in which they\nwere published. Messages can be tagged with an ordering key, a string\nthat identifies related messages for which publish order should be\nrespected. The service guarantees that, for a given ordering key and\npublisher, messages are sent to subscribers in the order in which they\nwere published. Ordering does not require sacrificing high throughput\nor scalability, as the service automatically distributes messages for\ndifferent ordering keys across subscribers.</p>\n\n<p>See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a> and <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Subscription#listen</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Identifies related messages for which publish order should be\nrespected.</p>\n\n<p>Google Cloud Pub/Sub ordering keys provide the ability to ensure\nrelated messages are sent to subscribers in the order in which they\nwere published. Messages can be tagged with an ordering key, a string\nthat identifies related messages for which publish order should be\nrespected. The service guarantees that, for a given ordering key and\npublisher, messages are sent to subscribers in the order in which they\nwere published. Ordering does not require sacrificing high throughput\nor scalability, as the service automatically distributes messages for\ndifferent ordering keys across subscribers.</p>\n\n<p>See <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a> and <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Subscription#listen</a>."
+    content: "def ordering_key => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String)"
+    raises: []
+- uid: Google::Cloud::PubSub::Message#publish_time(instance)
+  fullName: Google::Cloud::PubSub::Message#publish_time
+  name: "#publish_time"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish_time"
+  summary: "The time at which the message was published."
+  type: method
+  example: []
+  syntax:
+    description: "The time at which the message was published."
+    content: "def publish_time"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Message#published_at(instance)
+  fullName: Google::Cloud::PubSub::Message#published_at
+  name: "#published_at"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#published_at"
+  summary: "The time at which the message was published."
+  type: method
+  example: []
+  syntax:
+    description: "The time at which the message was published."
+    content: "def published_at"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+references: []

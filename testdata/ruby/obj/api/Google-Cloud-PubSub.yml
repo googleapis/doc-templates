@@ -1,0 +1,229 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub
+  children: 
+  - Google::Cloud::PubSub.configure(class)
+  - Google::Cloud::PubSub.new(class)
+  - Google::Cloud::PubSub::Topic
+  - Google::Cloud::PubSub::AsyncPublisherStopped
+  - Google::Cloud::PubSub::OrderedMessagesDisabled
+  - Google::Cloud::PubSub::OrderedMessageDeliveryError
+  - Google::Cloud::PubSub::OrderingKeyError
+  - Google::Cloud::PubSub::FlowControlLimitError
+  - Google::Cloud::PubSub::Policy
+  - Google::Cloud::PubSub::Schema
+  - Google::Cloud::PubSub::Message
+  - Google::Cloud::PubSub::Project
+  - Google::Cloud::PubSub::VERSION
+  - Google::Cloud::PubSub::Snapshot
+  - Google::Cloud::PubSub::Subscriber
+  - Google::Cloud::PubSub::Credentials
+  - Google::Cloud::PubSub::RetryPolicy
+  - Google::Cloud::PubSub::Subscription
+  - Google::Cloud::PubSub::PublishResult
+  - Google::Cloud::PubSub::AsyncPublisher
+  - Google::Cloud::PubSub::BatchPublisher
+  - Google::Cloud::PubSub::ReceivedMessage
+  fullName: Google::Cloud::PubSub
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: PubSub
+  summary: "<h1>Google Cloud Pub/Sub</h1>\n\n<p>Google Cloud Pub/Sub is designed to provide reliable, many-to-many,\nasynchronous messaging between applications. Publisher applications can\nsend messages to a &quot;topic&quot; and other applications can subscribe to that\ntopic to receive the messages. By decoupling senders and receivers, Google\nCloud Pub/Sub allows developers to communicate between independently\nwritten applications.</p>\n\n<p>See <a href=\"../../file.OVERVIEW.yml\" title=\"Google Cloud Pub/Sub Overview\">Google Cloud Pub/Sub Overview</a>.</p>"
+  type: "module"
+  name: Google::Cloud::PubSub
+  example: []
+
+- uid: Google::Cloud::PubSub.configure(class)
+  fullName: Google::Cloud::PubSub.configure
+  name: ".configure"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: ".configure"
+  summary: "<p>Configure the Google Cloud PubSub library.</p>\n\n<p>The following PubSub configuration parameters are supported:</p>\n\n<ul>\n<li><code>project_id</code> - (String) Identifier for a PubSub project. (The\nparameter <code>project</code> is considered deprecated, but may also be used.)</li>\n<li><code>credentials</code> - (String, Hash, Google::Auth::Credentials) The path to\nthe keyfile as a String, the contents of the keyfile as a Hash, or a\nGoogle::Auth::Credentials object. (See <a href=\"./Google-Cloud-PubSub-Credentials\">Credentials</a>) (The\nparameter <code>keyfile</code> is considered deprecated, but may also be used.)</li>\n<li><code>scope</code> - (String, Array<String>) The OAuth 2.0 scopes controlling\nthe set of resources and operations that the connection can access.</li>\n<li><code>retries</code> - (Integer) Number of times to retry requests on server\nerror.</li>\n<li><code>timeout</code> - (Integer) Default timeout to use in requests.</li>\n<li><code>endpoint</code> - (String) Override of the endpoint host name, or <code>nil</code>\nto use the default endpoint.</li>\n<li><code>emulator_host</code> - (String) Host name of the emulator. Defaults to\n<code>ENV[&quot;PUBSUB_EMULATOR_HOST&quot;]</code></li>\n<li><code>on_error</code> - (Proc) A Proc to be run when an error is encountered\non a background thread. The Proc must take the error object as the\nsingle argument. (See <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_on_error_instance_\">Subscriber#on_error</a>.)</li>\n</ul>"
+  type: method
+  example: []
+  syntax:
+    description: "<p>Configure the Google Cloud PubSub library.</p>\n\n<p>The following PubSub configuration parameters are supported:</p>\n\n<ul>\n<li><code>project_id</code> - (String) Identifier for a PubSub project. (The\nparameter <code>project</code> is considered deprecated, but may also be used.)</li>\n<li><code>credentials</code> - (String, Hash, Google::Auth::Credentials) The path to\nthe keyfile as a String, the contents of the keyfile as a Hash, or a\nGoogle::Auth::Credentials object. (See <a href=\"./Google-Cloud-PubSub-Credentials\">Credentials</a>) (The\nparameter <code>keyfile</code> is considered deprecated, but may also be used.)</li>\n<li><code>scope</code> - (String, Array<String>) The OAuth 2.0 scopes controlling\nthe set of resources and operations that the connection can access.</li>\n<li><code>retries</code> - (Integer) Number of times to retry requests on server\nerror.</li>\n<li><code>timeout</code> - (Integer) Default timeout to use in requests.</li>\n<li><code>endpoint</code> - (String) Override of the endpoint host name, or <code>nil</code>\nto use the default endpoint.</li>\n<li><code>emulator_host</code> - (String) Host name of the emulator. Defaults to\n<code>ENV[&quot;PUBSUB_EMULATOR_HOST&quot;]</code></li>\n<li><code>on_error</code> - (Proc) A Proc to be run when an error is encountered\non a background thread. The Proc must take the error object as the\nsingle argument. (See <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_on_error_instance_\">Subscriber#on_error</a>.)</li>\n</ul>"
+    content: "def self.configure => Google::Cloud::Config"
+    arguments: []
+    yields:
+    - description: "(Google::Cloud.configure.pubsub)"
+    yieldparams: []
+    returnValues:
+    - description: "(Google::Cloud::Config) — The configuration object the\nGoogle::Cloud::PubSub library uses."
+    raises: []
+- uid: Google::Cloud::PubSub.new(class)
+  fullName: Google::Cloud::PubSub.new
+  name: ".new"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: ".new"
+  summary: "Creates a new object for connecting to the Pub/Sub service.\nEach call creates a new connection.</p>\n\n<p>For more information on connecting to Google Cloud see the\n<a href=\"../../file.AUTHENTICATION.yml\" title=\"Authentication Guide\">Authentication Guide</a>."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopic = pubsub.topic \"my-topic\"\ntopic.publish \"task completed\"</pre>"
+  syntax:
+    description: "Creates a new object for connecting to the Pub/Sub service.\nEach call creates a new connection.</p>\n\n<p>For more information on connecting to Google Cloud see the\n<a href=\"../../file.AUTHENTICATION.yml\" title=\"Authentication Guide\">Authentication Guide</a>."
+    content: "def self.new(project_id: nil, credentials: nil, scope: nil, timeout: nil, endpoint: nil, emulator_host: nil, project: nil, keyfile: nil) => Google::Cloud::PubSub::Project"
+    arguments:
+    - description: "<strong>project_id</strong> (String) <em>(defaults to: nil)</em> — Project identifier for the Pub/Sub service\nyou are connecting to. If not present, the default project for the\ncredentials is used."
+    - description: "<strong>credentials</strong> (String, Hash, Google::Auth::Credentials) <em>(defaults to: nil)</em> — The path to\nthe keyfile as a String, the contents of the keyfile as a Hash, or a\nGoogle::Auth::Credentials object. (See <a href=\"./Google-Cloud-PubSub-Credentials\">Credentials</a>)"
+    - description: "<strong>scope</strong> (String, Array&lt;String&gt;) <em>(defaults to: nil)</em> — <p>The OAuth 2.0 scopes controlling\nthe set of resources and operations that the connection can access.\nSee <a href=\"https://developers.google.com/identity/protocols/OAuth2\">Using OAuth 2.0 to Access Google\nAPIs</a>.</p>\n\n<p>The default scope is:</p>\n\n<ul>\n<li><code>https://www.googleapis.com/auth/pubsub</code></li>\n</ul>"
+    - description: "<strong>timeout</strong> (Integer) <em>(defaults to: nil)</em> — Default timeout to use in requests. Optional."
+    - description: "<strong>endpoint</strong> (String) <em>(defaults to: nil)</em> — Override of the endpoint host name. Optional.\nIf the param is nil, uses the default endpoint."
+    - description: "<strong>emulator_host</strong> (String) <em>(defaults to: nil)</em> — Pub/Sub emulator host. Optional.\nIf the param is nil, uses the value of the <code>emulator_host</code> config."
+    - description: "<strong>project</strong> (String) <em>(defaults to: nil)</em> — Alias for the <code>project_id</code> argument. Deprecated."
+    - description: "<strong>keyfile</strong> (String) <em>(defaults to: nil)</em> — Alias for the <code>credentials</code> argument.\nDeprecated."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Project\">Google::Cloud::PubSub::Project</a>)"
+    raises:
+    - description: "(ArgumentError)"
+- uid: Google::Cloud::PubSub::VERSION
+  fullName: Google::Cloud::PubSub::VERSION
+  name: VERSION
+  parent: Google::Cloud::PubSub
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: VERSION
+  summary: "<b>value: </b>&quot;2.8.0&quot;.freeze"
+  type: const
+references:
+- uid: Google::Cloud::PubSub::Topic
+  fullName: Google::Cloud::PubSub::Topic
+  name: Topic
+  module: google-cloud-pubsub
+  id: Topic
+  summary: "<h1>Topic</h1>\n\n<p>A named resource to which messages are published.</p>\n\n<p>See <a href=\"./Google-Cloud-PubSub-Project#Google__Cloud__PubSub__Project_create_topic_instance_\">Project#create_topic</a> and <a href=\"./Google-Cloud-PubSub-Project#Google__Cloud__PubSub__Project_topic_instance_\">Project#topic</a>.</p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::AsyncPublisherStopped
+  fullName: Google::Cloud::PubSub::AsyncPublisherStopped
+  name: AsyncPublisherStopped
+  module: google-cloud-pubsub
+  id: AsyncPublisherStopped
+  summary: "Indicates that the <a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a> has been stopped and cannot accept\nmessages to publish."
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::OrderedMessagesDisabled
+  fullName: Google::Cloud::PubSub::OrderedMessagesDisabled
+  name: OrderedMessagesDisabled
+  module: google-cloud-pubsub
+  id: OrderedMessagesDisabled
+  summary: "Indicates that the <a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a> has not been enabled to publish\nmessages with an ordering key. Use\nAsyncPublisher#enable&lt;em&gt;message&lt;/em&gt;ordering! to enable publishing ordered\nmessages."
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::OrderedMessageDeliveryError
+  fullName: Google::Cloud::PubSub::OrderedMessageDeliveryError
+  name: OrderedMessageDeliveryError
+  module: google-cloud-pubsub
+  id: OrderedMessageDeliveryError
+  summary: "Indicates that the <a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a> for a <a href=\"./Google-Cloud-PubSub-Subscription\">Subscription</a> with message\nordering enabled has observed that a message has been delivered out of\norder."
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::OrderingKeyError
+  fullName: Google::Cloud::PubSub::OrderingKeyError
+  name: OrderingKeyError
+  module: google-cloud-pubsub
+  id: OrderingKeyError
+  summary: "Indicates that messages using the #ordering&lt;em&gt;key are not being\npublished due to error. Future calls to Topic#publish&lt;/em&gt;async with the\n<a href=\"./Google-Cloud-PubSub-OrderingKeyError#Google__Cloud__PubSub__OrderingKeyError_ordering_key_instance_\">#ordering_key</a> will fail with this error.</p>\n\n<p>To allow future messages with the #ordering&lt;em&gt;key to be published, the\n#ordering&lt;/em&gt;key must be passed to <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_resume_publish_instance_\">Topic#resume_publish</a>.</p>\n\n<p>If this error is retrieved from <a href=\"./Google-Cloud-PubSub-PublishResult#Google__Cloud__PubSub__PublishResult_error_instance_\">PublishResult#error</a>, inspect <code>cause</code>\nfor the error raised while publishing."
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::FlowControlLimitError
+  fullName: Google::Cloud::PubSub::FlowControlLimitError
+  name: FlowControlLimitError
+  module: google-cloud-pubsub
+  id: FlowControlLimitError
+  summary: "Raised when the desired action is <code>error</code> and the message would exceed\nflow control limits, or when the desired action is <code>block</code> and the\nmessage would block forever against the flow control limits."
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Policy
+  fullName: Google::Cloud::PubSub::Policy
+  name: Policy
+  module: google-cloud-pubsub
+  id: Policy
+  summary: "<h1>Policy</h1>\n\n<p>Represents a Cloud IAM Policy for the Pub/Sub service.</p>\n\n<p>A common pattern for updating a resource&#39;s metadata, such as its Policy,\nis to read the current data from the service, update the data locally,\nand then send the modified data for writing. This pattern may result in\na conflict if two or more processes attempt the sequence simultaneously.\nIAM solves this problem with the <a href=\"./Google-Cloud-PubSub-Policy#Google__Cloud__PubSub__Policy_etag_instance_\">Policy#etag</a>\nproperty, which is used to verify whether the policy has changed since\nthe last request. When you make a request to with an <code>etag</code> value, Cloud\nIAM compares the <code>etag</code> value in the request with the existing <code>etag</code>\nvalue associated with the policy. It writes the policy only if the\n<code>etag</code> values match.</p>\n\n<p>When you update a policy, first read the policy (and its current <code>etag</code>)\nfrom the service, then modify the policy locally, and then write the\nmodified policy to the service. See\n<a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_policy_instance_\">Topic#policy</a> and\n<a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_policy=_instance_\">Topic#policy=</a>.</p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Schema
+  fullName: Google::Cloud::PubSub::Schema
+  name: Schema
+  module: google-cloud-pubsub
+  id: Schema
+  summary: "<h1>Schema</h1>\n\n<p>A schema resource.</p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Message
+  fullName: Google::Cloud::PubSub::Message
+  name: Message
+  module: google-cloud-pubsub
+  id: Message
+  summary: "<h1>Message</h1>\n\n<p>Represents a Pub/Sub Message.</p>\n\n<p>Message objects are created by <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_instance_\">Topic#publish</a>. <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_pull_instance_\">Subscription#pull</a>\nreturns an array of <a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> objects, each of which contains a\nMessage object. Each <a href=\"./Google-Cloud-PubSub-ReceivedMessage\">ReceivedMessage</a> object can be acknowledged and/or\ndelayed.</p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Project
+  fullName: Google::Cloud::PubSub::Project
+  name: Project
+  module: google-cloud-pubsub
+  id: Project
+  summary: "<h1>Project</h1>\n\n<p>Represents the project that pubsub messages are pushed to and pulled\nfrom. <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> is a named resource to which messages are sent by\npublishers. <a href=\"./Google-Cloud-PubSub-Subscription\">Subscription</a> is a named resource representing the stream\nof messages from a single, specific topic, to be delivered to the\nsubscribing application. <a href=\"./Google-Cloud-PubSub-Message\">Message</a> is a combination of data and\nattributes that a publisher sends to a topic and is eventually delivered\nto subscribers.</p>\n\n<p>See <a href=\"./Google-Cloud#Google__Cloud_pubsub_instance_\">#pubsub</a></p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Snapshot
+  fullName: Google::Cloud::PubSub::Snapshot
+  name: Snapshot
+  module: google-cloud-pubsub
+  id: Snapshot
+  summary: "<h1>Snapshot</h1>\n\n<p>A named resource created from a subscription to retain a stream of\nmessages from a topic. A snapshot is guaranteed to retain:</p>\n\n<ul>\n<li>The existing backlog on the subscription. More precisely, this is\ndefined as the messages in the subscription&#39;s backlog that are\nunacknowledged upon the successful completion of the\n<code>create_snapshot</code> operation; as well as:</li>\n<li>Any messages published to the subscription&#39;s topic following the\nsuccessful completion of the <code>create_snapshot</code> operation.</li>\n</ul>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Subscriber
+  fullName: Google::Cloud::PubSub::Subscriber
+  name: Subscriber
+  module: google-cloud-pubsub
+  id: Subscriber
+  summary: "Subscriber object used to stream and process messages from a\nSubscription. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Subscription#listen</a>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Credentials
+  fullName: Google::Cloud::PubSub::Credentials
+  name: Credentials
+  module: google-cloud-pubsub
+  id: Credentials
+  summary: "<h1>Credentials</h1>\n\n<p>Represents the authentication and authorization used to connect to the\nPub/Sub API.</p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::RetryPolicy
+  fullName: Google::Cloud::PubSub::RetryPolicy
+  name: RetryPolicy
+  module: google-cloud-pubsub
+  id: RetryPolicy
+  summary: "<h1>RetryPolicy</h1>\n\n<p>An immutable Retry Policy value object that specifies how Cloud Pub/Sub retries message delivery.</p>\n\n<p>Retry delay will be exponential based on provided minimum and maximum backoffs. (See <a href=\"https://en.wikipedia.org/wiki/Exponential_backoff\">Exponential\nbackoff</a>.)</p>\n\n<p>Retry Policy will be triggered on NACKs or acknowledgement deadline exceeded events for a given message.</p>\n\n<p>Retry Policy is implemented on a best effort basis. At times, the delay between consecutive deliveries may not\nmatch the configuration. That is, delay can be more or less than configured backoff.</p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::Subscription
+  fullName: Google::Cloud::PubSub::Subscription
+  name: Subscription
+  module: google-cloud-pubsub
+  id: Subscription
+  summary: "<h1>Subscription</h1>\n\n<p>A named resource representing the stream of messages from a single,\nspecific <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a>, to be delivered to the subscribing application.</p>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::PublishResult
+  fullName: Google::Cloud::PubSub::PublishResult
+  name: PublishResult
+  module: google-cloud-pubsub
+  id: PublishResult
+  summary: "The result of a publish operation. The message object is available on\n<a href=\"./Google-Cloud-PubSub-PublishResult#Google__Cloud__PubSub__PublishResult_message_instance_\">#message</a> and will have <a href=\"./Google-Cloud-PubSub-PublishResult#Google__Cloud__PubSub__PublishResult_message_id_instance_\">#message_id</a> assigned by the API.</p>\n\n<p>When the publish operation was successful the result will be marked\n<a href=\"./Google-Cloud-PubSub-PublishResult#Google__Cloud__PubSub__PublishResult_succeeded__instance_\">#succeeded?</a>. Otherwise, the result will be marked <a href=\"./Google-Cloud-PubSub-PublishResult#Google__Cloud__PubSub__PublishResult_failed__instance_\">#failed?</a> and the\nerror raised will be availabe on <a href=\"./Google-Cloud-PubSub-PublishResult#Google__Cloud__PubSub__PublishResult_error_instance_\">#error</a>."
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::AsyncPublisher
+  fullName: Google::Cloud::PubSub::AsyncPublisher
+  name: AsyncPublisher
+  module: google-cloud-pubsub
+  id: AsyncPublisher
+  summary: "Used to publish multiple messages in batches to a topic. See\n<a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_async_publisher_instance_\">Topic#async_publisher</a>"
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::BatchPublisher
+  fullName: Google::Cloud::PubSub::BatchPublisher
+  name: BatchPublisher
+  module: google-cloud-pubsub
+  id: BatchPublisher
+  summary: "Topic Batch Publisher object used to publish multiple messages at\nonce."
+  parent: Google::Cloud::PubSub
+- uid: Google::Cloud::PubSub::ReceivedMessage
+  fullName: Google::Cloud::PubSub::ReceivedMessage
+  name: ReceivedMessage
+  module: google-cloud-pubsub
+  id: ReceivedMessage
+  summary: "<h1>ReceivedMessage</h1>\n\n<p>Represents a Pub/Sub <a href=\"./Google-Cloud-PubSub-Message\">Message</a> that can be acknowledged or delayed.</p>"
+  parent: Google::Cloud::PubSub

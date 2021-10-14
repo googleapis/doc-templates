@@ -1,0 +1,164 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Policy
+  children: 
+  - Google::Cloud::PubSub::Policy#add(instance)
+  - Google::Cloud::PubSub::Policy#etag(instance)
+  - Google::Cloud::PubSub::Policy#etag=(instance)
+  - Google::Cloud::PubSub::Policy#remove(instance)
+  - Google::Cloud::PubSub::Policy#role(instance)
+  - Google::Cloud::PubSub::Policy#roles(instance)
+  - Google::Cloud::PubSub::Policy#roles=(instance)
+  fullName: Google::Cloud::PubSub::Policy
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: Policy
+  summary: "<h1>Policy</h1>\n\n<p>Represents a Cloud IAM Policy for the Pub/Sub service.</p>\n\n<p>A common pattern for updating a resource&#39;s metadata, such as its Policy,\nis to read the current data from the service, update the data locally,\nand then send the modified data for writing. This pattern may result in\na conflict if two or more processes attempt the sequence simultaneously.\nIAM solves this problem with the <a href=\"./Google-Cloud-PubSub-Policy#Google__Cloud__PubSub__Policy_etag_instance_\">#etag</a>\nproperty, which is used to verify whether the policy has changed since\nthe last request. When you make a request to with an <code>etag</code> value, Cloud\nIAM compares the <code>etag</code> value in the request with the existing <code>etag</code>\nvalue associated with the policy. It writes the policy only if the\n<code>etag</code> values match.</p>\n\n<p>When you update a policy, first read the policy (and its current <code>etag</code>)\nfrom the service, then modify the policy locally, and then write the\nmodified policy to the service. See\n<a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_policy_instance_\">Topic#policy</a> and\n<a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_policy=_instance_\">Topic#policy=</a>.</p>"
+  type: "class"
+  name: Google::Cloud::PubSub::Policy
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\"\n\ntopic.policy do |p|\n  p.remove \"roles/owner\", \"user:owner@example.com\"\n  p.add \"roles/owner\", \"user:newowner@example.com\"\n  p.roles[\"roles/viewer\"] = [\"allUsers\"]\nend</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::Policy#add(instance)
+  fullName: Google::Cloud::PubSub::Policy#add
+  name: "#add"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#add"
+  summary: "Convenience method for adding a member to a binding on this policy.\nSee <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles.\nSee <a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\"\n\ntopic.policy do |p|\n  p.add \"roles/owner\", \"user:newowner@example.com\"\nend</pre>"
+  syntax:
+    description: "Convenience method for adding a member to a binding on this policy.\nSee <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles.\nSee <a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+    content: "def add(role_name, member)"
+    arguments:
+    - description: "<strong>role_name</strong> (String) — A Cloud IAM role, such as\n<code>&quot;roles/pubsub.admin&quot;</code>."
+    - description: "<strong>member</strong> (String) — A Cloud IAM identity, such as\n<code>&quot;user:owner@example.com&quot;</code>."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Policy#etag(instance)
+  fullName: Google::Cloud::PubSub::Policy#etag
+  name: "#etag"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#etag"
+  summary: "Used to verify whether the policy has changed since\nthe last request. The policy will be written only if the <code>etag</code> values\nmatch."
+  type: method
+  example: []
+  syntax:
+    description: "Used to verify whether the policy has changed since\nthe last request. The policy will be written only if the <code>etag</code> values\nmatch."
+    content: "def etag => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — the current value of etag"
+    raises: []
+- uid: Google::Cloud::PubSub::Policy#etag=(instance)
+  fullName: Google::Cloud::PubSub::Policy#etag=
+  name: "#etag="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#etag="
+  summary: "Used to verify whether the policy has changed since\nthe last request. The policy will be written only if the <code>etag</code> values\nmatch."
+  type: method
+  example: []
+  syntax:
+    description: "Used to verify whether the policy has changed since\nthe last request. The policy will be written only if the <code>etag</code> values\nmatch."
+    content: "def etag=(value) => String"
+    arguments:
+    - description: "<strong>value</strong> (String) — the value to set the attribute etag to."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — the newly set value"
+    raises: []
+- uid: Google::Cloud::PubSub::Policy#remove(instance)
+  fullName: Google::Cloud::PubSub::Policy#remove
+  name: "#remove"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#remove"
+  summary: "Convenience method for removing a member from a binding on this\npolicy. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles. See\n<a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\"\n\ntopic.policy do |p|\n  p.remove \"roles/owner\", \"user:owner@example.com\"\nend</pre>"
+  syntax:
+    description: "Convenience method for removing a member from a binding on this\npolicy. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles. See\n<a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+    content: "def remove(role_name, member)"
+    arguments:
+    - description: "<strong>role_name</strong> (String) — A Cloud IAM role, such as\n<code>&quot;roles/pubsub.admin&quot;</code>."
+    - description: "<strong>member</strong> (String) — A Cloud IAM identity, such as\n<code>&quot;user:owner@example.com&quot;</code>."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Policy#role(instance)
+  fullName: Google::Cloud::PubSub::Policy#role
+  name: "#role"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#role"
+  summary: "Convenience method returning the array of members bound to a role in\nthis policy, or an empty array if no value is present for the role in\n<a href=\"./Google-Cloud-PubSub-Policy#Google__Cloud__PubSub__Policy_roles_instance_\">#roles</a>. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles. See\n<a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\ntopic = pubsub.topic \"my-topic\"\n\ntopic.policy do |p|\n  p.role(\"roles/viewer\") << \"user:viewer@example.com\"\nend</pre>"
+  syntax:
+    description: "Convenience method returning the array of members bound to a role in\nthis policy, or an empty array if no value is present for the role in\n<a href=\"./Google-Cloud-PubSub-Policy#Google__Cloud__PubSub__Policy_roles_instance_\">#roles</a>. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles. See\n<a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+    content: "def role(role_name) => Array<String>"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Array&lt;String&gt;) — The members strings, or an empty array."
+    raises: []
+- uid: Google::Cloud::PubSub::Policy#roles(instance)
+  fullName: Google::Cloud::PubSub::Policy#roles
+  name: "#roles"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#roles"
+  summary: "The bindings that associate\nroles with an array of members. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles.\nSee <a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+  type: method
+  example: []
+  syntax:
+    description: "The bindings that associate\nroles with an array of members. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles.\nSee <a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+    content: "def roles => Hash{String => Array<String>}"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Hash{String =&gt; Array&lt;String&gt;}) — the current value of roles"
+    raises: []
+- uid: Google::Cloud::PubSub::Policy#roles=(instance)
+  fullName: Google::Cloud::PubSub::Policy#roles=
+  name: "#roles="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#roles="
+  summary: "The bindings that associate\nroles with an array of members. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles.\nSee <a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+  type: method
+  example: []
+  syntax:
+    description: "The bindings that associate\nroles with an array of members. See <a href=\"https://cloud.google.com/iam/docs/understanding-roles\">Understanding\nRoles</a> for a\nlisting of primitive and curated roles.\nSee <a href=\"https://cloud.google.com/pubsub/docs/reference/rpc/google.iam.v1#binding\">Binding</a>\nfor a listing of values and patterns for members."
+    content: "def roles=(value) => Hash{String => Array<String>}"
+    arguments:
+    - description: "<strong>value</strong> (Hash{String =&gt; Array&lt;String&gt;}) — the value to set the attribute roles to."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Hash{String =&gt; Array&lt;String&gt;}) — the newly set value"
+    raises: []
+references: []

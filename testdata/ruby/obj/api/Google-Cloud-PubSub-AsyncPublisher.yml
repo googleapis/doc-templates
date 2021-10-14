@@ -1,0 +1,550 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::AsyncPublisher
+  children: 
+  - Google::Cloud::PubSub::AsyncPublisher#callback_threads(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#enable_message_ordering!(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#execute_callback_async(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#flow_control(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#flush(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#interval(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#max_bytes(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#max_messages(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#message_ordering?(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#publish(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#publish_batch_async(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#publish_batch_error_retryable?(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#publish_batch_sync(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#publish_batches!(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#publish_threads(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#resolve_batch_for_message(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#resolve_batch_for_ordering_key(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#resume_publish(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#run_background(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#started?(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#stop(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#stop!(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#stop_publish(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#stopped?(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#topic_name(instance)
+  - Google::Cloud::PubSub::AsyncPublisher#wait!(instance)
+  - Google::Cloud::PubSub::AsyncPublisher::PUBLISH_RETRY_ERRORS
+  fullName: Google::Cloud::PubSub::AsyncPublisher
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: AsyncPublisher
+  summary: "Used to publish multiple messages in batches to a topic. See\n<a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_async_publisher_instance_\">Topic#async_publisher</a>"
+  type: "class"
+  name: Google::Cloud::PubSub::AsyncPublisher
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\ntopic = pubsub.topic \"my-topic\"\ntopic.publish_async \"task completed\" do |result|\n  if result.succeeded?\n    log_publish_success result.data\n  else\n    log_publish_failure result.data, result.error\n  end\nend\n\ntopic.async_publisher.stop!</pre>"
+  inherits:
+  - "Object"
+  includes:
+  - "MonitorMixin"
+- uid: Google::Cloud::PubSub::AsyncPublisher#callback_threads(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#callback_threads
+  name: "#callback_threads"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#callback_threads"
+  summary: "The number of threads to handle the published messages&#39; callbacks.\nDefault is 4."
+  type: method
+  example: []
+  syntax:
+    description: "The number of threads to handle the published messages&#39; callbacks.\nDefault is 4."
+    content: "def callback_threads => Numeric"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the current value of callback_threads"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#enable_message_ordering!(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#enable_message_ordering!
+  name: "#enable_message_ordering!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#enable_message_ordering!"
+  summary: "Enables message ordering for messages with ordering keys. When\nenabled, messages published with the same <code>ordering_key</code> will be\ndelivered in the order they were published.</p>\n\n<p>See #message&lt;em&gt;ordering?. See Topic#publish&lt;/em&gt;async,\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Subscription#listen</a>, and <a href=\"./Google-Cloud-PubSub-Message#Google__Cloud__PubSub__Message_ordering_key_instance_\">Message#ordering_key</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Enables message ordering for messages with ordering keys. When\nenabled, messages published with the same <code>ordering_key</code> will be\ndelivered in the order they were published.</p>\n\n<p>See #message&lt;em&gt;ordering?. See Topic#publish&lt;/em&gt;async,\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Subscription#listen</a>, and <a href=\"./Google-Cloud-PubSub-Message#Google__Cloud__PubSub__Message_ordering_key_instance_\">Message#ordering_key</a>."
+    content: "def enable_message_ordering!"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#execute_callback_async(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#execute_callback_async
+  name: "#execute_callback_async"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#execute_callback_async"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def execute_callback_async(callback, publish_result)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#flow_control(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#flow_control
+  name: "#flow_control"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#flow_control"
+  summary: "Returns the value of attribute flow_control."
+  type: method
+  example: []
+  syntax:
+    description: "Returns the value of attribute flow_control."
+    content: "def flow_control"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#flush(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#flush
+  name: "#flush"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#flush"
+  summary: "Forces all messages in the current batch to be published\nimmediately."
+  type: method
+  example: []
+  syntax:
+    description: "Forces all messages in the current batch to be published\nimmediately."
+    content: "def flush => AsyncPublisher"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#interval(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#interval
+  name: "#interval"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#interval"
+  summary: "The number of seconds to collect messages before the batch is published. Default\nis 0.01."
+  type: method
+  example: []
+  syntax:
+    description: "The number of seconds to collect messages before the batch is published. Default\nis 0.01."
+    content: "def interval => Numeric"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the current value of interval"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#max_bytes(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#max_bytes
+  name: "#max_bytes"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#max_bytes"
+  summary: "The maximum size of messages to be collected before the batch is published.\nDefault is 1,000,000 (1MB)."
+  type: method
+  example: []
+  syntax:
+    description: "The maximum size of messages to be collected before the batch is published.\nDefault is 1,000,000 (1MB)."
+    content: "def max_bytes => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — the current value of max_bytes"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#max_messages(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#max_messages
+  name: "#max_messages"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#max_messages"
+  summary: "The maximum number of messages to be collected before the batch is\npublished. Default is 100."
+  type: method
+  example: []
+  syntax:
+    description: "The maximum number of messages to be collected before the batch is\npublished. Default is 100."
+    content: "def max_messages => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — the current value of max_messages"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#message_ordering?(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#message_ordering?
+  name: "#message_ordering?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#message_ordering?"
+  summary: "Whether message ordering for messages with ordering keys has been\nenabled. When enabled, messages published with the same <code>ordering_key</code>\nwill be delivered in the order they were published. When disabled,\nmessages may be delivered in any order.</p>\n\n<p>See #enable&lt;em&gt;message&lt;/em&gt;ordering!. See Topic#publish&lt;em&gt;async,\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Subscription#listen</a>, and Message#ordering&lt;/em&gt;key."
+  type: method
+  example: []
+  syntax:
+    description: "Whether message ordering for messages with ordering keys has been\nenabled. When enabled, messages published with the same <code>ordering_key</code>\nwill be delivered in the order they were published. When disabled,\nmessages may be delivered in any order.</p>\n\n<p>See #enable&lt;em&gt;message&lt;/em&gt;ordering!. See Topic#publish&lt;em&gt;async,\n<a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Subscription#listen</a>, and Message#ordering&lt;/em&gt;key."
+    content: "def message_ordering? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#publish(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#publish
+  name: "#publish"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish"
+  summary: "Add a message to the async publisher to be published to the topic.\nMessages will be collected in batches and published together.\nSee <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a>"
+  type: method
+  example: []
+  syntax:
+    description: "Add a message to the async publisher to be published to the topic.\nMessages will be collected in batches and published together.\nSee <a href=\"./Google-Cloud-PubSub-Topic#Google__Cloud__PubSub__Topic_publish_async_instance_\">Topic#publish_async</a>"
+    content: "def publish(data = nil, attributes = nil, ordering_key: nil, **extra_attrs, &callback) { |result| ... }"
+    arguments:
+    - description: "<strong>data</strong> (String, File) — The message payload. This will be converted\nto bytes encoded as ASCII-8BIT."
+    - description: "<strong>attributes</strong> (Hash) — Optional attributes for the message."
+    - description: "<strong>ordering_key</strong> (String) <em>(defaults to: nil)</em> — Identifies related messages for which\npublish order should be respected."
+    yields:
+    - description: "(result) — the callback for when the message has been published"
+    yieldparams:
+    - description: "<strong>result</strong> (<a href=\"./Google-Cloud-PubSub-PublishResult\">PublishResult</a>) — the result of the asynchronous\npublish"
+    returnValues: []
+    raises:
+    - description: "(<a href=\"./Google-Cloud-PubSub-AsyncPublisherStopped\">Google::Cloud::PubSub::AsyncPublisherStopped</a>) — when the\npublisher is stopped. (See <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_stop_instance_\">#stop</a> and <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_stopped__instance_\">#stopped?</a>.)"
+    - description: "(<a href=\"./Google-Cloud-PubSub-OrderedMessagesDisabled\">Google::Cloud::PubSub::OrderedMessagesDisabled</a>) — when\npublishing a message with an <code>ordering_key</code> but ordered messages are\nnot enabled. (See #message&lt;em&gt;ordering? and\n#enable&lt;/em&gt;message_ordering!.)"
+    - description: "(<a href=\"./Google-Cloud-PubSub-OrderingKeyError\">Google::Cloud::PubSub::OrderingKeyError</a>) — when publishing a\nmessage with an <code>ordering_key</code> that has already failed when\npublishing. Use #resume&lt;em&gt;publish to allow this `ordering</em>key` to be\npublished again."
+- uid: Google::Cloud::PubSub::AsyncPublisher#publish_batch_async(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#publish_batch_async
+  name: "#publish_batch_async"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish_batch_async"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def publish_batch_async(topic_name, batch)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#publish_batch_error_retryable?(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#publish_batch_error_retryable?
+  name: "#publish_batch_error_retryable?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish_batch_error_retryable?"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def publish_batch_error_retryable?(error) => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#publish_batch_sync(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#publish_batch_sync
+  name: "#publish_batch_sync"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish_batch_sync"
+  summary: "rubocop:disable Metrics/AbcSize"
+  type: method
+  example: []
+  syntax:
+    description: "rubocop:disable Metrics/AbcSize"
+    content: "def publish_batch_sync(topic_name, batch)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#publish_batches!(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#publish_batches!
+  name: "#publish_batches!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish_batches!"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def publish_batches!(stop: nil)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#publish_threads(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#publish_threads
+  name: "#publish_threads"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#publish_threads"
+  summary: "The number of threads used to publish messages. Default is 2."
+  type: method
+  example: []
+  syntax:
+    description: "The number of threads used to publish messages. Default is 2."
+    content: "def publish_threads => Numeric"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the current value of publish_threads"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#resolve_batch_for_message(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#resolve_batch_for_message
+  name: "#resolve_batch_for_message"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#resolve_batch_for_message"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def resolve_batch_for_message(msg)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#resolve_batch_for_ordering_key(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#resolve_batch_for_ordering_key
+  name: "#resolve_batch_for_ordering_key"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#resolve_batch_for_ordering_key"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def resolve_batch_for_ordering_key(ordering_key)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#resume_publish(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#resume_publish
+  name: "#resume_publish"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#resume_publish"
+  summary: "Resume publishing ordered messages for the provided ordering key."
+  type: method
+  example: []
+  syntax:
+    description: "Resume publishing ordered messages for the provided ordering key."
+    content: "def resume_publish(ordering_key) => boolean"
+    arguments:
+    - description: "<strong>ordering_key</strong> (String) — Identifies related messages for which\npublish order should be respected."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(boolean) — <code>true</code> when resumed, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#run_background(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#run_background
+  name: "#run_background"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#run_background"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def run_background"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#started?(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#started?
+  name: "#started?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#started?"
+  summary: "Whether the publisher has been started."
+  type: method
+  example: []
+  syntax:
+    description: "Whether the publisher has been started."
+    content: "def started? => boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(boolean) — <code>true</code> when started, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#stop(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#stop
+  name: "#stop"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#stop"
+  summary: "Begins the process of stopping the publisher. Messages already in\nthe queue will be published, but no new messages can be added. Use\n<a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_wait__instance_\">#wait!</a> to block until the publisher is fully stopped and all\npending messages have been published."
+  type: method
+  example: []
+  syntax:
+    description: "Begins the process of stopping the publisher. Messages already in\nthe queue will be published, but no new messages can be added. Use\n<a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_wait__instance_\">#wait!</a> to block until the publisher is fully stopped and all\npending messages have been published."
+    content: "def stop => AsyncPublisher"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#stop!(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#stop!
+  name: "#stop!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#stop!"
+  summary: "Stop this publisher and block until the publisher is fully stopped,\nall pending messages have been published, and all callbacks have\ncompleted, or until <code>timeout</code> seconds have passed.</p>\n\n<p>The same as calling <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_stop_instance_\">#stop</a> and <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_wait__instance_\">#wait!</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Stop this publisher and block until the publisher is fully stopped,\nall pending messages have been published, and all callbacks have\ncompleted, or until <code>timeout</code> seconds have passed.</p>\n\n<p>The same as calling <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_stop_instance_\">#stop</a> and <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_wait__instance_\">#wait!</a>."
+    content: "def stop!(timeout = nil) => AsyncPublisher"
+    arguments:
+    - description: "<strong>timeout</strong> (Number, nil) — The number of seconds to block until the\npublisher is fully stopped. Default will block indefinitely."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#stop_publish(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#stop_publish
+  name: "#stop_publish"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#stop_publish"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def stop_publish(ordering_key, err)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#stopped?(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#stopped?
+  name: "#stopped?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#stopped?"
+  summary: "Whether the publisher has been stopped."
+  type: method
+  example: []
+  syntax:
+    description: "Whether the publisher has been stopped."
+    content: "def stopped? => boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(boolean) — <code>true</code> when stopped, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#topic_name(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#topic_name
+  name: "#topic_name"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#topic_name"
+  summary: "The name of the topic the messages are published to. The value is a\nfully-qualified topic name in the form <code>projects/{project_id}/topics/{topic_id}</code>."
+  type: method
+  example: []
+  syntax:
+    description: "The name of the topic the messages are published to. The value is a\nfully-qualified topic name in the form <code>projects/{project_id}/topics/{topic_id}</code>."
+    content: "def topic_name => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — the current value of topic_name"
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher#wait!(instance)
+  fullName: Google::Cloud::PubSub::AsyncPublisher#wait!
+  name: "#wait!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#wait!"
+  summary: "Blocks until the publisher is fully stopped, all pending messages have\nbeen published, and all callbacks have completed, or until <code>timeout</code>\nseconds have passed.</p>\n\n<p>Does not stop the publisher. To stop the publisher, first call <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_stop_instance_\">#stop</a>\nand then call <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_wait__instance_\">#wait!</a> to block until the publisher is stopped"
+  type: method
+  example: []
+  syntax:
+    description: "Blocks until the publisher is fully stopped, all pending messages have\nbeen published, and all callbacks have completed, or until <code>timeout</code>\nseconds have passed.</p>\n\n<p>Does not stop the publisher. To stop the publisher, first call <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_stop_instance_\">#stop</a>\nand then call <a href=\"./Google-Cloud-PubSub-AsyncPublisher#Google__Cloud__PubSub__AsyncPublisher_wait__instance_\">#wait!</a> to block until the publisher is stopped"
+    content: "def wait!(timeout = nil) => AsyncPublisher"
+    arguments:
+    - description: "<strong>timeout</strong> (Number, nil) — The number of seconds to block until the\npublisher is fully stopped. Default will block indefinitely."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-AsyncPublisher\">AsyncPublisher</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::AsyncPublisher::PUBLISH_RETRY_ERRORS
+  fullName: Google::Cloud::PubSub::AsyncPublisher::PUBLISH_RETRY_ERRORS
+  name: PUBLISH_RETRY_ERRORS
+  parent: Google::Cloud::PubSub::AsyncPublisher
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: PUBLISH_RETRY_ERRORS
+  summary: "<b>value: </b>[\n  GRPC::Cancelled, GRPC::DeadlineExceeded, GRPC::Internal,\n  GRPC::ResourceExhausted, GRPC::Unauthenticated, GRPC::Unavailable\n].freeze<br>rubocop:enable Metrics/AbcSize"
+  type: const
+references: []

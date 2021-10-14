@@ -1,0 +1,299 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Schema
+  children: 
+  - Google::Cloud::PubSub::Schema#definition(instance)
+  - Google::Cloud::PubSub::Schema#delete(instance)
+  - Google::Cloud::PubSub::Schema#ensure_grpc!(instance)
+  - Google::Cloud::PubSub::Schema#exists?(instance)
+  - Google::Cloud::PubSub::Schema#name(instance)
+  - Google::Cloud::PubSub::Schema#reference?(instance)
+  - Google::Cloud::PubSub::Schema#refresh!(instance)
+  - Google::Cloud::PubSub::Schema#reload!(instance)
+  - Google::Cloud::PubSub::Schema#resource?(instance)
+  - Google::Cloud::PubSub::Schema#resource_full?(instance)
+  - Google::Cloud::PubSub::Schema#resource_partial?(instance)
+  - Google::Cloud::PubSub::Schema#type(instance)
+  - Google::Cloud::PubSub::Schema#validate_message(instance)
+  - Google::Cloud::PubSub::Schema::List
+  fullName: Google::Cloud::PubSub::Schema
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: Schema
+  summary: "<h1>Schema</h1>\n\n<p>A schema resource.</p>"
+  type: "class"
+  name: Google::Cloud::PubSub::Schema
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\"\nschema.name #=> \"projects/my-project/schemas/my-schema\"\nschema.type #=> :PROTOCOL_BUFFER</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::Schema#definition(instance)
+  fullName: Google::Cloud::PubSub::Schema#definition
+  name: "#definition"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#definition"
+  summary: "The definition of the schema. This should be a string representing the full definition of the schema that is a\nvalid schema definition of the type specified in <a href=\"./Google-Cloud-PubSub-Schema#Google__Cloud__PubSub__Schema_type_instance_\">#type</a>."
+  type: method
+  example: []
+  syntax:
+    description: "The definition of the schema. This should be a string representing the full definition of the schema that is a\nvalid schema definition of the type specified in <a href=\"./Google-Cloud-PubSub-Schema#Google__Cloud__PubSub__Schema_type_instance_\">#type</a>."
+    content: "def definition => String, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String, nil) — The schema definition."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#delete(instance)
+  fullName: Google::Cloud::PubSub::Schema#delete
+  name: "#delete"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#delete"
+  summary: "Removes the schema, if it exists."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\"\n\nschema.delete</pre>"
+  syntax:
+    description: "Removes the schema, if it exists."
+    content: "def delete => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — Returns <code>true</code> if the schema was deleted."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#ensure_grpc!(instance)
+  fullName: Google::Cloud::PubSub::Schema#ensure_grpc!
+  name: "#ensure_grpc!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#ensure_grpc!"
+  summary: "Ensures a Google::Cloud::PubSub::V1::Schema object exists."
+  type: method
+  example: []
+  syntax:
+    description: "Ensures a Google::Cloud::PubSub::V1::Schema object exists."
+    content: "def ensure_grpc!"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#exists?(instance)
+  fullName: Google::Cloud::PubSub::Schema#exists?
+  name: "#exists?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#exists?"
+  summary: "Determines whether the schema exists in the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\"\nschema.exists? #=> true</pre>"
+  syntax:
+    description: "Determines whether the schema exists in the Pub/Sub service."
+    content: "def exists? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#name(instance)
+  fullName: Google::Cloud::PubSub::Schema#name
+  name: "#name"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#name"
+  summary: "The name of the schema."
+  type: method
+  example: []
+  syntax:
+    description: "The name of the schema."
+    content: "def name => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — A fully-qualified schema name in the form <code>projects/{project_id}/schemas/{schema_id}</code>."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#reference?(instance)
+  fullName: Google::Cloud::PubSub::Schema#reference?
+  name: "#reference?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#reference?"
+  summary: "Determines whether the schema object was created without retrieving the\nresource representation from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\", skip_lookup: true\nschema.reference? #=> true</pre>"
+  syntax:
+    description: "Determines whether the schema object was created without retrieving the\nresource representation from the Pub/Sub service."
+    content: "def reference? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> when the schema was created without a resource\nrepresentation, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#refresh!(instance)
+  fullName: Google::Cloud::PubSub::Schema#refresh!
+  name: "#refresh!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#refresh!"
+  summary: "Reloads the schema with current data from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\", skip_lookup: true\n\nschema.reload!</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\", view: :basic\nschema.resource_partial? #=> true\n\nschema.reload! view: :full\nschema.resource_partial? #=> false</pre>"
+  syntax:
+    description: "Reloads the schema with current data from the Pub/Sub service."
+    content: "def refresh! => Google::Cloud::PubSub::Schema"
+    arguments:
+    - description: "<strong>view</strong> (Symbol, String, nil) — The set of fields to return in the response. Possible values:\n* <code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.\n* <code>FULL</code> - Include all Schema object fields.</p>\n\n<p>Optional. If not provided or <code>nil</code>, the last non-nil <code>view</code> argument to this method will be used if one has\nbeen given, othewise <code>FULL</code> will be used."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>) — Returns the reloaded schema."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#reload!(instance)
+  fullName: Google::Cloud::PubSub::Schema#reload!
+  name: "#reload!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#reload!"
+  summary: "Reloads the schema with current data from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\", skip_lookup: true\n\nschema.reload!</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\", view: :basic\nschema.resource_partial? #=> true\n\nschema.reload! view: :full\nschema.resource_partial? #=> false</pre>"
+  syntax:
+    description: "Reloads the schema with current data from the Pub/Sub service."
+    content: "def reload!(view: nil) => Google::Cloud::PubSub::Schema"
+    arguments:
+    - description: "<strong>view</strong> (Symbol, String, nil) <em>(defaults to: nil)</em> — The set of fields to return in the response. Possible values:\n* <code>BASIC</code> - Include the <code>name</code> and <code>type</code> of the schema, but not the <code>definition</code>.\n* <code>FULL</code> - Include all Schema object fields.</p>\n\n<p>Optional. If not provided or <code>nil</code>, the last non-nil <code>view</code> argument to this method will be used if one has\nbeen given, othewise <code>FULL</code> will be used."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Schema\">Google::Cloud::PubSub::Schema</a>) — Returns the reloaded schema."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#resource?(instance)
+  fullName: Google::Cloud::PubSub::Schema#resource?
+  name: "#resource?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#resource?"
+  summary: "Determines whether the schema object was created with a resource\nrepresentation from the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nschema = pubsub.schema \"my-schema\"\nschema.resource? #=> true</pre>"
+  syntax:
+    description: "Determines whether the schema object was created with a resource\nrepresentation from the Pub/Sub service."
+    content: "def resource? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> when the schema was created with a resource\nrepresentation, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#resource_full?(instance)
+  fullName: Google::Cloud::PubSub::Schema#resource_full?
+  name: "#resource_full?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#resource_full?"
+  summary: "Whether the schema was created with a full resource representation\nfrom the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\"\n\nschema.resource_full? #=> true</pre>"
+  syntax:
+    description: "Whether the schema was created with a full resource representation\nfrom the Pub/Sub service."
+    content: "def resource_full? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> when the schema was created with a full\nresource representation, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#resource_partial?(instance)
+  fullName: Google::Cloud::PubSub::Schema#resource_partial?
+  name: "#resource_partial?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#resource_partial?"
+  summary: "Whether the schema was created with a partial resource representation\nfrom the Pub/Sub service."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\", view: :basic\n\nschema.resource_partial? #=> true\nschema.reload! view: :full # Loads the full resource.\nschema.resource_partial? #=> false</pre>"
+  syntax:
+    description: "Whether the schema was created with a partial resource representation\nfrom the Pub/Sub service."
+    content: "def resource_partial? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> when the schema was created with a partial\nresource representation, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#type(instance)
+  fullName: Google::Cloud::PubSub::Schema#type
+  name: "#type"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#type"
+  summary: "<p>The type of the schema. Possible values include:</p>\n\n<ul>\n<li><code>PROTOCOL_BUFFER</code> - A Protocol Buffer schema definition.</li>\n<li><code>AVRO</code> - An Avro schema definition.</li>\n</ul>"
+  type: method
+  example: []
+  syntax:
+    description: "<p>The type of the schema. Possible values include:</p>\n\n<ul>\n<li><code>PROTOCOL_BUFFER</code> - A Protocol Buffer schema definition.</li>\n<li><code>AVRO</code> - An Avro schema definition.</li>\n</ul>"
+    content: "def type => String, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String, nil) — The upper-case type name."
+    raises: []
+- uid: Google::Cloud::PubSub::Schema#validate_message(instance)
+  fullName: Google::Cloud::PubSub::Schema#validate_message
+  name: "#validate_message"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#validate_message"
+  summary: "Validates a message against a schema."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nschema = pubsub.schema \"my-schema\"\n\nmessage_data = { \"name\" => \"Alaska\", \"post_abbr\" => \"AK\" }.to_json\nschema.validate_message message_data, :json</pre>"
+  syntax:
+    description: "Validates a message against a schema."
+    content: "def validate_message(message_data, message_encoding) => Boolean"
+    arguments:
+    - description: "<strong>message_data</strong> (String) — Message to validate against the provided <code>schema_spec</code>."
+    - description: "<strong>message_encoding</strong> (Symbol, String) — <p>The encoding of the message validated against the schema. Values\ninclude:</p>\n\n<ul>\n<li><code>JSON</code> - JSON encoding.</li>\n<li><code>BINARY</code> - Binary encoding, as defined by the schema type. For some schema types, binary encoding may not\nbe available.</li>\n</ul>"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — Returns <code>true</code> if the message validiation succeeds, <code>false</code> otherwise."
+    raises: []
+references:
+- uid: Google::Cloud::PubSub::Schema::List
+  fullName: Google::Cloud::PubSub::Schema::List
+  name: List
+  module: google-cloud-pubsub
+  id: List
+  summary: "Schema::List is a special case Array with additional values."
+  parent: Google::Cloud::PubSub::Schema

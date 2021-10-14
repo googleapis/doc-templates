@@ -1,0 +1,561 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Subscriber
+  children: 
+  - Google::Cloud::PubSub::Subscriber#callback(instance)
+  - Google::Cloud::PubSub::Subscriber#callback_threads(instance)
+  - Google::Cloud::PubSub::Subscriber#coerce_inventory(instance)
+  - Google::Cloud::PubSub::Subscriber#deadline(instance)
+  - Google::Cloud::PubSub::Subscriber#default_error_callbacks(instance)
+  - Google::Cloud::PubSub::Subscriber#inventory(instance)
+  - Google::Cloud::PubSub::Subscriber#inventory_bytesize(instance)
+  - Google::Cloud::PubSub::Subscriber#inventory_extension(instance)
+  - Google::Cloud::PubSub::Subscriber#inventory_limit(instance)
+  - Google::Cloud::PubSub::Subscriber#last_error(instance)
+  - Google::Cloud::PubSub::Subscriber#max_duration_per_lease_extension(instance)
+  - Google::Cloud::PubSub::Subscriber#max_outstanding_bytes(instance)
+  - Google::Cloud::PubSub::Subscriber#max_outstanding_messages(instance)
+  - Google::Cloud::PubSub::Subscriber#max_total_lease_duration(instance)
+  - Google::Cloud::PubSub::Subscriber#message_ordering(instance)
+  - Google::Cloud::PubSub::Subscriber#on_error(instance)
+  - Google::Cloud::PubSub::Subscriber#push_threads(instance)
+  - Google::Cloud::PubSub::Subscriber#start(instance)
+  - Google::Cloud::PubSub::Subscriber#started?(instance)
+  - Google::Cloud::PubSub::Subscriber#stop(instance)
+  - Google::Cloud::PubSub::Subscriber#stop!(instance)
+  - Google::Cloud::PubSub::Subscriber#stopped?(instance)
+  - Google::Cloud::PubSub::Subscriber#streams(instance)
+  - Google::Cloud::PubSub::Subscriber#subscription_name(instance)
+  - Google::Cloud::PubSub::Subscriber#use_legacy_flow_control?(instance)
+  - Google::Cloud::PubSub::Subscriber#wait!(instance)
+  - Google::Cloud::PubSub::Subscriber#wait_stop_buffer_thread!(instance)
+  fullName: Google::Cloud::PubSub::Subscriber
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: Subscriber
+  summary: "Subscriber object used to stream and process messages from a\nSubscription. See <a href=\"./Google-Cloud-PubSub-Subscription#Google__Cloud__PubSub__Subscription_listen_instance_\">Google::Cloud::PubSub::Subscription#listen</a>"
+  type: "class"
+  name: Google::Cloud::PubSub::Subscriber
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsubscriber = sub.listen do |received_message|\n  # process message\n  received_message.acknowledge!\nend\n\n# Start background threads that will call the block passed to listen.\nsubscriber.start\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+  inherits:
+  - "Object"
+  includes:
+  - "MonitorMixin"
+- uid: Google::Cloud::PubSub::Subscriber#callback(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#callback
+  name: "#callback"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#callback"
+  summary: "The procedure that will handle the messages\nreceived from the subscription."
+  type: method
+  example: []
+  syntax:
+    description: "The procedure that will handle the messages\nreceived from the subscription."
+    content: "def callback => Proc"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Proc) — the current value of callback"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#callback_threads(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#callback_threads
+  name: "#callback_threads"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#callback_threads"
+  summary: "The number of threads used to\nhandle the received messages. Default is 8."
+  type: method
+  example: []
+  syntax:
+    description: "The number of threads used to\nhandle the received messages. Default is 8."
+    content: "def callback_threads => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — the current value of callback_threads"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#coerce_inventory(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#coerce_inventory
+  name: "#coerce_inventory"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#coerce_inventory"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def coerce_inventory(inventory)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#deadline(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#deadline
+  name: "#deadline"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#deadline"
+  summary: "The default number of seconds the stream\nwill hold received messages before modifying the message&#39;s ack\ndeadline. The minimum is 10, the maximum is 600. Default is 60."
+  type: method
+  example: []
+  syntax:
+    description: "The default number of seconds the stream\nwill hold received messages before modifying the message&#39;s ack\ndeadline. The minimum is 10, the maximum is 600. Default is 60."
+    content: "def deadline => Numeric"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the current value of deadline"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#default_error_callbacks(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#default_error_callbacks
+  name: "#default_error_callbacks"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#default_error_callbacks"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def default_error_callbacks"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#inventory(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#inventory
+  name: "#inventory"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#inventory"
+  summary: "The number of received messages to be collected by subscriber. Default is 1,000."
+  type: method
+  example: []
+  syntax:
+    description: "The number of received messages to be collected by subscriber. Default is 1,000."
+    content: "def inventory => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of messages."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#inventory_bytesize(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#inventory_bytesize
+  name: "#inventory_bytesize"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#inventory_bytesize"
+  summary: "The total byte size of received messages to be collected by subscriber. Default is 100,000,000 (100MB)."
+  type: method
+  example: []
+  syntax:
+    description: "The total byte size of received messages to be collected by subscriber. Default is 100,000,000 (100MB)."
+    content: "def inventory_bytesize => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of bytes."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#inventory_extension(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#inventory_extension
+  name: "#inventory_extension"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#inventory_extension"
+  summary: "The number of seconds that received messages can be held awaiting processing. Default is 3,600 (1 hour)."
+  type: method
+  example: []
+  syntax:
+    description: "The number of seconds that received messages can be held awaiting processing. Default is 3,600 (1 hour)."
+    content: "def inventory_extension => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of seconds."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#inventory_limit(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#inventory_limit
+  name: "#inventory_limit"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#inventory_limit"
+  summary: "The number of received messages to be collected by subscriber. Default is 1,000."
+  type: method
+  example: []
+  syntax:
+    description: "The number of received messages to be collected by subscriber. Default is 1,000."
+    content: "def inventory_limit => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of messages."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#last_error(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#last_error
+  name: "#last_error"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#last_error"
+  summary: "The most recent unhandled error to occur while listening to messages\non the subscriber.</p>\n\n<p>If an unhandled error has occurred the subscriber will attempt to\nrecover from the error and resume listening."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsubscriber = sub.listen do |received_message|\n  # process message\n  received_message.acknowledge!\nend\n\n# Start listening for messages and errors.\nsubscriber.start\n\n# If an error was raised, it can be retrieved here:\nsubscriber.last_error #=> nil\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+  syntax:
+    description: "The most recent unhandled error to occur while listening to messages\non the subscriber.</p>\n\n<p>If an unhandled error has occurred the subscriber will attempt to\nrecover from the error and resume listening."
+    content: "def last_error => Exception, nil"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Exception, nil) — error The most recent error raised."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#max_duration_per_lease_extension(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#max_duration_per_lease_extension
+  name: "#max_duration_per_lease_extension"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#max_duration_per_lease_extension"
+  summary: "The maximum amount of time in seconds for a single lease extension attempt. Bounds the delay before a message\nredelivery if the subscriber fails to extend the deadline. Default is 0 (disabled)."
+  type: method
+  example: []
+  syntax:
+    description: "The maximum amount of time in seconds for a single lease extension attempt. Bounds the delay before a message\nredelivery if the subscriber fails to extend the deadline. Default is 0 (disabled)."
+    content: "def max_duration_per_lease_extension => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of seconds."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#max_outstanding_bytes(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#max_outstanding_bytes
+  name: "#max_outstanding_bytes"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#max_outstanding_bytes"
+  summary: "The total byte size of received messages to be collected by subscriber. Default is 100,000,000 (100MB)."
+  type: method
+  example: []
+  syntax:
+    description: "The total byte size of received messages to be collected by subscriber. Default is 100,000,000 (100MB)."
+    content: "def max_outstanding_bytes => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of bytes."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#max_outstanding_messages(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#max_outstanding_messages
+  name: "#max_outstanding_messages"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#max_outstanding_messages"
+  summary: "The number of received messages to be collected by subscriber. Default is 1,000."
+  type: method
+  example: []
+  syntax:
+    description: "The number of received messages to be collected by subscriber. Default is 1,000."
+    content: "def max_outstanding_messages => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of messages."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#max_total_lease_duration(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#max_total_lease_duration
+  name: "#max_total_lease_duration"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#max_total_lease_duration"
+  summary: "The number of seconds that received messages can be held awaiting processing. Default is 3,600 (1 hour)."
+  type: method
+  example: []
+  syntax:
+    description: "The number of seconds that received messages can be held awaiting processing. Default is 3,600 (1 hour)."
+    content: "def max_total_lease_duration => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — The maximum number of seconds."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#message_ordering(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#message_ordering
+  name: "#message_ordering"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#message_ordering"
+  summary: "Whether message ordering has\nbeen enabled."
+  type: method
+  example: []
+  syntax:
+    description: "Whether message ordering has\nbeen enabled."
+    content: "def message_ordering => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — the current value of message_ordering"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#on_error(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#on_error
+  name: "#on_error"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#on_error"
+  summary: "Register to be notified of errors when raised.</p>\n\n<p>If an unhandled error has occurred the subscriber will attempt to\nrecover from the error and resume listening.</p>\n\n<p>Multiple error handlers can be added."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsubscriber = sub.listen do |received_message|\n  # process message\n  received_message.acknowledge!\nend\n\n# Register to be notified when unhandled errors occur.\nsubscriber.on_error do |error|\n  # log error\n  puts error\nend\n\n# Start listening for messages and errors.\nsubscriber.start\n\n# Shut down the subscriber when ready to stop receiving messages.\nsubscriber.stop!</pre>"
+  syntax:
+    description: "Register to be notified of errors when raised.</p>\n\n<p>If an unhandled error has occurred the subscriber will attempt to\nrecover from the error and resume listening.</p>\n\n<p>Multiple error handlers can be added."
+    content: "def on_error(&block) { |error| ... }"
+    arguments: []
+    yields:
+    - description: "(callback) — The block to be called when an error is raised."
+    yieldparams:
+    - description: "<strong>error</strong> (Exception) — The error raised."
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#push_threads(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#push_threads
+  name: "#push_threads"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#push_threads"
+  summary: "The number of threads to handle\nacknowledgement (<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_ack__instance_\">ReceivedMessage#ack!</a>) and delay messages\n(<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_nack__instance_\">ReceivedMessage#nack!</a>, ReceivedMessage#modify&lt;em&gt;ack&lt;/em&gt;deadline!).\nDefault is 4."
+  type: method
+  example: []
+  syntax:
+    description: "The number of threads to handle\nacknowledgement (<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_ack__instance_\">ReceivedMessage#ack!</a>) and delay messages\n(<a href=\"./Google-Cloud-PubSub-ReceivedMessage#Google__Cloud__PubSub__ReceivedMessage_nack__instance_\">ReceivedMessage#nack!</a>, ReceivedMessage#modify&lt;em&gt;ack&lt;/em&gt;deadline!).\nDefault is 4."
+    content: "def push_threads => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — the current value of push_threads"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#start(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#start
+  name: "#start"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#start"
+  summary: "Starts the subscriber pulling from the subscription and processing the\nreceived messages."
+  type: method
+  example: []
+  syntax:
+    description: "Starts the subscriber pulling from the subscription and processing the\nreceived messages."
+    content: "def start => Subscriber"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#started?(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#started?
+  name: "#started?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#started?"
+  summary: "Whether the subscriber has been started."
+  type: method
+  example: []
+  syntax:
+    description: "Whether the subscriber has been started."
+    content: "def started? => boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(boolean) — <code>true</code> when started, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#stop(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#stop
+  name: "#stop"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#stop"
+  summary: "Immediately stops the subscriber. No new messages will be pulled from\nthe subscription. Use <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_wait__instance_\">#wait!</a> to block until all received messages have\nbeen processed or released: All actions taken on received messages that\nhave not yet been sent to the API will be sent to the API. All received\nbut unprocessed messages will be released back to the API and redelivered."
+  type: method
+  example: []
+  syntax:
+    description: "Immediately stops the subscriber. No new messages will be pulled from\nthe subscription. Use <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_wait__instance_\">#wait!</a> to block until all received messages have\nbeen processed or released: All actions taken on received messages that\nhave not yet been sent to the API will be sent to the API. All received\nbut unprocessed messages will be released back to the API and redelivered."
+    content: "def stop => Subscriber"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#stop!(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#stop!
+  name: "#stop!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#stop!"
+  summary: "Stop this subscriber and block until the subscriber is fully stopped\nand all received messages have been processed or released, or until\n<code>timeout</code> seconds have passed.</p>\n\n<p>The same as calling <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_stop_instance_\">#stop</a> and <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_wait__instance_\">#wait!</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Stop this subscriber and block until the subscriber is fully stopped\nand all received messages have been processed or released, or until\n<code>timeout</code> seconds have passed.</p>\n\n<p>The same as calling <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_stop_instance_\">#stop</a> and <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_wait__instance_\">#wait!</a>."
+    content: "def stop!(timeout = nil) => Subscriber"
+    arguments:
+    - description: "<strong>timeout</strong> (Number, nil) — The number of seconds to block until the\nsubscriber is fully stopped. Default will block indefinitely."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#stopped?(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#stopped?
+  name: "#stopped?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#stopped?"
+  summary: "Whether the subscriber has been stopped."
+  type: method
+  example: []
+  syntax:
+    description: "Whether the subscriber has been stopped."
+    content: "def stopped? => boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(boolean) — <code>true</code> when stopped, <code>false</code> otherwise."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#streams(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#streams
+  name: "#streams"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#streams"
+  summary: "The number of concurrent streams to open\nto pull messages from the subscription. Default is 4."
+  type: method
+  example: []
+  syntax:
+    description: "The number of concurrent streams to open\nto pull messages from the subscription. Default is 4."
+    content: "def streams => Integer"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Integer) — the current value of streams"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#subscription_name(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#subscription_name
+  name: "#subscription_name"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#subscription_name"
+  summary: "The name of the subscription the\nmessages are pulled from."
+  type: method
+  example: []
+  syntax:
+    description: "The name of the subscription the\nmessages are pulled from."
+    content: "def subscription_name => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — the current value of subscription_name"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#use_legacy_flow_control?(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#use_legacy_flow_control?
+  name: "#use_legacy_flow_control?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#use_legacy_flow_control?"
+  summary: "Whether to enforce flow control at the client side only or to enforce it at both the client and\nthe server. For more details about flow control see https://cloud.google.com/pubsub/docs/pull#config.</p>\n\n<p>server side flow control are enforced."
+  type: method
+  example: []
+  syntax:
+    description: "Whether to enforce flow control at the client side only or to enforce it at both the client and\nthe server. For more details about flow control see https://cloud.google.com/pubsub/docs/pull#config.</p>\n\n<p>server side flow control are enforced."
+    content: "def use_legacy_flow_control? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — <code>true</code> when only client side flow control is enforced, <code>false</code> when both client and"
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#wait!(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#wait!
+  name: "#wait!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#wait!"
+  summary: "Blocks until the subscriber is fully stopped and all received messages\nhave been processed or released, or until <code>timeout</code> seconds have\npassed.</p>\n\n<p>Does not stop the subscriber. To stop the subscriber, first call\n<a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_stop_instance_\">#stop</a> and then call <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_wait__instance_\">#wait!</a> to block until the subscriber is\nstopped."
+  type: method
+  example: []
+  syntax:
+    description: "Blocks until the subscriber is fully stopped and all received messages\nhave been processed or released, or until <code>timeout</code> seconds have\npassed.</p>\n\n<p>Does not stop the subscriber. To stop the subscriber, first call\n<a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_stop_instance_\">#stop</a> and then call <a href=\"./Google-Cloud-PubSub-Subscriber#Google__Cloud__PubSub__Subscriber_wait__instance_\">#wait!</a> to block until the subscriber is\nstopped."
+    content: "def wait!(timeout = nil) => Subscriber"
+    arguments:
+    - description: "<strong>timeout</strong> (Number, nil) — The number of seconds to block until the\nsubscriber is fully stopped. Default will block indefinitely."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Subscriber\">Subscriber</a>) — returns self so calls can be chained."
+    raises: []
+- uid: Google::Cloud::PubSub::Subscriber#wait_stop_buffer_thread!(instance)
+  fullName: Google::Cloud::PubSub::Subscriber#wait_stop_buffer_thread!
+  name: "#wait_stop_buffer_thread!"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#wait_stop_buffer_thread!"
+  summary: "Starts a new thread to call wait! (blocking) on each Stream and then stop the TimedUnaryBuffer."
+  type: method
+  example: []
+  syntax:
+    description: "Starts a new thread to call wait! (blocking) on each Stream and then stop the TimedUnaryBuffer."
+    content: "def wait_stop_buffer_thread!"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+references: []

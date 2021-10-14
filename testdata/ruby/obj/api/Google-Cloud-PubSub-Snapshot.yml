@@ -1,0 +1,149 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Snapshot
+  children: 
+  - Google::Cloud::PubSub::Snapshot#delete(instance)
+  - Google::Cloud::PubSub::Snapshot#expiration_time(instance)
+  - Google::Cloud::PubSub::Snapshot#labels(instance)
+  - Google::Cloud::PubSub::Snapshot#labels=(instance)
+  - Google::Cloud::PubSub::Snapshot#name(instance)
+  - Google::Cloud::PubSub::Snapshot#topic(instance)
+  - Google::Cloud::PubSub::Snapshot::List
+  fullName: Google::Cloud::PubSub::Snapshot
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: Snapshot
+  summary: "<h1>Snapshot</h1>\n\n<p>A named resource created from a subscription to retain a stream of\nmessages from a topic. A snapshot is guaranteed to retain:</p>\n\n<ul>\n<li>The existing backlog on the subscription. More precisely, this is\ndefined as the messages in the subscription&#39;s backlog that are\nunacknowledged upon the successful completion of the\n<code>create_snapshot</code> operation; as well as:</li>\n<li>Any messages published to the subscription&#39;s topic following the\nsuccessful completion of the <code>create_snapshot</code> operation.</li>\n</ul>"
+  type: "class"
+  name: Google::Cloud::PubSub::Snapshot
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot \"my-snapshot\"\nsnapshot.name #=> \"projects/my-project/snapshots/my-snapshot\"</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::Snapshot#delete(instance)
+  fullName: Google::Cloud::PubSub::Snapshot#delete
+  name: "#delete"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#delete"
+  summary: "Removes an existing snapshot. All messages retained in the snapshot\nare immediately dropped. After a snapshot is deleted, a new one may be\ncreated with the same name, but the new one has no association with\nthe old snapshot or its subscription, unless the same subscription is\nspecified."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\npubsub.snapshots.each do |snapshot|\n  snapshot.delete\nend</pre>"
+  syntax:
+    description: "Removes an existing snapshot. All messages retained in the snapshot\nare immediately dropped. After a snapshot is deleted, a new one may be\ncreated with the same name, but the new one has no association with\nthe old snapshot or its subscription, unless the same subscription is\nspecified."
+    content: "def delete => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean) — Returns <code>true</code> if the snapshot was deleted."
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot#expiration_time(instance)
+  fullName: Google::Cloud::PubSub::Snapshot#expiration_time
+  name: "#expiration_time"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#expiration_time"
+  summary: "The snapshot is guaranteed to exist up until this time.\nA newly-created snapshot expires no later than 7 days from the time of\nits creation. Its exact lifetime is determined at creation by the\nexisting backlog in the source subscription. Specifically, the\nlifetime of the snapshot is 7 days - (age of oldest unacked message in\nthe subscription). For example, consider a subscription whose oldest\nunacked message is 3 days old. If a snapshot is created from this\nsubscription, the snapshot -- which will always capture this 3-day-old\nbacklog as long as the snapshot exists -- will expire in 4 days."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot \"my-snapshot\"\nsnapshot.topic.name #=> \"projects/my-project/topics/my-topic\"\nsnapshot.expiration_time</pre>"
+  syntax:
+    description: "The snapshot is guaranteed to exist up until this time.\nA newly-created snapshot expires no later than 7 days from the time of\nits creation. Its exact lifetime is determined at creation by the\nexisting backlog in the source subscription. Specifically, the\nlifetime of the snapshot is 7 days - (age of oldest unacked message in\nthe subscription). For example, consider a subscription whose oldest\nunacked message is 3 days old. If a snapshot is created from this\nsubscription, the snapshot -- which will always capture this 3-day-old\nbacklog as long as the snapshot exists -- will expire in 4 days."
+    content: "def expiration_time => Time"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Time) — The time until which the snapshot is guaranteed to\nexist."
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot#labels(instance)
+  fullName: Google::Cloud::PubSub::Snapshot#labels
+  name: "#labels"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#labels"
+  summary: "A hash of user-provided labels associated with this snapshot.\nLabels can be used to organize and group snapshots.See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and\nManaging Labels</a>.</p>\n\n<p>The returned hash is frozen and changes are not allowed. Use\n<a href=\"./Google-Cloud-PubSub-Snapshot#Google__Cloud__PubSub__Snapshot_labels=_instance_\">#labels=</a> to update the labels for this snapshot."
+  type: method
+  example: []
+  syntax:
+    description: "A hash of user-provided labels associated with this snapshot.\nLabels can be used to organize and group snapshots.See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and\nManaging Labels</a>.</p>\n\n<p>The returned hash is frozen and changes are not allowed. Use\n<a href=\"./Google-Cloud-PubSub-Snapshot#Google__Cloud__PubSub__Snapshot_labels=_instance_\">#labels=</a> to update the labels for this snapshot."
+    content: "def labels => Hash"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Hash) — The frozen labels hash."
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot#labels=(instance)
+  fullName: Google::Cloud::PubSub::Snapshot#labels=
+  name: "#labels="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#labels="
+  summary: "Sets the hash of user-provided labels associated with this\nsnapshot. Labels can be used to organize and group snapshots.\nLabel keys and values can be no longer than 63 characters, can only\ncontain lowercase letters, numeric characters, underscores and dashes.\nInternational characters are allowed. Label values are optional. Label\nkeys must start with a letter and each label in the list must have a\ndifferent key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and Managing\nLabels</a>."
+  type: method
+  example: []
+  syntax:
+    description: "Sets the hash of user-provided labels associated with this\nsnapshot. Labels can be used to organize and group snapshots.\nLabel keys and values can be no longer than 63 characters, can only\ncontain lowercase letters, numeric characters, underscores and dashes.\nInternational characters are allowed. Label values are optional. Label\nkeys must start with a letter and each label in the list must have a\ndifferent key. See <a href=\"https://cloud.google.com/pubsub/docs/labels\">Creating and Managing\nLabels</a>."
+    content: "def labels=(new_labels)"
+    arguments:
+    - description: "<strong>new_labels</strong> (Hash) — The new labels hash."
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises:
+    - description: "(ArgumentError)"
+- uid: Google::Cloud::PubSub::Snapshot#name(instance)
+  fullName: Google::Cloud::PubSub::Snapshot#name
+  name: "#name"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#name"
+  summary: "The name of the snapshot."
+  type: method
+  example: []
+  syntax:
+    description: "The name of the snapshot."
+    content: "def name => String"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(String) — A fully-qualified snapshot name in the form\n<code>projects/{project_id}/snapshots/{snapshot_id}</code>."
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot#topic(instance)
+  fullName: Google::Cloud::PubSub::Snapshot#topic
+  name: "#topic"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#topic"
+  summary: "The <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> from which this snapshot is retaining messages."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\nsub = pubsub.subscription \"my-sub\"\n\nsnapshot = sub.create_snapshot \"my-snapshot\"\nsnapshot.topic.name #=> \"projects/my-project/topics/my-topic\"</pre>"
+  syntax:
+    description: "The <a href=\"./Google-Cloud-PubSub-Topic\">Topic</a> from which this snapshot is retaining messages."
+    content: "def topic => Topic"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Topic\">Topic</a>)"
+    raises: []
+references:
+- uid: Google::Cloud::PubSub::Snapshot::List
+  fullName: Google::Cloud::PubSub::Snapshot::List
+  name: List
+  module: google-cloud-pubsub
+  id: List
+  summary: "Snapshot::List is a special case Array with additional values."
+  parent: Google::Cloud::PubSub::Snapshot

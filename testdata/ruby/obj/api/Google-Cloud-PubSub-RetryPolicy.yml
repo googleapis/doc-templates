@@ -1,0 +1,119 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::RetryPolicy
+  children: 
+  - Google::Cloud::PubSub::RetryPolicy#initialize(instance)
+  - Google::Cloud::PubSub::RetryPolicy#maximum_backoff(instance)
+  - Google::Cloud::PubSub::RetryPolicy#maximum_backoff=(instance)
+  - Google::Cloud::PubSub::RetryPolicy#minimum_backoff(instance)
+  - Google::Cloud::PubSub::RetryPolicy#minimum_backoff=(instance)
+  fullName: Google::Cloud::PubSub::RetryPolicy
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: RetryPolicy
+  summary: "<h1>RetryPolicy</h1>\n\n<p>An immutable Retry Policy value object that specifies how Cloud Pub/Sub retries message delivery.</p>\n\n<p>Retry delay will be exponential based on provided minimum and maximum backoffs. (See <a href=\"https://en.wikipedia.org/wiki/Exponential_backoff\">Exponential\nbackoff</a>.)</p>\n\n<p>Retry Policy will be triggered on NACKs or acknowledgement deadline exceeded events for a given message.</p>\n\n<p>Retry Policy is implemented on a best effort basis. At times, the delay between consecutive deliveries may not\nmatch the configuration. That is, delay can be more or less than configured backoff.</p>"
+  type: "class"
+  name: Google::Cloud::PubSub::RetryPolicy
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsub = pubsub.subscription \"my-topic-sub\"\n\nsub.retry_policy = Google::Cloud::PubSub::RetryPolicy.new minimum_backoff: 5, maximum_backoff: 300\n\nsub.retry_policy.minimum_backoff #=> 5\nsub.retry_policy.maximum_backoff #=> 300</pre>"
+  inherits:
+  - "Object"
+- uid: Google::Cloud::PubSub::RetryPolicy#initialize(instance)
+  fullName: Google::Cloud::PubSub::RetryPolicy#initialize
+  name: "#initialize"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#initialize"
+  summary: "Creates a new, immutable RetryPolicy value object."
+  type: method
+  example: []
+  syntax:
+    description: "Creates a new, immutable RetryPolicy value object."
+    content: "def initialize(minimum_backoff: nil, maximum_backoff: nil) => RetryPolicy"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-RetryPolicy\">RetryPolicy</a>) — a new instance of RetryPolicy"
+    raises: []
+- uid: Google::Cloud::PubSub::RetryPolicy#maximum_backoff(instance)
+  fullName: Google::Cloud::PubSub::RetryPolicy#maximum_backoff
+  name: "#maximum_backoff"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#maximum_backoff"
+  summary: "The maximum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 600 seconds."
+  type: method
+  example: []
+  syntax:
+    description: "The maximum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 600 seconds."
+    content: "def maximum_backoff => Numeric"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the current value of maximum_backoff"
+    raises: []
+- uid: Google::Cloud::PubSub::RetryPolicy#maximum_backoff=(instance)
+  fullName: Google::Cloud::PubSub::RetryPolicy#maximum_backoff=
+  name: "#maximum_backoff="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#maximum_backoff="
+  summary: "The maximum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 600 seconds."
+  type: method
+  example: []
+  syntax:
+    description: "The maximum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 600 seconds."
+    content: "def maximum_backoff=(value) => Numeric"
+    arguments:
+    - description: "<strong>value</strong> (Numeric) — the value to set the attribute maximum_backoff to."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the newly set value"
+    raises: []
+- uid: Google::Cloud::PubSub::RetryPolicy#minimum_backoff(instance)
+  fullName: Google::Cloud::PubSub::RetryPolicy#minimum_backoff
+  name: "#minimum_backoff"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#minimum_backoff"
+  summary: "The minimum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 10 seconds."
+  type: method
+  example: []
+  syntax:
+    description: "The minimum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 10 seconds."
+    content: "def minimum_backoff => Numeric"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the current value of minimum_backoff"
+    raises: []
+- uid: Google::Cloud::PubSub::RetryPolicy#minimum_backoff=(instance)
+  fullName: Google::Cloud::PubSub::RetryPolicy#minimum_backoff=
+  name: "#minimum_backoff="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#minimum_backoff="
+  summary: "The minimum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 10 seconds."
+  type: method
+  example: []
+  syntax:
+    description: "The minimum delay between consecutive deliveries of a given message. Value\nshould be between 0 and 600 seconds. The default value is 10 seconds."
+    content: "def minimum_backoff=(value) => Numeric"
+    arguments:
+    - description: "<strong>value</strong> (Numeric) — the value to set the attribute minimum_backoff to."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Numeric) — the newly set value"
+    raises: []
+references: []

@@ -1,0 +1,141 @@
+### YamlMime:UniversalReference
+items:
+- uid: Google::Cloud::PubSub::Snapshot::List
+  children: 
+  - Google::Cloud::PubSub::Snapshot::List#all(instance)
+  - Google::Cloud::PubSub::Snapshot::List#next(instance)
+  - Google::Cloud::PubSub::Snapshot::List#next?(instance)
+  - Google::Cloud::PubSub::Snapshot::List#next_snapshots(instance)
+  - Google::Cloud::PubSub::Snapshot::List#token(instance)
+  - Google::Cloud::PubSub::Snapshot::List#token=(instance)
+  fullName: Google::Cloud::PubSub::Snapshot::List
+  langs:
+  - ruby
+  module: google-cloud-pubsub
+  id: List
+  summary: "Snapshot::List is a special case Array with additional values."
+  type: "class"
+  name: Google::Cloud::PubSub::Snapshot::List
+  example: []
+  inherits:
+  - "Array"
+- uid: Google::Cloud::PubSub::Snapshot::List#all(instance)
+  fullName: Google::Cloud::PubSub::Snapshot::List#all
+  name: "#all"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#all"
+  summary: "Retrieves remaining results by repeatedly invoking <a href=\"./Google-Cloud-PubSub-Snapshot-List#Google__Cloud__PubSub__Snapshot__List_next_instance_\">#next</a> until\n<a href=\"./Google-Cloud-PubSub-Snapshot-List#Google__Cloud__PubSub__Snapshot__List_next__instance_\">#next?</a> returns <code>false</code>. Calls the given block once for each\nresult, which is passed as the argument to the block.</p>\n\n<p>An Enumerator is returned if no block is given.</p>\n\n<p>This method will make repeated API calls until all remaining results\nare retrieved. (Unlike <code>#each</code>, for example, which merely iterates\nover the results returned by a single API call.) Use with caution."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.all do |snapshot|\n  puts snapshot.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nall_names = snapshots.all.map do |snapshot|\n  snapshot.name\nend</pre>"
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nsnapshots.all(request_limit: 10) do |snapshot|\n  puts snapshot.name\nend</pre>"
+  syntax:
+    description: "Retrieves remaining results by repeatedly invoking <a href=\"./Google-Cloud-PubSub-Snapshot-List#Google__Cloud__PubSub__Snapshot__List_next_instance_\">#next</a> until\n<a href=\"./Google-Cloud-PubSub-Snapshot-List#Google__Cloud__PubSub__Snapshot__List_next__instance_\">#next?</a> returns <code>false</code>. Calls the given block once for each\nresult, which is passed as the argument to the block.</p>\n\n<p>An Enumerator is returned if no block is given.</p>\n\n<p>This method will make repeated API calls until all remaining results\nare retrieved. (Unlike <code>#each</code>, for example, which merely iterates\nover the results returned by a single API call.) Use with caution."
+    content: "def all(request_limit: nil, &block) { |snapshot| ... } => Enumerator"
+    arguments:
+    - description: "<strong>request_limit</strong> (Integer) <em>(defaults to: nil)</em> — The upper limit of API requests to\nmake to load all snapshots. Default is no limit."
+    yields:
+    - description: "(snapshot) — The block for accessing each snapshot."
+    yieldparams:
+    - description: "<strong>snapshot</strong> (<a href=\"./Google-Cloud-PubSub-Snapshot\">Snapshot</a>) — The snapshot object."
+    returnValues:
+    - description: "(Enumerator)"
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot::List#next(instance)
+  fullName: Google::Cloud::PubSub::Snapshot::List#next
+  name: "#next"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#next"
+  summary: "Retrieve the next page of snapshots."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nif snapshots.next?\n  next_snapshots = snapshots.next\nend</pre>"
+  syntax:
+    description: "Retrieve the next page of snapshots."
+    content: "def next => Snapshot::List"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-PubSub-Snapshot-List\">Snapshot::List</a>)"
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot::List#next?(instance)
+  fullName: Google::Cloud::PubSub::Snapshot::List#next?
+  name: "#next?"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#next?"
+  summary: "Whether there a next page of snapshots."
+  type: method
+  example:     
+    - "<pre class=\"prettyprint lang-rb\">require \"google/cloud/pubsub\"\n\npubsub = Google::Cloud::PubSub.new\n\nsnapshots = pubsub.snapshots\nif snapshots.next?\n  next_snapshots = snapshots.next\nend</pre>"
+  syntax:
+    description: "Whether there a next page of snapshots."
+    content: "def next? => Boolean"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(Boolean)"
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot::List#next_snapshots(instance)
+  fullName: Google::Cloud::PubSub::Snapshot::List#next_snapshots
+  name: "#next_snapshots"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#next_snapshots"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def next_snapshots"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot::List#token(instance)
+  fullName: Google::Cloud::PubSub::Snapshot::List#token
+  name: "#token"
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#token"
+  summary: "If not empty, indicates that there are more snapshots\nthat match the request and this value should be passed to\nthe next <a href=\"./Google-Cloud-PubSub-Project#Google__Cloud__PubSub__Project_snapshots_instance_\">Project#snapshots</a> to continue."
+  type: method
+  example: []
+  syntax:
+    description: "If not empty, indicates that there are more snapshots\nthat match the request and this value should be passed to\nthe next <a href=\"./Google-Cloud-PubSub-Project#Google__Cloud__PubSub__Project_snapshots_instance_\">Project#snapshots</a> to continue."
+    content: "def token"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+- uid: Google::Cloud::PubSub::Snapshot::List#token=(instance)
+  fullName: Google::Cloud::PubSub::Snapshot::List#token=
+  name: "#token="
+  langs:
+    - ruby
+  module: google-cloud-pubsub
+  id: "#token="
+  summary: "If not empty, indicates that there are more snapshots\nthat match the request and this value should be passed to\nthe next <a href=\"./Google-Cloud-PubSub-Project#Google__Cloud__PubSub__Project_snapshots_instance_\">Project#snapshots</a> to continue."
+  type: method
+  example: []
+  syntax:
+    description: "If not empty, indicates that there are more snapshots\nthat match the request and this value should be passed to\nthe next <a href=\"./Google-Cloud-PubSub-Project#Google__Cloud__PubSub__Project_snapshots_instance_\">Project#snapshots</a> to continue."
+    content: "def token=(value)"
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues: []
+    raises: []
+references: []
