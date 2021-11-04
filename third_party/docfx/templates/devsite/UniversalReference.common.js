@@ -109,6 +109,11 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   if (vm.inheritance) {
     normalizeLanguageValuePairs(vm.inheritance).forEach(handleInheritance);
   }
+
+  // wrapdeclarationcode is used to automatically line break declaration code
+  if (vm.langs && vm.langs[0] === "python") {
+      vm.wrapdeclarationcode = true;
+  }
   
   common.processSeeAlso(vm);
 
