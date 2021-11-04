@@ -109,6 +109,10 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   if (vm.inheritance) {
     normalizeLanguageValuePairs(vm.inheritance).forEach(handleInheritance);
   }
+
+  if (vm.langs && vm.langs[0] === "python") {
+      vm.wrapcode = true;
+  }
   
   common.processSeeAlso(vm);
 
