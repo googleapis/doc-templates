@@ -33,7 +33,7 @@ items:
   fullName: "com.google.cloud.speech.v1.SpeechClient"
   type: "Class"
   package: "com.google.cloud.speech.v1"
-  summary: "Service Description: Service that implements Google Cloud Speech API.\n\n <p>This class provides the ability to make remote calls to the backing service through method\n calls that map to API methods. Sample code to get started:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognitionConfig config = RecognitionConfig.newBuilder().build();\n   RecognitionAudio audio = RecognitionAudio.newBuilder().build();\n   RecognizeResponse response = speechClient.recognize(config, audio);\n }\n </code></pre>\n\n <p>Note: close() needs to be called on the SpeechClient object to clean up resources such as\n threads. In the example above, try-with-resources is used, which automatically calls close().\n\n <p>The surface of this class includes several types of Java methods for each of the API's\n methods:\n\n <ol>\n   <li>A \"flattened\" method. With this type of method, the fields of the request type have been\n       converted into function parameters. It may be the case that not all fields are available as\n       parameters, and not every API method will have a flattened method entry point.\n   <li>A \"request object\" method. This type of method only takes one parameter, a request object,\n       which must be constructed before the call. Not every API method will have a request object\n       method.\n   <li>A \"callable\" method. This type of method takes no parameters and returns an immutable API\n       callable object, which can be used to initiate calls to the service.\n </ol>\n\n <p>See the individual methods for example code.\n\n <p>Many parameters require resource names to be formatted in a particular way. To assist with\n these names, this class includes a format method for each type of name, and additionally a parse\n method to extract the individual identifiers contained within names that are returned.\n\n <p>This class can be customized by passing in a custom instance of SpeechSettings to create().\n For example:\n\n <p>To customize credentials:\n\n <pre><code class=\"pretty-print\">\n SpeechSettings speechSettings =\n     SpeechSettings.newBuilder()\n         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))\n         .build();\n SpeechClient speechClient = SpeechClient.create(speechSettings);\n </code></pre>\n\n <p>To customize the endpoint:\n\n <pre><code class=\"pretty-print\">\n SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();\n SpeechClient speechClient = SpeechClient.create(speechSettings);\n </code></pre>\n\n <p>Please refer to the GitHub repository's samples for more quickstart code snippets."
+  summary: "Service Description: Service that implements Google Cloud Speech API.\n\n <p>This class provides the ability to make remote calls to the backing service through method\n calls that map to API methods. Sample code to get started:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognitionConfig config = RecognitionConfig.newBuilder().build();\n   RecognitionAudio audio = RecognitionAudio.newBuilder().build();\n   RecognizeResponse response = speechClient.recognize(config, audio);\n }\n </code></pre>\n\n <p>Note: close() needs to be called on the SpeechClient object to clean up resources such as\n threads. In the example above, try-with-resources is used, which automatically calls close().\n\n <p>The surface of this class includes several types of Java methods for each of the API's\n methods:\n\n <ol>\n   <li>A \"flattened\" method. With this type of method, the fields of the request type have been\n       converted into function parameters. It may be the case that not all fields are available as\n       parameters, and not every API method will have a flattened method entry point.\n   <li>A \"request object\" method. This type of method only takes one parameter, a request object,\n       which must be constructed before the call. Not every API method will have a request object\n       method.\n   <li>A \"callable\" method. This type of method takes no parameters and returns an immutable API\n       callable object, which can be used to initiate calls to the service.\n </ol>\n\n <p>See the individual methods for example code.\n\n <p>Many parameters require resource names to be formatted in a particular way. To assist with\n these names, this class includes a format method for each type of name, and additionally a parse\n method to extract the individual identifiers contained within names that are returned.\n\n <p>This class can be customized by passing in a custom instance of SpeechSettings to create().\n For example:\n\n <p>To customize credentials:\n\n <pre><code class=\"prettyprint lang-java\">\n SpeechSettings speechSettings =\n     SpeechSettings.newBuilder()\n         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))\n         .build();\n SpeechClient speechClient = SpeechClient.create(speechSettings);\n </code></pre>\n\n <p>To customize the endpoint:\n\n <pre><code class=\"prettyprint lang-java\">\n SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();\n SpeechClient speechClient = SpeechClient.create(speechSettings);\n </code></pre>\n\n <p>Please refer to the GitHub repository's samples for more quickstart code snippets."
   syntax:
     content: "public class SpeechClient implements BackgroundResource"
   inheritance:
@@ -52,6 +52,7 @@ items:
   - "java.lang.Object.wait()"
   - "java.lang.Object.wait(long)"
   - "java.lang.Object.wait(long,int)"
+  javaType: "class"
 - uid: "com.google.cloud.speech.v1.SpeechClient.SpeechClient(com.google.cloud.speech.v1.SpeechSettings)"
   id: "SpeechClient(com.google.cloud.speech.v1.SpeechSettings)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -69,6 +70,7 @@ items:
     parameters:
     - id: "settings"
       type: "com.google.cloud.speech.v1.SpeechSettings"
+  javaType: "constructor"
 - uid: "com.google.cloud.speech.v1.SpeechClient.SpeechClient(com.google.cloud.speech.v1.stub.SpeechStub)"
   id: "SpeechClient(com.google.cloud.speech.v1.stub.SpeechStub)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -85,6 +87,7 @@ items:
     parameters:
     - id: "stub"
       type: "com.google.cloud.speech.v1.stub.SpeechStub"
+  javaType: "constructor"
 - uid: "com.google.cloud.speech.v1.SpeechClient.awaitTermination(long,java.util.concurrent.TimeUnit)"
   id: "awaitTermination(long,java.util.concurrent.TimeUnit)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -107,6 +110,7 @@ items:
       type: "boolean"
   exceptions:
   - type: "java.lang.InterruptedException"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.close()"
   id: "close()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -120,6 +124,7 @@ items:
   package: "com.google.cloud.speech.v1"
   syntax:
     content: "public final void close()"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.create()"
   id: "create()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -138,6 +143,7 @@ items:
       type: "com.google.cloud.speech.v1.SpeechClient"
   exceptions:
   - type: "java.io.IOException"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.create(com.google.cloud.speech.v1.SpeechSettings)"
   id: "create(com.google.cloud.speech.v1.SpeechSettings)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -159,6 +165,7 @@ items:
       type: "com.google.cloud.speech.v1.SpeechClient"
   exceptions:
   - type: "java.io.IOException"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.create(com.google.cloud.speech.v1.stub.SpeechStub)"
   id: "create(com.google.cloud.speech.v1.stub.SpeechStub)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -178,6 +185,7 @@ items:
       type: "com.google.cloud.speech.v1.stub.SpeechStub"
     return:
       type: "com.google.cloud.speech.v1.SpeechClient"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.getOperationsClient()"
   id: "getOperationsClient()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -194,6 +202,7 @@ items:
     content: "public final OperationsClient getOperationsClient()"
     return:
       type: "com.google.longrunning.OperationsClient"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.getSettings()"
   id: "getSettings()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -209,6 +218,7 @@ items:
     content: "public final SpeechSettings getSettings()"
     return:
       type: "com.google.cloud.speech.v1.SpeechSettings"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.getStub()"
   id: "getStub()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -224,6 +234,7 @@ items:
     content: "public SpeechStub getStub()"
     return:
       type: "com.google.cloud.speech.v1.stub.SpeechStub"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.isShutdown()"
   id: "isShutdown()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -239,6 +250,7 @@ items:
     content: "public boolean isShutdown()"
     return:
       type: "boolean"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.isTerminated()"
   id: "isTerminated()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -254,6 +266,7 @@ items:
     content: "public boolean isTerminated()"
     return:
       type: "boolean"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeAsync(com.google.cloud.speech.v1.LongRunningRecognizeRequest)"
   id: "longRunningRecognizeAsync(com.google.cloud.speech.v1.LongRunningRecognizeRequest)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -265,7 +278,7 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeAsync*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   LongRunningRecognizeRequest request =\n       LongRunningRecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   LongRunningRecognizeResponse response = speechClient.longRunningRecognizeAsync(request).get();\n }\n </code></pre>"
+  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   LongRunningRecognizeRequest request =\n       LongRunningRecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   LongRunningRecognizeResponse response = speechClient.longRunningRecognizeAsync(request).get();\n }\n </code></pre>"
   syntax:
     content: "public final OperationFuture<LongRunningRecognizeResponse,LongRunningRecognizeMetadata> longRunningRecognizeAsync(LongRunningRecognizeRequest request)"
     parameters:
@@ -274,6 +287,7 @@ items:
       description: "The request object containing all of the parameters for the API call."
     return:
       type: "com.google.api.gax.longrunning.OperationFuture<com.google.cloud.speech.v1.LongRunningRecognizeResponse,com.google.cloud.speech.v1.LongRunningRecognizeMetadata>"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeAsync(com.google.cloud.speech.v1.RecognitionConfig,com.google.cloud.speech.v1.RecognitionAudio)"
   id: "longRunningRecognizeAsync(com.google.cloud.speech.v1.RecognitionConfig,com.google.cloud.speech.v1.RecognitionAudio)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -285,7 +299,7 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeAsync*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognitionConfig config = RecognitionConfig.newBuilder().build();\n   RecognitionAudio audio = RecognitionAudio.newBuilder().build();\n   LongRunningRecognizeResponse response =\n       speechClient.longRunningRecognizeAsync(config, audio).get();\n }\n </code></pre>"
+  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognitionConfig config = RecognitionConfig.newBuilder().build();\n   RecognitionAudio audio = RecognitionAudio.newBuilder().build();\n   LongRunningRecognizeResponse response =\n       speechClient.longRunningRecognizeAsync(config, audio).get();\n }\n </code></pre>"
   syntax:
     content: "public final OperationFuture<LongRunningRecognizeResponse,LongRunningRecognizeMetadata> longRunningRecognizeAsync(RecognitionConfig config, RecognitionAudio audio)"
     parameters:
@@ -297,6 +311,7 @@ items:
       description: "Required. The audio data to be recognized."
     return:
       type: "com.google.api.gax.longrunning.OperationFuture<com.google.cloud.speech.v1.LongRunningRecognizeResponse,com.google.cloud.speech.v1.LongRunningRecognizeMetadata>"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeCallable()"
   id: "longRunningRecognizeCallable()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -308,11 +323,12 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   LongRunningRecognizeRequest request =\n       LongRunningRecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   ApiFuture<Operation> future = speechClient.longRunningRecognizeCallable().futureCall(request);\n   // Do something.\n   Operation response = future.get();\n }\n </code></pre>"
+  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   LongRunningRecognizeRequest request =\n       LongRunningRecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   ApiFuture<Operation> future = speechClient.longRunningRecognizeCallable().futureCall(request);\n   // Do something.\n   Operation response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<LongRunningRecognizeRequest,Operation> longRunningRecognizeCallable()"
     return:
       type: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1.LongRunningRecognizeRequest,com.google.longrunning.Operation>"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeOperationCallable()"
   id: "longRunningRecognizeOperationCallable()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -324,11 +340,12 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.longRunningRecognizeOperationCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   LongRunningRecognizeRequest request =\n       LongRunningRecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> future =\n       speechClient.longRunningRecognizeOperationCallable().futureCall(request);\n   // Do something.\n   LongRunningRecognizeResponse response = future.get();\n }\n </code></pre>"
+  summary: "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations\n interface. Returns either an <code>Operation.error</code> or an <code>Operation.response</code> which contains a\n <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech\n recognition, see the <a href=\"https://cloud.google.com/speech-to-text/docs/async-recognize\">how-to</a>.\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   LongRunningRecognizeRequest request =\n       LongRunningRecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> future =\n       speechClient.longRunningRecognizeOperationCallable().futureCall(request);\n   // Do something.\n   LongRunningRecognizeResponse response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final OperationCallable<LongRunningRecognizeRequest,LongRunningRecognizeResponse,LongRunningRecognizeMetadata> longRunningRecognizeOperationCallable()"
     return:
       type: "com.google.api.gax.rpc.OperationCallable<com.google.cloud.speech.v1.LongRunningRecognizeRequest,com.google.cloud.speech.v1.LongRunningRecognizeResponse,com.google.cloud.speech.v1.LongRunningRecognizeMetadata>"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.recognize(com.google.cloud.speech.v1.RecognitionConfig,com.google.cloud.speech.v1.RecognitionAudio)"
   id: "recognize(com.google.cloud.speech.v1.RecognitionConfig,com.google.cloud.speech.v1.RecognitionAudio)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -340,7 +357,7 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.recognize*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs synchronous speech recognition: receive results after all audio has been sent and\n processed.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognitionConfig config = RecognitionConfig.newBuilder().build();\n   RecognitionAudio audio = RecognitionAudio.newBuilder().build();\n   RecognizeResponse response = speechClient.recognize(config, audio);\n }\n </code></pre>"
+  summary: "Performs synchronous speech recognition: receive results after all audio has been sent and\n processed.\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognitionConfig config = RecognitionConfig.newBuilder().build();\n   RecognitionAudio audio = RecognitionAudio.newBuilder().build();\n   RecognizeResponse response = speechClient.recognize(config, audio);\n }\n </code></pre>"
   syntax:
     content: "public final RecognizeResponse recognize(RecognitionConfig config, RecognitionAudio audio)"
     parameters:
@@ -352,6 +369,7 @@ items:
       description: "Required. The audio data to be recognized."
     return:
       type: "com.google.cloud.speech.v1.RecognizeResponse"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.recognize(com.google.cloud.speech.v1.RecognizeRequest)"
   id: "recognize(com.google.cloud.speech.v1.RecognizeRequest)"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -363,7 +381,7 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.recognize*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs synchronous speech recognition: receive results after all audio has been sent and\n processed.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognizeRequest request =\n       RecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   RecognizeResponse response = speechClient.recognize(request);\n }\n </code></pre>"
+  summary: "Performs synchronous speech recognition: receive results after all audio has been sent and\n processed.\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognizeRequest request =\n       RecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   RecognizeResponse response = speechClient.recognize(request);\n }\n </code></pre>"
   syntax:
     content: "public final RecognizeResponse recognize(RecognizeRequest request)"
     parameters:
@@ -372,6 +390,7 @@ items:
       description: "The request object containing all of the parameters for the API call."
     return:
       type: "com.google.cloud.speech.v1.RecognizeResponse"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.recognizeCallable()"
   id: "recognizeCallable()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -383,11 +402,12 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.recognizeCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs synchronous speech recognition: receive results after all audio has been sent and\n processed.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognizeRequest request =\n       RecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   ApiFuture<RecognizeResponse> future = speechClient.recognizeCallable().futureCall(request);\n   // Do something.\n   RecognizeResponse response = future.get();\n }\n </code></pre>"
+  summary: "Performs synchronous speech recognition: receive results after all audio has been sent and\n processed.\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   RecognizeRequest request =\n       RecognizeRequest.newBuilder()\n           .setConfig(RecognitionConfig.newBuilder().build())\n           .setAudio(RecognitionAudio.newBuilder().build())\n           .build();\n   ApiFuture<RecognizeResponse> future = speechClient.recognizeCallable().futureCall(request);\n   // Do something.\n   RecognizeResponse response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<RecognizeRequest,RecognizeResponse> recognizeCallable()"
     return:
       type: "com.google.api.gax.rpc.UnaryCallable<com.google.cloud.speech.v1.RecognizeRequest,com.google.cloud.speech.v1.RecognizeResponse>"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.shutdown()"
   id: "shutdown()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -401,6 +421,7 @@ items:
   package: "com.google.cloud.speech.v1"
   syntax:
     content: "public void shutdown()"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.shutdownNow()"
   id: "shutdownNow()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -414,6 +435,7 @@ items:
   package: "com.google.cloud.speech.v1"
   syntax:
     content: "public void shutdownNow()"
+  javaType: "method"
 - uid: "com.google.cloud.speech.v1.SpeechClient.streamingRecognizeCallable()"
   id: "streamingRecognizeCallable()"
   parent: "com.google.cloud.speech.v1.SpeechClient"
@@ -425,11 +447,12 @@ items:
   overload: "com.google.cloud.speech.v1.SpeechClient.streamingRecognizeCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1"
-  summary: "Performs bidirectional streaming speech recognition: receive results while sending audio. This\n method is only available via the gRPC API (not REST).\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   BidiStream<StreamingRecognizeRequest, StreamingRecognizeResponse> bidiStream =\n       speechClient.streamingRecognizeCallable().call();\n   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();\n   bidiStream.send(request);\n   for (StreamingRecognizeResponse response : bidiStream) {\n     // Do something when a response is received.\n   }\n }\n </code></pre>"
+  summary: "Performs bidirectional streaming speech recognition: receive results while sending audio. This\n method is only available via the gRPC API (not REST).\n\n <p>Sample code:\n\n <pre><code class=\"prettyprint lang-java\">\n try (SpeechClient speechClient = SpeechClient.create()) {\n   BidiStream<StreamingRecognizeRequest, StreamingRecognizeResponse> bidiStream =\n       speechClient.streamingRecognizeCallable().call();\n   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();\n   bidiStream.send(request);\n   for (StreamingRecognizeResponse response : bidiStream) {\n     // Do something when a response is received.\n   }\n }\n </code></pre>"
   syntax:
     content: "public final BidiStreamingCallable<StreamingRecognizeRequest,StreamingRecognizeResponse> streamingRecognizeCallable()"
     return:
       type: "com.google.api.gax.rpc.BidiStreamingCallable<com.google.cloud.speech.v1.StreamingRecognizeRequest,com.google.cloud.speech.v1.StreamingRecognizeResponse>"
+  javaType: "method"
 references:
 - uid: "com.google.cloud.speech.v1.SpeechSettings"
   name: "SpeechSettings"

@@ -8,14 +8,14 @@
     {% verbatim %}
     <div>
       <article data-uid="com.google.cloud.speech.v1">
-<h1 class="page-title">Namespace com.google.cloud.speech.v1
+<h1 class="page-title">Package com.google.cloud.speech.v1
 </h1>
   
   <div class="markdown level0 summary"><p>The interfaces provided are listed below, along with usage samples.</p>
 <p> <p><h2> SpeechClient </h2></p>
 <p> <p>Service Description: Service that implements Google Cloud Speech API.</p>
 <p> <p>Sample for SpeechClient:</p>
- <pre><code class="pretty-print">
+ <pre><code class="prettyprint lang-java">
  try (SpeechClient speechClient = SpeechClient.create()) {
    RecognitionConfig config = RecognitionConfig.newBuilder().build();
    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -127,7 +127,7 @@
       <section><p>Service Description: Service that implements Google Cloud Speech API.</p>
 <p> <p>This class provides the ability to make remote calls to the backing service through method
  calls that map to API methods. Sample code to get started:</p>
- <pre><code class="pretty-print">
+ <pre><code class="prettyprint lang-java">
  try (SpeechClient speechClient = SpeechClient.create()) {
    RecognitionConfig config = RecognitionConfig.newBuilder().build();
    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -157,7 +157,7 @@
 <p> <p>This class can be customized by passing in a custom instance of SpeechSettings to create().
  For example:</p>
 <p> <p>To customize credentials:</p>
- <pre><code class="pretty-print">
+ <pre><code class="prettyprint lang-java">
  SpeechSettings speechSettings =
      SpeechSettings.newBuilder()
          .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -166,7 +166,7 @@
  </code></pre>
 
 <p> <p>To customize the endpoint:</p>
- <pre><code class="pretty-print">
+ <pre><code class="prettyprint lang-java">
  SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
  SpeechClient speechClient = SpeechClient.create(speechSettings);
  </code></pre>
@@ -228,7 +228,7 @@
 <p> <p>The builder of this class is recursive, so contained classes are themselves builders. When
  build() is called, the tree of builders is called to create the complete settings object.</p>
 <p> <p>For example, to set the total timeout of recognize to 30 seconds:</p>
- <pre><code class="pretty-print">
+ <pre><code class="prettyprint lang-java">
  SpeechSettings.Builder speechSettingsBuilder = SpeechSettings.newBuilder();
  speechSettingsBuilder
      .recognizeSettings()
