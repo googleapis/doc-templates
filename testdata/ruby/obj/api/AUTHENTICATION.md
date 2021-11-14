@@ -24,11 +24,10 @@ export VISION_CREDENTIALS=path/to/keyfile.json
 
 3. Initialize the client.
 
-```ruby
-require "google/cloud/vision/v1"
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
-```
+</pre>
 
 ## Credential Lookup
 
@@ -72,38 +71,35 @@ checks for credentials are configured on the service Credentials class (such as
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
-```ruby
-require "google/cloud/vision/v1"
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 ENV["VISION_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
-```
+</pre>
 
 ### Configuration
 
 The path to the **Credentials JSON** file can be configured instead of storing
 it in an environment variable. Either on an individual client initialization:
 
-```ruby
-require "google/cloud/vision/v1"
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
-```
+</pre>
 
 Or globally for all clients:
 
-```ruby
-require "google/cloud/vision/v1"
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 ::Google::Cloud::Vision::V1::ProductSearch::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
-```
+</pre>
 
 ### Cloud SDK
 

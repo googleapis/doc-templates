@@ -94,7 +94,7 @@ items:
   - ruby
   module: google-cloud-vision-v1
   id: V1
-  summary: "To load this package, including all its services, and instantiate a client:\n\n<pre class=\"prettyprint lang-rb\">require \"google/cloud/vision/v1\"\nclient = ::Google::Cloud::Vision::V1::ProductSearch::Client.new</pre>"
+  summary: "<p>To load this package, including all its services, and instantiate a client:</p>\n\n<pre><code>require &quot;google/cloud/vision/v1&quot;\nclient = ::Google::Cloud::Vision::V1::ProductSearch::Client.new\n</code></pre>"
   type: "module"
   name: Google::Cloud::Vision::V1
   example: []
@@ -107,7 +107,7 @@ items:
     - ruby
   module: google-cloud-vision-v1
   id: VERSION
-  summary: "<b>value: </b>\"0.6.3\""
+  summary: "<b>value: </b>&quot;0.6.3&quot;"
   type: const
 references:
 - uid: Google::Cloud::Vision::V1::ProductSearch
@@ -115,14 +115,14 @@ references:
   name: ProductSearch
   module: google-cloud-vision-v1
   id: ProductSearch
-  summary: "Manages Products and ProductSets of reference images for use in product\nsearch. It uses the following resource model:\n\n- The API has a collection of <a href=\"./Google-Cloud-Vision-V1-ProductSet\">ProductSet</a> resources, named\n<code>projects/&#42;/locations/&#42;/productSets/&#42;</code>, which acts as a way to put different\nproducts into groups to limit identification.\n\nIn parallel,\n\n- The API has a collection of <a href=\"./Google-Cloud-Vision-V1-Product\">Product</a> resources, named\n  <code>projects/&#42;/locations/&#42;/products/&#42;</code>\n\n- Each <a href=\"./Google-Cloud-Vision-V1-Product\">Product</a> has a collection of <a href=\"./Google-Cloud-Vision-V1-ReferenceImage\">ReferenceImage</a> resources, named\n  <code>projects/&#42;/locations/&#42;/products/&#42;/referenceImages/&#42;</code>\n\nTo load this service and instantiate a client:\n\n<pre class=\"prettyprint lang-rb\">require \"google/cloud/vision/v1/product_search\"\nclient = ::Google::Cloud::Vision::V1::ProductSearch::Client.new</pre>"
+  summary: "<p>Manages Products and ProductSets of reference images for use in product\nsearch. It uses the following resource model:</p>\n\n<ul>\n<li>The API has a collection of <span class='object_link'><a href=\"Google-Cloud-Vision-V1-ProductSet\" title=\"Google::Cloud::Vision::V1::ProductSet (class)\">ProductSet</a></span> resources, named\n<code>projects/*/locations/*/productSets/*</code>, which acts as a way to put different\nproducts into groups to limit identification.</li>\n</ul>\n\n<p>In parallel,</p>\n\n<ul>\n<li><p>The API has a collection of <span class='object_link'><a href=\"Google-Cloud-Vision-V1-Product\" title=\"Google::Cloud::Vision::V1::Product (class)\">Product</a></span> resources, named\n<code>projects/*/locations/*/products/*</code></p></li>\n<li><p>Each <span class='object_link'><a href=\"Google-Cloud-Vision-V1-Product\" title=\"Google::Cloud::Vision::V1::Product (class)\">Product</a></span> has a collection of <span class='object_link'><a href=\"Google-Cloud-Vision-V1-ReferenceImage\" title=\"Google::Cloud::Vision::V1::ReferenceImage (class)\">ReferenceImage</a></span> resources, named\n<code>projects/*/locations/*/products/*/referenceImages/*</code></p></li>\n</ul>\n\n<p>To load this service and instantiate a client:</p>\n\n<pre><code>require &quot;google/cloud/vision/v1/product_search&quot;\nclient = ::Google::Cloud::Vision::V1::ProductSearch::Client.new\n</code></pre>"
   parent: Google::Cloud::Vision::V1
 - uid: Google::Cloud::Vision::V1::ImageAnnotator
   fullName: Google::Cloud::Vision::V1::ImageAnnotator
   name: ImageAnnotator
   module: google-cloud-vision-v1
   id: ImageAnnotator
-  summary: "Service that performs Google Cloud Vision API detection tasks over client\nimages, such as face, landmark, logo, label, and text detection. The\nImageAnnotator service returns detected entities from the images.\n\nTo load this service and instantiate a client:\n\n<pre class=\"prettyprint lang-rb\">require \"google/cloud/vision/v1/image_annotator\"\nclient = ::Google::Cloud::Vision::V1::ImageAnnotator::Client.new</pre>"
+  summary: "<p>Service that performs Google Cloud Vision API detection tasks over client\nimages, such as face, landmark, logo, label, and text detection. The\nImageAnnotator service returns detected entities from the images.</p>\n\n<p>To load this service and instantiate a client:</p>\n\n<pre><code>require &quot;google/cloud/vision/v1/image_annotator&quot;\nclient = ::Google::Cloud::Vision::V1::ImageAnnotator::Client.new\n</code></pre>"
   parent: Google::Cloud::Vision::V1
 - uid: Google::Cloud::Vision::V1::Vertex
   fullName: Google::Cloud::Vision::V1::Vertex
@@ -458,7 +458,7 @@ references:
   name: TextAnnotation
   module: google-cloud-vision-v1
   id: TextAnnotation
-  summary: "TextAnnotation contains a structured representation of OCR extracted text.\nThe hierarchy of an OCR extracted text structure is like this:\n<pre class=\"prettyprint lang-rb\">TextAnnotation -> Page -> Block -> Paragraph -> Word -> Symbol\nEach structural component, starting from Page, may further have their own\nproperties. Properties describe detected languages, breaks etc.. Please refer\nto the {::Google::Cloud::Vision::V1::TextAnnotation::TextProperty TextAnnotation.TextProperty} message definition below for more\ndetail.</pre>"
+  summary: "TextAnnotation contains a structured representation of OCR extracted text.\nThe hierarchy of an OCR extracted text structure is like this:\n    TextAnnotation -&gt; Page -&gt; Block -&gt; Paragraph -&gt; Word -&gt; Symbol\nEach structural component, starting from Page, may further have their own\nproperties. Properties describe detected languages, breaks etc.. Please refer\nto the <span class='object_link'><a href=\"Google-Cloud-Vision-V1-TextAnnotation-TextProperty\" title=\"Google::Cloud::Vision::V1::TextAnnotation::TextProperty (class)\">TextAnnotation.TextProperty</a></span> message definition below for more\ndetail."
   parent: Google::Cloud::Vision::V1
 - uid: Google::Cloud::Vision::V1::Page
   fullName: Google::Cloud::Vision::V1::Page
@@ -689,14 +689,14 @@ references:
   name: ImportProductSetsResponse
   module: google-cloud-vision-v1
   id: ImportProductSetsResponse
-  summary: "Response message for the <code>ImportProductSets</code> method.\n\nThis message is returned by the\ngoogle.longrunning.Operations.GetOperation method in the returned\n{::Google::Longrunning::Operation#response google.longrunning.Operation.response} field."
+  summary: "Response message for the <code>ImportProductSets</code> method.</p>\n\n<p>This message is returned by the\ngoogle.longrunning.Operations.GetOperation method in the returned\n<span class='object_link'><a href=\"Google-Longrunning-Operation#Google__Longrunning__Operation_response_instance_\" title=\"Google::Longrunning::Operation#response (method)\">google.longrunning.Operation.response</a></span> field."
   parent: Google::Cloud::Vision::V1
 - uid: Google::Cloud::Vision::V1::BatchOperationMetadata
   fullName: Google::Cloud::Vision::V1::BatchOperationMetadata
   name: BatchOperationMetadata
   module: google-cloud-vision-v1
   id: BatchOperationMetadata
-  summary: "Metadata for the batch operations such as the current state.\n\nThis is included in the <code>metadata</code> field of the <code>Operation</code> returned by the\n<code>GetOperation</code> call of the <code>google::longrunning::Operations</code> service."
+  summary: "Metadata for the batch operations such as the current state.</p>\n\n<p>This is included in the <code>metadata</code> field of the <code>Operation</code> returned by the\n<code>GetOperation</code> call of the <code>google::longrunning::Operations</code> service."
   parent: Google::Cloud::Vision::V1
 - uid: Google::Cloud::Vision::V1::ProductSetPurgeConfig
   fullName: Google::Cloud::Vision::V1::ProductSetPurgeConfig

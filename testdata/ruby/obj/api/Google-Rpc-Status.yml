@@ -4,16 +4,16 @@ items:
   children: 
   - Google::Rpc::Status#code(instance)
   - Google::Rpc::Status#code=(instance)
-  - Google::Rpc::Status#message(instance)
-  - Google::Rpc::Status#message=(instance)
   - Google::Rpc::Status#details(instance)
   - Google::Rpc::Status#details=(instance)
+  - Google::Rpc::Status#message(instance)
+  - Google::Rpc::Status#message=(instance)
   fullName: Google::Rpc::Status
   langs:
   - ruby
   module: google-cloud-vision-v1
   id: Status
-  summary: "The <code>Status</code> type defines a logical error model that is suitable for\ndifferent programming environments, including REST APIs and RPC APIs. It is\nused by [gRPC](https://github.com/grpc). Each <code>Status</code> message contains\nthree pieces of data: error code, error message, and error details.\n\nYou can find out more about this error model and how to work with it in the\n[API Design Guide](https://cloud.google.com/apis/design/errors)."
+  summary: "The <code>Status</code> type defines a logical error model that is suitable for\ndifferent programming environments, including REST APIs and RPC APIs. It is\nused by <a href=\"https://github.com/grpc\">gRPC</a>. Each <code>Status</code> message contains\nthree pieces of data: error code, error message, and error details.</p>\n\n<p>You can find out more about this error model and how to work with it in the\n<a href=\"https://cloud.google.com/apis/design/errors\">API Design Guide</a>."
   type: "class"
   name: Google::Rpc::Status
   example: []
@@ -35,7 +35,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def code => ::Integer"
+    content: "def code() -> ::Integer"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -54,50 +55,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def code=(value) => ::Integer"
-    arguments: []
+    content: "def code=(value) -> ::Integer"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Integer) — The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code]."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Integer) — The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code]."
-    raises: []
-- uid: Google::Rpc::Status#message(instance)
-  fullName: Google::Rpc::Status#message
-  name: "#message"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#message"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def message => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — A developer-facing error message, which should be in English. Any\nuser-facing error message should be localized and sent in the\n{::Google::Rpc::Status#details google.rpc.Status.details} field, or localized by the client."
-    raises: []
-- uid: Google::Rpc::Status#message=(instance)
-  fullName: Google::Rpc::Status#message=
-  name: "#message="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#message="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def message=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — A developer-facing error message, which should be in English. Any\nuser-facing error message should be localized and sent in the\n{::Google::Rpc::Status#details google.rpc.Status.details} field, or localized by the client."
     raises: []
 - uid: Google::Rpc::Status#details(instance)
   fullName: Google::Rpc::Status#details
@@ -111,7 +76,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def details => ::Array<::Google::Protobuf::Any>"
+    content: "def details() -> ::Array<::Google::Protobuf::Any>"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -130,11 +96,54 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def details=(value) => ::Array<::Google::Protobuf::Any>"
-    arguments: []
+    content: "def details=(value) -> ::Array<::Google::Protobuf::Any>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>&gt;) — A list of messages that carry the error details.  There is a common set of\nmessage types for APIs to use."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Array&lt;<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>&gt;) — A list of messages that carry the error details.  There is a common set of\nmessage types for APIs to use."
+    raises: []
+- uid: Google::Rpc::Status#message(instance)
+  fullName: Google::Rpc::Status#message
+  name: "#message"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#message"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def message() -> ::String"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — A developer-facing error message, which should be in English. Any\nuser-facing error message should be localized and sent in the\n<span class='object_link'><a href=\"Google-Rpc-Status#Google__Rpc__Status_details_instance_\" title=\"Google::Rpc::Status#details (method)\">google.rpc.Status.details</a></span> field, or localized by the client."
+    raises: []
+- uid: Google::Rpc::Status#message=(instance)
+  fullName: Google::Rpc::Status#message=
+  name: "#message="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#message="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def message=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — A developer-facing error message, which should be in English. Any\nuser-facing error message should be localized and sent in the\n<span class='object_link'><a href=\"Google-Rpc-Status#Google__Rpc__Status_details_instance_\" title=\"Google::Rpc::Status#details (method)\">google.rpc.Status.details</a></span> field, or localized by the client."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — A developer-facing error message, which should be in English. Any\nuser-facing error message should be localized and sent in the\n<span class='object_link'><a href=\"Google-Rpc-Status#Google__Rpc__Status_details_instance_\" title=\"Google::Rpc::Status#details (method)\">google.rpc.Status.details</a></span> field, or localized by the client."
     raises: []
 references: []

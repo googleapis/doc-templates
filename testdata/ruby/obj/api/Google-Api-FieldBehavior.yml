@@ -15,7 +15,7 @@ items:
   - ruby
   module: google-cloud-vision-v1
   id: FieldBehavior
-  summary: "An indicator of the behavior of a given field (for example, that a field\nis required in requests, or given as output but ignored as input).\nThis **does not** change the behavior in protocol buffers itself; it only\ndenotes the behavior and may affect how API tooling handles the field.\n\nNote: This enum **may** receive new values in the future."
+  summary: "An indicator of the behavior of a given field (for example, that a field\nis required in requests, or given as output but ignored as input).\nThis <strong>does not</strong> change the behavior in protocol buffers itself; it only\ndenotes the behavior and may affect how API tooling handles the field.</p>\n\n<p>Note: This enum <strong>may</strong> receive new values in the future."
   type: "module"
   name: Google::Api::FieldBehavior
   example: []
@@ -30,35 +30,15 @@ items:
   id: FIELD_BEHAVIOR_UNSPECIFIED
   summary: "<b>value: </b>0<br>Conventional default for enums. Do not use this."
   type: const
-- uid: Google::Api::FieldBehavior::OPTIONAL
-  fullName: Google::Api::FieldBehavior::OPTIONAL
-  name: OPTIONAL
+- uid: Google::Api::FieldBehavior::IMMUTABLE
+  fullName: Google::Api::FieldBehavior::IMMUTABLE
+  name: IMMUTABLE
   parent: Google::Api::FieldBehavior
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: OPTIONAL
-  summary: "<b>value: </b>1<br>Specifically denotes a field as optional.\nWhile all fields in protocol buffers are optional, this may be specified\nfor emphasis if appropriate."
-  type: const
-- uid: Google::Api::FieldBehavior::REQUIRED
-  fullName: Google::Api::FieldBehavior::REQUIRED
-  name: REQUIRED
-  parent: Google::Api::FieldBehavior
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: REQUIRED
-  summary: "<b>value: </b>2<br>Denotes a field as required.\nThis indicates that the field **must** be provided as part of the request,\nand failure to do so will cause an error (usually <code>INVALID_ARGUMENT</code>)."
-  type: const
-- uid: Google::Api::FieldBehavior::OUTPUT_ONLY
-  fullName: Google::Api::FieldBehavior::OUTPUT_ONLY
-  name: OUTPUT_ONLY
-  parent: Google::Api::FieldBehavior
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: OUTPUT_ONLY
-  summary: "<b>value: </b>3<br>Denotes a field as output only.\nThis indicates that the field is provided in responses, but including the\nfield in a request does nothing (the server *must* ignore it and\n*must not* throw an error as a result of the field's presence)."
+  id: IMMUTABLE
+  summary: "<b>value: </b>5<br>Denotes a field as immutable.\nThis indicates that the field may be set once in a request to create a\nresource, but may not be changed thereafter."
   type: const
 - uid: Google::Api::FieldBehavior::INPUT_ONLY
   fullName: Google::Api::FieldBehavior::INPUT_ONLY
@@ -70,26 +50,6 @@ items:
   id: INPUT_ONLY
   summary: "<b>value: </b>4<br>Denotes a field as input only.\nThis indicates that the field is provided in requests, and the\ncorresponding field is not included in output."
   type: const
-- uid: Google::Api::FieldBehavior::IMMUTABLE
-  fullName: Google::Api::FieldBehavior::IMMUTABLE
-  name: IMMUTABLE
-  parent: Google::Api::FieldBehavior
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: IMMUTABLE
-  summary: "<b>value: </b>5<br>Denotes a field as immutable.\nThis indicates that the field may be set once in a request to create a\nresource, but may not be changed thereafter."
-  type: const
-- uid: Google::Api::FieldBehavior::UNORDERED_LIST
-  fullName: Google::Api::FieldBehavior::UNORDERED_LIST
-  name: UNORDERED_LIST
-  parent: Google::Api::FieldBehavior
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: UNORDERED_LIST
-  summary: "<b>value: </b>6<br>Denotes that a (repeated) field is an unordered list.\nThis indicates that the service may provide the elements of the list\nin any arbitrary  order, rather than the order the user originally\nprovided. Additionally, the list's order may or may not be stable."
-  type: const
 - uid: Google::Api::FieldBehavior::NON_EMPTY_DEFAULT
   fullName: Google::Api::FieldBehavior::NON_EMPTY_DEFAULT
   name: NON_EMPTY_DEFAULT
@@ -99,5 +59,45 @@ items:
   module: google-cloud-vision-v1
   id: NON_EMPTY_DEFAULT
   summary: "<b>value: </b>7<br>Denotes that this field returns a non-empty default value if not set.\nThis indicates that if the user provides the empty value in a request,\na non-empty value will be returned. The user will not be aware of what\nnon-empty value to expect."
+  type: const
+- uid: Google::Api::FieldBehavior::OPTIONAL
+  fullName: Google::Api::FieldBehavior::OPTIONAL
+  name: OPTIONAL
+  parent: Google::Api::FieldBehavior
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: OPTIONAL
+  summary: "<b>value: </b>1<br>Specifically denotes a field as optional.\nWhile all fields in protocol buffers are optional, this may be specified\nfor emphasis if appropriate."
+  type: const
+- uid: Google::Api::FieldBehavior::OUTPUT_ONLY
+  fullName: Google::Api::FieldBehavior::OUTPUT_ONLY
+  name: OUTPUT_ONLY
+  parent: Google::Api::FieldBehavior
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: OUTPUT_ONLY
+  summary: "<b>value: </b>3<br>Denotes a field as output only.\nThis indicates that the field is provided in responses, but including the\nfield in a request does nothing (the server <em>must</em> ignore it and\n<em>must not</em> throw an error as a result of the field&#39;s presence)."
+  type: const
+- uid: Google::Api::FieldBehavior::REQUIRED
+  fullName: Google::Api::FieldBehavior::REQUIRED
+  name: REQUIRED
+  parent: Google::Api::FieldBehavior
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: REQUIRED
+  summary: "<b>value: </b>2<br>Denotes a field as required.\nThis indicates that the field <strong>must</strong> be provided as part of the request,\nand failure to do so will cause an error (usually <code>INVALID_ARGUMENT</code>)."
+  type: const
+- uid: Google::Api::FieldBehavior::UNORDERED_LIST
+  fullName: Google::Api::FieldBehavior::UNORDERED_LIST
+  name: UNORDERED_LIST
+  parent: Google::Api::FieldBehavior
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: UNORDERED_LIST
+  summary: "<b>value: </b>6<br>Denotes that a (repeated) field is an unordered list.\nThis indicates that the service may provide the elements of the list\nin any arbitrary  order, rather than the order the user originally\nprovided. Additionally, the list&#39;s order may or may not be stable."
   type: const
 references: []

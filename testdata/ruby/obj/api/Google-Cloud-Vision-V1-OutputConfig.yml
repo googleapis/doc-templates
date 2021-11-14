@@ -2,10 +2,10 @@
 items:
 - uid: Google::Cloud::Vision::V1::OutputConfig
   children: 
-  - Google::Cloud::Vision::V1::OutputConfig#gcs_destination(instance)
-  - Google::Cloud::Vision::V1::OutputConfig#gcs_destination=(instance)
   - Google::Cloud::Vision::V1::OutputConfig#batch_size(instance)
   - Google::Cloud::Vision::V1::OutputConfig#batch_size=(instance)
+  - Google::Cloud::Vision::V1::OutputConfig#gcs_destination(instance)
+  - Google::Cloud::Vision::V1::OutputConfig#gcs_destination=(instance)
   fullName: Google::Cloud::Vision::V1::OutputConfig
   langs:
   - ruby
@@ -21,6 +21,47 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
+- uid: Google::Cloud::Vision::V1::OutputConfig#batch_size(instance)
+  fullName: Google::Cloud::Vision::V1::OutputConfig#batch_size
+  name: "#batch_size"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#batch_size"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def batch_size() -> ::Integer"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — The max number of response protos to put into each output JSON file on\nGoogle Cloud Storage.\nThe valid range is [1, 100]. If not specified, the default value is 20.</p>\n\n<p>For example, for one pdf file with 100 pages, 100 response protos will\nbe generated. If <code>batch_size</code> = 20, then 5 json files each\ncontaining 20 response protos will be written under the prefix\n<code>gcs_destination</code>.<code>uri</code>.</p>\n\n<p>Currently, batch_size only applies to GcsDestination, with potential future\nsupport for other output configurations."
+    raises: []
+- uid: Google::Cloud::Vision::V1::OutputConfig#batch_size=(instance)
+  fullName: Google::Cloud::Vision::V1::OutputConfig#batch_size=
+  name: "#batch_size="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#batch_size="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def batch_size=(value) -> ::Integer"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Integer) — The max number of response protos to put into each output JSON file on\nGoogle Cloud Storage.\nThe valid range is [1, 100]. If not specified, the default value is 20.</p>\n\n<p>For example, for one pdf file with 100 pages, 100 response protos will\nbe generated. If <code>batch_size</code> = 20, then 5 json files each\ncontaining 20 response protos will be written under the prefix\n<code>gcs_destination</code>.<code>uri</code>.</p>\n\n<p>Currently, batch_size only applies to GcsDestination, with potential future\nsupport for other output configurations."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — The max number of response protos to put into each output JSON file on\nGoogle Cloud Storage.\nThe valid range is [1, 100]. If not specified, the default value is 20.</p>\n\n<p>For example, for one pdf file with 100 pages, 100 response protos will\nbe generated. If <code>batch_size</code> = 20, then 5 json files each\ncontaining 20 response protos will be written under the prefix\n<code>gcs_destination</code>.<code>uri</code>.</p>\n\n<p>Currently, batch_size only applies to GcsDestination, with potential future\nsupport for other output configurations."
+    raises: []
 - uid: Google::Cloud::Vision::V1::OutputConfig#gcs_destination(instance)
   fullName: Google::Cloud::Vision::V1::OutputConfig#gcs_destination
   name: "#gcs_destination"
@@ -33,7 +74,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def gcs_destination => ::Google::Cloud::Vision::V1::GcsDestination"
+    content: "def gcs_destination() -> ::Google::Cloud::Vision::V1::GcsDestination"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -52,49 +94,13 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def gcs_destination=(value) => ::Google::Cloud::Vision::V1::GcsDestination"
-    arguments: []
+    content: "def gcs_destination=(value) -> ::Google::Cloud::Vision::V1::GcsDestination"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-GcsDestination\">::Google::Cloud::Vision::V1::GcsDestination</a>) — The Google Cloud Storage location to write the output(s) to."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Cloud-Vision-V1-GcsDestination\">::Google::Cloud::Vision::V1::GcsDestination</a>) — The Google Cloud Storage location to write the output(s) to."
-    raises: []
-- uid: Google::Cloud::Vision::V1::OutputConfig#batch_size(instance)
-  fullName: Google::Cloud::Vision::V1::OutputConfig#batch_size
-  name: "#batch_size"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#batch_size"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def batch_size => ::Integer"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Integer) — The max number of response protos to put into each output JSON file on\nGoogle Cloud Storage.\nThe valid range is [1, 100]. If not specified, the default value is 20.\n\nFor example, for one pdf file with 100 pages, 100 response protos will\nbe generated. If <code>batch_size</code> = 20, then 5 json files each\ncontaining 20 response protos will be written under the prefix\n<code>gcs_destination</code>.<code>uri</code>.\n\nCurrently, batch_size only applies to GcsDestination, with potential future\nsupport for other output configurations."
-    raises: []
-- uid: Google::Cloud::Vision::V1::OutputConfig#batch_size=(instance)
-  fullName: Google::Cloud::Vision::V1::OutputConfig#batch_size=
-  name: "#batch_size="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#batch_size="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def batch_size=(value) => ::Integer"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Integer) — The max number of response protos to put into each output JSON file on\nGoogle Cloud Storage.\nThe valid range is [1, 100]. If not specified, the default value is 20.\n\nFor example, for one pdf file with 100 pages, 100 response protos will\nbe generated. If <code>batch_size</code> = 20, then 5 json files each\ncontaining 20 response protos will be written under the prefix\n<code>gcs_destination</code>.<code>uri</code>.\n\nCurrently, batch_size only applies to GcsDestination, with potential future\nsupport for other output configurations."
     raises: []
 references: []

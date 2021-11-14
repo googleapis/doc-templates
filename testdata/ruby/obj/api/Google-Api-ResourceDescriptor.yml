@@ -2,20 +2,20 @@
 items:
 - uid: Google::Api::ResourceDescriptor
   children: 
-  - Google::Api::ResourceDescriptor#type(instance)
-  - Google::Api::ResourceDescriptor#type=(instance)
-  - Google::Api::ResourceDescriptor#pattern(instance)
-  - Google::Api::ResourceDescriptor#pattern=(instance)
-  - Google::Api::ResourceDescriptor#name_field(instance)
-  - Google::Api::ResourceDescriptor#name_field=(instance)
   - Google::Api::ResourceDescriptor#history(instance)
   - Google::Api::ResourceDescriptor#history=(instance)
+  - Google::Api::ResourceDescriptor#name_field(instance)
+  - Google::Api::ResourceDescriptor#name_field=(instance)
+  - Google::Api::ResourceDescriptor#pattern(instance)
+  - Google::Api::ResourceDescriptor#pattern=(instance)
   - Google::Api::ResourceDescriptor#plural(instance)
   - Google::Api::ResourceDescriptor#plural=(instance)
   - Google::Api::ResourceDescriptor#singular(instance)
   - Google::Api::ResourceDescriptor#singular=(instance)
   - Google::Api::ResourceDescriptor#style(instance)
   - Google::Api::ResourceDescriptor#style=(instance)
+  - Google::Api::ResourceDescriptor#type(instance)
+  - Google::Api::ResourceDescriptor#type=(instance)
   - Google::Api::ResourceDescriptor::History
   - Google::Api::ResourceDescriptor::Style
   fullName: Google::Api::ResourceDescriptor
@@ -23,7 +23,7 @@ items:
   - ruby
   module: google-cloud-vision-v1
   id: ResourceDescriptor
-  summary: "A simple descriptor of a resource type.\n\nResourceDescriptor annotates a resource message (either by means of a\nprotobuf annotation or use in the service config), and associates the\nresource's schema, the resource type, and the pattern of the resource name.\n\nExample:\n\n<pre class=\"prettyprint lang-rb\">message Topic {\n  // Indicates this message defines a resource schema.\n  // Declares the resource type in the format of {service}/{kind}.\n  // For Kubernetes resources, the format is {api group}/{kind}.\n  option (google.api.resource) = {\n    type: \"pubsub.googleapis.com/Topic\"\n    name_descriptor: {\n      pattern: \"projects/{project}/topics/{topic}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Project\"\n      parent_name_extractor: \"projects/{project}\"\n    }\n  };\n}</pre>\n\nThe ResourceDescriptor Yaml config will look like:\n\n<pre class=\"prettyprint lang-rb\">resources:\n- type: \"pubsub.googleapis.com/Topic\"\n  name_descriptor:\n    - pattern: \"projects/{project}/topics/{topic}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Project\"\n      parent_name_extractor: \"projects/{project}\"</pre>\n\nSometimes, resources have multiple patterns, typically because they can\nlive under multiple parents.\n\nExample:\n\n<pre class=\"prettyprint lang-rb\">message LogEntry {\n  option (google.api.resource) = {\n    type: \"logging.googleapis.com/LogEntry\"\n    name_descriptor: {\n      pattern: \"projects/{project}/logs/{log}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Project\"\n      parent_name_extractor: \"projects/{project}\"\n    }\n    name_descriptor: {\n      pattern: \"folders/{folder}/logs/{log}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Folder\"\n      parent_name_extractor: \"folders/{folder}\"\n    }\n    name_descriptor: {\n      pattern: \"organizations/{organization}/logs/{log}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Organization\"\n      parent_name_extractor: \"organizations/{organization}\"\n    }\n    name_descriptor: {\n      pattern: \"billingAccounts/{billing_account}/logs/{log}\"\n      parent_type: \"billing.googleapis.com/BillingAccount\"\n      parent_name_extractor: \"billingAccounts/{billing_account}\"\n    }\n  };\n}</pre>\n\nThe ResourceDescriptor Yaml config will look like:\n\n<pre class=\"prettyprint lang-rb\">resources:\n- type: 'logging.googleapis.com/LogEntry'\n  name_descriptor:\n    - pattern: \"projects/{project}/logs/{log}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Project\"\n      parent_name_extractor: \"projects/{project}\"\n    - pattern: \"folders/{folder}/logs/{log}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Folder\"\n      parent_name_extractor: \"folders/{folder}\"\n    - pattern: \"organizations/{organization}/logs/{log}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Organization\"\n      parent_name_extractor: \"organizations/{organization}\"\n    - pattern: \"billingAccounts/{billing_account}/logs/{log}\"\n      parent_type: \"billing.googleapis.com/BillingAccount\"\n      parent_name_extractor: \"billingAccounts/{billing_account}\"</pre>\n\nFor flexible resources, the resource name doesn't contain parent names, but\nthe resource itself has parents for policy evaluation.\n\nExample:\n\n<pre class=\"prettyprint lang-rb\">message Shelf {\n  option (google.api.resource) = {\n    type: \"library.googleapis.com/Shelf\"\n    name_descriptor: {\n      pattern: \"shelves/{shelf}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Project\"\n    }\n    name_descriptor: {\n      pattern: \"shelves/{shelf}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Folder\"\n    }\n  };\n}</pre>\n\nThe ResourceDescriptor Yaml config will look like:\n\n<pre class=\"prettyprint lang-rb\">resources:\n- type: 'library.googleapis.com/Shelf'\n  name_descriptor:\n    - pattern: \"shelves/{shelf}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Project\"\n    - pattern: \"shelves/{shelf}\"\n      parent_type: \"cloudresourcemanager.googleapis.com/Folder\"</pre>"
+  summary: "<p>A simple descriptor of a resource type.</p>\n\n<p>ResourceDescriptor annotates a resource message (either by means of a\nprotobuf annotation or use in the service config), and associates the\nresource&#39;s schema, the resource type, and the pattern of the resource name.</p>\n\n<p>Example:</p>\n\n<pre><code>message Topic {\n  // Indicates this message defines a resource schema.\n  // Declares the resource type in the format of {service}/{kind}.\n  // For Kubernetes resources, the format is {api group}/{kind}.\n  option (google.api.resource) = {\n    type: &quot;pubsub.googleapis.com/Topic&quot;\n    name_descriptor: {\n      pattern: &quot;projects/{project}/topics/{topic}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n    }\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &quot;pubsub.googleapis.com/Topic&quot;\n  name_descriptor:\n    - pattern: &quot;projects/{project}/topics/{topic}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n</code></pre>\n\n<p>Sometimes, resources have multiple patterns, typically because they can\nlive under multiple parents.</p>\n\n<p>Example:</p>\n\n<pre><code>message LogEntry {\n  option (google.api.resource) = {\n    type: &quot;logging.googleapis.com/LogEntry&quot;\n    name_descriptor: {\n      pattern: &quot;projects/{project}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;folders/{folder}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n      parent_name_extractor: &quot;folders/{folder}&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;organizations/{organization}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Organization&quot;\n      parent_name_extractor: &quot;organizations/{organization}&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;\n      parent_type: &quot;billing.googleapis.com/BillingAccount&quot;\n      parent_name_extractor: &quot;billingAccounts/{billing_account}&quot;\n    }\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &#39;logging.googleapis.com/LogEntry&#39;\n  name_descriptor:\n    - pattern: &quot;projects/{project}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n    - pattern: &quot;folders/{folder}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n      parent_name_extractor: &quot;folders/{folder}&quot;\n    - pattern: &quot;organizations/{organization}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Organization&quot;\n      parent_name_extractor: &quot;organizations/{organization}&quot;\n    - pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;\n      parent_type: &quot;billing.googleapis.com/BillingAccount&quot;\n      parent_name_extractor: &quot;billingAccounts/{billing_account}&quot;\n</code></pre>\n\n<p>For flexible resources, the resource name doesn&#39;t contain parent names, but\nthe resource itself has parents for policy evaluation.</p>\n\n<p>Example:</p>\n\n<pre><code>message Shelf {\n  option (google.api.resource) = {\n    type: &quot;library.googleapis.com/Shelf&quot;\n    name_descriptor: {\n      pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n    }\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &#39;library.googleapis.com/Shelf&#39;\n  name_descriptor:\n    - pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n    - pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n</code></pre>"
   type: "class"
   name: Google::Api::ResourceDescriptor
   example: []
@@ -33,120 +33,6 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
-- uid: Google::Api::ResourceDescriptor#type(instance)
-  fullName: Google::Api::ResourceDescriptor#type
-  name: "#type"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#type"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def type => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The resource type. It must be in the format of\n{service_name}/{resource_type_kind}. The <code>resource_type_kind</code> must be\nsingular and must not include version numbers.\n\nExample: <code>storage.googleapis.com/Bucket</code>\n\nThe value of the resource_type_kind must follow the regular expression\n/[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and\nshould use PascalCase (UpperCamelCase). The maximum number of\ncharacters allowed for the <code>resource_type_kind</code> is 100."
-    raises: []
-- uid: Google::Api::ResourceDescriptor#type=(instance)
-  fullName: Google::Api::ResourceDescriptor#type=
-  name: "#type="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#type="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def type=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The resource type. It must be in the format of\n{service_name}/{resource_type_kind}. The <code>resource_type_kind</code> must be\nsingular and must not include version numbers.\n\nExample: <code>storage.googleapis.com/Bucket</code>\n\nThe value of the resource_type_kind must follow the regular expression\n/[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and\nshould use PascalCase (UpperCamelCase). The maximum number of\ncharacters allowed for the <code>resource_type_kind</code> is 100."
-    raises: []
-- uid: Google::Api::ResourceDescriptor#pattern(instance)
-  fullName: Google::Api::ResourceDescriptor#pattern
-  name: "#pattern"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#pattern"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def pattern => ::Array<::String>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn't be specified here.\n\nThe path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:\n\n<pre class=\"prettyprint lang-rb\">Template = Segment { \"/\" Segment } ;\nSegment = LITERAL | Variable ;\nVariable = \"{\" LITERAL \"}\" ;</pre>\n\nExamples:\n\n<pre class=\"prettyprint lang-rb\">- \"projects/{project}/topics/{topic}\"\n- \"projects/{project}/knowledgeBases/{knowledge_base}\"</pre>\n\nThe components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. \"project\") refers to IDs of the same\ntype of resource."
-    raises: []
-- uid: Google::Api::ResourceDescriptor#pattern=(instance)
-  fullName: Google::Api::ResourceDescriptor#pattern=
-  name: "#pattern="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#pattern="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def pattern=(value) => ::Array<::String>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn't be specified here.\n\nThe path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:\n\n<pre class=\"prettyprint lang-rb\">Template = Segment { \"/\" Segment } ;\nSegment = LITERAL | Variable ;\nVariable = \"{\" LITERAL \"}\" ;</pre>\n\nExamples:\n\n<pre class=\"prettyprint lang-rb\">- \"projects/{project}/topics/{topic}\"\n- \"projects/{project}/knowledgeBases/{knowledge_base}\"</pre>\n\nThe components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. \"project\") refers to IDs of the same\ntype of resource."
-    raises: []
-- uid: Google::Api::ResourceDescriptor#name_field(instance)
-  fullName: Google::Api::ResourceDescriptor#name_field
-  name: "#name_field"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#name_field"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def name_field => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — Optional. The field on the resource that designates the resource name\nfield. If omitted, this is assumed to be \"name\"."
-    raises: []
-- uid: Google::Api::ResourceDescriptor#name_field=(instance)
-  fullName: Google::Api::ResourceDescriptor#name_field=
-  name: "#name_field="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#name_field="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def name_field=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — Optional. The field on the resource that designates the resource name\nfield. If omitted, this is assumed to be \"name\"."
-    raises: []
 - uid: Google::Api::ResourceDescriptor#history(instance)
   fullName: Google::Api::ResourceDescriptor#history
   name: "#history"
@@ -159,12 +45,13 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def history => ::Google::Api::ResourceDescriptor::History"
+    content: "def history() -> ::Google::Api::ResourceDescriptor::History"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(<a href=\"./Google-Api-ResourceDescriptor-History\">::Google::Api::ResourceDescriptor::History</a>) — Optional. The historical or future-looking state of the resource pattern.\n\nExample:\n\n<pre class=\"prettyprint lang-rb\">// The InspectTemplate message originally only supported resource\n// names with organization, and project was added later.\nmessage InspectTemplate {\n  option (google.api.resource) = {\n    type: \"dlp.googleapis.com/InspectTemplate\"\n    pattern:\n    \"organizations/{organization}/inspectTemplates/{inspect_template}\"\n    pattern: \"projects/{project}/inspectTemplates/{inspect_template}\"\n    history: ORIGINALLY_SINGLE_PATTERN\n  };\n}</pre>"
+    - description: "(<a href=\"./Google-Api-ResourceDescriptor-History\">::Google::Api::ResourceDescriptor::History</a>) — <p>Optional. The historical or future-looking state of the resource pattern.</p>\n\n<p>Example:</p>\n\n<pre><code>// The InspectTemplate message originally only supported resource\n// names with organization, and project was added later.\nmessage InspectTemplate {\n  option (google.api.resource) = {\n    type: &quot;dlp.googleapis.com/InspectTemplate&quot;\n    pattern:\n    &quot;organizations/{organization}/inspectTemplates/{inspect_template}&quot;\n    pattern: &quot;projects/{project}/inspectTemplates/{inspect_template}&quot;\n    history: ORIGINALLY_SINGLE_PATTERN\n  };\n}\n</code></pre>"
     raises: []
 - uid: Google::Api::ResourceDescriptor#history=(instance)
   fullName: Google::Api::ResourceDescriptor#history=
@@ -178,12 +65,96 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def history=(value) => ::Google::Api::ResourceDescriptor::History"
+    content: "def history=(value) -> ::Google::Api::ResourceDescriptor::History"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Api-ResourceDescriptor-History\">::Google::Api::ResourceDescriptor::History</a>) — <p>Optional. The historical or future-looking state of the resource pattern.</p>\n\n<p>Example:</p>\n\n<pre><code>// The InspectTemplate message originally only supported resource\n// names with organization, and project was added later.\nmessage InspectTemplate {\n  option (google.api.resource) = {\n    type: &quot;dlp.googleapis.com/InspectTemplate&quot;\n    pattern:\n    &quot;organizations/{organization}/inspectTemplates/{inspect_template}&quot;\n    pattern: &quot;projects/{project}/inspectTemplates/{inspect_template}&quot;\n    history: ORIGINALLY_SINGLE_PATTERN\n  };\n}\n</code></pre>"
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Api-ResourceDescriptor-History\">::Google::Api::ResourceDescriptor::History</a>) — <p>Optional. The historical or future-looking state of the resource pattern.</p>\n\n<p>Example:</p>\n\n<pre><code>// The InspectTemplate message originally only supported resource\n// names with organization, and project was added later.\nmessage InspectTemplate {\n  option (google.api.resource) = {\n    type: &quot;dlp.googleapis.com/InspectTemplate&quot;\n    pattern:\n    &quot;organizations/{organization}/inspectTemplates/{inspect_template}&quot;\n    pattern: &quot;projects/{project}/inspectTemplates/{inspect_template}&quot;\n    history: ORIGINALLY_SINGLE_PATTERN\n  };\n}\n</code></pre>"
+    raises: []
+- uid: Google::Api::ResourceDescriptor#name_field(instance)
+  fullName: Google::Api::ResourceDescriptor#name_field
+  name: "#name_field"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#name_field"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def name_field() -> ::String"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(<a href=\"./Google-Api-ResourceDescriptor-History\">::Google::Api::ResourceDescriptor::History</a>) — Optional. The historical or future-looking state of the resource pattern.\n\nExample:\n\n<pre class=\"prettyprint lang-rb\">// The InspectTemplate message originally only supported resource\n// names with organization, and project was added later.\nmessage InspectTemplate {\n  option (google.api.resource) = {\n    type: \"dlp.googleapis.com/InspectTemplate\"\n    pattern:\n    \"organizations/{organization}/inspectTemplates/{inspect_template}\"\n    pattern: \"projects/{project}/inspectTemplates/{inspect_template}\"\n    history: ORIGINALLY_SINGLE_PATTERN\n  };\n}</pre>"
+    - description: "(::String) — Optional. The field on the resource that designates the resource name\nfield. If omitted, this is assumed to be &quot;name&quot;."
+    raises: []
+- uid: Google::Api::ResourceDescriptor#name_field=(instance)
+  fullName: Google::Api::ResourceDescriptor#name_field=
+  name: "#name_field="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#name_field="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def name_field=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — Optional. The field on the resource that designates the resource name\nfield. If omitted, this is assumed to be &quot;name&quot;."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — Optional. The field on the resource that designates the resource name\nfield. If omitted, this is assumed to be &quot;name&quot;."
+    raises: []
+- uid: Google::Api::ResourceDescriptor#pattern(instance)
+  fullName: Google::Api::ResourceDescriptor#pattern
+  name: "#pattern"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#pattern"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def pattern() -> ::Array<::String>"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;\n- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
+    raises: []
+- uid: Google::Api::ResourceDescriptor#pattern=(instance)
+  fullName: Google::Api::ResourceDescriptor#pattern=
+  name: "#pattern="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#pattern="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def pattern=(value) -> ::Array<::String>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;\n- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;\n- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
     raises: []
 - uid: Google::Api::ResourceDescriptor#plural(instance)
   fullName: Google::Api::ResourceDescriptor#plural
@@ -197,12 +168,13 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def plural => ::String"
+    content: "def plural() -> ::String"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The plural name used in the resource name and permission names, such as\n'projects' for the resource name of 'projects/{project}' and the permission\nname of 'cloudresourcemanager.googleapis.com/projects.get'. It is the same\nconcept of the <code>plural</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/\n\nNote: The plural form is required even for singleton resources. See\nhttps://aip.dev/156"
+    - description: "(::String) — The plural name used in the resource name and permission names, such as\n&#39;projects&#39; for the resource name of &#39;projects/{project}&#39; and the permission\nname of &#39;cloudresourcemanager.googleapis.com/projects.get&#39;. It is the same\nconcept of the <code>plural</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</p>\n\n<p>Note: The plural form is required even for singleton resources. See\nhttps://aip.dev/156"
     raises: []
 - uid: Google::Api::ResourceDescriptor#plural=(instance)
   fullName: Google::Api::ResourceDescriptor#plural=
@@ -216,12 +188,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def plural=(value) => ::String"
-    arguments: []
+    content: "def plural=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The plural name used in the resource name and permission names, such as\n&#39;projects&#39; for the resource name of &#39;projects/{project}&#39; and the permission\nname of &#39;cloudresourcemanager.googleapis.com/projects.get&#39;. It is the same\nconcept of the <code>plural</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</p>\n\n<p>Note: The plural form is required even for singleton resources. See\nhttps://aip.dev/156"
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The plural name used in the resource name and permission names, such as\n'projects' for the resource name of 'projects/{project}' and the permission\nname of 'cloudresourcemanager.googleapis.com/projects.get'. It is the same\nconcept of the <code>plural</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/\n\nNote: The plural form is required even for singleton resources. See\nhttps://aip.dev/156"
+    - description: "(::String) — The plural name used in the resource name and permission names, such as\n&#39;projects&#39; for the resource name of &#39;projects/{project}&#39; and the permission\nname of &#39;cloudresourcemanager.googleapis.com/projects.get&#39;. It is the same\nconcept of the <code>plural</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/</p>\n\n<p>Note: The plural form is required even for singleton resources. See\nhttps://aip.dev/156"
     raises: []
 - uid: Google::Api::ResourceDescriptor#singular(instance)
   fullName: Google::Api::ResourceDescriptor#singular
@@ -235,12 +209,13 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def singular => ::String"
+    content: "def singular() -> ::String"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The same concept of the <code>singular</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/\nSuch as \"project\" for the <code>resourcemanager.googleapis.com/Project</code> type."
+    - description: "(::String) — The same concept of the <code>singular</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/\nSuch as &quot;project&quot; for the <code>resourcemanager.googleapis.com/Project</code> type."
     raises: []
 - uid: Google::Api::ResourceDescriptor#singular=(instance)
   fullName: Google::Api::ResourceDescriptor#singular=
@@ -254,12 +229,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def singular=(value) => ::String"
-    arguments: []
+    content: "def singular=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The same concept of the <code>singular</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/\nSuch as &quot;project&quot; for the <code>resourcemanager.googleapis.com/Project</code> type."
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The same concept of the <code>singular</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/\nSuch as \"project\" for the <code>resourcemanager.googleapis.com/Project</code> type."
+    - description: "(::String) — The same concept of the <code>singular</code> field in k8s CRD spec\nhttps://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/\nSuch as &quot;project&quot; for the <code>resourcemanager.googleapis.com/Project</code> type."
     raises: []
 - uid: Google::Api::ResourceDescriptor#style(instance)
   fullName: Google::Api::ResourceDescriptor#style
@@ -273,7 +250,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def style => ::Array<::Google::Api::ResourceDescriptor::Style>"
+    content: "def style() -> ::Array<::Google::Api::ResourceDescriptor::Style>"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -292,12 +270,55 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def style=(value) => ::Array<::Google::Api::ResourceDescriptor::Style>"
-    arguments: []
+    content: "def style=(value) -> ::Array<::Google::Api::ResourceDescriptor::Style>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;<a href=\"./Google-Api-ResourceDescriptor-Style\">::Google::Api::ResourceDescriptor::Style</a>&gt;) — Style flag(s) for this resource.\nThese indicate that a resource is expected to conform to a given\nstyle. See the specific style flags for additional information."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Array&lt;<a href=\"./Google-Api-ResourceDescriptor-Style\">::Google::Api::ResourceDescriptor::Style</a>&gt;) — Style flag(s) for this resource.\nThese indicate that a resource is expected to conform to a given\nstyle. See the specific style flags for additional information."
+    raises: []
+- uid: Google::Api::ResourceDescriptor#type(instance)
+  fullName: Google::Api::ResourceDescriptor#type
+  name: "#type"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#type"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def type() -> ::String"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The resource type. It must be in the format of\n{service_name}/{resource_type_kind}. The <code>resource_type_kind</code> must be\nsingular and must not include version numbers.</p>\n\n<p>Example: <code>storage.googleapis.com/Bucket</code></p>\n\n<p>The value of the resource_type_kind must follow the regular expression\n/[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and\nshould use PascalCase (UpperCamelCase). The maximum number of\ncharacters allowed for the <code>resource_type_kind</code> is 100."
+    raises: []
+- uid: Google::Api::ResourceDescriptor#type=(instance)
+  fullName: Google::Api::ResourceDescriptor#type=
+  name: "#type="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#type="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def type=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The resource type. It must be in the format of\n{service_name}/{resource_type_kind}. The <code>resource_type_kind</code> must be\nsingular and must not include version numbers.</p>\n\n<p>Example: <code>storage.googleapis.com/Bucket</code></p>\n\n<p>The value of the resource_type_kind must follow the regular expression\n/[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and\nshould use PascalCase (UpperCamelCase). The maximum number of\ncharacters allowed for the <code>resource_type_kind</code> is 100."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The resource type. It must be in the format of\n{service_name}/{resource_type_kind}. The <code>resource_type_kind</code> must be\nsingular and must not include version numbers.</p>\n\n<p>Example: <code>storage.googleapis.com/Bucket</code></p>\n\n<p>The value of the resource_type_kind must follow the regular expression\n/[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and\nshould use PascalCase (UpperCamelCase). The maximum number of\ncharacters allowed for the <code>resource_type_kind</code> is 100."
     raises: []
 references:
 - uid: Google::Api::ResourceDescriptor::History

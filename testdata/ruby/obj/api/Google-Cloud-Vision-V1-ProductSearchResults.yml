@@ -4,10 +4,10 @@ items:
   children: 
   - Google::Cloud::Vision::V1::ProductSearchResults#index_time(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults#index_time=(instance)
-  - Google::Cloud::Vision::V1::ProductSearchResults#results(instance)
-  - Google::Cloud::Vision::V1::ProductSearchResults#results=(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults#product_grouped_results(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults#product_grouped_results=(instance)
+  - Google::Cloud::Vision::V1::ProductSearchResults#results(instance)
+  - Google::Cloud::Vision::V1::ProductSearchResults#results=(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults::Result
   - Google::Cloud::Vision::V1::ProductSearchResults::ObjectAnnotation
   - Google::Cloud::Vision::V1::ProductSearchResults::GroupedResult
@@ -38,7 +38,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def index_time => ::Google::Protobuf::Timestamp"
+    content: "def index_time() -> ::Google::Protobuf::Timestamp"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -57,50 +58,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def index_time=(value) => ::Google::Protobuf::Timestamp"
-    arguments: []
+    content: "def index_time=(value) -> ::Google::Protobuf::Timestamp"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Protobuf-Timestamp\">::Google::Protobuf::Timestamp</a>) — Timestamp of the index which provided these results. Products added to the\nproduct set and products removed from the product set after this time are\nnot reflected in the current results."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Protobuf-Timestamp\">::Google::Protobuf::Timestamp</a>) — Timestamp of the index which provided these results. Products added to the\nproduct set and products removed from the product set after this time are\nnot reflected in the current results."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchResults#results(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchResults#results
-  name: "#results"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#results"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def results => ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::Result>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-ProductSearchResults-Result\">::Google::Cloud::Vision::V1::ProductSearchResults::Result</a>&gt;) — List of results, one for each product match."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchResults#results=(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchResults#results=
-  name: "#results="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#results="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def results=(value) => ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::Result>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-ProductSearchResults-Result\">::Google::Cloud::Vision::V1::ProductSearchResults::Result</a>&gt;) — List of results, one for each product match."
     raises: []
 - uid: Google::Cloud::Vision::V1::ProductSearchResults#product_grouped_results(instance)
   fullName: Google::Cloud::Vision::V1::ProductSearchResults#product_grouped_results
@@ -114,7 +79,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def product_grouped_results => ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::GroupedResult>"
+    content: "def product_grouped_results() -> ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::GroupedResult>"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -133,12 +99,55 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def product_grouped_results=(value) => ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::GroupedResult>"
-    arguments: []
+    content: "def product_grouped_results=(value) -> ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::GroupedResult>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;<a href=\"./Google-Cloud-Vision-V1-ProductSearchResults-GroupedResult\">::Google::Cloud::Vision::V1::ProductSearchResults::GroupedResult</a>&gt;) — List of results grouped by products detected in the query image. Each entry\ncorresponds to one bounding polygon in the query image, and contains the\nmatching products specific to that region. There may be duplicate product\nmatches in the union of all the per-product results."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-ProductSearchResults-GroupedResult\">::Google::Cloud::Vision::V1::ProductSearchResults::GroupedResult</a>&gt;) — List of results grouped by products detected in the query image. Each entry\ncorresponds to one bounding polygon in the query image, and contains the\nmatching products specific to that region. There may be duplicate product\nmatches in the union of all the per-product results."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchResults#results(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchResults#results
+  name: "#results"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#results"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def results() -> ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::Result>"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-ProductSearchResults-Result\">::Google::Cloud::Vision::V1::ProductSearchResults::Result</a>&gt;) — List of results, one for each product match."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchResults#results=(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchResults#results=
+  name: "#results="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#results="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def results=(value) -> ::Array<::Google::Cloud::Vision::V1::ProductSearchResults::Result>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;<a href=\"./Google-Cloud-Vision-V1-ProductSearchResults-Result\">::Google::Cloud::Vision::V1::ProductSearchResults::Result</a>&gt;) — List of results, one for each product match."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-ProductSearchResults-Result\">::Google::Cloud::Vision::V1::ProductSearchResults::Result</a>&gt;) — List of results, one for each product match."
     raises: []
 references:
 - uid: Google::Cloud::Vision::V1::ProductSearchResults::Result
