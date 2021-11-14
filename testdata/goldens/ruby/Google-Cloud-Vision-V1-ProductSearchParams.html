@@ -42,7 +42,7 @@
   </h2>
   <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_bounding_poly_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#bounding_poly(instance)" class="notranslate">#bounding_poly</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def bounding_poly =&gt; ::Google::Cloud::Vision::V1::BoundingPoly</code></pre>
+    <pre class="prettyprint"><code>def bounding_poly() -&gt; ::Google::Cloud::Vision::V1::BoundingPoly</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -55,7 +55,16 @@ If it is not specified, system discretion will be applied.
   </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_bounding_poly__instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#bounding_poly=(instance)" class="notranslate">#bounding_poly=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def bounding_poly=(value) =&gt; ::Google::Cloud::Vision::V1::BoundingPoly</code></pre>
+    <pre class="prettyprint"><code>def bounding_poly=(value) -&gt; ::Google::Cloud::Vision::V1::BoundingPoly</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (<a href="./Google-Cloud-Vision-V1-BoundingPoly">::Google::Cloud::Vision::V1::BoundingPoly</a>) — The bounding polygon around the area of interest in the image.
+If it is not specified, system discretion will be applied.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -66,107 +75,147 @@ If it is not specified, system discretion will be applied.
       </li>
     </ul>
   </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#product_set(instance)" class="notranslate">#product_set</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_filter_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#filter(instance)" class="notranslate">#filter</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def product_set =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def filter() -&gt; ::String</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The resource name of a <a href="./Google-Cloud-Vision-V1-ProductSet">ProductSet</a> to be searched for similar images.
+        (::String) — The filtering expression. This can be used to restrict search results based
+on Product labels. We currently support an AND of OR of key-value
+expressions, where each expression within an OR must have the same key. An
+&#39;=&#39; should be used to connect the key and value.<p>
 
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.
+<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is
+acceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.
+&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;.
       </li>
     </ul>
   </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_product_set__instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#product_set=(instance)" class="notranslate">#product_set=</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_filter__instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#filter=(instance)" class="notranslate">#filter=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def product_set=(value) =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def filter=(value) -&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::String) — The filtering expression. This can be used to restrict search results based
+on Product labels. We currently support an AND of OR of key-value
+expressions, where each expression within an OR must have the same key. An
+&#39;=&#39; should be used to connect the key and value.<p>
+
+<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is
+acceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.
+&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The resource name of a <a href="./Google-Cloud-Vision-V1-ProductSet">ProductSet</a> to be searched for similar images.
+        (::String) — The filtering expression. This can be used to restrict search results based
+on Product labels. We currently support an AND of OR of key-value
+expressions, where each expression within an OR must have the same key. An
+&#39;=&#39; should be used to connect the key and value.<p>
 
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.
+<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is
+acceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.
+&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;.
       </li>
     </ul>
   </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_product_categories_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#product_categories(instance)" class="notranslate">#product_categories</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def product_categories =&gt; ::Array&lt;::String&gt;</code></pre>
+    <pre class="prettyprint"><code>def product_categories() -&gt; ::Array&lt;::String&gt;</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
         (::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider
-the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
-"packagedgoods-v1", or "general-v1" should be specified. The legacy
-categories "homegoods", "apparel", and "toys" are still supported but will
-be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
-or "toys-v2" for better product search accuracy. It is recommended to
+the first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,
+&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy
+categories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will
+be deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,
+or &quot;toys-v2&quot; for better product search accuracy. It is recommended to
 migrate existing products to these categories as well.
       </li>
     </ul>
   </div>
   <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_product_categories__instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#product_categories=(instance)" class="notranslate">#product_categories=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def product_categories=(value) =&gt; ::Array&lt;::String&gt;</code></pre>
+    <pre class="prettyprint"><code>def product_categories=(value) -&gt; ::Array&lt;::String&gt;</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider
+the first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,
+&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy
+categories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will
+be deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,
+or &quot;toys-v2&quot; for better product search accuracy. It is recommended to
+migrate existing products to these categories as well.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
         (::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider
-the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
-"packagedgoods-v1", or "general-v1" should be specified. The legacy
-categories "homegoods", "apparel", and "toys" are still supported but will
-be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
-or "toys-v2" for better product search accuracy. It is recommended to
+the first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,
+&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy
+categories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will
+be deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,
+or &quot;toys-v2&quot; for better product search accuracy. It is recommended to
 migrate existing products to these categories as well.
       </li>
     </ul>
   </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_filter_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#filter(instance)" class="notranslate">#filter</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#product_set(instance)" class="notranslate">#product_set</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def filter =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def product_set() -&gt; ::String</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The filtering expression. This can be used to restrict search results based
-on Product labels. We currently support an AND of OR of key-value
-expressions, where each expression within an OR must have the same key. An
-'=' should be used to connect the key and value.
+        (::String) — The resource name of a <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSet" title="Google::Cloud::Vision::V1::ProductSet (class)">ProductSet</a></span> to be searched for similar images.<p>
 
-For example, "(color = red OR color = blue) AND brand = Google" is
-acceptable, but "(color = red OR brand = Google)" is not acceptable.
-"color: red" is not acceptable because it uses a ':' instead of an '='.
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.
       </li>
     </ul>
   </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_filter__instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#filter=(instance)" class="notranslate">#filter=</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearchParams_product_set__instance_" data-uid="Google::Cloud::Vision::V1::ProductSearchParams#product_set=(instance)" class="notranslate">#product_set=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def filter=(value) =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def product_set=(value) -&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::String) — The resource name of a <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSet" title="Google::Cloud::Vision::V1::ProductSet (class)">ProductSet</a></span> to be searched for similar images.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The filtering expression. This can be used to restrict search results based
-on Product labels. We currently support an AND of OR of key-value
-expressions, where each expression within an OR must have the same key. An
-'=' should be used to connect the key and value.
+        (::String) — The resource name of a <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSet" title="Google::Cloud::Vision::V1::ProductSet (class)">ProductSet</a></span> to be searched for similar images.<p>
 
-For example, "(color = red OR color = blue) AND brand = Google" is
-acceptable, but "(color = red OR brand = Google)" is not acceptable.
-"color: red" is not acceptable because it uses a ':' instead of an '='.
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.
       </li>
     </ul>
   </div>

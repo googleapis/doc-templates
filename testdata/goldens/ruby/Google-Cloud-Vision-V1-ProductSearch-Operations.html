@@ -26,7 +26,7 @@
   </h2>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_configure_class_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations.configure(class)" class="notranslate">.configure</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def self.configure { |config| ... } =&gt; Operations::Configuration</code></pre>
+    <pre class="prettyprint"><code>def self.configure() { |config| ... } -&gt; Operations::Configuration</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Configuration for the ProductSearch Operations API.</p>
 </div>
@@ -39,7 +39,7 @@
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameters</strong>
+    <strong>Yield Parameter</strong>
     <ul>
       <li>
         <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations-Configuration">Operations::Configuration</a>)
@@ -54,98 +54,36 @@
       </li>
     </ul>
   </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_configure_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#configure(instance)" class="notranslate">#configure</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_cancel_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#cancel_operation(instance)" class="notranslate">#cancel_operation</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def configure { |config| ... } =&gt; Operations::Configuration</code></pre>
+    <pre class="prettyprint"><code>def cancel_operation(request, options = nil) -&gt; ::Google::Protobuf::Empty
+def cancel_operation(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Configure the ProductSearch Operations instance.</p>
-<p>The configuration is set to the derived mode, meaning that values can be changed,
-but structural changes (adding new fields, etc.) are not allowed. Structural changes
-should be made on {Operations.configure}.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (config) — Configure the Operations client.
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameters</strong>
-    <ul>
-      <li>
-        <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations-Configuration">Operations::Configuration</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations-Configuration">Operations::Configuration</a>)
-      </li>
-    </ul>
-  </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_initialize_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#initialize(instance)" class="notranslate">#initialize</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def initialize { |config| ... } =&gt; Operations</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Create a new Operations client object.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (config) — Configure the Client client.
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameters</strong>
-    <ul>
-      <li>
-        <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations-Configuration">Operations::Configuration</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations">Operations</a>) — a new instance of Operations
-      </li>
-    </ul>
-  </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_list_operations_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#list_operations(instance)" class="notranslate">#list_operations</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def list_operations(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;
-def list_operations(name: nil, filter: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Lists operations that match the specified filter in the request. If the
-server doesn&#39;t support this method, it returns <code>UNIMPLEMENTED</code>.</p>
-<p>NOTE: the <code>name</code> binding allows API services to override the binding
-to use different resource name schemes, such as <code>users/&#42;/operations</code>. To
-override the binding, API services can add a binding such as
-<code>&quot;/v1/{name=users/&#42;}/operations&quot;</code> to their service configuration.
-For backwards compatibility, the default name includes the operations
-collection id, however overriding users must ensure the name binding
-is the parent resource, without the operations collection id.</p>
+  <div class="markdown level1 summary"><p>Starts asynchronous cancellation on a long-running operation.  The server
+makes a best effort to cancel the operation, but success is not
+guaranteed.  If the server doesn&#39;t support this method, it returns
+<code>google.rpc.Code.UNIMPLEMENTED</code>.  Clients can use
+Operations.GetOperation or
+other methods to check whether the cancellation succeeded or whether the
+operation completed despite cancellation. On successful cancellation,
+the operation is not deleted; instead, it becomes an operation with
+an <span class='object_link'><a href="Google-Longrunning-Operation#Google__Longrunning__Operation_error_instance_" title="Google::Longrunning::Operation#error (method)">Operation.error</a></span> value with a <span class='object_link'><a href="Google-Rpc-Status#Google__Rpc__Status_code_instance_" title="Google::Rpc::Status#code (method)">google.rpc.Status.code</a></span> of 1,
+corresponding to <code>Code.CANCELLED</code>.</p>
 </div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_operations(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
+      <pre class="prettyprint"><code>def cancel_operation(request, options = nil) -&gt; ::Google::Protobuf::Empty</code></pre>
     </div>
     <div class="level1 summary">
-      Pass arguments to <code>list_operations</code> via a request object, either of type
-<a href="./Google-Longrunning-ListOperationsRequest">::Google::Longrunning::ListOperationsRequest</a> or an equivalent Hash.
+      Pass arguments to <code>cancel_operation</code> via a request object, either of type
+<span class='object_link'><a href="Google-Longrunning-CancelOperationRequest" title="Google::Longrunning::CancelOperationRequest (class)">Longrunning::CancelOperationRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>request</strong> (<a href="./Google-Longrunning-ListOperationsRequest">::Google::Longrunning::ListOperationsRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+       <strong>request</strong> (<a href="./Google-Longrunning-CancelOperationRequest">::Google::Longrunning::CancelOperationRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
 parameters, or to keep all the default parameter values, pass an empty Hash.
       </li>
       <li>
@@ -154,27 +92,18 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_operations(name: nil, filter: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
+      <pre class="prettyprint"><code>def cancel_operation(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
     </div>
     <div class="level1 summary">
-      Pass arguments to <code>list_operations</code> via keyword arguments. Note that at
+      Pass arguments to <code>cancel_operation</code> via keyword arguments. Note that at
 least one keyword argument is required. To specify no parameters, or to keep all
 the default parameter values, pass an empty Hash as a request object (see above).
     </div>
   <div class="level1 summary">
-    <strong>Parameters</strong>
+    <strong>Parameter</strong>
     <ul>
       <li>
-       <strong>name</strong> (::String) — The name of the operation's parent resource.
-      </li>
-      <li>
-       <strong>filter</strong> (::String) — The standard list filter.
-      </li>
-      <li>
-       <strong>page_size</strong> (::Integer) — The standard list page size.
-      </li>
-      <li>
-       <strong>page_token</strong> (::String) — The standard list page token.
+       <strong>name</strong> (::String) — The name of the operation resource to be cancelled.
       </li>
     </ul>
   </div>
@@ -188,10 +117,10 @@ the default parameter values, pass an empty Hash as a request object (see above)
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
-        <strong>response</strong> (::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;)
+        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
       </li>
       <li>
         <strong>operation</strong> (::GRPC::ActiveCall::Operation)
@@ -202,7 +131,7 @@ the default parameter values, pass an empty Hash as a request object (see above)
     <strong>Returns</strong>
     <ul>
       <li>
-        (::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;)
+        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
       </li>
     </ul>
   </div>
@@ -215,29 +144,155 @@ the default parameter values, pass an empty Hash as a request object (see above)
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/longrunning"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/longrunning"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Longrunning::Operations::Client.new
 
 # Create a request. To set request fields, pass in keyword arguments.
-request = Google::Longrunning::ListOperationsRequest.new
+request = Google::Longrunning::CancelOperationRequest.new
 
-# Call the list_operations method.
-result = client.list_operations request
+# Call the cancel_operation method.
+result = client.cancel_operation request
 
-# The returned object is of type Gapic::PagedEnumerable. You can
-# iterate over all elements by calling #each, and the enumerable
-# will lazily make API calls to fetch subsequent pages. Other
-# methods are also available for managing paging directly.
-result.each do |response|
-  # Each element is of type ::Google::Longrunning::Operation.
-  p response
-end</pre>
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_configure_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#configure(instance)" class="notranslate">#configure</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def configure() { |config| ... } -&gt; Operations::Configuration</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Configure the ProductSearch Operations instance.</p><p>
+<p><p>The configuration is set to the derived mode, meaning that values can be changed,
+but structural changes (adding new fields, etc.) are not allowed. Structural changes
+should be made on <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSearch-Operations#Google__Cloud__Vision__V1__ProductSearch__Operations_configure_class_" title="Google::Cloud::Vision::V1::ProductSearch::Operations.configure (method)">Operations.configure</a></span>.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (config) — Configure the Operations client.
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameter</strong>
+    <ul>
+      <li>
+        <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations-Configuration">Operations::Configuration</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations-Configuration">Operations::Configuration</a>)
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_delete_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#delete_operation(instance)" class="notranslate">#delete_operation</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def delete_operation(request, options = nil) -&gt; ::Google::Protobuf::Empty
+def delete_operation(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Deletes a long-running operation. This method indicates that the client is
+no longer interested in the operation result. It does not cancel the
+operation. If the server doesn&#39;t support this method, it returns
+<code>google.rpc.Code.UNIMPLEMENTED</code>.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def delete_operation(request, options = nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_operation</code> via a request object, either of type
+<span class='object_link'><a href="Google-Longrunning-DeleteOperationRequest" title="Google::Longrunning::DeleteOperationRequest (class)">Longrunning::DeleteOperationRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Longrunning-DeleteOperationRequest">::Google::Longrunning::DeleteOperationRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def delete_operation(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_operation</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — The name of the operation resource to be deleted.
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/longrunning"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Longrunning::Operations::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Longrunning::DeleteOperationRequest.new
+
+# Call the delete_operation method.
+result = client.delete_operation request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_get_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#get_operation(instance)" class="notranslate">#get_operation</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def get_operation(request, options = nil) =&gt; ::Gapic::Operation
-def get_operation(name: nil) =&gt; ::Gapic::Operation</code></pre>
+    <pre class="prettyprint"><code>def get_operation(request, options = nil) -&gt; ::Gapic::Operation
+def get_operation(name: nil) -&gt; ::Gapic::Operation</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Gets the latest state of a long-running operation.  Clients can use this
 method to poll the operation result at intervals as recommended by the API
@@ -246,11 +301,11 @@ service.</p>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_operation(request, options = nil) =&gt; ::Gapic::Operation</code></pre>
+      <pre class="prettyprint"><code>def get_operation(request, options = nil) -&gt; ::Gapic::Operation</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>get_operation</code> via a request object, either of type
-<a href="./Google-Longrunning-GetOperationRequest">::Google::Longrunning::GetOperationRequest</a> or an equivalent Hash.
+<span class='object_link'><a href="Google-Longrunning-GetOperationRequest" title="Google::Longrunning::GetOperationRequest (class)">Longrunning::GetOperationRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
@@ -265,7 +320,7 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_operation(name: nil) =&gt; ::Gapic::Operation</code></pre>
+      <pre class="prettyprint"><code>def get_operation(name: nil) -&gt; ::Gapic::Operation</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>get_operation</code> via keyword arguments. Note that at
@@ -290,7 +345,7 @@ the default parameter values, pass an empty Hash as a request object (see above)
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
         <strong>response</strong> (::Gapic::Operation)
@@ -317,7 +372,8 @@ the default parameter values, pass an empty Hash as a request object (see above)
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/longrunning"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/longrunning"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Longrunning::Operations::Client.new
@@ -337,30 +393,65 @@ if result.response?
 else
   puts "Error!"
 end</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_delete_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#delete_operation(instance)" class="notranslate">#delete_operation</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_initialize_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#initialize(instance)" class="notranslate">#initialize</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def delete_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty
-def delete_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+    <pre class="prettyprint"><code>def initialize() { |config| ... } -&gt; Operations</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Deletes a long-running operation. This method indicates that the client is
-no longer interested in the operation result. It does not cancel the
-operation. If the server doesn&#39;t support this method, it returns
-<code>google.rpc.Code.UNIMPLEMENTED</code>.</p>
+  <div class="markdown level1 summary"><p>Create a new Operations client object.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (config) — Configure the Client client.
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameter</strong>
+    <ul>
+      <li>
+        <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations-Configuration">Operations::Configuration</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations">Operations</a>) — a new instance of Operations
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_list_operations_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#list_operations(instance)" class="notranslate">#list_operations</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def list_operations(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;
+def list_operations(name: nil, filter: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists operations that match the specified filter in the request. If the
+server doesn&#39;t support this method, it returns <code>UNIMPLEMENTED</code>.</p><p>
+<p><p>NOTE: the <code>name</code> binding allows API services to override the binding
+to use different resource name schemes, such as <code>users/<em>/operations</em></code>. To
+override the binding, API services can add a binding such as
+<code>&quot;/v1/{name=users/}/operations&quot;</code> to their service configuration.
+For backwards compatibility, the default name includes the operations
+collection id, however overriding users must ensure the name binding
+is the parent resource, without the operations collection id.</p>
 </div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+      <pre class="prettyprint"><code>def list_operations(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
     </div>
     <div class="level1 summary">
-      Pass arguments to <code>delete_operation</code> via a request object, either of type
-<a href="./Google-Longrunning-DeleteOperationRequest">::Google::Longrunning::DeleteOperationRequest</a> or an equivalent Hash.
+      Pass arguments to <code>list_operations</code> via a request object, either of type
+<span class='object_link'><a href="Google-Longrunning-ListOperationsRequest" title="Google::Longrunning::ListOperationsRequest (class)">Longrunning::ListOperationsRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>request</strong> (<a href="./Google-Longrunning-DeleteOperationRequest">::Google::Longrunning::DeleteOperationRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+       <strong>request</strong> (<a href="./Google-Longrunning-ListOperationsRequest">::Google::Longrunning::ListOperationsRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
 parameters, or to keep all the default parameter values, pass an empty Hash.
       </li>
       <li>
@@ -369,18 +460,27 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
+      <pre class="prettyprint"><code>def list_operations(name: nil, filter: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;</code></pre>
     </div>
     <div class="level1 summary">
-      Pass arguments to <code>delete_operation</code> via keyword arguments. Note that at
+      Pass arguments to <code>list_operations</code> via keyword arguments. Note that at
 least one keyword argument is required. To specify no parameters, or to keep all
 the default parameter values, pass an empty Hash as a request object (see above).
     </div>
   <div class="level1 summary">
-    <strong>Parameter</strong>
+    <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>name</strong> (::String) — The name of the operation resource to be deleted.
+       <strong>name</strong> (::String) — The name of the operation&#39;s parent resource.
+      </li>
+      <li>
+       <strong>filter</strong> (::String) — The standard list filter.
+      </li>
+      <li>
+       <strong>page_size</strong> (::Integer) — The standard list page size.
+      </li>
+      <li>
+       <strong>page_token</strong> (::String) — The standard list page token.
       </li>
     </ul>
   </div>
@@ -394,10 +494,10 @@ the default parameter values, pass an empty Hash as a request object (see above)
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
-        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+        <strong>response</strong> (::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;)
       </li>
       <li>
         <strong>operation</strong> (::GRPC::ActiveCall::Operation)
@@ -408,7 +508,7 @@ the default parameter values, pass an empty Hash as a request object (see above)
     <strong>Returns</strong>
     <ul>
       <li>
-        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+        (::Gapic::PagedEnumerable&lt;::Gapic::Operation&gt;)
       </li>
     </ul>
   </div>
@@ -421,126 +521,30 @@ the default parameter values, pass an empty Hash as a request object (see above)
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/longrunning"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/longrunning"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Longrunning::Operations::Client.new
 
 # Create a request. To set request fields, pass in keyword arguments.
-request = Google::Longrunning::DeleteOperationRequest.new
+request = Google::Longrunning::ListOperationsRequest.new
 
-# Call the delete_operation method.
-result = client.delete_operation request
+# Call the list_operations method.
+result = client.list_operations request
 
-# The returned object is of type Google::Protobuf::Empty.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_cancel_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#cancel_operation(instance)" class="notranslate">#cancel_operation</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def cancel_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty
-def cancel_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Starts asynchronous cancellation on a long-running operation.  The server
-makes a best effort to cancel the operation, but success is not
-guaranteed.  If the server doesn&#39;t support this method, it returns
-<code>google.rpc.Code.UNIMPLEMENTED</code>.  Clients can use
-Operations.GetOperation or
-other methods to check whether the cancellation succeeded or whether the
-operation completed despite cancellation. On successful cancellation,
-the operation is not deleted; instead, it becomes an operation with
-an {::Google::Longrunning::Operation#error Operation.error} value with a {::Google::Rpc::Status#code google.rpc.Status.code} of 1,
-corresponding to <code>Code.CANCELLED</code>.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def cancel_operation(request, options = nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>cancel_operation</code> via a request object, either of type
-<a href="./Google-Longrunning-CancelOperationRequest">::Google::Longrunning::CancelOperationRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Longrunning-CancelOperationRequest">::Google::Longrunning::CancelOperationRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def cancel_operation(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>cancel_operation</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameter</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — The name of the operation resource to be cancelled.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/longrunning"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Longrunning::Operations::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Longrunning::CancelOperationRequest.new
-
-# Call the cancel_operation method.
-result = client.cancel_operation request
-
-# The returned object is of type Google::Protobuf::Empty.
-p result</pre>
+# The returned object is of type Gapic::PagedEnumerable. You can
+# iterate over all elements by calling #each, and the enumerable
+# will lazily make API calls to fetch subsequent pages. Other
+# methods are also available for managing paging directly.
+result.each do |response|
+  # Each element is of type ::Google::Longrunning::Operation.
+  p response
+end</pre>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Operations_wait_operation_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Operations#wait_operation(instance)" class="notranslate">#wait_operation</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def wait_operation(request, options = nil) =&gt; ::Gapic::Operation
-def wait_operation(name: nil, timeout: nil) =&gt; ::Gapic::Operation</code></pre>
+    <pre class="prettyprint"><code>def wait_operation(request, options = nil) -&gt; ::Gapic::Operation
+def wait_operation(name: nil, timeout: nil) -&gt; ::Gapic::Operation</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Waits until the specified long-running operation is done or reaches at most
 a specified timeout, returning the latest state.  If the operation is
@@ -555,11 +559,11 @@ immediate response is no guarantee that the operation is done.</p>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def wait_operation(request, options = nil) =&gt; ::Gapic::Operation</code></pre>
+      <pre class="prettyprint"><code>def wait_operation(request, options = nil) -&gt; ::Gapic::Operation</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>wait_operation</code> via a request object, either of type
-<a href="./Google-Longrunning-WaitOperationRequest">::Google::Longrunning::WaitOperationRequest</a> or an equivalent Hash.
+<span class='object_link'><a href="Google-Longrunning-WaitOperationRequest" title="Google::Longrunning::WaitOperationRequest (class)">Longrunning::WaitOperationRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
@@ -574,7 +578,7 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def wait_operation(name: nil, timeout: nil) =&gt; ::Gapic::Operation</code></pre>
+      <pre class="prettyprint"><code>def wait_operation(name: nil, timeout: nil) -&gt; ::Gapic::Operation</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>wait_operation</code> via keyword arguments. Note that at
@@ -604,7 +608,7 @@ If RPC context deadline is also specified, the shorter one will be used.
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
         <strong>response</strong> (::Gapic::Operation)
@@ -631,7 +635,8 @@ If RPC context deadline is also specified, the shorter one will be used.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/longrunning"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/longrunning"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Longrunning::Operations::Client.new

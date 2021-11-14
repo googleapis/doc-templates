@@ -15,8 +15,8 @@
   <div class="markdown level0 summary"><p>The <code>Status</code> type defines a logical error model that is suitable for
 different programming environments, including REST APIs and RPC APIs. It is
 used by <a href="https://github.com/grpc">gRPC</a>. Each <code>Status</code> message contains
-three pieces of data: error code, error message, and error details.</p>
-<p>You can find out more about this error model and how to work with it in the
+three pieces of data: error code, error message, and error details.</p><p>
+<p><p>You can find out more about this error model and how to work with it in the
 <a href="https://cloud.google.com/apis/design/errors">API Design Guide</a>.</p>
 </div>
   <div class="inheritance">
@@ -47,7 +47,7 @@ three pieces of data: error code, error message, and error details.</p>
   </h2>
   <h3 id="Google__Rpc__Status_code_instance_" data-uid="Google::Rpc::Status#code(instance)" class="notranslate">#code</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def code =&gt; ::Integer</code></pre>
+    <pre class="prettyprint"><code>def code() -&gt; ::Integer</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -59,7 +59,15 @@ three pieces of data: error code, error message, and error details.</p>
   </div>
   <h3 id="Google__Rpc__Status_code__instance_" data-uid="Google::Rpc::Status#code=(instance)" class="notranslate">#code=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def code=(value) =&gt; ::Integer</code></pre>
+    <pre class="prettyprint"><code>def code=(value) -&gt; ::Integer</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::Integer) — The status code, which should be an enum value of [google.rpc.Code][google.rpc.Code].
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -69,37 +77,9 @@ three pieces of data: error code, error message, and error details.</p>
       </li>
     </ul>
   </div>
-  <h3 id="Google__Rpc__Status_message_instance_" data-uid="Google::Rpc::Status#message(instance)" class="notranslate">#message</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def message =&gt; ::String</code></pre>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (::String) — A developer-facing error message, which should be in English. Any
-user-facing error message should be localized and sent in the
-{::Google::Rpc::Status#details google.rpc.Status.details} field, or localized by the client.
-      </li>
-    </ul>
-  </div>
-  <h3 id="Google__Rpc__Status_message__instance_" data-uid="Google::Rpc::Status#message=(instance)" class="notranslate">#message=</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def message=(value) =&gt; ::String</code></pre>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (::String) — A developer-facing error message, which should be in English. Any
-user-facing error message should be localized and sent in the
-{::Google::Rpc::Status#details google.rpc.Status.details} field, or localized by the client.
-      </li>
-    </ul>
-  </div>
   <h3 id="Google__Rpc__Status_details_instance_" data-uid="Google::Rpc::Status#details(instance)" class="notranslate">#details</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def details =&gt; ::Array&lt;::Google::Protobuf::Any&gt;</code></pre>
+    <pre class="prettyprint"><code>def details() -&gt; ::Array&lt;::Google::Protobuf::Any&gt;</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -112,7 +92,16 @@ message types for APIs to use.
   </div>
   <h3 id="Google__Rpc__Status_details__instance_" data-uid="Google::Rpc::Status#details=(instance)" class="notranslate">#details=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def details=(value) =&gt; ::Array&lt;::Google::Protobuf::Any&gt;</code></pre>
+    <pre class="prettyprint"><code>def details=(value) -&gt; ::Array&lt;::Google::Protobuf::Any&gt;</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::Array&lt;<a href="./Google-Protobuf-Any">::Google::Protobuf::Any</a>&gt;) — A list of messages that carry the error details.  There is a common set of
+message types for APIs to use.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -120,6 +109,44 @@ message types for APIs to use.
       <li>
         (::Array&lt;<a href="./Google-Protobuf-Any">::Google::Protobuf::Any</a>&gt;) — A list of messages that carry the error details.  There is a common set of
 message types for APIs to use.
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Rpc__Status_message_instance_" data-uid="Google::Rpc::Status#message(instance)" class="notranslate">#message</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def message() -&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::String) — A developer-facing error message, which should be in English. Any
+user-facing error message should be localized and sent in the
+<span class='object_link'><a href="Google-Rpc-Status#Google__Rpc__Status_details_instance_" title="Google::Rpc::Status#details (method)">google.rpc.Status.details</a></span> field, or localized by the client.
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Rpc__Status_message__instance_" data-uid="Google::Rpc::Status#message=(instance)" class="notranslate">#message=</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def message=(value) -&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::String) — A developer-facing error message, which should be in English. Any
+user-facing error message should be localized and sent in the
+<span class='object_link'><a href="Google-Rpc-Status#Google__Rpc__Status_details_instance_" title="Google::Rpc::Status#details (method)">google.rpc.Status.details</a></span> field, or localized by the client.
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::String) — A developer-facing error message, which should be in English. Any
+user-facing error message should be localized and sent in the
+<span class='object_link'><a href="Google-Rpc-Status#Google__Rpc__Status_details_instance_" title="Google::Rpc::Status#details (method)">google.rpc.Status.details</a></span> field, or localized by the client.
       </li>
     </ul>
   </div>

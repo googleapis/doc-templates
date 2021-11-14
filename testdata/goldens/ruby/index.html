@@ -31,12 +31,14 @@ See the section below titled <em>Which client should I use?</em> for more inform
 <li><a href="AUTHENTICATION.html">Set up authentication.</a></li>
 </ol>
 <h2 id="quick-start">Quick Start</h2>
-<pre><code class="lang-ruby">require &quot;google/cloud/vision/v1&quot;
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
 request = ::Google::Cloud::Vision::V1::CreateProductSetRequest.new # (request fields as keyword arguments...)
 response = client.create_product_set request
-</code></pre><p>View the <a href="https://googleapis.dev/ruby/google-cloud-vision-v1/latest">Client Library Documentation</a>
+</pre>
+
+<p>View the <a href="https://googleapis.dev/ruby/google-cloud-vision-v1/latest">Client Library Documentation</a>
 for class and method documentation.</p>
 <p>See also the <a href="https://cloud.google.com/vision">Product Documentation</a>
 for general usage information.</p>
@@ -47,7 +49,7 @@ or a <a href="https://googleapis.dev/ruby/google-cloud-logging/latest"><code>Goo
 that will write logs to <a href="https://cloud.google.com/logging/">Cloud Logging</a>. See <a href="https://github.com/grpc/grpc/blob/master/src/ruby/lib/grpc/logconfig.rb">grpc/logconfig.rb</a>
 and the gRPC <a href="https://github.com/grpc/grpc/blob/master/src/ruby/spec/spec_helper.rb">spec_helper.rb</a> for additional information.</p>
 <p>Configuring a Ruby stdlib logger:</p>
-<pre><code class="lang-ruby">require &quot;logger&quot;
+<pre class="prettyprint lang-rb">require "logger"
 
 module MyLogger
   LOGGER = Logger.new $stderr, level: Logger::WARN
@@ -60,7 +62,9 @@ end
 module GRPC
   extend MyLogger
 end
-</code></pre><h2 id="supported-ruby-versions">Supported Ruby Versions</h2>
+</pre>
+
+<h2 id="supported-ruby-versions">Supported Ruby Versions</h2>
 <p>This library is supported on Ruby 2.5+.</p>
 <p>Google provides official support for Ruby versions that are actively supported
 by Ruby Core—that is, Ruby versions that are either in normal maintenance or
