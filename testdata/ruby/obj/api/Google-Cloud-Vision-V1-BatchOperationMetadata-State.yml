@@ -17,35 +17,15 @@ items:
   name: Google::Cloud::Vision::V1::BatchOperationMetadata::State
   example: []
 
-- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::STATE_UNSPECIFIED
-  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::STATE_UNSPECIFIED
-  name: STATE_UNSPECIFIED
+- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::CANCELLED
+  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::CANCELLED
+  name: CANCELLED
   parent: Google::Cloud::Vision::V1::BatchOperationMetadata::State
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: STATE_UNSPECIFIED
-  summary: "<b>value: </b>0<br>Invalid."
-  type: const
-- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::PROCESSING
-  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::PROCESSING
-  name: PROCESSING
-  parent: Google::Cloud::Vision::V1::BatchOperationMetadata::State
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: PROCESSING
-  summary: "<b>value: </b>1<br>Request is actively being processed."
-  type: const
-- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::SUCCESSFUL
-  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::SUCCESSFUL
-  name: SUCCESSFUL
-  parent: Google::Cloud::Vision::V1::BatchOperationMetadata::State
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: SUCCESSFUL
-  summary: "<b>value: </b>2<br>The request is done and at least one item has been successfully\nprocessed."
+  id: CANCELLED
+  summary: "<b>value: </b>4<br>The request is done after the longrunning.Operations.CancelOperation has\nbeen called by the user.  Any records that were processed before the\ncancel command are output as specified in the request."
   type: const
 - uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::FAILED
   fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::FAILED
@@ -57,14 +37,34 @@ items:
   id: FAILED
   summary: "<b>value: </b>3<br>The request is done and no item has been successfully processed."
   type: const
-- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::CANCELLED
-  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::CANCELLED
-  name: CANCELLED
+- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::PROCESSING
+  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::PROCESSING
+  name: PROCESSING
   parent: Google::Cloud::Vision::V1::BatchOperationMetadata::State
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: CANCELLED
-  summary: "<b>value: </b>4<br>The request is done after the longrunning.Operations.CancelOperation has\nbeen called by the user.  Any records that were processed before the\ncancel command are output as specified in the request."
+  id: PROCESSING
+  summary: "<b>value: </b>1<br>Request is actively being processed."
+  type: const
+- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::STATE_UNSPECIFIED
+  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::STATE_UNSPECIFIED
+  name: STATE_UNSPECIFIED
+  parent: Google::Cloud::Vision::V1::BatchOperationMetadata::State
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: STATE_UNSPECIFIED
+  summary: "<b>value: </b>0<br>Invalid."
+  type: const
+- uid: Google::Cloud::Vision::V1::BatchOperationMetadata::State::SUCCESSFUL
+  fullName: Google::Cloud::Vision::V1::BatchOperationMetadata::State::SUCCESSFUL
+  name: SUCCESSFUL
+  parent: Google::Cloud::Vision::V1::BatchOperationMetadata::State
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: SUCCESSFUL
+  summary: "<b>value: </b>2<br>The request is done and at least one item has been successfully\nprocessed."
   type: const
 references: []

@@ -2,14 +2,14 @@
 items:
 - uid: Google::Cloud::Vision::V1::AnnotateFileResponse
   children: 
+  - Google::Cloud::Vision::V1::AnnotateFileResponse#error(instance)
+  - Google::Cloud::Vision::V1::AnnotateFileResponse#error=(instance)
   - Google::Cloud::Vision::V1::AnnotateFileResponse#input_config(instance)
   - Google::Cloud::Vision::V1::AnnotateFileResponse#input_config=(instance)
   - Google::Cloud::Vision::V1::AnnotateFileResponse#responses(instance)
   - Google::Cloud::Vision::V1::AnnotateFileResponse#responses=(instance)
   - Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages(instance)
   - Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages=(instance)
-  - Google::Cloud::Vision::V1::AnnotateFileResponse#error(instance)
-  - Google::Cloud::Vision::V1::AnnotateFileResponse#error=(instance)
   fullName: Google::Cloud::Vision::V1::AnnotateFileResponse
   langs:
   - ruby
@@ -25,120 +25,6 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
-- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config(instance)
-  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config
-  name: "#input_config"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#input_config"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def input_config => ::Google::Cloud::Vision::V1::InputConfig"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-InputConfig\">::Google::Cloud::Vision::V1::InputConfig</a>) — Information about the file for which this response is generated."
-    raises: []
-- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config=(instance)
-  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config=
-  name: "#input_config="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#input_config="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def input_config=(value) => ::Google::Cloud::Vision::V1::InputConfig"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-InputConfig\">::Google::Cloud::Vision::V1::InputConfig</a>) — Information about the file for which this response is generated."
-    raises: []
-- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#responses(instance)
-  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#responses
-  name: "#responses"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#responses"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def responses => ::Array<::Google::Cloud::Vision::V1::AnnotateImageResponse>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-AnnotateImageResponse\">::Google::Cloud::Vision::V1::AnnotateImageResponse</a>&gt;) — Individual responses to images found within the file. This field will be\nempty if the <code>error</code> field is set."
-    raises: []
-- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#responses=(instance)
-  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#responses=
-  name: "#responses="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#responses="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def responses=(value) => ::Array<::Google::Cloud::Vision::V1::AnnotateImageResponse>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-AnnotateImageResponse\">::Google::Cloud::Vision::V1::AnnotateImageResponse</a>&gt;) — Individual responses to images found within the file. This field will be\nempty if the <code>error</code> field is set."
-    raises: []
-- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages(instance)
-  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages
-  name: "#total_pages"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#total_pages"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def total_pages => ::Integer"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Integer) — This field gives the total number of pages in the file."
-    raises: []
-- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages=(instance)
-  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages=
-  name: "#total_pages="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#total_pages="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def total_pages=(value) => ::Integer"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Integer) — This field gives the total number of pages in the file."
-    raises: []
 - uid: Google::Cloud::Vision::V1::AnnotateFileResponse#error(instance)
   fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#error
   name: "#error"
@@ -151,7 +37,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def error => ::Google::Rpc::Status"
+    content: "def error() -> ::Google::Rpc::Status"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -170,11 +57,136 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def error=(value) => ::Google::Rpc::Status"
-    arguments: []
+    content: "def error=(value) -> ::Google::Rpc::Status"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Rpc-Status\">::Google::Rpc::Status</a>) — If set, represents the error message for the failed request. The\n<code>responses</code> field will not be set in this case."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Rpc-Status\">::Google::Rpc::Status</a>) — If set, represents the error message for the failed request. The\n<code>responses</code> field will not be set in this case."
+    raises: []
+- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config(instance)
+  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config
+  name: "#input_config"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#input_config"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def input_config() -> ::Google::Cloud::Vision::V1::InputConfig"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-InputConfig\">::Google::Cloud::Vision::V1::InputConfig</a>) — Information about the file for which this response is generated."
+    raises: []
+- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config=(instance)
+  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#input_config=
+  name: "#input_config="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#input_config="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def input_config=(value) -> ::Google::Cloud::Vision::V1::InputConfig"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-InputConfig\">::Google::Cloud::Vision::V1::InputConfig</a>) — Information about the file for which this response is generated."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-InputConfig\">::Google::Cloud::Vision::V1::InputConfig</a>) — Information about the file for which this response is generated."
+    raises: []
+- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#responses(instance)
+  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#responses
+  name: "#responses"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#responses"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def responses() -> ::Array<::Google::Cloud::Vision::V1::AnnotateImageResponse>"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-AnnotateImageResponse\">::Google::Cloud::Vision::V1::AnnotateImageResponse</a>&gt;) — Individual responses to images found within the file. This field will be\nempty if the <code>error</code> field is set."
+    raises: []
+- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#responses=(instance)
+  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#responses=
+  name: "#responses="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#responses="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def responses=(value) -> ::Array<::Google::Cloud::Vision::V1::AnnotateImageResponse>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;<a href=\"./Google-Cloud-Vision-V1-AnnotateImageResponse\">::Google::Cloud::Vision::V1::AnnotateImageResponse</a>&gt;) — Individual responses to images found within the file. This field will be\nempty if the <code>error</code> field is set."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-AnnotateImageResponse\">::Google::Cloud::Vision::V1::AnnotateImageResponse</a>&gt;) — Individual responses to images found within the file. This field will be\nempty if the <code>error</code> field is set."
+    raises: []
+- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages(instance)
+  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages
+  name: "#total_pages"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#total_pages"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def total_pages() -> ::Integer"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — This field gives the total number of pages in the file."
+    raises: []
+- uid: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages=(instance)
+  fullName: Google::Cloud::Vision::V1::AnnotateFileResponse#total_pages=
+  name: "#total_pages="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#total_pages="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def total_pages=(value) -> ::Integer"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Integer) — This field gives the total number of pages in the file."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Integer) — This field gives the total number of pages in the file."
     raises: []
 references: []

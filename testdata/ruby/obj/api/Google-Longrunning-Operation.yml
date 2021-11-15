@@ -2,14 +2,14 @@
 items:
 - uid: Google::Longrunning::Operation
   children: 
-  - Google::Longrunning::Operation#name(instance)
-  - Google::Longrunning::Operation#name=(instance)
-  - Google::Longrunning::Operation#metadata(instance)
-  - Google::Longrunning::Operation#metadata=(instance)
   - Google::Longrunning::Operation#done(instance)
   - Google::Longrunning::Operation#done=(instance)
   - Google::Longrunning::Operation#error(instance)
   - Google::Longrunning::Operation#error=(instance)
+  - Google::Longrunning::Operation#metadata(instance)
+  - Google::Longrunning::Operation#metadata=(instance)
+  - Google::Longrunning::Operation#name(instance)
+  - Google::Longrunning::Operation#name=(instance)
   - Google::Longrunning::Operation#response(instance)
   - Google::Longrunning::Operation#response=(instance)
   fullName: Google::Longrunning::Operation
@@ -27,82 +27,6 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
-- uid: Google::Longrunning::Operation#name(instance)
-  fullName: Google::Longrunning::Operation#name
-  name: "#name"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#name"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def name => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The server-assigned name, which is only unique within the same service that\noriginally returns it. If you use the default HTTP mapping, the\n<code>name</code> should be a resource name ending with <code>operations/{unique_id}</code>."
-    raises: []
-- uid: Google::Longrunning::Operation#name=(instance)
-  fullName: Google::Longrunning::Operation#name=
-  name: "#name="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#name="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def name=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The server-assigned name, which is only unique within the same service that\noriginally returns it. If you use the default HTTP mapping, the\n<code>name</code> should be a resource name ending with <code>operations/{unique_id}</code>."
-    raises: []
-- uid: Google::Longrunning::Operation#metadata(instance)
-  fullName: Google::Longrunning::Operation#metadata
-  name: "#metadata"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#metadata"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def metadata => ::Google::Protobuf::Any"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>) — Service-specific metadata associated with the operation.  It typically\ncontains progress information and common metadata such as create time.\nSome services might not provide such metadata.  Any method that returns a\nlong-running operation should document the metadata type, if any."
-    raises: []
-- uid: Google::Longrunning::Operation#metadata=(instance)
-  fullName: Google::Longrunning::Operation#metadata=
-  name: "#metadata="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#metadata="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def metadata=(value) => ::Google::Protobuf::Any"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>) — Service-specific metadata associated with the operation.  It typically\ncontains progress information and common metadata such as create time.\nSome services might not provide such metadata.  Any method that returns a\nlong-running operation should document the metadata type, if any."
-    raises: []
 - uid: Google::Longrunning::Operation#done(instance)
   fullName: Google::Longrunning::Operation#done
   name: "#done"
@@ -115,7 +39,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def done => ::Boolean"
+    content: "def done() -> ::Boolean"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -134,8 +59,10 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def done=(value) => ::Boolean"
-    arguments: []
+    content: "def done=(value) -> ::Boolean"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Boolean) — If the value is <code>false</code>, it means the operation is still in progress.\nIf <code>true</code>, the operation is completed, and either <code>error</code> or <code>response</code> is\navailable."
     yields: []
     yieldparams: []
     returnValues:
@@ -153,7 +80,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def error => ::Google::Rpc::Status"
+    content: "def error() -> ::Google::Rpc::Status"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -172,12 +100,96 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def error=(value) => ::Google::Rpc::Status"
-    arguments: []
+    content: "def error=(value) -> ::Google::Rpc::Status"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Rpc-Status\">::Google::Rpc::Status</a>) — The error result of the operation in case of failure or cancellation."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Rpc-Status\">::Google::Rpc::Status</a>) — The error result of the operation in case of failure or cancellation."
+    raises: []
+- uid: Google::Longrunning::Operation#metadata(instance)
+  fullName: Google::Longrunning::Operation#metadata
+  name: "#metadata"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#metadata"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def metadata() -> ::Google::Protobuf::Any"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>) — Service-specific metadata associated with the operation.  It typically\ncontains progress information and common metadata such as create time.\nSome services might not provide such metadata.  Any method that returns a\nlong-running operation should document the metadata type, if any."
+    raises: []
+- uid: Google::Longrunning::Operation#metadata=(instance)
+  fullName: Google::Longrunning::Operation#metadata=
+  name: "#metadata="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#metadata="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def metadata=(value) -> ::Google::Protobuf::Any"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>) — Service-specific metadata associated with the operation.  It typically\ncontains progress information and common metadata such as create time.\nSome services might not provide such metadata.  Any method that returns a\nlong-running operation should document the metadata type, if any."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>) — Service-specific metadata associated with the operation.  It typically\ncontains progress information and common metadata such as create time.\nSome services might not provide such metadata.  Any method that returns a\nlong-running operation should document the metadata type, if any."
+    raises: []
+- uid: Google::Longrunning::Operation#name(instance)
+  fullName: Google::Longrunning::Operation#name
+  name: "#name"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#name"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def name() -> ::String"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The server-assigned name, which is only unique within the same service that\noriginally returns it. If you use the default HTTP mapping, the\n<code>name</code> should be a resource name ending with <code>operations/{unique_id}</code>."
+    raises: []
+- uid: Google::Longrunning::Operation#name=(instance)
+  fullName: Google::Longrunning::Operation#name=
+  name: "#name="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#name="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def name=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The server-assigned name, which is only unique within the same service that\noriginally returns it. If you use the default HTTP mapping, the\n<code>name</code> should be a resource name ending with <code>operations/{unique_id}</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The server-assigned name, which is only unique within the same service that\noriginally returns it. If you use the default HTTP mapping, the\n<code>name</code> should be a resource name ending with <code>operations/{unique_id}</code>."
     raises: []
 - uid: Google::Longrunning::Operation#response(instance)
   fullName: Google::Longrunning::Operation#response
@@ -191,7 +203,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def response => ::Google::Protobuf::Any"
+    content: "def response() -> ::Google::Protobuf::Any"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -210,8 +223,10 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def response=(value) => ::Google::Protobuf::Any"
-    arguments: []
+    content: "def response=(value) -> ::Google::Protobuf::Any"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Protobuf-Any\">::Google::Protobuf::Any</a>) — The normal response of the operation in case of success.  If the original\nmethod returns no data on success, such as <code>Delete</code>, the response is\n<code>google.protobuf.Empty</code>.  If the original method is standard\n<code>Get</code>/<code>Create</code>/<code>Update</code>, the response should be the resource.  For other\nmethods, the response should have the type <code>XxxResponse</code>, where <code>Xxx</code>\nis the original method name.  For example, if the original method name\nis <code>TakeSnapshot()</code>, the inferred response type is\n<code>TakeSnapshotResponse</code>."
     yields: []
     yieldparams: []
     returnValues:

@@ -2,10 +2,10 @@
 items:
 - uid: Google::Cloud::Vision::V1::InputConfig
   children: 
-  - Google::Cloud::Vision::V1::InputConfig#gcs_source(instance)
-  - Google::Cloud::Vision::V1::InputConfig#gcs_source=(instance)
   - Google::Cloud::Vision::V1::InputConfig#content(instance)
   - Google::Cloud::Vision::V1::InputConfig#content=(instance)
+  - Google::Cloud::Vision::V1::InputConfig#gcs_source(instance)
+  - Google::Cloud::Vision::V1::InputConfig#gcs_source=(instance)
   - Google::Cloud::Vision::V1::InputConfig#mime_type(instance)
   - Google::Cloud::Vision::V1::InputConfig#mime_type=(instance)
   fullName: Google::Cloud::Vision::V1::InputConfig
@@ -23,6 +23,47 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
+- uid: Google::Cloud::Vision::V1::InputConfig#content(instance)
+  fullName: Google::Cloud::Vision::V1::InputConfig#content
+  name: "#content"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#content"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def content() -> ::String"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — File content, represented as a stream of bytes.\nNote: As with all <code>bytes</code> fields, protobuffers use a pure binary\nrepresentation, whereas JSON representations use base64.</p>\n\n<p>Currently, this field only works for BatchAnnotateFiles requests. It does\nnot work for AsyncBatchAnnotateFiles requests."
+    raises: []
+- uid: Google::Cloud::Vision::V1::InputConfig#content=(instance)
+  fullName: Google::Cloud::Vision::V1::InputConfig#content=
+  name: "#content="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#content="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def content=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — File content, represented as a stream of bytes.\nNote: As with all <code>bytes</code> fields, protobuffers use a pure binary\nrepresentation, whereas JSON representations use base64.</p>\n\n<p>Currently, this field only works for BatchAnnotateFiles requests. It does\nnot work for AsyncBatchAnnotateFiles requests."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — File content, represented as a stream of bytes.\nNote: As with all <code>bytes</code> fields, protobuffers use a pure binary\nrepresentation, whereas JSON representations use base64.</p>\n\n<p>Currently, this field only works for BatchAnnotateFiles requests. It does\nnot work for AsyncBatchAnnotateFiles requests."
+    raises: []
 - uid: Google::Cloud::Vision::V1::InputConfig#gcs_source(instance)
   fullName: Google::Cloud::Vision::V1::InputConfig#gcs_source
   name: "#gcs_source"
@@ -35,7 +76,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def gcs_source => ::Google::Cloud::Vision::V1::GcsSource"
+    content: "def gcs_source() -> ::Google::Cloud::Vision::V1::GcsSource"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -54,50 +96,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def gcs_source=(value) => ::Google::Cloud::Vision::V1::GcsSource"
-    arguments: []
+    content: "def gcs_source=(value) -> ::Google::Cloud::Vision::V1::GcsSource"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-GcsSource\">::Google::Cloud::Vision::V1::GcsSource</a>) — The Google Cloud Storage location to read the input from."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Cloud-Vision-V1-GcsSource\">::Google::Cloud::Vision::V1::GcsSource</a>) — The Google Cloud Storage location to read the input from."
-    raises: []
-- uid: Google::Cloud::Vision::V1::InputConfig#content(instance)
-  fullName: Google::Cloud::Vision::V1::InputConfig#content
-  name: "#content"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#content"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def content => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — File content, represented as a stream of bytes.\nNote: As with all <code>bytes</code> fields, protobuffers use a pure binary\nrepresentation, whereas JSON representations use base64.\n\nCurrently, this field only works for BatchAnnotateFiles requests. It does\nnot work for AsyncBatchAnnotateFiles requests."
-    raises: []
-- uid: Google::Cloud::Vision::V1::InputConfig#content=(instance)
-  fullName: Google::Cloud::Vision::V1::InputConfig#content=
-  name: "#content="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#content="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def content=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — File content, represented as a stream of bytes.\nNote: As with all <code>bytes</code> fields, protobuffers use a pure binary\nrepresentation, whereas JSON representations use base64.\n\nCurrently, this field only works for BatchAnnotateFiles requests. It does\nnot work for AsyncBatchAnnotateFiles requests."
     raises: []
 - uid: Google::Cloud::Vision::V1::InputConfig#mime_type(instance)
   fullName: Google::Cloud::Vision::V1::InputConfig#mime_type
@@ -111,12 +117,13 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def mime_type => ::String"
+    content: "def mime_type() -> ::String"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The type of the file. Currently only \"application/pdf\", \"image/tiff\" and\n\"image/gif\" are supported. Wildcards are not supported."
+    - description: "(::String) — The type of the file. Currently only &quot;application/pdf&quot;, &quot;image/tiff&quot; and\n&quot;image/gif&quot; are supported. Wildcards are not supported."
     raises: []
 - uid: Google::Cloud::Vision::V1::InputConfig#mime_type=(instance)
   fullName: Google::Cloud::Vision::V1::InputConfig#mime_type=
@@ -130,11 +137,13 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def mime_type=(value) => ::String"
-    arguments: []
+    content: "def mime_type=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The type of the file. Currently only &quot;application/pdf&quot;, &quot;image/tiff&quot; and\n&quot;image/gif&quot; are supported. Wildcards are not supported."
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The type of the file. Currently only \"application/pdf\", \"image/tiff\" and\n\"image/gif\" are supported. Wildcards are not supported."
+    - description: "(::String) — The type of the file. Currently only &quot;application/pdf&quot;, &quot;image/tiff&quot; and\n&quot;image/gif&quot; are supported. Wildcards are not supported."
     raises: []
 references: []

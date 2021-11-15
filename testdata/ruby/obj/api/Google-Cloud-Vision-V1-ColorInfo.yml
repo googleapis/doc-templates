@@ -4,10 +4,10 @@ items:
   children: 
   - Google::Cloud::Vision::V1::ColorInfo#color(instance)
   - Google::Cloud::Vision::V1::ColorInfo#color=(instance)
-  - Google::Cloud::Vision::V1::ColorInfo#score(instance)
-  - Google::Cloud::Vision::V1::ColorInfo#score=(instance)
   - Google::Cloud::Vision::V1::ColorInfo#pixel_fraction(instance)
   - Google::Cloud::Vision::V1::ColorInfo#pixel_fraction=(instance)
+  - Google::Cloud::Vision::V1::ColorInfo#score(instance)
+  - Google::Cloud::Vision::V1::ColorInfo#score=(instance)
   fullName: Google::Cloud::Vision::V1::ColorInfo
   langs:
   - ruby
@@ -35,7 +35,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def color => ::Google::Type::Color"
+    content: "def color() -> ::Google::Type::Color"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -54,50 +55,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def color=(value) => ::Google::Type::Color"
-    arguments: []
+    content: "def color=(value) -> ::Google::Type::Color"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Type-Color\">::Google::Type::Color</a>) — RGB components of the color."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Type-Color\">::Google::Type::Color</a>) — RGB components of the color."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ColorInfo#score(instance)
-  fullName: Google::Cloud::Vision::V1::ColorInfo#score
-  name: "#score"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#score"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def score => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — Image-specific score for this color. Value in range [0, 1]."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ColorInfo#score=(instance)
-  fullName: Google::Cloud::Vision::V1::ColorInfo#score=
-  name: "#score="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#score="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def score=(value) => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — Image-specific score for this color. Value in range [0, 1]."
     raises: []
 - uid: Google::Cloud::Vision::V1::ColorInfo#pixel_fraction(instance)
   fullName: Google::Cloud::Vision::V1::ColorInfo#pixel_fraction
@@ -111,7 +76,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def pixel_fraction => ::Float"
+    content: "def pixel_fraction() -> ::Float"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -130,11 +96,54 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def pixel_fraction=(value) => ::Float"
-    arguments: []
+    content: "def pixel_fraction=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — The fraction of pixels the color occupies in the image.\nValue in range [0, 1]."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Float) — The fraction of pixels the color occupies in the image.\nValue in range [0, 1]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ColorInfo#score(instance)
+  fullName: Google::Cloud::Vision::V1::ColorInfo#score
+  name: "#score"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#score"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def score() -> ::Float"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Image-specific score for this color. Value in range [0, 1]."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ColorInfo#score=(instance)
+  fullName: Google::Cloud::Vision::V1::ColorInfo#score=
+  name: "#score="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#score="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def score=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — Image-specific score for this color. Value in range [0, 1]."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Image-specific score for this color. Value in range [0, 1]."
     raises: []
 references: []

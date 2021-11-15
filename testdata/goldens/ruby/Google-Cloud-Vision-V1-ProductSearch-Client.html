@@ -13,23 +13,24 @@
   
   
   <div class="markdown level0 summary"><p>Client for the ProductSearch service.</p>
+
 <p>Manages Products and ProductSets of reference images for use in product
 search. It uses the following resource model:</p>
+
 <ul>
-<li>The API has a collection of <a href="./Google-Cloud-Vision-V1-ProductSet">ProductSet</a> resources, named
-<code>projects/&#42;/locations/&#42;/productSets/&#42;</code>, which acts as a way to put different
+<li>The API has a collection of <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSet" title="Google::Cloud::Vision::V1::ProductSet (class)">ProductSet</a></span> resources, named
+<code>projects/<em>/locations/</em>/productSets/*</code>, which acts as a way to put different
 products into groups to limit identification.</li>
 </ul>
+
 <p>In parallel,</p>
+
 <ul>
-<li><p>The API has a collection of <a href="./Google-Cloud-Vision-V1-Product">Product</a> resources, named
-<code>projects/&#42;/locations/&#42;/products/&#42;</code></p>
-</li>
-<li><p>Each <a href="./Google-Cloud-Vision-V1-Product">Product</a> has a collection of <a href="./Google-Cloud-Vision-V1-ReferenceImage">ReferenceImage</a> resources, named
-<code>projects/&#42;/locations/&#42;/products/&#42;/referenceImages/&#42;</code></p>
-</li>
-</ul>
-</div>
+<li><p>The API has a collection of <span class='object_link'><a href="Google-Cloud-Vision-V1-Product" title="Google::Cloud::Vision::V1::Product (class)">Product</a></span> resources, named
+<code>projects/<em>/locations/</em>/products/<em></em></code></p></li>
+<li><p>Each <span class='object_link'><a href="Google-Cloud-Vision-V1-Product" title="Google::Cloud::Vision::V1::Product (class)">Product</a></span> has a collection of <span class='object_link'><a href="Google-Cloud-Vision-V1-ReferenceImage" title="Google::Cloud::Vision::V1::ReferenceImage (class)">ReferenceImage</a></span> resources, named
+<code>projects//locations/<em>/products/</em>/referenceImages/*</code></p></li>
+</ul></div>
   <div class="inheritance">
     <h2>Inherits</h2>
     <ul>
@@ -50,10 +51,10 @@ products into groups to limit identification.</li>
   </h2>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_configure_class_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client.configure(class)" class="notranslate">.configure</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def self.configure { |config| ... } =&gt; Client::Configuration</code></pre>
+    <pre class="prettyprint"><code>def self.configure() { |config| ... } -&gt; Client::Configuration</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Configure the ProductSearch Client class.</p>
-<p>See <a href="./Google-Cloud-Vision-V1-ProductSearch-Client-Configuration">::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration</a>
+  <div class="markdown level1 summary"><p>Configure the ProductSearch Client class.</p><p>
+<p><p>See <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSearch-Client-Configuration" title="Google::Cloud::Vision::V1::ProductSearch::Client::Configuration (class)">Configuration</a></span>
 for a description of the configuration fields.</p>
 </div>
   <div class="level1 summary">
@@ -65,7 +66,7 @@ for a description of the configuration fields.</p>
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameters</strong>
+    <strong>Yield Parameter</strong>
     <ul>
       <li>
         <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Client-Configuration">Client::Configuration</a>)
@@ -86,15 +87,128 @@ for a description of the configuration fields.</p>
 ::Google::Cloud::Vision::V1::ProductSearch::Client.configure do |config|
   config.timeout = 10.0
 end</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_add_product_to_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#add_product_to_product_set(instance)" class="notranslate">#add_product_to_product_set</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def add_product_to_product_set(request, options = nil) -&gt; ::Google::Protobuf::Empty
+def add_product_to_product_set(name: nil, product: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Adds a Product to the specified ProductSet. If the Product is already
+present, no change is made.</p>
+
+<p>One Product can be added to at most 100 ProductSets.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns NOT_FOUND if the Product or the ProductSet doesn&#39;t exist.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def add_product_to_product_set(request, options = nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>add_product_to_product_set</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-AddProductToProductSetRequest" title="Google::Cloud::Vision::V1::AddProductToProductSetRequest (class)">AddProductToProductSetRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-AddProductToProductSetRequest">::Google::Cloud::Vision::V1::AddProductToProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def add_product_to_product_set(name: nil, product: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>add_product_to_product_set</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. The resource name for the ProductSet to modify.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
+      </li>
+      <li>
+       <strong>product</strong> (::String) — Required. The resource name for the Product to be added to this ProductSet.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::AddProductToProductSetRequest.new
+
+# Call the add_product_to_product_set method.
+result = client.add_product_to_product_set request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_configure_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#configure(instance)" class="notranslate">#configure</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def configure { |config| ... } =&gt; Client::Configuration</code></pre>
+    <pre class="prettyprint"><code>def configure() { |config| ... } -&gt; Client::Configuration</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Configure the ProductSearch Client instance.</p>
+  <div class="markdown level1 summary"><p>Configure the ProductSearch Client instance.</p><p>
 <p>The configuration is set to the derived mode, meaning that values can be changed,
 but structural changes (adding new fields, etc.) are not allowed. Structural changes
-should be made on {Client.configure}.</p>
-<p>See <a href="./Google-Cloud-Vision-V1-ProductSearch-Client-Configuration">::Google::Cloud::Vision::V1::ProductSearch::Client::Configuration</a>
+should be made on <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSearch-Client#Google__Cloud__Vision__V1__ProductSearch__Client_configure_class_" title="Google::Cloud::Vision::V1::ProductSearch::Client.configure (method)">Client.configure</a></span>.</p>
+
+<p><p>See <span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSearch-Client-Configuration" title="Google::Cloud::Vision::V1::ProductSearch::Client::Configuration (class)">Configuration</a></span>
 for a description of the configuration fields.</p>
 </div>
   <div class="level1 summary">
@@ -106,7 +220,7 @@ for a description of the configuration fields.</p>
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameters</strong>
+    <strong>Yield Parameter</strong>
     <ul>
       <li>
         <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Client-Configuration">Client::Configuration</a>)
@@ -121,17 +235,76 @@ for a description of the configuration fields.</p>
       </li>
     </ul>
   </div>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_initialize_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#initialize(instance)" class="notranslate">#initialize</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_product(instance)" class="notranslate">#create_product</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def initialize { |config| ... } =&gt; Client</code></pre>
+    <pre class="prettyprint"><code>def create_product(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::Product
+def create_product(parent: nil, product: nil, product_id: nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Create a new ProductSearch client object.</p>
-</div>
+  <div class="markdown level1 summary"><p>Creates and returns a new product resource.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
+characters.</li>
+<li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if product_category is missing or invalid.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def create_product(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>create_product</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-CreateProductRequest" title="Google::Cloud::Vision::V1::CreateProductRequest (class)">CreateProductRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-CreateProductRequest">::Google::Cloud::Vision::V1::CreateProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def create_product(parent: nil, product: nil, product_id: nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>create_product</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>parent</strong> (::String) — Required. The project in which the Product should be created.<p>
+
+<p>Format is
+<code>projects/PROJECT_ID/locations/LOC_ID</code>.
+      </li>
+      <li>
+       <strong>product</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>, ::Hash) — Required. The product to create.
+      </li>
+      <li>
+       <strong>product_id</strong> (::String) — A user-supplied resource id for this Product. If set, the server will
+attempt to use this value as the resource id. If it is already in use, an
+error is returned with code ALREADY_EXISTS. Must be at most 128 characters
+long. It cannot contain the character <code>/</code>.
+      </li>
+    </ul>
+  </div>
+  </div>
   <div class="level1 summary">
     <strong>Yields</strong>
     <ul>
       <li>
-        (config) — Configure the ProductSearch client.
+        (response, operation) — Access the result along with the RPC operation
       </li>
     </ul>
   </div>
@@ -139,7 +312,10 @@ for a description of the configuration fields.</p>
     <strong>Yield Parameters</strong>
     <ul>
       <li>
-        <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Client-Configuration">Client::Configuration</a>)
+        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
       </li>
     </ul>
   </div>
@@ -147,53 +323,54 @@ for a description of the configuration fields.</p>
     <strong>Returns</strong>
     <ul>
       <li>
-        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Client">Client</a>) — a new instance of Client
+        (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
       </li>
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">
-# Create a client using the default configuration
-client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
-# Create a client using a custom configuration
-client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|
-  config.timeout = 10.0
-end</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_operations_client_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#operations_client(instance)" class="notranslate">#operations_client</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def operations_client =&gt; ::Google::Cloud::Vision::V1::ProductSearch::Operations</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Get the associated client for long-running operations.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations">::Google::Cloud::Vision::V1::ProductSearch::Operations</a>)
-      </li>
-    </ul>
-  </div>
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::CreateProductRequest.new
+
+# Call the create_product method.
+result = client.create_product request
+
+# The returned object is of type Google::Cloud::Vision::V1::Product.
+p result</pre>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_product_set(instance)" class="notranslate">#create_product_set</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def create_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
-def create_product_set(parent: nil, product_set: nil, product_set_id: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+    <pre class="prettyprint"><code>def create_product_set(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet
+def create_product_set(parent: nil, product_set: nil, product_set_id: nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Creates and returns a new ProductSet resource.</p>
+
 <p>Possible errors:</p>
+
 <ul>
 <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than
 4096 characters.</li>
-</ul>
-</div>
+</ul></div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def create_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+      <pre class="prettyprint"><code>def create_product_set(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>create_product_set</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-CreateProductSetRequest">::Google::Cloud::Vision::V1::CreateProductSetRequest</a> or an equivalent Hash.
+<span class='object_link'><a href="Google-Cloud-Vision-V1-CreateProductSetRequest" title="Google::Cloud::Vision::V1::CreateProductSetRequest (class)">CreateProductSetRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
@@ -208,7 +385,7 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def create_product_set(parent: nil, product_set: nil, product_set_id: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+      <pre class="prettyprint"><code>def create_product_set(parent: nil, product_set: nil, product_set_id: nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>create_product_set</code> via keyword arguments. Note that at
@@ -219,9 +396,9 @@ the default parameter values, pass an empty Hash as a request object (see above)
     <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>parent</strong> (::String) — Required. The project in which the ProductSet should be created.
+       <strong>parent</strong> (::String) — Required. The project in which the ProductSet should be created.<p>
 
-Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
+<p>Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
       </li>
       <li>
        <strong>product_set</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>, ::Hash) — Required. The ProductSet to create.
@@ -244,7 +421,7 @@ long. It cannot contain the character <code>/</code>.
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
         <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
@@ -271,7 +448,8 @@ long. It cannot contain the character <code>/</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -284,26 +462,922 @@ result = client.create_product_set request
 
 # The returned object is of type Google::Cloud::Vision::V1::ProductSet.
 p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_product_sets_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_product_sets(instance)" class="notranslate">#list_product_sets</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_reference_image(instance)" class="notranslate">#create_reference_image</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def list_product_sets(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;
-def list_product_sets(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</code></pre>
+    <pre class="prettyprint"><code>def create_reference_image(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage
+def create_reference_image(parent: nil, reference_image: nil, reference_image_id: nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Lists ProductSets in an unspecified order.</p>
+  <div class="markdown level1 summary"><p>Creates and returns a new ReferenceImage resource.</p>
+
+<p>The <code>bounding_poly</code> field is optional. If <code>bounding_poly</code> is not specified,
+the system will try to detect regions of interest in the image that are
+compatible with the product_category on the parent product. If it is
+specified, detection is ALWAYS skipped. The system converts polygons into
+non-rotated rectangles.</p>
+
+<p>Note that the pipeline will resize the image if the image resolution is too
+large to process (above 50MP).</p>
+
 <p>Possible errors:</p>
+
 <ul>
-<li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less
-than 1.</li>
-</ul>
+<li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
+characters.</li>
+<li>Returns INVALID_ARGUMENT if the product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
+compatible with the parent product&#39;s product_category is detected.</li>
+<li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def create_reference_image(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>create_reference_image</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-CreateReferenceImageRequest" title="Google::Cloud::Vision::V1::CreateReferenceImageRequest (class)">CreateReferenceImageRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-CreateReferenceImageRequest">::Google::Cloud::Vision::V1::CreateReferenceImageRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def create_reference_image(parent: nil, reference_image: nil, reference_image_id: nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>create_reference_image</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>parent</strong> (::String) — Required. Resource name of the product in which to create the reference image.<p>
+
+<p>Format is
+<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>.
+      </li>
+      <li>
+       <strong>reference_image</strong> (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>, ::Hash) — Required. The reference image to create.
+If an image ID is specified, it is ignored.
+      </li>
+      <li>
+       <strong>reference_image_id</strong> (::String) — A user-supplied resource id for the ReferenceImage to be added. If set,
+the server will attempt to use this value as the resource id. If it is
+already in use, an error is returned with code ALREADY_EXISTS. Must be at
+most 128 characters long. It cannot contain the character <code>/</code>.
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::CreateReferenceImageRequest.new
+
+# Call the create_reference_image method.
+result = client.create_reference_image request
+
+# The returned object is of type Google::Cloud::Vision::V1::ReferenceImage.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product(instance)" class="notranslate">#delete_product</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def delete_product(request, options = nil) -&gt; ::Google::Protobuf::Empty
+def delete_product(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Permanently deletes a product and its reference images.</p><p>
+<p><p>Metadata of the product and all its images will be deleted right away, but
+search queries against ProductSets containing the product may still work
+until all related caches are refreshed.</p>
 </div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_product_sets(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</code></pre>
+      <pre class="prettyprint"><code>def delete_product(request, options = nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_product</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-DeleteProductRequest" title="Google::Cloud::Vision::V1::DeleteProductRequest (class)">DeleteProductRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-DeleteProductRequest">::Google::Cloud::Vision::V1::DeleteProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def delete_product(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_product</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. Resource name of product to delete.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::DeleteProductRequest.new
+
+# Call the delete_product method.
+result = client.delete_product request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product_set(instance)" class="notranslate">#delete_product_set</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def delete_product_set(request, options = nil) -&gt; ::Google::Protobuf::Empty
+def delete_product_set(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Permanently deletes a ProductSet. Products and ReferenceImages in the
+ProductSet are not deleted.</p><p>
+<p><p>The actual image files are not deleted from Google Cloud Storage.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def delete_product_set(request, options = nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_product_set</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-DeleteProductSetRequest" title="Google::Cloud::Vision::V1::DeleteProductSetRequest (class)">DeleteProductSetRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-DeleteProductSetRequest">::Google::Cloud::Vision::V1::DeleteProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def delete_product_set(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_product_set</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. Resource name of the ProductSet to delete.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::DeleteProductSetRequest.new
+
+# Call the delete_product_set method.
+result = client.delete_product_set request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_reference_image(instance)" class="notranslate">#delete_reference_image</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def delete_reference_image(request, options = nil) -&gt; ::Google::Protobuf::Empty
+def delete_reference_image(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Permanently deletes a reference image.</p><p>
+<p>The image metadata will be deleted right away, but search queries
+against ProductSets containing the image may still work until all related
+caches are refreshed.</p>
+
+<p><p>The actual image files are not deleted from Google Cloud Storage.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def delete_reference_image(request, options = nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_reference_image</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-DeleteReferenceImageRequest" title="Google::Cloud::Vision::V1::DeleteReferenceImageRequest (class)">DeleteReferenceImageRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-DeleteReferenceImageRequest">::Google::Cloud::Vision::V1::DeleteReferenceImageRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def delete_reference_image(name: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>delete_reference_image</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. The resource name of the reference image to delete.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID</code>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::DeleteReferenceImageRequest.new
+
+# Call the delete_reference_image method.
+result = client.delete_reference_image request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product(instance)" class="notranslate">#get_product</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def get_product(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::Product
+def get_product(name: nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets information associated with a Product.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns NOT_FOUND if the Product does not exist.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def get_product(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>get_product</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-GetProductRequest" title="Google::Cloud::Vision::V1::GetProductRequest (class)">GetProductRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-GetProductRequest">::Google::Cloud::Vision::V1::GetProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def get_product(name: nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>get_product</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. Resource name of the Product to get.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::GetProductRequest.new
+
+# Call the get_product method.
+result = client.get_product request
+
+# The returned object is of type Google::Cloud::Vision::V1::Product.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product_set(instance)" class="notranslate">#get_product_set</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def get_product_set(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet
+def get_product_set(name: nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets information associated with a ProductSet.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def get_product_set(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>get_product_set</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-GetProductSetRequest" title="Google::Cloud::Vision::V1::GetProductSetRequest (class)">GetProductSetRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-GetProductSetRequest">::Google::Cloud::Vision::V1::GetProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def get_product_set(name: nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>get_product_set</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. Resource name of the ProductSet to get.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::GetProductSetRequest.new
+
+# Call the get_product_set method.
+result = client.get_product_set request
+
+# The returned object is of type Google::Cloud::Vision::V1::ProductSet.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_reference_image(instance)" class="notranslate">#get_reference_image</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def get_reference_image(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage
+def get_reference_image(name: nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets information associated with a ReferenceImage.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns NOT_FOUND if the specified image does not exist.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def get_reference_image(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>get_reference_image</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-GetReferenceImageRequest" title="Google::Cloud::Vision::V1::GetReferenceImageRequest (class)">GetReferenceImageRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-GetReferenceImageRequest">::Google::Cloud::Vision::V1::GetReferenceImageRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def get_reference_image(name: nil) -&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>get_reference_image</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. The resource name of the ReferenceImage to get.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID</code>.
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::GetReferenceImageRequest.new
+
+# Call the get_reference_image method.
+result = client.get_reference_image request
+
+# The returned object is of type Google::Cloud::Vision::V1::ReferenceImage.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_import_product_sets_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#import_product_sets(instance)" class="notranslate">#import_product_sets</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def import_product_sets(request, options = nil) -&gt; ::Gapic::Operation
+def import_product_sets(parent: nil, input_config: nil) -&gt; ::Gapic::Operation</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Asynchronous API that imports a list of reference images to specified
+product sets based on a list of image information.</p><p>
+<p>The <span class='object_link'><a href="Google-Longrunning-Operation" title="Google::Longrunning::Operation (class)">google.longrunning.Operation</a></span> API can be used to keep track of the
+progress and results of the request.
+<code>Operation.metadata</code> contains <code>BatchOperationMetadata</code>. (progress)
+<code>Operation.response</code> contains <code>ImportProductSetsResponse</code>. (results)</p>
+
+<p><p>The input source of this method is a csv file on Google Cloud Storage.
+For the format of the csv file please see
+<span class='object_link'><a href="Google-Cloud-Vision-V1-ImportProductSetsGcsSource#Google__Cloud__Vision__V1__ImportProductSetsGcsSource_csv_file_uri_instance_" title="Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri (method)">ImportProductSetsGcsSource.csv&lowbar;file&lowbar;uri</a></span>.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def import_product_sets(request, options = nil) -&gt; ::Gapic::Operation</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>import_product_sets</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-ImportProductSetsRequest" title="Google::Cloud::Vision::V1::ImportProductSetsRequest (class)">ImportProductSetsRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-ImportProductSetsRequest">::Google::Cloud::Vision::V1::ImportProductSetsRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def import_product_sets(parent: nil, input_config: nil) -&gt; ::Gapic::Operation</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>import_product_sets</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>parent</strong> (::String) — Required. The project in which the ProductSets should be imported.<p>
+
+<p>Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
+      </li>
+      <li>
+       <strong>input_config</strong> (<a href="./Google-Cloud-Vision-V1-ImportProductSetsInputConfig">::Google::Cloud::Vision::V1::ImportProductSetsInputConfig</a>, ::Hash) — Required. The input content for the list of requests.
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (::Gapic::Operation)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::Gapic::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::ImportProductSetsRequest.new
+
+# Call the import_product_sets method.
+result = client.import_product_sets request
+
+# The returned object is of type Gapic::Operation. You can use this
+# object to check the status of an operation, cancel it, or wait
+# for results. Here is how to block until completion:
+result.wait_until_done! timeout: 60
+if result.response?
+  p result.response
+else
+  puts "Error!"
+end</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_initialize_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#initialize(instance)" class="notranslate">#initialize</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def initialize() { |config| ... } -&gt; Client</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Create a new ProductSearch client object.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (config) — Configure the ProductSearch client.
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameter</strong>
+    <ul>
+      <li>
+        <strong>config</strong> (<a href="./Google-Cloud-Vision-V1-ProductSearch-Client-Configuration">Client::Configuration</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Client">Client</a>) — a new instance of Client
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <pre class="prettyprint lang-rb">
+# Create a client using the default configuration
+client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a client using a custom configuration
+client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|
+  config.timeout = 10.0
+end</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_product_sets_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_product_sets(instance)" class="notranslate">#list_product_sets</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def list_product_sets(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;
+def list_product_sets(parent: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Lists ProductSets in an unspecified order.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less
+than 1.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def list_product_sets(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>list_product_sets</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-ListProductSetsRequest">::Google::Cloud::Vision::V1::ListProductSetsRequest</a> or an equivalent Hash.
+<span class='object_link'><a href="Google-Cloud-Vision-V1-ListProductSetsRequest" title="Google::Cloud::Vision::V1::ListProductSetsRequest (class)">ListProductSetsRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
@@ -318,7 +1392,7 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_product_sets(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</code></pre>
+      <pre class="prettyprint"><code>def list_product_sets(parent: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ProductSet&gt;</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>list_product_sets</code> via keyword arguments. Note that at
@@ -329,9 +1403,9 @@ the default parameter values, pass an empty Hash as a request object (see above)
     <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>parent</strong> (::String) — Required. The project from which ProductSets should be listed.
+       <strong>parent</strong> (::String) — Required. The project from which ProductSets should be listed.<p>
 
-Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
+<p>Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
       </li>
       <li>
        <strong>page_size</strong> (::Integer) — The maximum number of items to return. Default 10, maximum 100.
@@ -351,7 +1425,7 @@ Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
         <strong>response</strong> (::Gapic::PagedEnumerable&lt;<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>&gt;)
@@ -378,7 +1452,8 @@ Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -397,445 +1472,26 @@ result.each do |response|
   # Each element is of type ::Google::Cloud::Vision::V1::ProductSet.
   p response
 end</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product_set(instance)" class="notranslate">#get_product_set</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def get_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
-def get_product_set(name: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Gets information associated with a ProductSet.</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
-</ul>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>get_product_set</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-GetProductSetRequest">::Google::Cloud::Vision::V1::GetProductSetRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-GetProductSetRequest">::Google::Cloud::Vision::V1::GetProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_product_set(name: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>get_product_set</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameter</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. Resource name of the ProductSet to get.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::GetProductSetRequest.new
-
-# Call the get_product_set method.
-result = client.get_product_set request
-
-# The returned object is of type Google::Cloud::Vision::V1::ProductSet.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product_set(instance)" class="notranslate">#update_product_set</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def update_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet
-def update_product_set(product_set: nil, update_mask: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Makes changes to a ProductSet resource.
-Only display_name can be updated currently.</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
-<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but
-missing from the request or longer than 4096 characters.</li>
-</ul>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def update_product_set(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>update_product_set</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-UpdateProductSetRequest">::Google::Cloud::Vision::V1::UpdateProductSetRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-UpdateProductSetRequest">::Google::Cloud::Vision::V1::UpdateProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def update_product_set(product_set: nil, update_mask: nil) =&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>update_product_set</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>product_set</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>, ::Hash) — Required. The ProductSet resource which replaces the one on the server.
-      </li>
-      <li>
-       <strong>update_mask</strong> (<a href="./Google-Protobuf-FieldMask">::Google::Protobuf::FieldMask</a>, ::Hash) — The <a href="./Google-Protobuf-FieldMask">FieldMask</a> that specifies which fields to
-update.
-If update_mask isn't specified, all mutable fields are to be updated.
-Valid mask path is <code>display_name</code>.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::UpdateProductSetRequest.new
-
-# Call the update_product_set method.
-result = client.update_product_set request
-
-# The returned object is of type Google::Cloud::Vision::V1::ProductSet.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product_set(instance)" class="notranslate">#delete_product_set</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def delete_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
-def delete_product_set(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Permanently deletes a ProductSet. Products and ReferenceImages in the
-ProductSet are not deleted.</p>
-<p>The actual image files are not deleted from Google Cloud Storage.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>delete_product_set</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-DeleteProductSetRequest">::Google::Cloud::Vision::V1::DeleteProductSetRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-DeleteProductSetRequest">::Google::Cloud::Vision::V1::DeleteProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_product_set(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>delete_product_set</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameter</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. Resource name of the ProductSet to delete.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::DeleteProductSetRequest.new
-
-# Call the delete_product_set method.
-result = client.delete_product_set request
-
-# The returned object is of type Google::Protobuf::Empty.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_product(instance)" class="notranslate">#create_product</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def create_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
-def create_product(parent: nil, product: nil, product_id: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Creates and returns a new product resource.</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
-characters.</li>
-<li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.</li>
-<li>Returns INVALID_ARGUMENT if product_category is missing or invalid.</li>
-</ul>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def create_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>create_product</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-CreateProductRequest">::Google::Cloud::Vision::V1::CreateProductRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-CreateProductRequest">::Google::Cloud::Vision::V1::CreateProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def create_product(parent: nil, product: nil, product_id: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>create_product</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>parent</strong> (::String) — Required. The project in which the Product should be created.
-
-Format is
-<code>projects/PROJECT_ID/locations/LOC_ID</code>.
-      </li>
-      <li>
-       <strong>product</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>, ::Hash) — Required. The product to create.
-      </li>
-      <li>
-       <strong>product_id</strong> (::String) — A user-supplied resource id for this Product. If set, the server will
-attempt to use this value as the resource id. If it is already in use, an
-error is returned with code ALREADY_EXISTS. Must be at most 128 characters
-long. It cannot contain the character <code>/</code>.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::CreateProductRequest.new
-
-# Call the create_product method.
-result = client.create_product request
-
-# The returned object is of type Google::Cloud::Vision::V1::Product.
-p result</pre>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_products_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_products(instance)" class="notranslate">#list_products</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def list_products(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
-def list_products(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
+    <pre class="prettyprint"><code>def list_products(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
+def list_products(parent: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Lists products in an unspecified order.</p>
+
 <p>Possible errors:</p>
+
 <ul>
 <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.</li>
-</ul>
-</div>
+</ul></div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_products(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
+      <pre class="prettyprint"><code>def list_products(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>list_products</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-ListProductsRequest">::Google::Cloud::Vision::V1::ListProductsRequest</a> or an equivalent Hash.
+<span class='object_link'><a href="Google-Cloud-Vision-V1-ListProductsRequest" title="Google::Cloud::Vision::V1::ListProductsRequest (class)">ListProductsRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
@@ -850,7 +1506,7 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_products(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
+      <pre class="prettyprint"><code>def list_products(parent: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>list_products</code> via keyword arguments. Note that at
@@ -861,9 +1517,9 @@ the default parameter values, pass an empty Hash as a request object (see above)
     <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>parent</strong> (::String) — Required. The project OR ProductSet from which Products should be listed.
+       <strong>parent</strong> (::String) — Required. The project OR ProductSet from which Products should be listed.<p>
 
-Format:
+<p>Format:
 <code>projects/PROJECT_ID/locations/LOC_ID</code>
       </li>
       <li>
@@ -884,7 +1540,7 @@ Format:
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
         <strong>response</strong> (::Gapic::PagedEnumerable&lt;<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>&gt;)
@@ -911,7 +1567,8 @@ Format:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -930,31 +1587,34 @@ result.each do |response|
   # Each element is of type ::Google::Cloud::Vision::V1::Product.
   p response
 end</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_product(instance)" class="notranslate">#get_product</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_products_in_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_products_in_product_set(instance)" class="notranslate">#list_products_in_product_set</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def get_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
-def get_product(name: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+    <pre class="prettyprint"><code>def list_products_in_product_set(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
+def list_products_in_product_set(name: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Gets information associated with a Product.</p>
+  <div class="markdown level1 summary"><p>Lists the Products in a ProductSet, in an unspecified order. If the
+ProductSet does not exist, the products field of the response will be
+empty.</p>
+
 <p>Possible errors:</p>
+
 <ul>
-<li>Returns NOT_FOUND if the Product does not exist.</li>
-</ul>
-</div>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.</li>
+</ul></div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+      <pre class="prettyprint"><code>def list_products_in_product_set(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
     </div>
     <div class="level1 summary">
-      Pass arguments to <code>get_product</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-GetProductRequest">::Google::Cloud::Vision::V1::GetProductRequest</a> or an equivalent Hash.
+      Pass arguments to <code>list_products_in_product_set</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-ListProductsInProductSetRequest" title="Google::Cloud::Vision::V1::ListProductsInProductSetRequest (class)">ListProductsInProductSetRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-GetProductRequest">::Google::Cloud::Vision::V1::GetProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-ListProductsInProductSetRequest">::Google::Cloud::Vision::V1::ListProductsInProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
 parameters, or to keep all the default parameter values, pass an empty Hash.
       </li>
       <li>
@@ -963,21 +1623,27 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_product(name: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+      <pre class="prettyprint"><code>def list_products_in_product_set(name: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
     </div>
     <div class="level1 summary">
-      Pass arguments to <code>get_product</code> via keyword arguments. Note that at
+      Pass arguments to <code>list_products_in_product_set</code> via keyword arguments. Note that at
 least one keyword argument is required. To specify no parameters, or to keep all
 the default parameter values, pass an empty Hash as a request object (see above).
     </div>
   <div class="level1 summary">
-    <strong>Parameter</strong>
+    <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>name</strong> (::String) — Required. Resource name of the Product to get.
+       <strong>name</strong> (::String) — Required. The ProductSet resource for which to retrieve Products.<p>
 
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
+      </li>
+      <li>
+       <strong>page_size</strong> (::Integer) — The maximum number of items to return. Default 10, maximum 100.
+      </li>
+      <li>
+       <strong>page_token</strong> (::String) — The next_page_token returned from a previous List request, if any.
       </li>
     </ul>
   </div>
@@ -991,10 +1657,10 @@ Format is:
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
-        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+        <strong>response</strong> (::Gapic::PagedEnumerable&lt;<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>&gt;)
       </li>
       <li>
         <strong>operation</strong> (::GRPC::ActiveCall::Operation)
@@ -1005,7 +1671,7 @@ Format is:
     <strong>Returns</strong>
     <ul>
       <li>
-        (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+        (::Gapic::PagedEnumerable&lt;<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>&gt;)
       </li>
     </ul>
   </div>
@@ -1018,479 +1684,48 @@ Format is:
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
 
 # Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::GetProductRequest.new
+request = Google::Cloud::Vision::V1::ListProductsInProductSetRequest.new
 
-# Call the get_product method.
-result = client.get_product request
+# Call the list_products_in_product_set method.
+result = client.list_products_in_product_set request
 
-# The returned object is of type Google::Cloud::Vision::V1::Product.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product(instance)" class="notranslate">#update_product</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def update_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product
-def update_product(product: nil, update_mask: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Makes changes to a Product resource.
-Only the <code>display_name</code>, <code>description</code>, and <code>labels</code> fields can be updated
-right now.</p>
-<p>If labels are updated, the change will not be reflected in queries until
-the next index time.</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns NOT_FOUND if the Product does not exist.</li>
-<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is
-missing from the request or longer than 4096 characters.</li>
-<li>Returns INVALID_ARGUMENT if description is present in update_mask but is
-longer than 4096 characters.</li>
-<li>Returns INVALID_ARGUMENT if product_category is present in update_mask.</li>
-</ul>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def update_product(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>update_product</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-UpdateProductRequest">::Google::Cloud::Vision::V1::UpdateProductRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-UpdateProductRequest">::Google::Cloud::Vision::V1::UpdateProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def update_product(product: nil, update_mask: nil) =&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>update_product</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>product</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>, ::Hash) — Required. The Product resource which replaces the one on the server.
-product.name is immutable.
-      </li>
-      <li>
-       <strong>update_mask</strong> (<a href="./Google-Protobuf-FieldMask">::Google::Protobuf::FieldMask</a>, ::Hash) — The <a href="./Google-Protobuf-FieldMask">FieldMask</a> that specifies which fields
-to update.
-If update_mask isn't specified, all mutable fields are to be updated.
-Valid mask paths include <code>product_labels</code>, <code>display_name</code>, and
-<code>description</code>.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::UpdateProductRequest.new
-
-# Call the update_product method.
-result = client.update_product request
-
-# The returned object is of type Google::Cloud::Vision::V1::Product.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_product(instance)" class="notranslate">#delete_product</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def delete_product(request, options = nil) =&gt; ::Google::Protobuf::Empty
-def delete_product(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Permanently deletes a product and its reference images.</p>
-<p>Metadata of the product and all its images will be deleted right away, but
-search queries against ProductSets containing the product may still work
-until all related caches are refreshed.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_product(request, options = nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>delete_product</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-DeleteProductRequest">::Google::Cloud::Vision::V1::DeleteProductRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-DeleteProductRequest">::Google::Cloud::Vision::V1::DeleteProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_product(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>delete_product</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameter</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. Resource name of product to delete.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::DeleteProductRequest.new
-
-# Call the delete_product method.
-result = client.delete_product request
-
-# The returned object is of type Google::Protobuf::Empty.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_create_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#create_reference_image(instance)" class="notranslate">#create_reference_image</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def create_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage
-def create_reference_image(parent: nil, reference_image: nil, reference_image_id: nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Creates and returns a new ReferenceImage resource.</p>
-<p>The <code>bounding_poly</code> field is optional. If <code>bounding_poly</code> is not specified,
-the system will try to detect regions of interest in the image that are
-compatible with the product_category on the parent product. If it is
-specified, detection is ALWAYS skipped. The system converts polygons into
-non-rotated rectangles.</p>
-<p>Note that the pipeline will resize the image if the image resolution is too
-large to process (above 50MP).</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
-characters.</li>
-<li>Returns INVALID_ARGUMENT if the product does not exist.</li>
-<li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
-compatible with the parent product&#39;s product_category is detected.</li>
-<li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.</li>
-</ul>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def create_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>create_reference_image</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-CreateReferenceImageRequest">::Google::Cloud::Vision::V1::CreateReferenceImageRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-CreateReferenceImageRequest">::Google::Cloud::Vision::V1::CreateReferenceImageRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def create_reference_image(parent: nil, reference_image: nil, reference_image_id: nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>create_reference_image</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>parent</strong> (::String) — Required. Resource name of the product in which to create the reference image.
-
-Format is
-<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>.
-      </li>
-      <li>
-       <strong>reference_image</strong> (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>, ::Hash) — Required. The reference image to create.
-If an image ID is specified, it is ignored.
-      </li>
-      <li>
-       <strong>reference_image_id</strong> (::String) — A user-supplied resource id for the ReferenceImage to be added. If set,
-the server will attempt to use this value as the resource id. If it is
-already in use, an error is returned with code ALREADY_EXISTS. Must be at
-most 128 characters long. It cannot contain the character <code>/</code>.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::CreateReferenceImageRequest.new
-
-# Call the create_reference_image method.
-result = client.create_reference_image request
-
-# The returned object is of type Google::Cloud::Vision::V1::ReferenceImage.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_delete_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#delete_reference_image(instance)" class="notranslate">#delete_reference_image</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def delete_reference_image(request, options = nil) =&gt; ::Google::Protobuf::Empty
-def delete_reference_image(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Permanently deletes a reference image.</p>
-<p>The image metadata will be deleted right away, but search queries
-against ProductSets containing the image may still work until all related
-caches are refreshed.</p>
-<p>The actual image files are not deleted from Google Cloud Storage.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_reference_image(request, options = nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>delete_reference_image</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-DeleteReferenceImageRequest">::Google::Cloud::Vision::V1::DeleteReferenceImageRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-DeleteReferenceImageRequest">::Google::Cloud::Vision::V1::DeleteReferenceImageRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def delete_reference_image(name: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>delete_reference_image</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameter</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. The resource name of the reference image to delete.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID</code>
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::DeleteReferenceImageRequest.new
-
-# Call the delete_reference_image method.
-result = client.delete_reference_image request
-
-# The returned object is of type Google::Protobuf::Empty.
-p result</pre>
+# The returned object is of type Gapic::PagedEnumerable. You can
+# iterate over all elements by calling #each, and the enumerable
+# will lazily make API calls to fetch subsequent pages. Other
+# methods are also available for managing paging directly.
+result.each do |response|
+  # Each element is of type ::Google::Cloud::Vision::V1::Product.
+  p response
+end</pre>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_reference_images_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_reference_images(instance)" class="notranslate">#list_reference_images</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def list_reference_images(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;
-def list_reference_images(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</code></pre>
+    <pre class="prettyprint"><code>def list_reference_images(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;
+def list_reference_images(parent: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Lists reference images.</p>
+
 <p>Possible errors:</p>
+
 <ul>
 <li>Returns NOT_FOUND if the parent product does not exist.</li>
 <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
 than 1.</li>
-</ul>
-</div>
+</ul></div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_reference_images(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</code></pre>
+      <pre class="prettyprint"><code>def list_reference_images(request, options = nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>list_reference_images</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-ListReferenceImagesRequest">::Google::Cloud::Vision::V1::ListReferenceImagesRequest</a> or an equivalent Hash.
+<span class='object_link'><a href="Google-Cloud-Vision-V1-ListReferenceImagesRequest" title="Google::Cloud::Vision::V1::ListReferenceImagesRequest (class)">ListReferenceImagesRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
@@ -1505,7 +1740,7 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_reference_images(parent: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</code></pre>
+      <pre class="prettyprint"><code>def list_reference_images(parent: nil, page_size: nil, page_token: nil) -&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::ReferenceImage&gt;</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>list_reference_images</code> via keyword arguments. Note that at
@@ -1516,9 +1751,9 @@ the default parameter values, pass an empty Hash as a request object (see above)
     <strong>Parameters</strong>
     <ul>
       <li>
-       <strong>parent</strong> (::String) — Required. Resource name of the product containing the reference images.
+       <strong>parent</strong> (::String) — Required. Resource name of the product containing the reference images.<p>
 
-Format is
+<p>Format is
 <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>.
       </li>
       <li>
@@ -1526,9 +1761,9 @@ Format is
       </li>
       <li>
        <strong>page_token</strong> (::String) — A token identifying a page of results to be returned. This is the value
-of <code>nextPageToken</code> returned in a previous reference image list request.
+of <code>nextPageToken</code> returned in a previous reference image list request.<p>
 
-Defaults to the first page if not specified.
+<p>Defaults to the first page if not specified.
       </li>
     </ul>
   </div>
@@ -1542,7 +1777,7 @@ Defaults to the first page if not specified.
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
         <strong>response</strong> (::Gapic::PagedEnumerable&lt;<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>&gt;)
@@ -1569,7 +1804,8 @@ Defaults to the first page if not specified.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -1588,581 +1824,57 @@ result.each do |response|
   # Each element is of type ::Google::Cloud::Vision::V1::ReferenceImage.
   p response
 end</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_get_reference_image_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#get_reference_image(instance)" class="notranslate">#get_reference_image</h3>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_operations_client_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#operations_client(instance)" class="notranslate">#operations_client</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def get_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage
-def get_reference_image(name: nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
+    <pre class="prettyprint"><code>def operations_client() -&gt; ::Google::Cloud::Vision::V1::ProductSearch::Operations</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Gets information associated with a ReferenceImage.</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns NOT_FOUND if the specified image does not exist.</li>
-</ul>
+  <div class="markdown level1 summary"><p>Get the associated client for long-running operations.</p>
 </div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_reference_image(request, options = nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>get_reference_image</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-GetReferenceImageRequest">::Google::Cloud::Vision::V1::GetReferenceImageRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-GetReferenceImageRequest">::Google::Cloud::Vision::V1::GetReferenceImageRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def get_reference_image(name: nil) =&gt; ::Google::Cloud::Vision::V1::ReferenceImage</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>get_reference_image</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameter</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. The resource name of the ReferenceImage to get.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID</code>.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (<a href="./Google-Cloud-Vision-V1-ReferenceImage">::Google::Cloud::Vision::V1::ReferenceImage</a>)
+        (<a href="./Google-Cloud-Vision-V1-ProductSearch-Operations">::Google::Cloud::Vision::V1::ProductSearch::Operations</a>)
       </li>
     </ul>
   </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::GetReferenceImageRequest.new
-
-# Call the get_reference_image method.
-result = client.get_reference_image request
-
-# The returned object is of type Google::Cloud::Vision::V1::ReferenceImage.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_add_product_to_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#add_product_to_product_set(instance)" class="notranslate">#add_product_to_product_set</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def add_product_to_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
-def add_product_to_product_set(name: nil, product: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Adds a Product to the specified ProductSet. If the Product is already
-present, no change is made.</p>
-<p>One Product can be added to at most 100 ProductSets.</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns NOT_FOUND if the Product or the ProductSet doesn&#39;t exist.</li>
-</ul>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def add_product_to_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>add_product_to_product_set</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-AddProductToProductSetRequest">::Google::Cloud::Vision::V1::AddProductToProductSetRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-AddProductToProductSetRequest">::Google::Cloud::Vision::V1::AddProductToProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def add_product_to_product_set(name: nil, product: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>add_product_to_product_set</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. The resource name for the ProductSet to modify.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
-      </li>
-      <li>
-       <strong>product</strong> (::String) — Required. The resource name for the Product to be added to this ProductSet.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::AddProductToProductSetRequest.new
-
-# Call the add_product_to_product_set method.
-result = client.add_product_to_product_set request
-
-# The returned object is of type Google::Protobuf::Empty.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_remove_product_from_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#remove_product_from_product_set(instance)" class="notranslate">#remove_product_from_product_set</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def remove_product_from_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty
-def remove_product_from_product_set(name: nil, product: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Removes a Product from the specified ProductSet.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def remove_product_from_product_set(request, options = nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>remove_product_from_product_set</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-RemoveProductFromProductSetRequest">::Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-RemoveProductFromProductSetRequest">::Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def remove_product_from_product_set(name: nil, product: nil) =&gt; ::Google::Protobuf::Empty</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>remove_product_from_product_set</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. The resource name for the ProductSet to modify.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
-      </li>
-      <li>
-       <strong>product</strong> (::String) — Required. The resource name for the Product to be removed from this ProductSet.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest.new
-
-# Call the remove_product_from_product_set method.
-result = client.remove_product_from_product_set request
-
-# The returned object is of type Google::Protobuf::Empty.
-p result</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_list_products_in_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#list_products_in_product_set(instance)" class="notranslate">#list_products_in_product_set</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def list_products_in_product_set(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;
-def list_products_in_product_set(name: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Lists the Products in a ProductSet, in an unspecified order. If the
-ProductSet does not exist, the products field of the response will be
-empty.</p>
-<p>Possible errors:</p>
-<ul>
-<li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.</li>
-</ul>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_products_in_product_set(request, options = nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>list_products_in_product_set</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-ListProductsInProductSetRequest">::Google::Cloud::Vision::V1::ListProductsInProductSetRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-ListProductsInProductSetRequest">::Google::Cloud::Vision::V1::ListProductsInProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def list_products_in_product_set(name: nil, page_size: nil, page_token: nil) =&gt; ::Gapic::PagedEnumerable&lt;::Google::Cloud::Vision::V1::Product&gt;</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>list_products_in_product_set</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>name</strong> (::String) — Required. The ProductSet resource for which to retrieve Products.
-
-Format is:
-<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
-      </li>
-      <li>
-       <strong>page_size</strong> (::Integer) — The maximum number of items to return. Default 10, maximum 100.
-      </li>
-      <li>
-       <strong>page_token</strong> (::String) — The next_page_token returned from a previous List request, if any.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (::Gapic::PagedEnumerable&lt;<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>&gt;)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (::Gapic::PagedEnumerable&lt;<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>&gt;)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::ListProductsInProductSetRequest.new
-
-# Call the list_products_in_product_set method.
-result = client.list_products_in_product_set request
-
-# The returned object is of type Gapic::PagedEnumerable. You can
-# iterate over all elements by calling #each, and the enumerable
-# will lazily make API calls to fetch subsequent pages. Other
-# methods are also available for managing paging directly.
-result.each do |response|
-  # Each element is of type ::Google::Cloud::Vision::V1::Product.
-  p response
-end</pre>
-  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_import_product_sets_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#import_product_sets(instance)" class="notranslate">#import_product_sets</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def import_product_sets(request, options = nil) =&gt; ::Gapic::Operation
-def import_product_sets(parent: nil, input_config: nil) =&gt; ::Gapic::Operation</code></pre>
-  </div>
-  <div class="markdown level1 summary"><p>Asynchronous API that imports a list of reference images to specified
-product sets based on a list of image information.</p>
-<p>The <a href="./Google-Longrunning-Operation">google.longrunning.Operation</a> API can be used to keep track of the
-progress and results of the request.
-<code>Operation.metadata</code> contains <code>BatchOperationMetadata</code>. (progress)
-<code>Operation.response</code> contains <code>ImportProductSetsResponse</code>. (results)</p>
-<p>The input source of this method is a csv file on Google Cloud Storage.
-For the format of the csv file please see
-{::Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri ImportProductSetsGcsSource.csv_file_uri}.</p>
-</div>
-  <div class="level1 summary">
-    <strong>Overloads</strong>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def import_product_sets(request, options = nil) =&gt; ::Gapic::Operation</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>import_product_sets</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-ImportProductSetsRequest">::Google::Cloud::Vision::V1::ImportProductSetsRequest</a> or an equivalent Hash.
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-ImportProductSetsRequest">::Google::Cloud::Vision::V1::ImportProductSetsRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
-parameters, or to keep all the default parameter values, pass an empty Hash.
-      </li>
-      <li>
-       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
-      </li>
-    </ul>
-  </div>
-    <div class="codewrapper">
-      <pre class="prettyprint"><code>def import_product_sets(parent: nil, input_config: nil) =&gt; ::Gapic::Operation</code></pre>
-    </div>
-    <div class="level1 summary">
-      Pass arguments to <code>import_product_sets</code> via keyword arguments. Note that at
-least one keyword argument is required. To specify no parameters, or to keep all
-the default parameter values, pass an empty Hash as a request object (see above).
-    </div>
-  <div class="level1 summary">
-    <strong>Parameters</strong>
-    <ul>
-      <li>
-       <strong>parent</strong> (::String) — Required. The project in which the ProductSets should be imported.
-
-Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
-      </li>
-      <li>
-       <strong>input_config</strong> (<a href="./Google-Cloud-Vision-V1-ImportProductSetsInputConfig">::Google::Cloud::Vision::V1::ImportProductSetsInputConfig</a>, ::Hash) — Required. The input content for the list of requests.
-      </li>
-    </ul>
-  </div>
-  </div>
-  <div class="level1 summary">
-    <strong>Yields</strong>
-    <ul>
-      <li>
-        (response, operation) — Access the result along with the RPC operation
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
-    <ul>
-      <li>
-        <strong>response</strong> (::Gapic::Operation)
-      </li>
-      <li>
-        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (::Gapic::Operation)
-      </li>
-    </ul>
-  </div>
-  <div class="level1 summary">
-    <strong>Raises</strong>
-    <ul>
-      <li>
-        (::Google::Cloud::Error) — if the RPC is aborted.
-      </li>
-    </ul>
-  </div>
-  <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
-
-# Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Vision::V1::ProductSearch::Client.new
-
-# Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Vision::V1::ImportProductSetsRequest.new
-
-# Call the import_product_sets method.
-result = client.import_product_sets request
-
-# The returned object is of type Gapic::Operation. You can use this
-# object to check the status of an operation, cancel it, or wait
-# for results. Here is how to block until completion:
-result.wait_until_done! timeout: 60
-if result.response?
-  p result.response
-else
-  puts "Error!"
-end</pre>
   <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_purge_products_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#purge_products(instance)" class="notranslate">#purge_products</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def purge_products(request, options = nil) =&gt; ::Gapic::Operation
-def purge_products(product_set_purge_config: nil, delete_orphan_products: nil, parent: nil, force: nil) =&gt; ::Gapic::Operation</code></pre>
+    <pre class="prettyprint"><code>def purge_products(request, options = nil) -&gt; ::Gapic::Operation
+def purge_products(product_set_purge_config: nil, delete_orphan_products: nil, parent: nil, force: nil) -&gt; ::Gapic::Operation</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Asynchronous API to delete all Products in a ProductSet or all Products
-that are in no ProductSet.</p>
+that are in no ProductSet.</p><p>
 <p>If a Product is a member of the specified ProductSet in addition to other
 ProductSets, the Product will still be deleted.</p>
+
 <p>It is recommended to not delete the specified ProductSet until after this
 operation has completed. It is also recommended to not add any of the
 Products involved in the batch delete to a new ProductSet while this
 operation is running because those Products may still end up deleted.</p>
+
 <p>It&#39;s not possible to undo the PurgeProducts operation. Therefore, it is
 recommended to keep the csv files used in ImportProductSets (if that was
 how you originally built the Product Set) before starting PurgeProducts, in
 case you need to re-import the data after deletion.</p>
+
 <p>If the plan is to purge all of the Products from a ProductSet and then
 re-use the empty ProductSet to re-import new Products into the empty
 ProductSet, you must wait until the PurgeProducts operation has finished
 for that ProductSet.</p>
-<p>The <a href="./Google-Longrunning-Operation">google.longrunning.Operation</a> API can be used to keep track of the
+
+<p><p>The <span class='object_link'><a href="Google-Longrunning-Operation" title="Google::Longrunning::Operation (class)">google.longrunning.Operation</a></span> API can be used to keep track of the
 progress and results of the request.
 <code>Operation.metadata</code> contains <code>BatchOperationMetadata</code>. (progress)</p>
 </div>
   <div class="level1 summary">
     <strong>Overloads</strong>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def purge_products(request, options = nil) =&gt; ::Gapic::Operation</code></pre>
+      <pre class="prettyprint"><code>def purge_products(request, options = nil) -&gt; ::Gapic::Operation</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>purge_products</code> via a request object, either of type
-<a href="./Google-Cloud-Vision-V1-PurgeProductsRequest">::Google::Cloud::Vision::V1::PurgeProductsRequest</a> or an equivalent Hash.
+<span class='object_link'><a href="Google-Cloud-Vision-V1-PurgeProductsRequest" title="Google::Cloud::Vision::V1::PurgeProductsRequest (class)">Google::Cloud::Vision::V1::PurgeProductsRequest</a></span> or an equivalent Hash.
     </div>
   <div class="level1 summary">
     <strong>Parameters</strong>
@@ -2177,7 +1889,7 @@ parameters, or to keep all the default parameter values, pass an empty Hash.
     </ul>
   </div>
     <div class="codewrapper">
-      <pre class="prettyprint"><code>def purge_products(product_set_purge_config: nil, delete_orphan_products: nil, parent: nil, force: nil) =&gt; ::Gapic::Operation</code></pre>
+      <pre class="prettyprint"><code>def purge_products(product_set_purge_config: nil, delete_orphan_products: nil, parent: nil, force: nil) -&gt; ::Gapic::Operation</code></pre>
     </div>
     <div class="level1 summary">
       Pass arguments to <code>purge_products</code> via keyword arguments. Note that at
@@ -2195,9 +1907,9 @@ the default parameter values, pass an empty Hash as a request object (see above)
 ProductSet will be deleted.
       </li>
       <li>
-       <strong>parent</strong> (::String) — Required. The project and location in which the Products should be deleted.
+       <strong>parent</strong> (::String) — Required. The project and location in which the Products should be deleted.<p>
 
-Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
+<p>Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.
       </li>
       <li>
        <strong>force</strong> (::Boolean) — The default value is false. Override this value to true to actually perform
@@ -2215,7 +1927,7 @@ the purge.
     </ul>
   </div>
   <div class="level1 summary">
-    <strong>Yield Parameterss</strong>
+    <strong>Yield Parameters</strong>
     <ul>
       <li>
         <strong>response</strong> (::Gapic::Operation)
@@ -2242,7 +1954,8 @@ the purge.
     </ul>
   </div>
   <strong>Example</strong>
-  <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 # Create a client object. The client can be reused for multiple calls.
 client = Google::Cloud::Vision::V1::ProductSearch::Client.new
@@ -2262,6 +1975,337 @@ if result.response?
 else
   puts "Error!"
 end</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_remove_product_from_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#remove_product_from_product_set(instance)" class="notranslate">#remove_product_from_product_set</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def remove_product_from_product_set(request, options = nil) -&gt; ::Google::Protobuf::Empty
+def remove_product_from_product_set(name: nil, product: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Removes a Product from the specified ProductSet.</p>
+</div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def remove_product_from_product_set(request, options = nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>remove_product_from_product_set</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-RemoveProductFromProductSetRequest" title="Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest (class)">RemoveProductFromProductSetRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-RemoveProductFromProductSetRequest">::Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def remove_product_from_product_set(name: nil, product: nil) -&gt; ::Google::Protobuf::Empty</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>remove_product_from_product_set</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>name</strong> (::String) — Required. The resource name for the ProductSet to modify.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>
+      </li>
+      <li>
+       <strong>product</strong> (::String) — Required. The resource name for the Product to be removed from this ProductSet.<p>
+
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Protobuf-Empty">::Google::Protobuf::Empty</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::RemoveProductFromProductSetRequest.new
+
+# Call the remove_product_from_product_set method.
+result = client.remove_product_from_product_set request
+
+# The returned object is of type Google::Protobuf::Empty.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product(instance)" class="notranslate">#update_product</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def update_product(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::Product
+def update_product(product: nil, update_mask: nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Makes changes to a Product resource.
+Only the <code>display_name</code>, <code>description</code>, and <code>labels</code> fields can be updated
+right now.</p>
+
+<p>If labels are updated, the change will not be reflected in queries until
+the next index time.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns NOT_FOUND if the Product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is
+missing from the request or longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if description is present in update_mask but is
+longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if product_category is present in update_mask.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def update_product(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>update_product</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-UpdateProductRequest" title="Google::Cloud::Vision::V1::UpdateProductRequest (class)">UpdateProductRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-UpdateProductRequest">::Google::Cloud::Vision::V1::UpdateProductRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def update_product(product: nil, update_mask: nil) -&gt; ::Google::Cloud::Vision::V1::Product</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>update_product</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>product</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>, ::Hash) — Required. The Product resource which replaces the one on the server.
+product.name is immutable.
+      </li>
+      <li>
+       <strong>update_mask</strong> (<a href="./Google-Protobuf-FieldMask">::Google::Protobuf::FieldMask</a>, ::Hash) — The <span class='object_link'><a href="Google-Protobuf-FieldMask" title="Google::Protobuf::FieldMask (class)">FieldMask</a></span> that specifies which fields
+to update.
+If update_mask isn&#39;t specified, all mutable fields are to be updated.
+Valid mask paths include <code>product_labels</code>, <code>display_name</code>, and
+<code>description</code>.
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-Product">::Google::Cloud::Vision::V1::Product</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::UpdateProductRequest.new
+
+# Call the update_product method.
+result = client.update_product request
+
+# The returned object is of type Google::Cloud::Vision::V1::Product.
+p result</pre>
+  <h3 id="Google__Cloud__Vision__V1__ProductSearch__Client_update_product_set_instance_" data-uid="Google::Cloud::Vision::V1::ProductSearch::Client#update_product_set(instance)" class="notranslate">#update_product_set</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def update_product_set(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet
+def update_product_set(product_set: nil, update_mask: nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Makes changes to a ProductSet resource.
+Only display_name can be updated currently.</p>
+
+<p>Possible errors:</p>
+
+<ul>
+<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
+<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but
+missing from the request or longer than 4096 characters.</li>
+</ul></div>
+  <div class="level1 summary">
+    <strong>Overloads</strong>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def update_product_set(request, options = nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>update_product_set</code> via a request object, either of type
+<span class='object_link'><a href="Google-Cloud-Vision-V1-UpdateProductSetRequest" title="Google::Cloud::Vision::V1::UpdateProductSetRequest (class)">UpdateProductSetRequest</a></span> or an equivalent Hash.
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>request</strong> (<a href="./Google-Cloud-Vision-V1-UpdateProductSetRequest">::Google::Cloud::Vision::V1::UpdateProductSetRequest</a>, ::Hash) — A request object representing the call parameters. Required. To specify no
+parameters, or to keep all the default parameter values, pass an empty Hash.
+      </li>
+      <li>
+       <strong>options</strong> (::Gapic::CallOptions, ::Hash) — Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+      </li>
+    </ul>
+  </div>
+    <div class="codewrapper">
+      <pre class="prettyprint"><code>def update_product_set(product_set: nil, update_mask: nil) -&gt; ::Google::Cloud::Vision::V1::ProductSet</code></pre>
+    </div>
+    <div class="level1 summary">
+      Pass arguments to <code>update_product_set</code> via keyword arguments. Note that at
+least one keyword argument is required. To specify no parameters, or to keep all
+the default parameter values, pass an empty Hash as a request object (see above).
+    </div>
+  <div class="level1 summary">
+    <strong>Parameters</strong>
+    <ul>
+      <li>
+       <strong>product_set</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>, ::Hash) — Required. The ProductSet resource which replaces the one on the server.
+      </li>
+      <li>
+       <strong>update_mask</strong> (<a href="./Google-Protobuf-FieldMask">::Google::Protobuf::FieldMask</a>, ::Hash) — The <span class='object_link'><a href="Google-Protobuf-FieldMask" title="Google::Protobuf::FieldMask (class)">FieldMask</a></span> that specifies which fields to
+update.
+If update_mask isn&#39;t specified, all mutable fields are to be updated.
+Valid mask path is <code>display_name</code>.
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="level1 summary">
+    <strong>Yields</strong>
+    <ul>
+      <li>
+        (response, operation) — Access the result along with the RPC operation
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Yield Parameters</strong>
+    <ul>
+      <li>
+        <strong>response</strong> (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
+      </li>
+      <li>
+        <strong>operation</strong> (::GRPC::ActiveCall::Operation)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (<a href="./Google-Cloud-Vision-V1-ProductSet">::Google::Cloud::Vision::V1::ProductSet</a>)
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Raises</strong>
+    <ul>
+      <li>
+        (::Google::Cloud::Error) — if the RPC is aborted.
+      </li>
+    </ul>
+  </div>
+  <strong>Example</strong>
+  <p>Basic example</p>
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
+
+# Create a client object. The client can be reused for multiple calls.
+client = Google::Cloud::Vision::V1::ProductSearch::Client.new
+
+# Create a request. To set request fields, pass in keyword arguments.
+request = Google::Cloud::Vision::V1::UpdateProductSetRequest.new
+
+# Call the update_product_set method.
+result = client.update_product_set request
+
+# The returned object is of type Google::Cloud::Vision::V1::ProductSet.
+p result</pre>
 </article>
     </div>
     {% endverbatim %}

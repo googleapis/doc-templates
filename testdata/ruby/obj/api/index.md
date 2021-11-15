@@ -29,13 +29,12 @@ In order to use this library, you first need to go through the following steps:
 
 ## Quick Start
 
-```ruby
-require "google/cloud/vision/v1"
+<pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
 request = ::Google::Cloud::Vision::V1::CreateProductSetRequest.new # (request fields as keyword arguments...)
 response = client.create_product_set request
-```
+</pre>
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-vision-v1/latest)
 for class and method documentation.
@@ -53,8 +52,7 @@ and the gRPC [spec_helper.rb](https://github.com/grpc/grpc/blob/master/src/ruby/
 
 Configuring a Ruby stdlib logger:
 
-```ruby
-require "logger"
+<pre class="prettyprint lang-rb">require "logger"
 
 module MyLogger
   LOGGER = Logger.new $stderr, level: Logger::WARN
@@ -67,7 +65,7 @@ end
 module GRPC
   extend MyLogger
 end
-```
+</pre>
 
 ## Supported Ruby Versions
 

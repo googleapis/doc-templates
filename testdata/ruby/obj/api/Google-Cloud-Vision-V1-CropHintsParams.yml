@@ -31,7 +31,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def aspect_ratios => ::Array<::Float>"
+    content: "def aspect_ratios() -> ::Array<::Float>"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -50,8 +51,10 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def aspect_ratios=(value) => ::Array<::Float>"
-    arguments: []
+    content: "def aspect_ratios=(value) -> ::Array<::Float>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;::Float&gt;) — Aspect ratios in floats, representing the ratio of the width to the height\nof the image. For example, if the desired aspect ratio is 4/3, the\ncorresponding float value should be 1.33333.  If not specified, the\nbest possible crop is returned. The number of provided aspect ratios is\nlimited to a maximum of 16; any aspect ratios provided after the 16th are\nignored."
     yields: []
     yieldparams: []
     returnValues:

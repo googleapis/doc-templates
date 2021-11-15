@@ -2,54 +2,36 @@
 items:
 - uid: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs
   children: 
-  - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#list_operations(instance)
-  - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#get_operation(instance)
-  - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#delete_operation(instance)
   - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#cancel_operation(instance)
+  - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#delete_operation(instance)
+  - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#get_operation(instance)
+  - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#list_operations(instance)
   - Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#wait_operation(instance)
   fullName: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs
   langs:
   - ruby
   module: google-cloud-vision-v1
   id: Rpcs
-  summary: "Configuration RPC class for the Operations API.\n\nIncludes fields providing the configuration for each RPC in this service.\nEach configuration object is of type <code>Gapic::Config::Method</code> and includes\nthe following configuration fields:\n\n *  <code>timeout</code> (&#42;type:&#42; <code>Numeric</code>) - The call timeout in seconds\n *  <code>metadata</code> (&#42;type:&#42; <code>Hash{Symbol=>String}</code>) - Additional gRPC headers\n *  <code>retry_policy (&#42;type:&#42; </code>Hash<code>) - The retry policy. The policy fields\n    include the following keys:\n     &#42;  </code>:initial_delay<code> (&#42;type:&#42; </code>Numeric<code>) - The initial delay in seconds.\n     &#42;  </code>:max_delay<code> (&#42;type:&#42; </code>Numeric<code>) - The max delay in seconds.\n     &#42;  </code>:multiplier<code> (*type:* </code>Numeric<code>) - The incremental backoff multiplier.\n     &#42;  </code>:retry_codes<code> (*type:* </code>Array<String><code>) - The error codes that should\n        trigger a retry."
+  summary: "<p>Configuration RPC class for the Operations API.</p>\n\n<p>Includes fields providing the configuration for each RPC in this service.\nEach configuration object is of type <code>Gapic::Config::Method</code> and includes\nthe following configuration fields:</p>\n\n<ul>\n<li> <code>timeout</code> (<em>type:</em> <code>Numeric</code>) - The call timeout in seconds</li>\n<li> <code>metadata</code> (<em>type:</em> <code>Hash{Symbol=&gt;String}</code>) - Additional gRPC headers</li>\n<li> <code>retry_policy (*type:*</code>Hash`) - The retry policy. The policy fields\ninclude the following keys:\n\n<ul>\n<li> <code>:initial_delay</code> (<em>type:</em> <code>Numeric</code>) - The initial delay in seconds.</li>\n<li> <code>:max_delay</code> (<em>type:</em> <code>Numeric</code>) - The max delay in seconds.</li>\n<li> <code>:multiplier</code> (<em>type:</em> <code>Numeric</code>) - The incremental backoff multiplier.</li>\n<li> <code>:retry_codes</code> (<em>type:</em> <code>Array&lt;String&gt;</code>) - The error codes that should\ntrigger a retry.</li>\n</ul></li>\n</ul>"
   type: "class"
   name: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs
   example: []
   inherits:
   - "Object"
-- uid: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#list_operations(instance)
-  fullName: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#list_operations
-  name: "#list_operations"
+- uid: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#cancel_operation(instance)
+  fullName: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#cancel_operation
+  name: "#cancel_operation"
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#list_operations"
-  summary: "RPC-specific configuration for <code>list_operations</code>"
+  id: "#cancel_operation"
+  summary: "RPC-specific configuration for <code>cancel_operation</code>"
   type: method
   example: []
   syntax:
-    description: "RPC-specific configuration for <code>list_operations</code>"
-    content: "def list_operations => ::Gapic::Config::Method"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Gapic::Config::Method)"
-    raises: []
-- uid: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#get_operation(instance)
-  fullName: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#get_operation
-  name: "#get_operation"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#get_operation"
-  summary: "RPC-specific configuration for <code>get_operation</code>"
-  type: method
-  example: []
-  syntax:
-    description: "RPC-specific configuration for <code>get_operation</code>"
-    content: "def get_operation => ::Gapic::Config::Method"
+    description: "RPC-specific configuration for <code>cancel_operation</code>"
+    content: "def cancel_operation() -> ::Gapic::Config::Method"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -68,26 +50,48 @@ items:
   example: []
   syntax:
     description: "RPC-specific configuration for <code>delete_operation</code>"
-    content: "def delete_operation => ::Gapic::Config::Method"
+    content: "def delete_operation() -> ::Gapic::Config::Method"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Gapic::Config::Method)"
     raises: []
-- uid: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#cancel_operation(instance)
-  fullName: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#cancel_operation
-  name: "#cancel_operation"
+- uid: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#get_operation(instance)
+  fullName: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#get_operation
+  name: "#get_operation"
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#cancel_operation"
-  summary: "RPC-specific configuration for <code>cancel_operation</code>"
+  id: "#get_operation"
+  summary: "RPC-specific configuration for <code>get_operation</code>"
   type: method
   example: []
   syntax:
-    description: "RPC-specific configuration for <code>cancel_operation</code>"
-    content: "def cancel_operation => ::Gapic::Config::Method"
+    description: "RPC-specific configuration for <code>get_operation</code>"
+    content: "def get_operation() -> ::Gapic::Config::Method"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Gapic::Config::Method)"
+    raises: []
+- uid: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#list_operations(instance)
+  fullName: Google::Cloud::Vision::V1::ImageAnnotator::Operations::Configuration::Rpcs#list_operations
+  name: "#list_operations"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#list_operations"
+  summary: "RPC-specific configuration for <code>list_operations</code>"
+  type: method
+  example: []
+  syntax:
+    description: "RPC-specific configuration for <code>list_operations</code>"
+    content: "def list_operations() -> ::Gapic::Config::Method"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -106,7 +110,8 @@ items:
   example: []
   syntax:
     description: "RPC-specific configuration for <code>wait_operation</code>"
-    content: "def wait_operation => ::Gapic::Config::Method"
+    content: "def wait_operation() -> ::Gapic::Config::Method"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
