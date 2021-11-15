@@ -70,7 +70,7 @@ items:
   fullName: "com.google.cloud.speech.v1p1beta1.AdaptationClient"
   type: "Class"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Service Description: Service that implements Google Cloud Speech Adaptation API.\n\n <p>This class provides the ability to make remote calls to the backing service through method\n calls that map to API methods. Sample code to get started:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   String phraseSetId = \"phraseSetId959902180\";\n   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);\n }\n </code></pre>\n\n <p>Note: close() needs to be called on the AdaptationClient object to clean up resources such as\n threads. In the example above, try-with-resources is used, which automatically calls close().\n\n <p>The surface of this class includes several types of Java methods for each of the API's\n methods:\n\n <ol>\n   <li>A \"flattened\" method. With this type of method, the fields of the request type have been\n       converted into function parameters. It may be the case that not all fields are available as\n       parameters, and not every API method will have a flattened method entry point.\n   <li>A \"request object\" method. This type of method only takes one parameter, a request object,\n       which must be constructed before the call. Not every API method will have a request object\n       method.\n   <li>A \"callable\" method. This type of method takes no parameters and returns an immutable API\n       callable object, which can be used to initiate calls to the service.\n </ol>\n\n <p>See the individual methods for example code.\n\n <p>Many parameters require resource names to be formatted in a particular way. To assist with\n these names, this class includes a format method for each type of name, and additionally a parse\n method to extract the individual identifiers contained within names that are returned.\n\n <p>This class can be customized by passing in a custom instance of AdaptationSettings to\n create(). For example:\n\n <p>To customize credentials:\n\n <pre><code class=\"pretty-print\">\n AdaptationSettings adaptationSettings =\n     AdaptationSettings.newBuilder()\n         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))\n         .build();\n AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);\n </code></pre>\n\n <p>To customize the endpoint:\n\n <pre><code class=\"pretty-print\">\n AdaptationSettings adaptationSettings =\n     AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();\n AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);\n </code></pre>\n\n <p>Please refer to the GitHub repository's samples for more quickstart code snippets."
+  summary: "Service Description: Service that implements Google Cloud Speech Adaptation API.\n\n <p>This class provides the ability to make remote calls to the backing service through method\n calls that map to API methods. Sample code to get started:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   String phraseSetId = \"phraseSetId959902180\";\n   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);\n }\n </code></pre>\n\n <p>Note: close() needs to be called on the AdaptationClient object to clean up resources such as\n threads. In the example above, try-with-resources is used, which automatically calls close().\n\n <p>The surface of this class includes several types of Java methods for each of the API's\n methods:\n\n <ol>\n   <li>A \"flattened\" method. With this type of method, the fields of the request type have been\n       converted into function parameters. It may be the case that not all fields are available as\n       parameters, and not every API method will have a flattened method entry point.\n   <li>A \"request object\" method. This type of method only takes one parameter, a request object,\n       which must be constructed before the call. Not every API method will have a request object\n       method.\n   <li>A \"callable\" method. This type of method takes no parameters and returns an immutable API\n       callable object, which can be used to initiate calls to the service.\n </ol>\n\n <p>See the individual methods for example code.\n\n <p>Many parameters require resource names to be formatted in a particular way. To assist with\n these names, this class includes a format method for each type of name, and additionally a parse\n method to extract the individual identifiers contained within names that are returned.\n\n <p>This class can be customized by passing in a custom instance of AdaptationSettings to\n create(). For example:\n\n <p>To customize credentials:\n\n <pre class=\"prettyprint lang-java\"><code>\n AdaptationSettings adaptationSettings =\n     AdaptationSettings.newBuilder()\n         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))\n         .build();\n AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);\n </code></pre>\n\n <p>To customize the endpoint:\n\n <pre class=\"prettyprint lang-java\"><code>\n AdaptationSettings adaptationSettings =\n     AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();\n AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);\n </code></pre>\n\n <p>Please refer to the GitHub repository's samples for more quickstart code snippets."
   syntax:
     content: "public class AdaptationClient implements BackgroundResource"
   inheritance:
@@ -226,7 +226,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreateCustomClassRequest request =\n       CreateCustomClassRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setCustomClassId(\"customClassId1871032322\")\n           .setCustomClass(CustomClass.newBuilder().build())\n           .build();\n   CustomClass response = adaptationClient.createCustomClass(request);\n }\n </code></pre>"
+  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreateCustomClassRequest request =\n       CreateCustomClassRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setCustomClassId(\"customClassId1871032322\")\n           .setCustomClass(CustomClass.newBuilder().build())\n           .build();\n   CustomClass response = adaptationClient.createCustomClass(request);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass createCustomClass(CreateCustomClassRequest request)"
     parameters:
@@ -246,7 +246,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   CustomClass customClass = CustomClass.newBuilder().build();\n   String customClassId = \"customClassId1871032322\";\n   CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);\n }\n </code></pre>"
+  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   CustomClass customClass = CustomClass.newBuilder().build();\n   String customClassId = \"customClassId1871032322\";\n   CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass createCustomClass(LocationName parent, CustomClass customClass, String customClassId)"
     parameters:
@@ -272,7 +272,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   CustomClass customClass = CustomClass.newBuilder().build();\n   String customClassId = \"customClassId1871032322\";\n   CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);\n }\n </code></pre>"
+  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   CustomClass customClass = CustomClass.newBuilder().build();\n   String customClassId = \"customClassId1871032322\";\n   CustomClass response = adaptationClient.createCustomClass(parent, customClass, customClassId);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass createCustomClass(String parent, CustomClass customClass, String customClassId)"
     parameters:
@@ -298,7 +298,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createCustomClassCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreateCustomClassRequest request =\n       CreateCustomClassRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setCustomClassId(\"customClassId1871032322\")\n           .setCustomClass(CustomClass.newBuilder().build())\n           .build();\n   ApiFuture<CustomClass> future =\n       adaptationClient.createCustomClassCallable().futureCall(request);\n   // Do something.\n   CustomClass response = future.get();\n }\n </code></pre>"
+  summary: "Create a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreateCustomClassRequest request =\n       CreateCustomClassRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setCustomClassId(\"customClassId1871032322\")\n           .setCustomClass(CustomClass.newBuilder().build())\n           .build();\n   ApiFuture<CustomClass> future =\n       adaptationClient.createCustomClassCallable().futureCall(request);\n   // Do something.\n   CustomClass response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<CreateCustomClassRequest,CustomClass> createCustomClassCallable()"
     return:
@@ -314,7 +314,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreatePhraseSetRequest request =\n       CreatePhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPhraseSetId(\"phraseSetId959902180\")\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .build();\n   PhraseSet response = adaptationClient.createPhraseSet(request);\n }\n </code></pre>"
+  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreatePhraseSetRequest request =\n       CreatePhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPhraseSetId(\"phraseSetId959902180\")\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .build();\n   PhraseSet response = adaptationClient.createPhraseSet(request);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet createPhraseSet(CreatePhraseSetRequest request)"
     parameters:
@@ -334,7 +334,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   String phraseSetId = \"phraseSetId959902180\";\n   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);\n }\n </code></pre>"
+  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   String phraseSetId = \"phraseSetId959902180\";\n   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet createPhraseSet(LocationName parent, PhraseSet phraseSet, String phraseSetId)"
     parameters:
@@ -360,7 +360,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   String phraseSetId = \"phraseSetId959902180\";\n   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);\n }\n </code></pre>"
+  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   String phraseSetId = \"phraseSetId959902180\";\n   PhraseSet response = adaptationClient.createPhraseSet(parent, phraseSet, phraseSetId);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet createPhraseSet(String parent, PhraseSet phraseSet, String phraseSetId)"
     parameters:
@@ -386,7 +386,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.createPhraseSetCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreatePhraseSetRequest request =\n       CreatePhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPhraseSetId(\"phraseSetId959902180\")\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .build();\n   ApiFuture<PhraseSet> future = adaptationClient.createPhraseSetCallable().futureCall(request);\n   // Do something.\n   PhraseSet response = future.get();\n }\n </code></pre>"
+  summary: "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase.\n The items in the PhraseSet are favored by the recognition model when you send a call that\n includes the PhraseSet.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CreatePhraseSetRequest request =\n       CreatePhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPhraseSetId(\"phraseSetId959902180\")\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .build();\n   ApiFuture<PhraseSet> future = adaptationClient.createPhraseSetCallable().futureCall(request);\n   // Do something.\n   PhraseSet response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<CreatePhraseSetRequest,PhraseSet> createPhraseSetCallable()"
     return:
@@ -402,7 +402,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CustomClassName name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\");\n   adaptationClient.deleteCustomClass(name);\n }\n </code></pre>"
+  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CustomClassName name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\");\n   adaptationClient.deleteCustomClass(name);\n }\n </code></pre>"
   syntax:
     content: "public final void deleteCustomClass(CustomClassName name)"
     parameters:
@@ -420,7 +420,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeleteCustomClassRequest request =\n       DeleteCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   adaptationClient.deleteCustomClass(request);\n }\n </code></pre>"
+  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeleteCustomClassRequest request =\n       DeleteCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   adaptationClient.deleteCustomClass(request);\n }\n </code></pre>"
   syntax:
     content: "public final void deleteCustomClass(DeleteCustomClassRequest request)"
     parameters:
@@ -438,7 +438,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   adaptationClient.deleteCustomClass(name);\n }\n </code></pre>"
+  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   adaptationClient.deleteCustomClass(name);\n }\n </code></pre>"
   syntax:
     content: "public final void deleteCustomClass(String name)"
     parameters:
@@ -456,7 +456,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deleteCustomClassCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeleteCustomClassRequest request =\n       DeleteCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   ApiFuture<Empty> future = adaptationClient.deleteCustomClassCallable().futureCall(request);\n   // Do something.\n   future.get();\n }\n </code></pre>"
+  summary: "Delete a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeleteCustomClassRequest request =\n       DeleteCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   ApiFuture<Empty> future = adaptationClient.deleteCustomClassCallable().futureCall(request);\n   // Do something.\n   future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<DeleteCustomClassRequest,Empty> deleteCustomClassCallable()"
     return:
@@ -472,7 +472,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeletePhraseSetRequest request =\n       DeletePhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   adaptationClient.deletePhraseSet(request);\n }\n </code></pre>"
+  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeletePhraseSetRequest request =\n       DeletePhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   adaptationClient.deletePhraseSet(request);\n }\n </code></pre>"
   syntax:
     content: "public final void deletePhraseSet(DeletePhraseSetRequest request)"
     parameters:
@@ -490,7 +490,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   PhraseSetName name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\");\n   adaptationClient.deletePhraseSet(name);\n }\n </code></pre>"
+  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   PhraseSetName name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\");\n   adaptationClient.deletePhraseSet(name);\n }\n </code></pre>"
   syntax:
     content: "public final void deletePhraseSet(PhraseSetName name)"
     parameters:
@@ -508,7 +508,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   adaptationClient.deletePhraseSet(name);\n }\n </code></pre>"
+  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   adaptationClient.deletePhraseSet(name);\n }\n </code></pre>"
   syntax:
     content: "public final void deletePhraseSet(String name)"
     parameters:
@@ -526,7 +526,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.deletePhraseSetCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeletePhraseSetRequest request =\n       DeletePhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   ApiFuture<Empty> future = adaptationClient.deletePhraseSetCallable().futureCall(request);\n   // Do something.\n   future.get();\n }\n </code></pre>"
+  summary: "Delete a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   DeletePhraseSetRequest request =\n       DeletePhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   ApiFuture<Empty> future = adaptationClient.deletePhraseSetCallable().futureCall(request);\n   // Do something.\n   future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<DeletePhraseSetRequest,Empty> deletePhraseSetCallable()"
     return:
@@ -542,7 +542,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CustomClassName name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\");\n   CustomClass response = adaptationClient.getCustomClass(name);\n }\n </code></pre>"
+  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CustomClassName name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\");\n   CustomClass response = adaptationClient.getCustomClass(name);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass getCustomClass(CustomClassName name)"
     parameters:
@@ -562,7 +562,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetCustomClassRequest request =\n       GetCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   CustomClass response = adaptationClient.getCustomClass(request);\n }\n </code></pre>"
+  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetCustomClassRequest request =\n       GetCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   CustomClass response = adaptationClient.getCustomClass(request);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass getCustomClass(GetCustomClassRequest request)"
     parameters:
@@ -582,7 +582,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   CustomClass response = adaptationClient.getCustomClass(name);\n }\n </code></pre>"
+  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   CustomClass response = adaptationClient.getCustomClass(name);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass getCustomClass(String name)"
     parameters:
@@ -602,7 +602,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getCustomClassCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetCustomClassRequest request =\n       GetCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   ApiFuture<CustomClass> future = adaptationClient.getCustomClassCallable().futureCall(request);\n   // Do something.\n   CustomClass response = future.get();\n }\n </code></pre>"
+  summary: "Get a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetCustomClassRequest request =\n       GetCustomClassRequest.newBuilder()\n           .setName(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .build();\n   ApiFuture<CustomClass> future = adaptationClient.getCustomClassCallable().futureCall(request);\n   // Do something.\n   CustomClass response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<GetCustomClassRequest,CustomClass> getCustomClassCallable()"
     return:
@@ -618,7 +618,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetPhraseSetRequest request =\n       GetPhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   PhraseSet response = adaptationClient.getPhraseSet(request);\n }\n </code></pre>"
+  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetPhraseSetRequest request =\n       GetPhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   PhraseSet response = adaptationClient.getPhraseSet(request);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet getPhraseSet(GetPhraseSetRequest request)"
     parameters:
@@ -638,7 +638,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   PhraseSetName name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\");\n   PhraseSet response = adaptationClient.getPhraseSet(name);\n }\n </code></pre>"
+  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   PhraseSetName name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\");\n   PhraseSet response = adaptationClient.getPhraseSet(name);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet getPhraseSet(PhraseSetName name)"
     parameters:
@@ -658,7 +658,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   PhraseSet response = adaptationClient.getPhraseSet(name);\n }\n </code></pre>"
+  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String name = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   PhraseSet response = adaptationClient.getPhraseSet(name);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet getPhraseSet(String name)"
     parameters:
@@ -678,7 +678,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.getPhraseSetCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetPhraseSetRequest request =\n       GetPhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   ApiFuture<PhraseSet> future = adaptationClient.getPhraseSetCallable().futureCall(request);\n   // Do something.\n   PhraseSet response = future.get();\n }\n </code></pre>"
+  summary: "Get a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   GetPhraseSetRequest request =\n       GetPhraseSetRequest.newBuilder()\n           .setName(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .build();\n   ApiFuture<PhraseSet> future = adaptationClient.getPhraseSetCallable().futureCall(request);\n   // Do something.\n   PhraseSet response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<GetPhraseSetRequest,PhraseSet> getPhraseSetCallable()"
     return:
@@ -754,7 +754,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListCustomClassesRequest request =\n       ListCustomClassesRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   for (CustomClass element : adaptationClient.listCustomClasses(request).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListCustomClassesRequest request =\n       ListCustomClassesRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   for (CustomClass element : adaptationClient.listCustomClasses(request).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(ListCustomClassesRequest request)"
     parameters:
@@ -774,7 +774,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(LocationName parent)"
     parameters:
@@ -794,7 +794,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClasses*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString();\n   for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final AdaptationClient.ListCustomClassesPagedResponse listCustomClasses(String parent)"
     parameters:
@@ -814,7 +814,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListCustomClassesRequest request =\n       ListCustomClassesRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   while (true) {\n     ListCustomClassesResponse response =\n         adaptationClient.listCustomClassesCallable().call(request);\n     for (CustomClass element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n </code></pre>"
+  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListCustomClassesRequest request =\n       ListCustomClassesRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   while (true) {\n     ListCustomClassesResponse response =\n         adaptationClient.listCustomClassesCallable().call(request);\n     for (CustomClass element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<ListCustomClassesRequest,ListCustomClassesResponse> listCustomClassesCallable()"
     return:
@@ -830,7 +830,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listCustomClassesPagedCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListCustomClassesRequest request =\n       ListCustomClassesRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   ApiFuture<CustomClass> future =\n       adaptationClient.listCustomClassesPagedCallable().futureCall(request);\n   // Do something.\n   for (CustomClass element : future.get().iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List custom classes.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListCustomClassesRequest request =\n       ListCustomClassesRequest.newBuilder()\n           .setParent(CustomClassName.of(\"[PROJECT]\", \"[LOCATION]\", \"[CUSTOM_CLASS]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   ApiFuture<CustomClass> future =\n       adaptationClient.listCustomClassesPagedCallable().futureCall(request);\n   // Do something.\n   for (CustomClass element : future.get().iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<ListCustomClassesRequest,AdaptationClient.ListCustomClassesPagedResponse> listCustomClassesPagedCallable()"
     return:
@@ -846,7 +846,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListPhraseSetRequest request =\n       ListPhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   for (PhraseSet element : adaptationClient.listPhraseSet(request).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListPhraseSetRequest request =\n       ListPhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   for (PhraseSet element : adaptationClient.listPhraseSet(request).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(ListPhraseSetRequest request)"
     parameters:
@@ -866,7 +866,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   LocationName parent = LocationName.of(\"[PROJECT]\", \"[LOCATION]\");\n   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(LocationName parent)"
     parameters:
@@ -886,7 +886,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   String parent = PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString();\n   for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final AdaptationClient.ListPhraseSetPagedResponse listPhraseSet(String parent)"
     parameters:
@@ -906,7 +906,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListPhraseSetRequest request =\n       ListPhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   while (true) {\n     ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);\n     for (PhraseSet element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n </code></pre>"
+  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListPhraseSetRequest request =\n       ListPhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   while (true) {\n     ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);\n     for (PhraseSet element : response.getResponsesList()) {\n       // doThingsWith(element);\n     }\n     String nextPageToken = response.getNextPageToken();\n     if (!Strings.isNullOrEmpty(nextPageToken)) {\n       request = request.toBuilder().setPageToken(nextPageToken).build();\n     } else {\n       break;\n     }\n   }\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<ListPhraseSetRequest,ListPhraseSetResponse> listPhraseSetCallable()"
     return:
@@ -922,7 +922,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.listPhraseSetPagedCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListPhraseSetRequest request =\n       ListPhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   ApiFuture<PhraseSet> future =\n       adaptationClient.listPhraseSetPagedCallable().futureCall(request);\n   // Do something.\n   for (PhraseSet element : future.get().iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
+  summary: "List phrase sets.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   ListPhraseSetRequest request =\n       ListPhraseSetRequest.newBuilder()\n           .setParent(PhraseSetName.of(\"[PROJECT]\", \"[LOCATION]\", \"[PHRASE_SET]\").toString())\n           .setPageSize(883849137)\n           .setPageToken(\"pageToken873572522\")\n           .build();\n   ApiFuture<PhraseSet> future =\n       adaptationClient.listPhraseSetPagedCallable().futureCall(request);\n   // Do something.\n   for (PhraseSet element : future.get().iterateAll()) {\n     // doThingsWith(element);\n   }\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<ListPhraseSetRequest,AdaptationClient.ListPhraseSetPagedResponse> listPhraseSetPagedCallable()"
     return:
@@ -964,7 +964,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Update a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CustomClass customClass = CustomClass.newBuilder().build();\n   FieldMask updateMask = FieldMask.newBuilder().build();\n   CustomClass response = adaptationClient.updateCustomClass(customClass, updateMask);\n }\n </code></pre>"
+  summary: "Update a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   CustomClass customClass = CustomClass.newBuilder().build();\n   FieldMask updateMask = FieldMask.newBuilder().build();\n   CustomClass response = adaptationClient.updateCustomClass(customClass, updateMask);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass updateCustomClass(CustomClass customClass, FieldMask updateMask)"
     parameters:
@@ -987,7 +987,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClass*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Update a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdateCustomClassRequest request =\n       UpdateCustomClassRequest.newBuilder()\n           .setCustomClass(CustomClass.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   CustomClass response = adaptationClient.updateCustomClass(request);\n }\n </code></pre>"
+  summary: "Update a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdateCustomClassRequest request =\n       UpdateCustomClassRequest.newBuilder()\n           .setCustomClass(CustomClass.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   CustomClass response = adaptationClient.updateCustomClass(request);\n }\n </code></pre>"
   syntax:
     content: "public final CustomClass updateCustomClass(UpdateCustomClassRequest request)"
     parameters:
@@ -1007,7 +1007,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updateCustomClassCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Update a custom class.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdateCustomClassRequest request =\n       UpdateCustomClassRequest.newBuilder()\n           .setCustomClass(CustomClass.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   ApiFuture<CustomClass> future =\n       adaptationClient.updateCustomClassCallable().futureCall(request);\n   // Do something.\n   CustomClass response = future.get();\n }\n </code></pre>"
+  summary: "Update a custom class.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdateCustomClassRequest request =\n       UpdateCustomClassRequest.newBuilder()\n           .setCustomClass(CustomClass.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   ApiFuture<CustomClass> future =\n       adaptationClient.updateCustomClassCallable().futureCall(request);\n   // Do something.\n   CustomClass response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<UpdateCustomClassRequest,CustomClass> updateCustomClassCallable()"
     return:
@@ -1023,7 +1023,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Update a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   FieldMask updateMask = FieldMask.newBuilder().build();\n   PhraseSet response = adaptationClient.updatePhraseSet(phraseSet, updateMask);\n }\n </code></pre>"
+  summary: "Update a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   PhraseSet phraseSet = PhraseSet.newBuilder().build();\n   FieldMask updateMask = FieldMask.newBuilder().build();\n   PhraseSet response = adaptationClient.updatePhraseSet(phraseSet, updateMask);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet updatePhraseSet(PhraseSet phraseSet, FieldMask updateMask)"
     parameters:
@@ -1046,7 +1046,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSet*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Update a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdatePhraseSetRequest request =\n       UpdatePhraseSetRequest.newBuilder()\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   PhraseSet response = adaptationClient.updatePhraseSet(request);\n }\n </code></pre>"
+  summary: "Update a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdatePhraseSetRequest request =\n       UpdatePhraseSetRequest.newBuilder()\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   PhraseSet response = adaptationClient.updatePhraseSet(request);\n }\n </code></pre>"
   syntax:
     content: "public final PhraseSet updatePhraseSet(UpdatePhraseSetRequest request)"
     parameters:
@@ -1066,7 +1066,7 @@ items:
   overload: "com.google.cloud.speech.v1p1beta1.AdaptationClient.updatePhraseSetCallable*"
   type: "Method"
   package: "com.google.cloud.speech.v1p1beta1"
-  summary: "Update a phrase set.\n\n <p>Sample code:\n\n <pre><code class=\"pretty-print\">\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdatePhraseSetRequest request =\n       UpdatePhraseSetRequest.newBuilder()\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   ApiFuture<PhraseSet> future = adaptationClient.updatePhraseSetCallable().futureCall(request);\n   // Do something.\n   PhraseSet response = future.get();\n }\n </code></pre>"
+  summary: "Update a phrase set.\n\n <p>Sample code:\n\n <pre class=\"prettyprint lang-java\"><code>\n try (AdaptationClient adaptationClient = AdaptationClient.create()) {\n   UpdatePhraseSetRequest request =\n       UpdatePhraseSetRequest.newBuilder()\n           .setPhraseSet(PhraseSet.newBuilder().build())\n           .setUpdateMask(FieldMask.newBuilder().build())\n           .build();\n   ApiFuture<PhraseSet> future = adaptationClient.updatePhraseSetCallable().futureCall(request);\n   // Do something.\n   PhraseSet response = future.get();\n }\n </code></pre>"
   syntax:
     content: "public final UnaryCallable<UpdatePhraseSetRequest,PhraseSet> updatePhraseSetCallable()"
     return:

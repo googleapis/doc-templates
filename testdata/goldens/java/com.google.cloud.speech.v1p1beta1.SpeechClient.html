@@ -18,7 +18,7 @@
   <div class="markdown level0 summary"><p>Service Description: Service that implements Google Cloud Speech API.</p>
 <p> <p>This class provides the ability to make remote calls to the backing service through method
  calls that map to API methods. Sample code to get started:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    RecognitionConfig config = RecognitionConfig.newBuilder().build();
    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -48,7 +48,7 @@
 <p> <p>This class can be customized by passing in a custom instance of SpeechSettings to create().
  For example:</p>
 <p> <p>To customize credentials:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  SpeechSettings speechSettings =
      SpeechSettings.newBuilder()
          .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -57,7 +57,7 @@
  </code></pre>
 
 <p> <p>To customize the endpoint:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  SpeechSettings speechSettings = SpeechSettings.newBuilder().setEndpoint(myEndpoint).build();
  SpeechClient speechClient = SpeechClient.create(speechSettings);
  </code></pre>
@@ -422,7 +422,7 @@
  <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech
  recognition, see the <a href="https://cloud.google.com/speech-to-text/docs/async-recognize">how-to</a>.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    LongRunningRecognizeRequest request =
        LongRunningRecognizeRequest.newBuilder()
@@ -470,7 +470,7 @@
  <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech
  recognition, see the <a href="https://cloud.google.com/speech-to-text/docs/async-recognize">how-to</a>.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    RecognitionConfig config = RecognitionConfig.newBuilder().build();
    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -521,7 +521,7 @@
  <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech
  recognition, see the <a href="https://cloud.google.com/speech-to-text/docs/async-recognize">how-to</a>.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    LongRunningRecognizeRequest request =
        LongRunningRecognizeRequest.newBuilder()
@@ -557,7 +557,7 @@
  <code>LongRunningRecognizeResponse</code> message. For more information on asynchronous speech
  recognition, see the <a href="https://cloud.google.com/speech-to-text/docs/async-recognize">how-to</a>.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    LongRunningRecognizeRequest request =
        LongRunningRecognizeRequest.newBuilder()
@@ -592,7 +592,7 @@
   <div class="markdown level1 summary"><p>Performs synchronous speech recognition: receive results after all audio has been sent and
  processed.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    RecognitionConfig config = RecognitionConfig.newBuilder().build();
    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
@@ -640,7 +640,7 @@
   <div class="markdown level1 summary"><p>Performs synchronous speech recognition: receive results after all audio has been sent and
  processed.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    RecognizeRequest request =
        RecognizeRequest.newBuilder()
@@ -685,7 +685,7 @@
   <div class="markdown level1 summary"><p>Performs synchronous speech recognition: receive results after all audio has been sent and
  processed.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    RecognizeRequest request =
        RecognizeRequest.newBuilder()
@@ -728,7 +728,7 @@
   <div class="markdown level1 summary"><p>Performs bidirectional streaming speech recognition: receive results while sending audio. This
  method is only available via the gRPC API (not REST).</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (SpeechClient speechClient = SpeechClient.create()) {
    BidiStream<streamingrecognizerequest, streamingrecognizeresponse=""> bidiStream =
        speechClient.streamingRecognizeCallable().call();

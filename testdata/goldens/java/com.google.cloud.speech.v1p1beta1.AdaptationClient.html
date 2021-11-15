@@ -18,7 +18,7 @@
   <div class="markdown level0 summary"><p>Service Description: Service that implements Google Cloud Speech Adaptation API.</p>
 <p> <p>This class provides the ability to make remote calls to the backing service through method
  calls that map to API methods. Sample code to get started:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
@@ -49,7 +49,7 @@
 <p> <p>This class can be customized by passing in a custom instance of AdaptationSettings to
  create(). For example:</p>
 <p> <p>To customize credentials:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  AdaptationSettings adaptationSettings =
      AdaptationSettings.newBuilder()
          .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -58,7 +58,7 @@
  </code></pre>
 
 <p> <p>To customize the endpoint:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  AdaptationSettings adaptationSettings =
      AdaptationSettings.newBuilder().setEndpoint(myEndpoint).build();
  AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
@@ -328,7 +328,7 @@
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreateCustomClassRequest request =
        CreateCustomClassRequest.newBuilder()
@@ -373,7 +373,7 @@
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    CustomClass customClass = CustomClass.newBuilder().build();
@@ -428,7 +428,7 @@
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String parent = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    CustomClass customClass = CustomClass.newBuilder().build();
@@ -483,7 +483,7 @@
   </div>
   <div class="markdown level1 summary"><p>Create a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreateCustomClassRequest request =
        CreateCustomClassRequest.newBuilder()
@@ -519,7 +519,7 @@
  The items in the PhraseSet are favored by the recognition model when you send a call that
  includes the PhraseSet.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreatePhraseSetRequest request =
        CreatePhraseSetRequest.newBuilder()
@@ -566,7 +566,7 @@
  The items in the PhraseSet are favored by the recognition model when you send a call that
  includes the PhraseSet.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
@@ -623,7 +623,7 @@
  The items in the PhraseSet are favored by the recognition model when you send a call that
  includes the PhraseSet.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String parent = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
@@ -680,7 +680,7 @@
  The items in the PhraseSet are favored by the recognition model when you send a call that
  includes the PhraseSet.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CreatePhraseSetRequest request =
        CreatePhraseSetRequest.newBuilder()
@@ -713,7 +713,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CustomClassName name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]");
    adaptationClient.deleteCustomClass(name);
@@ -741,7 +741,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeleteCustomClassRequest request =
        DeleteCustomClassRequest.newBuilder()
@@ -771,7 +771,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    adaptationClient.deleteCustomClass(name);
@@ -799,7 +799,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeleteCustomClassRequest request =
        DeleteCustomClassRequest.newBuilder()
@@ -830,7 +830,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeletePhraseSetRequest request =
        DeletePhraseSetRequest.newBuilder()
@@ -860,7 +860,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    PhraseSetName name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]");
    adaptationClient.deletePhraseSet(name);
@@ -888,7 +888,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    adaptationClient.deletePhraseSet(name);
@@ -916,7 +916,7 @@
   </div>
   <div class="markdown level1 summary"><p>Delete a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    DeletePhraseSetRequest request =
        DeletePhraseSetRequest.newBuilder()
@@ -947,7 +947,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CustomClassName name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]");
    CustomClass response = adaptationClient.getCustomClass(name);
@@ -988,7 +988,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetCustomClassRequest request =
        GetCustomClassRequest.newBuilder()
@@ -1031,7 +1031,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String name = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    CustomClass response = adaptationClient.getCustomClass(name);
@@ -1072,7 +1072,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetCustomClassRequest request =
        GetCustomClassRequest.newBuilder()
@@ -1103,7 +1103,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetPhraseSetRequest request =
        GetPhraseSetRequest.newBuilder()
@@ -1146,7 +1146,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    PhraseSetName name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]");
    PhraseSet response = adaptationClient.getPhraseSet(name);
@@ -1187,7 +1187,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String name = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    PhraseSet response = adaptationClient.getPhraseSet(name);
@@ -1228,7 +1228,7 @@
   </div>
   <div class="markdown level1 summary"><p>Get a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    GetPhraseSetRequest request =
        GetPhraseSetRequest.newBuilder()
@@ -1331,7 +1331,7 @@
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListCustomClassesRequest request =
        ListCustomClassesRequest.newBuilder()
@@ -1378,7 +1378,7 @@
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
@@ -1421,7 +1421,7 @@
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String parent = CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString();
    for (CustomClass element : adaptationClient.listCustomClasses(parent).iterateAll()) {
@@ -1464,7 +1464,7 @@
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListCustomClassesRequest request =
        ListCustomClassesRequest.newBuilder()
@@ -1507,7 +1507,7 @@
   </div>
   <div class="markdown level1 summary"><p>List custom classes.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListCustomClassesRequest request =
        ListCustomClassesRequest.newBuilder()
@@ -1543,7 +1543,7 @@
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListPhraseSetRequest request =
        ListPhraseSetRequest.newBuilder()
@@ -1590,7 +1590,7 @@
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
@@ -1633,7 +1633,7 @@
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    String parent = PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString();
    for (PhraseSet element : adaptationClient.listPhraseSet(parent).iterateAll()) {
@@ -1676,7 +1676,7 @@
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListPhraseSetRequest request =
        ListPhraseSetRequest.newBuilder()
@@ -1718,7 +1718,7 @@
   </div>
   <div class="markdown level1 summary"><p>List phrase sets.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    ListPhraseSetRequest request =
        ListPhraseSetRequest.newBuilder()
@@ -1764,7 +1764,7 @@
   </div>
   <div class="markdown level1 summary"><p>Update a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    CustomClass customClass = CustomClass.newBuilder().build();
    FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1812,7 +1812,7 @@
   </div>
   <div class="markdown level1 summary"><p>Update a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdateCustomClassRequest request =
        UpdateCustomClassRequest.newBuilder()
@@ -1856,7 +1856,7 @@
   </div>
   <div class="markdown level1 summary"><p>Update a custom class.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdateCustomClassRequest request =
        UpdateCustomClassRequest.newBuilder()
@@ -1889,7 +1889,7 @@
   </div>
   <div class="markdown level1 summary"><p>Update a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    PhraseSet phraseSet = PhraseSet.newBuilder().build();
    FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1937,7 +1937,7 @@
   </div>
   <div class="markdown level1 summary"><p>Update a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdatePhraseSetRequest request =
        UpdatePhraseSetRequest.newBuilder()
@@ -1981,7 +1981,7 @@
   </div>
   <div class="markdown level1 summary"><p>Update a phrase set.</p>
 <p> <p>Sample code:</p>
- <pre><code class="pretty-print">
+ <pre class="prettyprint lang-java"><code>
  try (AdaptationClient adaptationClient = AdaptationClient.create()) {
    UpdatePhraseSetRequest request =
        UpdatePhraseSetRequest.newBuilder()

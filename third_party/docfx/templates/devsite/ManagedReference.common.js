@@ -17,12 +17,16 @@ exports.transform = function (model) {
 
   if (model.type) {
     switch (model.type.toLowerCase()) {
+      case 'overview':
+      case 'package':
       case 'namespace':
         model.isNamespace = true;
         if (model.children) groupChildren(model, namespaceCategory);
         model[getTypePropertyName(model.type)] = true;
         break;
+      case 'exception':
       case 'class':
+      case 'annotationtype':
       case 'interface':
       case 'struct':
       case 'delegate':
@@ -166,12 +170,16 @@ function getDefinition(type) {
 
 function getDefinitions(category) {
   var namespaceItems = {
-    "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
-    "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
-    "struct":       { inStruct: true,       typePropertyName: "inStruct",       id: "structs" },
-    "interface":    { inInterface: true,    typePropertyName: "inInterface",    id: "interfaces" },
-    "enum":         { inEnum: true,         typePropertyName: "inEnum",         id: "enums" },
-    "delegate":     { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" }
+    "namespace":      { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
+    "class":          { inClass: true,        typePropertyName: "inClass",        id: "classes" },
+    "struct":         { inStruct: true,       typePropertyName: "inStruct",       id: "structs" },
+    "interface":      { inInterface: true,    typePropertyName: "inInterface",    id: "interfaces" },
+    "enum":           { inEnum: true,         typePropertyName: "inEnum",         id: "enums" },
+    "delegate":       { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" },
+    "exception":      { inException: true,    typePropertyName: "inException",    id: "exceptions" },
+    "annotationtype": { inAnnotation: true,   typePropertyName: "inAnnotation",   id: "annotationtypes" },
+    "package":        { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
+    "overview":       { inOverview: true,     typePropertyName: "inOverview",     id: "overviews" }
   };
   var classItems = {
     "constructor":      { inConstructor: true,      typePropertyName: "inConstructor",      id: "constructors" },
@@ -310,5 +318,12 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
     else if (vm.status == "eap") {
       vm.status_title = "Early access"
     }
+  }
+
+  if (vm.javaType) {
+    // Resetting 'type' from added field 'javaType' field here 
+    // because docfx cannot process custom types while using ManagedReference.
+    // This allows Java to use custom types without rewriting for UniversalReference
+    vm.type = vm.javaType;
   }
 }
