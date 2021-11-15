@@ -2,12 +2,12 @@
 items:
 - uid: Google::Cloud::Vision::V1::ProductSearchResults::Result
   children: 
+  - Google::Cloud::Vision::V1::ProductSearchResults::Result#image(instance)
+  - Google::Cloud::Vision::V1::ProductSearchResults::Result#image=(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults::Result#product(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults::Result#product=(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults::Result#score(instance)
   - Google::Cloud::Vision::V1::ProductSearchResults::Result#score=(instance)
-  - Google::Cloud::Vision::V1::ProductSearchResults::Result#image(instance)
-  - Google::Cloud::Vision::V1::ProductSearchResults::Result#image=(instance)
   fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result
   langs:
   - ruby
@@ -23,82 +23,6 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
-- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#product(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#product
-  name: "#product"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#product"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def product => ::Google::Cloud::Vision::V1::Product"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Product\">::Google::Cloud::Vision::V1::Product</a>) — The Product."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#product=(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#product=
-  name: "#product="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#product="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def product=(value) => ::Google::Cloud::Vision::V1::Product"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Product\">::Google::Cloud::Vision::V1::Product</a>) — The Product."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#score(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#score
-  name: "#score"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#score"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def score => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — A confidence level on the match, ranging from 0 (no confidence) to\n1 (full confidence)."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#score=(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#score=
-  name: "#score="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#score="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def score=(value) => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — A confidence level on the match, ranging from 0 (no confidence) to\n1 (full confidence)."
-    raises: []
 - uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#image(instance)
   fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#image
   name: "#image"
@@ -111,7 +35,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def image => ::String"
+    content: "def image() -> ::String"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -130,11 +55,95 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def image=(value) => ::String"
-    arguments: []
+    content: "def image=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The resource name of the image from the product that is the closest match\nto the query."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::String) — The resource name of the image from the product that is the closest match\nto the query."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#product(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#product
+  name: "#product"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#product"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def product() -> ::Google::Cloud::Vision::V1::Product"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Product\">::Google::Cloud::Vision::V1::Product</a>) — The Product."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#product=(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#product=
+  name: "#product="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#product="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def product=(value) -> ::Google::Cloud::Vision::V1::Product"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-Product\">::Google::Cloud::Vision::V1::Product</a>) — The Product."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Product\">::Google::Cloud::Vision::V1::Product</a>) — The Product."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#score(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#score
+  name: "#score"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#score"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def score() -> ::Float"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — A confidence level on the match, ranging from 0 (no confidence) to\n1 (full confidence)."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchResults::Result#score=(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchResults::Result#score=
+  name: "#score="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#score="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def score=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — A confidence level on the match, ranging from 0 (no confidence) to\n1 (full confidence)."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — A confidence level on the match, ranging from 0 (no confidence) to\n1 (full confidence)."
     raises: []
 references: []

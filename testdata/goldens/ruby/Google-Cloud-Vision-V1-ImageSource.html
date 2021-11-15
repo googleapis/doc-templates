@@ -42,90 +42,130 @@
   </h2>
   <h3 id="Google__Cloud__Vision__V1__ImageSource_gcs_image_uri_instance_" data-uid="Google::Cloud::Vision::V1::ImageSource#gcs_image_uri(instance)" class="notranslate">#gcs_image_uri</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def gcs_image_uri =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def gcs_image_uri() -&gt; ::String</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — **Use <code>image_uri</code> instead.**
+        (::String) — <strong>Use <code>image_uri</code> instead.</strong><p>
 
-The Google Cloud Storage  URI of the form
+<p>The Google Cloud Storage  URI of the form
 <code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
-[Google Cloud Storage Request
-URIs](https://cloud.google.com/storage/docs/reference-uris) for more info.
+<a href="https://cloud.google.com/storage/docs/reference-uris">Google Cloud Storage Request
+URIs</a> for more info.
       </li>
     </ul>
   </div>
   <h3 id="Google__Cloud__Vision__V1__ImageSource_gcs_image_uri__instance_" data-uid="Google::Cloud::Vision::V1::ImageSource#gcs_image_uri=(instance)" class="notranslate">#gcs_image_uri=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def gcs_image_uri=(value) =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def gcs_image_uri=(value) -&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::String) — <strong>Use <code>image_uri</code> instead.</strong><p>
+
+<p>The Google Cloud Storage  URI of the form
+<code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
+<a href="https://cloud.google.com/storage/docs/reference-uris">Google Cloud Storage Request
+URIs</a> for more info.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — **Use <code>image_uri</code> instead.**
+        (::String) — <strong>Use <code>image_uri</code> instead.</strong><p>
 
-The Google Cloud Storage  URI of the form
+<p>The Google Cloud Storage  URI of the form
 <code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
-[Google Cloud Storage Request
-URIs](https://cloud.google.com/storage/docs/reference-uris) for more info.
+<a href="https://cloud.google.com/storage/docs/reference-uris">Google Cloud Storage Request
+URIs</a> for more info.
       </li>
     </ul>
   </div>
   <h3 id="Google__Cloud__Vision__V1__ImageSource_image_uri_instance_" data-uid="Google::Cloud::Vision::V1::ImageSource#image_uri(instance)" class="notranslate">#image_uri</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def image_uri =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def image_uri() -&gt; ::String</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The URI of the source image. Can be either:
+        (::String) — The URI of the source image. Can be either:<p>
 
-1. A Google Cloud Storage URI of the form
-   <code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
-   [Google Cloud Storage Request
-   URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   info.
+<ol>
+<li><p>A Google Cloud Storage URI of the form
+<code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
+<a href="https://cloud.google.com/storage/docs/reference-uris">Google Cloud Storage Request
+URIs</a> for more
+info.</p></li>
+<li><p>A publicly-accessible image HTTP/HTTPS URL. When fetching images from
+HTTP/HTTPS URLs, Google cannot guarantee that the request will be
+completed. Your request may fail if the specified host denies the
+request (e.g. due to request throttling or DOS prevention), or if Google
+throttles requests to the site for abuse prevention. You should not
+depend on externally-hosted images for production applications.</p></li>
+</ol>
 
-2. A publicly-accessible image HTTP/HTTPS URL. When fetching images from
-   HTTP/HTTPS URLs, Google cannot guarantee that the request will be
-   completed. Your request may fail if the specified host denies the
-   request (e.g. due to request throttling or DOS prevention), or if Google
-   throttles requests to the site for abuse prevention. You should not
-   depend on externally-hosted images for production applications.
-
-When both <code>gcs_image_uri</code> and <code>image_uri</code> are specified, <code>image_uri</code> takes
+<p>When both <code>gcs_image_uri</code> and <code>image_uri</code> are specified, <code>image_uri</code> takes
 precedence.
       </li>
     </ul>
   </div>
   <h3 id="Google__Cloud__Vision__V1__ImageSource_image_uri__instance_" data-uid="Google::Cloud::Vision::V1::ImageSource#image_uri=(instance)" class="notranslate">#image_uri=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def image_uri=(value) =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def image_uri=(value) -&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::String) — The URI of the source image. Can be either:<p>
+
+<ol>
+<li><p>A Google Cloud Storage URI of the form
+<code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
+<a href="https://cloud.google.com/storage/docs/reference-uris">Google Cloud Storage Request
+URIs</a> for more
+info.</p></li>
+<li><p>A publicly-accessible image HTTP/HTTPS URL. When fetching images from
+HTTP/HTTPS URLs, Google cannot guarantee that the request will be
+completed. Your request may fail if the specified host denies the
+request (e.g. due to request throttling or DOS prevention), or if Google
+throttles requests to the site for abuse prevention. You should not
+depend on externally-hosted images for production applications.</p></li>
+</ol>
+
+<p>When both <code>gcs_image_uri</code> and <code>image_uri</code> are specified, <code>image_uri</code> takes
+precedence.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The URI of the source image. Can be either:
+        (::String) — The URI of the source image. Can be either:<p>
 
-1. A Google Cloud Storage URI of the form
-   <code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
-   [Google Cloud Storage Request
-   URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   info.
+<ol>
+<li><p>A Google Cloud Storage URI of the form
+<code>gs://bucket_name/object_name</code>. Object versioning is not supported. See
+<a href="https://cloud.google.com/storage/docs/reference-uris">Google Cloud Storage Request
+URIs</a> for more
+info.</p></li>
+<li><p>A publicly-accessible image HTTP/HTTPS URL. When fetching images from
+HTTP/HTTPS URLs, Google cannot guarantee that the request will be
+completed. Your request may fail if the specified host denies the
+request (e.g. due to request throttling or DOS prevention), or if Google
+throttles requests to the site for abuse prevention. You should not
+depend on externally-hosted images for production applications.</p></li>
+</ol>
 
-2. A publicly-accessible image HTTP/HTTPS URL. When fetching images from
-   HTTP/HTTPS URLs, Google cannot guarantee that the request will be
-   completed. Your request may fail if the specified host denies the
-   request (e.g. due to request throttling or DOS prevention), or if Google
-   throttles requests to the site for abuse prevention. You should not
-   depend on externally-hosted images for production applications.
-
-When both <code>gcs_image_uri</code> and <code>image_uri</code> are specified, <code>image_uri</code> takes
+<p>When both <code>gcs_image_uri</code> and <code>image_uri</code> are specified, <code>image_uri</code> takes
 precedence.
       </li>
     </ul>

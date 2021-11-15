@@ -2,16 +2,16 @@
 items:
 - uid: Google::Cloud::Vision::V1::WebDetection::WebPage
   children: 
-  - Google::Cloud::Vision::V1::WebDetection::WebPage#url(instance)
-  - Google::Cloud::Vision::V1::WebDetection::WebPage#url=(instance)
-  - Google::Cloud::Vision::V1::WebDetection::WebPage#score(instance)
-  - Google::Cloud::Vision::V1::WebDetection::WebPage#score=(instance)
-  - Google::Cloud::Vision::V1::WebDetection::WebPage#page_title(instance)
-  - Google::Cloud::Vision::V1::WebDetection::WebPage#page_title=(instance)
   - Google::Cloud::Vision::V1::WebDetection::WebPage#full_matching_images(instance)
   - Google::Cloud::Vision::V1::WebDetection::WebPage#full_matching_images=(instance)
+  - Google::Cloud::Vision::V1::WebDetection::WebPage#page_title(instance)
+  - Google::Cloud::Vision::V1::WebDetection::WebPage#page_title=(instance)
   - Google::Cloud::Vision::V1::WebDetection::WebPage#partial_matching_images(instance)
   - Google::Cloud::Vision::V1::WebDetection::WebPage#partial_matching_images=(instance)
+  - Google::Cloud::Vision::V1::WebDetection::WebPage#score(instance)
+  - Google::Cloud::Vision::V1::WebDetection::WebPage#score=(instance)
+  - Google::Cloud::Vision::V1::WebDetection::WebPage#url(instance)
+  - Google::Cloud::Vision::V1::WebDetection::WebPage#url=(instance)
   fullName: Google::Cloud::Vision::V1::WebDetection::WebPage
   langs:
   - ruby
@@ -27,120 +27,6 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
-- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#url(instance)
-  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#url
-  name: "#url"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#url"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def url => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The result web page URL."
-    raises: []
-- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#url=(instance)
-  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#url=
-  name: "#url="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#url="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def url=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The result web page URL."
-    raises: []
-- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#score(instance)
-  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#score
-  name: "#score"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#score"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def score => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — (Deprecated) Overall relevancy score for the web page."
-    raises: []
-- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#score=(instance)
-  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#score=
-  name: "#score="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#score="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def score=(value) => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — (Deprecated) Overall relevancy score for the web page."
-    raises: []
-- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title(instance)
-  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title
-  name: "#page_title"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#page_title"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def page_title => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — Title for the web page, may contain HTML markups."
-    raises: []
-- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title=(instance)
-  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title=
-  name: "#page_title="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#page_title="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def page_title=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — Title for the web page, may contain HTML markups."
-    raises: []
 - uid: Google::Cloud::Vision::V1::WebDetection::WebPage#full_matching_images(instance)
   fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#full_matching_images
   name: "#full_matching_images"
@@ -153,7 +39,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def full_matching_images => ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
+    content: "def full_matching_images() -> ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -172,12 +59,55 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def full_matching_images=(value) => ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
-    arguments: []
+    content: "def full_matching_images=(value) -> ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;<a href=\"./Google-Cloud-Vision-V1-WebDetection-WebImage\">::Google::Cloud::Vision::V1::WebDetection::WebImage</a>&gt;) — Fully matching images on the page.\nCan include resized copies of the query image."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-WebDetection-WebImage\">::Google::Cloud::Vision::V1::WebDetection::WebImage</a>&gt;) — Fully matching images on the page.\nCan include resized copies of the query image."
+    raises: []
+- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title(instance)
+  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title
+  name: "#page_title"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#page_title"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def page_title() -> ::String"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — Title for the web page, may contain HTML markups."
+    raises: []
+- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title=(instance)
+  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#page_title=
+  name: "#page_title="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#page_title="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def page_title=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — Title for the web page, may contain HTML markups."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — Title for the web page, may contain HTML markups."
     raises: []
 - uid: Google::Cloud::Vision::V1::WebDetection::WebPage#partial_matching_images(instance)
   fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#partial_matching_images
@@ -191,7 +121,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def partial_matching_images => ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
+    content: "def partial_matching_images() -> ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -210,11 +141,95 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def partial_matching_images=(value) => ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
-    arguments: []
+    content: "def partial_matching_images=(value) -> ::Array<::Google::Cloud::Vision::V1::WebDetection::WebImage>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;<a href=\"./Google-Cloud-Vision-V1-WebDetection-WebImage\">::Google::Cloud::Vision::V1::WebDetection::WebImage</a>&gt;) — Partial matching images on the page.\nThose images are similar enough to share some key-point features. For\nexample an original image will likely have partial matching for its\ncrops."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Array&lt;<a href=\"./Google-Cloud-Vision-V1-WebDetection-WebImage\">::Google::Cloud::Vision::V1::WebDetection::WebImage</a>&gt;) — Partial matching images on the page.\nThose images are similar enough to share some key-point features. For\nexample an original image will likely have partial matching for its\ncrops."
+    raises: []
+- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#score(instance)
+  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#score
+  name: "#score"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#score"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def score() -> ::Float"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — (Deprecated) Overall relevancy score for the web page."
+    raises: []
+- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#score=(instance)
+  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#score=
+  name: "#score="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#score="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def score=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — (Deprecated) Overall relevancy score for the web page."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — (Deprecated) Overall relevancy score for the web page."
+    raises: []
+- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#url(instance)
+  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#url
+  name: "#url"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#url"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def url() -> ::String"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The result web page URL."
+    raises: []
+- uid: Google::Cloud::Vision::V1::WebDetection::WebPage#url=(instance)
+  fullName: Google::Cloud::Vision::V1::WebDetection::WebPage#url=
+  name: "#url="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#url="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def url=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The result web page URL."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The result web page URL."
     raises: []
 references: []

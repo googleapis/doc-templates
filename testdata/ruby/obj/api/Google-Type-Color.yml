@@ -2,20 +2,20 @@
 items:
 - uid: Google::Type::Color
   children: 
-  - Google::Type::Color#red(instance)
-  - Google::Type::Color#red=(instance)
-  - Google::Type::Color#green(instance)
-  - Google::Type::Color#green=(instance)
-  - Google::Type::Color#blue(instance)
-  - Google::Type::Color#blue=(instance)
   - Google::Type::Color#alpha(instance)
   - Google::Type::Color#alpha=(instance)
+  - Google::Type::Color#blue(instance)
+  - Google::Type::Color#blue=(instance)
+  - Google::Type::Color#green(instance)
+  - Google::Type::Color#green=(instance)
+  - Google::Type::Color#red(instance)
+  - Google::Type::Color#red=(instance)
   fullName: Google::Type::Color
   langs:
   - ruby
   module: google-cloud-vision-v1
   id: Color
-  summary: "Represents a color in the RGBA color space. This representation is designed\nfor simplicity of conversion to/from color representations in various\nlanguages over compactness. For example, the fields of this representation\ncan be trivially provided to the constructor of <code>java.awt.Color</code> in Java; it\ncan also be trivially provided to UIColor's <code>+colorWithRed:green:blue:alpha</code>\nmethod in iOS; and, with just a little work, it can be easily formatted into\na CSS <code>rgba()</code> string in JavaScript.\n\nThis reference page doesn't carry information about the absolute color\nspace\nthat should be used to interpret the RGB value (e.g. sRGB, Adobe RGB,\nDCI-P3, BT.2020, etc.). By default, applications should assume the sRGB color\nspace.\n\nWhen color equality needs to be decided, implementations, unless\ndocumented otherwise, treat two colors as equal if all their red,\ngreen, blue, and alpha values each differ by at most 1e-5.\n\nExample (Java):\n\n<pre class=\"prettyprint lang-rb\"> import com.google.type.Color;\n\n // ...\n public static java.awt.Color fromProto(Color protocolor) {\n   float alpha = protocolor.hasAlpha()\n       ? protocolor.getAlpha().getValue()\n       : 1.0;\n\n   return new java.awt.Color(\n       protocolor.getRed(),\n       protocolor.getGreen(),\n       protocolor.getBlue(),\n       alpha);\n }\n\n public static Color toProto(java.awt.Color color) {\n   float red = (float) color.getRed();\n   float green = (float) color.getGreen();\n   float blue = (float) color.getBlue();\n   float denominator = 255.0;\n   Color.Builder resultBuilder =\n       Color\n           .newBuilder()\n           .setRed(red / denominator)\n           .setGreen(green / denominator)\n           .setBlue(blue / denominator);\n   int alpha = color.getAlpha();\n   if (alpha != 255) {\n     result.setAlpha(\n         FloatValue\n             .newBuilder()\n             .setValue(((float) alpha) / denominator)\n             .build());\n   }\n   return resultBuilder.build();\n }\n // ...</pre>\n\nExample (iOS / Obj-C):\n\n<pre class=\"prettyprint lang-rb\"> // ...\n static UIColor* fromProto(Color* protocolor) {\n    float red = [protocolor red];\n    float green = [protocolor green];\n    float blue = [protocolor blue];\n    FloatValue* alpha_wrapper = [protocolor alpha];\n    float alpha = 1.0;\n    if (alpha_wrapper != nil) {\n      alpha = [alpha_wrapper value];\n    }\n    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];\n }\n\n static Color* toProto(UIColor* color) {\n     CGFloat red, green, blue, alpha;\n     if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) {\n       return nil;\n     }\n     Color* result = [[Color alloc] init];\n     [result setRed:red];\n     [result setGreen:green];\n     [result setBlue:blue];\n     if (alpha <= 0.9999) {\n       [result setAlpha:floatWrapperWithValue(alpha)];\n     }\n     [result autorelease];\n     return result;\n}\n// ...\n\n Example (JavaScript):\n\n// ...\n\nvar protoToCssColor = function(rgb_color) {\n   var redFrac = rgb_color.red || 0.0;\n   var greenFrac = rgb_color.green || 0.0;\n   var blueFrac = rgb_color.blue || 0.0;\n   var red = Math.floor(redFrac * 255);\n   var green = Math.floor(greenFrac * 255);\n   var blue = Math.floor(blueFrac * 255);\n\n   if (!('alpha' in rgb_color)) {\n      return rgbToCssColor(red, green, blue);\n   }\n\n   var alphaFrac = rgb_color.alpha.value || 0.0;\n   var rgbParams = [red, green, blue].join(',');\n   return ['rgba(', rgbParams, ',', alphaFrac, ')'].join('');\n};\n\nvar rgbToCssColor = function(red, green, blue) {\n  var rgbNumber = new Number((red << 16) | (green << 8) | blue);\n  var hexString = rgbNumber.toString(16);\n  var missingZeros = 6 - hexString.length;\n  var resultBuilder = ['#'];\n  for (var i = 0; i < missingZeros; i++) {\n     resultBuilder.push('0');\n  }\n  resultBuilder.push(hexString);\n  return resultBuilder.join('');\n};\n\n// ...</pre>"
+  summary: "<p>Represents a color in the RGBA color space. This representation is designed\nfor simplicity of conversion to/from color representations in various\nlanguages over compactness. For example, the fields of this representation\ncan be trivially provided to the constructor of <code>java.awt.Color</code> in Java; it\ncan also be trivially provided to UIColor&#39;s <code>+colorWithRed:green:blue:alpha</code>\nmethod in iOS; and, with just a little work, it can be easily formatted into\na CSS <code>rgba()</code> string in JavaScript.</p>\n\n<p>This reference page doesn&#39;t carry information about the absolute color\nspace\nthat should be used to interpret the RGB value (e.g. sRGB, Adobe RGB,\nDCI-P3, BT.2020, etc.). By default, applications should assume the sRGB color\nspace.</p>\n\n<p>When color equality needs to be decided, implementations, unless\ndocumented otherwise, treat two colors as equal if all their red,\ngreen, blue, and alpha values each differ by at most 1e-5.</p>\n\n<p>Example (Java):</p>\n\n<pre><code> import com.google.type.Color;\n\n // ...\n public static java.awt.Color fromProto(Color protocolor) {\n   float alpha = protocolor.hasAlpha()\n       ? protocolor.getAlpha().getValue()\n       : 1.0;\n\n   return new java.awt.Color(\n       protocolor.getRed(),\n       protocolor.getGreen(),\n       protocolor.getBlue(),\n       alpha);\n }\n\n public static Color toProto(java.awt.Color color) {\n   float red = (float) color.getRed();\n   float green = (float) color.getGreen();\n   float blue = (float) color.getBlue();\n   float denominator = 255.0;\n   Color.Builder resultBuilder =\n       Color\n           .newBuilder()\n           .setRed(red / denominator)\n           .setGreen(green / denominator)\n           .setBlue(blue / denominator);\n   int alpha = color.getAlpha();\n   if (alpha != 255) {\n     result.setAlpha(\n         FloatValue\n             .newBuilder()\n             .setValue(((float) alpha) / denominator)\n             .build());\n   }\n   return resultBuilder.build();\n }\n // ...\n</code></pre>\n\n<p>Example (iOS / Obj-C):</p>\n\n<pre><code> // ...\n static UIColor* fromProto(Color* protocolor) {\n    float red = [protocolor red];\n    float green = [protocolor green];\n    float blue = [protocolor blue];\n    FloatValue* alpha_wrapper = [protocolor alpha];\n    float alpha = 1.0;\n    if (alpha_wrapper != nil) {\n      alpha = [alpha_wrapper value];\n    }\n    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];\n }\n\n static Color* toProto(UIColor* color) {\n     CGFloat red, green, blue, alpha;\n     if (![color getRed:&amp;red green:&amp;green blue:&amp;blue alpha:&amp;alpha]) {\n       return nil;\n     }\n     Color* result = [[Color alloc] init];\n     [result setRed:red];\n     [result setGreen:green];\n     [result setBlue:blue];\n     if (alpha &lt;= 0.9999) {\n       [result setAlpha:floatWrapperWithValue(alpha)];\n     }\n     [result autorelease];\n     return result;\n}\n// ...\n</code></pre>\n\n<p>Example (JavaScript):</p>\n\n<pre><code>// ...\n\nvar protoToCssColor = function(rgb_color) {\n   var redFrac = rgb_color.red || 0.0;\n   var greenFrac = rgb_color.green || 0.0;\n   var blueFrac = rgb_color.blue || 0.0;\n   var red = Math.floor(redFrac * 255);\n   var green = Math.floor(greenFrac * 255);\n   var blue = Math.floor(blueFrac * 255);\n\n   if (!(&#39;alpha&#39; in rgb_color)) {\n      return rgbToCssColor(red, green, blue);\n   }\n\n   var alphaFrac = rgb_color.alpha.value || 0.0;\n   var rgbParams = [red, green, blue].join(&#39;,&#39;);\n   return [&#39;rgba(&#39;, rgbParams, &#39;,&#39;, alphaFrac, &#39;)&#39;].join(&#39;&#39;);\n};\n\nvar rgbToCssColor = function(red, green, blue) {\n  var rgbNumber = new Number((red &lt;&lt; 16) | (green &lt;&lt; 8) | blue);\n  var hexString = rgbNumber.toString(16);\n  var missingZeros = 6 - hexString.length;\n  var resultBuilder = [&#39;#&#39;];\n  for (var i = 0; i &lt; missingZeros; i++) {\n     resultBuilder.push(&#39;0&#39;);\n  }\n  resultBuilder.push(hexString);\n  return resultBuilder.join(&#39;&#39;);\n};\n\n// ...\n</code></pre>"
   type: "class"
   name: Google::Type::Color
   example: []
@@ -25,81 +25,46 @@ items:
   - "Google::Protobuf::MessageExts::ClassMethods"
   includes:
   - "Google::Protobuf::MessageExts"
-- uid: Google::Type::Color#red(instance)
-  fullName: Google::Type::Color#red
-  name: "#red"
+- uid: Google::Type::Color#alpha(instance)
+  fullName: Google::Type::Color#alpha
+  name: "#alpha"
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#red"
+  id: "#alpha"
   summary: ""
   type: method
   example: []
   syntax:
     description: ""
-    content: "def red => ::Float"
+    content: "def alpha() -> ::Google::Protobuf::FloatValue"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::Float) — The amount of red in the color as a value in the interval [0, 1]."
+    - description: "(<a href=\"./Google-Protobuf-FloatValue\">::Google::Protobuf::FloatValue</a>) — The fraction of this color that should be applied to the pixel. That is,\nthe final pixel color is defined by the equation:</p>\n\n<p><code>pixel color = alpha * (this color) + (1.0 - alpha) * (background color)</code></p>\n\n<p>This means that a value of 1.0 corresponds to a solid color, whereas\na value of 0.0 corresponds to a completely transparent color. This\nuses a wrapper message rather than a simple float scalar so that it is\npossible to distinguish between a default value and the value being unset.\nIf omitted, this color object is rendered as a solid color\n(as if the alpha value had been explicitly given a value of 1.0)."
     raises: []
-- uid: Google::Type::Color#red=(instance)
-  fullName: Google::Type::Color#red=
-  name: "#red="
+- uid: Google::Type::Color#alpha=(instance)
+  fullName: Google::Type::Color#alpha=
+  name: "#alpha="
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#red="
+  id: "#alpha="
   summary: ""
   type: method
   example: []
   syntax:
     description: ""
-    content: "def red=(value) => ::Float"
-    arguments: []
+    content: "def alpha=(value) -> ::Google::Protobuf::FloatValue"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Protobuf-FloatValue\">::Google::Protobuf::FloatValue</a>) — The fraction of this color that should be applied to the pixel. That is,\nthe final pixel color is defined by the equation:</p>\n\n<p><code>pixel color = alpha * (this color) + (1.0 - alpha) * (background color)</code></p>\n\n<p>This means that a value of 1.0 corresponds to a solid color, whereas\na value of 0.0 corresponds to a completely transparent color. This\nuses a wrapper message rather than a simple float scalar so that it is\npossible to distinguish between a default value and the value being unset.\nIf omitted, this color object is rendered as a solid color\n(as if the alpha value had been explicitly given a value of 1.0)."
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::Float) — The amount of red in the color as a value in the interval [0, 1]."
-    raises: []
-- uid: Google::Type::Color#green(instance)
-  fullName: Google::Type::Color#green
-  name: "#green"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#green"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def green => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — The amount of green in the color as a value in the interval [0, 1]."
-    raises: []
-- uid: Google::Type::Color#green=(instance)
-  fullName: Google::Type::Color#green=
-  name: "#green="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#green="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def green=(value) => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — The amount of green in the color as a value in the interval [0, 1]."
+    - description: "(<a href=\"./Google-Protobuf-FloatValue\">::Google::Protobuf::FloatValue</a>) — The fraction of this color that should be applied to the pixel. That is,\nthe final pixel color is defined by the equation:</p>\n\n<p><code>pixel color = alpha * (this color) + (1.0 - alpha) * (background color)</code></p>\n\n<p>This means that a value of 1.0 corresponds to a solid color, whereas\na value of 0.0 corresponds to a completely transparent color. This\nuses a wrapper message rather than a simple float scalar so that it is\npossible to distinguish between a default value and the value being unset.\nIf omitted, this color object is rendered as a solid color\n(as if the alpha value had been explicitly given a value of 1.0)."
     raises: []
 - uid: Google::Type::Color#blue(instance)
   fullName: Google::Type::Color#blue
@@ -113,7 +78,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def blue => ::Float"
+    content: "def blue() -> ::Float"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -132,49 +98,95 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def blue=(value) => ::Float"
-    arguments: []
+    content: "def blue=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — The amount of blue in the color as a value in the interval [0, 1]."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Float) — The amount of blue in the color as a value in the interval [0, 1]."
     raises: []
-- uid: Google::Type::Color#alpha(instance)
-  fullName: Google::Type::Color#alpha
-  name: "#alpha"
+- uid: Google::Type::Color#green(instance)
+  fullName: Google::Type::Color#green
+  name: "#green"
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#alpha"
+  id: "#green"
   summary: ""
   type: method
   example: []
   syntax:
     description: ""
-    content: "def alpha => ::Google::Protobuf::FloatValue"
+    content: "def green() -> ::Float"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(<a href=\"./Google-Protobuf-FloatValue\">::Google::Protobuf::FloatValue</a>) — The fraction of this color that should be applied to the pixel. That is,\nthe final pixel color is defined by the equation:\n\n  <code>pixel color = alpha &#42; (this color) + (1.0 - alpha) &#42; (background color)</code>\n\nThis means that a value of 1.0 corresponds to a solid color, whereas\na value of 0.0 corresponds to a completely transparent color. This\nuses a wrapper message rather than a simple float scalar so that it is\npossible to distinguish between a default value and the value being unset.\nIf omitted, this color object is rendered as a solid color\n(as if the alpha value had been explicitly given a value of 1.0)."
+    - description: "(::Float) — The amount of green in the color as a value in the interval [0, 1]."
     raises: []
-- uid: Google::Type::Color#alpha=(instance)
-  fullName: Google::Type::Color#alpha=
-  name: "#alpha="
+- uid: Google::Type::Color#green=(instance)
+  fullName: Google::Type::Color#green=
+  name: "#green="
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#alpha="
+  id: "#green="
   summary: ""
   type: method
   example: []
   syntax:
     description: ""
-    content: "def alpha=(value) => ::Google::Protobuf::FloatValue"
+    content: "def green=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — The amount of green in the color as a value in the interval [0, 1]."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — The amount of green in the color as a value in the interval [0, 1]."
+    raises: []
+- uid: Google::Type::Color#red(instance)
+  fullName: Google::Type::Color#red
+  name: "#red"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#red"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def red() -> ::Float"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(<a href=\"./Google-Protobuf-FloatValue\">::Google::Protobuf::FloatValue</a>) — The fraction of this color that should be applied to the pixel. That is,\nthe final pixel color is defined by the equation:\n\n  <code>pixel color = alpha &#42; (this color) + (1.0 - alpha) &#42; (background color)</code>\n\nThis means that a value of 1.0 corresponds to a solid color, whereas\na value of 0.0 corresponds to a completely transparent color. This\nuses a wrapper message rather than a simple float scalar so that it is\npossible to distinguish between a default value and the value being unset.\nIf omitted, this color object is rendered as a solid color\n(as if the alpha value had been explicitly given a value of 1.0)."
+    - description: "(::Float) — The amount of red in the color as a value in the interval [0, 1]."
+    raises: []
+- uid: Google::Type::Color#red=(instance)
+  fullName: Google::Type::Color#red=
+  name: "#red="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#red="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def red=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — The amount of red in the color as a value in the interval [0, 1]."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — The amount of red in the color as a value in the interval [0, 1]."
     raises: []
 references: []

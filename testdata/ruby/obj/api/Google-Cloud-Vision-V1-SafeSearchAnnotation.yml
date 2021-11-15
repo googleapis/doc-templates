@@ -4,26 +4,26 @@ items:
   children: 
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#adult(instance)
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#adult=(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof=(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#medical(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#medical=(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence=(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy=(instance)
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#adult_confidence(instance)
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#adult_confidence=(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence=(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#medical(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#medical=(instance)
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#medical_confidence(instance)
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#medical_confidence=(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence=(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence(instance)
-  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence=(instance)
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#nsfw_confidence(instance)
   - Google::Cloud::Vision::V1::SafeSearchAnnotation#nsfw_confidence=(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy=(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence=(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof=(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence=(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence=(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence(instance)
+  - Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence=(instance)
   fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation
   langs:
   - ruby
@@ -51,7 +51,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def adult => ::Google::Cloud::Vision::V1::Likelihood"
+    content: "def adult() -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -70,164 +71,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def adult=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
+    content: "def adult=(value) -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Represents the adult content likelihood for the image. Adult content may\ncontain elements such as nudity, pornographic images or cartoons, or\nsexual activities."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Represents the adult content likelihood for the image. Adult content may\ncontain elements such as nudity, pornographic images or cartoons, or\nsexual activities."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof
-  name: "#spoof"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#spoof"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def spoof => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Spoof likelihood. The likelihood that an modification\nwas made to the image's canonical version to make it appear\nfunny or offensive."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof=(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof=
-  name: "#spoof="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#spoof="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def spoof=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Spoof likelihood. The likelihood that an modification\nwas made to the image's canonical version to make it appear\nfunny or offensive."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical
-  name: "#medical"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#medical"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def medical => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this is a medical image."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical=(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical=
-  name: "#medical="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#medical="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def medical=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this is a medical image."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence
-  name: "#violence"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#violence"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def violence => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this image contains violent content."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence=(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence=
-  name: "#violence="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#violence="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def violence=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this image contains violent content."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy
-  name: "#racy"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#racy"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def racy => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that the request image contains racy content. Racy content may\ninclude (but is not limited to) skimpy or sheer clothing, strategically\ncovered nudity, lewd or provocative poses, or close-ups of sensitive\nbody areas."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy=(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy=
-  name: "#racy="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#racy="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def racy=(value) => ::Google::Cloud::Vision::V1::Likelihood"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that the request image contains racy content. Racy content may\ninclude (but is not limited to) skimpy or sheer clothing, strategically\ncovered nudity, lewd or provocative poses, or close-ups of sensitive\nbody areas."
     raises: []
 - uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#adult_confidence(instance)
   fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#adult_confidence
@@ -241,7 +92,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def adult_confidence => ::Float"
+    content: "def adult_confidence() -> ::Float"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -260,50 +112,55 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def adult_confidence=(value) => ::Float"
-    arguments: []
+    content: "def adult_confidence=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — Confidence of adult_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Float) — Confidence of adult_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
     raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence
-  name: "#spoof_confidence"
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical
+  name: "#medical"
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#spoof_confidence"
+  id: "#medical"
   summary: ""
   type: method
   example: []
   syntax:
     description: ""
-    content: "def spoof_confidence => ::Float"
+    content: "def medical() -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::Float) — Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this is a medical image."
     raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence=(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence=
-  name: "#spoof_confidence="
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical=(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical=
+  name: "#medical="
   langs:
     - ruby
   module: google-cloud-vision-v1
-  id: "#spoof_confidence="
+  id: "#medical="
   summary: ""
   type: method
   example: []
   syntax:
     description: ""
-    content: "def spoof_confidence=(value) => ::Float"
-    arguments: []
+    content: "def medical=(value) -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this is a medical image."
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::Float) — Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this is a medical image."
     raises: []
 - uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical_confidence(instance)
   fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#medical_confidence
@@ -317,7 +174,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def medical_confidence => ::Float"
+    content: "def medical_confidence() -> ::Float"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -336,88 +194,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def medical_confidence=(value) => ::Float"
-    arguments: []
+    content: "def medical_confidence=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — Confidence of medical_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Float) — Confidence of medical_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence
-  name: "#violence_confidence"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#violence_confidence"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def violence_confidence => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence=(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence=
-  name: "#violence_confidence="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#violence_confidence="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def violence_confidence=(value) => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence
-  name: "#racy_confidence"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#racy_confidence"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def racy_confidence => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very\nconfident."
-    raises: []
-- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence=(instance)
-  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence=
-  name: "#racy_confidence="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#racy_confidence="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def racy_confidence=(value) => ::Float"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Float) — Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very\nconfident."
     raises: []
 - uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#nsfw_confidence(instance)
   fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#nsfw_confidence
@@ -431,7 +215,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def nsfw_confidence => ::Float"
+    content: "def nsfw_confidence() -> ::Float"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -450,11 +235,259 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def nsfw_confidence=(value) => ::Float"
-    arguments: []
+    content: "def nsfw_confidence=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — Confidence of nsfw_score. Range [0, 1]. 0 means not confident, 1 means very\nconfident."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(::Float) — Confidence of nsfw_score. Range [0, 1]. 0 means not confident, 1 means very\nconfident."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy
+  name: "#racy"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#racy"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def racy() -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that the request image contains racy content. Racy content may\ninclude (but is not limited to) skimpy or sheer clothing, strategically\ncovered nudity, lewd or provocative poses, or close-ups of sensitive\nbody areas."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy=(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy=
+  name: "#racy="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#racy="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def racy=(value) -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that the request image contains racy content. Racy content may\ninclude (but is not limited to) skimpy or sheer clothing, strategically\ncovered nudity, lewd or provocative poses, or close-ups of sensitive\nbody areas."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that the request image contains racy content. Racy content may\ninclude (but is not limited to) skimpy or sheer clothing, strategically\ncovered nudity, lewd or provocative poses, or close-ups of sensitive\nbody areas."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence
+  name: "#racy_confidence"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#racy_confidence"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def racy_confidence() -> ::Float"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very\nconfident."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence=(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#racy_confidence=
+  name: "#racy_confidence="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#racy_confidence="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def racy_confidence=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very\nconfident."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Confidence of racy_score. Range [0, 1]. 0 means not confident, 1 means very\nconfident."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof
+  name: "#spoof"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#spoof"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def spoof() -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Spoof likelihood. The likelihood that an modification\nwas made to the image&#39;s canonical version to make it appear\nfunny or offensive."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof=(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof=
+  name: "#spoof="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#spoof="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def spoof=(value) -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Spoof likelihood. The likelihood that an modification\nwas made to the image&#39;s canonical version to make it appear\nfunny or offensive."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Spoof likelihood. The likelihood that an modification\nwas made to the image&#39;s canonical version to make it appear\nfunny or offensive."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence
+  name: "#spoof_confidence"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#spoof_confidence"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def spoof_confidence() -> ::Float"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence=(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#spoof_confidence=
+  name: "#spoof_confidence="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#spoof_confidence="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def spoof_confidence=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Confidence of spoof_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence
+  name: "#violence"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#violence"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def violence() -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this image contains violent content."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence=(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence=
+  name: "#violence="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#violence="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def violence=(value) -> ::Google::Cloud::Vision::V1::Likelihood"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this image contains violent content."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(<a href=\"./Google-Cloud-Vision-V1-Likelihood\">::Google::Cloud::Vision::V1::Likelihood</a>) — Likelihood that this image contains violent content."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence
+  name: "#violence_confidence"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#violence_confidence"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def violence_confidence() -> ::Float"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
+    raises: []
+- uid: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence=(instance)
+  fullName: Google::Cloud::Vision::V1::SafeSearchAnnotation#violence_confidence=
+  name: "#violence_confidence="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#violence_confidence="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def violence_confidence=(value) -> ::Float"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Float) — Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Float) — Confidence of violence_score. Range [0, 1]. 0 means not confident, 1 means\nvery confident."
     raises: []
 references: []

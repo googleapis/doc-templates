@@ -4,12 +4,12 @@ items:
   children: 
   - Google::Cloud::Vision::V1::ProductSearchParams#bounding_poly(instance)
   - Google::Cloud::Vision::V1::ProductSearchParams#bounding_poly=(instance)
-  - Google::Cloud::Vision::V1::ProductSearchParams#product_set(instance)
-  - Google::Cloud::Vision::V1::ProductSearchParams#product_set=(instance)
-  - Google::Cloud::Vision::V1::ProductSearchParams#product_categories(instance)
-  - Google::Cloud::Vision::V1::ProductSearchParams#product_categories=(instance)
   - Google::Cloud::Vision::V1::ProductSearchParams#filter(instance)
   - Google::Cloud::Vision::V1::ProductSearchParams#filter=(instance)
+  - Google::Cloud::Vision::V1::ProductSearchParams#product_categories(instance)
+  - Google::Cloud::Vision::V1::ProductSearchParams#product_categories=(instance)
+  - Google::Cloud::Vision::V1::ProductSearchParams#product_set(instance)
+  - Google::Cloud::Vision::V1::ProductSearchParams#product_set=(instance)
   fullName: Google::Cloud::Vision::V1::ProductSearchParams
   langs:
   - ruby
@@ -37,7 +37,8 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def bounding_poly => ::Google::Cloud::Vision::V1::BoundingPoly"
+    content: "def bounding_poly() -> ::Google::Cloud::Vision::V1::BoundingPoly"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
@@ -56,88 +57,14 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def bounding_poly=(value) => ::Google::Cloud::Vision::V1::BoundingPoly"
-    arguments: []
+    content: "def bounding_poly=(value) -> ::Google::Cloud::Vision::V1::BoundingPoly"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (<a href=\"./Google-Cloud-Vision-V1-BoundingPoly\">::Google::Cloud::Vision::V1::BoundingPoly</a>) — The bounding polygon around the area of interest in the image.\nIf it is not specified, system discretion will be applied."
     yields: []
     yieldparams: []
     returnValues:
     - description: "(<a href=\"./Google-Cloud-Vision-V1-BoundingPoly\">::Google::Cloud::Vision::V1::BoundingPoly</a>) — The bounding polygon around the area of interest in the image.\nIf it is not specified, system discretion will be applied."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_set(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_set
-  name: "#product_set"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#product_set"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def product_set => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The resource name of a <a href=\"./Google-Cloud-Vision-V1-ProductSet\">ProductSet</a> to be searched for similar images.\n\nFormat is:\n<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_set=(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_set=
-  name: "#product_set="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#product_set="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def product_set=(value) => ::String"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::String) — The resource name of a <a href=\"./Google-Cloud-Vision-V1-ProductSet\">ProductSet</a> to be searched for similar images.\n\nFormat is:\n<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_categories(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_categories
-  name: "#product_categories"
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#product_categories"
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def product_categories => ::Array<::String>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider\nthe first category, and either \"homegoods-v2\", \"apparel-v2\", \"toys-v2\",\n\"packagedgoods-v1\", or \"general-v1\" should be specified. The legacy\ncategories \"homegoods\", \"apparel\", and \"toys\" are still supported but will\nbe deprecated. For new products, please use \"homegoods-v2\", \"apparel-v2\",\nor \"toys-v2\" for better product search accuracy. It is recommended to\nmigrate existing products to these categories as well."
-    raises: []
-- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_categories=(instance)
-  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_categories=
-  name: "#product_categories="
-  langs:
-    - ruby
-  module: google-cloud-vision-v1
-  id: "#product_categories="
-  summary: ""
-  type: method
-  example: []
-  syntax:
-    description: ""
-    content: "def product_categories=(value) => ::Array<::String>"
-    arguments: []
-    yields: []
-    yieldparams: []
-    returnValues:
-    - description: "(::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider\nthe first category, and either \"homegoods-v2\", \"apparel-v2\", \"toys-v2\",\n\"packagedgoods-v1\", or \"general-v1\" should be specified. The legacy\ncategories \"homegoods\", \"apparel\", and \"toys\" are still supported but will\nbe deprecated. For new products, please use \"homegoods-v2\", \"apparel-v2\",\nor \"toys-v2\" for better product search accuracy. It is recommended to\nmigrate existing products to these categories as well."
     raises: []
 - uid: Google::Cloud::Vision::V1::ProductSearchParams#filter(instance)
   fullName: Google::Cloud::Vision::V1::ProductSearchParams#filter
@@ -151,12 +78,13 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def filter => ::String"
+    content: "def filter() -> ::String"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The filtering expression. This can be used to restrict search results based\non Product labels. We currently support an AND of OR of key-value\nexpressions, where each expression within an OR must have the same key. An\n'=' should be used to connect the key and value.\n\nFor example, \"(color = red OR color = blue) AND brand = Google\" is\nacceptable, but \"(color = red OR brand = Google)\" is not acceptable.\n\"color: red\" is not acceptable because it uses a ':' instead of an '='."
+    - description: "(::String) — The filtering expression. This can be used to restrict search results based\non Product labels. We currently support an AND of OR of key-value\nexpressions, where each expression within an OR must have the same key. An\n&#39;=&#39; should be used to connect the key and value.</p>\n\n<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is\nacceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.\n&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;."
     raises: []
 - uid: Google::Cloud::Vision::V1::ProductSearchParams#filter=(instance)
   fullName: Google::Cloud::Vision::V1::ProductSearchParams#filter=
@@ -170,11 +98,95 @@ items:
   example: []
   syntax:
     description: ""
-    content: "def filter=(value) => ::String"
+    content: "def filter=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The filtering expression. This can be used to restrict search results based\non Product labels. We currently support an AND of OR of key-value\nexpressions, where each expression within an OR must have the same key. An\n&#39;=&#39; should be used to connect the key and value.</p>\n\n<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is\nacceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.\n&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The filtering expression. This can be used to restrict search results based\non Product labels. We currently support an AND of OR of key-value\nexpressions, where each expression within an OR must have the same key. An\n&#39;=&#39; should be used to connect the key and value.</p>\n\n<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is\nacceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.\n&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_categories(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_categories
+  name: "#product_categories"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#product_categories"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def product_categories() -> ::Array<::String>"
+    aliases: []
     arguments: []
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::String) — The filtering expression. This can be used to restrict search results based\non Product labels. We currently support an AND of OR of key-value\nexpressions, where each expression within an OR must have the same key. An\n'=' should be used to connect the key and value.\n\nFor example, \"(color = red OR color = blue) AND brand = Google\" is\nacceptable, but \"(color = red OR brand = Google)\" is not acceptable.\n\"color: red\" is not acceptable because it uses a ':' instead of an '='."
+    - description: "(::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider\nthe first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,\n&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy\ncategories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will\nbe deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,\nor &quot;toys-v2&quot; for better product search accuracy. It is recommended to\nmigrate existing products to these categories as well."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_categories=(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_categories=
+  name: "#product_categories="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#product_categories="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def product_categories=(value) -> ::Array<::String>"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider\nthe first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,\n&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy\ncategories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will\nbe deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,\nor &quot;toys-v2&quot; for better product search accuracy. It is recommended to\nmigrate existing products to these categories as well."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::Array&lt;::String&gt;) — The list of product categories to search in. Currently, we only consider\nthe first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,\n&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy\ncategories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will\nbe deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,\nor &quot;toys-v2&quot; for better product search accuracy. It is recommended to\nmigrate existing products to these categories as well."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_set(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_set
+  name: "#product_set"
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#product_set"
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def product_set() -> ::String"
+    aliases: []
+    arguments: []
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The resource name of a <span class='object_link'><a href=\"Google-Cloud-Vision-V1-ProductSet\" title=\"Google::Cloud::Vision::V1::ProductSet (class)\">ProductSet</a></span> to be searched for similar images.</p>\n\n<p>Format is:\n<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>."
+    raises: []
+- uid: Google::Cloud::Vision::V1::ProductSearchParams#product_set=(instance)
+  fullName: Google::Cloud::Vision::V1::ProductSearchParams#product_set=
+  name: "#product_set="
+  langs:
+    - ruby
+  module: google-cloud-vision-v1
+  id: "#product_set="
+  summary: ""
+  type: method
+  example: []
+  syntax:
+    description: ""
+    content: "def product_set=(value) -> ::String"
+    aliases: []
+    arguments:
+    - description: "<strong>value</strong> (::String) — The resource name of a <span class='object_link'><a href=\"Google-Cloud-Vision-V1-ProductSet\" title=\"Google::Cloud::Vision::V1::ProductSet (class)\">ProductSet</a></span> to be searched for similar images.</p>\n\n<p>Format is:\n<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>."
+    yields: []
+    yieldparams: []
+    returnValues:
+    - description: "(::String) — The resource name of a <span class='object_link'><a href=\"Google-Cloud-Vision-V1-ProductSet\" title=\"Google::Cloud::Vision::V1::ProductSet (class)\">ProductSet</a></span> to be searched for similar images.</p>\n\n<p>Format is:\n<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>."
     raises: []
 references: []

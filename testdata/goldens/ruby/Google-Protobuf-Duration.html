@@ -18,40 +18,52 @@ resolution. It is independent of any calendar and concepts like &quot;day&quot;
 or &quot;month&quot;. It is related to Timestamp in that the difference between
 two Timestamp values is a Duration and it can be added or subtracted
 from a Timestamp. Range is approximately +-10,000 years.</p>
-<h2 id="examples">Examples</h2>
+<h2>Examples</h2><p>
 <p>Example 1: Compute Duration from two Timestamps in pseudo code.</p>
-<pre class="prettyprint lang-rb">Timestamp start = ...;
+
+<pre><code>Timestamp start = ...;
 Timestamp end = ...;
 Duration duration = ...;
 
 duration.seconds = end.seconds - start.seconds;
 duration.nanos = end.nanos - start.nanos;
 
-if (duration.seconds < 0="" &&="" duration.nanos=""> 0) {
+if (duration.seconds &lt; 0 &amp;&amp; duration.nanos &gt; 0) {
   duration.seconds += 1;
   duration.nanos -= 1000000000;
-} else if (duration.seconds > 0 && duration.nanos < 0)="" {="" duration.seconds="" -="1;" duration.nanos="" +="1000000000;"></pre>
+} else if (duration.seconds &gt; 0 &amp;&amp; duration.nanos &lt; 0) {
+  duration.seconds -= 1;
+  duration.nanos += 1000000000;
+}
+</code></pre>
 
 <p>Example 2: Compute Timestamp from Timestamp + Duration in pseudo code.</p>
-<pre class="prettyprint lang-rb">Timestamp start = ...;
+
+<pre><code>Timestamp start = ...;
 Duration duration = ...;
 Timestamp end = ...;
 
 end.seconds = start.seconds + duration.seconds;
 end.nanos = start.nanos + duration.nanos;
 
-if (end.nanos < 0)="" {="" end.seconds="" -="1;" end.nanos="" +="1000000000;" }="" else="" if="" (end.nanos="">= 1000000000) {
+if (end.nanos &lt; 0) {
+  end.seconds -= 1;
+  end.nanos += 1000000000;
+} else if (end.nanos &gt;= 1000000000) {
   end.seconds += 1;
   end.nanos -= 1000000000;
-}</pre>
+}
+</code></pre>
 
 <p>Example 3: Compute Duration from datetime.timedelta in Python.</p>
-<pre class="prettyprint lang-rb">td = datetime.timedelta(days=3, minutes=10)
-duration = Duration()
-duration.FromTimedelta(td)</pre>
 
-<h2 id="json-mapping">JSON Mapping</h2>
-<p>In JSON format, the Duration type is encoded as a string rather than an
+<pre><code>td = datetime.timedelta(days=3, minutes=10)
+duration = Duration()
+duration.FromTimedelta(td)
+</code></pre>
+<h2>JSON Mapping</h2>
+
+<p><p>In JSON format, the Duration type is encoded as a string rather than an
 object, where the string ends in the suffix &quot;s&quot; (indicating seconds) and
 is preceded by the number of seconds, with nanoseconds expressed as
 fractional seconds. For example, 3 seconds with 0 nanoseconds should be
@@ -85,37 +97,9 @@ microsecond should be expressed in JSON format as &quot;3.000001s&quot;.</p>
   </div>
   <h2 id="methods">Methods
   </h2>
-  <h3 id="Google__Protobuf__Duration_seconds_instance_" data-uid="Google::Protobuf::Duration#seconds(instance)" class="notranslate">#seconds</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def seconds =&gt; ::Integer</code></pre>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (::Integer) — Signed seconds of the span of time. Must be from -315,576,000,000
-to +315,576,000,000 inclusive. Note: these bounds are computed from:
-60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
-      </li>
-    </ul>
-  </div>
-  <h3 id="Google__Protobuf__Duration_seconds__instance_" data-uid="Google::Protobuf::Duration#seconds=(instance)" class="notranslate">#seconds=</h3>
-  <div class="codewrapper">
-    <pre class="prettyprint"><code>def seconds=(value) =&gt; ::Integer</code></pre>
-  </div>
-  <div class="level1 summary">
-    <strong>Returns</strong>
-    <ul>
-      <li>
-        (::Integer) — Signed seconds of the span of time. Must be from -315,576,000,000
-to +315,576,000,000 inclusive. Note: these bounds are computed from:
-60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
-      </li>
-    </ul>
-  </div>
   <h3 id="Google__Protobuf__Duration_nanos_instance_" data-uid="Google::Protobuf::Duration#nanos(instance)" class="notranslate">#nanos</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def nanos =&gt; ::Integer</code></pre>
+    <pre class="prettyprint"><code>def nanos() -&gt; ::Integer</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -132,7 +116,20 @@ to +999,999,999 inclusive.
   </div>
   <h3 id="Google__Protobuf__Duration_nanos__instance_" data-uid="Google::Protobuf::Duration#nanos=(instance)" class="notranslate">#nanos=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def nanos=(value) =&gt; ::Integer</code></pre>
+    <pre class="prettyprint"><code>def nanos=(value) -&gt; ::Integer</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::Integer) — Signed fractions of a second at nanosecond resolution of the span
+of time. Durations less than one second are represented with a 0
+<code>seconds</code> field and a positive or negative <code>nanos</code> field. For durations
+of one second or more, a non-zero value for the <code>nanos</code> field must be
+of the same sign as the <code>seconds</code> field. Must be from -999,999,999
+to +999,999,999 inclusive.
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
@@ -144,6 +141,44 @@ of time. Durations less than one second are represented with a 0
 of one second or more, a non-zero value for the <code>nanos</code> field must be
 of the same sign as the <code>seconds</code> field. Must be from -999,999,999
 to +999,999,999 inclusive.
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Protobuf__Duration_seconds_instance_" data-uid="Google::Protobuf::Duration#seconds(instance)" class="notranslate">#seconds</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def seconds() -&gt; ::Integer</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::Integer) — Signed seconds of the span of time. Must be from -315,576,000,000
+to +315,576,000,000 inclusive. Note: these bounds are computed from:
+60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
+      </li>
+    </ul>
+  </div>
+  <h3 id="Google__Protobuf__Duration_seconds__instance_" data-uid="Google::Protobuf::Duration#seconds=(instance)" class="notranslate">#seconds=</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>def seconds=(value) -&gt; ::Integer</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::Integer) — Signed seconds of the span of time. Must be from -315,576,000,000
+to +315,576,000,000 inclusive. Note: these bounds are computed from:
+60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
+      </li>
+    </ul>
+  </div>
+  <div class="level1 summary">
+    <strong>Returns</strong>
+    <ul>
+      <li>
+        (::Integer) — Signed seconds of the span of time. Must be from -315,576,000,000
+to +315,576,000,000 inclusive. Note: these bounds are computed from:
+60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
       </li>
     </ul>
   </div>

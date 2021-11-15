@@ -43,144 +43,221 @@ ImportProductSetRequests in each line.</p>
   </h2>
   <h3 id="Google__Cloud__Vision__V1__ImportProductSetsGcsSource_csv_file_uri_instance_" data-uid="Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri(instance)" class="notranslate">#csv_file_uri</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def csv_file_uri =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def csv_file_uri() -&gt; ::String</code></pre>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The Google Cloud Storage URI of the input csv file.
+        (::String) — The Google Cloud Storage URI of the input csv file.<p>
 
-The URI must start with <code>gs://</code>.
+<p>The URI must start with <code>gs://</code>.</p>
 
-The format of the input csv file should be one image per line.
-In each line, there are 8 columns.
+<p>The format of the input csv file should be one image per line.
+In each line, there are 8 columns.</p>
 
-1.  image-uri
-2.  image-id
-3.  product-set-id
-4.  product-id
-5.  product-category
-6.  product-display-name
-7.  labels
-8.  bounding-poly
+<ol>
+<li> image-uri</li>
+<li> image-id</li>
+<li> product-set-id</li>
+<li> product-id</li>
+<li> product-category</li>
+<li> product-display-name</li>
+<li> labels</li>
+<li> bounding-poly</li>
+</ol>
 
-The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
-columns are required. All other columns are optional.
+<p>The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
+columns are required. All other columns are optional.</p>
 
-If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
+<p>If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
 <code>product-id</code> values does not exist, then the system will create a new
 <code>ProductSet</code> or <code>Product</code> for the image. In this case, the
 <code>product-display-name</code> column refers to
-{::Google::Cloud::Vision::V1::Product#display_name display_name}, the
+<span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_display_name_instance_" title="Google::Cloud::Vision::V1::Product#display_name (method)">display&lowbar;name</a></span>, the
 <code>product-category</code> column refers to
-{::Google::Cloud::Vision::V1::Product#product_category product_category}, and the
-<code>labels</code> column refers to {::Google::Cloud::Vision::V1::Product#product_labels product_labels}.
+<span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_product_category_instance_" title="Google::Cloud::Vision::V1::Product#product_category (method)">product&lowbar;category</a></span>, and the
+<code>labels</code> column refers to <span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_product_labels_instance_" title="Google::Cloud::Vision::V1::Product#product_labels (method)">product&lowbar;labels</a></span>.</p>
 
-The <code>image-id</code> column is optional but must be unique if provided. If it is
-empty, the system will automatically assign a unique id to the image.
+<p>The <code>image-id</code> column is optional but must be unique if provided. If it is
+empty, the system will automatically assign a unique id to the image.</p>
 
-The <code>product-display-name</code> column is optional. If it is empty, the system
-sets the {::Google::Cloud::Vision::V1::Product#display_name display_name} field for the product to a
-space (" "). You can update the <code>display_name</code> later by using the API.
+<p>The <code>product-display-name</code> column is optional. If it is empty, the system
+sets the <span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_display_name_instance_" title="Google::Cloud::Vision::V1::Product#display_name (method)">display&lowbar;name</a></span> field for the product to a
+space (&quot; &quot;). You can update the <code>display_name</code> later by using the API.</p>
 
-If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
+<p>If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
 system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code>
-columns.
+columns.</p>
 
-The <code>labels</code> column (optional) is a line containing a list of
-comma-separated key-value pairs, in the following format:
+<p>The <code>labels</code> column (optional) is a line containing a list of
+comma-separated key-value pairs, in the following format:</p>
 
-<pre class="prettyprint lang-rb">"key_1=value_1,key_2=value_2,...,key_n=value_n"</pre>
+<pre><code>&quot;key_1=value_1,key_2=value_2,...,key_n=value_n&quot;
+</code></pre>
 
-The <code>bounding-poly</code> column (optional) identifies one region of
+<p>The <code>bounding-poly</code> column (optional) identifies one region of
 interest from the image in the same manner as <code>CreateReferenceImage</code>. If
 you do not specify the <code>bounding-poly</code> column, then the system will try to
-detect regions of interest automatically.
+detect regions of interest automatically.</p>
 
-At most one <code>bounding-poly</code> column is allowed per line. If the image
+<p>At most one <code>bounding-poly</code> column is allowed per line. If the image
 contains multiple regions of interest, add a line to the CSV file that
 includes the same product information, and the <code>bounding-poly</code> values for
-each region of interest.
+each region of interest.</p>
 
-The <code>bounding-poly</code> column must contain an even number of comma-separated
-numbers, in the format "p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y". Use
+<p>The <code>bounding-poly</code> column must contain an even number of comma-separated
+numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use
 non-negative integers for absolute bounding polygons, and float values
-in [0, 1] for normalized bounding polygons.
+in [0, 1] for normalized bounding polygons.</p>
 
-The system will resize the image if the image resolution is too
+<p>The system will resize the image if the image resolution is too
 large to process (larger than 20MP).
       </li>
     </ul>
   </div>
   <h3 id="Google__Cloud__Vision__V1__ImportProductSetsGcsSource_csv_file_uri__instance_" data-uid="Google::Cloud::Vision::V1::ImportProductSetsGcsSource#csv_file_uri=(instance)" class="notranslate">#csv_file_uri=</h3>
   <div class="codewrapper">
-    <pre class="prettyprint"><code>def csv_file_uri=(value) =&gt; ::String</code></pre>
+    <pre class="prettyprint"><code>def csv_file_uri=(value) -&gt; ::String</code></pre>
+  </div>
+  <div class="level1 summary">
+    <strong>Parameter</strong>
+    <ul>
+      <li>
+        <strong>value</strong> (::String) — The Google Cloud Storage URI of the input csv file.<p>
+
+<p>The URI must start with <code>gs://</code>.</p>
+
+<p>The format of the input csv file should be one image per line.
+In each line, there are 8 columns.</p>
+
+<ol>
+<li> image-uri</li>
+<li> image-id</li>
+<li> product-set-id</li>
+<li> product-id</li>
+<li> product-category</li>
+<li> product-display-name</li>
+<li> labels</li>
+<li> bounding-poly</li>
+</ol>
+
+<p>The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
+columns are required. All other columns are optional.</p>
+
+<p>If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
+<code>product-id</code> values does not exist, then the system will create a new
+<code>ProductSet</code> or <code>Product</code> for the image. In this case, the
+<code>product-display-name</code> column refers to
+<span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_display_name_instance_" title="Google::Cloud::Vision::V1::Product#display_name (method)">display&lowbar;name</a></span>, the
+<code>product-category</code> column refers to
+<span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_product_category_instance_" title="Google::Cloud::Vision::V1::Product#product_category (method)">product&lowbar;category</a></span>, and the
+<code>labels</code> column refers to <span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_product_labels_instance_" title="Google::Cloud::Vision::V1::Product#product_labels (method)">product&lowbar;labels</a></span>.</p>
+
+<p>The <code>image-id</code> column is optional but must be unique if provided. If it is
+empty, the system will automatically assign a unique id to the image.</p>
+
+<p>The <code>product-display-name</code> column is optional. If it is empty, the system
+sets the <span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_display_name_instance_" title="Google::Cloud::Vision::V1::Product#display_name (method)">display&lowbar;name</a></span> field for the product to a
+space (&quot; &quot;). You can update the <code>display_name</code> later by using the API.</p>
+
+<p>If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
+system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code>
+columns.</p>
+
+<p>The <code>labels</code> column (optional) is a line containing a list of
+comma-separated key-value pairs, in the following format:</p>
+
+<pre><code>&quot;key_1=value_1,key_2=value_2,...,key_n=value_n&quot;
+</code></pre>
+
+<p>The <code>bounding-poly</code> column (optional) identifies one region of
+interest from the image in the same manner as <code>CreateReferenceImage</code>. If
+you do not specify the <code>bounding-poly</code> column, then the system will try to
+detect regions of interest automatically.</p>
+
+<p>At most one <code>bounding-poly</code> column is allowed per line. If the image
+contains multiple regions of interest, add a line to the CSV file that
+includes the same product information, and the <code>bounding-poly</code> values for
+each region of interest.</p>
+
+<p>The <code>bounding-poly</code> column must contain an even number of comma-separated
+numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use
+non-negative integers for absolute bounding polygons, and float values
+in [0, 1] for normalized bounding polygons.</p>
+
+<p>The system will resize the image if the image resolution is too
+large to process (larger than 20MP).
+      </li>
+    </ul>
   </div>
   <div class="level1 summary">
     <strong>Returns</strong>
     <ul>
       <li>
-        (::String) — The Google Cloud Storage URI of the input csv file.
+        (::String) — The Google Cloud Storage URI of the input csv file.<p>
 
-The URI must start with <code>gs://</code>.
+<p>The URI must start with <code>gs://</code>.</p>
 
-The format of the input csv file should be one image per line.
-In each line, there are 8 columns.
+<p>The format of the input csv file should be one image per line.
+In each line, there are 8 columns.</p>
 
-1.  image-uri
-2.  image-id
-3.  product-set-id
-4.  product-id
-5.  product-category
-6.  product-display-name
-7.  labels
-8.  bounding-poly
+<ol>
+<li> image-uri</li>
+<li> image-id</li>
+<li> product-set-id</li>
+<li> product-id</li>
+<li> product-category</li>
+<li> product-display-name</li>
+<li> labels</li>
+<li> bounding-poly</li>
+</ol>
 
-The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
-columns are required. All other columns are optional.
+<p>The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
+columns are required. All other columns are optional.</p>
 
-If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
+<p>If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
 <code>product-id</code> values does not exist, then the system will create a new
 <code>ProductSet</code> or <code>Product</code> for the image. In this case, the
 <code>product-display-name</code> column refers to
-{::Google::Cloud::Vision::V1::Product#display_name display_name}, the
+<span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_display_name_instance_" title="Google::Cloud::Vision::V1::Product#display_name (method)">display&lowbar;name</a></span>, the
 <code>product-category</code> column refers to
-{::Google::Cloud::Vision::V1::Product#product_category product_category}, and the
-<code>labels</code> column refers to {::Google::Cloud::Vision::V1::Product#product_labels product_labels}.
+<span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_product_category_instance_" title="Google::Cloud::Vision::V1::Product#product_category (method)">product&lowbar;category</a></span>, and the
+<code>labels</code> column refers to <span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_product_labels_instance_" title="Google::Cloud::Vision::V1::Product#product_labels (method)">product&lowbar;labels</a></span>.</p>
 
-The <code>image-id</code> column is optional but must be unique if provided. If it is
-empty, the system will automatically assign a unique id to the image.
+<p>The <code>image-id</code> column is optional but must be unique if provided. If it is
+empty, the system will automatically assign a unique id to the image.</p>
 
-The <code>product-display-name</code> column is optional. If it is empty, the system
-sets the {::Google::Cloud::Vision::V1::Product#display_name display_name} field for the product to a
-space (" "). You can update the <code>display_name</code> later by using the API.
+<p>The <code>product-display-name</code> column is optional. If it is empty, the system
+sets the <span class='object_link'><a href="Google-Cloud-Vision-V1-Product#Google__Cloud__Vision__V1__Product_display_name_instance_" title="Google::Cloud::Vision::V1::Product#display_name (method)">display&lowbar;name</a></span> field for the product to a
+space (&quot; &quot;). You can update the <code>display_name</code> later by using the API.</p>
 
-If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
+<p>If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
 system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code>
-columns.
+columns.</p>
 
-The <code>labels</code> column (optional) is a line containing a list of
-comma-separated key-value pairs, in the following format:
+<p>The <code>labels</code> column (optional) is a line containing a list of
+comma-separated key-value pairs, in the following format:</p>
 
-<pre class="prettyprint lang-rb">"key_1=value_1,key_2=value_2,...,key_n=value_n"</pre>
+<pre><code>&quot;key_1=value_1,key_2=value_2,...,key_n=value_n&quot;
+</code></pre>
 
-The <code>bounding-poly</code> column (optional) identifies one region of
+<p>The <code>bounding-poly</code> column (optional) identifies one region of
 interest from the image in the same manner as <code>CreateReferenceImage</code>. If
 you do not specify the <code>bounding-poly</code> column, then the system will try to
-detect regions of interest automatically.
+detect regions of interest automatically.</p>
 
-At most one <code>bounding-poly</code> column is allowed per line. If the image
+<p>At most one <code>bounding-poly</code> column is allowed per line. If the image
 contains multiple regions of interest, add a line to the CSV file that
 includes the same product information, and the <code>bounding-poly</code> values for
-each region of interest.
+each region of interest.</p>
 
-The <code>bounding-poly</code> column must contain an even number of comma-separated
-numbers, in the format "p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y". Use
+<p>The <code>bounding-poly</code> column must contain an even number of comma-separated
+numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use
 non-negative integers for absolute bounding polygons, and float values
-in [0, 1] for normalized bounding polygons.
+in [0, 1] for normalized bounding polygons.</p>
 
-The system will resize the image if the image resolution is too
+<p>The system will resize the image if the image resolution is too
 large to process (larger than 20MP).
       </li>
     </ul>
