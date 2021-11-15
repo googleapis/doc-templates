@@ -324,17 +324,6 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
     // Resetting 'type' from added field 'javaType' field here 
     // because docfx cannot process custom types while using ManagedReference.
     // This allows Java to use custom types without rewriting for UniversalReference
-    if (vm.javaType === "exception") {
-      vm.type = "exception";
-    }
-    if (vm.javaType === "annotationtype") {
-      vm.type = "annotationtype";
-    }
-    if (vm.javaType === "package") {
-      vm.type = "package";
-    }
-    if (vm.javaType === "overview") {
-      vm.type = "overview";
-    }
+    vm.type = vm.javaType;
   }
 }
