@@ -26,9 +26,10 @@ exports.transform = function (model) {
         break;
       case 'module':
         if (model.langs && model.langs[0].toLowerCase() === "ruby" &&
-          model.children && model.children.length > 0) {
+            model.children && model.children.length > 0) {
           model.isClass = true;
-          groupChildren(model, classCategory);
+          // Special handling for Ruby modules, which treat methods as embedded
+          groupChildren(model, "rubyModule");
           model[getTypePropertyName(model.type)] = true;
           break;
         }
@@ -344,37 +345,53 @@ function getDefinition(type) {
   return undefined;
 }
 
+var namespaceItems = {
+  "package":      { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
+  "subpackage":   { inSubpackage: true,   typePropertyName: "inSubpackage",   id: "subPackages" },
+  "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
+  "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
+  "module":       { inModule: true,       typePropertyName: "inModule",       id: "modules" },
+  "struct":       { inStruct: true,       typePropertyName: "inStruct",       id: "structs" },
+  "interface":    { inInterface: true,    typePropertyName: "inInterface",    id: "interfaces" },
+  "enum":         { inEnum: true,         typePropertyName: "inEnum",         id: "enums" },
+  "delegate":     { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" },
+  "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts",       isEmbedded: true },
+  "variable":     { inVariable: true,     typePropertyName: "inVariable",     id: "variables",    isEmbedded: true },
+  "property":     { inProperty: true,     typePropertyName: "inProperty",     id: "properties",   isEmbedded: true },
+  "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
+  "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
+  "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods",      isEmbedded: true },
+  "typealias":    { inTypeAlias: true,    typePropertyName: "inTypeAlias",    id: "typealiases",  isEmbedded: true },
+};
+var classItems = {
+  "constructor":  { inConstructor: true,  typePropertyName: "inConstructor",  id: "constructors" },
+  "field":        { inField: true,        typePropertyName: "inField",        id: "fields" },
+  "property":     { inProperty: true,     typePropertyName: "inProperty",     id: "properties" },
+  "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods" },
+  "event":        { inEvent: true,        typePropertyName: "inEvent",        id: "events" },
+  "operator":     { inOperator: true,     typePropertyName: "inOperator",     id: "operators" },
+  "eii":          { inEii: true,          typePropertyName: "inEii",          id: "eii" },
+  "member":       { inMember: true,       typePropertyName: "inMember",       id: "members"},
+  "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions" },
+  "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts", isEmbedded: true }
+};
+var rubyModuleItems = {
+  "constructor":  { inConstructor: true,  typePropertyName: "inConstructor",  id: "constructors" },
+  "field":        { inField: true,        typePropertyName: "inField",        id: "fields" },
+  "property":     { inProperty: true,     typePropertyName: "inProperty",     id: "properties" },
+  "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods", isEmbedded: true },
+  "event":        { inEvent: true,        typePropertyName: "inEvent",        id: "events" },
+  "operator":     { inOperator: true,     typePropertyName: "inOperator",     id: "operators" },
+  "eii":          { inEii: true,          typePropertyName: "inEii",          id: "eii" },
+  "member":       { inMember: true,       typePropertyName: "inMember",       id: "members"},
+  "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions" },
+  "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts", isEmbedded: true }
+};
+
 function getDefinitions(category) {
-  var namespaceItems = {
-    "package":      { inPackage: true,      typePropertyName: "inPackage",      id: "packages" },
-    "subpackage":   { inSubpackage: true,   typePropertyName: "inSubpackage",   id: "subPackages" },
-    "namespace":    { inNamespace: true,    typePropertyName: "inNamespace",    id: "namespaces" },
-    "class":        { inClass: true,        typePropertyName: "inClass",        id: "classes" },
-    "module":       { inModule: true,       typePropertyName: "inModule",       id: "modules" },
-    "struct":       { inStruct: true,       typePropertyName: "inStruct",       id: "structs" },
-    "interface":    { inInterface: true,    typePropertyName: "inInterface",    id: "interfaces" },
-    "enum":         { inEnum: true,         typePropertyName: "inEnum",         id: "enums" },
-    "delegate":     { inDelegate: true,     typePropertyName: "inDelegate",     id: "delegates" },
-    "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts",       isEmbedded: true },
-    "variable":     { inVariable: true,     typePropertyName: "inVariable",     id: "variables",    isEmbedded: true },
-    "property":     { inProperty: true,     typePropertyName: "inProperty",     id: "properties",   isEmbedded: true },
-    "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions",    isEmbedded: true },
-    "type":         { inTypes: true,        typePropertyName: "inTypes",        id: "types",        isEmbedded: true },
-    "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods",      isEmbedded: true },
-    "typealias":    { inTypeAlias: true,    typePropertyName: "inTypeAlias",    id: "typealiases",  isEmbedded: true },
-  };
-  var classItems = {
-    "constructor":  { inConstructor: true,  typePropertyName: "inConstructor",  id: "constructors" },
-    "field":        { inField: true,        typePropertyName: "inField",        id: "fields" },
-    "property":     { inProperty: true,     typePropertyName: "inProperty",     id: "properties" },
-    "method":       { inMethod: true,       typePropertyName: "inMethod",       id: "methods" },
-    "event":        { inEvent: true,        typePropertyName: "inEvent",        id: "events" },
-    "operator":     { inOperator: true,     typePropertyName: "inOperator",     id: "operators" },
-    "eii":          { inEii: true,          typePropertyName: "inEii",          id: "eii" },
-    "member":       { inMember: true,       typePropertyName: "inMember",       id: "members"},
-    "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions" },
-    "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts", isEmbedded: true }
-  };
+  if (category === "rubyModule") {
+    return rubyModuleItems;
+  }
   if (category === 'class' || category === 'type') {
     return classItems;
   }
