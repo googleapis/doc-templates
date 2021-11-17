@@ -375,6 +375,7 @@ var classItems = {
   "function":     { inFunction: true,     typePropertyName: "inFunction",     id: "functions" },
   "const":        { inConst: true,        typePropertyName: "inConst",        id: "consts", isEmbedded: true }
 };
+// Used for Ruby modules. Currently identical to classItems, except isEmbedded is true for methods.
 var rubyModuleItems = {
   "constructor":  { inConstructor: true,  typePropertyName: "inConstructor",  id: "constructors" },
   "field":        { inField: true,        typePropertyName: "inField",        id: "fields" },
