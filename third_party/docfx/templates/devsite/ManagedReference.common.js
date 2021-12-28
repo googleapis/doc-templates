@@ -92,7 +92,7 @@ function groupChildren(model, category) {
       grouped[type] = [];
     }
     // special handle for field
-    if (type === "field" && c.syntax) {
+    if ((type === "field" || type === "static field") && c.syntax) {
       c.syntax.fieldValue = c.syntax.return;
       c.syntax.return = undefined;
     }
@@ -182,6 +182,8 @@ function getDefinitions(category) {
     "overview":       { inOverview: true,     typePropertyName: "inOverview",     id: "overviews" }
   };
   var classItems = {
+    "static field":     { inStaticField: true,      typePropertyName: "inStaticField",      id: "staticFields" },
+    "static method":    { inStaticMethod: true,     typePropertyName: "inStaticMethod",     id: "staticMethods" },
     "constructor":      { inConstructor: true,      typePropertyName: "inConstructor",      id: "constructors" },
     "field":            { inField: true,            typePropertyName: "inField",            id: "fields" },
     "property":         { inProperty: true,         typePropertyName: "inProperty",         id: "properties" },
