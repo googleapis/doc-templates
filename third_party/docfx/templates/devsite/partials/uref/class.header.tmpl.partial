@@ -12,6 +12,40 @@
 {{#conceptual}}
 <div class="markdown level0 conceptual">{{{conceptual}}}</div>
 {{/conceptual}}
+{{#syntax.parameters.0}}
+<h2>{{__global.parameter}}{{#syntax.parameters.1}}s{{/syntax.parameters.1}}</h2>
+<table class="responsive">
+  <tbody>
+    <tr>
+      <td><strong>{{__global.name}}</strong></td>
+      <td><strong>{{__global.description}}</strong></td>
+    </tr>
+{{/syntax.parameters.0}}
+{{#syntax.parameters}}
+    <tr>
+      <td><span class="parametername">{{{id}}}</span></td>
+      <td><code>{{{type.specName.0.value}}}</code><br>{{{description}}}</td>
+    </tr>
+{{/syntax.parameters}}
+{{#syntax.parameters.0}}
+  </tbody>
+</table>
+{{/syntax.parameters.0}}
+{{#syntax.return}}
+<h2>{{__global.returns}}</h2>
+<table class="responsive">
+  <tbody>
+    <tr>
+      <td><strong>{{__global.type}}</strong></td>
+      <td><strong>{{__global.description}}</strong></td>
+    </tr>
+    <tr>
+      <td>{{{type.specName.0.value}}}</td>
+      <td>{{{description}}}</td>
+    </tr>
+  </tbody>
+</table>
+{{/syntax.return}}
 {{#attributes.0}}
 <strong>{{__global.attribute}}{{#attributes.1}}s{{/attributes.1}}</strong>
 <table class="responsive">
