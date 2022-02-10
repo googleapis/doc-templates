@@ -12,12 +12,22 @@
 </h1>
   
   
-  <div class="markdown level0 summary"><p>Estimated stream statistics for a given Stream.
-Attributes:
-    progress (google.cloud.bigquery_storage_v1.types.StreamStats.Progress):
-        Represents the progress of the current
-        stream.</p>
+  <div class="markdown level0 summary"><p>Estimated stream statistics for a given read Stream.</p>
 </div>
+  <strong>Attribute</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">progress</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1.types.StreamStats.Progress.html">google.cloud.bigquery_storage_v1.types.StreamStats.Progress</a></code><br>Represents the progress of the current
+   stream.</td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>
@@ -32,24 +42,6 @@ Attributes:
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>Progress(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Attributes:
-    at_response_start (float):
-        The fraction of rows assigned to the stream that have been
-        processed by the server so far, not including the rows in
-        the current response message.</p>
-<pre><code>    This value, along with ``at_response_end``, can be used to
-    interpolate the progress made as the rows in the message are
-    being processed using the following formula:
-    ``at_response_start + (at_response_end - at_response_start) * rows_processed_from_response / rows_in_response``.
-
-
-    Note that if a filter is provided, the ``at_response_end``
-    value of the previous response may not necessarily be equal
-    to the ``at_response_start`` value of the current response.
-at_response_end (float):
-    Similar to ``at_response_start``, except that this value
-    includes the rows in the current response.
-</code></pre></div>
 </article>
     </div>
     {% endverbatim %}

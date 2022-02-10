@@ -12,25 +12,40 @@
 </h1>
   
   
-  <div class="markdown level0 summary"><p>Request message for <code>CreateReadSession</code>.
-Attributes:
-    parent (str):
-        Required. The request project that owns the session, in the
-        form of <code>projects/{project_id}</code>.
-    read_session (google.cloud.bigquery_storage_v1beta2.types.ReadSession):
-        Required. Session to be created.
-    max_stream_count (int):
-        Max initial number of streams. If unset or
-        zero, the server will provide a value of streams
-        so as to produce reasonable throughput. Must be
-        non-negative. The number of streams may be lower
-        than the requested number, depending on the
-        amount parallelism that is reasonable for the
-        table. Error will be returned if the max count
-        is greater than the current system max limit of
-        1,000.</p>
-<pre><code>    Streams must be read starting from offset 0.
-</code></pre></div>
+  <div class="markdown level0 summary"><p>Request message for <code>CreateReadSession</code>.</p>
+</div>
+  <strong>Attributes</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">parent</span></td>
+        <td><code>str</code><br>Required. The request project that owns the session, in the
+   form of ``projects/{project_id}``.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">read_session</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ReadSession.html">google.cloud.bigquery_storage_v1beta2.types.ReadSession</a></code><br>Required. Session to be created.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">max_stream_count</span></td>
+        <td><code>int</code><br>Max initial number of streams. If unset or
+   zero, the server will provide a value of streams
+   so as to produce reasonable throughput. Must be
+   non-negative. The number of streams may be lower
+   than the requested number, depending on the
+   amount parallelism that is reasonable for the
+   table. Error will be returned if the max count
+   is greater than the current system max limit of
+   1,000.
+   
+   Streams must be read starting from offset 0.</td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>

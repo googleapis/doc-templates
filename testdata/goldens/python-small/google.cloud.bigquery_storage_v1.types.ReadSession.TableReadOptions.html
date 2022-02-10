@@ -12,28 +12,45 @@
 </h1>
   
   
-  <div class="markdown level0 summary"><p>Options dictating how we read a table.
-Attributes:
-    selected_fields (Sequence[str]):
-        Names of the fields in the table that should be read. If
-        empty, all fields will be read. If the specified field is a
-        nested field, all the sub-fields in the field will be
-        selected. The output field order is unrelated to the order
-        of fields in selected_fields.
-    row_restriction (str):
-        SQL text filtering statement, similar to a WHERE clause in a
-        query. Aggregates are not supported.</p>
-<pre><code>    Examples: &quot;int_field &gt; 5&quot; &quot;date_field = CAST(&#39;2014-9-27&#39; as
-    DATE)&quot; &quot;nullable_field is not NULL&quot; &quot;st_equals(geo_field,
-    st_geofromtext(&quot;POINT(2, 2)&quot;))&quot; &quot;numeric_field BETWEEN 1.0
-    AND 5.0&quot;
-
-
-    Restricted to a maximum length for 1 MB.
-arrow_serialization_options (google.cloud.bigquery_storage_v1.types.ArrowSerializationOptions):
-    Optional. Options specific to the Apache
-    Arrow output format.
-</code></pre></div>
+  <div class="markdown level0 summary"><p>Options dictating how we read a table.</p>
+<p>.. _oneof: <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields</a></p>
+</div>
+  <strong>Attributes</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">selected_fields</span></td>
+        <td><code>Sequence[str]</code><br>Names of the fields in the table that should be read. If
+   empty, all fields will be read. If the specified field is a
+   nested field, all the sub-fields in the field will be
+   selected. The output field order is unrelated to the order
+   of fields in selected_fields.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">row_restriction</span></td>
+        <td><code>str</code><br>SQL text filtering statement, similar to a WHERE clause in a
+   query. Aggregates are not supported.
+   
+   Examples: "int_field > 5" "date_field = CAST('2014-9-27' as
+   DATE)" "nullable_field is not NULL" "st_equals(geo_field,
+   st_geofromtext("POINT(2, 2)"))" "numeric_field BETWEEN 1.0
+   AND 5.0"
+   
+   Restricted to a maximum length for 1 MB.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">arrow_serialization_options</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1.types.ArrowSerializationOptions.html">google.cloud.bigquery_storage_v1.types.ArrowSerializationOptions</a></code><br>Optional. Options specific to the Apache
+   Arrow output format.
+   
+   This field is a member of `oneof`_ ``output_format_serialization_options``.</td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>

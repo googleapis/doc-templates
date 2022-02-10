@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsStream">
+<h1 class="page-title">Class AppendRowsStream
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>A manager object which can append rows to a stream.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+      <span><span class="xref">builtins.object</span></span>
+      <span> &gt; </span>
+      <span class="xref">AppendRowsStream</span>
+  </div>
+  <h2 id="properties">Properties
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsStream_is_active" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsStream.is_active" class="notranslate">is_active</h3>
+  <div class="markdown level1 summary"><p>bool: True if this manager is actively streaming.</p>
+<p>Note that <code>False</code> does not indicate this is complete shut down,
+just that it stopped getting new messages.</p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsStream_add_close_callback" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsStream.add_close_callback" class="notranslate">add_close_callback</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>add_close_callback(callback: typing.Callable)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Schedules a callable when the manager closes.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">callback</span></td>
+        <td>
+          <code>Callable</code>
+          <br>
+          <p>The method to call.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsStream_close" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsStream.close" class="notranslate">close</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>close(reason: typing.Optional[Exception] = None)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Stop consuming messages and shutdown all helper threads.</p>
+<p>This method is idempotent. Additional calls will have no effect.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">reason</span></td>
+        <td>
+          <code></code>
+          <br>
+          <p>The reason to close this. If <code>None</code>, this is considered an &quot;intentional&quot; shutdown. This is passed to the callbacks specified via <code>add_close_callback</code>.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsStream_send" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsStream.send" class="notranslate">send</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>send(
+    request: google.cloud.bigquery_storage_v1beta2.types.storage.AppendRowsRequest,
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Send an append rows request to the open stream.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">request</span></td>
+        <td>
+          <code></code>
+          <br>
+          <p>The request to add to the stream.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

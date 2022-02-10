@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1.types.WriteStream">
+<h1 class="page-title">Class WriteStream
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Information about a single stream that gets data inside the
+storage system.</p>
+</div>
+  <strong>Attributes</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">name</span></td>
+        <td><code>str</code><br>Output only. Name of the stream, in the form
+   ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">type_</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1.types.WriteStream.Type.html">google.cloud.bigquery_storage_v1.types.WriteStream.Type</a></code><br>Immutable. Type of the stream.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">create_time</span></td>
+        <td><code>google.protobuf.timestamp_pb2.Timestamp</code><br>Output only. Create time of the stream. For the \_default
+   stream, this is the creation_time of the table.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">commit_time</span></td>
+        <td><code>google.protobuf.timestamp_pb2.Timestamp</code><br>Output only. Commit time of the stream. If a stream is of
+   ``COMMITTED`` type, then it will have a commit_time same as
+   ``create_time``. If the stream is of ``PENDING`` type, empty
+   commit_time means it is not committed.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">table_schema</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1.types.TableSchema.html">google.cloud.bigquery_storage_v1.types.TableSchema</a></code><br>Output only. The schema of the destination table. It is only
+   returned in ``CreateWriteStream`` response. Caller should
+   generate data that's compatible with this schema to send in
+   initial ``AppendRowsRequest``. The table schema could go out
+   of date during the life time of the stream.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">write_mode</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode.html">google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode</a></code><br>Immutable. Mode of the stream.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">WriteStream</span>
+  </div>
+  <h2 id="classes">Classes
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_types_WriteStream_Type" data-uid="google.cloud.bigquery_storage_v1.types.WriteStream.Type" class="notranslate">Type</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>Type(value)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Type enum of the stream.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_types_WriteStream_WriteMode" data-uid="google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode" class="notranslate">WriteMode</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>WriteMode(value)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Mode enum of the stream.</p>
+</div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

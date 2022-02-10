@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1.types.TableFieldSchema">
+<h1 class="page-title">Class TableFieldSchema
+</h1>
+  
+  
+  <div class="markdown level0 summary"><p>TableFieldSchema defines a single field/column within a table
+schema.</p>
+</div>
+  <strong>Attributes</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">name</span></td>
+        <td><code>str</code><br>Required. The field name. The name must contain only letters
+   (a-z, A-Z), numbers (0-9), or underscores (_), and must
+   start with a letter or underscore. The maximum length is 128
+   characters.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">type_</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type.html">google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type</a></code><br>Required. The field data type.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">mode</span></td>
+        <td><code><a class="xref" href="google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode.html">google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode</a></code><br>Optional. The field mode. The default value
+   is NULLABLE.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">fields</span></td>
+        <td><code>Sequence[google.cloud.bigquery_storage_v1.types.TableFieldSchema]</code><br>Optional. Describes the nested schema fields
+   if the type property is set to STRUCT.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">description</span></td>
+        <td><code>str</code><br>Optional. The field description. The maximum
+   length is 1,024 characters.</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">max_length</span></td>
+        <td><code>int</code><br>Optional. Maximum length of values of this field for STRINGS
+   or BYTES.
+   
+   If max_length is not specified, no maximum length constraint
+   is imposed on this field.
+   
+   If type = "STRING", then max_length represents the maximum
+   UTF-8 length of strings in this field.
+   
+   If type = "BYTES", then max_length represents the maximum
+   number of bytes in this field.
+   
+   It is invalid to set this field if type is not "STRING" or
+   "BYTES".</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">precision</span></td>
+        <td><code>int</code><br>Optional. Precision (maximum number of total digits in base
+   10) and scale (maximum number of digits in the fractional
+   part in base 10) constraints for values of this field for
+   NUMERIC or BIGNUMERIC.
+   
+   It is invalid to set precision or scale if type is not
+   "NUMERIC" or "BIGNUMERIC".
+   
+   If precision and scale are not specified, no value range
+   constraint is imposed on this field insofar as values are
+   permitted by the type.
+   
+   Values of this NUMERIC or BIGNUMERIC field must be in this
+   range when:
+   
+   -  Precision (P) and scale (S) are specified: [-10^(P-S) +
+      10^(-S), 10^(P-S) - 10^(-S)]
+   -  Precision (P) is specified but not scale (and thus scale
+      is interpreted to be equal to zero): [-10^P + 1, 10^P -
+      1].
+   
+   Acceptable values for precision and scale if both are
+   specified:
+   
+   -  If type = "NUMERIC": 1 <= precision="" -="" scale=""></=><= 29="" and="" 0=""></=><= scale=""></=><= 9.="" -="" if="" type="BIGNUMERIC" :="" 1=""></=><= precision="" -="" scale=""></=><= 38="" and="" 0=""></=><= scale=""></=><= 38.="" acceptable="" values="" for="" precision="" if="" only="" precision="" is="" specified="" but="" not="" scale="" (and="" thus="" scale="" is="" interpreted="" to="" be="" equal="" to="" zero):="" -="" if="" type="NUMERIC" :="" 1=""></=><= precision=""></=><= 29.="" -="" if="" type="BIGNUMERIC" :="" 1=""></=><= precision=""></=><= 38.="" if="" scale="" is="" specified="" but="" not="" precision,="" then="" it="" is=""></=></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">scale</span></td>
+        <td><code>int</code><br>Optional. See documentation for precision.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">TableFieldSchema</span>
+  </div>
+  <h2 id="classes">Classes
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_types_TableFieldSchema_Mode" data-uid="google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode" class="notranslate">Mode</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>Mode(value)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>API documentation for <code>bigquery_storage_v1.types.TableFieldSchema.Mode</code> class.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_types_TableFieldSchema_Type" data-uid="google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type" class="notranslate">Type</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>Type(value)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>API documentation for <code>bigquery_storage_v1.types.TableFieldSchema.Type</code> class.</p>
+</div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>
