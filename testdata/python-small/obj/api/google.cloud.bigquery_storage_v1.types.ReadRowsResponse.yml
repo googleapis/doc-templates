@@ -1,7 +1,34 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- attributes:
+  - description: "Serialized row data in AVRO format.\n   \n   This field is a member\
+      \ of `oneof`_ ``rows``."
+    id: avro_rows
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.AvroRows">google.cloud.bigquery_storage_v1.types.AvroRows</xref>
+  - description: "Serialized row data in Arrow RecordBatch\n   format.\n   \n   This\
+      \ field is a member of `oneof`_ ``rows``."
+    id: arrow_record_batch
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ArrowRecordBatch">google.cloud.bigquery_storage_v1.types.ArrowRecordBatch</xref>
+  - description: Number of serialized rows in the rows block.
+    id: row_count
+    var_type: int
+  - description: Statistics for the stream.
+    id: stats
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.StreamStats">google.cloud.bigquery_storage_v1.types.StreamStats</xref>
+  - description: "Throttling state. If unset, the latest\n   response still describes\
+      \ the current throttling\n   status."
+    id: throttle_state
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ThrottleState">google.cloud.bigquery_storage_v1.types.ThrottleState</xref>
+  - description: "Output only. Avro schema.\n   \n   This field is a member of `oneof`_\
+      \ ``schema``."
+    id: avro_schema
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.AvroSchema">google.cloud.bigquery_storage_v1.types.AvroSchema</xref>
+  - description: "Output only. Arrow schema.\n   \n   This field is a member of `oneof`_\
+      \ ``schema``."
+    id: arrow_schema
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ArrowSchema">google.cloud.bigquery_storage_v1.types.ArrowSchema</xref>
+  children: []
   class: google.cloud.bigquery_storage_v1.types.ReadRowsResponse
   fullName: google.cloud.bigquery_storage_v1.types.ReadRowsResponse
   inheritance:
@@ -16,20 +43,27 @@ items:
     id: ReadRowsResponse
     path: google/cloud/bigquery_storage_v1/types/storage.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/types/storage.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 127
-  summary: "Response from calling ``ReadRows`` may include row data, progress\nand\
-    \ throttling information.\n\n\nAttributes:\n    avro_rows (google.cloud.bigquery_storage_v1.types.AvroRows):\n\
-    \        Serialized row data in AVRO format.\n    arrow_record_batch (google.cloud.bigquery_storage_v1.types.ArrowRecordBatch):\n\
-    \        Serialized row data in Arrow RecordBatch\n        format.\n    row_count\
-    \ (int):\n        Number of serialized rows in the rows block.\n    stats (google.cloud.bigquery_storage_v1.types.StreamStats):\n\
-    \        Statistics for the stream.\n    throttle_state (google.cloud.bigquery_storage_v1.types.ThrottleState):\n\
-    \        Throttling state. If unset, the latest\n        response still describes\
-    \ the current throttling\n        status.\n    avro_schema (google.cloud.bigquery_storage_v1.types.AvroSchema):\n\
-    \        Output only. Avro schema.\n    arrow_schema (google.cloud.bigquery_storage_v1.types.ArrowSchema):\n\
-    \        Output only. Arrow schema.\n"
+    startLine: 148
+  summary: 'Response from calling ``ReadRows`` may include row data, progress
+
+    and throttling information.
+
+
+    This message has `oneof`_ fields (mutually exclusive fields).
+
+    For each oneof, at most one member field can be set at the same time.
+
+    Setting any member of the oneof automatically clears all other
+
+    members.
+
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
+    '
   syntax:
     content: ReadRowsResponse(mapping=None, *, ignore_unknown_fields=False, **kwargs)
   type: class

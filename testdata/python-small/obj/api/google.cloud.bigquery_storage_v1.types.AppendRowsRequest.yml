@@ -1,0 +1,72 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- attributes:
+  - description: "Required. The write_stream identifies the target of the\n   append\
+      \ operation, and only needs to be specified as part of\n   the first request\
+      \ on the gRPC connection. If provided for\n   subsequent requests, it must match\
+      \ the value of the first\n   request.\n   \n   For explicitly created write\
+      \ streams, the format is:\n   ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}``\n\
+      \   \n   For the special default stream, the format is:\n   ``projects/{project}/datasets/{dataset}/tables/{table}/_default``."
+    id: write_stream
+    var_type: str
+  - description: "If present, the write is only performed if the next append\n   offset\
+      \ is same as the provided value. If not present, the\n   write is performed\
+      \ at the current end of stream. Specifying\n   a value for this field is not\
+      \ allowed when calling\n   AppendRows for the '_default' stream."
+    id: offset
+    var_type: google.protobuf.wrappers_pb2.Int64Value
+  - description: "Rows in proto format.\n   \n   This field is a member of `oneof`_\
+      \ ``rows``."
+    id: proto_rows
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData">google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData</xref>
+  - description: "Id set by client to annotate its identity.\n   Only initial request\
+      \ setting is respected."
+    id: trace_id
+    var_type: str
+  children:
+  - google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData
+  class: google.cloud.bigquery_storage_v1.types.AppendRowsRequest
+  fullName: google.cloud.bigquery_storage_v1.types.AppendRowsRequest
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: proto.message.Message
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1.types
+  name: AppendRowsRequest
+  source:
+    id: AppendRowsRequest
+    path: google/cloud/bigquery_storage_v1/types/storage.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1/types/storage.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 263
+  summary: 'Request message for ``AppendRows``.
+
+
+    Due to the nature of AppendRows being a bidirectional streaming RPC,
+
+    certain parts of the AppendRowsRequest need only be specified for
+
+    the first request sent each time the gRPC network connection is
+
+    opened/reopened.
+
+
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
+    '
+  syntax:
+    content: AppendRowsRequest(mapping=None, *, ignore_unknown_fields=False, **kwargs)
+  type: class
+  uid: google.cloud.bigquery_storage_v1.types.AppendRowsRequest
+references:
+- fullName: google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData
+  isExternal: false
+  name: ProtoData
+  parent: google.cloud.bigquery_storage_v1.types.AppendRowsRequest
+  uid: google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData

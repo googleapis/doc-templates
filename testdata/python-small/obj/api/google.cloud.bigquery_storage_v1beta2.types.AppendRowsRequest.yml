@@ -1,7 +1,29 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children:
+- attributes:
+  - description: "Required. The stream that is the target of the append\n   operation.\
+      \ This value must be specified for the initial\n   request. If subsequent requests\
+      \ specify the stream name, it\n   must equal to the value provided in the first\
+      \ request. To\n   write to the \\_default stream, populate this field with a\n\
+      \   string in the format\n   ``projects/{project}/datasets/{dataset}/tables/{table}/_default``."
+    id: write_stream
+    var_type: str
+  - description: "If present, the write is only performed if the next append\n   offset\
+      \ is same as the provided value. If not present, the\n   write is performed\
+      \ at the current end of stream. Specifying\n   a value for this field is not\
+      \ allowed when calling\n   AppendRows for the '_default' stream."
+    id: offset
+    var_type: google.protobuf.wrappers_pb2.Int64Value
+  - description: "Rows in proto format.\n   \n   This field is a member of `oneof`_\
+      \ ``rows``."
+    id: proto_rows
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.ProtoData">google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.ProtoData</xref>
+  - description: "Id set by client to annotate its identity.\n   Only initial request\
+      \ setting is respected."
+    id: trace_id
+    var_type: str
+  children:
   - google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.ProtoData
   class: google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest
   fullName: google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest
@@ -17,23 +39,16 @@ items:
     id: AppendRowsRequest
     path: google/cloud/bigquery_storage_v1beta2/types/storage.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/types/storage.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 240
-  summary: "Request message for ``AppendRows``.\nAttributes:\n    write_stream (str):\n\
-    \        Required. The stream that is the target of the append\n        operation.\
-    \ This value must be specified for the initial\n        request. If subsequent\
-    \ requests specify the stream name, it\n        must equal to the value provided\
-    \ in the first request. To\n        write to the \\_default stream, populate this\
-    \ field with a\n        string in the format\n        ``projects/{project}/datasets/{dataset}/tables/{table}/_default``.\n\
-    \    offset (google.protobuf.wrappers_pb2.Int64Value):\n        If present, the\
-    \ write is only performed if the next append\n        offset is same as the provided\
-    \ value. If not present, the\n        write is performed at the current end of\
-    \ stream. Specifying\n        a value for this field is not allowed when calling\n\
-    \        AppendRows for the '_default' stream.\n    proto_rows (google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.ProtoData):\n\
-    \        Rows in proto format.\n    trace_id (str):\n        Id set by client\
-    \ to annotate its identity.\n        Only initial request setting is respected.\n"
+    startLine: 263
+  summary: 'Request message for ``AppendRows``.
+
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
+    '
   syntax:
     content: AppendRowsRequest(mapping=None, *, ignore_unknown_fields=False, **kwargs)
   type: class

@@ -1,7 +1,8 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children:
+- attributes: []
+  children:
   - google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.__iter__
   - google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.pages
   - google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.to_arrow
@@ -18,20 +19,19 @@ items:
     id: ReadRowsIterable
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 245
+    startLine: 302
   summary: 'An iterable of rows from a read session.
-
-
 
     '
   syntax:
     content: ReadRowsIterable(reader, read_session=None)
   type: class
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
-- class: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.__iter__
   langs:
   - python
@@ -41,11 +41,12 @@ items:
     id: __iter__
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 288
+    startLine: 345
   summary: 'Iterator for each row in all pages.
+
 
     '
   syntax:
@@ -54,6 +55,7 @@ items:
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.__iter__
 - &id001
+  attributes: []
   class: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.pages
   langs:
@@ -64,13 +66,11 @@ items:
     id: pages
     path: null
     remote:
-      branch: master
+      branch: main
       path: null
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: null
   summary: 'A generator of all pages in the stream.
-
-
 
     '
   syntax:
@@ -80,7 +80,8 @@ items:
   type: property
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.pages
 - *id001
-- class: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.to_arrow
   langs:
   - python
@@ -90,19 +91,16 @@ items:
     id: to_arrow
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 294
+    startLine: 351
   summary: 'Create a `pyarrow.Table` of all rows in the stream.
-
 
 
     This method requires the pyarrow library and a stream using the Arrow
 
     format.
-
-
 
     '
   syntax:
@@ -113,7 +111,8 @@ items:
       var_type: pyarrow.Table
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.to_arrow
-- class: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsIterable.to_dataframe
   langs:
   - python
@@ -123,19 +122,18 @@ items:
     id: to_dataframe
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 315
-  summary: "Create a `pandas.DataFrame` of all rows in the stream.\n\n\nThis method\
+    startLine: 372
+  summary: "Create a `pandas.DataFrame` of all rows in the stream.\n\nThis method\
     \ requires the pandas libary to create a data frame and the\nfastavro library\
-    \ to parse row messages.\n\n\n.. warning::\n    DATETIME columns are not supported.\
-    \ They are currently parsed as\n    strings in the fastavro library.\n\n\n"
+    \ to parse row messages.\n\n.. warning::\n    DATETIME columns are not supported.\
+    \ They are currently parsed as\n    strings in the fastavro library.\n"
   syntax:
     content: to_dataframe(dtypes=None)
     parameters:
-    - defaultValue: None
-      description: Optional. A dictionary of column names pandas ``dtype``s. The provided
+    - description: Optional. A dictionary of column names pandas ``dtype``s. The provided
         ``dtype`` is used when constructing the series for the column specified. Otherwise,
         the default pandas behavior is used.
       id: dtypes

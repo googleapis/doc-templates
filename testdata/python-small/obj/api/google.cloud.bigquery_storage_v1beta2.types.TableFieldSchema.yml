@@ -1,7 +1,27 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children:
+- attributes:
+  - description: "Required. The field name. The name must contain only letters\n \
+      \  (a-z, A-Z), numbers (0-9), or underscores (_), and must\n   start with a\
+      \ letter or underscore. The maximum length is 128\n   characters."
+    id: name
+    var_type: str
+  - description: Required. The field data type.
+    id: type_
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Type">google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Type</xref>
+  - description: "Optional. The field mode. The default value\n   is NULLABLE."
+    id: mode
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Mode">google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Mode</xref>
+  - description: "Optional. Describes the nested schema fields\n   if the type property\
+      \ is set to STRUCT."
+    id: fields
+    var_type: Sequence[google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema]
+  - description: "Optional. The field description. The maximum\n   length is 1,024\
+      \ characters."
+    id: description
+    var_type: str
+  children:
   - google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Mode
   - google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Type
   class: google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema
@@ -18,20 +38,13 @@ items:
     id: TableFieldSchema
     path: google/cloud/bigquery_storage_v1beta2/types/table.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/types/table.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 35
-  summary: "A field in TableSchema\nAttributes:\n    name (str):\n        Required.\
-    \ The field name. The name must contain only letters\n        (a-z, A-Z), numbers\
-    \ (0-9), or underscores (_), and must\n        start with a letter or underscore.\
-    \ The maximum length is 128\n        characters.\n    type_ (google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Type):\n\
-    \        Required. The field data type.\n    mode (google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema.Mode):\n\
-    \        Optional. The field mode. The default value\n        is NULLABLE.\n \
-    \   fields (Sequence[google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema]):\n\
-    \        Optional. Describes the nested schema fields\n        if the type property\
-    \ is set to STRUCT.\n    description (str):\n        Optional. The field description.\
-    \ The maximum\n        length is 1,024 characters.\n"
+    startLine: 36
+  summary: 'A field in TableSchema
+
+    '
   syntax:
     content: TableFieldSchema(mapping=None, *, ignore_unknown_fields=False, **kwargs)
   type: class

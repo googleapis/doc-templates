@@ -1,7 +1,15 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- attributes:
+  - description: "Required. The stream that is the target of\n   the flush operation."
+    id: write_stream
+    var_type: str
+  - description: "Ending offset of the flush operation. Rows\n   before this offset(including\
+      \ this offset) will\n   be flushed."
+    id: offset
+    var_type: google.protobuf.wrappers_pb2.Int64Value
+  children: []
   class: google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest
   fullName: google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest
   inheritance:
@@ -16,15 +24,13 @@ items:
     id: FlushRowsRequest
     path: google/cloud/bigquery_storage_v1beta2/types/storage.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/types/storage.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 412
-  summary: "Request message for ``FlushRows``.\nAttributes:\n    write_stream (str):\n\
-    \        Required. The stream that is the target of\n        the flush operation.\n\
-    \    offset (google.protobuf.wrappers_pb2.Int64Value):\n        Ending offset\
-    \ of the flush operation. Rows\n        before this offset(including this offset)\
-    \ will\n        be flushed.\n"
+    startLine: 459
+  summary: 'Request message for ``FlushRows``.
+
+    '
   syntax:
     content: FlushRowsRequest(mapping=None, *, ignore_unknown_fields=False, **kwargs)
   type: class

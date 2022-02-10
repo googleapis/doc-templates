@@ -1,0 +1,69 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- attributes:
+  - description: "Output only. Name of the stream, in the form\n   ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``."
+    id: name
+    var_type: str
+  - description: Immutable. Type of the stream.
+    id: type_
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.WriteStream.Type">google.cloud.bigquery_storage_v1.types.WriteStream.Type</xref>
+  - description: "Output only. Create time of the stream. For the \\_default\n   stream,\
+      \ this is the creation_time of the table."
+    id: create_time
+    var_type: google.protobuf.timestamp_pb2.Timestamp
+  - description: "Output only. Commit time of the stream. If a stream is of\n   ``COMMITTED``\
+      \ type, then it will have a commit_time same as\n   ``create_time``. If the\
+      \ stream is of ``PENDING`` type, empty\n   commit_time means it is not committed."
+    id: commit_time
+    var_type: google.protobuf.timestamp_pb2.Timestamp
+  - description: "Output only. The schema of the destination table. It is only\n \
+      \  returned in ``CreateWriteStream`` response. Caller should\n   generate data\
+      \ that's compatible with this schema to send in\n   initial ``AppendRowsRequest``.\
+      \ The table schema could go out\n   of date during the life time of the stream."
+    id: table_schema
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.TableSchema">google.cloud.bigquery_storage_v1.types.TableSchema</xref>
+  - description: Immutable. Mode of the stream.
+    id: write_mode
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode">google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode</xref>
+  children:
+  - google.cloud.bigquery_storage_v1.types.WriteStream.Type
+  - google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode
+  class: google.cloud.bigquery_storage_v1.types.WriteStream
+  fullName: google.cloud.bigquery_storage_v1.types.WriteStream
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: proto.message.Message
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1.types
+  name: WriteStream
+  source:
+    id: WriteStream
+    path: google/cloud/bigquery_storage_v1/types/stream.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1/types/stream.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 173
+  summary: 'Information about a single stream that gets data inside the
+
+    storage system.
+
+    '
+  syntax:
+    content: WriteStream(mapping=None, *, ignore_unknown_fields=False, **kwargs)
+  type: class
+  uid: google.cloud.bigquery_storage_v1.types.WriteStream
+references:
+- fullName: google.cloud.bigquery_storage_v1.types.WriteStream.Type
+  isExternal: false
+  name: Type
+  parent: google.cloud.bigquery_storage_v1.types.WriteStream
+  uid: google.cloud.bigquery_storage_v1.types.WriteStream.Type
+- fullName: google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode
+  isExternal: false
+  name: WriteMode
+  parent: google.cloud.bigquery_storage_v1.types.WriteStream
+  uid: google.cloud.bigquery_storage_v1.types.WriteStream.WriteMode

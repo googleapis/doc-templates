@@ -1,7 +1,19 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- attributes:
+  - description: "The time at which streams were committed in microseconds\n   granularity.\
+      \ This field will only exist when there are no\n   stream errors. **Note** if\
+      \ this field is not set, it means\n   the commit was not successful."
+    id: commit_time
+    var_type: google.protobuf.timestamp_pb2.Timestamp
+  - description: "Stream level error if commit failed. Only\n   streams with error\
+      \ will be in the list.\n   If empty, there is no error and all streams are\n\
+      \   committed successfully. If non empty, certain\n   streams have errors and\
+      \ ZERO stream is committed\n   due to atomicity guarantee."
+    id: stream_errors
+    var_type: Sequence[<xref uid="google.cloud.bigquery_storage_v1beta2.types.StorageError">google.cloud.bigquery_storage_v1beta2.types.StorageError</xref>]
+  children: []
   class: google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse
   fullName: google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse
   inheritance:
@@ -16,22 +28,16 @@ items:
     id: BatchCommitWriteStreamsResponse
     path: google/cloud/bigquery_storage_v1beta2/types/storage.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/types/storage.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 368
-  summary: "Response message for ``BatchCommitWriteStreams``.\nAttributes:\n    commit_time\
-    \ (google.protobuf.timestamp_pb2.Timestamp):\n        The time at which streams\
-    \ were committed in microseconds\n        granularity. This field will only exist\
-    \ when there are no\n        stream errors. **Note** if this field is not set,\
-    \ it means\n        the commit was not successful.\n    stream_errors (Sequence[google.cloud.bigquery_storage_v1beta2.types.StorageError]):\n\
-    \        Stream level error if commit failed. Only\n        streams with error\
-    \ will be in the list.\n        If empty, there is no error and all streams are\n\
-    \        committed successfully. If non empty, certain\n        streams have errors\
-    \ and ZERO stream is committed\n        due to atomicity guarantee.\n"
+    startLine: 412
+  summary: 'Response message for ``BatchCommitWriteStreams``.
+
+    '
   syntax:
-    content: BatchCommitWriteStreamsResponse(mapping=None, *, ignore_unknown_fields=False,
-      **kwargs)
+    content: "BatchCommitWriteStreamsResponse(\n    mapping=None, *, ignore_unknown_fields=False,\
+      \ **kwargs\n)"
   type: class
   uid: google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse
 references: []

@@ -1,0 +1,72 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- attributes:
+  - description: "Result if the append is successful.\n   \n   This field is a member\
+      \ of `oneof`_ ``response``."
+    id: append_result
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.AppendRowsResponse.AppendResult">google.cloud.bigquery_storage_v1.types.AppendRowsResponse.AppendResult</xref>
+  - description: "Error returned when problems were encountered. If present,\n   it\
+      \ indicates rows were not accepted into the system. Users\n   can retry or continue\
+      \ with other append requests within the\n   same connection.\n   \n   Additional\
+      \ information about error signalling:\n   \n   ALREADY_EXISTS: Happens when\
+      \ an append specified an offset,\n   and the backend already has received data\
+      \ at this offset.\n   Typically encountered in retry scenarios, and can be\n\
+      \   ignored.\n   \n   OUT_OF_RANGE: Returned when the specified offset in the\n\
+      \   stream is beyond the current end of the stream.\n   \n   INVALID_ARGUMENT:\
+      \ Indicates a malformed request or data.\n   \n   ABORTED: Request processing\
+      \ is aborted because of prior\n   failures. The request can be retried if previous\
+      \ failure is\n   addressed.\n   \n   INTERNAL: Indicates server side error(s)\
+      \ that can be\n   retried.\n   \n   This field is a member of `oneof`_ ``response``."
+    id: error
+    var_type: google.rpc.status_pb2.Status
+  - description: "If backend detects a schema update, pass it\n   to user so that\
+      \ user can use it to input new\n   type of message. It will be empty when no\
+      \ schema\n   updates have occurred."
+    id: updated_schema
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.TableSchema">google.cloud.bigquery_storage_v1.types.TableSchema</xref>
+  children:
+  - google.cloud.bigquery_storage_v1.types.AppendRowsResponse.AppendResult
+  class: google.cloud.bigquery_storage_v1.types.AppendRowsResponse
+  fullName: google.cloud.bigquery_storage_v1.types.AppendRowsResponse
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: proto.message.Message
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1.types
+  name: AppendRowsResponse
+  source:
+    id: AppendRowsResponse
+    path: google/cloud/bigquery_storage_v1/types/storage.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1/types/storage.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 332
+  summary: 'Response message for ``AppendRows``.
+
+
+    This message has `oneof`_ fields (mutually exclusive fields).
+
+    For each oneof, at most one member field can be set at the same time.
+
+    Setting any member of the oneof automatically clears all other
+
+    members.
+
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
+    '
+  syntax:
+    content: AppendRowsResponse(mapping=None, *, ignore_unknown_fields=False, **kwargs)
+  type: class
+  uid: google.cloud.bigquery_storage_v1.types.AppendRowsResponse
+references:
+- fullName: google.cloud.bigquery_storage_v1.types.AppendRowsResponse.AppendResult
+  isExternal: false
+  name: AppendResult
+  parent: google.cloud.bigquery_storage_v1.types.AppendRowsResponse
+  uid: google.cloud.bigquery_storage_v1.types.AppendRowsResponse.AppendResult
