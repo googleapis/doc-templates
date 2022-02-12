@@ -13,7 +13,7 @@
   
   
   <div class="codewrapper">
-    <pre class="prettyprint wrap-code"><code>ReadRowsStream(wrapped, client, name, offset, read_rows_kwargs)</code></pre>
+    <pre class="prettyprint wrap-code"><code>ReadRowsStream(client, name, offset, read_rows_kwargs, retry_delay_callback=None)</code></pre>
   </div>
   <div class="markdown level0 summary"><p>A stream of results from a read rows request.</p>
 <p>This stream is an iterable of
@@ -25,6 +25,8 @@ method to parse all messages into a stream of row dictionaries.</p>
 <p>If the pandas and fastavro libraries are installed, use the
 <a class="xref" href="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.html">to_dataframe()</a>
 method to parse all messages into a <code>pandas.DataFrame</code>.</p>
+<p>This object should not be created directly, but is returned by
+other methods in this library.</p>
 </div>
   <div class="inheritance">
     <h2>Inheritance</h2>
@@ -34,6 +36,84 @@ method to parse all messages into a <code>pandas.DataFrame</code>.</p>
   </div>
   <h2 id="methods">Methods
   </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_reader_ReadRowsStream" data-uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream" class="notranslate">ReadRowsStream</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>ReadRowsStream(client, name, offset, read_rows_kwargs, retry_delay_callback=None)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Construct a ReadRowsStream.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>client</td>
+        <td>
+          <code><span class="xref">google.cloud.bigquery_storage_v1.services</span> big_query_read.BigQueryReadClient</code>
+          <br>
+          <p>A GAPIC client used to reconnect to a ReadRows stream. This must be the GAPIC client to avoid a circular dependency on this class.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>str</code>
+          <br>
+          <p>Required. Stream ID from which rows are being read.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Required. Position in the stream to start reading from. The offset requested must be less than the last row read from ReadRows. Requesting a larger offset is undefined.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>read_rows_kwargs</td>
+        <td>
+          <code>dict</code>
+          <br>
+          <p>Keyword arguments to use when reconnecting to a ReadRows stream.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry_delay_callback</td>
+        <td>
+          <code>Optional[Callable[[float], None]]</code>
+          <br>
+          <p>If the client receives a retryable error that asks the client to delay its next attempt and retry_delay_callback is not None, ReadRowsStream will call retry_delay_callback with the delay duration (in seconds) before it starts sleeping until the next attempt.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>Iterable[ <span class="xref">google.cloud.bigquery_storage_v1.services</span>ReadRowsResponse ]</td>
+        <td>A sequence of row messages.</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="google_cloud_bigquery_storage_v1_reader_ReadRowsStream___iter__" data-uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.__iter__" class="notranslate">__iter__</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>__iter__()</code></pre>

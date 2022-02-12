@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1.types.AppendRowsRequest">
+<h1 class="page-title">Class AppendRowsRequest
+</h1>
+  
+  
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>AppendRowsRequest(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>Request message for <code>AppendRows</code>.</p>
+<p>Due to the nature of AppendRows being a bidirectional streaming RPC,
+certain parts of the AppendRowsRequest need only be specified for
+the first request sent each time the gRPC network connection is
+opened/reopened.</p>
+<p>.. _oneof: <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields</a></p>
+</div>
+  <h2>Attributes</h2>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>write_stream</td>
+        <td>
+          <code>str</code>
+          <br>
+          Required. The write_stream identifies the target of the
+   append operation, and only needs to be specified as part of
+   the first request on the gRPC connection. If provided for
+   subsequent requests, it must match the value of the first
+   request.
+   
+   For explicitly created write streams, the format is:
+   ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}``
+   
+   For the special default stream, the format is:
+   ``projects/{project}/datasets/{dataset}/tables/{table}/_default``.
+        </td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>
+          <code>google.protobuf.wrappers_pb2.Int64Value</code>
+          <br>
+          If present, the write is only performed if the next append
+   offset is same as the provided value. If not present, the
+   write is performed at the current end of stream. Specifying
+   a value for this field is not allowed when calling
+   AppendRows for the '_default' stream.
+        </td>
+      </tr>
+      <tr>
+        <td>proto_rows</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData.html">google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData</a></code>
+          <br>
+          Rows in proto format.
+   
+   This field is a member of `oneof`_ ``rows``.
+        </td>
+      </tr>
+      <tr>
+        <td>trace_id</td>
+        <td>
+          <code>str</code>
+          <br>
+          Id set by client to annotate its identity.
+   Only initial request setting is respected.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+          <span><span class="xref">builtins.object</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">proto.message.Message</span></span>
+      <span> &gt; </span>
+      <span class="xref">AppendRowsRequest</span>
+  </div>
+  <h2 id="classes">Classes
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_types_AppendRowsRequest_ProtoData" data-uid="google.cloud.bigquery_storage_v1.types.AppendRowsRequest.ProtoData" class="notranslate">ProtoData</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>ProtoData(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>ProtoData contains the data rows and schema when constructing
+append requests.</p>
+</div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

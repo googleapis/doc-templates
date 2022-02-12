@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture">
+<h1 class="page-title">Class AppendRowsFuture
+</h1>
+  
+  
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>AppendRowsFuture(
+    manager: google.cloud.bigquery_storage_v1beta2.writer.AppendRowsStream,
+)</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>Encapsulation of the asynchronous execution of an action.</p>
+<p>This object is returned from long-running BigQuery Storage API calls, and
+is the interface to determine the status of those calls.</p>
+<p>This object should not be created directly, but is returned by other
+methods in this library.</p>
+</div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+              <span><span class="xref">builtins.object</span></span>
+              <span> &gt; </span>
+          <span><span class="xref">google.api_core.future.base.Future</span></span>
+          <span> &gt; </span>
+      <span><span class="xref">google.api_core.future.polling.PollingFuture</span></span>
+      <span> &gt; </span>
+      <span class="xref">AppendRowsFuture</span>
+  </div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_add_done_callback" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.add_done_callback" class="notranslate">add_done_callback</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>add_done_callback(fn)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Add a callback to be executed when the operation is complete.</p>
+<p>If the operation is not already complete, this will start a helper
+thread to poll for the status of the operation in the background.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>fn</td>
+        <td>
+          <code>Callable[Future]</code>
+          <br>
+          <p>The callback to execute when the operation is complete.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_cancel" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.cancel" class="notranslate">cancel</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>cancel()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Stops pulling messages and shutdowns the background thread consuming
+ messages.</p>
+<p>The method does not block, it just triggers the shutdown and returns
+immediately. To block until the background stream is terminated, call
+<code>result()</code> after cancelling the future.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_cancelled" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.cancelled" class="notranslate">cancelled</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>cancelled()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>:returns: <code>True</code> if the write stream has been cancelled.
+:rtype: bool</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_done" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.done" class="notranslate">done</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>done(retry: typing.Optional[google.api_core.retry.Retry] = None)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Check the status of the future.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_exception" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.exception" class="notranslate">exception</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>exception(timeout=None)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get the exception from the operation, blocking if necessary.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>How long to wait for the operation to complete. If None, wait indefinitely.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>Optional[google.api_core.GoogleAPICallError]</td>
+        <td>The operation's error.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_result" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.result" class="notranslate">result</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>result(timeout=None, retry=&lt;google.api_core.retry.Retry object&gt;)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Get the result of the operation, blocking if necessary.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>How long (in seconds) to wait for the operation to complete. If None, wait indefinitely.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>google.api_core.GoogleAPICallError</td>
+        <td>If the operation errors or if the timeout is reached before the operation completes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>google.protobuf.Message</td>
+        <td>The Operation's result.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_running" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.running" class="notranslate">running</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>running()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>True if the operation is currently running.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_set_exception" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.set_exception" class="notranslate">set_exception</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>set_exception(exception)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Set the result of the future as being the given exception.</p>
+<p>Do not use this method, it should only be used internally by the library and its
+unit tests.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1beta2_writer_AppendRowsFuture_set_result" data-uid="google.cloud.bigquery_storage_v1beta2.writer.AppendRowsFuture.set_result" class="notranslate">set_result</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>set_result(result)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Set the return value of work associated with the future.</p>
+<p>Do not use this method, it should only be used internally by the library and its
+unit tests.</p>
+</div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

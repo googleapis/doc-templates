@@ -17,27 +17,65 @@
   </div>
   <div class="markdown level0 summary"><p>Information about a single stream that gets data inside the
 storage system.</p>
-<p>Attributes:
-    name (str):
-        Output only. Name of the stream, in the form
-        <code>projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}</code>.
-    type_ (google.cloud.bigquery_storage_v1beta2.types.WriteStream.Type):
-        Immutable. Type of the stream.
-    create_time (google.protobuf.timestamp_pb2.Timestamp):
-        Output only. Create time of the stream. For the _default
-        stream, this is the creation_time of the table.
-    commit_time (google.protobuf.timestamp_pb2.Timestamp):
-        Output only. Commit time of the stream. If a stream is of
-        <code>COMMITTED</code> type, then it will have a commit_time same as
-        <code>create_time</code>. If the stream is of <code>PENDING</code> type,
-        commit_time being empty means it is not committed.
-    table_schema (google.cloud.bigquery_storage_v1beta2.types.TableSchema):
-        Output only. The schema of the destination table. It is only
-        returned in <code>CreateWriteStream</code> response. Caller should
-        generate data that&#39;s compatible with this schema to send in
-        initial <code>AppendRowsRequest</code>. The table schema could go out
-        of date during the life time of the stream.</p>
 </div>
+  <h2>Attributes</h2>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>str</code>
+          <br>
+          Output only. Name of the stream, in the form
+   ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.
+        </td>
+      </tr>
+      <tr>
+        <td>type_</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.WriteStream.Type.html">google.cloud.bigquery_storage_v1beta2.types.WriteStream.Type</a></code>
+          <br>
+          Immutable. Type of the stream.
+        </td>
+      </tr>
+      <tr>
+        <td>create_time</td>
+        <td>
+          <code>google.protobuf.timestamp_pb2.Timestamp</code>
+          <br>
+          Output only. Create time of the stream. For the \_default
+   stream, this is the creation_time of the table.
+        </td>
+      </tr>
+      <tr>
+        <td>commit_time</td>
+        <td>
+          <code>google.protobuf.timestamp_pb2.Timestamp</code>
+          <br>
+          Output only. Commit time of the stream. If a stream is of
+   ``COMMITTED`` type, then it will have a commit_time same as
+   ``create_time``. If the stream is of ``PENDING`` type,
+   commit_time being empty means it is not committed.
+        </td>
+      </tr>
+      <tr>
+        <td>table_schema</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.TableSchema.html">google.cloud.bigquery_storage_v1beta2.types.TableSchema</a></code>
+          <br>
+          Output only. The schema of the destination table. It is only
+   returned in ``CreateWriteStream`` response. Caller should
+   generate data that's compatible with this schema to send in
+   initial ``AppendRowsRequest``. The table schema could go out
+   of date during the life time of the stream.
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>

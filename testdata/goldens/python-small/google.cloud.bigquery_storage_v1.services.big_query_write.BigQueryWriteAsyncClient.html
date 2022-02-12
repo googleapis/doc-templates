@@ -1,0 +1,986 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/python/_project.yaml">
+    <meta name="book_path" value="/python/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient">
+<h1 class="page-title">Class BigQueryWriteAsyncClient
+</h1>
+  
+  
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>BigQueryWriteAsyncClient(*, credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Union[str, google.cloud.bigquery_storage_v1.services.big_query_write.transports.base.BigQueryWriteTransport] = 'grpc_asyncio', client_options: typing.Optional[google.api_core.client_options.ClientOptions] = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = &lt;google.api_core.gapic_v1.client_info.ClientInfo object&gt;)</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>BigQuery Write API.
+The Write API can be used to write data to BigQuery.
+For supplementary information about the Write API, see:
+<a href="https://cloud.google.com/bigquery/docs/write-api">https://cloud.google.com/bigquery/docs/write-api</a></p>
+</div>
+  <div class="inheritance">
+    <h2>Inheritance</h2>
+      <span><span class="xref">builtins.object</span></span>
+      <span> &gt; </span>
+      <span class="xref">BigQueryWriteAsyncClient</span>
+  </div>
+  <h2 id="properties">Properties
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_transport" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.transport" class="notranslate">transport</h3>
+  <div class="markdown level1 summary"><p>Returns the transport used by the client instance.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>BigQueryWriteTransport</td>
+        <td>The transport used by the client instance.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient" class="notranslate">BigQueryWriteAsyncClient</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>BigQueryWriteAsyncClient(*, credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Union[str, google.cloud.bigquery_storage_v1.services.big_query_write.transports.base.BigQueryWriteTransport] = 'grpc_asyncio', client_options: typing.Optional[google.api_core.client_options.ClientOptions] = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = &lt;google.api_core.gapic_v1.client_info.ClientInfo object&gt;)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Instantiates the big query write client.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>credentials</td>
+        <td>
+          <code>Optional[google.auth.credentials.Credentials]</code>
+          <br>
+          <p>The authorization credentials to attach to requests. These credentials identify the application to the service; if none are specified, the client will attempt to ascertain the credentials from the environment.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>transport</td>
+        <td>
+          <code>Union[str, `.BigQueryWriteTransport`]</code>
+          <br>
+          <p>The transport to use. If set to None, a transport is chosen automatically.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>client_options</td>
+        <td>
+          <code>ClientOptions</code>
+          <br>
+          <p>Custom options for the client. It won&#39;t take effect if a <code>transport</code> instance is provided. (1) The <code>api_endpoint</code> property can be used to override the default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT environment variable can also be used to override the endpoint: &quot;always&quot; (always use the default mTLS endpoint), &quot;never&quot; (always use the default regular endpoint) and &quot;auto&quot; (auto switch to the default mTLS endpoint if client certificate is present, this is the default value). However, the <code>api_endpoint</code> property takes precedence if provided. (2) If GOOGLE_API_USE_CLIENT_CERTIFICATE environment variable is &quot;true&quot;, then the <code>client_cert_source</code> property can be used to provide client certificate for mutual TLS transport. If not provided, the default SSL client certificate will be used if present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is &quot;false&quot; or not set, no client certificate will be used.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>google.auth.exceptions.MutualTlsChannelError</td>
+        <td>If mutual TLS transport creation failed for any reason.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_append_rows" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.append_rows" class="notranslate">append_rows</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>append_rows(
+    requests: typing.Optional[
+        typing.AsyncIterator[
+            google.cloud.bigquery_storage_v1.types.storage.AppendRowsRequest
+        ]
+    ] = None,
+    *,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Appends data to the given stream.</p>
+<p>If <code>offset</code> is specified, the <code>offset</code> is checked against
+the end of stream. The server returns <code>OUT_OF_RANGE</code> in
+<code>AppendRowsResponse</code> if an attempt is made to append to an
+offset beyond the current end of the stream or
+<code>ALREADY_EXISTS</code> if user provides an <code>offset</code> that has
+already been written to. User can retry with adjusted offset
+within the same RPC connection. If <code>offset</code> is not specified,
+append happens at the end of the stream.</p>
+<p>The response contains an optional offset at which the append
+happened. No offset information will be returned for appends to
+a default stream.</p>
+<p>Responses are received in the same order in which requests are
+sent. There will be one response for each successful inserted
+request. Responses may optionally embed error information if the
+originating AppendRequest was not successfully processed.</p>
+<p>The specifics of when successfully appended data is made visible
+to the table are governed by the type of stream:</p>
+<ul>
+<li><p>For COMMITTED streams (which includes the default stream),
+data is visible immediately upon successful append.</p>
+</li>
+<li><p>For BUFFERED streams, data is made visible via a subsequent
+<code>FlushRows</code> rpc which advances a cursor to a newer offset
+in the stream.</p>
+</li>
+<li><p>For PENDING streams, data is not made visible until the
+stream itself is finalized (via the <code>FinalizeWriteStream</code>
+rpc), and the stream is explicitly committed via the
+<code>BatchCommitWriteStreams</code> rpc.</p>
+</li>
+</ul>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>requests</td>
+        <td>
+          <code>AsyncIterator[`<a class="xref" href="google.cloud.bigquery_storage_v1.types.AppendRowsRequest.html">google.cloud.bigquery_storage_v1.types.AppendRowsRequest</a>`]</code>
+          <br>
+          <p>The request object AsyncIterator. Request message for <code>AppendRows</code>. Due to the nature of AppendRows being a bidirectional streaming RPC, certain parts of the AppendRowsRequest need only be specified for the first request sent each time the gRPC network connection is opened/reopened.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>AsyncIterable[<a class="xref" href="google.cloud.bigquery_storage_v1.types.AppendRowsResponse.html">google.cloud.bigquery_storage_v1.types.AppendRowsResponse</a>]</td>
+        <td>Response message for AppendRows.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_batch_commit_write_streams" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.batch_commit_write_streams" class="notranslate">batch_commit_write_streams</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>batch_commit_write_streams(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.BatchCommitWriteStreamsRequest,
+            dict,
+        ]
+    ] = None,
+    *,
+    parent: typing.Optional[str] = None,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Atomically commits a group of <code>PENDING</code> streams that belong to
+the same <code>parent</code> table.</p>
+<p>Streams must be finalized before commit and cannot be committed
+multiple times. Once a stream is committed, data in the stream
+becomes available for read operations.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>request</td>
+        <td>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.BatchCommitWriteStreamsRequest.html">google.cloud.bigquery_storage_v1.types.BatchCommitWriteStreamsRequest</a>, dict]</code>
+          <br>
+          <p>The request object. Request message for <code>BatchCommitWriteStreams</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>`str`</code>
+          <br>
+          <p>Required. Parent table that all the streams should belong to, in the form of <code>projects/{project}/datasets/{dataset}/tables/{table}</code>. This corresponds to the <code>parent</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1.types.BatchCommitWriteStreamsResponse.html">google.cloud.bigquery_storage_v1.types.BatchCommitWriteStreamsResponse</a></td>
+        <td>Response message for BatchCommitWriteStreams.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_common_billing_account_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.common_billing_account_path" class="notranslate">common_billing_account_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>common_billing_account_path(billing_account: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified billing_account string.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_common_folder_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.common_folder_path" class="notranslate">common_folder_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>common_folder_path(folder: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified folder string.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_common_location_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.common_location_path" class="notranslate">common_location_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>common_location_path(project: str, location: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified location string.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_common_organization_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.common_organization_path" class="notranslate">common_organization_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>common_organization_path(organization: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified organization string.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_common_project_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.common_project_path" class="notranslate">common_project_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>common_project_path(project: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified project string.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_create_write_stream" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.create_write_stream" class="notranslate">create_write_stream</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>create_write_stream(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.CreateWriteStreamRequest,
+            dict,
+        ]
+    ] = None,
+    *,
+    parent: typing.Optional[str] = None,
+    write_stream: typing.Optional[
+        google.cloud.bigquery_storage_v1.types.stream.WriteStream
+    ] = None,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates a write stream to the given table. Additionally, every
+table has a special stream named &#39;_default&#39; to which data can be
+written. This stream doesn&#39;t need to be created using
+CreateWriteStream. It is a stream that can be used
+simultaneously by any number of clients. Data written to this
+stream is considered committed as soon as an acknowledgement is
+received.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>request</td>
+        <td>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.CreateWriteStreamRequest.html">google.cloud.bigquery_storage_v1.types.CreateWriteStreamRequest</a>, dict]</code>
+          <br>
+          <p>The request object. Request message for <code>CreateWriteStream</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>`str`</code>
+          <br>
+          <p>Required. Reference to the table to which the stream belongs, in the format of <code>projects/{project}/datasets/{dataset}/tables/{table}</code>. This corresponds to the <code>parent</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>write_stream</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1.types.WriteStream.html">WriteStream</a></code>
+          <br>
+          <p>Required. Stream to be created. This corresponds to the <code>write_stream</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1.types.WriteStream.html">google.cloud.bigquery_storage_v1.types.WriteStream</a></td>
+        <td>Information about a single stream that gets data inside the storage system.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_finalize_write_stream" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.finalize_write_stream" class="notranslate">finalize_write_stream</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>finalize_write_stream(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.FinalizeWriteStreamRequest,
+            dict,
+        ]
+    ] = None,
+    *,
+    name: typing.Optional[str] = None,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Finalize a write stream so that no new data can be appended to
+the stream. Finalize is not supported on the &#39;_default&#39; stream.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>request</td>
+        <td>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.FinalizeWriteStreamRequest.html">google.cloud.bigquery_storage_v1.types.FinalizeWriteStreamRequest</a>, dict]</code>
+          <br>
+          <p>The request object. Request message for invoking <code>FinalizeWriteStream</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>`str`</code>
+          <br>
+          <p>Required. Name of the stream to finalize, in the form of <code>projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}</code>. This corresponds to the <code>name</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1.types.FinalizeWriteStreamResponse.html">google.cloud.bigquery_storage_v1.types.FinalizeWriteStreamResponse</a></td>
+        <td>Response message for FinalizeWriteStream.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_flush_rows" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.flush_rows" class="notranslate">flush_rows</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>flush_rows(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.FlushRowsRequest, dict
+        ]
+    ] = None,
+    *,
+    write_stream: typing.Optional[str] = None,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Flushes rows to a BUFFERED stream.</p>
+<p>If users are appending rows to BUFFERED stream, flush operation
+is required in order for the rows to become available for
+reading. A Flush operation flushes up to any previously flushed
+offset in a BUFFERED stream, to the offset specified in the
+request.</p>
+<p>Flush is not supported on the _default stream, since it is not
+BUFFERED.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>request</td>
+        <td>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.FlushRowsRequest.html">google.cloud.bigquery_storage_v1.types.FlushRowsRequest</a>, dict]</code>
+          <br>
+          <p>The request object. Request message for <code>FlushRows</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>write_stream</td>
+        <td>
+          <code>`str`</code>
+          <br>
+          <p>Required. The stream that is the target of the flush operation. This corresponds to the <code>write_stream</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1.types.FlushRowsResponse.html">google.cloud.bigquery_storage_v1.types.FlushRowsResponse</a></td>
+        <td>Respond message for FlushRows.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_from_service_account_file" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.from_service_account_file" class="notranslate">from_service_account_file</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>from_service_account_file(filename: str, *args, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
+    file.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>filename</td>
+        <td>
+          <code>str</code>
+          <br>
+          <p>The path to the service account private key json file.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>BigQueryWriteAsyncClient</td>
+        <td>The constructed client.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_from_service_account_info" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.from_service_account_info" class="notranslate">from_service_account_info</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>from_service_account_info(info: dict, *args, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
+    info.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>info</td>
+        <td>
+          <code>dict</code>
+          <br>
+          <p>The service account private key info.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>BigQueryWriteAsyncClient</td>
+        <td>The constructed client.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_from_service_account_json" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.from_service_account_json" class="notranslate">from_service_account_json</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>from_service_account_json(filename: str, *args, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
+    file.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>filename</td>
+        <td>
+          <code>str</code>
+          <br>
+          <p>The path to the service account private key json file.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>BigQueryWriteAsyncClient</td>
+        <td>The constructed client.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_get_mtls_endpoint_and_cert_source" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.get_mtls_endpoint_and_cert_source" class="notranslate">get_mtls_endpoint_and_cert_source</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>get_mtls_endpoint_and_cert_source(
+    client_options: typing.Optional[
+        google.api_core.client_options.ClientOptions
+    ] = None,
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Return the API endpoint and client cert source for mutual TLS.</p>
+<p>The client cert source is determined in the following order:
+(1) if <code>GOOGLE_API_USE_CLIENT_CERTIFICATE</code> environment variable is not &quot;true&quot;, the
+client cert source is None.
+(2) if <code>client_options.client_cert_source</code> is provided, use the provided one; if the
+default client cert source exists, use the default one; otherwise the client cert
+source is None.</p>
+<p>The API endpoint is determined in the following order:
+(1) if <code>client_options.api_endpoint</code> if provided, use the provided one.
+(2) if <code>GOOGLE_API_USE_CLIENT_CERTIFICATE</code> environment variable is &quot;always&quot;, use the
+default mTLS endpoint; if the environment variabel is &quot;never&quot;, use the default API
+endpoint; otherwise if client cert source exists, use the default mTLS endpoint, otherwise
+use the default API endpoint.</p>
+<p>More details can be found at <a href="https://google.aip.dev/auth/4114">https://google.aip.dev/auth/4114</a>.</p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>client_options</td>
+        <td>
+          <code>google.api_core.client_options.ClientOptions</code>
+          <br>
+          <p>Custom options for the client. Only the <code>api_endpoint</code> and <code>client_cert_source</code> properties may be used in this method.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>google.auth.exceptions.MutualTLSChannelError</td>
+        <td>If any errors happen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>Tuple[str, Callable[[], Tuple[bytes, bytes]]]</td>
+        <td>returns the API endpoint and the client cert source to use.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_get_transport_class" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.get_transport_class" class="notranslate">get_transport_class</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>get_transport_class()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns an appropriate transport class.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_get_write_stream" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.get_write_stream" class="notranslate">get_write_stream</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>get_write_stream(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.GetWriteStreamRequest, dict
+        ]
+    ] = None,
+    *,
+    name: typing.Optional[str] = None,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Gets information about a write stream.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong><strong>Name</strong></strong></td>
+        <td><strong><strong>Description</strong></strong></td>
+      </tr>
+      <tr>
+        <td>request</td>
+        <td>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.GetWriteStreamRequest.html">google.cloud.bigquery_storage_v1.types.GetWriteStreamRequest</a>, dict]</code>
+          <br>
+          <p>The request object. Request message for <code>GetWriteStreamRequest</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>`str`</code>
+          <br>
+          <p>Required. Name of the stream to get, in the form of <code>projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}</code>. This corresponds to the <code>name</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1.types.WriteStream.html">google.cloud.bigquery_storage_v1.types.WriteStream</a></td>
+        <td>Information about a single stream that gets data inside the storage system.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_parse_common_billing_account_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.parse_common_billing_account_path" class="notranslate">parse_common_billing_account_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>parse_common_billing_account_path(path: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Parse a billing_account path into its component segments.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_parse_common_folder_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.parse_common_folder_path" class="notranslate">parse_common_folder_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>parse_common_folder_path(path: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Parse a folder path into its component segments.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_parse_common_location_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.parse_common_location_path" class="notranslate">parse_common_location_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>parse_common_location_path(path: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Parse a location path into its component segments.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_parse_common_organization_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.parse_common_organization_path" class="notranslate">parse_common_organization_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>parse_common_organization_path(path: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Parse a organization path into its component segments.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_parse_common_project_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.parse_common_project_path" class="notranslate">parse_common_project_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>parse_common_project_path(path: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Parse a project path into its component segments.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_parse_table_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.parse_table_path" class="notranslate">parse_table_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>parse_table_path(path: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Parses a table path into its component segments.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_parse_write_stream_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.parse_write_stream_path" class="notranslate">parse_write_stream_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>parse_write_stream_path(path: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Parses a write_stream path into its component segments.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_table_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.table_path" class="notranslate">table_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>table_path(project: str, dataset: str, table: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified table string.</p>
+</div>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_write_BigQueryWriteAsyncClient_write_stream_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_write.BigQueryWriteAsyncClient.write_stream_path" class="notranslate">write_stream_path</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>write_stream_path(project: str, dataset: str, table: str, stream: str)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns a fully-qualified write_stream string.</p>
+</div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>
