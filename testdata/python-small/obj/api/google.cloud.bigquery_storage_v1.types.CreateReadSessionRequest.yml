@@ -1,7 +1,24 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- attributes:
+  - description: "Required. The request project that owns the session, in the\n  \
+      \ form of ``projects/{project_id}``."
+    id: parent
+    var_type: str
+  - description: Required. Session to be created.
+    id: read_session
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ReadSession">google.cloud.bigquery_storage_v1.types.ReadSession</xref>
+  - description: "Max initial number of streams. If unset or\n   zero, the server\
+      \ will provide a value of streams\n   so as to produce reasonable throughput.\
+      \ Must be\n   non-negative. The number of streams may be lower\n   than the\
+      \ requested number, depending on the\n   amount parallelism that is reasonable\
+      \ for the\n   table. Error will be returned if the max count\n   is greater\
+      \ than the current system max limit of\n   1,000.\n   \n   Streams must be read\
+      \ starting from offset 0."
+    id: max_stream_count
+    var_type: int
+  children: []
   class: google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest
   fullName: google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest
   inheritance:
@@ -16,24 +33,17 @@ items:
     id: CreateReadSessionRequest
     path: google/cloud/bigquery_storage_v1/types/storage.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/types/storage.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 37
-  summary: "Request message for ``CreateReadSession``.\nAttributes:\n    parent (str):\n\
-    \        Required. The request project that owns the session, in the\n       \
-    \ form of ``projects/{project_id}``.\n    read_session (google.cloud.bigquery_storage_v1.types.ReadSession):\n\
-    \        Required. Session to be created.\n    max_stream_count (int):\n     \
-    \   Max initial number of streams. If unset or\n        zero, the server will\
-    \ provide a value of streams\n        so as to produce reasonable throughput.\
-    \ Must be\n        non-negative. The number of streams may be lower\n        than\
-    \ the requested number, depending on the\n        amount parallelism that is reasonable\
-    \ for the\n        table. Error will be returned if the max count\n        is\
-    \ greater than the current system max limit of\n        1,000.\n\n\n        Streams\
-    \ must be read starting from offset 0.\n"
+    startLine: 53
+  summary: 'Request message for ``CreateReadSession``.
+
+    '
   syntax:
     content: CreateReadSessionRequest(mapping=None, *, ignore_unknown_fields=False,
       **kwargs)
+    parameters: []
   type: class
   uid: google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest
 references: []

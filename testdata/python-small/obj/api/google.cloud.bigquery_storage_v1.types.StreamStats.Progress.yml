@@ -1,7 +1,23 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- attributes:
+  - description: "The fraction of rows assigned to the stream that have been\n   processed\
+      \ by the server so far, not including the rows in\n   the current response message.\n\
+      \   \n   This value, along with ``at_response_end``, can be used to\n   interpolate\
+      \ the progress made as the rows in the message are\n   being processed using\
+      \ the following formula:\n   ``at_response_start + (at_response_end - at_response_start)\
+      \ * rows_processed_from_response / rows_in_response``.\n   \n   Note that if\
+      \ a filter is provided, the ``at_response_end``\n   value of the previous response\
+      \ may not necessarily be equal\n   to the ``at_response_start`` value of the\
+      \ current response."
+    id: at_response_start
+    var_type: float
+  - description: "Similar to ``at_response_start``, except that this value\n   includes\
+      \ the rows in the current response."
+    id: at_response_end
+    var_type: float
+  children: []
   class: google.cloud.bigquery_storage_v1.types.StreamStats.Progress
   fullName: google.cloud.bigquery_storage_v1.types.StreamStats.Progress
   inheritance:
@@ -16,24 +32,14 @@ items:
     id: Progress
     path: google/cloud/bigquery_storage_v1/types/storage.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/types/storage.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 100
-  summary: "Attributes:\n    at_response_start (float):\n        The fraction of rows\
-    \ assigned to the stream that have been\n        processed by the server so far,\
-    \ not including the rows in\n        the current response message.\n\n\n     \
-    \   This value, along with ``at_response_end``, can be used to\n        interpolate\
-    \ the progress made as the rows in the message are\n        being processed using\
-    \ the following formula:\n        ``at_response_start + (at_response_end - at_response_start)\
-    \ * rows_processed_from_response / rows_in_response``.\n\n\n        Note that\
-    \ if a filter is provided, the ``at_response_end``\n        value of the previous\
-    \ response may not necessarily be equal\n        to the ``at_response_start``\
-    \ value of the current response.\n    at_response_end (float):\n        Similar\
-    \ to ``at_response_start``, except that this value\n        includes the rows\
-    \ in the current response.\n"
+    startLine: 120
+  summary: ''
   syntax:
     content: Progress(mapping=None, *, ignore_unknown_fields=False, **kwargs)
+    parameters: []
   type: class
   uid: google.cloud.bigquery_storage_v1.types.StreamStats.Progress
 references: []

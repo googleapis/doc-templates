@@ -1,7 +1,9 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children:
+- attributes: []
+  children:
+  - google.cloud.bigquery_storage_v1.reader.ReadRowsStream
   - google.cloud.bigquery_storage_v1.reader.ReadRowsStream.__iter__
   - google.cloud.bigquery_storage_v1.reader.ReadRowsStream.rows
   - google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_arrow
@@ -18,12 +20,11 @@ items:
     id: ReadRowsStream
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 63
+    startLine: 70
   summary: 'A stream of results from a read rows request.
-
 
 
     This stream is an iterable of
@@ -33,13 +34,11 @@ items:
     Iterate over it to fetch all row messages.
 
 
-
     If the fastavro library is installed, use the
 
     <xref uid="google.cloud.bigquery_storage_v1.reader.ReadRowsStream.rows">rows()</xref>
 
     method to parse all messages into a stream of row dictionaries.
-
 
 
     If the pandas and fastavro libraries are installed, use the
@@ -48,12 +47,70 @@ items:
 
     method to parse all messages into a `pandas.DataFrame`.
 
+
+    This object should not be created directly, but is returned by
+
+    other methods in this library.
+
+
     '
   syntax:
-    content: ReadRowsStream(wrapped, client, name, offset, read_rows_kwargs)
+    content: ReadRowsStream(client, name, offset, read_rows_kwargs, retry_delay_callback=None)
+    parameters: []
   type: class
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
-- class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+  fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1.reader
+  name: ReadRowsStream
+  source:
+    id: ReadRowsStream
+    path: google/cloud/bigquery_storage_v1/reader.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1/reader.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 70
+  summary: 'Construct a ReadRowsStream.
+
+    '
+  syntax:
+    content: ReadRowsStream(client, name, offset, read_rows_kwargs, retry_delay_callback=None)
+    parameters:
+    - description: A GAPIC client used to reconnect to a ReadRows stream. This must
+        be the GAPIC client to avoid a circular dependency on this class.
+      id: client
+      var_type: <xref uid="google.cloud.bigquery_storage_v1.services"></xref> big_query_read.BigQueryReadClient
+    - description: Required. Stream ID from which rows are being read.
+      id: name
+      var_type: str
+    - description: Required. Position in the stream to start reading from. The offset
+        requested must be less than the last row read from ReadRows. Requesting a
+        larger offset is undefined.
+      id: offset
+      var_type: int
+    - description: Keyword arguments to use when reconnecting to a ReadRows stream.
+      id: read_rows_kwargs
+      var_type: dict
+    - description: If the client receives a retryable error that asks the client to
+        delay its next attempt and retry_delay_callback is not None, ReadRowsStream
+        will call retry_delay_callback with the delay duration (in seconds) before
+        it starts sleeping until the next attempt.
+      id: retry_delay_callback
+      var_type: Optional[Callable[[float], None]]
+    returns:
+    - description: A sequence of row messages.
+      var_type: Iterable[ <xref uid="google.cloud.bigquery_storage_v1.services"></xref>ReadRowsResponse
+        ]
+  type: method
+  uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.__iter__
   langs:
   - python
@@ -63,13 +120,11 @@ items:
     id: __iter__
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 120
+    startLine: 135
   summary: 'An iterable of messages.
-
-
 
     '
   syntax:
@@ -81,7 +136,8 @@ items:
         ]
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.__iter__
-- class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.rows
   langs:
   - python
@@ -91,20 +147,18 @@ items:
     id: rows
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 159
-  summary: "Iterate over all rows in the stream.\n\n\nThis method requires the fastavro\
+    startLine: 216
+  summary: "Iterate over all rows in the stream.\n\nThis method requires the fastavro\
     \ library in order to parse row\nmessages in avro format.  For arrow format messages,\
-    \ the pyarrow\nlibrary is required.\n\n\n.. warning::\n    DATETIME columns are\
-    \ not supported. They are currently parsed as\n    strings in the fastavro library.\n\
-    \n\n"
+    \ the pyarrow\nlibrary is required.\n\n.. warning::\n    DATETIME columns are\
+    \ not supported. They are currently parsed as\n    strings in the fastavro library.\n"
   syntax:
     content: rows(read_session=None)
     parameters:
-    - defaultValue: None
-      description: DEPRECATED. This argument was used to specify the schema of the
+    - description: DEPRECATED. This argument was used to specify the schema of the
         rows in the stream, but now the first message in a read stream contains this
         information.
       id: read_session
@@ -114,7 +168,8 @@ items:
       var_type: Iterable[Mapping]
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.rows
-- class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_arrow
   langs:
   - python
@@ -124,26 +179,22 @@ items:
     id: to_arrow
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 186
+    startLine: 243
   summary: 'Create a `pyarrow.Table` of all rows in the stream.
-
 
 
     This method requires the pyarrow library and a stream using the Arrow
 
     format.
 
-
-
     '
   syntax:
     content: to_arrow(read_session=None)
     parameters:
-    - defaultValue: None
-      description: DEPRECATED. This argument was used to specify the schema of the
+    - description: DEPRECATED. This argument was used to specify the schema of the
         rows in the stream, but now the first message in a read stream contains this
         information.
       id: read_session
@@ -153,7 +204,8 @@ items:
       var_type: pyarrow.Table
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_arrow
-- class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+- attributes: []
+  class: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
   fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_dataframe
   langs:
   - python
@@ -163,25 +215,23 @@ items:
     id: to_dataframe
     path: google/cloud/bigquery_storage_v1/reader.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1/reader.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 208
-  summary: "Create a `pandas.DataFrame` of all rows in the stream.\n\n\nThis method\
+    startLine: 265
+  summary: "Create a `pandas.DataFrame` of all rows in the stream.\n\nThis method\
     \ requires the pandas libary to create a data frame and the\nfastavro library\
-    \ to parse row messages.\n\n\n.. warning::\n    DATETIME columns are not supported.\
-    \ They are currently parsed as\n    strings.\n\n\n"
+    \ to parse row messages.\n\n.. warning::\n    DATETIME columns are not supported.\
+    \ They are currently parsed as\n    strings.\n"
   syntax:
     content: to_dataframe(read_session=None, dtypes=None)
     parameters:
-    - defaultValue: None
-      description: DEPRECATED. This argument was used to specify the schema of the
+    - description: DEPRECATED. This argument was used to specify the schema of the
         rows in the stream, but now the first message in a read stream contains this
         information.
       id: read_session
       var_type: <xref uid="google.cloud.bigquery_storage_v1.types.ReadSession">ReadSession</xref>
-    - defaultValue: None
-      description: Optional. A dictionary of column names pandas ``dtype``s. The provided
+    - description: Optional. A dictionary of column names pandas ``dtype``s. The provided
         ``dtype`` is used when constructing the series for the column specified. Otherwise,
         the default pandas behavior is used.
       id: dtypes
@@ -192,6 +242,11 @@ items:
   type: method
   uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.to_dataframe
 references:
+- fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+  isExternal: false
+  name: ReadRowsStream
+  parent: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
+  uid: google.cloud.bigquery_storage_v1.reader.ReadRowsStream
 - fullName: google.cloud.bigquery_storage_v1.reader.ReadRowsStream.__iter__
   isExternal: false
   name: __iter__

@@ -1,7 +1,48 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children:
+- attributes:
+  - description: "Output only. Unique identifier for the session, in the form\n  \
+      \ ``projects/{project_id}/locations/{location}/sessions/{session_id}``."
+    id: name
+    var_type: str
+  - description: "Output only. Time at which the session becomes invalid.\n   After\
+      \ this time, subsequent requests to read this Session\n   will return errors.\
+      \ The expire_time is automatically\n   assigned and currently cannot be specified\
+      \ or updated."
+    id: expire_time
+    var_type: google.protobuf.timestamp_pb2.Timestamp
+  - description: Immutable. Data format of the output data.
+    id: data_format
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.DataFormat">google.cloud.bigquery_storage_v1beta2.types.DataFormat</xref>
+  - description: "Output only. Avro schema.\n   \n   This field is a member of `oneof`_\
+      \ ``schema``."
+    id: avro_schema
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.AvroSchema">google.cloud.bigquery_storage_v1beta2.types.AvroSchema</xref>
+  - description: "Output only. Arrow schema.\n   \n   This field is a member of `oneof`_\
+      \ ``schema``."
+    id: arrow_schema
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.ArrowSchema">google.cloud.bigquery_storage_v1beta2.types.ArrowSchema</xref>
+  - description: "Immutable. Table that this ReadSession is reading from, in\n   the\
+      \ form\n   \\`projects/{project_id}/datasets/{dataset_id}/tables/{table_id}"
+    id: table
+    var_type: str
+  - description: "Optional. Any modifiers which are applied\n   when reading from\
+      \ the specified table."
+    id: table_modifiers
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableModifiers">google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableModifiers</xref>
+  - description: "Optional. Read options for this session (e.g.\n   column selection,\
+      \ filters)."
+    id: read_options
+    var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableReadOptions">google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableReadOptions</xref>
+  - description: "Output only. A list of streams created with the session.\n   \n\
+      \   At least one stream is created with the session. In the\n   future, larger\
+      \ request_stream_count values *may* result in\n   this list being unpopulated,\
+      \ in that case, the user will\n   need to use a List method to get the streams\
+      \ instead, which\n   is not yet available."
+    id: streams
+    var_type: Sequence[<xref uid="google.cloud.bigquery_storage_v1beta2.types.ReadStream">google.cloud.bigquery_storage_v1beta2.types.ReadStream</xref>]
+  children:
   - google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableModifiers
   - google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableReadOptions
   class: google.cloud.bigquery_storage_v1beta2.types.ReadSession
@@ -18,33 +59,28 @@ items:
     id: ReadSession
     path: google/cloud/bigquery_storage_v1beta2/types/stream.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/types/stream.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: 37
-  summary: "Information about the ReadSession.\nAttributes:\n    name (str):\n   \
-    \     Output only. Unique identifier for the session, in the form\n        ``projects/{project_id}/locations/{location}/sessions/{session_id}``.\n\
-    \    expire_time (google.protobuf.timestamp_pb2.Timestamp):\n        Output only.\
-    \ Time at which the session becomes invalid.\n        After this time, subsequent\
-    \ requests to read this Session\n        will return errors. The expire_time is\
-    \ automatically\n        assigned and currently cannot be specified or updated.\n\
-    \    data_format (google.cloud.bigquery_storage_v1beta2.types.DataFormat):\n \
-    \       Immutable. Data format of the output data.\n    avro_schema (google.cloud.bigquery_storage_v1beta2.types.AvroSchema):\n\
-    \        Output only. Avro schema.\n    arrow_schema (google.cloud.bigquery_storage_v1beta2.types.ArrowSchema):\n\
-    \        Output only. Arrow schema.\n    table (str):\n        Immutable. Table\
-    \ that this ReadSession is reading from, in\n        the form\n        \\`projects/{project_id}/datasets/{dataset_id}/tables/{table_id}\n\
-    \    table_modifiers (google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableModifiers):\n\
-    \        Optional. Any modifiers which are applied\n        when reading from\
-    \ the specified table.\n    read_options (google.cloud.bigquery_storage_v1beta2.types.ReadSession.TableReadOptions):\n\
-    \        Optional. Read options for this session (e.g.\n        column selection,\
-    \ filters).\n    streams (Sequence[google.cloud.bigquery_storage_v1beta2.types.ReadStream]):\n\
-    \        Output only. A list of streams created with the session.\n\n\n      \
-    \  At least one stream is created with the session. In the\n        future, larger\
-    \ request_stream_count values *may* result in\n        this list being unpopulated,\
-    \ in that case, the user will\n        need to use a List method to get the streams\
-    \ instead, which\n        is not yet available.\n"
+  summary: 'Information about the ReadSession.
+
+
+    This message has `oneof`_ fields (mutually exclusive fields).
+
+    For each oneof, at most one member field can be set at the same time.
+
+    Setting any member of the oneof automatically clears all other
+
+    members.
+
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
+    '
   syntax:
     content: ReadSession(mapping=None, *, ignore_unknown_fields=False, **kwargs)
+    parameters: []
   type: class
   uid: google.cloud.bigquery_storage_v1beta2.types.ReadSession
 references:
