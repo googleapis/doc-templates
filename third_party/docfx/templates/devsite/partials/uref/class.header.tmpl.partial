@@ -23,8 +23,12 @@
 {{/syntax.parameters.0}}
 {{#syntax.parameters}}
     <tr>
-      <td><span class="parametername">{{{id}}}</span></td>
-      <td><code>{{{type.specName.0.value}}}</code><br>{{{description}}}</td>
+      <td>{{{id}}}</td>
+      <td>
+	<code>{{#var_type}}{{{var_type}}}{{/var_type}}{{^var_type}}{{{type.specName.0.value}}}{{/var_type}}</code>
+	<br>
+	{{{description}}}
+      </td>
     </tr>
 {{/syntax.parameters}}
 {{#syntax.parameters.0}}
@@ -40,14 +44,14 @@
       <td><strong>{{__global.description}}</strong></td>
     </tr>
     <tr>
-      <td>{{{type.specName.0.value}}}</td>
+      <td><code>{{#var_type}}{{{var_type}}}{{/var_type}}{{^var_type}}{{{type.specName.0.value}}}{{/var_type}}</code></td>
       <td>{{{description}}}</td>
     </tr>
   </tbody>
 </table>
 {{/syntax.return}}
 {{#attributes.0}}
-<strong>{{__global.attribute}}{{#attributes.1}}s{{/attributes.1}}</strong>
+<h2>{{__global.attribute}}{{#attributes.1}}s{{/attributes.1}}</h2>
 <table class="responsive">
   <tbody>
     <tr>
@@ -57,8 +61,12 @@
 {{/attributes.0}}
 {{#attributes}}
     <tr>
-      <td>{{{var_type}}}</td>
-      <td><code>{{{name}}}</code><br>{{{description}}}</td>
+      <td>{{{id}}}</td>
+      <td>
+	<code>{{#var_type}}{{{var_type}}}{{/var_type}}{{^var_type}}{{{type.specName.0.value}}}{{/var_type}}</code>
+	<br>
+	{{{description}}}
+      </td>
     </tr>
 {{/attributes}}
 {{#attributes.0}}
