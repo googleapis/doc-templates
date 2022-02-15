@@ -12,21 +12,46 @@
 </h1>
   
   
-  <div class="markdown level0 summary"><p>Response message for <code>BatchCommitWriteStreams</code>.
-Attributes:
-    commit_time (google.protobuf.timestamp_pb2.Timestamp):
-        The time at which streams were committed in microseconds
-        granularity. This field will only exist when there are no
-        stream errors. <strong>Note</strong> if this field is not set, it means
-        the commit was not successful.
-    stream_errors (Sequence[google.cloud.bigquery_storage_v1beta2.types.StorageError]):
-        Stream level error if commit failed. Only
-        streams with error will be in the list.
-        If empty, there is no error and all streams are
-        committed successfully. If non empty, certain
-        streams have errors and ZERO stream is committed
-        due to atomicity guarantee.</p>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>BatchCommitWriteStreamsResponse(
+    mapping=None, *, ignore_unknown_fields=False, **kwargs
+)</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>Response message for <code>BatchCommitWriteStreams</code>.</p>
 </div>
+  <h2>Attributes</h2>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>commit_time</td>
+        <td>
+          <code>google.protobuf.timestamp_pb2.Timestamp</code>
+          <br>
+          The time at which streams were committed in microseconds
+   granularity. This field will only exist when there are no
+   stream errors. **Note** if this field is not set, it means
+   the commit was not successful.
+        </td>
+      </tr>
+      <tr>
+        <td>stream_errors</td>
+        <td>
+          <code>Sequence[<a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.StorageError.html">google.cloud.bigquery_storage_v1beta2.types.StorageError</a>]</code>
+          <br>
+          Stream level error if commit failed. Only
+   streams with error will be in the list.
+   If empty, there is no error and all streams are
+   committed successfully. If non empty, certain
+   streams have errors and ZERO stream is committed
+   due to atomicity guarantee.
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>

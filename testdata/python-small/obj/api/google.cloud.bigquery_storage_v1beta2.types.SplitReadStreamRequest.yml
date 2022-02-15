@@ -1,7 +1,21 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- attributes:
+  - description: Required. Name of the stream to split.
+    id: name
+    var_type: str
+  - description: "A value in the range (0.0, 1.0) that\n   specifies the fractional\
+      \ point at which the\n   original stream should be split. The actual\n   split\
+      \ point is evaluated on pre-filtered rows,\n   so if a filter is provided, then\
+      \ there is no\n   guarantee that the division of the rows between\n   the new\
+      \ child streams will be proportional to\n   this fractional value. Additionally,\
+      \ because the\n   server-side unit for assigning data is\n   collections of\
+      \ rows, this fraction will always\n   map to a data storage boundary on the\
+      \ server\n   side."
+    id: fraction
+    var_type: float
+  children: []
   class: google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest
   fullName: google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest
   inheritance:
@@ -16,23 +30,17 @@ items:
     id: SplitReadStreamRequest
     path: google/cloud/bigquery_storage_v1beta2/types/storage.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/types/storage.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 184
-  summary: "Request message for ``SplitReadStream``.\nAttributes:\n    name (str):\n\
-    \        Required. Name of the stream to split.\n    fraction (float):\n     \
-    \   A value in the range (0.0, 1.0) that\n        specifies the fractional point\
-    \ at which the\n        original stream should be split. The actual\n        split\
-    \ point is evaluated on pre-filtered rows,\n        so if a filter is provided,\
-    \ then there is no\n        guarantee that the division of the rows between\n\
-    \        the new child streams will be proportional to\n        this fractional\
-    \ value. Additionally, because the\n        server-side unit for assigning data\
-    \ is\n        collections of rows, this fraction will always\n        map to a\
-    \ data storage boundary on the server\n        side.\n"
+    startLine: 204
+  summary: 'Request message for ``SplitReadStream``.
+
+    '
   syntax:
     content: SplitReadStreamRequest(mapping=None, *, ignore_unknown_fields=False,
       **kwargs)
+    parameters: []
   type: class
   uid: google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest
 references: []

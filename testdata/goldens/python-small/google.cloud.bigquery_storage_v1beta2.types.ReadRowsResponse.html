@@ -12,27 +12,93 @@
 </h1>
   
   
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>ReadRowsResponse(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
   <div class="markdown level0 summary"><p>Response from calling <code>ReadRows</code> may include row data, progress
 and throttling information.</p>
-<p>Attributes:
-    avro_rows (google.cloud.bigquery_storage_v1beta2.types.AvroRows):
-        Serialized row data in AVRO format.
-    arrow_record_batch (google.cloud.bigquery_storage_v1beta2.types.ArrowRecordBatch):
-        Serialized row data in Arrow RecordBatch
-        format.
-    row_count (int):
-        Number of serialized rows in the rows block.
-    stats (google.cloud.bigquery_storage_v1beta2.types.StreamStats):
-        Statistics for the stream.
-    throttle_state (google.cloud.bigquery_storage_v1beta2.types.ThrottleState):
-        Throttling state. If unset, the latest
-        response still describes the current throttling
-        status.
-    avro_schema (google.cloud.bigquery_storage_v1beta2.types.AvroSchema):
-        Output only. Avro schema.
-    arrow_schema (google.cloud.bigquery_storage_v1beta2.types.ArrowSchema):
-        Output only. Arrow schema.</p>
+<p>This message has <code>oneof</code>_ fields (mutually exclusive fields).
+For each oneof, at most one member field can be set at the same time.
+Setting any member of the oneof automatically clears all other
+members.</p>
+<p>.. _oneof: <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields</a></p>
 </div>
+  <h2>Attributes</h2>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>avro_rows</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.AvroRows.html">google.cloud.bigquery_storage_v1beta2.types.AvroRows</a></code>
+          <br>
+          Serialized row data in AVRO format.
+   
+   This field is a member of `oneof`_ ``rows``.
+        </td>
+      </tr>
+      <tr>
+        <td>arrow_record_batch</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ArrowRecordBatch.html">google.cloud.bigquery_storage_v1beta2.types.ArrowRecordBatch</a></code>
+          <br>
+          Serialized row data in Arrow RecordBatch
+   format.
+   
+   This field is a member of `oneof`_ ``rows``.
+        </td>
+      </tr>
+      <tr>
+        <td>row_count</td>
+        <td>
+          <code>int</code>
+          <br>
+          Number of serialized rows in the rows block.
+        </td>
+      </tr>
+      <tr>
+        <td>stats</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.StreamStats.html">google.cloud.bigquery_storage_v1beta2.types.StreamStats</a></code>
+          <br>
+          Statistics for the stream.
+        </td>
+      </tr>
+      <tr>
+        <td>throttle_state</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ThrottleState.html">google.cloud.bigquery_storage_v1beta2.types.ThrottleState</a></code>
+          <br>
+          Throttling state. If unset, the latest
+   response still describes the current throttling
+   status.
+        </td>
+      </tr>
+      <tr>
+        <td>avro_schema</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.AvroSchema.html">google.cloud.bigquery_storage_v1beta2.types.AvroSchema</a></code>
+          <br>
+          Output only. Avro schema.
+   
+   This field is a member of `oneof`_ ``schema``.
+        </td>
+      </tr>
+      <tr>
+        <td>arrow_schema</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.ArrowSchema.html">google.cloud.bigquery_storage_v1beta2.types.ArrowSchema</a></code>
+          <br>
+          Output only. Arrow schema.
+   
+   This field is a member of `oneof`_ ``schema``.
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>

@@ -1,0 +1,97 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- attributes:
+  - description: "Required. The field name. The name must contain only letters\n \
+      \  (a-z, A-Z), numbers (0-9), or underscores (_), and must\n   start with a\
+      \ letter or underscore. The maximum length is 128\n   characters."
+    id: name
+    var_type: str
+  - description: Required. The field data type.
+    id: type_
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type">google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type</xref>
+  - description: "Optional. The field mode. The default value\n   is NULLABLE."
+    id: mode
+    var_type: <xref uid="google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode">google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode</xref>
+  - description: "Optional. Describes the nested schema fields\n   if the type property\
+      \ is set to STRUCT."
+    id: fields
+    var_type: Sequence[google.cloud.bigquery_storage_v1.types.TableFieldSchema]
+  - description: "Optional. The field description. The maximum\n   length is 1,024\
+      \ characters."
+    id: description
+    var_type: str
+  - description: "Optional. Maximum length of values of this field for STRINGS\n \
+      \  or BYTES.\n   \n   If max_length is not specified, no maximum length constraint\n\
+      \   is imposed on this field.\n   \n   If type = \"STRING\", then max_length\
+      \ represents the maximum\n   UTF-8 length of strings in this field.\n   \n \
+      \  If type = \"BYTES\", then max_length represents the maximum\n   number of\
+      \ bytes in this field.\n   \n   It is invalid to set this field if type is not\
+      \ \"STRING\" or\n   \"BYTES\"."
+    id: max_length
+    var_type: int
+  - description: "Optional. Precision (maximum number of total digits in base\n  \
+      \ 10) and scale (maximum number of digits in the fractional\n   part in base\
+      \ 10) constraints for values of this field for\n   NUMERIC or BIGNUMERIC.\n\
+      \   \n   It is invalid to set precision or scale if type is not\n   \"NUMERIC\"\
+      \ or \"BIGNUMERIC\".\n   \n   If precision and scale are not specified, no value\
+      \ range\n   constraint is imposed on this field insofar as values are\n   permitted\
+      \ by the type.\n   \n   Values of this NUMERIC or BIGNUMERIC field must be in\
+      \ this\n   range when:\n   \n   -  Precision (P) and scale (S) are specified:\
+      \ [-10^(P-S) +\n      10^(-S), 10^(P-S) - 10^(-S)]\n   -  Precision (P) is specified\
+      \ but not scale (and thus scale\n      is interpreted to be equal to zero):\
+      \ [-10^P + 1, 10^P -\n      1].\n   \n   Acceptable values for precision and\
+      \ scale if both are\n   specified:\n   \n   -  If type = \"NUMERIC\": 1 <= precision\
+      \ - scale <= 29 and 0\n      <= scale <= 9.\n   -  If type = \"BIGNUMERIC\"\
+      : 1 <= precision - scale <= 38 and\n      0 <= scale <= 38.\n   \n   Acceptable\
+      \ values for precision if only precision is\n   specified but not scale (and\
+      \ thus scale is interpreted to be\n   equal to zero):\n   \n   -  If type =\
+      \ \"NUMERIC\": 1 <= precision <= 29.\n   -  If type = \"BIGNUMERIC\": 1 <= precision\
+      \ <= 38.\n   \n   If scale is specified but not precision, then it is invalid."
+    id: precision
+    var_type: int
+  - description: Optional. See documentation for precision.
+    id: scale
+    var_type: int
+  children:
+  - google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode
+  - google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type
+  class: google.cloud.bigquery_storage_v1.types.TableFieldSchema
+  fullName: google.cloud.bigquery_storage_v1.types.TableFieldSchema
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: proto.message.Message
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1.types
+  name: TableFieldSchema
+  source:
+    id: TableFieldSchema
+    path: google/cloud/bigquery_storage_v1/types/table.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1/types/table.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 36
+  summary: 'TableFieldSchema defines a single field/column within a table
+
+    schema.
+
+    '
+  syntax:
+    content: TableFieldSchema(mapping=None, *, ignore_unknown_fields=False, **kwargs)
+    parameters: []
+  type: class
+  uid: google.cloud.bigquery_storage_v1.types.TableFieldSchema
+references:
+- fullName: google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode
+  isExternal: false
+  name: Mode
+  parent: google.cloud.bigquery_storage_v1.types.TableFieldSchema
+  uid: google.cloud.bigquery_storage_v1.types.TableFieldSchema.Mode
+- fullName: google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type
+  isExternal: false
+  name: Type
+  parent: google.cloud.bigquery_storage_v1.types.TableFieldSchema
+  uid: google.cloud.bigquery_storage_v1.types.TableFieldSchema.Type

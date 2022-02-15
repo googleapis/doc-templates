@@ -12,28 +12,66 @@
 </h1>
   
   
-  <div class="markdown level0 summary"><p>Request message for <code>AppendRows</code>.
-Attributes:
-    write_stream (str):
-        Required. The stream that is the target of the append
-        operation. This value must be specified for the initial
-        request. If subsequent requests specify the stream name, it
-        must equal to the value provided in the first request. To
-        write to the _default stream, populate this field with a
-        string in the format
-        <code>projects/{project}/datasets/{dataset}/tables/{table}/_default</code>.
-    offset (google.protobuf.wrappers_pb2.Int64Value):
-        If present, the write is only performed if the next append
-        offset is same as the provided value. If not present, the
-        write is performed at the current end of stream. Specifying
-        a value for this field is not allowed when calling
-        AppendRows for the &#39;_default&#39; stream.
-    proto_rows (google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.ProtoData):
-        Rows in proto format.
-    trace_id (str):
-        Id set by client to annotate its identity.
-        Only initial request setting is respected.</p>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>AppendRowsRequest(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>Request message for <code>AppendRows</code>.</p>
+<p>.. _oneof: <a href="https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields">https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields</a></p>
 </div>
+  <h2>Attributes</h2>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>write_stream</td>
+        <td>
+          <code>str</code>
+          <br>
+          Required. The stream that is the target of the append
+   operation. This value must be specified for the initial
+   request. If subsequent requests specify the stream name, it
+   must equal to the value provided in the first request. To
+   write to the \_default stream, populate this field with a
+   string in the format
+   ``projects/{project}/datasets/{dataset}/tables/{table}/_default``.
+        </td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>
+          <code>google.protobuf.wrappers_pb2.Int64Value</code>
+          <br>
+          If present, the write is only performed if the next append
+   offset is same as the provided value. If not present, the
+   write is performed at the current end of stream. Specifying
+   a value for this field is not allowed when calling
+   AppendRows for the '_default' stream.
+        </td>
+      </tr>
+      <tr>
+        <td>proto_rows</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.ProtoData.html">google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest.ProtoData</a></code>
+          <br>
+          Rows in proto format.
+   
+   This field is a member of `oneof`_ ``rows``.
+        </td>
+      </tr>
+      <tr>
+        <td>trace_id</td>
+        <td>
+          <code>str</code>
+          <br>
+          Id set by client to annotate its identity.
+   Only initial request setting is respected.
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>
@@ -48,13 +86,7 @@ Attributes:
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>ProtoData(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>Proto schema and data.
-Attributes:
-    writer_schema (google.cloud.bigquery_storage_v1beta2.types.ProtoSchema):
-        Proto schema used to serialize the data.
-    rows (google.cloud.bigquery_storage_v1beta2.types.ProtoRows):
-        Serialized row data in protobuf message
-        format.</p>
+  <div class="markdown level1 summary"><p>Proto schema and data.</p>
 </div>
 </article>
     </div>

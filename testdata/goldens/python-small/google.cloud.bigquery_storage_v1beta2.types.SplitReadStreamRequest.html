@@ -12,24 +12,47 @@
 </h1>
   
   
-  <div class="markdown level0 summary"><p>Request message for <code>SplitReadStream</code>.
-Attributes:
-    name (str):
-        Required. Name of the stream to split.
-    fraction (float):
-        A value in the range (0.0, 1.0) that
-        specifies the fractional point at which the
-        original stream should be split. The actual
-        split point is evaluated on pre-filtered rows,
-        so if a filter is provided, then there is no
-        guarantee that the division of the rows between
-        the new child streams will be proportional to
-        this fractional value. Additionally, because the
-        server-side unit for assigning data is
-        collections of rows, this fraction will always
-        map to a data storage boundary on the server
-        side.</p>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>SplitReadStreamRequest(mapping=None, *, ignore_unknown_fields=False, **kwargs)</code></pre>
+  </div>
+  <div class="markdown level0 summary"><p>Request message for <code>SplitReadStream</code>.</p>
 </div>
+  <h2>Attributes</h2>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>str</code>
+          <br>
+          Required. Name of the stream to split.
+        </td>
+      </tr>
+      <tr>
+        <td>fraction</td>
+        <td>
+          <code>float</code>
+          <br>
+          A value in the range (0.0, 1.0) that
+   specifies the fractional point at which the
+   original stream should be split. The actual
+   split point is evaluated on pre-filtered rows,
+   so if a filter is provided, then there is no
+   guarantee that the division of the rows between
+   the new child streams will be proportional to
+   this fractional value. Additionally, because the
+   server-side unit for assigning data is
+   collections of rows, this fraction will always
+   map to a data storage boundary on the server
+   side.
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <div class="inheritance">
     <h2>Inheritance</h2>
           <span><span class="xref">builtins.object</span></span>

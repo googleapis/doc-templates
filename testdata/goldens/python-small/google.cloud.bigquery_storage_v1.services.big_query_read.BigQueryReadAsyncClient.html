@@ -12,6 +12,9 @@
 </h1>
   
   
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>BigQueryReadAsyncClient(*, credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Union[str, google.cloud.bigquery_storage_v1.services.big_query_read.transports.base.BigQueryReadTransport] = 'grpc_asyncio', client_options: typing.Optional[google.api_core.client_options.ClientOptions] = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = &lt;google.api_core.gapic_v1.client_info.ClientInfo object&gt;)</code></pre>
+  </div>
   <div class="markdown level0 summary"><p>BigQuery Read API.
 The Read API can be used to read data from BigQuery.</p>
 </div>
@@ -41,145 +44,122 @@ The Read API can be used to read data from BigQuery.</p>
   </table>
   <h2 id="methods">Methods
   </h2>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient" class="notranslate">BigQueryReadAsyncClient</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>BigQueryReadAsyncClient(*, credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Union[str, google.cloud.bigquery_storage_v1.services.big_query_read.transports.base.BigQueryReadTransport] = 'grpc_asyncio', client_options: typing.Optional[google.api_core.client_options.ClientOptions] = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = &lt;google.api_core.gapic_v1.client_info.ClientInfo object&gt;)</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Instantiates the big query read client.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>credentials</td>
+        <td>
+          <code>Optional[google.auth.credentials.Credentials]</code>
+          <br>
+          <p>The authorization credentials to attach to requests. These credentials identify the application to the service; if none are specified, the client will attempt to ascertain the credentials from the environment.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>transport</td>
+        <td>
+          <code>Union[str, `.BigQueryReadTransport`]</code>
+          <br>
+          <p>The transport to use. If set to None, a transport is chosen automatically.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>client_options</td>
+        <td>
+          <code>ClientOptions</code>
+          <br>
+          <p>Custom options for the client. It won&#39;t take effect if a <code>transport</code> instance is provided. (1) The <code>api_endpoint</code> property can be used to override the default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT environment variable can also be used to override the endpoint: &quot;always&quot; (always use the default mTLS endpoint), &quot;never&quot; (always use the default regular endpoint) and &quot;auto&quot; (auto switch to the default mTLS endpoint if client certificate is present, this is the default value). However, the <code>api_endpoint</code> property takes precedence if provided. (2) If GOOGLE_API_USE_CLIENT_CERTIFICATE environment variable is &quot;true&quot;, then the <code>client_cert_source</code> property can be used to provide client certificate for mutual TLS transport. If not provided, the default SSL client certificate will be used if present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is &quot;false&quot; or not set, no client certificate will be used.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Exceptions</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>google.auth.exceptions.MutualTlsChannelError</td>
+        <td>If mutual TLS transport creation failed for any reason.</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_common_billing_account_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.common_billing_account_path" class="notranslate">common_billing_account_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>common_billing_account_path(billing_account: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified billing_account string.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>billing_account</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_common_folder_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.common_folder_path" class="notranslate">common_folder_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>common_folder_path(folder: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified folder string.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>folder</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_common_location_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.common_location_path" class="notranslate">common_location_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>common_location_path(project: str, location: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified location string.</p>
 </div>
-  <strong>Parameters</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>project</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>location</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_common_organization_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.common_organization_path" class="notranslate">common_organization_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>common_organization_path(organization: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified organization string.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>organization</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_common_project_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.common_project_path" class="notranslate">common_project_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>common_project_path(project: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified project string.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>project</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_create_read_session" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.create_read_session" class="notranslate">create_read_session</h3>
   <div class="codewrapper">
-    <pre class="prettyprint wrap-code"><code>create_read_session(request: Optional[google.cloud.bigquery_storage_v1.types.storage.CreateReadSessionRequest] = None, *, parent: Optional[str] = None, read_session: Optional[google.cloud.bigquery_storage_v1.types.stream.ReadSession] = None, max_stream_count: Optional[int] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
+    <pre class="prettyprint wrap-code"><code>create_read_session(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.CreateReadSessionRequest,
+            dict,
+        ]
+    ] = None,
+    *,
+    parent: typing.Optional[str] = None,
+    read_session: typing.Optional[
+        google.cloud.bigquery_storage_v1.types.stream.ReadSession
+    ] = None,
+    max_stream_count: typing.Optional[int] = None,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Creates a new read session. A read session divides
 the contents of a BigQuery table into one or more
 streams, which can then be used to read data from the
 table. The read session also specifies properties of the
-data to be read, such as a list of columns or a push-
-down filter describing the rows to be returned.</p>
+data to be read, such as a list of columns or a
+push-down filter describing the rows to be returned.</p>
 <p>A particular row can be read by at most one stream. When
 the caller has reached the end of each stream in the
 session, then all the data in the table has been read.</p>
@@ -191,23 +171,83 @@ each stream will return the same number or rows.
 Additionally, the limits are enforced based on the
 number of pre-filtered rows, so some filters can lead to
 lopsided assignments.</p>
-<p>Read sessions automatically expire 24 hours after they
+<p>Read sessions automatically expire 6 hours after they
 are created and do not require manual clean-up by the
 caller.</p>
 </div>
-  <strong>Parameter</strong>
+  <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
       <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
       </tr>
       <tr>
         <td>request</td>
         <td>
-          <code><a class="xref" href="google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest.html">CreateReadSessionRequest</a></code>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest.html">google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest</a>, dict]</code>
           <br>
           <p>The request object. Request message for <code>CreateReadSession</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>`str`</code>
+          <br>
+          <p>Required. The request project that owns the session, in the form of <code>projects/{project_id}</code>. This corresponds to the <code>parent</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>read_session</td>
+        <td>
+          <code><a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadSession.html">ReadSession</a></code>
+          <br>
+          <p>Required. Session to be created. This corresponds to the <code>read_session</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>max_stream_count</td>
+        <td>
+          <code>`int`</code>
+          <br>
+          <p>Max initial number of streams. If unset or zero, the server will provide a value of streams so as to produce reasonable throughput. Must be non-negative. The number of streams may be lower than the requested number, depending on the amount parallelism that is reasonable for the table. Error will be returned if the max count is greater than the current system max limit of 1,000. Streams must be read starting from offset 0. This corresponds to the <code>max_stream_count</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
 
           
         </td>
@@ -222,7 +262,7 @@ caller.</p>
         <td><strong>Description</strong></td>
       </tr>
       <tr>
-        <td>google.cloud.bigquery_storage_v1.types.ReadSession</td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadSession.html">google.cloud.bigquery_storage_v1.types.ReadSession</a></td>
         <td>Information about the ReadSession.</td>
       </tr>
     </tbody>
@@ -234,12 +274,12 @@ caller.</p>
   <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
     file.</p>
 </div>
-  <strong>Parameters</strong>
+  <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
       <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
       </tr>
       <tr>
         <td>filename</td>
@@ -247,26 +287,6 @@ caller.</p>
           <code>str</code>
           <br>
           <p>The path to the service account private key json file.</p>
-
-          
-        </td>
-      </tr>
-      <tr>
-        <td>args</td>
-        <td>
-          <code></code>
-          <br>
-          <p>Additional arguments to pass to the constructor.</p>
-
-          
-        </td>
-      </tr>
-      <tr>
-        <td>kwargs</td>
-        <td>
-          <code></code>
-          <br>
-          <p>Additional arguments to pass to the constructor.</p>
 
           
         </td>
@@ -293,12 +313,12 @@ caller.</p>
   <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
     info.</p>
 </div>
-  <strong>Parameters</strong>
+  <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
       <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
       </tr>
       <tr>
         <td>info</td>
@@ -306,26 +326,6 @@ caller.</p>
           <code>dict</code>
           <br>
           <p>The service account private key info.</p>
-
-          
-        </td>
-      </tr>
-      <tr>
-        <td>args</td>
-        <td>
-          <code></code>
-          <br>
-          <p>Additional arguments to pass to the constructor.</p>
-
-          
-        </td>
-      </tr>
-      <tr>
-        <td>kwargs</td>
-        <td>
-          <code></code>
-          <br>
-          <p>Additional arguments to pass to the constructor.</p>
 
           
         </td>
@@ -352,12 +352,12 @@ caller.</p>
   <div class="markdown level1 summary"><p>Creates an instance of this client using the provided credentials
     file.</p>
 </div>
-  <strong>Parameters</strong>
+  <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
       <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
       </tr>
       <tr>
         <td>filename</td>
@@ -365,26 +365,6 @@ caller.</p>
           <code>str</code>
           <br>
           <p>The path to the service account private key json file.</p>
-
-          
-        </td>
-      </tr>
-      <tr>
-        <td>args</td>
-        <td>
-          <code></code>
-          <br>
-          <p>Additional arguments to pass to the constructor.</p>
-
-          
-        </td>
-      </tr>
-      <tr>
-        <td>kwargs</td>
-        <td>
-          <code></code>
-          <br>
-          <p>Additional arguments to pass to the constructor.</p>
 
           
         </td>
@@ -404,226 +384,145 @@ caller.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_get_transport_class" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.get_transport_class" class="notranslate">get_transport_class</h3>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_get_mtls_endpoint_and_cert_source" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.get_mtls_endpoint_and_cert_source" class="notranslate">get_mtls_endpoint_and_cert_source</h3>
   <div class="codewrapper">
-    <pre class="prettyprint wrap-code"><code>get_transport_class()</code></pre>
+    <pre class="prettyprint wrap-code"><code>get_mtls_endpoint_and_cert_source(
+    client_options: typing.Optional[
+        google.api_core.client_options.ClientOptions
+    ] = None,
+)</code></pre>
   </div>
-  <div class="markdown level1 summary"><p>partial(func, *args, **keywords) - new function with partial application
-of the given arguments and keywords.</p>
+  <div class="markdown level1 summary"><p>Return the API endpoint and client cert source for mutual TLS.</p>
+<p>The client cert source is determined in the following order:
+(1) if <code>GOOGLE_API_USE_CLIENT_CERTIFICATE</code> environment variable is not &quot;true&quot;, the
+client cert source is None.
+(2) if <code>client_options.client_cert_source</code> is provided, use the provided one; if the
+default client cert source exists, use the default one; otherwise the client cert
+source is None.</p>
+<p>The API endpoint is determined in the following order:
+(1) if <code>client_options.api_endpoint</code> if provided, use the provided one.
+(2) if <code>GOOGLE_API_USE_CLIENT_CERTIFICATE</code> environment variable is &quot;always&quot;, use the
+default mTLS endpoint; if the environment variabel is &quot;never&quot;, use the default API
+endpoint; otherwise if client cert source exists, use the default mTLS endpoint, otherwise
+use the default API endpoint.</p>
+<p>More details can be found at <a href="https://google.aip.dev/auth/4114">https://google.aip.dev/auth/4114</a>.</p>
 </div>
   <strong>Parameter</strong>
   <table class="responsive">
     <tbody>
       <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
       </tr>
       <tr>
-        <td>label</td>
+        <td>client_options</td>
         <td>
-          <code></code>
+          <code>google.api_core.client_options.ClientOptions</code>
           <br>
-          
+          <p>Custom options for the client. Only the <code>api_endpoint</code> and <code>client_cert_source</code> properties may be used in this method.</p>
+
           
         </td>
       </tr>
     </tbody>
   </table>
+  <strong>Exceptions</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>google.auth.exceptions.MutualTLSChannelError</td>
+        <td>If any errors happen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>Tuple[str, Callable[[], Tuple[bytes, bytes]]]</td>
+        <td>returns the API endpoint and the client cert source to use.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_get_transport_class" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.get_transport_class" class="notranslate">get_transport_class</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint wrap-code"><code>get_transport_class()</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>Returns an appropriate transport class.</p>
+</div>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_common_billing_account_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_common_billing_account_path" class="notranslate">parse_common_billing_account_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_common_billing_account_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parse a billing_account path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_common_folder_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_common_folder_path" class="notranslate">parse_common_folder_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_common_folder_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parse a folder path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_common_location_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_common_location_path" class="notranslate">parse_common_location_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_common_location_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parse a location path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_common_organization_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_common_organization_path" class="notranslate">parse_common_organization_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_common_organization_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parse a organization path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_common_project_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_common_project_path" class="notranslate">parse_common_project_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_common_project_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parse a project path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_read_session_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_read_session_path" class="notranslate">parse_read_session_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_read_session_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parses a read_session path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_read_stream_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_read_stream_path" class="notranslate">parse_read_stream_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_read_stream_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parses a read_stream path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_parse_table_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.parse_table_path" class="notranslate">parse_table_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>parse_table_path(path: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Parses a table path into its component segments.</p>
 </div>
-  <strong>Parameter</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>path</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_read_rows" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.read_rows" class="notranslate">read_rows</h3>
   <div class="codewrapper">
-    <pre class="prettyprint wrap-code"><code>read_rows(request: Optional[google.cloud.bigquery_storage_v1.types.storage.ReadRowsRequest] = None, *, read_stream: Optional[str] = None, offset: Optional[int] = None, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
+    <pre class="prettyprint wrap-code"><code>read_rows(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.ReadRowsRequest, dict
+        ]
+    ] = None,
+    *,
+    read_stream: typing.Optional[str] = None,
+    offset: typing.Optional[int] = None,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Reads rows from the stream in the format prescribed
 by the ReadSession. Each response contains one or more
@@ -633,19 +532,69 @@ larger than 100 MiB will fail.</p>
 <p>Each request also returns a set of stream statistics
 reflecting the current state of the stream.</p>
 </div>
-  <strong>Parameter</strong>
+  <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
       <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
       </tr>
       <tr>
         <td>request</td>
         <td>
-          <code><a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadRowsRequest.html">ReadRowsRequest</a></code>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadRowsRequest.html">google.cloud.bigquery_storage_v1.types.ReadRowsRequest</a>, dict]</code>
           <br>
           <p>The request object. Request message for <code>ReadRows</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>read_stream</td>
+        <td>
+          <code>`str`</code>
+          <br>
+          <p>Required. Stream to read rows from. This corresponds to the <code>read_stream</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>
+          <code>`int`</code>
+          <br>
+          <p>The offset requested must be less than the last row read from Read. Requesting a larger offset is undefined. If not specified, start reading from offset zero. This corresponds to the <code>offset</code> field on the <code>request</code> instance; if <code>request</code> is provided, this should not be set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
 
           
         </td>
@@ -660,7 +609,7 @@ reflecting the current state of the stream.</p>
         <td><strong>Description</strong></td>
       </tr>
       <tr>
-        <td>AsyncIterable[google.cloud.bigquery_storage_v1.types.ReadRowsResponse]</td>
+        <td>AsyncIterable[<a class="xref" href="google.cloud.bigquery_storage_v1.types.ReadRowsResponse.html">google.cloud.bigquery_storage_v1.types.ReadRowsResponse</a>]</td>
         <td>Response from calling ReadRows may include row data, progress and throttling information.</td>
       </tr>
     </tbody>
@@ -671,96 +620,27 @@ reflecting the current state of the stream.</p>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified read_session string.</p>
 </div>
-  <strong>Parameters</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>project</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>location</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>session</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_read_stream_path" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.read_stream_path" class="notranslate">read_stream_path</h3>
   <div class="codewrapper">
     <pre class="prettyprint wrap-code"><code>read_stream_path(project: str, location: str, session: str, stream: str)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified read_stream string.</p>
 </div>
-  <strong>Parameters</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>project</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>location</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>session</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>stream</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="google_cloud_bigquery_storage_v1_services_big_query_read_BigQueryReadAsyncClient_split_read_stream" data-uid="google.cloud.bigquery_storage_v1.services.big_query_read.BigQueryReadAsyncClient.split_read_stream" class="notranslate">split_read_stream</h3>
   <div class="codewrapper">
-    <pre class="prettyprint wrap-code"><code>split_read_stream(request: Optional[google.cloud.bigquery_storage_v1.types.storage.SplitReadStreamRequest] = None, *, retry: google.api_core.retry.Retry = &lt;object object&gt;, timeout: Optional[float] = None, metadata: Sequence[Tuple[str, str]] = ())</code></pre>
+    <pre class="prettyprint wrap-code"><code>split_read_stream(
+    request: typing.Optional[
+        typing.Union[
+            google.cloud.bigquery_storage_v1.types.storage.SplitReadStreamRequest, dict
+        ]
+    ] = None,
+    *,
+    retry: typing.Union[
+        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault
+    ] = _MethodDefault._DEFAULT_VALUE,
+    timeout: typing.Optional[float] = None,
+    metadata: typing.Sequence[typing.Tuple[str, str]] = ()
+)</code></pre>
   </div>
   <div class="markdown level1 summary"><p>Splits a given <code>ReadStream</code> into two <code>ReadStream</code> objects.
 These <code>ReadStream</code> objects are referred to as the primary and
@@ -775,19 +655,49 @@ that for streams original, primary, and residual, that
 original[0-j] = primary[0-j] and original[j-n] = residual[0-m]
 once the streams have been read to completion.</p>
 </div>
-  <strong>Parameter</strong>
+  <strong>Parameters</strong>
   <table class="responsive">
     <tbody>
       <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
       </tr>
       <tr>
         <td>request</td>
         <td>
-          <code><a class="xref" href="google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest.html">SplitReadStreamRequest</a></code>
+          <code>Union[<a class="xref" href="google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest.html">google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest</a>, dict]</code>
           <br>
           <p>The request object. Request message for <code>SplitReadStream</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>retry</td>
+        <td>
+          <code>google.api_core.retry.Retry</code>
+          <br>
+          <p>Designation of what errors, if any, should be retried.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>timeout</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The timeout for this request.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>metadata</td>
+        <td>
+          <code>Sequence[Tuple[str, str]]</code>
+          <br>
+          <p>Strings which should be sent along with the request as metadata.</p>
 
           
         </td>
@@ -802,7 +712,7 @@ once the streams have been read to completion.</p>
         <td><strong>Description</strong></td>
       </tr>
       <tr>
-        <td>google.cloud.bigquery_storage_v1.types.SplitReadStreamResponse</td>
+        <td><a class="xref" href="google.cloud.bigquery_storage_v1.types.SplitReadStreamResponse.html">google.cloud.bigquery_storage_v1.types.SplitReadStreamResponse</a></td>
         <td>Response message for SplitReadStream.</td>
       </tr>
     </tbody>
@@ -813,42 +723,6 @@ once the streams have been read to completion.</p>
   </div>
   <div class="markdown level1 summary"><p>Returns a fully-qualified table string.</p>
 </div>
-  <strong>Parameters</strong>
-  <table class="responsive">
-    <tbody>
-      <tr>
-        <td><strong><strong>Name</strong></strong></td>
-        <td><strong><strong>Description</strong></strong></td>
-      </tr>
-      <tr>
-        <td>project</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>dataset</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-      <tr>
-        <td>table</td>
-        <td>
-          <code></code>
-          <br>
-          
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </article>
     </div>
     {% endverbatim %}

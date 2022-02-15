@@ -1,14 +1,57 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 
 {{>partials/disclaimer}}
+{{#syntax.content.0}}
+<div class="codewrapper">
+  <pre class="prettyprint{{#wrapdeclarationcode}} wrap-code{{/wrapdeclarationcode}}"><code>{{syntax.content.0.value}}</code></pre>
+</div>
+{{/syntax.content.0}}
 {{#summary}}
 <div class="markdown level0 summary">{{{summary}}}</div>
 {{/summary}}
 {{#conceptual}}
 <div class="markdown level0 conceptual">{{{conceptual}}}</div>
 {{/conceptual}}
+{{#syntax.parameters.0}}
+<h2>{{__global.parameter}}{{#syntax.parameters.1}}s{{/syntax.parameters.1}}</h2>
+<table class="responsive">
+  <tbody>
+    <tr>
+      <td><strong>{{__global.name}}</strong></td>
+      <td><strong>{{__global.description}}</strong></td>
+    </tr>
+{{/syntax.parameters.0}}
+{{#syntax.parameters}}
+    <tr>
+      <td>{{{id}}}</td>
+      <td>
+	<code>{{#var_type}}{{{var_type}}}{{/var_type}}{{^var_type}}{{{type.specName.0.value}}}{{/var_type}}</code>
+	<br>
+	{{{description}}}
+      </td>
+    </tr>
+{{/syntax.parameters}}
+{{#syntax.parameters.0}}
+  </tbody>
+</table>
+{{/syntax.parameters.0}}
+{{#syntax.return}}
+<h2>{{__global.returns}}</h2>
+<table class="responsive">
+  <tbody>
+    <tr>
+      <td><strong>{{__global.type}}</strong></td>
+      <td><strong>{{__global.description}}</strong></td>
+    </tr>
+    <tr>
+      <td><code>{{#var_type}}{{{var_type}}}{{/var_type}}{{^var_type}}{{{type.specName.0.value}}}{{/var_type}}</code></td>
+      <td>{{{description}}}</td>
+    </tr>
+  </tbody>
+</table>
+{{/syntax.return}}
 {{#attributes.0}}
-<strong>{{__global.attribute}}{{#attributes.1}}s{{/attributes.1}}</strong>
+<h2>{{__global.attribute}}{{#attributes.1}}s{{/attributes.1}}</h2>
 <table class="responsive">
   <tbody>
     <tr>
@@ -18,8 +61,12 @@
 {{/attributes.0}}
 {{#attributes}}
     <tr>
-      <td>{{{var_type}}}</td>
-      <td><code>{{{name}}}</code><br>{{{description}}}</td>
+      <td>{{{id}}}</td>
+      <td>
+        <code>{{#var_type}}{{{var_type}}}{{/var_type}}{{^var_type}}{{{type.specName.0.value}}}{{/var_type}}</code>
+        <br>
+        {{{description}}}
+      </td>
     </tr>
 {{/attributes}}
 {{#attributes.0}}

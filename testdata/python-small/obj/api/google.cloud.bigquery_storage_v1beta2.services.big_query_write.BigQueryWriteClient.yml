@@ -1,7 +1,10 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children:
+- attributes: []
+  children:
+  - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.__exit__
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.append_rows
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.batch_commit_write_streams
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_billing_account_path
@@ -15,6 +18,7 @@ items:
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_file
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_info
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_json
+  - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_mtls_endpoint_and_cert_source
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_write_stream
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_billing_account_path
   - google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_folder_path
@@ -38,24 +42,110 @@ items:
     id: BigQueryWriteClient
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 84
+    startLine: 78
   summary: 'BigQuery Write API.
 
     The Write API can be used to write data to BigQuery.
 
+
     '
   syntax:
-    content: 'BigQueryWriteClient(*, credentials: Optional[google.auth.credentials.Credentials]
-      = None, transport: Optional[Union[str, google.cloud.bigquery_storage_v1beta2.services.big_query_write.transports.base.BigQueryWriteTransport]]
-      = None, client_options: Optional[google.api_core.client_options.ClientOptions]
+    content: 'BigQueryWriteClient(*, credentials: typing.Optional[google.auth.credentials.Credentials]
+      = None, transport: typing.Optional[typing.Union[str, google.cloud.bigquery_storage_v1beta2.services.big_query_write.transports.base.BigQueryWriteTransport]]
+      = None, client_options: typing.Optional[google.api_core.client_options.ClientOptions]
       = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = <google.api_core.gapic_v1.client_info.ClientInfo
       object>)'
+    parameters: []
   type: class
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1beta2.services.big_query_write
+  name: BigQueryWriteClient
+  source:
+    id: BigQueryWriteClient
+    path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 78
+  summary: 'Instantiates the big query write client.
+
+    '
+  syntax:
+    content: 'BigQueryWriteClient(*, credentials: typing.Optional[google.auth.credentials.Credentials]
+      = None, transport: typing.Optional[typing.Union[str, google.cloud.bigquery_storage_v1beta2.services.big_query_write.transports.base.BigQueryWriteTransport]]
+      = None, client_options: typing.Optional[google.api_core.client_options.ClientOptions]
+      = None, client_info: google.api_core.gapic_v1.client_info.ClientInfo = <google.api_core.gapic_v1.client_info.ClientInfo
+      object>)'
+    exceptions:
+    - description: If mutual TLS transport creation failed for any reason.
+      var_type: google.auth.exceptions.MutualTLSChannelError
+    parameters:
+    - description: The authorization credentials to attach to requests. These credentials
+        identify the application to the service; if none are specified, the client
+        will attempt to ascertain the credentials from the environment.
+      id: credentials
+      var_type: Optional[google.auth.credentials.Credentials]
+    - description: The transport to use. If set to None, a transport is chosen automatically.
+      id: transport
+      var_type: Union[str, BigQueryWriteTransport]
+    - description: 'Custom options for the client. It won''t take effect if a ``transport``
+        instance is provided. (1) The ``api_endpoint`` property can be used to override
+        the default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
+        environment variable can also be used to override the endpoint: "always" (always
+        use the default mTLS endpoint), "never" (always use the default regular endpoint)
+        and "auto" (auto switch to the default mTLS endpoint if client certificate
+        is present, this is the default value). However, the ``api_endpoint`` property
+        takes precedence if provided. (2) If GOOGLE_API_USE_CLIENT_CERTIFICATE environment
+        variable is "true", then the ``client_cert_source`` property can be used to
+        provide client certificate for mutual TLS transport. If not provided, the
+        default SSL client certificate will be used if present. If GOOGLE_API_USE_CLIENT_CERTIFICATE
+        is "false" or not set, no client certificate will be used.'
+      id: client_options
+      var_type: google.api_core.client_options.ClientOptions
+    - description: The client info used to send a user-agent string along with API
+        requests. If ``None``, then default info will be used. Generally, you only
+        need to set this if you're developing your own client library.
+      id: client_info
+      var_type: google.api_core.gapic_v1.client_info.ClientInfo
+  type: method
+  uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.__exit__
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1beta2.services.big_query_write
+  name: __exit__
+  source:
+    id: __exit__
+    path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 862
+  summary: "Releases underlying transport's resources.\n\n.. warning::\n    ONLY use\
+    \ as a context manager if the transport is NOT shared\n    with other clients!\
+    \ Exiting the with block will CLOSE the transport\n    and may cause errors in\
+    \ other clients!\n\n"
+  syntax:
+    content: __exit__(type, value, traceback)
+    parameters: []
+  type: method
+  uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.__exit__
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.append_rows
   langs:
   - python
@@ -65,12 +155,11 @@ items:
     id: append_rows
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 465
+    startLine: 508
   summary: 'Appends data to the given stream.
-
 
 
     If ``offset`` is specified, the ``offset`` is checked against
@@ -90,7 +179,6 @@ items:
     append happens at the end of the stream.
 
 
-
     The response contains the offset at which the append happened.
 
     Responses are received in the same order in which requests are
@@ -106,29 +194,39 @@ items:
     made again.
 
 
-
     If the stream is of ``PENDING`` type, data will only be
 
     available for read operations after the stream is committed.
 
-
-
     '
   syntax:
-    content: 'append_rows(requests: Optional[Iterator[google.cloud.bigquery_storage_v1beta2.types.storage.AppendRowsRequest]]
-      = None, *, retry: google.api_core.retry.Retry = <object object>, timeout: Optional[float]
-      = None, metadata: Sequence[Tuple[str, str]] = ())'
+    content: "append_rows(\n    requests: typing.Optional[\n        typing.Iterator[\n\
+      \            google.cloud.bigquery_storage_v1beta2.types.storage.AppendRowsRequest\n\
+      \        ]\n    ] = None,\n    *,\n    retry: typing.Union[\n        google.api_core.retry.Retry,\
+      \ google.api_core.gapic_v1.method._MethodDefault\n    ] = _MethodDefault._DEFAULT_VALUE,\n\
+      \    timeout: typing.Optional[float] = None,\n    metadata: typing.Sequence[typing.Tuple[str,\
+      \ str]] = ()\n)"
     parameters:
     - defaultValue: None
       description: The request object iterator. Request message for `AppendRows`.
       id: requests
-      var_type: Iterator[google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest]
+      var_type: Iterator[<xref uid="google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest">google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest</xref>]
+    - description: Designation of what errors, if any, should be retried.
+      id: retry
+      var_type: google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      var_type: float
+    - description: Strings which should be sent along with the request as metadata.
+      id: metadata
+      var_type: Sequence[Tuple[str, str]]
     returns:
     - description: Response message for AppendRows.
-      var_type: Iterable[google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse]
+      var_type: Iterable[<xref uid="google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse">google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse</xref>]
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.append_rows
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.batch_commit_write_streams
   langs:
   - python
@@ -138,10 +236,10 @@ items:
     id: batch_commit_write_streams
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 665
+    startLine: 708
   summary: 'Atomically commits a group of ``PENDING`` streams that belong to
 
     the same ``parent`` table. Streams must be finalized before
@@ -152,25 +250,42 @@ items:
 
     operations.
 
-
-
     '
   syntax:
-    content: 'batch_commit_write_streams(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.BatchCommitWriteStreamsRequest]
-      = None, *, parent: Optional[str] = None, retry: google.api_core.retry.Retry
-      = <object object>, timeout: Optional[float] = None, metadata: Sequence[Tuple[str,
-      str]] = ())'
+    content: "batch_commit_write_streams(\n    request: typing.Optional[\n       \
+      \ typing.Union[\n            google.cloud.bigquery_storage_v1beta2.types.storage.BatchCommitWriteStreamsRequest,\n\
+      \            dict,\n        ]\n    ] = None,\n    *,\n    parent: typing.Optional[str]\
+      \ = None,\n    retry: typing.Union[\n        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault\n\
+      \    ] = _MethodDefault._DEFAULT_VALUE,\n    timeout: typing.Optional[float]\
+      \ = None,\n    metadata: typing.Sequence[typing.Tuple[str, str]] = ()\n)"
     parameters:
     - defaultValue: None
       description: The request object. Request message for `BatchCommitWriteStreams`.
       id: request
-      var_type: google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest
+      var_type: Union[<xref uid="google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest">google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest</xref>,
+        dict]
+    - description: Required. Parent table that all the streams should belong to, in
+        the form of ``projects/{project}/datasets/{dataset}/tables/{table}``. This
+        corresponds to the ``parent`` field on the ``request`` instance; if ``request``
+        is provided, this should not be set.
+      id: parent
+      var_type: str
+    - description: Designation of what errors, if any, should be retried.
+      id: retry
+      var_type: google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      var_type: float
+    - description: Strings which should be sent along with the request as metadata.
+      id: metadata
+      var_type: Sequence[Tuple[str, str]]
     returns:
     - description: Response message for BatchCommitWriteStreams.
-      var_type: google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse">google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsResponse</xref>
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.batch_commit_write_streams
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_billing_account_path
   langs:
   - python
@@ -180,20 +295,21 @@ items:
     id: common_billing_account_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 203
+    startLine: 197
   summary: 'Returns a fully-qualified billing_account string.
+
 
     '
   syntax:
     content: 'common_billing_account_path(billing_account: str)'
-    parameters:
-    - id: billing_account
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_billing_account_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_folder_path
   langs:
   - python
@@ -203,20 +319,21 @@ items:
     id: common_folder_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 216
+    startLine: 210
   summary: 'Returns a fully-qualified folder string.
+
 
     '
   syntax:
     content: 'common_folder_path(folder: str)'
-    parameters:
-    - id: folder
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_folder_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_location_path
   langs:
   - python
@@ -226,21 +343,21 @@ items:
     id: common_location_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 249
+    startLine: 243
   summary: 'Returns a fully-qualified location string.
+
 
     '
   syntax:
     content: 'common_location_path(project: str, location: str)'
-    parameters:
-    - id: project
-    - id: location
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_location_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_organization_path
   langs:
   - python
@@ -250,20 +367,21 @@ items:
     id: common_organization_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 227
+    startLine: 221
   summary: 'Returns a fully-qualified organization string.
+
 
     '
   syntax:
     content: 'common_organization_path(organization: str)'
-    parameters:
-    - id: organization
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_organization_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_project_path
   langs:
   - python
@@ -273,20 +391,21 @@ items:
     id: common_project_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 238
+    startLine: 232
   summary: 'Returns a fully-qualified project string.
+
 
     '
   syntax:
     content: 'common_project_path(project: str)'
-    parameters:
-    - id: project
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.common_project_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.create_write_stream
   langs:
   - python
@@ -296,10 +415,10 @@ items:
     id: create_write_stream
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 378
+    startLine: 421
   summary: 'Creates a write stream to the given table. Additionally, every
 
     table has a special COMMITTED stream named ''_default'' to which
@@ -314,26 +433,50 @@ items:
 
     received.
 
-
-
     '
   syntax:
-    content: 'create_write_stream(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.CreateWriteStreamRequest]
-      = None, *, parent: Optional[str] = None, write_stream: Optional[google.cloud.bigquery_storage_v1beta2.types.stream.WriteStream]
-      = None, retry: google.api_core.retry.Retry = <object object>, timeout: Optional[float]
-      = None, metadata: Sequence[Tuple[str, str]] = ())'
+    content: "create_write_stream(\n    request: typing.Optional[\n        typing.Union[\n\
+      \            google.cloud.bigquery_storage_v1beta2.types.storage.CreateWriteStreamRequest,\n\
+      \            dict,\n        ]\n    ] = None,\n    *,\n    parent: typing.Optional[str]\
+      \ = None,\n    write_stream: typing.Optional[\n        google.cloud.bigquery_storage_v1beta2.types.stream.WriteStream\n\
+      \    ] = None,\n    retry: typing.Union[\n        google.api_core.retry.Retry,\
+      \ google.api_core.gapic_v1.method._MethodDefault\n    ] = _MethodDefault._DEFAULT_VALUE,\n\
+      \    timeout: typing.Optional[float] = None,\n    metadata: typing.Sequence[typing.Tuple[str,\
+      \ str]] = ()\n)"
     parameters:
     - defaultValue: None
       description: The request object. Request message for `CreateWriteStream`.
       id: request
-      var_type: google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest
+      var_type: Union[<xref uid="google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest">google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest</xref>,
+        dict]
+    - description: Required. Reference to the table to which the stream belongs, in
+        the format of ``projects/{project}/datasets/{dataset}/tables/{table}``. This
+        corresponds to the ``parent`` field on the ``request`` instance; if ``request``
+        is provided, this should not be set.
+      id: parent
+      var_type: str
+    - description: Required. Stream to be created. This corresponds to the ``write_stream``
+        field on the ``request`` instance; if ``request`` is provided, this should
+        not be set.
+      id: write_stream
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.WriteStream">google.cloud.bigquery_storage_v1beta2.types.WriteStream</xref>
+    - description: Designation of what errors, if any, should be retried.
+      id: retry
+      var_type: google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      var_type: float
+    - description: Strings which should be sent along with the request as metadata.
+      id: metadata
+      var_type: Sequence[Tuple[str, str]]
     returns:
     - description: Information about a single stream that gets data inside the storage
         system.
-      var_type: google.cloud.bigquery_storage_v1beta2.types.WriteStream
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.WriteStream">google.cloud.bigquery_storage_v1beta2.types.WriteStream</xref>
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.create_write_stream
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.finalize_write_stream
   langs:
   - python
@@ -343,33 +486,49 @@ items:
     id: finalize_write_stream
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 595
+    startLine: 638
   summary: 'Finalize a write stream so that no new data can be appended to
 
     the stream. Finalize is not supported on the ''_default'' stream.
 
-
-
     '
   syntax:
-    content: 'finalize_write_stream(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.FinalizeWriteStreamRequest]
-      = None, *, name: Optional[str] = None, retry: google.api_core.retry.Retry =
-      <object object>, timeout: Optional[float] = None, metadata: Sequence[Tuple[str,
-      str]] = ())'
+    content: "finalize_write_stream(\n    request: typing.Optional[\n        typing.Union[\n\
+      \            google.cloud.bigquery_storage_v1beta2.types.storage.FinalizeWriteStreamRequest,\n\
+      \            dict,\n        ]\n    ] = None,\n    *,\n    name: typing.Optional[str]\
+      \ = None,\n    retry: typing.Union[\n        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault\n\
+      \    ] = _MethodDefault._DEFAULT_VALUE,\n    timeout: typing.Optional[float]\
+      \ = None,\n    metadata: typing.Sequence[typing.Tuple[str, str]] = ()\n)"
     parameters:
     - defaultValue: None
       description: The request object. Request message for invoking `FinalizeWriteStream`.
       id: request
-      var_type: google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest
+      var_type: Union[<xref uid="google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest">google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest</xref>,
+        dict]
+    - description: Required. Name of the stream to finalize, in the form of ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.
+        This corresponds to the ``name`` field on the ``request`` instance; if ``request``
+        is provided, this should not be set.
+      id: name
+      var_type: str
+    - description: Designation of what errors, if any, should be retried.
+      id: retry
+      var_type: google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      var_type: float
+    - description: Strings which should be sent along with the request as metadata.
+      id: metadata
+      var_type: Sequence[Tuple[str, str]]
     returns:
     - description: Response message for FinalizeWriteStream.
-      var_type: google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamResponse
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamResponse">google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamResponse</xref>
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.finalize_write_stream
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.flush_rows
   langs:
   - python
@@ -379,10 +538,10 @@ items:
     id: flush_rows
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 741
+    startLine: 784
   summary: 'Flushes rows to a BUFFERED stream. If users are appending rows
 
     to BUFFERED stream, flush operation is required in order for the
@@ -395,25 +554,41 @@ items:
 
     \_default stream, since it is not BUFFERED.
 
-
-
     '
   syntax:
-    content: 'flush_rows(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.FlushRowsRequest]
-      = None, *, write_stream: Optional[str] = None, retry: google.api_core.retry.Retry
-      = <object object>, timeout: Optional[float] = None, metadata: Sequence[Tuple[str,
-      str]] = ())'
+    content: "flush_rows(\n    request: typing.Optional[\n        typing.Union[\n\
+      \            google.cloud.bigquery_storage_v1beta2.types.storage.FlushRowsRequest,\
+      \ dict\n        ]\n    ] = None,\n    *,\n    write_stream: typing.Optional[str]\
+      \ = None,\n    retry: typing.Union[\n        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault\n\
+      \    ] = _MethodDefault._DEFAULT_VALUE,\n    timeout: typing.Optional[float]\
+      \ = None,\n    metadata: typing.Sequence[typing.Tuple[str, str]] = ()\n)"
     parameters:
     - defaultValue: None
       description: The request object. Request message for `FlushRows`.
       id: request
-      var_type: google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest
+      var_type: Union[<xref uid="google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest">google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest</xref>,
+        dict]
+    - description: Required. The stream that is the target of the flush operation.
+        This corresponds to the ``write_stream`` field on the ``request`` instance;
+        if ``request`` is provided, this should not be set.
+      id: write_stream
+      var_type: str
+    - description: Designation of what errors, if any, should be retried.
+      id: retry
+      var_type: google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      var_type: float
+    - description: Strings which should be sent along with the request as metadata.
+      id: metadata
+      var_type: Sequence[Tuple[str, str]]
     returns:
     - description: Respond message for FlushRows.
-      var_type: google.cloud.bigquery_storage_v1beta2.types.FlushRowsResponse
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.FlushRowsResponse">google.cloud.bigquery_storage_v1beta2.types.FlushRowsResponse</xref>
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.flush_rows
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_file
   langs:
   - python
@@ -423,30 +598,25 @@ items:
     id: from_service_account_file
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 141
+    startLine: 135
   summary: "Creates an instance of this client using the provided credentials\n  \
-    \  file.\n\n\n"
+    \  file.\n"
   syntax:
     content: 'from_service_account_file(filename: str, *args, **kwargs)'
     parameters:
     - description: The path to the service account private key json file.
       id: filename
       var_type: str
-    - description: Additional arguments to pass to the constructor.
-      id: args
-      var_type: ''
-    - description: Additional arguments to pass to the constructor.
-      id: kwargs
-      var_type: ''
     returns:
     - description: The constructed client.
       var_type: BigQueryWriteClient
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_file
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_info
   langs:
   - python
@@ -456,30 +626,25 @@ items:
     id: from_service_account_info
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 124
+    startLine: 118
   summary: "Creates an instance of this client using the provided credentials\n  \
-    \  info.\n\n\n"
+    \  info.\n"
   syntax:
     content: 'from_service_account_info(info: dict, *args, **kwargs)'
     parameters:
     - description: The service account private key info.
       id: info
       var_type: dict
-    - description: Additional arguments to pass to the constructor.
-      id: args
-      var_type: ''
-    - description: Additional arguments to pass to the constructor.
-      id: kwargs
-      var_type: ''
     returns:
     - description: The constructed client.
       var_type: BigQueryWriteClient
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_info
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_json
   langs:
   - python
@@ -489,30 +654,94 @@ items:
     id: from_service_account_json
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 141
+    startLine: 135
   summary: "Creates an instance of this client using the provided credentials\n  \
-    \  file.\n\n\n"
+    \  file.\n"
   syntax:
     content: 'from_service_account_json(filename: str, *args, **kwargs)'
     parameters:
     - description: The path to the service account private key json file.
       id: filename
       var_type: str
-    - description: Additional arguments to pass to the constructor.
-      id: args
-      var_type: ''
-    - description: Additional arguments to pass to the constructor.
-      id: kwargs
-      var_type: ''
     returns:
     - description: The constructed client.
       var_type: BigQueryWriteClient
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_json
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_mtls_endpoint_and_cert_source
+  langs:
+  - python
+  module: google.cloud.bigquery_storage_v1beta2.services.big_query_write
+  name: get_mtls_endpoint_and_cert_source
+  source:
+    id: get_mtls_endpoint_and_cert_source
+    path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
+    remote:
+      branch: main
+      path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
+      repo: git@github.com:googleapis/python-bigquery-storage.git
+    startLine: 256
+  summary: 'Return the API endpoint and client cert source for mutual TLS.
+
+
+    The client cert source is determined in the following order:
+
+    (1) if `GOOGLE_API_USE_CLIENT_CERTIFICATE` environment variable is not "true",
+    the
+
+    client cert source is None.
+
+    (2) if `client_options.client_cert_source` is provided, use the provided one;
+    if the
+
+    default client cert source exists, use the default one; otherwise the client cert
+
+    source is None.
+
+
+    The API endpoint is determined in the following order:
+
+    (1) if `client_options.api_endpoint` if provided, use the provided one.
+
+    (2) if `GOOGLE_API_USE_CLIENT_CERTIFICATE` environment variable is "always", use
+    the
+
+    default mTLS endpoint; if the environment variabel is "never", use the default
+    API
+
+    endpoint; otherwise if client cert source exists, use the default mTLS endpoint,
+    otherwise
+
+    use the default API endpoint.
+
+
+    More details can be found at https://google.aip.dev/auth/4114.
+
+    '
+  syntax:
+    content: "get_mtls_endpoint_and_cert_source(\n    client_options: typing.Optional[\n\
+      \        google.api_core.client_options.ClientOptions\n    ] = None,\n)"
+    exceptions:
+    - description: If any errors happen.
+      var_type: google.auth.exceptions.MutualTLSChannelError
+    parameters:
+    - defaultValue: None
+      description: Custom options for the client. Only the `api_endpoint` and `client_cert_source`
+        properties may be used in this method.
+      id: client_options
+      var_type: google.api_core.client_options.ClientOptions
+    returns:
+    - description: returns the API endpoint and the client cert source to use.
+      var_type: Tuple[str, Callable[[], Tuple[bytes, bytes]]]
+  type: method
+  uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_mtls_endpoint_and_cert_source
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_write_stream
   langs:
   - python
@@ -522,32 +751,48 @@ items:
     id: get_write_stream
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 523
+    startLine: 566
   summary: 'Gets a write stream.
-
-
 
     '
   syntax:
-    content: 'get_write_stream(request: Optional[google.cloud.bigquery_storage_v1beta2.types.storage.GetWriteStreamRequest]
-      = None, *, name: Optional[str] = None, retry: google.api_core.retry.Retry =
-      <object object>, timeout: Optional[float] = None, metadata: Sequence[Tuple[str,
-      str]] = ())'
+    content: "get_write_stream(\n    request: typing.Optional[\n        typing.Union[\n\
+      \            google.cloud.bigquery_storage_v1beta2.types.storage.GetWriteStreamRequest,\n\
+      \            dict,\n        ]\n    ] = None,\n    *,\n    name: typing.Optional[str]\
+      \ = None,\n    retry: typing.Union[\n        google.api_core.retry.Retry, google.api_core.gapic_v1.method._MethodDefault\n\
+      \    ] = _MethodDefault._DEFAULT_VALUE,\n    timeout: typing.Optional[float]\
+      \ = None,\n    metadata: typing.Sequence[typing.Tuple[str, str]] = ()\n)"
     parameters:
     - defaultValue: None
       description: The request object. Request message for `GetWriteStreamRequest`.
       id: request
-      var_type: google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest
+      var_type: Union[<xref uid="google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest">google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest</xref>,
+        dict]
+    - description: Required. Name of the stream to get, in the form of ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.
+        This corresponds to the ``name`` field on the ``request`` instance; if ``request``
+        is provided, this should not be set.
+      id: name
+      var_type: str
+    - description: Designation of what errors, if any, should be retried.
+      id: retry
+      var_type: google.api_core.retry.Retry
+    - description: The timeout for this request.
+      id: timeout
+      var_type: float
+    - description: Strings which should be sent along with the request as metadata.
+      id: metadata
+      var_type: Sequence[Tuple[str, str]]
     returns:
     - description: Information about a single stream that gets data inside the storage
         system.
-      var_type: google.cloud.bigquery_storage_v1beta2.types.WriteStream
+      var_type: <xref uid="google.cloud.bigquery_storage_v1beta2.types.WriteStream">google.cloud.bigquery_storage_v1beta2.types.WriteStream</xref>
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_write_stream
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_billing_account_path
   langs:
   - python
@@ -557,20 +802,21 @@ items:
     id: parse_common_billing_account_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 210
+    startLine: 204
   summary: 'Parse a billing_account path into its component segments.
+
 
     '
   syntax:
     content: 'parse_common_billing_account_path(path: str)'
-    parameters:
-    - id: path
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_billing_account_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_folder_path
   langs:
   - python
@@ -580,20 +826,21 @@ items:
     id: parse_common_folder_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 221
+    startLine: 215
   summary: 'Parse a folder path into its component segments.
+
 
     '
   syntax:
     content: 'parse_common_folder_path(path: str)'
-    parameters:
-    - id: path
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_folder_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_location_path
   langs:
   - python
@@ -603,20 +850,21 @@ items:
     id: parse_common_location_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 256
+    startLine: 250
   summary: 'Parse a location path into its component segments.
+
 
     '
   syntax:
     content: 'parse_common_location_path(path: str)'
-    parameters:
-    - id: path
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_location_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_organization_path
   langs:
   - python
@@ -626,20 +874,21 @@ items:
     id: parse_common_organization_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 232
+    startLine: 226
   summary: 'Parse a organization path into its component segments.
+
 
     '
   syntax:
     content: 'parse_common_organization_path(path: str)'
-    parameters:
-    - id: path
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_organization_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_project_path
   langs:
   - python
@@ -649,20 +898,21 @@ items:
     id: parse_common_project_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 243
+    startLine: 237
   summary: 'Parse a project path into its component segments.
+
 
     '
   syntax:
     content: 'parse_common_project_path(path: str)'
-    parameters:
-    - id: path
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_common_project_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_table_path
   langs:
   - python
@@ -672,20 +922,21 @@ items:
     id: parse_table_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 178
+    startLine: 172
   summary: 'Parses a table path into its component segments.
+
 
     '
   syntax:
     content: 'parse_table_path(path: str)'
-    parameters:
-    - id: path
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_table_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_write_stream_path
   langs:
   - python
@@ -695,20 +946,21 @@ items:
     id: parse_write_stream_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 194
+    startLine: 188
   summary: 'Parses a write_stream path into its component segments.
+
 
     '
   syntax:
     content: 'parse_write_stream_path(path: str)'
-    parameters:
-    - id: path
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.parse_write_stream_path
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.table_path
   langs:
   - python
@@ -718,22 +970,21 @@ items:
     id: table_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 171
+    startLine: 165
   summary: 'Returns a fully-qualified table string.
+
 
     '
   syntax:
     content: 'table_path(project: str, dataset: str, table: str)'
-    parameters:
-    - id: project
-    - id: dataset
-    - id: table
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.table_path
 - &id001
+  attributes: []
   class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.transport
   langs:
@@ -744,13 +995,11 @@ items:
     id: transport
     path: null
     remote:
-      branch: master
+      branch: main
       path: null
       repo: git@github.com:googleapis/python-bigquery-storage.git
     startLine: null
   summary: 'Returns the transport used by the client instance.
-
-
 
     '
   syntax:
@@ -760,7 +1009,8 @@ items:
   type: property
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.transport
 - *id001
-- class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- attributes: []
+  class: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.write_stream_path
   langs:
   - python
@@ -770,23 +1020,30 @@ items:
     id: write_stream_path
     path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
     remote:
-      branch: master
+      branch: main
       path: google/cloud/bigquery_storage_v1beta2/services/big_query_write/client.py
       repo: git@github.com:googleapis/python-bigquery-storage.git
-    startLine: 187
+    startLine: 181
   summary: 'Returns a fully-qualified write_stream string.
+
 
     '
   syntax:
     content: 'write_stream_path(project: str, dataset: str, table: str, stream: str)'
-    parameters:
-    - id: project
-    - id: dataset
-    - id: table
-    - id: stream
+    parameters: []
   type: method
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.write_stream_path
 references:
+- fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  isExternal: false
+  name: BigQueryWriteClient
+  parent: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+- fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.__exit__
+  isExternal: false
+  name: __exit__
+  parent: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.__exit__
 - fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.append_rows
   isExternal: false
   name: append_rows
@@ -852,6 +1109,11 @@ references:
   name: from_service_account_json
   parent: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
   uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.from_service_account_json
+- fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_mtls_endpoint_and_cert_source
+  isExternal: false
+  name: get_mtls_endpoint_and_cert_source
+  parent: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient
+  uid: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_mtls_endpoint_and_cert_source
 - fullName: google.cloud.bigquery_storage_v1beta2.services.big_query_write.BigQueryWriteClient.get_write_stream
   isExternal: false
   name: get_write_stream
