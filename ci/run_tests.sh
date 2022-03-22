@@ -28,7 +28,13 @@ black --check tests
 flake8 tests
 
 if [ -n "$UPDATE_GOLDENS" ]; then
-    pytest --update-goldens True tests/test_goldens.py
+    pytest --junitxml="sponge_log.xml" --update-goldens True tests/test_goldens.py
 else
-    pytest tests
+    pytest --junitxml="sponge_log.xml" tests
+fi
+
+if [[ $KOKORO_BUILD_ARTIFACTS_SUBDIR = *"continuous"* ]] || \
+   [[ $KOKORO_BUILD_ARTIFACTS_SUBDIR = *"periodic"* ]]; then
+  chmod +x $KOKORO_GFILE_DIR/linux_amd64/flakybot
+  $KOKORO_GFILE_DIR/linux_amd64/flakybot
 fi
