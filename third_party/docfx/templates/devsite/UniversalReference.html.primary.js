@@ -13,6 +13,7 @@ exports.transform = function (model) {
   }
 
   model._disableToc = model._disableToc || !model._tocPath || (model._navPath === model._tocPath);
+  model._displayFriendlyApiName = model._displayFriendlyApiName && model.friendlyApiName;
 
   if (extension && extension.postTransform) {
     model = extension.postTransform(model);
