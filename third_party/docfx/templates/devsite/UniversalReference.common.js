@@ -15,6 +15,7 @@ exports.transform = function (model) {
   };
 
   if (model.type) {
+    model[getTypePropertyName(model.type)] = true;
     switch (model.type.toLowerCase()) {
       // packages and namespaces are both containers for other elements
       case 'package':
@@ -22,7 +23,6 @@ exports.transform = function (model) {
       case 'subpackage':
         model.isNamespace = true;
         if (model.children) groupChildren(model, namespaceCategory);
-        model[getTypePropertyName(model.type)] = true;
         break;
       case 'module':
         if (model.langs && model.langs[0].toLowerCase() === "ruby" &&
@@ -30,7 +30,6 @@ exports.transform = function (model) {
           model.isClass = true;
           // Special handling for Ruby modules, which treat methods as embedded
           groupChildren(model, "rubyModule");
-          model[getTypePropertyName(model.type)] = true;
           break;
         }
       case 'class':
@@ -40,7 +39,6 @@ exports.transform = function (model) {
           // Handle classes and modules differently for Python
           model.isPythonHeader = true;
           groupChildren(model, namespaceCategory);
-          model[getTypePropertyName(model.type)] = true;
           break;
         }
       case 'interface':
@@ -48,12 +46,10 @@ exports.transform = function (model) {
       case 'delegate':
         model.isClass = true;
         if (model.children) groupChildren(model, classCategory);
-        model[getTypePropertyName(model.type)] = true;
         break;
       case 'enum':
         model.isEnum = true;
         if (model.children) groupChildren(model, classCategory);
-        model[getTypePropertyName(model.type)] = true;
         break;
       default:
         break;
