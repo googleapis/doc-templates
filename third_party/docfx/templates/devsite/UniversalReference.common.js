@@ -59,47 +59,47 @@ exports.transform = function (model) {
   // edit title based on type
   if (!model.title) {
     if (model.inPackage || model.inSubpackage) {
-      model.title = "Package " + model.name;
+      model.title = "Package " + model.name[0].value;
     } else if (model.inNamespace) {
-      model.title = "Namespace " + model.name;
+      model.title = "Namespace " + model.name[0].value;
     } else if (model.inModule) {
-      model.title = "Module " + model.name;
+      model.title = "Module " + model.name[0].value;
     } else if (model.inClass) {
-      model.title = "Class " + model.name;
+      model.title = "Class " + model.name[0].value;
     } else if (model.inStruct) {
-      model.title = "Struct " + model.name;
+      model.title = "Struct " + model.name[0].value;
     } else if (model.inInterface) {
-      model.title = "Interface " + model.name;
+      model.title = "Interface " + model.name[0].value;
     } else if (model.inEnum) {
-      model.title = "Enum " + model.name;
+      model.title = "Enum " + model.name[0].value;
     } else if (model.inDelegate) {
-      model.title = "Delegate " + model.name;
+      model.title = "Delegate " + model.name[0].value;
     } else if (model.inStaticField) {
-      model.title = "Static Field " + model.name;
+      model.title = "Static Field " + model.name[0].value;
     } else if (model.inStaticMethod) {
-      model.title = "Static Method " + model.name;
+      model.title = "Static Method " + model.name[0].value;
     } else if (model.inConstructor) {
-      model.title = "Constructor " + model.name;
+      model.title = "Constructor " + model.name[0].value;
     } else if (model.inField) {
-      model.title = "Field " + model.name;
+      model.title = "Field " + model.name[0].value;
     } else if (model.inProperty) {
-      model.title = "Property " + model.name;
+      model.title = "Property " + model.name[0].value;
     } else if (model.inMethod) {
-      model.title = "Method " + model.name;
+      model.title = "Method " + model.name[0].value;
     } else if (model.inEvent) {
-      model.title = "Event " + model.name;
+      model.title = "Event " + model.name[0].value;
     } else if (model.inOperator) {
-      model.title = "Operator " + model.name;
+      model.title = "Operator " + model.name[0].value;
     } else if (model.inEii) {
-      model.title = "Explict Interface Implementation " + model.name;
+      model.title = "Explict Interface Implementation " + model.name[0].value;
     } else if (model.inVariable) {
-      model.title = "Variable " + model.name;
+      model.title = "Variable " + model.name[0].value;
     } else if (model.inTypeAlias) {
-      model.title = "Type Alias " + model.name;
+      model.title = "Type Alias " + model.name[0].value;
     } else if (model.inAnnotation) {
-      model.title = "Annotation Type " = model.name;
+      model.title = "Annotation Type " = model.name[0].value;
     } else if (model.inException) {
-      model.title = "Exception " + model.name;
+      model.title = "Exception " + model.name[0].value;
     } else if (model.inOverview) {
       model.title = model.uid + " overview"
     }
