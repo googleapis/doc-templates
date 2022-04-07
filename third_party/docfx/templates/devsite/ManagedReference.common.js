@@ -16,6 +16,7 @@ exports.transform = function (model) {
   }
 
   if (model.type) {
+    model[getTypePropertyName(model.type)] = true;
     switch (model.type.toLowerCase()) {
       case 'overview':
       case 'package':
