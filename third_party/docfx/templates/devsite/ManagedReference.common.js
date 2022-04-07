@@ -23,7 +23,6 @@ exports.transform = function (model) {
       case 'namespace':
         model.isNamespace = true;
         if (model.children) groupChildren(model, namespaceCategory);
-        model[getTypePropertyName(model.type)] = true;
         break;
       case 'exception':
       case 'class':
@@ -34,10 +33,58 @@ exports.transform = function (model) {
       case 'enum':
         model.isClass = true;
         if (model.children) groupChildren(model, classCategory);
-        model[getTypePropertyName(model.type)] = true;
         break;
       default:
         break;
+    }
+  }
+  
+  // edit title based on type
+  if (!model.title) {
+    if (model.inPackage || model.inSubpackage) {
+      model.title = "Package " + model.name;
+    } else if (model.inNamespace) {
+      model.title = "Namespace " + model.name;
+    } else if (model.inModule) {
+      model.title = "Module " + model.name;
+    } else if (model.inClass) {
+      model.title = "Class " + model.name;
+    } else if (model.inStruct) {
+      model.title = "Struct " + model.name;
+    } else if (model.inInterface) {
+      model.title = "Interface " + model.name;
+    } else if (model.inEnum) {
+      model.title = "Enum " + model.name;
+    } else if (model.inDelegate) {
+      model.title = "Delegate " + model.name;
+    } else if (model.inStaticField) {
+      model.title = "Static Field " + model.name;
+    } else if (model.inStaticMethod) {
+      model.title = "Static Method " + model.name;
+    } else if (model.inConstructor) {
+      model.title = "Constructor " + model.name;
+    } else if (model.inField) {
+      model.title = "Field " + model.name;
+    } else if (model.inProperty) {
+      model.title = "Property " + model.name;
+    } else if (model.inMethod) {
+      model.title = "Method " + model.name;
+    } else if (model.inEvent) {
+      model.title = "Event " + model.name;
+    } else if (model.inOperator) {
+      model.title = "Operator " + model.name;
+    } else if (model.inEii) {
+      model.title = "Explict Interface Implementation " + model.name;
+    } else if (model.inVariable) {
+      model.title = "Variable " + model.name;
+    } else if (model.inTypeAlias) {
+      model.title = "Type Alias " + model.name;
+    } else if (model.inAnnotation) {
+      model.title = "Annotation Type " = model.name;
+    } else if (model.inException) {
+      model.title = "Exception " + model.name;
+    } else if (model.inOverview) {
+      model.title = model.uid + " overview"
     }
   }
 
