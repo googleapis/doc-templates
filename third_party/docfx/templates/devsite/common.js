@@ -12,7 +12,7 @@ exports.processSeeAlso = processSeeAlso;
 exports.isAbsolutePath = isAbsolutePath;
 exports.isRelativePath = isRelativePath;
 
-exports.getTitleForPropertyType = getTitleForPropertyType;
+exports.getTitleForTypeProperty = getTitleForTypeProperty;
 
 function getFileNameWithoutExtension(path) {
     if (!path || path[path.length - 1] === '/' || path[path.length - 1] === '\\') return '';
@@ -64,7 +64,7 @@ function isRelativePath(path) {
     return !exports.isAbsolutePath(path);
 }
 
-var titlePrefixForPropertyType = {
+var titlePrefixForTypeProperty = {
     "package": "Package",
     "subpackage": "Package",
     "namespace:": "Namespace",
@@ -89,17 +89,13 @@ var titlePrefixForPropertyType = {
     "exception": "Exception"
 }
 
-function getTitleForPropertyType(propertyType, name, uid) {
-    switch (propertyType.toLowerCase()) {
+function getTitleForTypeProperty(type, name, uid) {
+    switch (type.toLowerCase()) {
         case "overview":
             return uid + " " + "overview";
         default:
-            var titlePrefix = titlePrefixForPropertyType[propertyType];
-            if (titlePrefix) {
-                return titlePrefix + " " + name;
-            } else {
-                return name;
-            }
+            var titlePrefix = titlePrefixForTypeProperty[type];
+            return titlePrefix ? titlePrefix + " " + name[0].value : name[0].value;
     }
 }
 

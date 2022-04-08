@@ -40,7 +40,12 @@ exports.transform = function (model) {
     }
 
     if (!model.title) {
-      model.title = common.getTitleForPropertyType(model.type, model.name[0].value, model.uid)
+      if (model.javaType) {
+        model.title = common.getTitleForTypeProperty(model.javaType, model.name, model.uid)
+      } else {
+        model.title = common.getTitleForTypeProperty(model.type, model.name)
+      }
+
     }
   }
 

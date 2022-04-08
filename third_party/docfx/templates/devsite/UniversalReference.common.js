@@ -57,7 +57,7 @@ exports.transform = function (model) {
     }
 
     if (!model.title) {
-      model.title = common.getTitleForPropertyType(model.type, model.name[0].value, model.uid)
+      model.title = common.getTitleForTypeProperty(model.type, model.name)
     }
   }
 
