@@ -67,7 +67,7 @@ function isRelativePath(path) {
 var titlePrefixForTypeProperty = {
     "package": "Package",
     "subpackage": "Package",
-    "namespace:": "Namespace",
+    "namespace": "Namespace",
     "module": "Module",
     "class": "Class",
     "struct": "Struct",
@@ -90,7 +90,8 @@ var titlePrefixForTypeProperty = {
 }
 
 function getTitleForTypeProperty(type, name, uid) {
-    switch (type.toLowerCase()) {
+    type = type.toLowerCase();
+    switch (type) {
         case "overview":
             return uid + " " + "overview";
         default:
