@@ -15,7 +15,8 @@ exports.transform = function (model) {
   };
 
   if (model.type) {
-    model[getTypePropertyName(model.type)] = true;
+    var typePropertyName = getTypePropertyName(model.type)
+    model[typePropertyName] = true;
     switch (model.type.toLowerCase()) {
       // packages and namespaces are both containers for other elements
       case 'package':
@@ -54,54 +55,9 @@ exports.transform = function (model) {
       default:
         break;
     }
-  }
-  
-  // edit title based on type
-  if (!model.title) {
-    if (model.inPackage || model.inSubpackage) {
-      model.title = "Package " + model.name[0].value;
-    } else if (model.inNamespace) {
-      model.title = "Namespace " + model.name[0].value;
-    } else if (model.inModule) {
-      model.title = "Module " + model.name[0].value;
-    } else if (model.inClass) {
-      model.title = "Class " + model.name[0].value;
-    } else if (model.inStruct) {
-      model.title = "Struct " + model.name[0].value;
-    } else if (model.inInterface) {
-      model.title = "Interface " + model.name[0].value;
-    } else if (model.inEnum) {
-      model.title = "Enum " + model.name[0].value;
-    } else if (model.inDelegate) {
-      model.title = "Delegate " + model.name[0].value;
-    } else if (model.inStaticField) {
-      model.title = "Static Field " + model.name[0].value;
-    } else if (model.inStaticMethod) {
-      model.title = "Static Method " + model.name[0].value;
-    } else if (model.inConstructor) {
-      model.title = "Constructor " + model.name[0].value;
-    } else if (model.inField) {
-      model.title = "Field " + model.name[0].value;
-    } else if (model.inProperty) {
-      model.title = "Property " + model.name[0].value;
-    } else if (model.inMethod) {
-      model.title = "Method " + model.name[0].value;
-    } else if (model.inEvent) {
-      model.title = "Event " + model.name[0].value;
-    } else if (model.inOperator) {
-      model.title = "Operator " + model.name[0].value;
-    } else if (model.inEii) {
-      model.title = "Explict Interface Implementation " + model.name[0].value;
-    } else if (model.inVariable) {
-      model.title = "Variable " + model.name[0].value;
-    } else if (model.inTypeAlias) {
-      model.title = "Type Alias " + model.name[0].value;
-    } else if (model.inAnnotation) {
-      model.title = "Annotation Type " = model.name[0].value;
-    } else if (model.inException) {
-      model.title = "Exception " + model.name[0].value;
-    } else if (model.inOverview) {
-      model.title = model.uid + " overview"
+
+    if (!model.title) {
+      model.title = common.getTitleForPropertyType(model.type, model.name[0].value, model.uid)
     }
   }
 

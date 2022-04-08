@@ -12,6 +12,8 @@ exports.processSeeAlso = processSeeAlso;
 exports.isAbsolutePath = isAbsolutePath;
 exports.isRelativePath = isRelativePath;
 
+exports.getTitleForPropertyType = getTitleForPropertyType;
+
 function getFileNameWithoutExtension(path) {
     if (!path || path[path.length - 1] === '/' || path[path.length - 1] === '\\') return '';
     var fileName = path.split('\\').pop().split('/').pop();
@@ -60,6 +62,45 @@ function isAbsolutePath(path) {
 function isRelativePath(path) {
     if (!path) return false;
     return !exports.isAbsolutePath(path);
+}
+
+var titlePrefixForPropertyType = {
+    "package": "Package",
+    "subpackage": "Package",
+    "namespace:": "Namespace",
+    "module": "Module",
+    "class": "Class",
+    "struct": "Struct",
+    "interface": "Interface",
+    "enum": "Enum",
+    "delegate": "Delegate",
+    "static field": "Static Field",
+    "static method": "Static Method",
+    "constructor": "Constructor",
+    "field": "Field",
+    "property": "Property",
+    "method": "Method",
+    "event": "Event",
+    "operator": "Operator",
+    "eii": "Explict Interface Implementation",
+    "variable": "Variable",
+    "typealias": "Type Alias",
+    "annotationtype": "Annotation Type",
+    "exception": "Exception"
+}
+
+function getTitleForPropertyType(propertyType, name, uid) {
+    switch (propertyType.toLowerCase()) {
+        case "overview":
+            return uid + " " + "overview";
+        default:
+            var titlePrefix = titlePrefixForPropertyType[propertyType];
+            if (titlePrefix) {
+                return titlePrefix + " " + name;
+            } else {
+                return name;
+            }
+    }
 }
 
 var gitUrlPatternItems = {
