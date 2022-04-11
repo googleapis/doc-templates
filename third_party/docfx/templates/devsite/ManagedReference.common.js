@@ -16,14 +16,13 @@ exports.transform = function (model) {
   }
 
   if (model.type) {
-    var typePropertyName = getTypePropertyName(model.type)
-    model[typePropertyName] = true;
     switch (model.type.toLowerCase()) {
       case 'overview':
       case 'package':
       case 'namespace':
         model.isNamespace = true;
         if (model.children) groupChildren(model, namespaceCategory);
+        model[getTypePropertyName(model.type)] = true;
         break;
       case 'exception':
       case 'class':
@@ -34,18 +33,14 @@ exports.transform = function (model) {
       case 'enum':
         model.isClass = true;
         if (model.children) groupChildren(model, classCategory);
+        model[getTypePropertyName(model.type)] = true;
         break;
       default:
         break;
     }
 
     if (!model.title) {
-      if (model.javaType) {
-        model.title = common.getTitleForTypeProperty(model.javaType, model.name, model.uid)
-      } else {
-        model.title = common.getTitleForTypeProperty(model.type, model.name)
-      }
-
+      model.title = common.getTitleForTypeProperty(model.type, model.name, model.uid);
     }
   }
 
