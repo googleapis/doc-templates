@@ -89,6 +89,13 @@ var titlePrefixForTypeProperty = {
     "exception": "Exception"
 }
 
+/**
+ * Returns a page title based on the document's type.
+ *
+ * @param {string} type The type for the item (i.e. class, module).
+ * @param {Array} name The names for the item, only the first item is used for forming the title.
+ * @param {string} uid The uid for the item, this is used for Java language overview pages only.
+ */
 function getTitleForTypeProperty(type, name, uid) {
     type = type.toLowerCase();
     switch (type) {
