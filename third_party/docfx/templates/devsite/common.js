@@ -12,6 +12,8 @@ exports.processSeeAlso = processSeeAlso;
 exports.isAbsolutePath = isAbsolutePath;
 exports.isRelativePath = isRelativePath;
 
+exports.getTitleForTypeProperty = getTitleForTypeProperty;
+
 function getFileNameWithoutExtension(path) {
     if (!path || path[path.length - 1] === '/' || path[path.length - 1] === '\\') return '';
     var fileName = path.split('\\').pop().split('/').pop();
@@ -60,6 +62,49 @@ function isAbsolutePath(path) {
 function isRelativePath(path) {
     if (!path) return false;
     return !exports.isAbsolutePath(path);
+}
+
+var titlePrefixForTypeProperty = {
+    "package": "Package",
+    "subpackage": "Package",
+    "namespace": "Namespace",
+    "module": "Module",
+    "class": "Class",
+    "struct": "Struct",
+    "interface": "Interface",
+    "enum": "Enum",
+    "delegate": "Delegate",
+    "static field": "Static Field",
+    "static method": "Static Method",
+    "constructor": "Constructor",
+    "field": "Field",
+    "property": "Property",
+    "method": "Method",
+    "event": "Event",
+    "operator": "Operator",
+    "eii": "Explict Interface Implementation",
+    "variable": "Variable",
+    "typealias": "Type Alias",
+    "annotationtype": "Annotation Type",
+    "exception": "Exception"
+}
+
+/**
+ * Returns a page title based on the document's type.
+ *
+ * @param {string} type The type for the item (i.e. class, module).
+ * @param {Array} name The names for the item, only the first item is used for forming the title.
+ * @param {string} uid The uid for the item, this is used for Java language overview pages only.
+ */
+function getTitleForTypeProperty(type, name, uid) {
+    type = type.toLowerCase();
+    switch (type) {
+        case "overview":
+            return uid + " " + "overview";
+        default:
+            var titlePrefix = titlePrefixForTypeProperty[type];
+            return titlePrefix ? titlePrefix + " " + name[0].value : name[0].value;
+    }
 }
 
 var gitUrlPatternItems = {

@@ -38,6 +38,10 @@ exports.transform = function (model) {
       default:
         break;
     }
+
+    if (!model.title) {
+      model.title = common.getTitleForTypeProperty(model.type, model.name, model.uid);
+    }
   }
 
   return model;
