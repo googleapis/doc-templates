@@ -13,6 +13,7 @@ exports.isAbsolutePath = isAbsolutePath;
 exports.isRelativePath = isRelativePath;
 
 exports.getTitleForTypeProperty = getTitleForTypeProperty;
+exports.addIntroSentenceToSummary = addIntroSentenceToSummary;
 
 function getFileNameWithoutExtension(path) {
     if (!path || path[path.length - 1] === '/' || path[path.length - 1] === '\\') return '';
@@ -105,6 +106,22 @@ function getTitleForTypeProperty(type, name, uid) {
             var titlePrefix = titlePrefixForTypeProperty[type];
             return titlePrefix ? titlePrefix + " " + name[0].value : name[0].value;
     }
+}
+
+function addIntroSentenceToSummary(summary, friendlyApiName, type, name) {
+    if (summary == null || !friendlyApiName || !type || !name) return summary;
+    if (!titlePrefixForTypeProperty[type]) return summary;
+
+    summaryIntro = "<p>"
+    summaryIntro += "Reference information and code samples for the ";
+    summaryIntro += friendlyApiName;
+    summaryIntro += " ";
+    summaryIntro += titlePrefixForTypeProperty[type].toLowerCase();
+    summaryIntro += " ";
+    summaryIntro += name[0].value;
+    summaryIntro += "."
+    summaryIntro += "</p>";
+    return summaryIntro + summary;
 }
 
 var gitUrlPatternItems = {
