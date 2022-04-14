@@ -108,12 +108,20 @@ function getTitleForTypeProperty(type, name, uid) {
     }
 }
 
+/**
+ * Updates summary with an intro sentence containing the friendly API name.
+ *
+ * @param {string} summary The summary for the item.
+ * @param {string} type The type for the item (i.e. class, module).
+ * @parma {string} friendlyApiName The friendly API title for the item.
+ * @param {Array} name The names for the item, only the first item is used for forming the sentence.
+ */
 function addIntroSentenceToSummary(summary, friendlyApiName, type, name) {
     if (summary == null || !friendlyApiName || !type || !name) return summary;
     if (!titlePrefixForTypeProperty[type]) return summary;
 
     summaryIntro = "<p>"
-    summaryIntro += "Reference information and code samples for the ";
+    summaryIntro += "Reference documentation and code samples for the ";
     summaryIntro += friendlyApiName;
     summaryIntro += " ";
     summaryIntro += titlePrefixForTypeProperty[type].toLowerCase();
