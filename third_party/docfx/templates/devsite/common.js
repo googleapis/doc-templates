@@ -117,7 +117,7 @@ function getTitleForTypeProperty(type, name, uid) {
  * @param {Array} name The names for the item, only the first item is used for forming the sentence.
  */
 function addIntroSentenceToSummary(summary, friendlyApiName, type, name) {
-    if (summary == null || !friendlyApiName || !type || !name) return summary;
+    if (summary == null || !type || !name) return summary;
     if (!titlePrefixForTypeProperty[type]) return summary;
 
     summaryIntro = "<p>"
