@@ -113,7 +113,7 @@ function getTitleForTypeProperty(type, name, uid) {
  *
  * @param {string} summary The summary for the item.
  * @param {string} type The type for the item (i.e. class, module).
- * @parma {string} friendlyApiName The friendly API title for the item.
+ * @param {string} friendlyApiName The friendly API title for the item.
  * @param {Array} name The names for the item, only the first item is used for forming the sentence.
  */
 function addIntroSentenceToSummary(summary, friendlyApiName, type, name) {
