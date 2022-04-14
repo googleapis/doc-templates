@@ -64,7 +64,7 @@ exports.transform = function (model) {
     }
   }
 
-  if (model.summary != null) {
+  if (model.summary != null && model.friendlyApiName) {
     model.summary = common.addIntroSentenceToSummary(model.summary, model.friendlyApiName, model.type, model.name)
   }
   return model;
