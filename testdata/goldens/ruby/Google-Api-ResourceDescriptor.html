@@ -8,10 +8,10 @@
     {% verbatim %}
     <div>
       <article data-uid="Google::Api::ResourceDescriptor">
-<h1 class="page-title">Class Google::Api::ResourceDescriptor</h1>
+<h1 class="page-title">Cloud Vision V1 API - Class Google::Api::ResourceDescriptor</h1>
   
   
-  <div class="markdown level0 summary"><p>A simple descriptor of a resource type.</p>
+  <div class="markdown level0 summary"><p>Reference documentation and code samples for the Cloud Vision V1 API class Google::Api::ResourceDescriptor.</p><p>A simple descriptor of a resource type.</p>
 
 <p>ResourceDescriptor annotates a resource message (either by means of a
 protobuf annotation or use in the service config), and associates the
@@ -25,11 +25,7 @@ resource&#39;s schema, the resource type, and the pattern of the resource name.<
   // For Kubernetes resources, the format is {api group}/{kind}.
   option (google.api.resource) = {
     type: &quot;pubsub.googleapis.com/Topic&quot;
-    name_descriptor: {
-      pattern: &quot;projects/{project}/topics/{topic}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;
-      parent_name_extractor: &quot;projects/{project}&quot;
-    }
+    pattern: &quot;projects/{project}/topics/{topic}&quot;
   };
 }
 </code></pre>
@@ -38,10 +34,7 @@ resource&#39;s schema, the resource type, and the pattern of the resource name.<
 
 <pre><code>resources:
 - type: &quot;pubsub.googleapis.com/Topic&quot;
-  name_descriptor:
-    - pattern: &quot;projects/{project}/topics/{topic}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;
-      parent_name_extractor: &quot;projects/{project}&quot;
+  pattern: &quot;projects/{project}/topics/{topic}&quot;
 </code></pre>
 
 <p>Sometimes, resources have multiple patterns, typically because they can
@@ -52,26 +45,10 @@ live under multiple parents.</p>
 <pre><code>message LogEntry {
   option (google.api.resource) = {
     type: &quot;logging.googleapis.com/LogEntry&quot;
-    name_descriptor: {
-      pattern: &quot;projects/{project}/logs/{log}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;
-      parent_name_extractor: &quot;projects/{project}&quot;
-    }
-    name_descriptor: {
-      pattern: &quot;folders/{folder}/logs/{log}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;
-      parent_name_extractor: &quot;folders/{folder}&quot;
-    }
-    name_descriptor: {
-      pattern: &quot;organizations/{organization}/logs/{log}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Organization&quot;
-      parent_name_extractor: &quot;organizations/{organization}&quot;
-    }
-    name_descriptor: {
-      pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;
-      parent_type: &quot;billing.googleapis.com/BillingAccount&quot;
-      parent_name_extractor: &quot;billingAccounts/{billing_account}&quot;
-    }
+    pattern: &quot;projects/{project}/logs/{log}&quot;
+    pattern: &quot;folders/{folder}/logs/{log}&quot;
+    pattern: &quot;organizations/{organization}/logs/{log}&quot;
+    pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;
   };
 }
 </code></pre>
@@ -80,50 +57,10 @@ live under multiple parents.</p>
 
 <pre><code>resources:
 - type: &#39;logging.googleapis.com/LogEntry&#39;
-  name_descriptor:
-    - pattern: &quot;projects/{project}/logs/{log}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;
-      parent_name_extractor: &quot;projects/{project}&quot;
-    - pattern: &quot;folders/{folder}/logs/{log}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;
-      parent_name_extractor: &quot;folders/{folder}&quot;
-    - pattern: &quot;organizations/{organization}/logs/{log}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Organization&quot;
-      parent_name_extractor: &quot;organizations/{organization}&quot;
-    - pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;
-      parent_type: &quot;billing.googleapis.com/BillingAccount&quot;
-      parent_name_extractor: &quot;billingAccounts/{billing_account}&quot;
-</code></pre>
-
-<p>For flexible resources, the resource name doesn&#39;t contain parent names, but
-the resource itself has parents for policy evaluation.</p>
-
-<p>Example:</p>
-
-<pre><code>message Shelf {
-  option (google.api.resource) = {
-    type: &quot;library.googleapis.com/Shelf&quot;
-    name_descriptor: {
-      pattern: &quot;shelves/{shelf}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;
-    }
-    name_descriptor: {
-      pattern: &quot;shelves/{shelf}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;
-    }
-  };
-}
-</code></pre>
-
-<p>The ResourceDescriptor Yaml config will look like:</p>
-
-<pre><code>resources:
-- type: &#39;library.googleapis.com/Shelf&#39;
-  name_descriptor:
-    - pattern: &quot;shelves/{shelf}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;
-    - pattern: &quot;shelves/{shelf}&quot;
-      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;
+  pattern: &quot;projects/{project}/logs/{log}&quot;
+  pattern: &quot;folders/{folder}/logs/{log}&quot;
+  pattern: &quot;organizations/{organization}/logs/{log}&quot;
+  pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;
 </code></pre></div>
   <div class="inheritance">
     <h2>Inherits</h2>
@@ -284,8 +221,8 @@ Variable = &quot;{&quot; LITERAL &quot;}&quot; ;
 
 <p>Examples:</p>
 
-<pre><code>- &quot;projects/\{project}/topics/\{topic}&quot;
-- &quot;projects/\{project}/knowledgeBases/\{knowledge_base}&quot;
+<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;
+- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;
 </code></pre>
 
 <p>The components in braces correspond to the IDs for each resource in the
@@ -316,8 +253,8 @@ Variable = &quot;{&quot; LITERAL &quot;}&quot; ;
 
 <p>Examples:</p>
 
-<pre><code>- &quot;projects/\{project}/topics/\{topic}&quot;
-- &quot;projects/\{project}/knowledgeBases/\{knowledge_base}&quot;
+<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;
+- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;
 </code></pre>
 
 <p>The components in braces correspond to the IDs for each resource in the
@@ -344,8 +281,8 @@ Variable = &quot;{&quot; LITERAL &quot;}&quot; ;
 
 <p>Examples:</p>
 
-<pre><code>- &quot;projects/\{project}/topics/\{topic}&quot;
-- &quot;projects/\{project}/knowledgeBases/\{knowledge_base}&quot;
+<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;
+- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;
 </code></pre>
 
 <p>The components in braces correspond to the IDs for each resource in the
