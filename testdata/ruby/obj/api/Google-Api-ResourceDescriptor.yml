@@ -22,8 +22,9 @@ items:
   langs:
   - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: ResourceDescriptor
-  summary: "<p>A simple descriptor of a resource type.</p>\n\n<p>ResourceDescriptor annotates a resource message (either by means of a\nprotobuf annotation or use in the service config), and associates the\nresource&#39;s schema, the resource type, and the pattern of the resource name.</p>\n\n<p>Example:</p>\n\n<pre><code>message Topic {\n  // Indicates this message defines a resource schema.\n  // Declares the resource type in the format of {service}/{kind}.\n  // For Kubernetes resources, the format is {api group}/{kind}.\n  option (google.api.resource) = {\n    type: &quot;pubsub.googleapis.com/Topic&quot;\n    name_descriptor: {\n      pattern: &quot;projects/{project}/topics/{topic}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n    }\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &quot;pubsub.googleapis.com/Topic&quot;\n  name_descriptor:\n    - pattern: &quot;projects/{project}/topics/{topic}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n</code></pre>\n\n<p>Sometimes, resources have multiple patterns, typically because they can\nlive under multiple parents.</p>\n\n<p>Example:</p>\n\n<pre><code>message LogEntry {\n  option (google.api.resource) = {\n    type: &quot;logging.googleapis.com/LogEntry&quot;\n    name_descriptor: {\n      pattern: &quot;projects/{project}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;folders/{folder}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n      parent_name_extractor: &quot;folders/{folder}&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;organizations/{organization}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Organization&quot;\n      parent_name_extractor: &quot;organizations/{organization}&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;\n      parent_type: &quot;billing.googleapis.com/BillingAccount&quot;\n      parent_name_extractor: &quot;billingAccounts/{billing_account}&quot;\n    }\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &#39;logging.googleapis.com/LogEntry&#39;\n  name_descriptor:\n    - pattern: &quot;projects/{project}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n      parent_name_extractor: &quot;projects/{project}&quot;\n    - pattern: &quot;folders/{folder}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n      parent_name_extractor: &quot;folders/{folder}&quot;\n    - pattern: &quot;organizations/{organization}/logs/{log}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Organization&quot;\n      parent_name_extractor: &quot;organizations/{organization}&quot;\n    - pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;\n      parent_type: &quot;billing.googleapis.com/BillingAccount&quot;\n      parent_name_extractor: &quot;billingAccounts/{billing_account}&quot;\n</code></pre>\n\n<p>For flexible resources, the resource name doesn&#39;t contain parent names, but\nthe resource itself has parents for policy evaluation.</p>\n\n<p>Example:</p>\n\n<pre><code>message Shelf {\n  option (google.api.resource) = {\n    type: &quot;library.googleapis.com/Shelf&quot;\n    name_descriptor: {\n      pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n    }\n    name_descriptor: {\n      pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n    }\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &#39;library.googleapis.com/Shelf&#39;\n  name_descriptor:\n    - pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Project&quot;\n    - pattern: &quot;shelves/{shelf}&quot;\n      parent_type: &quot;cloudresourcemanager.googleapis.com/Folder&quot;\n</code></pre>"
+  summary: "<p>A simple descriptor of a resource type.</p>\n\n<p>ResourceDescriptor annotates a resource message (either by means of a\nprotobuf annotation or use in the service config), and associates the\nresource&#39;s schema, the resource type, and the pattern of the resource name.</p>\n\n<p>Example:</p>\n\n<pre><code>message Topic {\n  // Indicates this message defines a resource schema.\n  // Declares the resource type in the format of {service}/{kind}.\n  // For Kubernetes resources, the format is {api group}/{kind}.\n  option (google.api.resource) = {\n    type: &quot;pubsub.googleapis.com/Topic&quot;\n    pattern: &quot;projects/{project}/topics/{topic}&quot;\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &quot;pubsub.googleapis.com/Topic&quot;\n  pattern: &quot;projects/{project}/topics/{topic}&quot;\n</code></pre>\n\n<p>Sometimes, resources have multiple patterns, typically because they can\nlive under multiple parents.</p>\n\n<p>Example:</p>\n\n<pre><code>message LogEntry {\n  option (google.api.resource) = {\n    type: &quot;logging.googleapis.com/LogEntry&quot;\n    pattern: &quot;projects/{project}/logs/{log}&quot;\n    pattern: &quot;folders/{folder}/logs/{log}&quot;\n    pattern: &quot;organizations/{organization}/logs/{log}&quot;\n    pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;\n  };\n}\n</code></pre>\n\n<p>The ResourceDescriptor Yaml config will look like:</p>\n\n<pre><code>resources:\n- type: &#39;logging.googleapis.com/LogEntry&#39;\n  pattern: &quot;projects/{project}/logs/{log}&quot;\n  pattern: &quot;folders/{folder}/logs/{log}&quot;\n  pattern: &quot;organizations/{organization}/logs/{log}&quot;\n  pattern: &quot;billingAccounts/{billing_account}/logs/{log}&quot;\n</code></pre>"
   type: "class"
   name: Google::Api::ResourceDescriptor
   example: []
@@ -39,6 +40,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#history"
   summary: ""
   type: method
@@ -59,6 +61,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#history="
   summary: ""
   type: method
@@ -80,6 +83,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#name_field"
   summary: ""
   type: method
@@ -100,6 +104,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#name_field="
   summary: ""
   type: method
@@ -121,6 +126,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#pattern"
   summary: ""
   type: method
@@ -133,7 +139,7 @@ items:
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;\n- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
+    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\\\{project}/topics/\\\\{topic}&quot;\n- &quot;projects/\\\\{project}/knowledgeBases/\\\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
     raises: []
 - uid: Google::Api::ResourceDescriptor#pattern=(instance)
   fullName: Google::Api::ResourceDescriptor#pattern=
@@ -141,6 +147,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#pattern="
   summary: ""
   type: method
@@ -150,11 +157,11 @@ items:
     content: "def pattern=(value) -> ::Array<::String>"
     aliases: []
     arguments:
-    - description: "<strong>value</strong> (::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;\n- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
+    - description: "<strong>value</strong> (::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\\\{project}/topics/\\\\{topic}&quot;\n- &quot;projects/\\\\{project}/knowledgeBases/\\\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
     yields: []
     yieldparams: []
     returnValues:
-    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\{project}/topics/\\{topic}&quot;\n- &quot;projects/\\{project}/knowledgeBases/\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
+    - description: "(::Array&lt;::String&gt;) — Optional. The relative resource name pattern associated with this resource\ntype. The DNS prefix of the full resource name shouldn&#39;t be specified here.</p>\n\n<p>The path pattern must follow the syntax, which aligns with HTTP binding\nsyntax:</p>\n\n<pre><code>Template = Segment { &quot;/&quot; Segment } ;\nSegment = LITERAL | Variable ;\nVariable = &quot;{&quot; LITERAL &quot;}&quot; ;\n</code></pre>\n\n<p>Examples:</p>\n\n<pre><code>- &quot;projects/\\\\{project}/topics/\\\\{topic}&quot;\n- &quot;projects/\\\\{project}/knowledgeBases/\\\\{knowledge_base}&quot;\n</code></pre>\n\n<p>The components in braces correspond to the IDs for each resource in the\nhierarchy. It is expected that, if multiple patterns are provided,\nthe same component name (e.g. &quot;project&quot;) refers to IDs of the same\ntype of resource."
     raises: []
 - uid: Google::Api::ResourceDescriptor#plural(instance)
   fullName: Google::Api::ResourceDescriptor#plural
@@ -162,6 +169,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#plural"
   summary: ""
   type: method
@@ -182,6 +190,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#plural="
   summary: ""
   type: method
@@ -203,6 +212,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#singular"
   summary: ""
   type: method
@@ -223,6 +233,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#singular="
   summary: ""
   type: method
@@ -244,6 +255,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#style"
   summary: ""
   type: method
@@ -264,6 +276,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#style="
   summary: ""
   type: method
@@ -285,6 +298,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#type"
   summary: ""
   type: method
@@ -305,6 +319,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#type="
   summary: ""
   type: method
@@ -325,6 +340,7 @@ references:
   fullName: Google::Api::ResourceDescriptor::History
   name: History
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: History
   summary: "A description of the historical or future-looking state of the\nresource pattern."
   parent: Google::Api::ResourceDescriptor
@@ -332,6 +348,7 @@ references:
   fullName: Google::Api::ResourceDescriptor::Style
   name: Style
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Style
   summary: "A flag representing a specific style that a resource claims to conform to."
   parent: Google::Api::ResourceDescriptor

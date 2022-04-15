@@ -10,6 +10,7 @@ items:
   langs:
   - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Timestamp
   summary: "A Timestamp represents a point in time independent of any time zone or local\ncalendar, encoded as a count of seconds and fractions of seconds at\nnanosecond resolution. The count is relative to an epoch at UTC midnight on\nJanuary 1, 1970, in the proleptic Gregorian calendar which extends the\nGregorian calendar backwards to year one.</p>\n\n<p>All minutes are 60 seconds long. Leap seconds are &quot;smeared&quot; so that no leap\nsecond table is needed for interpretation, using a <a href=\"https://developers.google.com/time/smear\">24-hour linear\nsmear</a>.</p>\n\n<p>The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By\nrestricting to that range, we ensure that we can convert to and from <a href=\"https://www.ietf.org/rfc/rfc3339.txt\">RFC\n3339</a> date strings.</p>\n<h2>Examples</h2>\n\n<p>Example 1: Compute Timestamp from POSIX <code>time()</code>.</p>\n\n<pre><code>Timestamp timestamp;\ntimestamp.set_seconds(time(NULL));\ntimestamp.set_nanos(0);\n</code></pre>\n\n<p>Example 2: Compute Timestamp from POSIX <code>gettimeofday()</code>.</p>\n\n<pre><code>struct timeval tv;\ngettimeofday(&amp;tv, NULL);\n\nTimestamp timestamp;\ntimestamp.set_seconds(tv.tv_sec);\ntimestamp.set_nanos(tv.tv_usec * 1000);\n</code></pre>\n\n<p>Example 3: Compute Timestamp from Win32 <code>GetSystemTimeAsFileTime()</code>.</p>\n\n<pre><code>FILETIME ft;\nGetSystemTimeAsFileTime(&amp;ft);\nUINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;\n\n// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z\n// is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.\nTimestamp timestamp;\ntimestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));\ntimestamp.set_nanos((INT32) ((ticks % 10000000) * 100));\n</code></pre>\n\n<p>Example 4: Compute Timestamp from Java <code>System.currentTimeMillis()</code>.</p>\n\n<pre><code>long millis = System.currentTimeMillis();\n\nTimestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)\n    .setNanos((int) ((millis % 1000) * 1000000)).build();\n</code></pre>\n\n<p>Example 5: Compute Timestamp from Java <code>Instant.now()</code>.</p>\n\n<pre><code>Instant now = Instant.now();\n\nTimestamp timestamp =\n    Timestamp.newBuilder().setSeconds(now.getEpochSecond())\n        .setNanos(now.getNano()).build();\n</code></pre>\n\n<p>Example 6: Compute Timestamp from current time in Python.</p>\n\n<pre><code>timestamp = Timestamp()\ntimestamp.GetCurrentTime()\n</code></pre>\n<h2>JSON Mapping</h2>\n\n<p>In JSON format, the Timestamp type is encoded as a string in the\n<a href=\"https://www.ietf.org/rfc/rfc3339.txt\">RFC 3339</a> format. That is, the\nformat is &quot;{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z&quot;\nwhere {year} is always expressed using four digits while {month}, {day},\n{hour}, {min}, and {sec} are zero-padded to two digits each. The fractional\nseconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution),\nare optional. The &quot;Z&quot; suffix indicates the timezone (&quot;UTC&quot;); the timezone\nis required. A proto3 JSON serializer should always use UTC (as indicated by\n&quot;Z&quot;) when printing the Timestamp type and a proto3 JSON parser should be\nable to accept both UTC and other timezones (as indicated by an offset).</p>\n\n<p>For example, &quot;2017-01-15T01:30:15.01Z&quot; encodes 15.01 seconds past\n01:30 UTC on January 15, 2017.</p>\n\n<p>In JavaScript, one can convert a Date object to this format using the\nstandard\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString\">toISOString()</a>\nmethod. In Python, a standard <code>datetime.datetime</code> object can be converted\nto this format using\n<a href=\"https://docs.python.org/2/library/time.html#time.strftime\"><code>strftime</code></a> with\nthe time format spec &#39;%Y-%m-%dT%H:%M:%S.%fZ&#39;. Likewise, in Java, one can use\nthe Joda Time&#39;s <a href=\"http://www.joda.org/joda-time/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime%2D%2D\"><code>ISODateTimeFormat.dateTime()</code></a> to obtain a formatter capable of generating timestamps in this format."
   type: "class"
@@ -27,6 +28,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#nanos"
   summary: ""
   type: method
@@ -47,6 +49,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#nanos="
   summary: ""
   type: method
@@ -68,6 +71,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#seconds"
   summary: ""
   type: method
@@ -88,6 +92,7 @@ items:
   langs:
     - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: "#seconds="
   summary: ""
   type: method
