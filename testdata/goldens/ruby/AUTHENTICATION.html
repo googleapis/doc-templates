@@ -38,6 +38,7 @@ during development.</p>
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
 </pre>
 
+
 <h2 id="credential-lookup">Credential Lookup</h2>
 <p>The google-cloud-vision-v1 library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
@@ -66,7 +67,7 @@ the READMEs for the individual service gems for details.) The path to the
 containers where writing files is difficult or not encouraged.</p>
 <p>The environment variables that google-cloud-vision-v1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Vision::V1::ProductSearch::Credentials}):</p>
+<span class='object_link'><a href="Google-Cloud-Vision-V1-ProductSearch-Credentials" title="Google::Cloud::Vision::V1::ProductSearch::Credentials (class)">Google::Cloud::Vision::V1::ProductSearch::Credentials</a></span>):</p>
 <ul>
 <li><code>VISION_CREDENTIALS</code> - Path to JSON file, or JSON contents</li>
 <li><code>VISION_KEYFILE</code> - Path to JSON file, or JSON contents</li>
@@ -81,6 +82,7 @@ ENV["VISION_CREDENTIALS"] = "path/to/keyfile.json"
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
 </pre>
 
+
 <h3 id="configuration">Configuration</h3>
 <p>The path to the <strong>Credentials JSON</strong> file can be configured instead of storing
 it in an environment variable. Either on an individual client initialization:</p>
@@ -91,6 +93,7 @@ client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new do |config|
 end
 </pre>
 
+
 <p>Or globally for all clients:</p>
 <pre class="prettyprint lang-rb">require "google/cloud/vision/v1"
 
@@ -100,6 +103,7 @@ end
 
 client = ::Google::Cloud::Vision::V1::ProductSearch::Client.new
 </pre>
+
 
 <h3 id="cloud-sdk">Cloud SDK</h3>
 <p>This option allows for an easy way to authenticate during development. If
@@ -121,23 +125,19 @@ connect to most services with google-cloud-vision-v1.</p>
 <a href="#google-cloud-platform-environments">Google Cloud Platform environments</a>, you
 need a Google Developers service account.</p>
 <ol>
-<li>Visit the <a href="https://console.cloud.google.com/project">Google Developers Console</a>.</li>
+<li>Visit the <a href="https://console.cloud.google.com/project">Google Cloud Console</a>.</li>
 <li>Create a new project or click on an existing project.</li>
-<li><p>Activate the slide-out navigation tray and select <strong>API Manager</strong>. From
+<li><p>Activate the menu in the upper left and select <strong>APIs &amp; Services</strong>. From
 here, you will enable the APIs that your application requires.</p>
-<p><img src="https://raw.githubusercontent.com/GoogleCloudPlatform/gcloud-common/master/authentication/enable-apis.png" alt="Enable the APIs that your application requires"></p>
 <p><em>Note: You may need to enable billing in order to use these services.</em></p>
 </li>
 <li><p>Select <strong>Credentials</strong> from the side navigation.</p>
-<p>You should see a screen like one of the following.</p>
-<p><img src="https://raw.githubusercontent.com/GoogleCloudPlatform/gcloud-common/master/authentication/create-new-service-account.png" alt="Create a new service account"></p>
-<p><img src="https://raw.githubusercontent.com/GoogleCloudPlatform/gcloud-common/master/authentication/create-new-service-account-existing-keys.png" alt="Create a new service account With Existing Keys"></p>
-<p>Find the &quot;Add credentials&quot; drop down and select &quot;Service account&quot; to be
-guided through downloading a new JSON key file.</p>
+<p>Find the &quot;Create credentials&quot; drop down near the top of the page, and select
+&quot;Service account&quot; to be guided through downloading a new JSON key file.</p>
 <p>If you want to re-use an existing service account, you can easily generate a
-new key file. Just select the account you wish to re-use, and click &quot;Generate
-new JSON key&quot;:</p>
-<p><img src="https://raw.githubusercontent.com/GoogleCloudPlatform/gcloud-common/master/authentication/reuse-service-account.png" alt="Re-use an existing service account"></p>
+new key file. Just select the account you wish to re-use, click the pencil
+tool on the right side to edit the service account, select the <strong>Keys</strong> tab,
+and then select <strong>Add Key</strong>.</p>
 <p>The key file you download will be used by this library to authenticate API
 requests and should be stored in a secure location.</p>
 </li>

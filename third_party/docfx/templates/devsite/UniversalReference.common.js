@@ -64,6 +64,9 @@ exports.transform = function (model) {
     }
   }
 
+  if (model.summary != null && model.friendlyApiName) {
+    model.summaryIntro = common.getSummaryIntroSentence(model.friendlyApiName, model.type, model.name);
+  }
   return model;
 }
 
@@ -102,7 +105,7 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   vm.sourceurl = common.getViewSourceHref(vm, null, gitUrlPattern);
 
   // set to null incase mustache looks up
-  vm.summary = vm.summary || null;
+  vm.summary = vm.summary != null ? vm.summary : null;
   vm.remarks = vm.remarks || null;
   vm.conceptual = vm.conceptual || null;
   vm.syntax = vm.syntax || null;

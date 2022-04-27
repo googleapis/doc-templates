@@ -7,7 +7,12 @@
 </div>
 {{/syntax.content.0}}
 {{#summary}}
-<div class="markdown level0 summary">{{{summary}}}</div>
+<div class="markdown level0 summary">{{#summaryIntro}}<p>{{{summaryIntro}}}</p>{{/summaryIntro}}{{{summary}}}</div>
+{{/summary}}
+{{^summary}}
+{{#summaryIntro}}
+<div class="markdown level0 summary"><p>{{{summaryIntro}}}</p></div>
+{{/summaryIntro}}
 {{/summary}}
 {{#conceptual}}
 <div class="markdown level0 conceptual">{{{conceptual}}}</div>

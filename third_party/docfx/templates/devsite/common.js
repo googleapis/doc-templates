@@ -13,6 +13,7 @@ exports.isAbsolutePath = isAbsolutePath;
 exports.isRelativePath = isRelativePath;
 
 exports.getTitleForTypeProperty = getTitleForTypeProperty;
+exports.getSummaryIntroSentence = getSummaryIntroSentence;
 
 function getFileNameWithoutExtension(path) {
     if (!path || path[path.length - 1] === '/' || path[path.length - 1] === '\\') return '';
@@ -105,6 +106,26 @@ function getTitleForTypeProperty(type, name, uid) {
             var titlePrefix = titlePrefixForTypeProperty[type];
             return titlePrefix ? titlePrefix + " " + name[0].value : name[0].value;
     }
+}
+
+/**
+ * Returns an intro sentence containing the friendly API name.
+ *
+ * @param {string} type The type for the item (i.e. class, module).
+ * @param {string} friendlyApiName The friendly API title for the item.
+ * @param {Array} name The names for the item, only the first item is used for forming the sentence.
+ */
+function getSummaryIntroSentence(friendlyApiName, type, name) {
+    if (!type || !name || !titlePrefixForTypeProperty[type]) return null;
+
+    summaryIntro = "Reference documentation and code samples for the ";
+    summaryIntro += friendlyApiName;
+    summaryIntro += " ";
+    summaryIntro += titlePrefixForTypeProperty[type].toLowerCase();
+    summaryIntro += " ";
+    summaryIntro += name[0].value;
+    summaryIntro += "."
+    return summaryIntro;
 }
 
 var gitUrlPatternItems = {

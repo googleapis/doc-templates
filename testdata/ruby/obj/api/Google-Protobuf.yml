@@ -20,6 +20,7 @@ items:
   langs:
   - ruby
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Protobuf
   summary: ""
   type: "module"
@@ -31,6 +32,7 @@ references:
   fullName: Google::Protobuf::Any
   name: Any
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Any
   summary: "<p><code>Any</code> contains an arbitrary serialized protocol buffer message along with a\nURL that describes the type of the serialized message.</p>\n\n<p>Protobuf library provides support to pack/unpack Any values in the form\nof utility functions or additional generated methods of the Any type.</p>\n\n<p>Example 1: Pack and unpack a message in C++.</p>\n\n<pre><code>Foo foo = ...;\nAny any;\nany.PackFrom(foo);\n...\nif (any.UnpackTo(&amp;foo)) {\n  ...\n}\n</code></pre>\n\n<p>Example 2: Pack and unpack a message in Java.</p>\n\n<pre><code>Foo foo = ...;\nAny any = Any.pack(foo);\n...\nif (any.is(Foo.class)) {\n  foo = any.unpack(Foo.class);\n}\n</code></pre>\n\n<p>Example 3: Pack and unpack a message in Python.</p>\n\n<pre><code>foo = Foo(...)\nany = Any()\nany.Pack(foo)\n...\nif any.Is(Foo.DESCRIPTOR):\n  any.Unpack(foo)\n  ...\n</code></pre>\n\n<p>Example 4: Pack and unpack a message in Go</p>\n\n<pre><code> foo := &amp;pb.Foo{...}\n any, err := anypb.New(foo)\n if err != nil {\n   ...\n }\n ...\n foo := &amp;pb.Foo{}\n if err := any.UnmarshalTo(foo); err != nil {\n   ...\n }\n</code></pre>\n\n<p>The pack methods provided by protobuf library will by default use\n&#39;type.googleapis.com/full.type.name&#39; as the type URL and the unpack\nmethods only use the fully qualified type name after the last &#39;/&#39;\nin the type URL, for example &quot;foo.bar.com/x/y.z&quot; will yield type\nname &quot;y.z&quot;.</p>\n<h1>JSON</h1>\n\n<p>The JSON representation of an <code>Any</code> value uses the regular\nrepresentation of the deserialized, embedded message, with an\nadditional field <code>@type</code> which contains the type URL. Example:</p>\n\n<pre><code>package google.profile;\nmessage Person {\n  string first_name = 1;\n  string last_name = 2;\n}\n\n{\n  &quot;@type&quot;: &quot;type.googleapis.com/google.profile.Person&quot;,\n  &quot;firstName&quot;: &lt;string&gt;,\n  &quot;lastName&quot;: &lt;string&gt;\n}\n</code></pre>\n\n<p>If the embedded message type is well-known and has a custom JSON\nrepresentation, that representation will be embedded adding a field\n<code>value</code> which holds the custom JSON in addition to the <code>@type</code>\nfield. Example (for message [google.protobuf.Duration][]):</p>\n\n<pre><code>{\n  &quot;@type&quot;: &quot;type.googleapis.com/google.protobuf.Duration&quot;,\n  &quot;value&quot;: &quot;1.212s&quot;\n}\n</code></pre>"
   parent: Google::Protobuf
@@ -38,6 +40,7 @@ references:
   fullName: Google::Protobuf::Empty
   name: Empty
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Empty
   summary: "A generic empty message that you can re-use to avoid defining duplicated\nempty messages in your APIs. A typical example is to use it as the request\nor the response type of an API method. For instance:</p>\n\n<pre><code>service Foo {\n  rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);\n}\n</code></pre>\n\n<p>The JSON representation for <code>Empty</code> is empty JSON object <code>{}</code>."
   parent: Google::Protobuf
@@ -45,6 +48,7 @@ references:
   fullName: Google::Protobuf::Duration
   name: Duration
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Duration
   summary: "A Duration represents a signed, fixed-length span of time represented\nas a count of seconds and fractions of seconds at nanosecond\nresolution. It is independent of any calendar and concepts like &quot;day&quot;\nor &quot;month&quot;. It is related to Timestamp in that the difference between\ntwo Timestamp values is a Duration and it can be added or subtracted\nfrom a Timestamp. Range is approximately +-10,000 years.</p>\n<h1>Examples</h1>\n\n<p>Example 1: Compute Duration from two Timestamps in pseudo code.</p>\n\n<pre><code>Timestamp start = ...;\nTimestamp end = ...;\nDuration duration = ...;\n\nduration.seconds = end.seconds - start.seconds;\nduration.nanos = end.nanos - start.nanos;\n\nif (duration.seconds &lt; 0 &amp;&amp; duration.nanos &gt; 0) {\n  duration.seconds += 1;\n  duration.nanos -= 1000000000;\n} else if (duration.seconds &gt; 0 &amp;&amp; duration.nanos &lt; 0) {\n  duration.seconds -= 1;\n  duration.nanos += 1000000000;\n}\n</code></pre>\n\n<p>Example 2: Compute Timestamp from Timestamp + Duration in pseudo code.</p>\n\n<pre><code>Timestamp start = ...;\nDuration duration = ...;\nTimestamp end = ...;\n\nend.seconds = start.seconds + duration.seconds;\nend.nanos = start.nanos + duration.nanos;\n\nif (end.nanos &lt; 0) {\n  end.seconds -= 1;\n  end.nanos += 1000000000;\n} else if (end.nanos &gt;= 1000000000) {\n  end.seconds += 1;\n  end.nanos -= 1000000000;\n}\n</code></pre>\n\n<p>Example 3: Compute Duration from datetime.timedelta in Python.</p>\n\n<pre><code>td = datetime.timedelta(days=3, minutes=10)\nduration = Duration()\nduration.FromTimedelta(td)\n</code></pre>\n<h1>JSON Mapping</h1>\n\n<p>In JSON format, the Duration type is encoded as a string rather than an\nobject, where the string ends in the suffix &quot;s&quot; (indicating seconds) and\nis preceded by the number of seconds, with nanoseconds expressed as\nfractional seconds. For example, 3 seconds with 0 nanoseconds should be\nencoded in JSON format as &quot;3s&quot;, while 3 seconds and 1 nanosecond should\nbe expressed in JSON format as &quot;3.000000001s&quot;, and 3 seconds and 1\nmicrosecond should be expressed in JSON format as &quot;3.000001s&quot;."
   parent: Google::Protobuf
@@ -52,6 +56,7 @@ references:
   fullName: Google::Protobuf::DoubleValue
   name: DoubleValue
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: DoubleValue
   summary: "Wrapper message for <code>double</code>.</p>\n\n<p>The JSON representation for <code>DoubleValue</code> is JSON number."
   parent: Google::Protobuf
@@ -59,6 +64,7 @@ references:
   fullName: Google::Protobuf::FloatValue
   name: FloatValue
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: FloatValue
   summary: "Wrapper message for <code>float</code>.</p>\n\n<p>The JSON representation for <code>FloatValue</code> is JSON number."
   parent: Google::Protobuf
@@ -66,6 +72,7 @@ references:
   fullName: Google::Protobuf::Int64Value
   name: Int64Value
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Int64Value
   summary: "Wrapper message for <code>int64</code>.</p>\n\n<p>The JSON representation for <code>Int64Value</code> is JSON string."
   parent: Google::Protobuf
@@ -73,6 +80,7 @@ references:
   fullName: Google::Protobuf::UInt64Value
   name: UInt64Value
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: UInt64Value
   summary: "Wrapper message for <code>uint64</code>.</p>\n\n<p>The JSON representation for <code>UInt64Value</code> is JSON string."
   parent: Google::Protobuf
@@ -80,6 +88,7 @@ references:
   fullName: Google::Protobuf::Int32Value
   name: Int32Value
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Int32Value
   summary: "Wrapper message for <code>int32</code>.</p>\n\n<p>The JSON representation for <code>Int32Value</code> is JSON number."
   parent: Google::Protobuf
@@ -87,6 +96,7 @@ references:
   fullName: Google::Protobuf::UInt32Value
   name: UInt32Value
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: UInt32Value
   summary: "Wrapper message for <code>uint32</code>.</p>\n\n<p>The JSON representation for <code>UInt32Value</code> is JSON number."
   parent: Google::Protobuf
@@ -94,6 +104,7 @@ references:
   fullName: Google::Protobuf::BoolValue
   name: BoolValue
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: BoolValue
   summary: "Wrapper message for <code>bool</code>.</p>\n\n<p>The JSON representation for <code>BoolValue</code> is JSON <code>true</code> and <code>false</code>."
   parent: Google::Protobuf
@@ -101,6 +112,7 @@ references:
   fullName: Google::Protobuf::StringValue
   name: StringValue
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: StringValue
   summary: "Wrapper message for <code>string</code>.</p>\n\n<p>The JSON representation for <code>StringValue</code> is JSON string."
   parent: Google::Protobuf
@@ -108,6 +120,7 @@ references:
   fullName: Google::Protobuf::BytesValue
   name: BytesValue
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: BytesValue
   summary: "Wrapper message for <code>bytes</code>.</p>\n\n<p>The JSON representation for <code>BytesValue</code> is JSON string."
   parent: Google::Protobuf
@@ -115,6 +128,7 @@ references:
   fullName: Google::Protobuf::Timestamp
   name: Timestamp
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: Timestamp
   summary: "A Timestamp represents a point in time independent of any time zone or local\ncalendar, encoded as a count of seconds and fractions of seconds at\nnanosecond resolution. The count is relative to an epoch at UTC midnight on\nJanuary 1, 1970, in the proleptic Gregorian calendar which extends the\nGregorian calendar backwards to year one.</p>\n\n<p>All minutes are 60 seconds long. Leap seconds are &quot;smeared&quot; so that no leap\nsecond table is needed for interpretation, using a <a href=\"https://developers.google.com/time/smear\">24-hour linear\nsmear</a>.</p>\n\n<p>The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By\nrestricting to that range, we ensure that we can convert to and from <a href=\"https://www.ietf.org/rfc/rfc3339.txt\">RFC\n3339</a> date strings.</p>\n<h1>Examples</h1>\n\n<p>Example 1: Compute Timestamp from POSIX <code>time()</code>.</p>\n\n<pre><code>Timestamp timestamp;\ntimestamp.set_seconds(time(NULL));\ntimestamp.set_nanos(0);\n</code></pre>\n\n<p>Example 2: Compute Timestamp from POSIX <code>gettimeofday()</code>.</p>\n\n<pre><code>struct timeval tv;\ngettimeofday(&amp;tv, NULL);\n\nTimestamp timestamp;\ntimestamp.set_seconds(tv.tv_sec);\ntimestamp.set_nanos(tv.tv_usec * 1000);\n</code></pre>\n\n<p>Example 3: Compute Timestamp from Win32 <code>GetSystemTimeAsFileTime()</code>.</p>\n\n<pre><code>FILETIME ft;\nGetSystemTimeAsFileTime(&amp;ft);\nUINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;\n\n// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z\n// is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.\nTimestamp timestamp;\ntimestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));\ntimestamp.set_nanos((INT32) ((ticks % 10000000) * 100));\n</code></pre>\n\n<p>Example 4: Compute Timestamp from Java <code>System.currentTimeMillis()</code>.</p>\n\n<pre><code>long millis = System.currentTimeMillis();\n\nTimestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)\n    .setNanos((int) ((millis % 1000) * 1000000)).build();\n</code></pre>\n\n<p>Example 5: Compute Timestamp from Java <code>Instant.now()</code>.</p>\n\n<pre><code>Instant now = Instant.now();\n\nTimestamp timestamp =\n    Timestamp.newBuilder().setSeconds(now.getEpochSecond())\n        .setNanos(now.getNano()).build();\n</code></pre>\n\n<p>Example 6: Compute Timestamp from current time in Python.</p>\n\n<pre><code>timestamp = Timestamp()\ntimestamp.GetCurrentTime()\n</code></pre>\n<h1>JSON Mapping</h1>\n\n<p>In JSON format, the Timestamp type is encoded as a string in the\n<a href=\"https://www.ietf.org/rfc/rfc3339.txt\">RFC 3339</a> format. That is, the\nformat is &quot;{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z&quot;\nwhere {year} is always expressed using four digits while {month}, {day},\n{hour}, {min}, and {sec} are zero-padded to two digits each. The fractional\nseconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution),\nare optional. The &quot;Z&quot; suffix indicates the timezone (&quot;UTC&quot;); the timezone\nis required. A proto3 JSON serializer should always use UTC (as indicated by\n&quot;Z&quot;) when printing the Timestamp type and a proto3 JSON parser should be\nable to accept both UTC and other timezones (as indicated by an offset).</p>\n\n<p>For example, &quot;2017-01-15T01:30:15.01Z&quot; encodes 15.01 seconds past\n01:30 UTC on January 15, 2017.</p>\n\n<p>In JavaScript, one can convert a Date object to this format using the\nstandard\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString\">toISOString()</a>\nmethod. In Python, a standard <code>datetime.datetime</code> object can be converted\nto this format using\n<a href=\"https://docs.python.org/2/library/time.html#time.strftime\"><code>strftime</code></a> with\nthe time format spec &#39;%Y-%m-%dT%H:%M:%S.%fZ&#39;. Likewise, in Java, one can use\nthe Joda Time&#39;s <a href=\"http://www.joda.org/joda-time/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime%2D%2D\"><code>ISODateTimeFormat.dateTime()</code></a> to obtain a formatter capable of generating timestamps in this format."
   parent: Google::Protobuf
@@ -122,6 +136,7 @@ references:
   fullName: Google::Protobuf::FieldMask
   name: FieldMask
   module: google-cloud-vision-v1
+  friendlyApiName: "Cloud Vision V1 API"
   id: FieldMask
   summary: "<code>FieldMask</code> represents a set of symbolic field paths, for example:</p>\n\n<pre><code>paths: &quot;f.a&quot;\npaths: &quot;f.b.d&quot;\n</code></pre>\n\n<p>Here <code>f</code> represents a field in some root message, <code>a</code> and <code>b</code>\nfields in the message found in <code>f</code>, and <code>d</code> a field found in the\nmessage in <code>f.b</code>.</p>\n\n<p>Field masks are used to specify a subset of fields that should be\nreturned by a get operation or modified by an update operation.\nField masks also have a custom JSON encoding (see below).</p>\n<h1>Field Masks in Projections</h1>\n\n<p>When used in the context of a projection, a response message or\nsub-message is filtered by the API to only contain those fields as\nspecified in the mask. For example, if the mask in the previous\nexample is applied to a response message as follows:</p>\n\n<pre><code>f {\n  a : 22\n  b {\n    d : 1\n    x : 2\n  }\n  y : 13\n}\nz: 8\n</code></pre>\n\n<p>The result will not contain specific values for fields x,y and z\n(their value will be set to the default, and omitted in proto text\noutput):</p>\n\n<pre><code>f {\n  a : 22\n  b {\n    d : 1\n  }\n}\n</code></pre>\n\n<p>A repeated field is not allowed except at the last position of a\npaths string.</p>\n\n<p>If a FieldMask object is not present in a get operation, the\noperation applies to all fields (as if a FieldMask of all fields\nhad been specified).</p>\n\n<p>Note that a field mask does not necessarily apply to the\ntop-level response message. In case of a REST get operation, the\nfield mask applies directly to the response, but in case of a REST\nlist operation, the mask instead applies to each individual message\nin the returned resource list. In case of a REST custom method,\nother definitions may be used. Where the mask applies will be\nclearly documented together with its declaration in the API.  In\nany case, the effect on the returned resource/resources is required\nbehavior for APIs.</p>\n<h1>Field Masks in Update Operations</h1>\n\n<p>A field mask in update operations specifies which fields of the\ntargeted resource are going to be updated. The API is required\nto only change the values of the fields as specified in the mask\nand leave the others untouched. If a resource is passed in to\ndescribe the updated values, the API ignores the values of all\nfields not covered by the mask.</p>\n\n<p>If a repeated field is specified for an update operation, new values will\nbe appended to the existing repeated field in the target resource. Note that\na repeated field is only allowed in the last position of a <code>paths</code> string.</p>\n\n<p>If a sub-message is specified in the last position of the field mask for an\nupdate operation, then new value will be merged into the existing sub-message\nin the target resource.</p>\n\n<p>For example, given the target message:</p>\n\n<pre><code>f {\n  b {\n    d: 1\n    x: 2\n  }\n  c: [1]\n}\n</code></pre>\n\n<p>And an update message:</p>\n\n<pre><code>f {\n  b {\n    d: 10\n  }\n  c: [2]\n}\n</code></pre>\n\n<p>then if the field mask is:</p>\n\n<p>paths: [&quot;f.b&quot;, &quot;f.c&quot;]</p>\n\n<p>then the result will be:</p>\n\n<pre><code>f {\n  b {\n    d: 10\n    x: 2\n  }\n  c: [1, 2]\n}\n</code></pre>\n\n<p>An implementation may provide options to override this default behavior for\nrepeated and message fields.</p>\n\n<p>In order to reset a field&#39;s value to the default, the field must\nbe in the mask and set to the default value in the provided resource.\nHence, in order to reset all fields of a resource, provide a default\ninstance of the resource and set all fields in the mask, or do\nnot provide a mask as described below.</p>\n\n<p>If a field mask is not present on update, the operation applies to\nall fields (as if a field mask of all fields has been specified).\nNote that in the presence of schema evolution, this may mean that\nfields the client does not know and has therefore not filled into\nthe request will be reset to their default. If this is unwanted\nbehavior, a specific service may require a client to always specify\na field mask, producing an error if not.</p>\n\n<p>As with get operations, the location of the resource which\ndescribes the updated values in the request message depends on the\noperation kind. In any case, the effect of the field mask is\nrequired to be honored by the API.</p>\n<h2>Considerations for HTTP REST</h2>\n\n<p>The HTTP kind of an update operation which uses a field mask must\nbe set to PATCH instead of PUT in order to satisfy HTTP semantics\n(PUT must only be used for full updates).</p>\n<h1>JSON Encoding of Field Masks</h1>\n\n<p>In JSON, a field mask is encoded as a single string where paths are\nseparated by a comma. Fields name in each path are converted\nto/from lower-camel naming conventions.</p>\n\n<p>As an example, consider the following message declarations:</p>\n\n<pre><code>message Profile {\n  User user = 1;\n  Photo photo = 2;\n}\nmessage User {\n  string display_name = 1;\n  string address = 2;\n}\n</code></pre>\n\n<p>In proto a field mask for <code>Profile</code> may look as such:</p>\n\n<pre><code>mask {\n  paths: &quot;user.display_name&quot;\n  paths: &quot;photo&quot;\n}\n</code></pre>\n\n<p>In JSON, the same mask is represented as below:</p>\n\n<pre><code>{\n  mask: &quot;user.displayName,photo&quot;\n}\n</code></pre>\n<h1>Field Masks and Oneof Fields</h1>\n\n<p>Field masks treat fields in oneofs just as regular fields. Consider the\nfollowing message:</p>\n\n<pre><code>message SampleMessage {\n  oneof test_oneof {\n    string name = 4;\n    SubMessage sub_message = 9;\n  }\n}\n</code></pre>\n\n<p>The field mask can be:</p>\n\n<pre><code>mask {\n  paths: &quot;name&quot;\n}\n</code></pre>\n\n<p>Or:</p>\n\n<pre><code>mask {\n  paths: &quot;sub_message&quot;\n}\n</code></pre>\n\n<p>Note that oneof type names (&quot;test_oneof&quot; in this case) cannot be used in\npaths.</p>\n<h2>Field Mask Verification</h2>\n\n<p>The implementation of any API method which has a FieldMask type field in the\nrequest should verify the included field paths, and return an\n<code>INVALID_ARGUMENT</code> error if any path is unmappable."
   parent: Google::Protobuf
