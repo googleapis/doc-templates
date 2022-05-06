@@ -223,6 +223,10 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   vm.status = vm.status || null;
   common.processSeeAlso(vm);
 
+  if (!common.isValidPackageVersion(vm._packageVersion)) {
+    vm._packageVersion = null;
+  }
+
   // id is used as default template's bookmark
   vm.id = common.getHtmlId(vm.uid);
   if (vm.overload && vm.overload.uid) {
