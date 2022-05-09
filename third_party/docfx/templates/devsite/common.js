@@ -11,7 +11,6 @@ exports.processSeeAlso = processSeeAlso;
 
 exports.isAbsolutePath = isAbsolutePath;
 exports.isRelativePath = isRelativePath;
-exports.isValidPackageVersion = isValidPackageVersion;
 
 exports.getTitleForTypeProperty = getTitleForTypeProperty;
 exports.getSummaryIntroSentence = getSummaryIntroSentence;
@@ -127,23 +126,6 @@ function getSummaryIntroSentence(friendlyApiName, type, name) {
     summaryIntro += name[0].value;
     summaryIntro += "."
     return summaryIntro;
-}
-
-/**
- * Validates package version string.
- *
- * Example valid version strings:
- * v1.0.0
- * v11.11.11
- * V1.0.0
- * 1.0.0
- * v1.0
- * v1
- *
- * @param {string} version The package version to check.
- */
-function isValidPackageVersion(version) {
-    return /^v?([0-9]+)(.[0-9]+)?(.[0-9]+)?$/gi.test(version);
 }
 
 var gitUrlPatternItems = {

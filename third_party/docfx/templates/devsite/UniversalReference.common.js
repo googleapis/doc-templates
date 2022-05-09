@@ -114,10 +114,7 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   vm.inheritance = vm.inheritance || null;
   vm.children = vm.children || null;
   vm.status = vm.status || null;
-
-  if (!common.isValidPackageVersion(vm._packageVersion)) {
-    vm._packageVersion = null;
-  }
+  vm._packageVersion = vm._packageVersion || null;
 
   if (vm.inheritance) {
     normalizeLanguageValuePairs(vm.inheritance).forEach(handleInheritance);
