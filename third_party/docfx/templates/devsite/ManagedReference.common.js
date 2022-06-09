@@ -221,6 +221,7 @@ function handleItem(vm, gitContribute, gitUrlPattern) {
   vm.implements = vm.implements || null;
   vm.example = vm.example || null;
   vm.status = vm.status || null;
+  vm._packageVersion = vm._packageVersion || null;
   common.processSeeAlso(vm);
 
   // id is used as default template's bookmark
