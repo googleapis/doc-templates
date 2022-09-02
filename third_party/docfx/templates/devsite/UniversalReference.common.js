@@ -64,6 +64,8 @@ exports.transform = function (model) {
     }
   }
 
+  // add summary intro sentence if summary key is defined (can be empty string)
+  // and friendlyApiName is non-empty.
   if (model.summary != null && model.friendlyApiName) {
     model.summaryIntro = common.getSummaryIntroSentence(model.friendlyApiName, model.type, model.name);
   }
