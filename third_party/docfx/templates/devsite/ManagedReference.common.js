@@ -44,6 +44,9 @@ exports.transform = function (model) {
     }
   }
 
+  if (model.summary != null && model.friendlyApiName) {
+    model.summaryIntro = common.getSummaryIntroSentence(model.friendlyApiName, model.type, model.name);
+  }
   return model;
 }
 
