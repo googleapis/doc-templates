@@ -24,7 +24,7 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    "test_dir", ["python-small", "go", "dotnet", "nodejs", "java", "ruby"]
+    "test_dir", ["python-small", "go", "dotnet", "nodejs", "java", "ruby", "php"]
 )
 def test_goldens(update_goldens, test_dir):
     build_dir = Path("testdata") / test_dir

@@ -1,0 +1,640 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="\Google\Cloud\Vision\V1\EntityAnnotation">
+<h1 class="page-title">Class EntityAnnotation (2.2.2)</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Set of detected entity features.</p>
+<p>Generated from protobuf message <code>google.cloud.vision.v1.EntityAnnotation</code></p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation____construct__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::__construct()" class="notranslate">__construct</h3>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional. Data for populating the Message object.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ mid</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Opaque entity ID. Some IDs may be available in <a href="https://developers.google.com/knowledge-graph/">Google Knowledge Graph Search API</a>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ locale</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The language code for the locale in which the entity textual <code>description</code> is expressed.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ description</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Entity textual description, expressed in its <code>locale</code> language.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ score</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>Overall score of the result. Range [0, 1].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ confidence</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p><strong>Deprecated. Use <code>score</code> instead.</strong> The accuracy of the entity detection in an image. For example, for an image in which the &quot;Eiffel Tower&quot; entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ topicality</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of &quot;tower&quot; is likely higher to an image containing the detected &quot;Eiffel Tower&quot; than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ bounding_poly</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          <p>Image region to which this entity belongs. Not produced for <code>LABEL_DETECTION</code> features.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ locations</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.LocationInfo.html">Google\Cloud\Vision\V1\LocationInfo</a>&gt;</code>
+          <br>
+          <p>The location information for the detected entity. Multiple <code>LocationInfo</code> elements can be present because one location may indicate the location of the scene in the image, and another location may indicate the location of the place where the image was taken. Location information is usually present for landmarks.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ properties</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.Property.html">Google\Cloud\Vision\V1\Property</a>&gt;</code>
+          <br>
+          <p>Some entities may have optional user-supplied <code>Property</code> (name/value) fields, such a score or string that qualifies the entity.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getMid__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getMid()" class="notranslate">getMid</h3>
+  <div class="markdown level1 summary"><p>Opaque entity ID. Some IDs may be available in
+<a href="https://developers.google.com/knowledge-graph/">Google Knowledge Graph Search
+API</a>.</p>
+<p>Generated from protobuf field <code>string mid = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setMid__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setMid()" class="notranslate">setMid</h3>
+  <div class="markdown level1 summary"><p>Opaque entity ID. Some IDs may be available in
+<a href="https://developers.google.com/knowledge-graph/">Google Knowledge Graph Search
+API</a>.</p>
+<p>Generated from protobuf field <code>string mid = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getLocale__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getLocale()" class="notranslate">getLocale</h3>
+  <div class="markdown level1 summary"><p>The language code for the locale in which the entity textual
+<code>description</code> is expressed.</p>
+<p>Generated from protobuf field <code>string locale = 2;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setLocale__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setLocale()" class="notranslate">setLocale</h3>
+  <div class="markdown level1 summary"><p>The language code for the locale in which the entity textual
+<code>description</code> is expressed.</p>
+<p>Generated from protobuf field <code>string locale = 2;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getDescription__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getDescription()" class="notranslate">getDescription</h3>
+  <div class="markdown level1 summary"><p>Entity textual description, expressed in its <code>locale</code> language.</p>
+<p>Generated from protobuf field <code>string description = 3;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setDescription__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setDescription()" class="notranslate">setDescription</h3>
+  <div class="markdown level1 summary"><p>Entity textual description, expressed in its <code>locale</code> language.</p>
+<p>Generated from protobuf field <code>string description = 3;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getScore__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getScore()" class="notranslate">getScore</h3>
+  <div class="markdown level1 summary"><p>Overall score of the result. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float score = 4;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setScore__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setScore()" class="notranslate">setScore</h3>
+  <div class="markdown level1 summary"><p>Overall score of the result. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float score = 4;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getConfidence__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getConfidence()" class="notranslate">getConfidence</h3>
+  <div class="markdown level1 summary"><p><strong>Deprecated. Use <code>score</code> instead.</strong>
+The accuracy of the entity detection in an image.</p>
+<p>For example, for an image in which the &quot;Eiffel Tower&quot; entity is detected,
+this field represents the confidence that there is a tower in the query
+image. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float confidence = 5 [deprecated = true];</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setConfidence__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setConfidence()" class="notranslate">setConfidence</h3>
+  <div class="markdown level1 summary"><p><strong>Deprecated. Use <code>score</code> instead.</strong>
+The accuracy of the entity detection in an image.</p>
+<p>For example, for an image in which the &quot;Eiffel Tower&quot; entity is detected,
+this field represents the confidence that there is a tower in the query
+image. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float confidence = 5 [deprecated = true];</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getTopicality__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getTopicality()" class="notranslate">getTopicality</h3>
+  <div class="markdown level1 summary"><p>The relevancy of the ICA (Image Content Annotation) label to the
+image. For example, the relevancy of &quot;tower&quot; is likely higher to an image
+containing the detected &quot;Eiffel Tower&quot; than to an image containing a
+detected distant towering building, even though the confidence that
+there is a tower in each image may be the same. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float topicality = 6;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setTopicality__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setTopicality()" class="notranslate">setTopicality</h3>
+  <div class="markdown level1 summary"><p>The relevancy of the ICA (Image Content Annotation) label to the
+image. For example, the relevancy of &quot;tower&quot; is likely higher to an image
+containing the detected &quot;Eiffel Tower&quot; than to an image containing a
+detected distant towering building, even though the confidence that
+there is a tower in each image may be the same. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float topicality = 6;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getBoundingPoly()" class="notranslate">getBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>Image region to which this entity belongs. Not produced
+for <code>LABEL_DETECTION</code> features.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 7;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.BoundingPoly.html">BoundingPoly</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__hasBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::hasBoundingPoly()" class="notranslate">hasBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__clearBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::clearBoundingPoly()" class="notranslate">clearBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setBoundingPoly()" class="notranslate">setBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>Image region to which this entity belongs. Not produced
+for <code>LABEL_DETECTION</code> features.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 7;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getLocations__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getLocations()" class="notranslate">getLocations</h3>
+  <div class="markdown level1 summary"><p>The location information for the detected entity. Multiple
+<code>LocationInfo</code> elements can be present because one location may
+indicate the location of the scene in the image, and another location
+may indicate the location of the place where the image was taken.</p>
+<p>Location information is usually present for landmarks.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.LocationInfo locations = 8;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setLocations__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setLocations()" class="notranslate">setLocations</h3>
+  <div class="markdown level1 summary"><p>The location information for the detected entity. Multiple
+<code>LocationInfo</code> elements can be present because one location may
+indicate the location of the scene in the image, and another location
+may indicate the location of the place where the image was taken.</p>
+<p>Location information is usually present for landmarks.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.LocationInfo locations = 8;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.LocationInfo.html">Google\Cloud\Vision\V1\LocationInfo</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__getProperties__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::getProperties()" class="notranslate">getProperties</h3>
+  <div class="markdown level1 summary"><p>Some entities may have optional user-supplied <code>Property</code> (name/value)
+fields, such a score or string that qualifies the entity.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.Property properties = 9;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_EntityAnnotation__setProperties__" data-uid="\Google\Cloud\Vision\V1\EntityAnnotation::setProperties()" class="notranslate">setProperties</h3>
+  <div class="markdown level1 summary"><p>Some entities may have optional user-supplied <code>Property</code> (name/value)
+fields, such a score or string that qualifies the entity.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.Property properties = 9;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.Property.html">Google\Cloud\Vision\V1\Property</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

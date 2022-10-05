@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="\Google\Cloud\Vision\V1\ImportProductSetsGcsSource">
+<h1 class="page-title">Class ImportProductSetsGcsSource (2.2.2)</h1>
+  
+  
+  <div class="markdown level0 summary"><p>The Google Cloud Storage location for a csv file which preserves a list of
+ImportProductSetRequests in each line.</p>
+<p>Generated from protobuf message <code>google.cloud.vision.v1.ImportProductSetsGcsSource</code></p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_ImportProductSetsGcsSource____construct__" data-uid="\Google\Cloud\Vision\V1\ImportProductSetsGcsSource::__construct()" class="notranslate">__construct</h3>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional. Data for populating the Message object.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ csv_file_uri</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The Google Cloud Storage URI of the input csv file. The URI must start with <code>gs://</code>. The format of the input csv file should be one image per line. In each line, there are 8 columns. 1. image-uri 2. image-id 3. product-set-id 4. product-id 5. product-category 6. product-display-name 7. labels 8. bounding-poly The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code> columns are required. All other columns are optional. If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and <code>product-id</code> values does not exist, then the system will create a new <code>ProductSet</code> or <code>Product</code> for the image. In this case, the <code>product-display-name</code> column refers to <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getDisplayName__">display_name</a>, the <code>product-category</code> column refers to <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getProductCategory__">product_category</a>, and the <code>labels</code> column refers to <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getProductLabels__">product_labels</a>. The <code>image-id</code> column is optional but must be unique if provided. If it is empty, the system will automatically assign a unique id to the image. The <code>product-display-name</code> column is optional. If it is empty, the system sets the <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getDisplayName__">display_name</a> field for the product to a space (&quot; &quot;). You can update the <code>display_name</code> later by using the API. If a <code>Product</code> with the specified <code>product-id</code> already exists, then the system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code> columns. The <code>labels</code> column (optional) is a line containing a list of comma-separated key-value pairs, in the following format: &quot;key_1=value_1,key_2=value_2,...,key_n=value_n&quot; The <code>bounding-poly</code> column (optional) identifies one region of interest from the image in the same manner as <code>CreateReferenceImage</code>. If you do not specify the <code>bounding-poly</code> column, then the system will try to detect regions of interest automatically. At most one <code>bounding-poly</code> column is allowed per line. If the image contains multiple regions of interest, add a line to the CSV file that includes the same product information, and the <code>bounding-poly</code> values for each region of interest. The <code>bounding-poly</code> column must contain an even number of comma-separated numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use non-negative integers for absolute bounding polygons, and float values in [0, 1] for normalized bounding polygons. The system will resize the image if the image resolution is too large to process (larger than 20MP).</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ImportProductSetsGcsSource__getCsvFileUri__" data-uid="\Google\Cloud\Vision\V1\ImportProductSetsGcsSource::getCsvFileUri()" class="notranslate">getCsvFileUri</h3>
+  <div class="markdown level1 summary"><p>The Google Cloud Storage URI of the input csv file.</p>
+<p>The URI must start with <code>gs://</code>.
+The format of the input csv file should be one image per line.
+In each line, there are 8 columns.</p>
+<ol>
+<li>image-uri</li>
+<li>image-id</li>
+<li>product-set-id</li>
+<li>product-id</li>
+<li>product-category</li>
+<li>product-display-name</li>
+<li>labels</li>
+<li>bounding-poly
+The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
+columns are required. All other columns are optional.
+If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
+<code>product-id</code> values does not exist, then the system will create a new
+<code>ProductSet</code> or <code>Product</code> for the image. In this case, the
+<code>product-display-name</code> column refers to
+<a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getDisplayName__">display_name</a>, the
+<code>product-category</code> column refers to
+<a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getProductCategory__">product_category</a>, and the
+<code>labels</code> column refers to <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getProductLabels__">product_labels</a>.
+The <code>image-id</code> column is optional but must be unique if provided. If it is
+empty, the system will automatically assign a unique id to the image.
+The <code>product-display-name</code> column is optional. If it is empty, the system
+sets the <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getDisplayName__">display_name</a> field for the product to a
+space (&quot; &quot;). You can update the <code>display_name</code> later by using the API.
+If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
+system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code>
+columns.
+The <code>labels</code> column (optional) is a line containing a list of
+comma-separated key-value pairs, in the following format:
+&quot;key_1=value_1,key_2=value_2,...,key_n=value_n&quot;
+The <code>bounding-poly</code> column (optional) identifies one region of
+interest from the image in the same manner as <code>CreateReferenceImage</code>. If
+you do not specify the <code>bounding-poly</code> column, then the system will try to
+detect regions of interest automatically.
+At most one <code>bounding-poly</code> column is allowed per line. If the image
+contains multiple regions of interest, add a line to the CSV file that
+includes the same product information, and the <code>bounding-poly</code> values for
+each region of interest.
+The <code>bounding-poly</code> column must contain an even number of comma-separated
+numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use
+non-negative integers for absolute bounding polygons, and float values
+in [0, 1] for normalized bounding polygons.
+The system will resize the image if the image resolution is too
+large to process (larger than 20MP).</li>
+</ol>
+<p>Generated from protobuf field <code>string csv_file_uri = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ImportProductSetsGcsSource__setCsvFileUri__" data-uid="\Google\Cloud\Vision\V1\ImportProductSetsGcsSource::setCsvFileUri()" class="notranslate">setCsvFileUri</h3>
+  <div class="markdown level1 summary"><p>The Google Cloud Storage URI of the input csv file.</p>
+<p>The URI must start with <code>gs://</code>.
+The format of the input csv file should be one image per line.
+In each line, there are 8 columns.</p>
+<ol>
+<li>image-uri</li>
+<li>image-id</li>
+<li>product-set-id</li>
+<li>product-id</li>
+<li>product-category</li>
+<li>product-display-name</li>
+<li>labels</li>
+<li>bounding-poly
+The <code>image-uri</code>, <code>product-set-id</code>, <code>product-id</code>, and <code>product-category</code>
+columns are required. All other columns are optional.
+If the <code>ProductSet</code> or <code>Product</code> specified by the <code>product-set-id</code> and
+<code>product-id</code> values does not exist, then the system will create a new
+<code>ProductSet</code> or <code>Product</code> for the image. In this case, the
+<code>product-display-name</code> column refers to
+<a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getDisplayName__">display_name</a>, the
+<code>product-category</code> column refers to
+<a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getProductCategory__">product_category</a>, and the
+<code>labels</code> column refers to <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getProductLabels__">product_labels</a>.
+The <code>image-id</code> column is optional but must be unique if provided. If it is
+empty, the system will automatically assign a unique id to the image.
+The <code>product-display-name</code> column is optional. If it is empty, the system
+sets the <a class="xref" href="V1.Product.html#_Google_Cloud_Vision_V1_Product__getDisplayName__">display_name</a> field for the product to a
+space (&quot; &quot;). You can update the <code>display_name</code> later by using the API.
+If a <code>Product</code> with the specified <code>product-id</code> already exists, then the
+system ignores the <code>product-display-name</code>, <code>product-category</code>, and <code>labels</code>
+columns.
+The <code>labels</code> column (optional) is a line containing a list of
+comma-separated key-value pairs, in the following format:
+&quot;key_1=value_1,key_2=value_2,...,key_n=value_n&quot;
+The <code>bounding-poly</code> column (optional) identifies one region of
+interest from the image in the same manner as <code>CreateReferenceImage</code>. If
+you do not specify the <code>bounding-poly</code> column, then the system will try to
+detect regions of interest automatically.
+At most one <code>bounding-poly</code> column is allowed per line. If the image
+contains multiple regions of interest, add a line to the CSV file that
+includes the same product information, and the <code>bounding-poly</code> values for
+each region of interest.
+The <code>bounding-poly</code> column must contain an even number of comma-separated
+numbers, in the format &quot;p1_x,p1_y,p2_x,p2_y,...,pn_x,pn_y&quot;. Use
+non-negative integers for absolute bounding polygons, and float values
+in [0, 1] for normalized bounding polygons.
+The system will resize the image if the image resolution is too
+large to process (larger than 20MP).</li>
+</ol>
+<p>Generated from protobuf field <code>string csv_file_uri = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

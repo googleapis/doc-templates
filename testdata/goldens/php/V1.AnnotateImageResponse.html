@@ -1,0 +1,951 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse">
+<h1 class="page-title">Class AnnotateImageResponse (2.2.2)</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Response to an image annotation request.</p>
+<p>Generated from protobuf message <code>google.cloud.vision.v1.AnnotateImageResponse</code></p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse____construct__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::__construct()" class="notranslate">__construct</h3>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional. Data for populating the Message object.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ face_annotations</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.FaceAnnotation.html">Google\Cloud\Vision\V1\FaceAnnotation</a>&gt;</code>
+          <br>
+          <p>If present, face detection has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ landmark_annotations</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          <p>If present, landmark detection has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ logo_annotations</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          <p>If present, logo detection has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ label_annotations</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          <p>If present, label detection has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ localized_object_annotations</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.LocalizedObjectAnnotation.html">Google\Cloud\Vision\V1\LocalizedObjectAnnotation</a>&gt;</code>
+          <br>
+          <p>If present, localized object detection has completed successfully. This will be sorted descending by confidence score.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ text_annotations</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          <p>If present, text (OCR) detection has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ full_text_annotation</td>
+        <td>
+          <code><a class="xref" href="V1.TextAnnotation.html">Google\Cloud\Vision\V1\TextAnnotation</a></code>
+          <br>
+          <p>If present, text (OCR) detection or document (OCR) text detection has completed successfully. This annotation provides the structural hierarchy for the OCR detected text.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ safe_search_annotation</td>
+        <td>
+          <code><a class="xref" href="V1.SafeSearchAnnotation.html">Google\Cloud\Vision\V1\SafeSearchAnnotation</a></code>
+          <br>
+          <p>If present, safe-search annotation has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ image_properties_annotation</td>
+        <td>
+          <code><a class="xref" href="V1.ImageProperties.html">Google\Cloud\Vision\V1\ImageProperties</a></code>
+          <br>
+          <p>If present, image properties were extracted successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ crop_hints_annotation</td>
+        <td>
+          <code><a class="xref" href="V1.CropHintsAnnotation.html">Google\Cloud\Vision\V1\CropHintsAnnotation</a></code>
+          <br>
+          <p>If present, crop hints have completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ web_detection</td>
+        <td>
+          <code><a class="xref" href="V1.WebDetection.html">Google\Cloud\Vision\V1\WebDetection</a></code>
+          <br>
+          <p>If present, web detection has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ product_search_results</td>
+        <td>
+          <code><a class="xref" href="V1.ProductSearchResults.html">Google\Cloud\Vision\V1\ProductSearchResults</a></code>
+          <br>
+          <p>If present, product search has completed successfully.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ error</td>
+        <td>
+          <code>Google\Rpc\Status</code>
+          <br>
+          <p>If set, represents the error message for the operation. Note that filled-in image annotations are guaranteed to be correct, even when <code>error</code> is set.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ context</td>
+        <td>
+          <code><a class="xref" href="V1.ImageAnnotationContext.html">Google\Cloud\Vision\V1\ImageAnnotationContext</a></code>
+          <br>
+          <p>If present, contextual information is needed to understand where this image comes from.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getFaceAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getFaceAnnotations()" class="notranslate">getFaceAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, face detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.FaceAnnotation face_annotations = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setFaceAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setFaceAnnotations()" class="notranslate">setFaceAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, face detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.FaceAnnotation face_annotations = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.FaceAnnotation.html">Google\Cloud\Vision\V1\FaceAnnotation</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getLandmarkAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getLandmarkAnnotations()" class="notranslate">getLandmarkAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, landmark detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation landmark_annotations = 2;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setLandmarkAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setLandmarkAnnotations()" class="notranslate">setLandmarkAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, landmark detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation landmark_annotations = 2;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getLogoAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getLogoAnnotations()" class="notranslate">getLogoAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, logo detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation logo_annotations = 3;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setLogoAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setLogoAnnotations()" class="notranslate">setLogoAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, logo detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation logo_annotations = 3;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getLabelAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getLabelAnnotations()" class="notranslate">getLabelAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, label detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation label_annotations = 4;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setLabelAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setLabelAnnotations()" class="notranslate">setLabelAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, label detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation label_annotations = 4;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getLocalizedObjectAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getLocalizedObjectAnnotations()" class="notranslate">getLocalizedObjectAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, localized object detection has completed successfully.</p>
+<p>This will be sorted descending by confidence score.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setLocalizedObjectAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setLocalizedObjectAnnotations()" class="notranslate">setLocalizedObjectAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, localized object detection has completed successfully.</p>
+<p>This will be sorted descending by confidence score.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.LocalizedObjectAnnotation.html">Google\Cloud\Vision\V1\LocalizedObjectAnnotation</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getTextAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getTextAnnotations()" class="notranslate">getTextAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, text (OCR) detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation text_annotations = 5;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setTextAnnotations__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setTextAnnotations()" class="notranslate">setTextAnnotations</h3>
+  <div class="markdown level1 summary"><p>If present, text (OCR) detection has completed successfully.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.EntityAnnotation text_annotations = 5;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.EntityAnnotation.html">Google\Cloud\Vision\V1\EntityAnnotation</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getFullTextAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getFullTextAnnotation()" class="notranslate">getFullTextAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, text (OCR) detection or document (OCR) text detection has
+completed successfully.</p>
+<p>This annotation provides the structural hierarchy for the OCR detected
+text.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.TextAnnotation full_text_annotation = 12;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.TextAnnotation.html">TextAnnotation</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasFullTextAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasFullTextAnnotation()" class="notranslate">hasFullTextAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearFullTextAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearFullTextAnnotation()" class="notranslate">clearFullTextAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setFullTextAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setFullTextAnnotation()" class="notranslate">setFullTextAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, text (OCR) detection or document (OCR) text detection has
+completed successfully.</p>
+<p>This annotation provides the structural hierarchy for the OCR detected
+text.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.TextAnnotation full_text_annotation = 12;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.TextAnnotation.html">Google\Cloud\Vision\V1\TextAnnotation</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getSafeSearchAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getSafeSearchAnnotation()" class="notranslate">getSafeSearchAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, safe-search annotation has completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.SafeSearchAnnotation safe_search_annotation = 6;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.SafeSearchAnnotation.html">SafeSearchAnnotation</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasSafeSearchAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasSafeSearchAnnotation()" class="notranslate">hasSafeSearchAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearSafeSearchAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearSafeSearchAnnotation()" class="notranslate">clearSafeSearchAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setSafeSearchAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setSafeSearchAnnotation()" class="notranslate">setSafeSearchAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, safe-search annotation has completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.SafeSearchAnnotation safe_search_annotation = 6;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.SafeSearchAnnotation.html">Google\Cloud\Vision\V1\SafeSearchAnnotation</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getImagePropertiesAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getImagePropertiesAnnotation()" class="notranslate">getImagePropertiesAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, image properties were extracted successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ImageProperties image_properties_annotation = 8;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ImageProperties.html">ImageProperties</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasImagePropertiesAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasImagePropertiesAnnotation()" class="notranslate">hasImagePropertiesAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearImagePropertiesAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearImagePropertiesAnnotation()" class="notranslate">clearImagePropertiesAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setImagePropertiesAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setImagePropertiesAnnotation()" class="notranslate">setImagePropertiesAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, image properties were extracted successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ImageProperties image_properties_annotation = 8;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.ImageProperties.html">Google\Cloud\Vision\V1\ImageProperties</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getCropHintsAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getCropHintsAnnotation()" class="notranslate">getCropHintsAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, crop hints have completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.CropHintsAnnotation crop_hints_annotation = 11;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.CropHintsAnnotation.html">CropHintsAnnotation</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasCropHintsAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasCropHintsAnnotation()" class="notranslate">hasCropHintsAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearCropHintsAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearCropHintsAnnotation()" class="notranslate">clearCropHintsAnnotation</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setCropHintsAnnotation__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setCropHintsAnnotation()" class="notranslate">setCropHintsAnnotation</h3>
+  <div class="markdown level1 summary"><p>If present, crop hints have completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.CropHintsAnnotation crop_hints_annotation = 11;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.CropHintsAnnotation.html">Google\Cloud\Vision\V1\CropHintsAnnotation</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getWebDetection__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getWebDetection()" class="notranslate">getWebDetection</h3>
+  <div class="markdown level1 summary"><p>If present, web detection has completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.WebDetection web_detection = 13;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.WebDetection.html">WebDetection</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasWebDetection__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasWebDetection()" class="notranslate">hasWebDetection</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearWebDetection__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearWebDetection()" class="notranslate">clearWebDetection</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setWebDetection__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setWebDetection()" class="notranslate">setWebDetection</h3>
+  <div class="markdown level1 summary"><p>If present, web detection has completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.WebDetection web_detection = 13;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.WebDetection.html">Google\Cloud\Vision\V1\WebDetection</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getProductSearchResults__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getProductSearchResults()" class="notranslate">getProductSearchResults</h3>
+  <div class="markdown level1 summary"><p>If present, product search has completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ProductSearchResults.html">ProductSearchResults</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasProductSearchResults__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasProductSearchResults()" class="notranslate">hasProductSearchResults</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearProductSearchResults__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearProductSearchResults()" class="notranslate">clearProductSearchResults</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setProductSearchResults__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setProductSearchResults()" class="notranslate">setProductSearchResults</h3>
+  <div class="markdown level1 summary"><p>If present, product search has completed successfully.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.ProductSearchResults.html">Google\Cloud\Vision\V1\ProductSearchResults</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getError__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getError()" class="notranslate">getError</h3>
+  <div class="markdown level1 summary"><p>If set, represents the error message for the operation.</p>
+<p>Note that filled-in image annotations are guaranteed to be
+correct, even when <code>error</code> is set.</p>
+<p>Generated from protobuf field <code>.google.rpc.Status error = 9;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Rpc\Status</span></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasError__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasError()" class="notranslate">hasError</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearError__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearError()" class="notranslate">clearError</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setError__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setError()" class="notranslate">setError</h3>
+  <div class="markdown level1 summary"><p>If set, represents the error message for the operation.</p>
+<p>Note that filled-in image annotations are guaranteed to be
+correct, even when <code>error</code> is set.</p>
+<p>Generated from protobuf field <code>.google.rpc.Status error = 9;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>Google\Rpc\Status</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__getContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::getContext()" class="notranslate">getContext</h3>
+  <div class="markdown level1 summary"><p>If present, contextual information is needed to understand where this image
+comes from.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ImageAnnotationContext.html">ImageAnnotationContext</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__hasContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::hasContext()" class="notranslate">hasContext</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__clearContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::clearContext()" class="notranslate">clearContext</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateImageResponse__setContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateImageResponse::setContext()" class="notranslate">setContext</h3>
+  <div class="markdown level1 summary"><p>If present, contextual information is needed to understand where this image
+comes from.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ImageAnnotationContext context = 21;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.ImageAnnotationContext.html">Google\Cloud\Vision\V1\ImageAnnotationContext</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>
