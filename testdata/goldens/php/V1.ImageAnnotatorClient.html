@@ -54,15 +54,15 @@ try {
   <h3 id="_Google_Cloud_Vision_V1_ImageAnnotatorClient__createImageObject__" data-uid="\Google\Cloud\Vision\V1\ImageAnnotatorClient::createImageObject()" class="notranslate">createImageObject</h3>
   <div class="markdown level1 summary"><p>Creates an Image object that can be used as part of an image annotation request.</p>
 <p>Example:</p>
-<pre><code>//[snippet=resource]
+<pre><code>
 $imageResource = fopen(&#39;path/to/image.jpg&#39;, &#39;r&#39;);
 $image = $imageAnnotatorClient-&gt;createImageObject($imageResource);
 $response = $imageAnnotatorClient-&gt;faceDetection($image);
-</code></pre><pre><code>//[snippet=data]
+</code></pre><pre><code>
 $imageData = file_get_contents(&#39;path/to/image.jpg&#39;);
 $image = $imageAnnotatorClient-&gt;createImageObject($imageData);
 $response = $imageAnnotatorClient-&gt;faceDetection($image);
-</code></pre><pre><code>//[snippet=url]
+</code></pre><pre><code>
 $imageUri = &quot;gs://my-bucket/image.jpg&quot;;
 $image = $imageAnnotatorClient-&gt;createImageObject($imageUri);
 $response = $imageAnnotatorClient-&gt;faceDetection($image);
