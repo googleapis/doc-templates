@@ -1,0 +1,2104 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="\Google\Cloud\Vision\V1\ProductSearchClient">
+<h1 class="page-title">Class ProductSearchClient (v2.2.2)</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Service Description: Manages Products and ProductSets of reference images for use in product
+search. It uses the following resource model:</p>
+<ul>
+<li>The API has a collection of <a class="xref" href="V1.ProductSet.html">ProductSet</a> resources, named
+<code>projects/&amp;#42;/locations/&amp;#42;/productSets/*</code>, which acts as a way to put different
+products into groups to limit identification.</li>
+</ul>
+<p>In parallel,</p>
+<ul>
+<li><p>The API has a collection of <a class="xref" href="V1.Product.html">Product</a> resources, named
+<code>projects/&amp;#42;/locations/&amp;#42;/products/*</code></p>
+</li>
+<li><p>Each <a class="xref" href="V1.Product.html">Product</a> has a collection of <a class="xref" href="V1.ReferenceImage.html">ReferenceImage</a> resources, named
+<code>projects/&amp;#42;/locations/&amp;#42;/products/&amp;#42;/referenceImages/*</code></p>
+</li>
+</ul>
+<p>This class provides the ability to make remote calls to the backing service through method
+calls that map to API methods. Sample code to get started:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productSetName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT_SET]&#39;);
+    $formattedProduct = $productSearchClient-&gt;productName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;);
+    $productSearchClient-&gt;addProductToProductSet($formattedName, $formattedProduct);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre><p>Many parameters require resource names to be formatted in a particular way. To
+assist with these names, this class includes a format method for each type of
+name, and additionally a parseName method to extract the individual identifiers
+contained within formatted names that are returned by the API.</p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__locationName__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::locationName()" class="notranslate">locationName</h3>
+  <div class="markdown level1 summary"><p>Formats a string containing the fully-qualified path to represent a location
+resource.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>project</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>location</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><p>The formatted location resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__productName__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::productName()" class="notranslate">productName</h3>
+  <div class="markdown level1 summary"><p>Formats a string containing the fully-qualified path to represent a product
+resource.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>project</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>location</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>product</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><p>The formatted product resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__productSetName__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::productSetName()" class="notranslate">productSetName</h3>
+  <div class="markdown level1 summary"><p>Formats a string containing the fully-qualified path to represent a product_set
+resource.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>project</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>location</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>productSet</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><p>The formatted product_set resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__referenceImageName__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::referenceImageName()" class="notranslate">referenceImageName</h3>
+  <div class="markdown level1 summary"><p>Formats a string containing the fully-qualified path to represent a
+reference_image resource.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>project</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>location</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>product</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td>referenceImage</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td><p>The formatted reference_image resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__parseName__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::parseName()" class="notranslate">parseName</h3>
+  <div class="markdown level1 summary"><p>Parses a formatted name string and returns an associative array of the components in the name.</p>
+<p>The following name formats are supported:
+Template: Pattern</p>
+<ul>
+<li>location: projects/{project}/locations/{location}</li>
+<li>product: projects/{project}/locations/{location}/products/{product}</li>
+<li>productSet: projects/{project}/locations/{location}/productSets/{product_set}</li>
+<li>referenceImage: projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}</li>
+</ul>
+<p>The optional $template argument can be supplied to specify a particular pattern,
+and must match one of the templates listed above. If no $template argument is
+provided, or if the $template argument does not match one of the templates
+listed, then parseName will check each of the supported templates, and return
+the first match.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>formattedName</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The formatted name string</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>template</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Optional name of template to match</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">array</span></td>
+        <td><p>An associative array from name component IDs to component values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__getOperationsClient__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::getOperationsClient()" class="notranslate">getOperationsClient</h3>
+  <div class="markdown level1 summary"><p>Return an OperationsClient object with the same endpoint as $this.</p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\LongRunning\OperationsClient</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__resumeOperation__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::resumeOperation()" class="notranslate">resumeOperation</h3>
+  <div class="markdown level1 summary"><p>Resume an existing long running operation that was previously started by a long
+running API method. If $methodName is not provided, or does not match a long
+running API method, then the operation can still be resumed, but the
+OperationResponse object will not deserialize the final response.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>operationName</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The name of the long running operation</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>methodName</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The name of the method used to start the operation</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\OperationResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient____construct__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::__construct()" class="notranslate">__construct</h3>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>options</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional. Options for configuring the service API wrapper.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ serviceAddress</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p><strong>Deprecated</strong>. This option will be removed in a future major release. Please utilize the <code>$apiEndpoint</code> option instead.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ apiEndpoint</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The address of the API remote host. May optionally include the port, formatted as &quot;<uri>:<port>&quot;. Default &#39;vision.googleapis.com:443&#39;.<p>
+</port></uri>
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ credentials</td>
+        <td>
+          <code>string|array|FetchAuthTokenInterface|CredentialsWrapper</code>
+          <br>
+          <p>The credentials to be used by the client to authorize API calls. This option accepts either a path to a credentials file, or a decoded credentials file as a PHP array. <em>Advanced usage</em>: In addition, this option can also accept a pre-constructed <a href="https://googleapis.github.io/google-auth-library-php/main/Google/Auth/FetchAuthTokenInterface">Google\Auth\FetchAuthTokenInterface</a> object or <a href="https://googleapis.github.io/gax-php#Google/ApiCore/CredentialsWrapper">Google\ApiCore\CredentialsWrapper</a> object. Note that when one of these objects are provided, any settings in $credentialsConfig will be ignored.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ credentialsConfig</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Options used to configure credentials, including auth token caching, for the client. For a full list of supporting configuration options, see <a href="https://googleapis.github.io/gax-php#Google/ApiCore/CredentialsWrapper#method_build">Google\ApiCore\CredentialsWrapper::build()</a> .</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ disableRetries</td>
+        <td>
+          <code>bool</code>
+          <br>
+          <p>Determines whether or not retries defined by the client configuration should be disabled. Defaults to <code>false</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ clientConfig</td>
+        <td>
+          <code>string|array</code>
+          <br>
+          <p>Client method configuration, including retry settings. This option can be either a path to a JSON file, or a PHP array containing the decoded JSON data. By default this settings points to the default client config file, which is provided in the resources folder.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ transport</td>
+        <td>
+          <code>string|TransportInterface</code>
+          <br>
+          <p>The transport used for executing network requests. May be either the string <code>rest</code> or <code>grpc</code>. Defaults to <code>grpc</code> if gRPC support is detected on the system. <em>Advanced usage</em>: Additionally, it is possible to pass in an already instantiated <a href="https://googleapis.github.io/gax-php#Google/ApiCore/Transport/TransportInterface">Google\ApiCore\Transport\TransportInterface</a> object. Note that when this object is provided, any settings in $transportConfig, and any $serviceAddress setting, will be ignored.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ transportConfig</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Configuration options that will be used to construct the transport. Options for each supported transport type should be passed in a key for that transport. For example: $transportConfig = [ &#39;grpc&#39; =&gt; [...], &#39;rest&#39; =&gt; [...], ]; See the <a href="https://googleapis.github.io/gax-php#Google/ApiCore/Transport/GrpcTransport#method_build">Google\ApiCore\Transport\GrpcTransport::build()</a> and <a href="https://googleapis.github.io/gax-php#Google/ApiCore/Transport/RestTransport#method_build">Google\ApiCore\Transport\RestTransport::build()</a> methods for the supported options.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ clientCertSource</td>
+        <td>
+          <code>callable</code>
+          <br>
+          <p>A callable which returns the client cert as a string. This can be used to provide a certificate and private key to the transport layer for mTLS.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__addProductToProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::addProductToProductSet()" class="notranslate">addProductToProductSet</h3>
+  <div class="markdown level1 summary"><p>Adds a Product to the specified ProductSet. If the Product is already
+present, no change is made.</p>
+<p>One Product can be added to at most 100 ProductSets.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the Product or the ProductSet doesn&#39;t exist.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productSetName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT_SET]&#39;);
+    $formattedProduct = $productSearchClient-&gt;productName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;);
+    $productSearchClient-&gt;addProductToProductSet($formattedName, $formattedProduct);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The resource name for the ProductSet to modify.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>product</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The resource name for the Product to be added to this ProductSet.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__createProduct__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::createProduct()" class="notranslate">createProduct</h3>
+  <div class="markdown level1 summary"><p>Creates and returns a new product resource.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
+characters.</li>
+<li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if product_category is missing or invalid.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;locationName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;);
+    $product = new Product();
+    $response = $productSearchClient-&gt;createProduct($formattedParent, $product);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The project in which the Product should be created.  Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>product</td>
+        <td>
+          <code><a class="xref" href="V1.Product.html">Google\Cloud\Vision\V1\Product</a></code>
+          <br>
+          <p>Required. The product to create.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ productId</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>A user-supplied resource id for this Product. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character <code>/</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.Product.html">Product</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__createProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::createProductSet()" class="notranslate">createProductSet</h3>
+  <div class="markdown level1 summary"><p>Creates and returns a new ProductSet resource.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than
+4096 characters.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;locationName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;);
+    $productSet = new ProductSet();
+    $response = $productSearchClient-&gt;createProductSet($formattedParent, $productSet);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The project in which the ProductSet should be created.  Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>productSet</td>
+        <td>
+          <code><a class="xref" href="V1.ProductSet.html">Google\Cloud\Vision\V1\ProductSet</a></code>
+          <br>
+          <p>Required. The ProductSet to create.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ productSetId</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>A user-supplied resource id for this ProductSet. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character <code>/</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ProductSet.html">ProductSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__createReferenceImage__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::createReferenceImage()" class="notranslate">createReferenceImage</h3>
+  <div class="markdown level1 summary"><p>Creates and returns a new ReferenceImage resource.</p>
+<p>The <code>bounding_poly</code> field is optional. If <code>bounding_poly</code> is not specified,
+the system will try to detect regions of interest in the image that are
+compatible with the product_category on the parent product. If it is
+specified, detection is ALWAYS skipped. The system converts polygons into
+non-rotated rectangles.</p>
+<p>Note that the pipeline will resize the image if the image resolution is too
+large to process (above 50MP).</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
+characters.</li>
+<li>Returns INVALID_ARGUMENT if the product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
+compatible with the parent product&#39;s product_category is detected.</li>
+<li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;productName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;);
+    $referenceImage = new ReferenceImage();
+    $response = $productSearchClient-&gt;createReferenceImage($formattedParent, $referenceImage);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. Resource name of the product in which to create the reference image.  Format is <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>referenceImage</td>
+        <td>
+          <code><a class="xref" href="V1.ReferenceImage.html">Google\Cloud\Vision\V1\ReferenceImage</a></code>
+          <br>
+          <p>Required. The reference image to create. If an image ID is specified, it is ignored.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ referenceImageId</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>A user-supplied resource id for the ReferenceImage to be added. If set, the server will attempt to use this value as the resource id. If it is already in use, an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character <code>/</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ReferenceImage.html">ReferenceImage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__deleteProduct__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::deleteProduct()" class="notranslate">deleteProduct</h3>
+  <div class="markdown level1 summary"><p>Permanently deletes a product and its reference images.</p>
+<p>Metadata of the product and all its images will be deleted right away, but
+search queries against ProductSets containing the product may still work
+until all related caches are refreshed.</p>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;);
+    $productSearchClient-&gt;deleteProduct($formattedName);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. Resource name of product to delete.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__deleteProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::deleteProductSet()" class="notranslate">deleteProductSet</h3>
+  <div class="markdown level1 summary"><p>Permanently deletes a ProductSet. Products and ReferenceImages in the
+ProductSet are not deleted.</p>
+<p>The actual image files are not deleted from Google Cloud Storage.</p>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productSetName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT_SET]&#39;);
+    $productSearchClient-&gt;deleteProductSet($formattedName);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. Resource name of the ProductSet to delete.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__deleteReferenceImage__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::deleteReferenceImage()" class="notranslate">deleteReferenceImage</h3>
+  <div class="markdown level1 summary"><p>Permanently deletes a reference image.</p>
+<p>The image metadata will be deleted right away, but search queries
+against ProductSets containing the image may still work until all related
+caches are refreshed.</p>
+<p>The actual image files are not deleted from Google Cloud Storage.</p>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;referenceImageName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;, &#39;[REFERENCE_IMAGE]&#39;);
+    $productSearchClient-&gt;deleteReferenceImage($formattedName);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The resource name of the reference image to delete.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__getProduct__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::getProduct()" class="notranslate">getProduct</h3>
+  <div class="markdown level1 summary"><p>Gets information associated with a Product.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the Product does not exist.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;);
+    $response = $productSearchClient-&gt;getProduct($formattedName);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. Resource name of the Product to get.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.Product.html">Product</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__getProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::getProductSet()" class="notranslate">getProductSet</h3>
+  <div class="markdown level1 summary"><p>Gets information associated with a ProductSet.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productSetName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT_SET]&#39;);
+    $response = $productSearchClient-&gt;getProductSet($formattedName);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. Resource name of the ProductSet to get.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ProductSet.html">ProductSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__getReferenceImage__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::getReferenceImage()" class="notranslate">getReferenceImage</h3>
+  <div class="markdown level1 summary"><p>Gets information associated with a ReferenceImage.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the specified image does not exist.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;referenceImageName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;, &#39;[REFERENCE_IMAGE]&#39;);
+    $response = $productSearchClient-&gt;getReferenceImage($formattedName);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The resource name of the ReferenceImage to get.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ReferenceImage.html">ReferenceImage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__importProductSets__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::importProductSets()" class="notranslate">importProductSets</h3>
+  <div class="markdown level1 summary"><p>Asynchronous API that imports a list of reference images to specified
+product sets based on a list of image information.</p>
+<p>The <span class="xref">google.longrunning.Operation</span> API can be used to keep track of the
+progress and results of the request.
+<code>Operation.metadata</code> contains <code>BatchOperationMetadata</code>. (progress)
+<code>Operation.response</code> contains <code>ImportProductSetsResponse</code>. (results)</p>
+<p>The input source of this method is a csv file on Google Cloud Storage.
+For the format of the csv file please see
+<a class="xref" href="V1.ImportProductSetsGcsSource.html#_Google_Cloud_Vision_V1_ImportProductSetsGcsSource__getCsvFileUri__">ImportProductSetsGcsSource.csv_file_uri</a>.</p>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;locationName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;);
+    $inputConfig = new ImportProductSetsInputConfig();
+    $operationResponse = $productSearchClient-&gt;importProductSets($formattedParent, $inputConfig);
+    $operationResponse-&gt;pollUntilComplete();
+    if ($operationResponse-&gt;operationSucceeded()) {
+        $result = $operationResponse-&gt;getResult();
+    // doSomethingWith($result)
+    } else {
+        $error = $operationResponse-&gt;getError();
+        // handleError($error)
+    }
+    // Alternatively:
+    // start the operation, keep the operation name, and resume later
+    $operationResponse = $productSearchClient-&gt;importProductSets($formattedParent, $inputConfig);
+    $operationName = $operationResponse-&gt;getName();
+    // ... do other work
+    $newOperationResponse = $productSearchClient-&gt;resumeOperation($operationName, &#39;importProductSets&#39;);
+    while (!$newOperationResponse-&gt;isDone()) {
+        // ... do other work
+        $newOperationResponse-&gt;reload();
+    }
+    if ($newOperationResponse-&gt;operationSucceeded()) {
+        $result = $newOperationResponse-&gt;getResult();
+    // doSomethingWith($result)
+    } else {
+        $error = $newOperationResponse-&gt;getError();
+        // handleError($error)
+    }
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The project in which the ProductSets should be imported.  Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>inputConfig</td>
+        <td>
+          <code><a class="xref" href="V1.ImportProductSetsInputConfig.html">Google\Cloud\Vision\V1\ImportProductSetsInputConfig</a></code>
+          <br>
+          <p>Required. The input content for the list of requests.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\OperationResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__listProductSets__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::listProductSets()" class="notranslate">listProductSets</h3>
+  <div class="markdown level1 summary"><p>Lists ProductSets in an unspecified order.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less
+than 1.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;locationName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;);
+    // Iterate over pages of elements
+    $pagedResponse = $productSearchClient-&gt;listProductSets($formattedParent);
+    foreach ($pagedResponse-&gt;iteratePages() as $page) {
+        foreach ($page as $element) {
+            // doSomethingWith($element);
+        }
+    }
+    // Alternatively:
+    // Iterate through all elements
+    $pagedResponse = $productSearchClient-&gt;listProductSets($formattedParent);
+    foreach ($pagedResponse-&gt;iterateAllElements() as $element) {
+        // doSomethingWith($element);
+    }
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The project from which ProductSets should be listed.  Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageSize</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageToken</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\PagedListResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__listProducts__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::listProducts()" class="notranslate">listProducts</h3>
+  <div class="markdown level1 summary"><p>Lists products in an unspecified order.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;locationName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;);
+    // Iterate over pages of elements
+    $pagedResponse = $productSearchClient-&gt;listProducts($formattedParent);
+    foreach ($pagedResponse-&gt;iteratePages() as $page) {
+        foreach ($page as $element) {
+            // doSomethingWith($element);
+        }
+    }
+    // Alternatively:
+    // Iterate through all elements
+    $pagedResponse = $productSearchClient-&gt;listProducts($formattedParent);
+    foreach ($pagedResponse-&gt;iterateAllElements() as $element) {
+        // doSomethingWith($element);
+    }
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The project OR ProductSet from which Products should be listed.  Format: <code>projects/PROJECT_ID/locations/LOC_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageSize</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageToken</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\PagedListResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__listProductsInProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::listProductsInProductSet()" class="notranslate">listProductsInProductSet</h3>
+  <div class="markdown level1 summary"><p>Lists the Products in a ProductSet, in an unspecified order. If the
+ProductSet does not exist, the products field of the response will be
+empty.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productSetName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT_SET]&#39;);
+    // Iterate over pages of elements
+    $pagedResponse = $productSearchClient-&gt;listProductsInProductSet($formattedName);
+    foreach ($pagedResponse-&gt;iteratePages() as $page) {
+        foreach ($page as $element) {
+            // doSomethingWith($element);
+        }
+    }
+    // Alternatively:
+    // Iterate through all elements
+    $pagedResponse = $productSearchClient-&gt;listProductsInProductSet($formattedName);
+    foreach ($pagedResponse-&gt;iterateAllElements() as $element) {
+        // doSomethingWith($element);
+    }
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The ProductSet resource for which to retrieve Products.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageSize</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageToken</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\PagedListResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__listReferenceImages__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::listReferenceImages()" class="notranslate">listReferenceImages</h3>
+  <div class="markdown level1 summary"><p>Lists reference images.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the parent product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
+than 1.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;productName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;);
+    // Iterate over pages of elements
+    $pagedResponse = $productSearchClient-&gt;listReferenceImages($formattedParent);
+    foreach ($pagedResponse-&gt;iteratePages() as $page) {
+        foreach ($page as $element) {
+            // doSomethingWith($element);
+        }
+    }
+    // Alternatively:
+    // Iterate through all elements
+    $pagedResponse = $productSearchClient-&gt;listReferenceImages($formattedParent);
+    foreach ($pagedResponse-&gt;iterateAllElements() as $element) {
+        // doSomethingWith($element);
+    }
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. Resource name of the product containing the reference images.  Format is <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageSize</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>The maximum number of resources contained in the underlying API response. The API may return fewer values in a page, even if there are additional values to be retrieved.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pageToken</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>A page token is used to specify a page of values to be returned. If no page token is specified (the default), the first page of values will be returned. Any page token used here must have been generated by a previous call to the API.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\PagedListResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__purgeProducts__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::purgeProducts()" class="notranslate">purgeProducts</h3>
+  <div class="markdown level1 summary"><p>Asynchronous API to delete all Products in a ProductSet or all Products
+that are in no ProductSet.</p>
+<p>If a Product is a member of the specified ProductSet in addition to other
+ProductSets, the Product will still be deleted.</p>
+<p>It is recommended to not delete the specified ProductSet until after this
+operation has completed. It is also recommended to not add any of the
+Products involved in the batch delete to a new ProductSet while this
+operation is running because those Products may still end up deleted.</p>
+<p>It&#39;s not possible to undo the PurgeProducts operation. Therefore, it is
+recommended to keep the csv files used in ImportProductSets (if that was
+how you originally built the Product Set) before starting PurgeProducts, in
+case you need to re-import the data after deletion.</p>
+<p>If the plan is to purge all of the Products from a ProductSet and then
+re-use the empty ProductSet to re-import new Products into the empty
+ProductSet, you must wait until the PurgeProducts operation has finished
+for that ProductSet.</p>
+<p>The <span class="xref">google.longrunning.Operation</span> API can be used to keep track of the
+progress and results of the request.
+<code>Operation.metadata</code> contains <code>BatchOperationMetadata</code>. (progress)</p>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedParent = $productSearchClient-&gt;locationName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;);
+    $operationResponse = $productSearchClient-&gt;purgeProducts($formattedParent);
+    $operationResponse-&gt;pollUntilComplete();
+    if ($operationResponse-&gt;operationSucceeded()) {
+        // operation succeeded and returns no value
+    } else {
+        $error = $operationResponse-&gt;getError();
+        // handleError($error)
+    }
+    // Alternatively:
+    // start the operation, keep the operation name, and resume later
+    $operationResponse = $productSearchClient-&gt;purgeProducts($formattedParent);
+    $operationName = $operationResponse-&gt;getName();
+    // ... do other work
+    $newOperationResponse = $productSearchClient-&gt;resumeOperation($operationName, &#39;purgeProducts&#39;);
+    while (!$newOperationResponse-&gt;isDone()) {
+        // ... do other work
+        $newOperationResponse-&gt;reload();
+    }
+    if ($newOperationResponse-&gt;operationSucceeded()) {
+        // operation succeeded and returns no value
+    } else {
+        $error = $newOperationResponse-&gt;getError();
+        // handleError($error)
+    }
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>parent</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The project and location in which the Products should be deleted.  Format is <code>projects/PROJECT_ID/locations/LOC_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ productSetPurgeConfig</td>
+        <td>
+          <code>ProductSetPurgeConfig</code>
+          <br>
+          <p>Specify which ProductSet contains the Products to be deleted.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ deleteOrphanProducts</td>
+        <td>
+          <code>bool</code>
+          <br>
+          <p>If delete_orphan_products is true, all Products that are not in any ProductSet will be deleted.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ force</td>
+        <td>
+          <code>bool</code>
+          <br>
+          <p>The default value is false. Override this value to true to actually perform the purge.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\ApiCore\OperationResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__removeProductFromProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::removeProductFromProductSet()" class="notranslate">removeProductFromProductSet</h3>
+  <div class="markdown level1 summary"><p>Removes a Product from the specified ProductSet.</p>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $formattedName = $productSearchClient-&gt;productSetName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT_SET]&#39;);
+    $formattedProduct = $productSearchClient-&gt;productName(&#39;[PROJECT]&#39;, &#39;[LOCATION]&#39;, &#39;[PRODUCT]&#39;);
+    $productSearchClient-&gt;removeProductFromProductSet($formattedName, $formattedProduct);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The resource name for the ProductSet to modify.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>product</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>Required. The resource name for the Product to be removed from this ProductSet.  Format is: <code>projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID</code></p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__updateProduct__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::updateProduct()" class="notranslate">updateProduct</h3>
+  <div class="markdown level1 summary"><p>Makes changes to a Product resource.</p>
+<p>Only the <code>display_name</code>, <code>description</code>, and <code>labels</code> fields can be updated
+right now.</p>
+<p>If labels are updated, the change will not be reflected in queries until
+the next index time.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the Product does not exist.</li>
+<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is
+missing from the request or longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if description is present in update_mask but is
+longer than 4096 characters.</li>
+<li>Returns INVALID_ARGUMENT if product_category is present in update_mask.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $product = new Product();
+    $response = $productSearchClient-&gt;updateProduct($product);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>product</td>
+        <td>
+          <code><a class="xref" href="V1.Product.html">Google\Cloud\Vision\V1\Product</a></code>
+          <br>
+          <p>Required. The Product resource which replaces the one on the server. product.name is immutable.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ updateMask</td>
+        <td>
+          <code>FieldMask</code>
+          <br>
+          <p>The FieldMask that specifies which fields to update. If update_mask isn&#39;t specified, all mutable fields are to be updated. Valid mask paths include <code>product_labels</code>, <code>display_name</code>, and <code>description</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.Product.html">Product</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__updateProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::updateProductSet()" class="notranslate">updateProductSet</h3>
+  <div class="markdown level1 summary"><p>Makes changes to a ProductSet resource.</p>
+<p>Only display_name can be updated currently.</p>
+<p>Possible errors:</p>
+<ul>
+<li>Returns NOT_FOUND if the ProductSet does not exist.</li>
+<li>Returns INVALID_ARGUMENT if display_name is present in update_mask but
+missing from the request or longer than 4096 characters.</li>
+</ul>
+<p>Sample code:</p>
+<pre><code>$productSearchClient = new ProductSearchClient();
+try {
+    $productSet = new ProductSet();
+    $response = $productSearchClient-&gt;updateProductSet($productSet);
+} finally {
+    $productSearchClient-&gt;close();
+}
+</code></pre></div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>productSet</td>
+        <td>
+          <code><a class="xref" href="V1.ProductSet.html">Google\Cloud\Vision\V1\ProductSet</a></code>
+          <br>
+          <p>Required. The ProductSet resource which replaces the one on the server.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>optionalArgs</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ updateMask</td>
+        <td>
+          <code>FieldMask</code>
+          <br>
+          <p>The FieldMask that specifies which fields to update. If update_mask isn&#39;t specified, all mutable fields are to be updated. Valid mask path is <code>display_name</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ retrySettings</td>
+        <td>
+          <code>RetrySettings|array</code>
+          <br>
+          <p>Retry settings to use for this call. Can be a <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> object, or an associative array of retry settings parameters. See the documentation on <a href="https://googleapis.github.io/gax-php#Google/ApiCore/RetrySettings">Google\ApiCore\RetrySettings</a> for example usage.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ProductSet.html">ProductSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="consts">Constants
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__SERVICE_NAME" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::SERVICE_NAME" class="notranslate">SERVICE_NAME</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>Value: 'google.cloud.vision.v1.ProductSearch'</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The name of the service.</p>
+</div>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__SERVICE_ADDRESS" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::SERVICE_ADDRESS" class="notranslate">SERVICE_ADDRESS</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>Value: 'vision.googleapis.com'</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The default address of the service.</p>
+</div>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__DEFAULT_SERVICE_PORT" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::DEFAULT_SERVICE_PORT" class="notranslate">DEFAULT_SERVICE_PORT</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>Value: 443</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The default port of the service.</p>
+</div>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchClient__CODEGEN_NAME" data-uid="\Google\Cloud\Vision\V1\ProductSearchClient::CODEGEN_NAME" class="notranslate">CODEGEN_NAME</h3>
+  <div class="codewrapper">
+    <pre class="prettyprint"><code>Value: 'gapic'</code></pre>
+  </div>
+  <div class="markdown level1 summary"><p>The name of the code generator, to be included in the agent header.</p>
+</div>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

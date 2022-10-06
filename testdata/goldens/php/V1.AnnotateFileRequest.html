@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest">
+<h1 class="page-title">Class AnnotateFileRequest (v2.2.2)</h1>
+  
+  
+  <div class="markdown level0 summary"><p>A request to annotate one single file, e.g. a PDF, TIFF or GIF file.</p>
+<p>Generated from protobuf message <code>google.cloud.vision.v1.AnnotateFileRequest</code></p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest____construct__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::__construct()" class="notranslate">__construct</h3>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional. Data for populating the Message object.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ input_config</td>
+        <td>
+          <code><a class="xref" href="V1.InputConfig.html">Google\Cloud\Vision\V1\InputConfig</a></code>
+          <br>
+          <p>Required. Information about the input file.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ features</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.Feature.html">Google\Cloud\Vision\V1\Feature</a>&gt;</code>
+          <br>
+          <p>Required. Requested features.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ image_context</td>
+        <td>
+          <code><a class="xref" href="V1.ImageContext.html">Google\Cloud\Vision\V1\ImageContext</a></code>
+          <br>
+          <p>Additional context that may accompany the image(s) in the file.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pages</td>
+        <td>
+          <code>array<int></int></code>
+          <br>
+          <p>Pages of the file to perform image annotation. Pages starts from 1, we assume the first page of the file is page 1. At most 5 pages are supported per request. Pages can be negative. Page 1 means the first page. Page 2 means the second page. Page -1 means the last page. Page -2 means the second to the last page. If the file is GIF instead of PDF or TIFF, page refers to GIF frames. If this field is empty, by default the service performs image annotation for the first 5 pages of the file.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__getInputConfig__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::getInputConfig()" class="notranslate">getInputConfig</h3>
+  <div class="markdown level1 summary"><p>Required. Information about the input file.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.InputConfig.html">InputConfig</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__hasInputConfig__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::hasInputConfig()" class="notranslate">hasInputConfig</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__clearInputConfig__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::clearInputConfig()" class="notranslate">clearInputConfig</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__setInputConfig__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::setInputConfig()" class="notranslate">setInputConfig</h3>
+  <div class="markdown level1 summary"><p>Required. Information about the input file.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.InputConfig input_config = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.InputConfig.html">Google\Cloud\Vision\V1\InputConfig</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__getFeatures__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::getFeatures()" class="notranslate">getFeatures</h3>
+  <div class="markdown level1 summary"><p>Required. Requested features.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.Feature features = 2;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__setFeatures__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::setFeatures()" class="notranslate">setFeatures</h3>
+  <div class="markdown level1 summary"><p>Required. Requested features.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.Feature features = 2;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.Feature.html">Google\Cloud\Vision\V1\Feature</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__getImageContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::getImageContext()" class="notranslate">getImageContext</h3>
+  <div class="markdown level1 summary"><p>Additional context that may accompany the image(s) in the file.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.ImageContext.html">ImageContext</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__hasImageContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::hasImageContext()" class="notranslate">hasImageContext</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__clearImageContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::clearImageContext()" class="notranslate">clearImageContext</h3>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__setImageContext__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::setImageContext()" class="notranslate">setImageContext</h3>
+  <div class="markdown level1 summary"><p>Additional context that may accompany the image(s) in the file.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.ImageContext image_context = 3;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.ImageContext.html">Google\Cloud\Vision\V1\ImageContext</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__getPages__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::getPages()" class="notranslate">getPages</h3>
+  <div class="markdown level1 summary"><p>Pages of the file to perform image annotation.</p>
+<p>Pages starts from 1, we assume the first page of the file is page 1.
+At most 5 pages are supported per request. Pages can be negative.
+Page 1 means the first page.
+Page 2 means the second page.
+Page -1 means the last page.
+Page -2 means the second to the last page.
+If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+If this field is empty, by default the service performs image annotation
+for the first 5 pages of the file.</p>
+<p>Generated from protobuf field <code>repeated int32 pages = 4;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_AnnotateFileRequest__setPages__" data-uid="\Google\Cloud\Vision\V1\AnnotateFileRequest::setPages()" class="notranslate">setPages</h3>
+  <div class="markdown level1 summary"><p>Pages of the file to perform image annotation.</p>
+<p>Pages starts from 1, we assume the first page of the file is page 1.
+At most 5 pages are supported per request. Pages can be negative.
+Page 1 means the first page.
+Page 2 means the second page.
+Page -1 means the last page.
+Page -2 means the second to the last page.
+If the file is GIF instead of PDF or TIFF, page refers to GIF frames.
+If this field is empty, by default the service performs image annotation
+for the first 5 pages of the file.</p>
+<p>Generated from protobuf field <code>repeated int32 pages = 4;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int[]</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

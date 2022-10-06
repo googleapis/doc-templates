@@ -1,0 +1,1013 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="\Google\Cloud\Vision\V1\FaceAnnotation">
+<h1 class="page-title">Class FaceAnnotation (v2.2.2)</h1>
+  
+  
+  <div class="markdown level0 summary"><p>A face annotation object contains the results of face detection.</p>
+<p>Generated from protobuf message <code>google.cloud.vision.v1.FaceAnnotation</code></p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation____construct__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::__construct()" class="notranslate">__construct</h3>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional. Data for populating the Message object.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ bounding_poly</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          <p>The bounding polygon around the face. The coordinates of the bounding box are in the original image&#39;s scale. The bounding box is computed to &quot;frame&quot; the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the <code>BoundingPoly</code> (the polygon will be unbounded) if only a partial face appears in the image to be annotated.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ fd_bounding_poly</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          <p>The <code>fd_bounding_poly</code> bounding polygon is tighter than the <code>boundingPoly</code>, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the &quot;amount of skin&quot; visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the <code>fd</code> (face detection) prefix.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ landmarks</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.FaceAnnotation.Landmark.html">Google\Cloud\Vision\V1\FaceAnnotation\Landmark</a>&gt;</code>
+          <br>
+          <p>Detected face landmarks.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ roll_angle</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ pan_angle</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ tilt_angle</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image&#39;s horizontal plane. Range [-180,180].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ detection_confidence</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>Detection confidence. Range [0, 1].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ landmarking_confidence</td>
+        <td>
+          <code>float</code>
+          <br>
+          <p>Face landmarking confidence. Range [0, 1].</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ joy_likelihood</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Joy likelihood.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ sorrow_likelihood</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Sorrow likelihood.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ anger_likelihood</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Anger likelihood.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ surprise_likelihood</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Surprise likelihood.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ under_exposed_likelihood</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Under-exposed likelihood.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ blurred_likelihood</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Blurred likelihood.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ headwear_likelihood</td>
+        <td>
+          <code>int</code>
+          <br>
+          <p>Headwear likelihood.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getBoundingPoly()" class="notranslate">getBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>The bounding polygon around the face. The coordinates of the bounding box
+are in the original image&#39;s scale.</p>
+<p>The bounding box is computed to &quot;frame&quot; the face in accordance with human
+expectations. It is based on the landmarker results.
+Note that one or more x and/or y coordinates may not be generated in the
+<code>BoundingPoly</code> (the polygon will be unbounded) if only a partial face
+appears in the image to be annotated.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.BoundingPoly.html">BoundingPoly</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__hasBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::hasBoundingPoly()" class="notranslate">hasBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__clearBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::clearBoundingPoly()" class="notranslate">clearBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setBoundingPoly()" class="notranslate">setBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>The bounding polygon around the face. The coordinates of the bounding box
+are in the original image&#39;s scale.</p>
+<p>The bounding box is computed to &quot;frame&quot; the face in accordance with human
+expectations. It is based on the landmarker results.
+Note that one or more x and/or y coordinates may not be generated in the
+<code>BoundingPoly</code> (the polygon will be unbounded) if only a partial face
+appears in the image to be annotated.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getFdBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getFdBoundingPoly()" class="notranslate">getFdBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>The <code>fd_bounding_poly</code> bounding polygon is tighter than the
+<code>boundingPoly</code>, and encloses only the skin part of the face. Typically, it
+is used to eliminate the face from any image analysis that detects the
+&quot;amount of skin&quot; visible in an image. It is not based on the
+landmarker results, only on the initial face detection, hence
+the <code>fd</code> (face detection) prefix.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.BoundingPoly.html">BoundingPoly</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__hasFdBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::hasFdBoundingPoly()" class="notranslate">hasFdBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__clearFdBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::clearFdBoundingPoly()" class="notranslate">clearFdBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setFdBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setFdBoundingPoly()" class="notranslate">setFdBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>The <code>fd_bounding_poly</code> bounding polygon is tighter than the
+<code>boundingPoly</code>, and encloses only the skin part of the face. Typically, it
+is used to eliminate the face from any image analysis that detects the
+&quot;amount of skin&quot; visible in an image. It is not based on the
+landmarker results, only on the initial face detection, hence
+the <code>fd</code> (face detection) prefix.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getLandmarks__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getLandmarks()" class="notranslate">getLandmarks</h3>
+  <div class="markdown level1 summary"><p>Detected face landmarks.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setLandmarks__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setLandmarks()" class="notranslate">setLandmarks</h3>
+  <div class="markdown level1 summary"><p>Detected face landmarks.</p>
+<p>Generated from protobuf field <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>array&lt;<a class="xref" href="V1.FaceAnnotation.Landmark.html">Google\Cloud\Vision\V1\FaceAnnotation\Landmark</a>&gt;</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getRollAngle__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getRollAngle()" class="notranslate">getRollAngle</h3>
+  <div class="markdown level1 summary"><p>Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
+of the face relative to the image vertical about the axis perpendicular to
+the face. Range [-180,180].</p>
+<p>Generated from protobuf field <code>float roll_angle = 4;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setRollAngle__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setRollAngle()" class="notranslate">setRollAngle</h3>
+  <div class="markdown level1 summary"><p>Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
+of the face relative to the image vertical about the axis perpendicular to
+the face. Range [-180,180].</p>
+<p>Generated from protobuf field <code>float roll_angle = 4;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getPanAngle__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getPanAngle()" class="notranslate">getPanAngle</h3>
+  <div class="markdown level1 summary"><p>Yaw angle, which indicates the leftward/rightward angle that the face is
+pointing relative to the vertical plane perpendicular to the image. Range
+[-180,180].</p>
+<p>Generated from protobuf field <code>float pan_angle = 5;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setPanAngle__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setPanAngle()" class="notranslate">setPanAngle</h3>
+  <div class="markdown level1 summary"><p>Yaw angle, which indicates the leftward/rightward angle that the face is
+pointing relative to the vertical plane perpendicular to the image. Range
+[-180,180].</p>
+<p>Generated from protobuf field <code>float pan_angle = 5;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getTiltAngle__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getTiltAngle()" class="notranslate">getTiltAngle</h3>
+  <div class="markdown level1 summary"><p>Pitch angle, which indicates the upwards/downwards angle that the face is
+pointing relative to the image&#39;s horizontal plane. Range [-180,180].</p>
+<p>Generated from protobuf field <code>float tilt_angle = 6;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setTiltAngle__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setTiltAngle()" class="notranslate">setTiltAngle</h3>
+  <div class="markdown level1 summary"><p>Pitch angle, which indicates the upwards/downwards angle that the face is
+pointing relative to the image&#39;s horizontal plane. Range [-180,180].</p>
+<p>Generated from protobuf field <code>float tilt_angle = 6;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getDetectionConfidence__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getDetectionConfidence()" class="notranslate">getDetectionConfidence</h3>
+  <div class="markdown level1 summary"><p>Detection confidence. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float detection_confidence = 7;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setDetectionConfidence__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setDetectionConfidence()" class="notranslate">setDetectionConfidence</h3>
+  <div class="markdown level1 summary"><p>Detection confidence. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float detection_confidence = 7;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getLandmarkingConfidence__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getLandmarkingConfidence()" class="notranslate">getLandmarkingConfidence</h3>
+  <div class="markdown level1 summary"><p>Face landmarking confidence. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float landmarking_confidence = 8;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setLandmarkingConfidence__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setLandmarkingConfidence()" class="notranslate">setLandmarkingConfidence</h3>
+  <div class="markdown level1 summary"><p>Face landmarking confidence. Range [0, 1].</p>
+<p>Generated from protobuf field <code>float landmarking_confidence = 8;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>float</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getJoyLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getJoyLikelihood()" class="notranslate">getJoyLikelihood</h3>
+  <div class="markdown level1 summary"><p>Joy likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setJoyLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setJoyLikelihood()" class="notranslate">setJoyLikelihood</h3>
+  <div class="markdown level1 summary"><p>Joy likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getSorrowLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getSorrowLikelihood()" class="notranslate">getSorrowLikelihood</h3>
+  <div class="markdown level1 summary"><p>Sorrow likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setSorrowLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setSorrowLikelihood()" class="notranslate">setSorrowLikelihood</h3>
+  <div class="markdown level1 summary"><p>Sorrow likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getAngerLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getAngerLikelihood()" class="notranslate">getAngerLikelihood</h3>
+  <div class="markdown level1 summary"><p>Anger likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setAngerLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setAngerLikelihood()" class="notranslate">setAngerLikelihood</h3>
+  <div class="markdown level1 summary"><p>Anger likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getSurpriseLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getSurpriseLikelihood()" class="notranslate">getSurpriseLikelihood</h3>
+  <div class="markdown level1 summary"><p>Surprise likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setSurpriseLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setSurpriseLikelihood()" class="notranslate">setSurpriseLikelihood</h3>
+  <div class="markdown level1 summary"><p>Surprise likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getUnderExposedLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getUnderExposedLikelihood()" class="notranslate">getUnderExposedLikelihood</h3>
+  <div class="markdown level1 summary"><p>Under-exposed likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setUnderExposedLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setUnderExposedLikelihood()" class="notranslate">setUnderExposedLikelihood</h3>
+  <div class="markdown level1 summary"><p>Under-exposed likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getBlurredLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getBlurredLikelihood()" class="notranslate">getBlurredLikelihood</h3>
+  <div class="markdown level1 summary"><p>Blurred likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setBlurredLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setBlurredLikelihood()" class="notranslate">setBlurredLikelihood</h3>
+  <div class="markdown level1 summary"><p>Blurred likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__getHeadwearLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::getHeadwearLikelihood()" class="notranslate">getHeadwearLikelihood</h3>
+  <div class="markdown level1 summary"><p>Headwear likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_FaceAnnotation__setHeadwearLikelihood__" data-uid="\Google\Cloud\Vision\V1\FaceAnnotation::setHeadwearLikelihood()" class="notranslate">setHeadwearLikelihood</h3>
+  <div class="markdown level1 summary"><p>Headwear likelihood.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>int</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="">
+<h1 class="page-title">
+  <h1 id="google-cloud-vision-for-php">Google Cloud Vision for PHP</h1>
+</h1>
+
+<blockquote><p>Idiomatic PHP client for <a href="https://cloud.google.com/vision/">Cloud Vision</a>.</p>
+</blockquote>
+<p><a href="https://packagist.org/packages/google/cloud-vision"><img src="https://poser.pugx.org/google/cloud-vision/v/stable" alt="Latest Stable Version"></a> <a href="https://packagist.org/packages/google/cloud-vision"><img src="https://img.shields.io/packagist/dm/google/cloud-vision.svg" alt="Packagist"></a></p>
+<ul>
+<li><a href="http://googleapis.github.io/google-cloud-php/#/docs/cloud-vision/latest">API documentation</a></li>
+</ul>
+<p><strong>NOTE:</strong> This repository is part of <a href="https://github.com/googleapis/google-cloud-php">Google Cloud PHP</a>. Any
+support requests, bug reports, or development contributions should be directed to
+that project.</p>
+<p>Allows developers to easily integrate vision detection features within applications, including image labeling, face and
+landmark detection, optical character recognition (OCR), and tagging of explicit content.</p>
+<h3 id="installation">Installation</h3>
+<p>To begin, install the preferred dependency manager for PHP, <a href="https://getcomposer.org/">Composer</a>.</p>
+<p>Now to install just this component:</p>
+<pre><code class="lang-sh">$ composer require google/cloud-vision
+</code></pre><p>Or to install the entire suite of components at once:</p>
+<pre><code class="lang-sh">$ composer require google/cloud
+</code></pre><h3 id="authentication">Authentication</h3>
+<p>Please see our <a href="https://github.com/googleapis/google-cloud-php/blob/main/AUTHENTICATION.md">Authentication guide</a> for more information
+on authenticating your client. Once authenticated, you&#39;ll be ready to start making requests.</p>
+<h3 id="sample">Sample</h3>
+<pre><code class="lang-php">require &#39;vendor/autoload.php&#39;;
+
+use Google\Cloud\Vision\V1\Feature\Type;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+use Google\Cloud\Vision\V1\Likelihood;
+
+$client = new ImageAnnotatorClient();
+
+// Annotate an image, detecting faces.
+$annotation = $client-&gt;annotateImage(
+    fopen(&#39;/data/photos/family_photo.jpg&#39;, &#39;r&#39;),
+    [Type::FACE_DETECTION]
+);
+
+// Determine if the detected faces have headwear.
+foreach ($annotation-&gt;getFaceAnnotations() as $faceAnnotation) {
+    $likelihood = Likelihood::name($faceAnnotation-&gt;getHeadwearLikelihood());
+    echo &quot;Likelihood of headwear: $likelihood&quot; . PHP_EOL;
+}
+</code></pre><h3 id="version">Version</h3>
+<p>This component is considered GA (generally available). As such, it will not introduce backwards-incompatible changes in
+any minor or patch releases. We will address issues and requests with the highest priority.</p>
+<h3 id="next-steps">Next Steps</h3>
+<ol>
+<li>Understand the <a href="https://cloud.google.com/vision/docs/">official documentation</a>.</li>
+<li>Take a look at <a href="https://github.com/GoogleCloudPlatform/php-docs-samples/tree/master/vision/">in-depth usage samples</a>.</li>
+</ol>
+
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>

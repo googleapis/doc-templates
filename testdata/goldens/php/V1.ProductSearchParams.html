@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html devsite="">
+  <head>
+    <meta name="project_path" value="/php/docs/reference/_project.yaml">
+    <meta name="book_path" value="/php/docs/reference/vision/latest/_book.yaml">
+  </head>
+  <body>
+    {% verbatim %}
+    <div>
+      <article data-uid="\Google\Cloud\Vision\V1\ProductSearchParams">
+<h1 class="page-title">Class ProductSearchParams (v2.2.2)</h1>
+  
+  
+  <div class="markdown level0 summary"><p>Parameters for a product search request.</p>
+<p>Generated from protobuf message <code>google.cloud.vision.v1.ProductSearchParams</code></p>
+</div>
+  <h2 id="methods">Methods
+  </h2>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams____construct__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::__construct()" class="notranslate">__construct</h3>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
+  <strong>Parameters</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>
+          <code>array</code>
+          <br>
+          <p>Optional. Data for populating the Message object.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ bounding_poly</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          <p>The bounding polygon around the area of interest in the image. If it is not specified, system discretion will be applied.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ product_set</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The resource name of a <a class="xref" href="V1.ProductSet.html">ProductSet</a> to be searched for similar images. Format is: <code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ product_categories</td>
+        <td>
+          <code>array<string></string></code>
+          <br>
+          <p>The list of product categories to search in. Currently, we only consider the first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;, &quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy categories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will be deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, or &quot;toys-v2&quot; for better product search accuracy. It is recommended to migrate existing products to these categories as well.</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td>↳ filter</td>
+        <td>
+          <code>string</code>
+          <br>
+          <p>The filtering expression. This can be used to restrict search results based on Product labels. We currently support an AND of OR of key-value expressions, where each expression within an OR must have the same key. An &#39;=&#39; should be used to connect the key and value. For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is acceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable. &quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;.</p>
+
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__getBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::getBoundingPoly()" class="notranslate">getBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>The bounding polygon around the area of interest in the image.</p>
+<p>If it is not specified, system discretion will be applied.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="V1.BoundingPoly.html">BoundingPoly</a></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__hasBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::hasBoundingPoly()" class="notranslate">hasBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__clearBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::clearBoundingPoly()" class="notranslate">clearBoundingPoly</h3>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__setBoundingPoly__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::setBoundingPoly()" class="notranslate">setBoundingPoly</h3>
+  <div class="markdown level1 summary"><p>The bounding polygon around the area of interest in the image.</p>
+<p>If it is not specified, system discretion will be applied.</p>
+<p>Generated from protobuf field <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code><a class="xref" href="V1.BoundingPoly.html">Google\Cloud\Vision\V1\BoundingPoly</a></code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__getProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::getProductSet()" class="notranslate">getProductSet</h3>
+  <div class="markdown level1 summary"><p>The resource name of a <a class="xref" href="V1.ProductSet.html">ProductSet</a> to be searched for similar images.</p>
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.</p>
+<p>Generated from protobuf field <code>string product_set = 6 [(.google.api.resource_reference) = {</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__setProductSet__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::setProductSet()" class="notranslate">setProductSet</h3>
+  <div class="markdown level1 summary"><p>The resource name of a <a class="xref" href="V1.ProductSet.html">ProductSet</a> to be searched for similar images.</p>
+<p>Format is:
+<code>projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID</code>.</p>
+<p>Generated from protobuf field <code>string product_set = 6 [(.google.api.resource_reference) = {</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__getProductCategories__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::getProductCategories()" class="notranslate">getProductCategories</h3>
+  <div class="markdown level1 summary"><p>The list of product categories to search in. Currently, we only consider
+the first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,
+&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy
+categories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will
+be deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,
+or &quot;toys-v2&quot; for better product search accuracy. It is recommended to
+migrate existing products to these categories as well.</p>
+<p>Generated from protobuf field <code>repeated string product_categories = 7;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">\Google\Protobuf\Internal\RepeatedField</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__setProductCategories__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::setProductCategories()" class="notranslate">setProductCategories</h3>
+  <div class="markdown level1 summary"><p>The list of product categories to search in. Currently, we only consider
+the first category, and either &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;, &quot;toys-v2&quot;,
+&quot;packagedgoods-v1&quot;, or &quot;general-v1&quot; should be specified. The legacy
+categories &quot;homegoods&quot;, &quot;apparel&quot;, and &quot;toys&quot; are still supported but will
+be deprecated. For new products, please use &quot;homegoods-v2&quot;, &quot;apparel-v2&quot;,
+or &quot;toys-v2&quot; for better product search accuracy. It is recommended to
+migrate existing products to these categories as well.</p>
+<p>Generated from protobuf field <code>repeated string product_categories = 7;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>string[]</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__getFilter__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::getFilter()" class="notranslate">getFilter</h3>
+  <div class="markdown level1 summary"><p>The filtering expression. This can be used to restrict search results based
+on Product labels. We currently support an AND of OR of key-value
+expressions, where each expression within an OR must have the same key. An
+&#39;=&#39; should be used to connect the key and value.</p>
+<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is
+acceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.
+&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;.</p>
+<p>Generated from protobuf field <code>string filter = 8;</code></p>
+</div>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="_Google_Cloud_Vision_V1_ProductSearchParams__setFilter__" data-uid="\Google\Cloud\Vision\V1\ProductSearchParams::setFilter()" class="notranslate">setFilter</h3>
+  <div class="markdown level1 summary"><p>The filtering expression. This can be used to restrict search results based
+on Product labels. We currently support an AND of OR of key-value
+expressions, where each expression within an OR must have the same key. An
+&#39;=&#39; should be used to connect the key and value.</p>
+<p>For example, &quot;(color = red OR color = blue) AND brand = Google&quot; is
+acceptable, but &quot;(color = red OR brand = Google)&quot; is not acceptable.
+&quot;color: red&quot; is not acceptable because it uses a &#39;:&#39; instead of an &#39;=&#39;.</p>
+<p>Generated from protobuf field <code>string filter = 8;</code></p>
+</div>
+  <strong>Parameter</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>
+          <code>string</code>
+          <br>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>Returns</strong>
+  <table class="responsive">
+    <tbody>
+      <tr>
+        <td><strong>Type</strong></td>
+        <td><strong>Description</strong></td>
+      </tr>
+      <tr>
+        <td><span class="xref">$this</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+    </div>
+    {% endverbatim %}
+  </body>
+</html>
