@@ -1,5 +1,10 @@
 # doc-templates
 
+**This repo is unmaintained.** All of the templates were moved to
+https://github.com/googleapis/doc-pipeline.
+
+--------------
+
 This repository contains templates used to generate API reference documentation
 for developers.google.com, cloud.google.com, and other sites.
 
